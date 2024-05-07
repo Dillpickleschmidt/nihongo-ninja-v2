@@ -18,7 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className}`}>
+      <body
+        className={`${inter.className} scrollbar:w-2.5 scrollbar-track:bg-transparent scrollbar-thumb:bg-neutral-500 hover:scrollbar-thumb:bg-[#999999]`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

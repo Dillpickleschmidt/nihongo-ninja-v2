@@ -5,7 +5,7 @@ import { Button } from "./ui/button"
 import { VariantProps, cva } from "class-variance-authority"
 import { cn } from "@/utils/utils"
 import { Card } from "./ui/card"
-import { CloseDialog } from "@/features"
+import { CloseDialog } from "@/features/dialog"
 
 type DialogProps = React.DialogHTMLAttributes<HTMLDialogElement> &
   VariantProps<typeof dialogVariants> & {

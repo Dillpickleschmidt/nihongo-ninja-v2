@@ -30,7 +30,7 @@ export default function Learn({ children }: { children: React.ReactNode }) {
         <div className="flex justify-center">
           <div className="w-[60%]">
             {/* Tips box */}
-            <div className="w-full h-28 mt-16 bg-card saturate-50 my-6 flex justify-center items-center rounded-md border">
+            <div className="w-full h-28 mt-16 px-8 bg-card saturate-50 my-6 flex justify-center items-center rounded-md border">
               Visit the resources page to find helpful tools and resources to
               aid in your learning journey.
             </div>
@@ -41,40 +41,40 @@ export default function Learn({ children }: { children: React.ReactNode }) {
             </div>
             {/* Lessons */}
             <ChapterBox text="Chapter 1" className="bg-red-700 saturate-50">
-              <Button>Unit 1 - Welcome!</Button>
-              <Button>Unit 2 - Writing Systems</Button>
-              <Button>Unit 3</Button>
-              <Button>Unit 4</Button>
-              <Button>Unit 5</Button>
-              <Button>Unit 6</Button>
-              <Button>Unit 7</Button>
-              <Button>Unit 8</Button>
-              <Button>Unit 9</Button>
-              <Button>Unit 10</Button>
+              <UnitButton id="Unit 1">Welcome!</UnitButton>
+              <UnitButton id="Unit 2">Writing Systems</UnitButton>
+              <UnitButton id="Unit 3">Placeholder</UnitButton>
+              <UnitButton id="Unit 4">Placeholder</UnitButton>
+              <UnitButton id="Unit 5">Placeholder</UnitButton>
+              <UnitButton id="Unit 6">Placeholder</UnitButton>
+              <UnitButton id="Unit 7">Placeholder</UnitButton>
+              <UnitButton id="Unit 8">Placeholder</UnitButton>
+              <UnitButton id="Unit 9">Placeholder</UnitButton>
+              <UnitButton id="Unit 10">Placeholder</UnitButton>
             </ChapterBox>
             <ChapterBox text="Chapter 2" className="bg-sky-600 saturate-50">
-              <Button>Unit 1</Button>
-              <Button>Unit 2</Button>
-              <Button>Unit 3</Button>
-              <Button>Unit 4</Button>
-              <Button>Unit 5</Button>
-              <Button>Unit 6</Button>
-              <Button>Unit 7</Button>
-              <Button>Unit 8</Button>
-              <Button>Unit 9</Button>
-              <Button>Unit 10</Button>
+              <UnitButton id="Unit 1">Placeholder</UnitButton>
+              <UnitButton id="Unit 2">Placeholder</UnitButton>
+              <UnitButton id="Unit 3">Placeholder</UnitButton>
+              <UnitButton id="Unit 4">Placeholder</UnitButton>
+              <UnitButton id="Unit 5">Placeholder</UnitButton>
+              <UnitButton id="Unit 6">Placeholder</UnitButton>
+              <UnitButton id="Unit 7">Placeholder</UnitButton>
+              <UnitButton id="Unit 8">Placeholder</UnitButton>
+              <UnitButton id="Unit 9">Placeholder</UnitButton>
+              <UnitButton id="Unit 10">Placeholder</UnitButton>
             </ChapterBox>
             <ChapterBox text="Chapter 3" className="bg-green-600 saturate-50">
-              <Button>Unit 1</Button>
-              <Button>Unit 2</Button>
-              <Button>Unit 3</Button>
-              <Button>Unit 4</Button>
-              <Button>Unit 5</Button>
-              <Button>Unit 6</Button>
-              <Button>Unit 7</Button>
-              <Button>Unit 8</Button>
-              <Button>Unit 9</Button>
-              <Button>Unit 10</Button>
+              <UnitButton id="Unit 1">Placeholder</UnitButton>
+              <UnitButton id="Unit 2">Placeholder</UnitButton>
+              <UnitButton id="Unit 3">Placeholder</UnitButton>
+              <UnitButton id="Unit 4">Placeholder</UnitButton>
+              <UnitButton id="Unit 5">Placeholder</UnitButton>
+              <UnitButton id="Unit 6">Placeholder</UnitButton>
+              <UnitButton id="Unit 7">Placeholder</UnitButton>
+              <UnitButton id="Unit 8">Placeholder</UnitButton>
+              <UnitButton id="Unit 9">Placeholder</UnitButton>
+              <UnitButton id="Unit 10">Placeholder</UnitButton>
             </ChapterBox>
           </div>
         </div>
@@ -147,11 +147,26 @@ function ChapterBox({ children, text, className }: ChapterBoxProps) {
         </div>
       </div>
       <div
-        className="w-full grid grid-cols-3 gap-y-6 gap-x-6
-            [&>*]:text-base [&>*]:px-7 [&>*]:py-6 [&>*]:shadow-lg [&>*]:rounded-sm [&>*]:bg-card [&>*]:border [&>*]:text-muted-foreground [&>*]:justify-between"
+        className="w-full grid 2xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-y-6 gap-x-6
+            [&>*]:text-base [&>*]:px-7 [&>*]:py-6 [&>*]:shadow-lg [&>*]:justify-start"
       >
         {children}
       </div>
     </>
+  )
+}
+
+type UnitButtonProps = {
+  children: React.ReactNode
+  id: string
+}
+
+function UnitButton({ children, id }: UnitButtonProps) {
+  return (
+    <Button variant="outline" className="font-normal">
+      <span className="">{id}</span>
+      <span className="mx-[.35rem]">-</span>
+      <span className="text-sm text-muted-foreground">{children}</span>
+    </Button>
   )
 }

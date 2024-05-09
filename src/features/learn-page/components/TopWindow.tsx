@@ -8,7 +8,7 @@ export default function TopWindow({ children }: { children: React.ReactNode }) {
         <div className="w-96 h-full bg-background text-center">{children}</div>
       </div>
       <Link href="/learn/chapter-1/welcome">
-        <CustomImage image="/img/japanese-gate.png">
+        <CustomImage image="/img/japanese-gate.png" priority={true}>
           {/* Vignette */}
           <div className="absolute w-full h-full bg-[radial-gradient(50%_120%_at_50%_50%,rgba(0,0,0,0.0)_30%,rgba(0,0,0,0.2)_100%)]"></div>
           <div

@@ -15,7 +15,7 @@ export default function ChapterBox({
     <>
       <div
         className={twMerge(
-          "w-full h-28 my-6 flex justify-center items-center font-medium rounded-md",
+          "w-full h-28 my-6 flex justify-center items-center font-medium rounded-md text-white",
           className
         )}
       >

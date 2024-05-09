@@ -12,8 +12,8 @@ export default function TopWindowContentWrapper({
   return (
     <div>
       {showContentBox && (
-        <div className="absolute z-10 w-full h-full flex justify-center">
-          <div className="w-96 h-full bg-background text-center">
+        <div className="absolute z-10 w-full h-full pt-2 pb-[4.5rem] flex justify-center backdrop-blur-2xl dark:backdrop-brightness-[65%]">
+          <div className="w-[45%] h-full bg-background text-center border-[4px] border-black rounded-[40px] shadow-xl overflow-y-scroll scrollbar:hidden">
             {children}
           </div>
         </div>

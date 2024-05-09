@@ -10,16 +10,13 @@ type UnitButtonProps = {
 }
 
 export default function UnitButton({ children, id, type }: UnitButtonProps) {
-  const { height, setHeight, showContentBox, setShowContentBox } =
-    useTopWindowContext()
+  const { showContentBox, setShowContentBox } = useTopWindowContext()
 
   return (
     <Button
       variant="outline"
       className="font-normal overflow-x-scroll overflow-y-hidden scrollbar:hidden justify-between"
       onClick={() => {
-        setHeight("100vh")
-        console.log(height)
         setShowContentBox(true)
       }}
     >

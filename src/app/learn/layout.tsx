@@ -8,14 +8,14 @@ import TopWindowContentWrapper from "@/features/learn-page/components/TopWindowC
 export default function Learn({ children }: { children: React.ReactNode }) {
   return (
     <TopWindowContextProvider>
-      <main className="pb-12">
+      <main>
         {/* Top Window */}
         <TopWindowSizer>
           <TopWindow>
             <TopWindowContentWrapper>{children}</TopWindowContentWrapper>
           </TopWindow>
         </TopWindowSizer>
-        <div className="overflow-hidden z-40 bg-background/[100%]">
+        <div className="relative overflow-hidden z-40 bg-background/[100%] pb-12">
           <ButtonBarGroup />
           {/* Rest of Content */}
           <div className="flex justify-center">

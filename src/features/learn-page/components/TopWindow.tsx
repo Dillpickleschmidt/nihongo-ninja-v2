@@ -4,9 +4,7 @@ import CustomImage from "@/components/CustomImage"
 export default function TopWindow({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <div className="absolute z-10 w-full h-full flex justify-center">
-        <div className="w-96 h-full bg-background text-center">{children}</div>
-      </div>
+      {children}
       <Link href="/learn/chapter-1/welcome">
         <CustomImage image="/img/japanese-gate.png" priority={true}>
           {/* Vignette */}

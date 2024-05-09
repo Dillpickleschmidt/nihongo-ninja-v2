@@ -9,15 +9,20 @@ type TopWindowContextProps = {
 type TopWindowContext = {
   height: string
   setHeight: React.Dispatch<React.SetStateAction<string>>
+  showContentBox: boolean
+  setShowContentBox: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export const TopWindowContext = createContext<TopWindowContext | null>(null)
 
 export function TopWindowContextProvider({ children }: TopWindowContextProps) {
   const [height, setHeight] = useState("380px")
+  const [showContentBox, setShowContentBox] = useState(false)
 
   return (
-    <TopWindowContext.Provider value={{ height, setHeight }}>
+    <TopWindowContext.Provider
+      value={{ height, setHeight, showContentBox, setShowContentBox }}
+    >
       {children}
     </TopWindowContext.Provider>
   )

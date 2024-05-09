@@ -3,6 +3,7 @@ import ButtonBarGroup, { ChapterBoxes } from "@/features/learn-page"
 import { TopWindowContextProvider } from "@/features/learn-page/context/TopWindowContextProvider"
 import TopWindowSizer from "@/features/learn-page/components/TopWindowSizer"
 import TopWindow from "@/features/learn-page/components/TopWindow"
+import TopWindowContentWrapper from "@/features/learn-page/components/TopWindowContentWrapper"
 
 export default function Learn({ children }: { children: React.ReactNode }) {
   return (
@@ -10,7 +11,9 @@ export default function Learn({ children }: { children: React.ReactNode }) {
       <main className="pb-12">
         {/* Top Window */}
         <TopWindowSizer>
-          <TopWindow>{children}</TopWindow>
+          <TopWindow>
+            <TopWindowContentWrapper>{children}</TopWindowContentWrapper>
+          </TopWindow>
         </TopWindowSizer>
         <div className="overflow-hidden z-40 bg-background/[100%]">
           <ButtonBarGroup />

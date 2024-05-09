@@ -10,7 +10,8 @@ type UnitButtonProps = {
 }
 
 export default function UnitButton({ children, id, type }: UnitButtonProps) {
-  const { height, setHeight } = useTopWindowContext()
+  const { height, setHeight, showContentBox, setShowContentBox } =
+    useTopWindowContext()
 
   return (
     <Button
@@ -19,6 +20,7 @@ export default function UnitButton({ children, id, type }: UnitButtonProps) {
       onClick={() => {
         setHeight("100vh")
         console.log(height)
+        setShowContentBox(true)
       }}
     >
       <UnitButtonContents id={id} type={type}>

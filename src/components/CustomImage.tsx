@@ -7,7 +7,7 @@ type CustomImageProps = {
 
 export default function CustomImage({ children, image }: CustomImageProps) {
   return (
-    <div className="relative h-full bg-background">
+    <div className="absolute h-full w-full bg-background hover:scale-[102%] ease-in-out duration-300">
       <Image
         src={image}
         fill={true}

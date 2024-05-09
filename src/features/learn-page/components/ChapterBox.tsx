@@ -15,13 +15,12 @@ export default function ChapterBox({
     <>
       <div
         className={twMerge(
-          "w-full h-28 my-6 flex justify-center items-center text-3xl font-medium rounded-md",
+          "w-full h-28 my-6 flex justify-center items-center font-medium rounded-md",
           className
         )}
       >
-        <div className="px-14 py-4 bg-background/90 shadow-inner rounded-lg border">
-          {text}
-        </div>
+        {/* <div className="px-14 py-4 text-3xl bg-background/90 shadow-inner rounded-lg border"> */}
+        <div className="px-14 py-4 text-4xl">{text}</div>
       </div>
       {/* Buttons */}
       <div

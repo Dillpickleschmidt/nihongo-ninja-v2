@@ -1,34 +1,29 @@
+"use client"
 import { Button } from "@/components/ui/button"
-import { BookOpen, PencilLine, ScrollText, GraduationCap } from "lucide-react"
+import { useTopWindowContext } from "../context/TopWindowContextProvider"
+import UnitButtonContents from "./UnitButtonContents"
 
 type UnitButtonProps = {
   children: React.ReactNode
   id: string
-  type?: "lesson" | "quiz" | "vocab-list" | "learn-vocab"
+  type?: "lesson" | "quiz" | "preview" | "vocab-list" | "learn-vocab"
 }
 
 export default function UnitButton({ children, id, type }: UnitButtonProps) {
+  const { height, setHeight } = useTopWindowContext()
+
   return (
     <Button
       variant="outline"
       className="font-normal overflow-x-scroll overflow-y-hidden scrollbar:hidden justify-between"
+      onClick={() => {
+        setHeight("100vh")
+        console.log(height)
+      }}
     >
-      <div>
-        <span className="">{id}</span>
-        <span className="mx-[.35rem]"></span>
-        <span className="text-sm text-muted-foreground">{children}</span>
-      </div>
-      <span className="h-[1.2rem] w-[1.2rem] text-muted-foreground">
-        {type === "lesson" ? (
-          <BookOpen />
-        ) : type === "quiz" ? (
-          <PencilLine />
-        ) : type === "vocab-list" ? (
-          <ScrollText />
-        ) : type === "learn-vocab" ? (
-          <GraduationCap />
-        ) : undefined}
-      </span>
+      <UnitButtonContents id={id} type={type}>
+        {children}
+      </UnitButtonContents>
     </Button>
   )
 }

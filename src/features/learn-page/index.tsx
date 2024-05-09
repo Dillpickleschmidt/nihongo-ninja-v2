@@ -7,7 +7,9 @@ export function ChapterBoxes() {
   return (
     <>
       <ChapterBox text="Chapter 1" className="bg-red-700 saturate-50">
-        <UnitButton id="1.">Welcome!</UnitButton>
+        <UnitButton id="1." type="preview">
+          Welcome!
+        </UnitButton>
         <UnitButton id="2." type="lesson">
           Writing Systems
         </UnitButton>
@@ -61,7 +63,9 @@ export function ChapterBoxes() {
         </UnitButton>
       </ChapterBox>
       <ChapterBox text="Chapter 2" className="bg-sky-600 saturate-50">
-        <UnitButton id="1.">Chapter Preview</UnitButton>
+        <UnitButton id="1." type="preview">
+          Chapter Preview
+        </UnitButton>
         <UnitButton id="2." type="vocab-list">
           Chapter 2 - All Vocab
         </UnitButton>
@@ -69,7 +73,7 @@ export function ChapterBoxes() {
           です
         </UnitButton>
         <UnitButton id="4." type="lesson">
-          わたし & は
+          わたし + は
         </UnitButton>
         <UnitButton id="Unit 4">Placeholder</UnitButton>
         <UnitButton id="Unit 5">Placeholder</UnitButton>

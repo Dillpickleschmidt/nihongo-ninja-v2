@@ -6,7 +6,7 @@ import ButtonBar from "./components/ButtonBar"
 export function ChapterBoxes() {
   return (
     <>
-      <ChapterBox text="Chapter 1" className="bg-red-700 saturate-50">
+      <ChapterBox text="Chapter 1" className="bg-red-600 saturate-50">
         <UnitButton id="1." type="preview">
           Welcome!
         </UnitButton>

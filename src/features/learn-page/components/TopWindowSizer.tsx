@@ -33,7 +33,7 @@ export default function TopWindowSizer({
         </div>
       ) : (
         <div // Else: use normal positioning
-          className="relative h-[380px] w-full mt-16 bg-background"
+          className="relative h-[380px] w-full bg-background"
         >
           {children}
         </div>

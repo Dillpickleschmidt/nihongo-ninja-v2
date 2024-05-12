@@ -2,7 +2,8 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme/theme-provider"
-import Navbar from "@/components/Navbar"
+import Navbar from "@/features/navbar/Navbar"
+import { NavbarContextProvider } from "@/features/navbar/context/NavbarContext"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -19,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} mt-16 scrollbar:w-2.5 scrollbar-track:bg-transparent scrollbar-thumb:bg-neutral-500 hover:scrollbar-thumb:bg-[#999999]`}
+        className={`${inter.className} text-xl scrollbar:w-2.5 scrollbar-track:bg-transparent scrollbar-thumb:bg-neutral-500 hover:scrollbar-thumb:bg-[#999999]`}
       >
         <ThemeProvider
           attribute="class"
@@ -27,8 +28,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          {children}
+          <NavbarContextProvider>
+            <Navbar />
+            {children}
+          </NavbarContextProvider>
         </ThemeProvider>
       </body>
     </html>

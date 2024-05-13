@@ -7,6 +7,7 @@ import {
   anticipate,
   useAnimate,
   easeInOut,
+  useInView,
 } from "framer-motion"
 
 type TopWindowSizerProps = {
@@ -14,25 +15,40 @@ type TopWindowSizerProps = {
 }
 
 export default function TopWindowSizer({ children }: TopWindowSizerProps) {
-  const { showContentBox, setShowContentBox, scrollRef } = useGlobalContext()
-  const [ref, setRef] = useState<React.RefObject<HTMLDivElement>>(scrollRef)
+  const {
+    showContentBox,
+    setShowContentBox,
+    setShowNavbar,
+    scrollRef,
+    navbarRef,
+  } = useGlobalContext()
+  const [scrollRefStateObject, setScrollRefStateObject] =
+    useState<React.RefObject<HTMLDivElement>>(scrollRef)
+  const [navbarRefStateObject, setnavbarRefStateObject] =
+    useState<React.RefObject<HTMLDivElement>>(scrollRef)
   const [startTracking, setStartTracking] = useState(false)
 
   useEffect(() => {
-    setRef(scrollRef)
+    setScrollRefStateObject(scrollRef)
   }, [scrollRef])
 
+  useEffect(() => {
+    setnavbarRefStateObject(navbarRef)
+  }, [navbarRef])
+
   const { scrollYProgress: opacityValue } = useScroll({
-    target: ref,
+    target: scrollRefStateObject,
     offset: ["start 75%", "start start"],
     layoutEffect: false,
   })
 
-  const { scrollYProgress: navBarTransformValue } = useScroll({
-    target: ref,
-    offset: ["start 75%", "start 50%"],
-    layoutEffect: false,
-  })
+  // When the element is 2px (y value) in view, the value is true
+  const isInView = useInView(scrollRefStateObject, { margin: "-2px 0px" })
+
+  useEffect(() => {
+    console.log("Element is in view: ", isInView)
+    setShowNavbar(isInView)
+  }, [isInView])
 
   const opacity = useTransform(opacityValue, [0, 1], [1, 0], {
     ease: anticipate,
@@ -63,7 +79,15 @@ export default function TopWindowSizer({ children }: TopWindowSizerProps) {
   }, [showContentBox])
 
   useEffect(() => {
+    let isInitialRender = true
+
     const handleScroll = async () => {
+      // This is to prevent the animation from running on the first render (fix flickering issue)
+      if (isInitialRender) {
+        isInitialRender = false
+        return
+      }
+
       if (showContentBox && scope.current && startTracking) {
         await animate(
           scope.current,

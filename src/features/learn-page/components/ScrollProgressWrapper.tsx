@@ -1,6 +1,6 @@
 "use client"
 
-import { useTopWindowContext } from "../context/LayoutContextProvider"
+import { useGlobalContext } from "@/context/GlobalContext"
 
 type ScrollProgressWrapperProps = {
   children: React.ReactNode
@@ -9,7 +9,7 @@ type ScrollProgressWrapperProps = {
 export default function ScrollProgressWrapper({
   children,
 }: ScrollProgressWrapperProps) {
-  const { scrollRef } = useTopWindowContext()
+  const { scrollRef } = useGlobalContext()
 
   return (
     <div

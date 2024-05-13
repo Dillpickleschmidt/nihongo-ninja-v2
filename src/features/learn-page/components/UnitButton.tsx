@@ -1,7 +1,6 @@
 "use client"
 import { Button } from "@/components/ui/button"
-import { useTopWindowContext } from "../context/LayoutContextProvider"
-import { useNavbarContext } from "@/features/navbar/context/NavbarContext"
+import { useGlobalContext } from "@/context/GlobalContext"
 import UnitButtonContents from "./UnitButtonContents"
 
 type UnitButtonProps = {
@@ -11,8 +10,8 @@ type UnitButtonProps = {
 }
 
 export default function UnitButton({ children, id, type }: UnitButtonProps) {
-  const { showContentBox, setShowContentBox } = useTopWindowContext()
-  const { showNavbar, setShowNavbar } = useNavbarContext()
+  const { showContentBox, setShowContentBox } = useGlobalContext()
+  const { showNavbar, setShowNavbar } = useGlobalContext()
 
   return (
     <div className="!p-0 hover:scale-[98.5%] ease-in-out duration-75">

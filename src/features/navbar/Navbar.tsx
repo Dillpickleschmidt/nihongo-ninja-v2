@@ -1,10 +1,10 @@
 "use client"
 
-import { useNavbarContext } from "./context/NavbarContext"
+import { useGlobalContext } from "@/context/GlobalContext"
 import ShowNavbarContent from "./components/ShowNavbarContent"
 import HideNavbarContent from "./components/HideNavbarContent"
 
 export default function Navbar() {
-  const { showNavbar, setShowNavbar } = useNavbarContext()
-  return <>{showNavbar ? <ShowNavbarContent /> : <HideNavbarContent />}</>
+  const { showContentBox } = useGlobalContext()
+  return <>{showContentBox ? <HideNavbarContent /> : <ShowNavbarContent />}</>
 }

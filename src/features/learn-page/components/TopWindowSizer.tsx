@@ -24,17 +24,10 @@ export default function TopWindowSizer({ children }: TopWindowSizerProps) {
   } = useGlobalContext()
   const [scrollRefStateObject, setScrollRefStateObject] =
     useState<React.RefObject<HTMLDivElement>>(scrollRef)
-  const [navbarRefStateObject, setnavbarRefStateObject] =
-    useState<React.RefObject<HTMLDivElement>>(scrollRef)
-  const [startTracking, setStartTracking] = useState(false)
 
   useEffect(() => {
     setScrollRefStateObject(scrollRef)
   }, [scrollRef])
-
-  useEffect(() => {
-    setnavbarRefStateObject(navbarRef)
-  }, [navbarRef])
 
   const { scrollYProgress: opacityValue } = useScroll({
     target: scrollRefStateObject,
@@ -63,14 +56,11 @@ export default function TopWindowSizer({ children }: TopWindowSizerProps) {
         { height: "94vh", opacity: 1 },
         { duration: 0.5, ease: easeInOut }
       )
-      setTimeout(async () => {
-        await animate(
-          scope.current,
-          { height: "100vh" },
-          { duration: 1, ease: easeInOut }
-        )
-      }, 500)
-      setStartTracking(true)
+      await animate(
+        scope.current,
+        { height: "100vh" },
+        { duration: 1, ease: easeInOut }
+      )
     }
   }
 
@@ -88,7 +78,7 @@ export default function TopWindowSizer({ children }: TopWindowSizerProps) {
         return
       }
 
-      if (showContentBox && scope.current && startTracking) {
+      if (showContentBox && scope.current) {
         await animate(
           scope.current,
           { opacity: opacity.get() },
@@ -102,7 +92,7 @@ export default function TopWindowSizer({ children }: TopWindowSizerProps) {
     return () => {
       window.removeEventListener("scroll", handleScroll)
     }
-  }, [showContentBox, opacityValue, startTracking])
+  }, [showContentBox, opacityValue])
 
   return (
     <div>

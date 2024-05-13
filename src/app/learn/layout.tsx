@@ -1,23 +1,16 @@
 import { Button } from "@/components/ui/button"
-import ButtonBarGroup, { ChapterBoxes } from "@/features/learn-page"
-import TopWindowSizer from "@/features/learn-page/components/TopWindowSizer"
-import TopWindow from "@/features/learn-page/components/TopWindow"
-import TopWindowContentWrapper from "@/features/learn-page/components/TopWindowContentWrapper"
+import { ButtonBar, ChapterBoxes, TopWindow } from "@/features/learn-page"
 import ScrollProgressWrapper from "@/features/learn-page/components/ScrollProgressWrapper"
 
 export default function Learn({ children }: { children: React.ReactNode }) {
   return (
     <main>
       {/* Top Window */}
-      <TopWindowSizer>
-        <TopWindow>
-          <TopWindowContentWrapper>{children}</TopWindowContentWrapper>
-        </TopWindow>
-      </TopWindowSizer>
+      <TopWindow>{children}</TopWindow>
+      {/* Rest of Content */}
       <ScrollProgressWrapper>
         <div className="relative overflow-hidden z-40 bg-background/[100%] pb-12">
-          <ButtonBarGroup />
-          {/* Rest of Content */}
+          <ButtonBar />
           <div className="flex justify-center">
             <div className="w-[60%]">
               {/* Tips box */}

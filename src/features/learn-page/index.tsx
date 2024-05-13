@@ -1,7 +1,9 @@
-import ChapterBox from "./components/ChapterBox"
-import UnitButton from "./components/UnitButton"
-import ExpandingTabs from "./components/ExpandingTabs"
-import ButtonBar from "./components/ButtonBar"
+import ChapterBox from "./components/ChapterBox/ChapterBox"
+import UnitButton from "./components/ChapterBox/UnitButton"
+import ButtonBarGroup from "./components/ButtonBar/ButtonBarGroup"
+import TopWindowSizer from "./components/TopWindowSizer"
+import TopWindowBackground from "./components/TopWindowBackground"
+import TopWindowContentWrapper from "./components/TopWindowContentWrapper"
 
 export function ChapterBoxes() {
   return (
@@ -99,11 +101,16 @@ export function ChapterBoxes() {
   )
 }
 
-export default function ButtonBarGroup() {
+export function ButtonBar() {
+  return <ButtonBarGroup />
+}
+
+export function TopWindow({ children }: { children: React.ReactNode }) {
   return (
-    <>
-      <ExpandingTabs />
-      <ButtonBar />
-    </>
+    <TopWindowSizer>
+      <TopWindowBackground>
+        <TopWindowContentWrapper>{children}</TopWindowContentWrapper>
+      </TopWindowBackground>
+    </TopWindowSizer>
   )
 }

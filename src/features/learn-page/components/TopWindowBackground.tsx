@@ -1,7 +1,11 @@
 import Link from "next/link"
 import CustomImage from "@/components/CustomImage"
 
-export default function TopWindow({ children }: { children: React.ReactNode }) {
+export default function TopWindowBackground({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <>
       {children}

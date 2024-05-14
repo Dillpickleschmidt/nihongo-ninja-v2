@@ -6,7 +6,7 @@ export default function Learn({ children }: { children: React.ReactNode }) {
   return (
     <main>
       {/* Top Window */}
-      <TopWindow>{children}</TopWindow>
+      {children}
       {/* Rest of Content */}
       <ScrollProgressWrapper>
         <div className="relative overflow-hidden z-40 bg-background/[100%] pb-12">

@@ -71,13 +71,10 @@ export default function TopWindowSizer({ children }: TopWindowSizerProps) {
     }
   }
 
-  // Run the 'open' animation when the content box is shown
+  // Run the 'open' animation when the page mounts
   useEffect(() => {
-    // Only if coming from the learn page
-    if (showContentBox && fromLearnPage) {
-      pageMountAnimation()
-    }
-  }, [showContentBox])
+    pageMountAnimation()
+  }, [])
 
   // Change opacity of the content box when scrolling
   useEffect(() => {
@@ -104,25 +101,16 @@ export default function TopWindowSizer({ children }: TopWindowSizerProps) {
   }, [showContentBox, opacityValue])
 
   return (
-    <div>
-      {showContentBox ? (
-        fromLearnPage ? (
-          // If fromLearnPage is true & showContentBox is true
-          <div ref={scope} className="relative w-full bg-background">
-            <TopWindowWrapper>{children}</TopWindowWrapper>
-          </div>
-        ) : (
-          // If fromLearnPage is false & showContentBox is true
-          <div className="relative w-full h-screen bg-background">
-            <TopWindowWrapper>{children}</TopWindowWrapper>
-          </div>
-        )
-      ) : (
-        // If showContentBox is false
-        <div className="relative h-[380px] w-full bg-background">
-          <TopWindowBackground>{children}</TopWindowBackground>
+    <>
+      {/* {fromLearnPage ? ( */}
+      <div ref={scope} className="relative w-full bg-background">
+        <TopWindowWrapper>{children}</TopWindowWrapper>
+      </div>
+      {/* ) : (
+        <div className="relative w-full h-screen bg-background">
+          <TopWindowWrapper>{children}</TopWindowWrapper>
         </div>
-      )}
-    </div>
+      )} */}
+    </>
   )
 }

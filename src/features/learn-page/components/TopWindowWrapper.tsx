@@ -8,7 +8,7 @@ export default function TopWindowWrapper({
   children: React.ReactNode
 }) {
   return (
-    <div className="fixed h-full w-full">
+    <div className="fixed top-0 h-full w-full">
       <TopWindowBackground>
         {/* Blur background */}
         <div className="absolute z-10 w-full h-full backdrop-blur-2xl dark:backdrop-brightness-[65%]">

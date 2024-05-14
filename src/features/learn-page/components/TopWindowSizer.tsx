@@ -9,6 +9,8 @@ import {
   easeInOut,
   useInView,
 } from "framer-motion"
+import TopWindowBackground from "./TopWindowBackground"
+import TopWindowWrapper from "./TopWindowWrapper"
 
 type TopWindowSizerProps = {
   children: React.ReactNode
@@ -17,32 +19,36 @@ type TopWindowSizerProps = {
 export default function TopWindowSizer({ children }: TopWindowSizerProps) {
   const {
     showContentBox,
-    setShowContentBox,
     setShowNavbar,
     scrollRef,
-    navbarRef,
+    fromLearnPage,
+    setFromLearnPage,
   } = useGlobalContext()
+
   const [scrollRefStateObject, setScrollRefStateObject] =
     useState<React.RefObject<HTMLDivElement>>(scrollRef)
 
+  // Set the scrollRefStateObject to the scrollRef
   useEffect(() => {
     setScrollRefStateObject(scrollRef)
   }, [scrollRef])
 
+  // Track the scroll position of the scrollRefStateObject
   const { scrollYProgress: opacityValue } = useScroll({
     target: scrollRefStateObject,
-    offset: ["start 75%", "start start"],
+    offset: ["start 75%", "start 64px"],
     layoutEffect: false,
   })
 
   // When the element is 2px (y value) in view, the value is true
   const isInView = useInView(scrollRefStateObject, { margin: "-2px 0px" })
 
+  // Show the navbar when the element is in view
   useEffect(() => {
-    console.log("Element is in view: ", isInView)
     setShowNavbar(isInView)
   }, [isInView])
 
+  // Apply a curve to the opacity value and flip it
   const opacity = useTransform(opacityValue, [0, 1], [1, 0], {
     ease: anticipate,
   })
@@ -50,7 +56,7 @@ export default function TopWindowSizer({ children }: TopWindowSizerProps) {
   const [scope, animate] = useAnimate()
 
   const pageMountAnimation = async () => {
-    if (showContentBox && scope.current) {
+    if (scope.current) {
       await animate(
         scope.current,
         { height: "94vh", opacity: 1 },
@@ -61,13 +67,19 @@ export default function TopWindowSizer({ children }: TopWindowSizerProps) {
         { height: "100vh" },
         { duration: 1, ease: easeInOut }
       )
+      setFromLearnPage(false)
     }
   }
 
+  // Run the 'open' animation when the content box is shown
   useEffect(() => {
-    pageMountAnimation()
+    // Only if coming from the learn page
+    if (showContentBox && fromLearnPage) {
+      pageMountAnimation()
+    }
   }, [showContentBox])
 
+  // Change opacity of the content box when scrolling
   useEffect(() => {
     let isInitialRender = true
 
@@ -77,7 +89,6 @@ export default function TopWindowSizer({ children }: TopWindowSizerProps) {
         isInitialRender = false
         return
       }
-
       if (showContentBox && scope.current) {
         await animate(
           scope.current,
@@ -86,9 +97,7 @@ export default function TopWindowSizer({ children }: TopWindowSizerProps) {
         )
       }
     }
-
     window.addEventListener("scroll", handleScroll)
-
     return () => {
       window.removeEventListener("scroll", handleScroll)
     }
@@ -97,12 +106,21 @@ export default function TopWindowSizer({ children }: TopWindowSizerProps) {
   return (
     <div>
       {showContentBox ? (
-        <div ref={scope} className="relative w-full bg-background">
-          <div className="fixed h-full w-full">{children}</div>
-        </div>
+        fromLearnPage ? (
+          // If fromLearnPage is true & showContentBox is true
+          <div ref={scope} className="relative w-full bg-background">
+            <TopWindowWrapper>{children}</TopWindowWrapper>
+          </div>
+        ) : (
+          // If fromLearnPage is false & showContentBox is true
+          <div className="relative w-full h-screen bg-background">
+            <TopWindowWrapper>{children}</TopWindowWrapper>
+          </div>
+        )
       ) : (
+        // If showContentBox is false
         <div className="relative h-[380px] w-full bg-background">
-          {children}
+          <TopWindowBackground>{children}</TopWindowBackground>
         </div>
       )}
     </div>

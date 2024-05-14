@@ -2,14 +2,12 @@ import ChapterBox from "./components/ChapterBox/ChapterBox"
 import UnitButton from "./components/ChapterBox/UnitButton"
 import ButtonBarGroup from "./components/ButtonBar/ButtonBarGroup"
 import TopWindowSizer from "./components/TopWindowSizer"
-import TopWindowBackground from "./components/TopWindowBackground"
-import TopWindowContentWrapper from "./components/TopWindowContentWrapper"
 
 export function ChapterBoxes() {
   return (
     <>
       <ChapterBox text="Chapter 1" className="bg-red-600 saturate-50">
-        <UnitButton id="1." type="preview">
+        <UnitButton id="1." type="preview" link="learn/test">
           Welcome!
         </UnitButton>
         <UnitButton id="2." type="lesson">
@@ -106,11 +104,5 @@ export function ButtonBar() {
 }
 
 export function TopWindow({ children }: { children: React.ReactNode }) {
-  return (
-    <TopWindowSizer>
-      <TopWindowBackground>
-        <TopWindowContentWrapper>{children}</TopWindowContentWrapper>
-      </TopWindowBackground>
-    </TopWindowSizer>
-  )
+  return <TopWindowSizer>{children}</TopWindowSizer>
 }

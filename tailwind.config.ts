@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
 
 const config = {
   darkMode: ["class"],
@@ -22,8 +22,14 @@ const config = {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        background: {
+          DEFAULT: "hsl(var(--background))",
+          secondary: "hsl(var(--background-secondary))",
+        },
+        foreground: {
+          DEFAULT: "hsl(var(--foreground))",
+          secondary: "hsl(var(--foreground-secondary))",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -83,17 +89,17 @@ const config = {
       addVariant(
         "supports-backdrop-blur",
         "@supports (backdrop-filter: blur(0)) or (-webkit-backdrop-filter: blur(0))"
-      );
+      )
       addVariant(
         "supports-scrollbars",
         "@supports selector(::-webkit-scrollbar)"
-      );
-      addVariant("scrollbar", "&::-webkit-scrollbar");
-      addVariant("scrollbar-track", "&::-webkit-scrollbar-track");
-      addVariant("scrollbar-thumb", "&::-webkit-scrollbar-thumb");
+      )
+      addVariant("scrollbar", "&::-webkit-scrollbar")
+      addVariant("scrollbar-track", "&::-webkit-scrollbar-track")
+      addVariant("scrollbar-thumb", "&::-webkit-scrollbar-thumb")
     },
     require("tailwindcss-animate"),
   ],
-} satisfies Config;
+} satisfies Config
 
-export default config;
+export default config

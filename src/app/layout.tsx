@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter} ${japanese} font-inter text-lg scrollbar:w-2.5 scrollbar-track:bg-transparent scrollbar-thumb:bg-neutral-500 hover:scrollbar-thumb:bg-[#999999]`}
+        className={`${inter} ${japanese} font-inter text-lg overflow-x-hidden scrollbar:w-2.5 scrollbar-track:bg-transparent scrollbar-thumb:bg-neutral-500 hover:scrollbar-thumb:bg-[#999999]`}
       >
         <ThemeProvider
           attribute="class"

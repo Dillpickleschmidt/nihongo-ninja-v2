@@ -77,6 +77,8 @@ const dialogVariants = cva(
       variant: {
         fullscreen: "w-full h-full rounded-none border-none",
         reading: "w-[45%] h-[99%]",
+        reading_light:
+          "w-[45%] h-[99%] bg-background-secondary text-foreground-secondary",
       },
     },
     defaultVariants: {

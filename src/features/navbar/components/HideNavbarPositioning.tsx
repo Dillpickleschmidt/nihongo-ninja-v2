@@ -13,7 +13,7 @@ export default function HideNavbarPositioning() {
   async function handleMouseExit() {
     await animate(
       scope.current,
-      { y: -42, opacity: 0.25 },
+      { y: -42, opacity: 0.125 },
       { duration: 0.1, ease: easeInOut }
     )
   }
@@ -35,7 +35,7 @@ export default function HideNavbarPositioning() {
       )
       await animate(
         scope.current,
-        { y: -42, opacity: 0.25 },
+        { y: -42, opacity: 0.125 },
         { duration: 1, ease: easeInOut }
       )
     } else {
@@ -79,7 +79,7 @@ export default function HideNavbarPositioning() {
           handleAnimate("mouseOver")
         }}
         onMouseLeave={() => handleAnimate("mouseExit")}
-        className="fixed top-0 left-0 z-50 w-full h-[65px] bg-background/[99.9%] text-foreground"
+        className="fixed top-0 left-0 z-10 w-full h-[65px] bg-background/[99.9%] text-foreground"
       >
         <NavbarContent />
       </div>

@@ -1,9 +1,10 @@
-import ContentBox from "@/components/ContentBox";
-import { Button } from "@/components/ui/button";
+import ContentBox from "@/components/ContentBox"
+import { Button } from "@/components/ui/button"
 
 export default function page() {
   return (
     <ContentBox
+      variant="reading_light"
       backgroundImage="/wavy-pattern-2.jpg"
       backgroundImageSize="700px"
       backgroundImageOpacity={9}
@@ -178,5 +179,5 @@ export default function page() {
         </div>
       </div>
     </ContentBox>
-  );
+  )
 }

@@ -55,30 +55,55 @@ export default function ContentBox({
           transform: "translate(50%,-50%)",
         }}
       >
-        {showProgressBar && (
-          <m.div
-            style={{ scaleX: scaleX }}
-            className="sticky top-[-64.5px] mt-[-64.5px] mb-[64.5px] h-1 w-full origin-left bg-green-400"
-          ></m.div>
+        {/* If a background is provided, render this html */}
+        {backgroundImage ? (
+          <div className="relative">
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: `url(${backgroundImage})`,
+                backgroundRepeat: "repeat",
+                backgroundSize: backgroundImageSize, // Change this value to scale your background image
+                backgroundBlendMode: "multiply",
+                opacity: backgroundImageOpacity / 100, // Change this value to set the opacity of the background image
+                zIndex: -1,
+              }}
+            />
+            {showProgressBar && (
+              <m.div
+                style={{ scaleX: scaleX }}
+                className="sticky top-[-64.5px] mt-[-64.5px] mb-[64.5px] h-1 w-full origin-left bg-green-400"
+              ></m.div>
+            )}
+            {children}
+            <div className="mt-24 pb-16 mx-12 flex flex-row justify-end">
+              {nextButton}
+            </div>
+          </div>
+        ) : (
+          // Otherwise, just render this html
+          <div>
+            {children}
+            <div className="mt-24 mx-12 flex flex-row justify-end">
+              {nextButton}
+            </div>
+          </div>
         )}
-        {children}
-        <div className="mt-24 mx-12 flex flex-row justify-end">
-          {nextButton}
-        </div>
       </div>
     </div>
   )
 }
 
 const dialogVariants = cva(
-  "relative w-full h-full py-16 bg-background border-[4px] border-black rounded-[50px] shadow-xl overflow-y-scroll scrollbar:hidden",
+  "relative w-full h-full bg-background border-black rounded-none shadow-xl overflow-y-scroll scrollbar:hidden",
   {
     variants: {
       variant: {
         fullscreen: "w-full h-full rounded-none border-none",
-        reading: "w-[45%] h-[99%]",
+        reading:
+          "lg:w-[815px] md:w-[98%] w-full md:h-[99%] md:rounded-[50px] md:border-[4px]",
         reading_light:
-          "w-[45%] h-[99%] bg-background-secondary text-foreground-secondary",
+          "lg:w-[815px] md:w-[98%] w-full md:h-[99%] md:rounded-[50px] md:border-[4px] bg-background-secondary text-foreground-secondary",
       },
     },
     defaultVariants: {

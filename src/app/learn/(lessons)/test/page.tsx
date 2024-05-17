@@ -5,7 +5,7 @@ export default function page() {
   return (
     <ContentBox
       variant="reading_light"
-      backgroundImage="/wavy-pattern-2.jpg"
+      backgroundImage="/img/wavy-pattern-2.jpg"
       backgroundImageSize="700px"
       backgroundImageOpacity={9}
     >

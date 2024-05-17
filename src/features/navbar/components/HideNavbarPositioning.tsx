@@ -79,7 +79,7 @@ export default function HideNavbarPositioning() {
           handleAnimate("mouseOver")
         }}
         onMouseLeave={() => handleAnimate("mouseExit")}
-        className="fixed top-0 left-0 z-50 w-full h-[65px] bg-background text-foreground"
+        className="fixed top-0 left-0 z-50 w-full h-[65px] bg-background/[99.9%] text-foreground"
       >
         <NavbarContent />
       </div>

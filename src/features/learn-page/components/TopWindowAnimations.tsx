@@ -8,6 +8,7 @@ import {
   useAnimate,
   easeInOut,
   useInView,
+  useMotionValueEvent,
 } from "framer-motion"
 import TopWindowWrapper from "./TopWindowWrapper"
 
@@ -29,17 +30,14 @@ export default function TopWindowAnimations({
   const [scrollRefStateObject, setScrollRefStateObject] =
     useState<React.RefObject<HTMLDivElement>>(scrollRef)
 
+  const [opacityState, setOpacityState] = useState(1)
+
   // Set the scrollRefStateObject to the scrollRef
   useEffect(() => {
-    setScrollRefStateObject(scrollRef)
+    if (scrollRef.current) {
+      setScrollRefStateObject(scrollRef)
+    }
   }, [scrollRef])
-
-  // Track the scroll position of the scrollRefStateObject
-  const { scrollYProgress: opacityValue } = useScroll({
-    target: scrollRefStateObject,
-    offset: ["start 75%", "start 64px"],
-    layoutEffect: false,
-  })
 
   // When the element is 2px (y value) in view, the value is true
   const isInView = useInView(scrollRefStateObject, { margin: "-1px 0px" })
@@ -52,16 +50,11 @@ export default function TopWindowAnimations({
     }
   }, [isInView])
 
-  // Apply a curve to the opacity value and flip it
-  const opacity = useTransform(opacityValue, [0, 1], [1, 0], {
-    ease: anticipate,
-  })
-
   const [scope, animate] = useAnimate()
 
   const pageMountAnimation = async () => {
-    console.log("Running animation")
     if (scope.current && fromLearnPage) {
+      console.log("Running animation")
       await animate(
         scope.current,
         { height: "94vh", opacity: 1 },
@@ -82,38 +75,42 @@ export default function TopWindowAnimations({
     pageMountAnimation()
   }, [])
 
-  // Change opacity of the content box when scrolling
-  useEffect(() => {
-    let isInitialRender = true
+  // Track the scroll position of the scrollRefStateObject
+  const { scrollYProgress } = useScroll({
+    target: scrollRef,
+    offset: ["start 75%", "start 64px"],
+    layoutEffect: false,
+  })
 
-    const handleScroll = async () => {
-      // This is to prevent the animation from running on the first render (fix flickering issue)
-      if (isInitialRender) {
-        isInitialRender = false
-        return
-      }
-      if (scope.current) {
-        await animate(
-          scope.current,
-          { opacity: opacity.get() },
-          { duration: 0 }
-        )
-      }
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [opacityValue])
+  // Apply a curve to the opacity value and flip it
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0], {
+    ease: anticipate,
+  })
+
+  const handleScroll = () => {
+    useMotionValueEvent(opacity, "change", (latestValue) => {
+      setOpacityState(latestValue)
+      // console.log("Page scroll: ", latestValue)
+    })
+
+    return opacityState
+  }
 
   return (
     <>
       {fromLearnPage ? (
-        <div ref={scope} className="relative w-full bg-background">
+        <div
+          ref={scope}
+          style={{ opacity: handleScroll() }}
+          className="relative w-full bg-background"
+        >
           <TopWindowWrapper>{children}</TopWindowWrapper>
         </div>
       ) : (
-        <div className="relative w-full h-screen bg-background">
+        <div
+          style={{ opacity: handleScroll() }}
+          className="relative w-full h-screen bg-background"
+        >
           <TopWindowWrapper>{children}</TopWindowWrapper>
         </div>
       )}

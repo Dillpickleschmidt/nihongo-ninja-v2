@@ -1,6 +1,13 @@
 "use client"
 
-import { createContext, useContext, useState, createRef } from "react"
+import { usePathname } from "next/navigation"
+import {
+  createContext,
+  useContext,
+  useState,
+  createRef,
+  useEffect,
+} from "react"
 
 type GlobalContextProps = {
   children: React.ReactNode
@@ -25,6 +32,18 @@ export function GlobalContextProvider({ children }: GlobalContextProps) {
   const [showNavbar, setShowNavbar] = useState(true)
   const [fromLearnPage, setFromLearnPage] = useState(false)
   const [isTopFullyExpanded, setIsTopFullyExpanded] = useState(true)
+
+  const pathname = usePathname()
+  const specificPaths = ["/learn"]
+
+  useEffect(() => {
+    // If the current path is in the specificPaths array
+    if (specificPaths.includes(pathname)) {
+      // Reset state on path change
+      setShowNavbar(true)
+      setIsTopFullyExpanded(true)
+    }
+  }, [pathname])
 
   return (
     <GlobalContext.Provider

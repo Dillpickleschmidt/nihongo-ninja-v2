@@ -10,7 +10,7 @@ export default function ButtonBarGroup() {
   const [isHovered4, setIsHovered4] = useState(false)
 
   return (
-    <>
+    <div className="sticky">
       <ExpandingTabs
         isHovered1={isHovered1}
         setIsHovered1={setIsHovered1}
@@ -31,6 +31,6 @@ export default function ButtonBarGroup() {
         isHovered4={isHovered4}
         setIsHovered4={setIsHovered4}
       />
-    </>
+    </div>
   )
 }

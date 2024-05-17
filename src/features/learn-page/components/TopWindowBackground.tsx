@@ -1,10 +1,10 @@
-import Link from "next/link";
-import CustomImage from "@/components/CustomImage";
+import Link from "next/link"
+import CustomImage from "@/components/CustomImage"
 
 export default function TopWindowBackground({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <>
@@ -24,5 +24,5 @@ export default function TopWindowBackground({
         </CustomImage>
       </Link>
     </>
-  );
+  )
 }

@@ -1,19 +1,19 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import { ThemeProvider } from "@/components/theme/theme-provider";
-import Navbar from "@/features/navbar/Navbar";
-import { GlobalContextProvider } from "@/context/GlobalContext";
-import { inter, japanese } from "@/utils/fonts";
+import type { Metadata } from "next"
+import "./globals.css"
+import { ThemeProvider } from "@/components/theme/theme-provider"
+import Navbar from "@/features/navbar/Navbar"
+import { GlobalContextProvider } from "@/context/GlobalContext"
+import { inter, japanese } from "@/utils/fonts"
 
 export const metadata: Metadata = {
   title: "Nihongo Ninja",
   description: "Learn Japanese with Nihongo Ninja",
-};
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en">
@@ -33,5 +33,5 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }

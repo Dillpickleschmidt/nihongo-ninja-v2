@@ -3,7 +3,7 @@
 import { ReactNode } from "react"
 import { Button } from "./ui/button"
 import { VariantProps, cva } from "class-variance-authority"
-import { cn } from "@/utils/utils"
+import { cn } from "@/utils/cn"
 import { Card } from "./ui/card"
 import { CloseDialog } from "@/features/dialog"
 

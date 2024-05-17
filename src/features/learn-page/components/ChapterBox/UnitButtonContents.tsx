@@ -4,20 +4,20 @@ import {
   ScrollText,
   GraduationCap,
   CloudSun,
-} from "lucide-react";
+} from "lucide-react"
 
 type UnitButtonContentsProps = {
-  children: React.ReactNode;
-  id: string;
-  type?: "lesson" | "quiz" | "preview" | "vocab-list" | "learn-vocab";
-};
+  children: React.ReactNode
+  id: string
+  type?: "lesson" | "quiz" | "preview" | "vocab-list" | "learn-vocab"
+}
 
 export default function UnitButtonContents({
   children,
   id,
   type,
 }: UnitButtonContentsProps) {
-  const iconSize = "22px";
+  const iconSize = "22px"
 
   return (
     <>
@@ -40,5 +40,5 @@ export default function UnitButtonContents({
         ) : undefined}
       </div>
     </>
-  );
+  )
 }

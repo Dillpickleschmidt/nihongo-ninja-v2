@@ -9,12 +9,12 @@ type GlobalContextProps = {
 type GlobalContext = {
   scrollRef: React.RefObject<HTMLDivElement>
   navbarRef: React.RefObject<HTMLDivElement>
-  showContentBox: boolean
-  setShowContentBox: React.Dispatch<React.SetStateAction<boolean>>
   showNavbar: boolean
   setShowNavbar: React.Dispatch<React.SetStateAction<boolean>>
   fromLearnPage: boolean
   setFromLearnPage: React.Dispatch<React.SetStateAction<boolean>>
+  isTopFullyExpanded: boolean
+  setIsTopFullyExpanded: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const GlobalContext = createContext<GlobalContext | null>(null)
@@ -23,20 +23,20 @@ export function GlobalContextProvider({ children }: GlobalContextProps) {
   const scrollRef = createRef<HTMLDivElement>()
   const navbarRef = createRef<HTMLDivElement>()
   const [showNavbar, setShowNavbar] = useState(true)
-  const [showContentBox, setShowContentBox] = useState(false)
   const [fromLearnPage, setFromLearnPage] = useState(false)
+  const [isTopFullyExpanded, setIsTopFullyExpanded] = useState(true)
 
   return (
     <GlobalContext.Provider
       value={{
         scrollRef,
         navbarRef,
-        showContentBox,
-        setShowContentBox,
         showNavbar,
         setShowNavbar,
         fromLearnPage,
         setFromLearnPage,
+        isTopFullyExpanded,
+        setIsTopFullyExpanded,
       }}
     >
       {children}

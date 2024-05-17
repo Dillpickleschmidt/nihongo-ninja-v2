@@ -1,14 +1,14 @@
 "use client"
 
 import { useGlobalContext } from "@/context/GlobalContext"
-import ShowNavbarContent from "./components/ShowNavbarContent"
-import HideNavbarContent from "./components/HideNavbarContent"
+import ShowNavbarPositioning from "./components/ShowNavbarPositioning"
+import HideNavbarPositioning from "./components/HideNavbarPositioning"
 
 export default function Navbar() {
-  const { showContentBox, navbarRef } = useGlobalContext()
+  const { showNavbar, navbarRef } = useGlobalContext()
   return (
     <div ref={navbarRef}>
-      {showContentBox ? <HideNavbarContent /> : <ShowNavbarContent />}
+      {showNavbar ? <ShowNavbarPositioning /> : <HideNavbarPositioning />}
     </div>
   )
 }

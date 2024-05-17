@@ -6,8 +6,8 @@ import NavbarContent from "./NavbarContent"
 import { useEffect } from "react"
 import { useGlobalContext } from "@/context/GlobalContext"
 
-export default function HideNavbarContent() {
-  const { showNavbar } = useGlobalContext()
+export default function HideNavbarPositioning() {
+  const { fromLearnPage } = useGlobalContext()
   const [scope, animate] = useAnimate()
 
   async function handleMouseExit() {
@@ -26,19 +26,22 @@ export default function HideNavbarContent() {
   }
 
   async function pageMountAnimation() {
-    await animate(
-      // Just to remove blur flickering and provide time offset
-      scope.current,
-      { y: 0, opacity: 0.999 },
-      { duration: 0.5, ease: easeInOut }
-    )
-    setTimeout(async () => {
+    if (fromLearnPage) {
+      await animate(
+        // Just to remove blur flickering and provide time offset
+        scope.current,
+        { y: 0, opacity: 0.999 },
+        { duration: 1, ease: easeInOut }
+      )
       await animate(
         scope.current,
         { y: -42, opacity: 0.25 },
         { duration: 1, ease: easeInOut }
       )
-    }, 500)
+    } else {
+      // Set y to -42 and opacity to 0.25 immediately
+      await animate(scope.current, { y: -42, opacity: 0.25 }, { duration: 0.5 })
+    }
   }
 
   enum AnimationType {
@@ -49,7 +52,7 @@ export default function HideNavbarContent() {
 
   type AnimationTypeString = keyof typeof AnimationType
 
-  function switchAnimationType(animationType: AnimationTypeString) {
+  function handleAnimate(animationType: AnimationTypeString) {
     switch (animationType) {
       case "pageMount":
         pageMountAnimation()
@@ -63,21 +66,9 @@ export default function HideNavbarContent() {
     }
   }
 
-  async function handleAnimate(animationType: AnimationTypeString) {
-    if (!showNavbar) {
-      switchAnimationType(animationType)
-    } else {
-      await animate(
-        scope.current,
-        { y: 0, opacity: 1 },
-        { duration: 0.1, ease: easeInOut }
-      )
-    }
-  }
-
   useEffect(() => {
     handleAnimate("pageMount")
-  }, [showNavbar])
+  }, [])
 
   return (
     // This animation will run when loadFeatures resolves.

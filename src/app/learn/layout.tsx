@@ -15,7 +15,7 @@ export default function Learn({ children }: { children: React.ReactNode }) {
             <div className="w-[60%]">
               {/* Tips box */}
               <div className="w-full h-28 mt-24 px-8 bg-card saturate-50 my-6 flex justify-center items-center rounded-md border">
-                Visit the resources page to find helpful tools and resources to
+                Visit the resources page to find helpful tools and materials to
                 aid in your learning journey.
               </div>
               {/* Stats */}

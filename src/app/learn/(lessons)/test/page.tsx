@@ -1,11 +1,15 @@
-import ContentBox from "@/components/ContentBox"
-import { Button } from "@/components/ui/button"
+import ContentBox from "@/components/ContentBox";
+import { Button } from "@/components/ui/button";
 
 export default function page() {
   return (
-    <ContentBox>
-      <div>
-        <h1 className="pt-12 text-4xl font-medium leading-[3.25rem] text-center">
+    <ContentBox
+      backgroundImage="/wavy-pattern-2.jpg"
+      backgroundImageSize="700px"
+      backgroundImageOpacity={9}
+    >
+      <div className="pb-16">
+        <h1 className="pt-28 text-4xl font-medium leading-[3.25rem] text-center px-20">
           You thought you were finally in the clear?{" "}
           <span className="text-5xl font-bold">
             <em>No!</em>{" "}
@@ -26,9 +30,9 @@ export default function page() {
           </span>
           , because things are about to get <em>wildly</em>... linguistic.
         </h1>
-        <h2 className="text-4xl font-medium leading-[3.25rem] text-center px-4"></h2>
+        <h2 className="text-4xl font-medium leading-[3.25rem] text-center px-20"></h2>
 
-        <div className="px-16 [&>*]:py-6">
+        <div className="px-32 [&>*]:py-6">
           <h3 className="font-semibold !pb-4">
             Double Consonants (促音, Sokuon): The Dramatic Pauses of Japanese:
           </h3>
@@ -174,5 +178,5 @@ export default function page() {
         </div>
       </div>
     </ContentBox>
-  )
+  );
 }

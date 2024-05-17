@@ -1,21 +1,21 @@
-"use client"
+"use client";
 
-import { m, useScroll, useSpring } from "framer-motion"
-import { useEffect, useRef } from "react"
-import { VariantProps, cva } from "class-variance-authority"
-import { cn } from "@/utils/utils"
-import { Button } from "./ui/button"
+import { m, useScroll, useSpring } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { VariantProps, cva } from "class-variance-authority";
+import { cn } from "@/utils/cn";
+import { Button } from "./ui/button";
 
 type ContentBoxProps = React.HTMLAttributes<HTMLDivElement> &
   VariantProps<typeof dialogVariants> & {
-    children: React.ReactNode
-    nextButton?: React.ReactNode
-    showProgressBar?: boolean
-    backgroundImage?: string
-    backgroundImageSize?: string
-    backgroundImageOpacity?: number
-    showAlertOnClose?: boolean
-  }
+    children: React.ReactNode;
+    nextButton?: React.ReactNode;
+    showProgressBar?: boolean;
+    backgroundImage?: string;
+    backgroundImageSize?: string;
+    backgroundImageOpacity?: number;
+    showAlertOnClose?: boolean;
+  };
 
 export default function ContentBox({
   children,
@@ -28,20 +28,20 @@ export default function ContentBox({
   backgroundImageOpacity = 30,
   showAlertOnClose = false,
 }: ContentBoxProps) {
-  const contentScrollRef = useRef(null)
+  const contentScrollRef = useRef(null);
   const { scrollYProgress } = useScroll({
     container: contentScrollRef,
-  })
+  });
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 125,
     damping: 30,
     restDelta: 0.001,
-  })
+  });
 
   // Scroll to the top of the page on component mount
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div>
@@ -67,7 +67,7 @@ export default function ContentBox({
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 const dialogVariants = cva(
@@ -83,4 +83,4 @@ const dialogVariants = cva(
       variant: "reading",
     },
   }
-)
+);

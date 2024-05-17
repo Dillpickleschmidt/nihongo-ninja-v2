@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
@@ -72,6 +72,10 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      fontFamily: {
+        inter: ["var(--font-inter)"],
+        japanese: ["var(--font-noto-sans-jp)"],
+      },
     },
   },
   plugins: [
@@ -79,17 +83,17 @@ const config = {
       addVariant(
         "supports-backdrop-blur",
         "@supports (backdrop-filter: blur(0)) or (-webkit-backdrop-filter: blur(0))"
-      )
+      );
       addVariant(
         "supports-scrollbars",
         "@supports selector(::-webkit-scrollbar)"
-      )
-      addVariant("scrollbar", "&::-webkit-scrollbar")
-      addVariant("scrollbar-track", "&::-webkit-scrollbar-track")
-      addVariant("scrollbar-thumb", "&::-webkit-scrollbar-thumb")
+      );
+      addVariant("scrollbar", "&::-webkit-scrollbar");
+      addVariant("scrollbar-track", "&::-webkit-scrollbar-track");
+      addVariant("scrollbar-thumb", "&::-webkit-scrollbar-thumb");
     },
     require("tailwindcss-animate"),
   ],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;

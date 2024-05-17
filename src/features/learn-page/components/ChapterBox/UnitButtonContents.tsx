@@ -4,39 +4,41 @@ import {
   ScrollText,
   GraduationCap,
   CloudSun,
-} from "lucide-react"
+} from "lucide-react";
 
 type UnitButtonContentsProps = {
-  children: React.ReactNode
-  id: string
-  type?: "lesson" | "quiz" | "preview" | "vocab-list" | "learn-vocab"
-}
+  children: React.ReactNode;
+  id: string;
+  type?: "lesson" | "quiz" | "preview" | "vocab-list" | "learn-vocab";
+};
 
 export default function UnitButtonContents({
   children,
   id,
   type,
 }: UnitButtonContentsProps) {
+  const iconSize = "22px";
+
   return (
     <>
-      <div>
+      <div className="h-full flex items-center">
         <span className="">{id}</span>
-        <span className="mx-[.35rem]"></span>
-        <span className="text-sm text-muted-foreground">{children}</span>
+        <span className="mx-[0.3rem]"></span>
+        <span className="text-muted-foreground">{children}</span>
       </div>
-      <span className="h-[1.2rem] w-[1.2rem] text-muted-foreground">
+      <div className="text-muted-foreground">
         {type === "lesson" ? (
-          <BookOpen />
+          <BookOpen size={iconSize} />
         ) : type === "quiz" ? (
-          <PencilLine />
+          <PencilLine size={iconSize} />
         ) : type === "preview" ? (
-          <CloudSun />
+          <CloudSun size={iconSize} />
         ) : type === "vocab-list" ? (
-          <ScrollText />
+          <ScrollText size={iconSize} />
         ) : type === "learn-vocab" ? (
-          <GraduationCap />
+          <GraduationCap size={iconSize} />
         ) : undefined}
-      </span>
+      </div>
     </>
-  )
+  );
 }

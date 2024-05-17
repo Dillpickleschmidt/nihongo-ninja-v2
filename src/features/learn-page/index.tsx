@@ -1,7 +1,7 @@
-import ChapterBox from "./components/ChapterBox/ChapterBox"
-import UnitButton from "./components/ChapterBox/UnitButton"
-import ButtonBarGroup from "./components/ButtonBar/ButtonBarGroup"
-import TopWindowSizer from "./components/TopWindowSizer"
+import ChapterBox from "./components/ChapterBox/ChapterBox";
+import UnitButton from "./components/ChapterBox/UnitButton";
+import ButtonBarGroup from "./components/ButtonBar/ButtonBarGroup";
+import TopWindowSizer from "./components/TopWindowSizer";
 
 export function ChapterBoxes() {
   return (
@@ -96,13 +96,13 @@ export function ChapterBoxes() {
         <UnitButton id="Unit 10">Placeholder</UnitButton>
       </ChapterBox>
     </>
-  )
+  );
 }
 
 export function ButtonBar() {
-  return <ButtonBarGroup />
+  return <ButtonBarGroup />;
 }
 
 export function TopWindow({ children }: { children: React.ReactNode }) {
-  return <TopWindowSizer>{children}</TopWindowSizer>
+  return <TopWindowSizer>{children}</TopWindowSizer>;
 }

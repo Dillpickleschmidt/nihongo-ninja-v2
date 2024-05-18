@@ -104,6 +104,7 @@ const dialogVariants = cva(
     variants: {
       variant: {
         fullscreen: "w-full h-full rounded-none border-none",
+        xl: "2xl:w-[1550px] 2xl:h-[95%] 2xl:rounded-[50px] 2xl:border-[4px]",
         reading:
           "lg:w-[815px] md:w-[98%] w-full md:h-[99%] md:rounded-[50px] md:border-[4px]",
         large:

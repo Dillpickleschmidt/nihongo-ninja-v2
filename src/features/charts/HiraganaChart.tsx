@@ -467,7 +467,7 @@ export default function HiraganaChart() {
         </table>
       </div>
       <div className="full flex justify-center text-5xl mt-2">
-        <div className="bg-card/50 rounded-2xl border-2 border-dashed border-card-foreground h-28 w-28 pt-3 text-center">
+        <div className="bg-card/100 rounded-2xl border-2 border-dashed border-card-foreground h-28 w-28 pt-3 text-center">
           <Romaji
             romaji="n"
             className={romajiClassName}

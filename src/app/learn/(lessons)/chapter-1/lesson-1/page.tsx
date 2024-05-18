@@ -53,21 +53,55 @@ export default function page() {
             Japanese has a simple phonetic structure. The language revolves
             around five basic vowel sounds. Listen carefully:
           </p>
-          <div className="font-japanese font-medium text-center text-2xl !py-0">
-            <p>あ a</p>
-            <p>い i</p>
-            <p>う u</p>
-            <p>え e</p>
-            <p>お o</p>
+          <div className="font-japanese font-medium w-full flex justify-center text-2xl">
+            <ul>
+              <li>
+                あ a -{" "}
+                <span className="text-xl">
+                  <em>
+                    <span className="font-extrabold text-2xl">AH</span>HH!!
+                  </em>
+                </span>
+              </li>
+              <li>
+                い i -{" "}
+                <span className="text-xl">
+                  <em>
+                    eur<span className="font-semibold text-2xl">ea</span>ka!
+                  </em>
+                </span>
+              </li>
+              <li>
+                う u -{" "}
+                <span className="text-xl">
+                  g<span className="font-semibold text-2xl">👀</span>se 🪿
+                </span>
+              </li>
+              <li>
+                え e -{" "}
+                <span className="text-xl">
+                  <span className="font-semibold text-2xl">e</span>lephant 🐘
+                </span>
+              </li>
+              <li>
+                お o -{" "}
+                <span className="text-xl">
+                  d<span className="font-semibold text-2xl">o</span>nut 🍩
+                </span>
+              </li>
+            </ul>
           </div>
-          <p className="mt-0 text-sm text-center">
+          <p className="mt-0 mb-12 text-sm text-center">
             *Note the rounded shapes of Hiragana characters.*
           </p>
-          <p>
-            These vowels form the essence of the Japanese phonetic system.
-            Everything else is just a combination of these vowels with
-            consonants you already know!
-          </p>
+          <div className="my-6 ml-6 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
+            <PortraitIcon image="/img/guru.png" className="float-end ml-2" />
+            <p>
+              These vowels form the essence of the Japanese phonetic system.
+              Everything else is just a combination of these vowels with
+              consonants you already know!
+            </p>
+          </div>
           <p>
             <span className="font-extrabold">Student:</span> I'm not sure I'm
             following, wise one. Can you give me an example?
@@ -78,7 +112,7 @@ export default function page() {
           <p className="text-center">
             Take the consonant <span className="font-bold text-xl">k</span>:
           </p>
-          <div className="font-japanese font-medium text-2xl !py-0 flex justify-center">
+          <div className="font-japanese font-medium text-2xl flex justify-center">
             <div>
               <p>か ka</p>
               <p>き ki</p>
@@ -90,7 +124,7 @@ export default function page() {
           <p className="text-center">
             And the consonant <span className="font-bold text-xl">s</span>:
           </p>
-          <div className="font-japanese font-medium text-2xl !py-0 flex justify-center">
+          <div className="font-japanese font-medium text-2xl flex justify-center">
             <div>
               <p>さ sa</p>
               <p>

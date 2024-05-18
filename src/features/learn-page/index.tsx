@@ -7,58 +7,61 @@ export function ChapterBoxes() {
   return (
     <>
       <ChapterBox text="Chapter 1" className="bg-red-600 saturate-50">
-        <UnitButton id="1." type="preview" link="/learn/test">
+        <UnitButton id="1." type="preview" link="/learn/chapter-1/welcome">
           Welcome!
         </UnitButton>
-        <UnitButton id="2." type="lesson" link="/learn/test2">
+        <UnitButton id="2." type="lesson" link="/learn/chapter-1/lesson-1">
+          Japanese Phonetics
+        </UnitButton>
+        <UnitButton id="3." type="lesson" link="/learn/chapter-1/lesson-2">
           Writing Systems
         </UnitButton>
-        <UnitButton id="3." type="lesson">
+        <UnitButton id="4." type="lesson" link="/learn/chapter-1/lesson-2">
           Hiragana
         </UnitButton>
-        <UnitButton id="4." type="quiz">
+        <UnitButton id="5." type="quiz">
           Hiragana Quiz 1
         </UnitButton>
-        <UnitButton id="5." type="lesson">
+        <UnitButton id="6." type="lesson">
           Dakuten & Handakuten
         </UnitButton>
-        <UnitButton id="6." type="quiz">
+        <UnitButton id="7." type="quiz">
           Hiragana Quiz 2
         </UnitButton>
-        <UnitButton id="7." type="lesson">
+        <UnitButton id="8." type="lesson">
           Contracted Sounds
         </UnitButton>
-        <UnitButton id="8." type="quiz">
+        <UnitButton id="9." type="quiz">
           Hiragana Quiz 3
         </UnitButton>
-        <UnitButton id="9." type="lesson">
+        <UnitButton id="10." type="lesson">
           Long Vowels & Double Consonants
         </UnitButton>
-        <UnitButton id="10." type="quiz">
+        <UnitButton id="11." type="quiz">
           Hiragana Final Quiz
         </UnitButton>
-        <UnitButton id="11." type="vocab-list">
+        <UnitButton id="12." type="vocab-list">
           Chapter 1 - All Vocab
         </UnitButton>
-        <UnitButton id="12." type="lesson">
+        <UnitButton id="13." type="lesson">
           Greetings
         </UnitButton>
-        <UnitButton id="13." type="quiz">
+        <UnitButton id="14." type="quiz">
           Greetings Quiz
         </UnitButton>
-        <UnitButton id="14." type="lesson">
+        <UnitButton id="15." type="lesson">
           Common Phrases
         </UnitButton>
-        <UnitButton id="15." type="lesson">
+        <UnitButton id="16." type="lesson">
           Numbers
         </UnitButton>
-        <UnitButton id="16." type="vocab-list">
+        <UnitButton id="17." type="vocab-list">
           Numbers 1-100
         </UnitButton>
-        <UnitButton id="17." type="quiz">
+        <UnitButton id="18." type="quiz">
           Practice Numbers 0-10
         </UnitButton>
-        <UnitButton id="18." type="quiz">
+        <UnitButton id="19." type="quiz">
           Practice Numbers 11-100
         </UnitButton>
       </ChapterBox>

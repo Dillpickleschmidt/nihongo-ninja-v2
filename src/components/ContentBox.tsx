@@ -9,6 +9,7 @@ import { Button } from "./ui/button"
 type ContentBoxProps = React.HTMLAttributes<HTMLDivElement> &
   VariantProps<typeof dialogVariants> & {
     children: React.ReactNode
+    nextPageLink: string
     nextButton?: React.ReactNode
     showProgressBar?: boolean
     backgroundImage?: string
@@ -20,8 +21,10 @@ type ContentBoxProps = React.HTMLAttributes<HTMLDivElement> &
 export default function ContentBox({
   children,
   variant,
+  color,
   className,
-  nextButton = <Button link="/learn">Next Lesson {"->"}</Button>,
+  nextPageLink,
+  nextButton = <Button link={nextPageLink}>Next Lesson {"->"}</Button>,
   showProgressBar = true,
   backgroundImage,
   backgroundImageSize = "1200px",
@@ -47,7 +50,7 @@ export default function ContentBox({
     <div>
       <div
         ref={contentScrollRef}
-        className={cn(dialogVariants({ variant, className }))}
+        className={cn(dialogVariants({ variant, color, className }))}
         style={{
           position: "absolute",
           top: "50%",
@@ -64,6 +67,7 @@ export default function ContentBox({
                 backgroundImage: `url(${backgroundImage})`,
                 backgroundRepeat: "repeat",
                 backgroundSize: backgroundImageSize, // Change this value to scale your background image
+                // mixBlendMode: "multiply",
                 backgroundBlendMode: "multiply",
                 opacity: backgroundImageOpacity / 100, // Change this value to set the opacity of the background image
                 zIndex: -1,
@@ -84,7 +88,7 @@ export default function ContentBox({
           // Otherwise, just render this html
           <div>
             {children}
-            <div className="mt-24 mx-12 flex flex-row justify-end">
+            <div className="mt-24 pb-16 mx-12 flex flex-row justify-end">
               {nextButton}
             </div>
           </div>
@@ -95,19 +99,26 @@ export default function ContentBox({
 }
 
 const dialogVariants = cva(
-  "relative w-full h-full bg-background border-black rounded-none shadow-xl overflow-y-scroll scrollbar:hidden",
+  "relative w-full h-full border-black rounded-none shadow-xl overflow-y-scroll scrollbar:hidden",
   {
     variants: {
       variant: {
         fullscreen: "w-full h-full rounded-none border-none",
         reading:
           "lg:w-[815px] md:w-[98%] w-full md:h-[99%] md:rounded-[50px] md:border-[4px]",
-        reading_light:
-          "lg:w-[815px] md:w-[98%] w-full md:h-[99%] md:rounded-[50px] md:border-[4px] bg-background-secondary text-foreground-secondary",
+        large:
+          "xl:w-[1370px] w-full h-[80%] xl:rounded-[50px] xl:border-[4px] border-y-[4px]",
+        small:
+          "lg:w-[715px] md:w-[98%] w-full h-[90%] md:rounded-2xl md:border-[3px]",
+      },
+      color: {
+        default: "bg-background",
+        light: "bg-background-secondary text-foreground-secondary",
       },
     },
     defaultVariants: {
       variant: "reading",
+      color: "default",
     },
   }
 )

@@ -1,18 +1,23 @@
 import Image from "next/image"
+import { twMerge } from "tailwind-merge"
 
 type CustomImageProps = {
   children?: React.ReactNode
   image: string
   priority?: boolean
+  className?: string
+  hoverZoom?: boolean
 }
 
 export default function CustomImage({
   children,
   image,
   priority = false,
+  className,
+  hoverZoom = false,
 }: CustomImageProps) {
   return (
-    <div className="absolute h-full w-full bg-background hover:scale-[102%] ease-in-out duration-300">
+    <div className={twMerge(`absolute h-full w-full`, className)}>
       <Image
         src={image}
         fill={true}

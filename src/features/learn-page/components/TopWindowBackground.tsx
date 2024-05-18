@@ -10,7 +10,11 @@ export default function TopWindowBackground({
     <>
       {children}
       <Link href="/learn/chapter-1/welcome">
-        <CustomImage image="/img/japanese-gate.png" priority={true}>
+        <CustomImage
+          image="/img/japanese-gate.png"
+          priority={true}
+          className="bg-background hover:scale-[102%] ease-in-out duration-300"
+        >
           {/* Vignette */}
           <div className="absolute w-full h-full bg-[radial-gradient(50%_120%_at_50%_50%,rgba(0,0,0,0.0)_30%,rgba(0,0,0,0.2)_100%)]"></div>
           <div

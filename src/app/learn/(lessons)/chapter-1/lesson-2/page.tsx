@@ -164,10 +164,9 @@ export default function page() {
             漢 (Han Chinese) 字 (Characters)
           </div>
           <p>
-            <span className="font-extrabold">Sensei:</span> While China has
-            simplified many, Japan has kept many of them unchanged, like a
-            collection of preserved art pieces. Behold the pictorial depiction
-            of the sun:
+            While China has simplified many, Japan has kept many of them
+            unchanged, like a collection of preserved art pieces. Behold the
+            pictorial depiction of the sun:
           </p>
           <p className="text-center text-5xl font-japanese">日</p>
           <p>
@@ -190,6 +189,55 @@ export default function page() {
             Hiragana is the first step to opening the gate to the vast world of
             Japanese knowledge.
           </p>
+          <h2 className="text-2xl font-bold !mt-12 mb-8">
+            Bonus - <span className="font-normal">Romaji</span>
+          </h2>
+          <div className="mr-24 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
+            <PortraitIcon image="/img/student.png" />
+            <p>Sensei, I've seen Romaji used a lot. What exactly is it?</p>
+          </div>
+          <div className="ml-24 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
+            <PortraitIcon image="/img/guru.png" className="float-end" />
+            <p>
+              Romaji is the use of Latin alphabet letters to represent Japanese
+              sounds. It serves as a bridge for those who are just beginning
+              their journey in the Japanese language. For example, the word
+              "こんにちは" can be written as "konnichiwa" in Romaji.
+            </p>
+          </div>
+          <p className="!mt-12">
+            <span className="font-extrabold">Student:</span> Is Romaji used
+            often in Japan?
+          </p>
+          <p>
+            <span className="font-extrabold">Sensei:</span> Romaji is primarily
+            used for the benefit of learners and in contexts where Japanese
+            characters might not be practical, such as on international signage
+            or in technology settings. However, true mastery of Japanese
+            involves moving beyond Romaji and immersing oneself in Hiragana,
+            Katakana, and Kanji.
+          </p>
+          <p>
+            <span className="font-extrabold">Student:</span> I see. So, Romaji
+            is like training wheels?
+          </p>
+          <p>
+            <span className="font-extrabold">Sensei:</span> Precisely, eager
+            student. Romaji can help you get started, but to truly embrace the
+            beauty and depth of the Japanese language, you must delve into its
+            unique scripts. That is why we will only use Romaji during this
+            first chapter.
+          </p>
+          <p>
+            <span className="font-extrabold">Student:</span> Thanks, Sensei.
+            I'll make sure to practice reading without relying too much on it.
+          </p>
+          <p>
+            <span className="font-extrabold">Sensei:</span> Wise decision, young
+            one. Embrace the challenge and let each step bring you closer to
+            fluency. Remember, the journey of learning a language is as
+            important as the destination. Enjoy each moment.
+          </p>
           <h2 className="text-2xl font-bold !mt-12 mb-4">Summary</h2>
           <ul className="!mt-2 list-disc space-y-4 ml-6">
             <li className="">
@@ -207,6 +255,12 @@ export default function page() {
             <li>
               <span className="font-extrabold">Kanji - </span>Ancient Chinese
               characters that represent entire words or ideas.
+            </li>
+            <li>
+              <span className="font-extrabold">Bonus: Romaji - </span>
+              Latin representation of Japanese words, primarily used for
+              beginners and in contexts where Japanese characters are not
+              practical.
             </li>
           </ul>
         </div>

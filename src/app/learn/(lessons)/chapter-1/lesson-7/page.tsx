@@ -7,16 +7,30 @@ export default function page() {
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-1/hiragana-test"
+      nextPageLink="/learn/chapter-1/vocab"
     >
-      <h1 className="mt-40 text-6xl font-bold leading-[3.5rem] mx-24 text-center">
-        More about the Japanese writing systems
+      <h1 className="pt-28 text-[2rem] font-medium leading-[2.875rem] text-center px-20">
+        Just When You Thought It Was Safe...{" "}
+        <span className="text-[2.75rem] font-bold">Prepare Yourselves</span>,
+        Intrepid Learners, for the World of{" "}
+        <span className="text-[3.125rem] font-bold">Japanese Punctuation</span>.
+        Uppercase? Lowercase?{" "}
+        <span className="text-[2.125rem] font-semibold">Forget about it!</span>{" "}
+        Question marks and periods? Oh, they're here, but with a{" "}
+        <span className="text-[2.25rem]">
+          <em>twist!</em>
+        </span>{" "}
+        Spaces?{" "}
+        <span className="text-[2.125rem] font-bold">
+          <em>Who needs them!</em>
+        </span>{" "}
+        Strap in, because you're about to get wildly... precise!
       </h1>
       <h2 className="text-3xl text-center font-bold mb-4 mt-12">
-        Uppercase and Lowercase
+        No Uppercase or Lowercase!
       </h2>
       <div className="sm:px-24 px-16 space-y-9">
-        <div className="mr-[5.75rem] mt-6 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
+        <div className="mr-[5.75rem] mt-9 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
           <PortraitIcon image="/img/student.png" />
           <p>
             Sensei, I've been learning about Hiragana, but I have some questions
@@ -33,93 +47,88 @@ export default function page() {
             its own, without needing to change form.
           </p>
         </div>
-        <p>
-          <span className="font-extrabold">Student:</span> That's interesting!
-          What about punctuation, like question marks and periods?
-        </p>
-        <p>
-          <span className="font-extrabold">Sensei:</span> Ah, punctuation—the
-          tiny marks that guide our understanding. In Japanese, we do use
-          question marks and periods, but their usage can be a bit different.
-          The Japanese question mark (？) is used sparingly, often in informal
-          writing or to add emphasis. In more formal contexts, the question is
-          usually indicated by the context and the sentence-ending particle “か”
-          (ka).
-        </p>
+        <h2 className="text-3xl text-center font-bold mb-4 mt-12">
+          Punctuation
+        </h2>
+        <div className="mr-[5.75rem] mt-9 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
+          <PortraitIcon image="/img/student.png" />
+          <p>What about punctuation, like question marks and periods?</p>
+        </div>
+        <div className="ml-24 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
+          <PortraitIcon image="/img/guru.png" className="float-end" />
+          <p>
+            Ah, punctuation—the tiny marks that guide our understanding. In
+            Japanese, we do use question marks and periods, but their usage can
+            be a bit different. The Japanese question mark (？) is used
+            sparingly, often in informal writing or to add emphasis. In more
+            formal contexts, the question is usually indicated by the context
+            and the sentence-ending particle{" "}
+            <span className="font-japanese text-xl">か</span> (ka).
+          </p>
+        </div>
+        <h3 className="text-2xl font-medium">
+          Japanese speakers use <span className="font-japanese">か</span> to
+          indicate questions in polite and formal contexts. In casual settings,
+          they might drop <span className="font-japanese">か</span> and use a
+          rising intonation at the end of their sentence, which is written with
+          a question mark (？).
+        </h3>
         <p>
           <span className="font-extrabold">Student:</span> Oh, that's weird.
-          I'll have to get used to that... So, what about periods?
+          I'll have to get used to that.
         </p>
+        <div className="mr-[5.75rem] mt-9 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
+          <PortraitIcon image="/img/student.png" />
+          <p>So, what about periods? Surely, they use those... right Sensei?</p>
+        </div>
+        <div className="ml-24 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
+          <PortraitIcon image="/img/guru.png" className="float-end" />
+          <p>
+            Indeed, young grasshopper. The humble period (。) in Japanese is
+            called “句点” (kuten). It's used at the end of a sentence, just like
+            in English. But instead of a solid dot, it's a hollow circle—imagine
+            it as a tiny halo, giving your sentence a celestial send-off.
+          </p>
+        </div>
+        <h2 className="text-3xl text-center font-bold mb-4 mt-12">
+          No Spaces!
+        </h2>
+        <div className="mr-[5.75rem] mt-9 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
+          <PortraitIcon image="/img/student.png" />
+          <p>
+            Do Japanese sentences have spaces between words like in English?
+          </p>
+        </div>
+        <div className="ml-24 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
+          <PortraitIcon image="/img/guru.png" className="float-end" />
+          <p>
+            Ah, spaces, or rather the absence of them, is a unique feature of
+            Japanese. In traditional Japanese writing, spaces are not used
+            between words. The text flows continuously, like a river. However,
+            modern Japanese sometimes uses spaces in children's books or
+            language learning materials to help with readability.
+          </p>
+        </div>
+        <h3 className="text-2xl font-medium">
+          Japanese doesn't use spaces between words. However, when typing,
+          you'll notice that characters like 。 and 、 have built-in spaces to
+          separate sentences. Additionally, Japanese characters are
+          double-width, which means punctuation marks like ? and ! take up more
+          space, appearing as ？ and ！.
+        </h3>
         <p>
-          <span className="font-extrabold">Sensei:</span> The humble period (。)
-          in Japanese is called “句点” (kuten). It's used at the end of a
-          sentence, just like in English. Think of it as a small circle marking
-          the end of your thought.
-        </p>
-        <p>
-          <span className="font-extrabold">Student:</span> Do Japanese sentences
-          have spaces between words like in English?
-        </p>
-        <p>
-          <span className="font-extrabold">Sensei:</span> Ah, spaces, or rather
-          the absence of them, is a unique feature of Japanese. In traditional
-          Japanese writing, spaces are not used between words. The text flows
-          continuously, like a river. However, modern Japanese sometimes uses
-          spaces in children's books or language learning materials to help with
-          readability.
-        </p>
-        <p>
-          <span className="font-extrabold">Student:</span> That must make
-          reading a bit challenging!
+          <span className="font-extrabold">Student:</span> <em>No spaces?</em>{" "}
+          That must make reading a bit challenging!
         </p>
         <p>
           <span className="font-extrabold">Sensei:</span> It can be at first,
           but with practice, your mind will begin to recognize the patterns and
-          break down sentences naturally. Now, let's talk about Romaji.
-        </p>
-        <p>
-          <span className="font-extrabold">Student:</span> Yes, I’ve seen Romaji
-          used a lot. What exactly is it?
-        </p>
-        <p>
-          <span className="font-extrabold">Sensei:</span> Romaji is the use of
-          Latin alphabet letters to represent Japanese sounds. It serves as a
-          bridge for those who are just beginning their journey in the Japanese
-          language. For example, the word “こんにちは” can be written as
-          “konnichiwa” in Romaji.
-        </p>
-        <p>
-          <span className="font-extrabold">Student:</span> Is Romaji used often
-          in Japan?
-        </p>
-        <p>
-          <span className="font-extrabold">Sensei:</span> Romaji is primarily
-          used for the benefit of learners and in contexts where Japanese
-          characters might not be practical, such as on international signage or
-          in technology settings. However, true mastery of Japanese involves
-          moving beyond Romaji and immersing oneself in Hiragana, Katakana, and
-          Kanji.
-        </p>
-        <p>
-          <span className="font-extrabold">Student:</span> I see. So, Romaji is
-          like training wheels?
-        </p>
-        <p>
-          <span className="font-extrabold">Sensei:</span> Precisely, young
-          student. Romaji can help you get started, but to truly embrace the
-          beauty and depth of the Japanese language, you must delve into its
-          unique scripts.
+          break down sentences naturally. It's like learning to read music—once
+          you understand the rhythm, you'll be able to play any tune.
         </p>
         <p>
           <span className="font-extrabold">Student:</span> Thanks, Sensei. This
-          makes a lot of sense. I’ll make sure to practice reading without
-          relying too much on Romaji.
-        </p>
-        <p>
-          <span className="font-extrabold">Sensei:</span> Wise decision, young
-          one. Embrace the challenge and let each step bring you closer to
-          fluency. Remember, the journey of learning a language is as important
-          as the destination. Enjoy each moment.
+          is starting to make more sense.
         </p>
       </div>
     </ContentBox>

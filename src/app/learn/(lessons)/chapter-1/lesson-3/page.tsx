@@ -109,8 +109,9 @@ export default function page() {
           <div className="mr-24 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
             <PortraitIcon image="/img/student.png" />
             <p>
-              But wait, し sounds like 'she' instead of 'see'! And what about
-              つ？
+              But wait, <span className="font-japanese">し</span> sounds like
+              'she' instead of 'see'! And what about{" "}
+              <span className="font-japanese">ん？</span>
             </p>
           </div>
           <div className="ml-24 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
@@ -122,11 +123,41 @@ export default function page() {
             </p>
           </div>
         </div>
+        <div className="mt-4 flex flex-row justify-center">
+          <ul
+            className="h-32 flex flex-col justify-center pr-4 leading-7 pl-2 text-2xl font-bold text-center
+              ![&>*]:py-0"
+          >
+            <li className="font-japanese">ん</li>
+          </ul>
+          <p>
+            <span className="font-extrabold">Sensei:</span> Now, let's talk
+            about one of the most distinctive Hiragana characters you'll
+            encounter—"<span className="font-japanese text-xl">ん</span>" (n).
+            Unlike the na-ni-nu-ne-no sounds, this "n" is added at the end of a
+            syllable and is the only time a Japanese syllable ends with a
+            consonant. To pronounce it, lift the back of your tongue to the roof
+            of your mouth and produce a sound similar to "un."
+          </p>
+        </div>
+        <div className="mt-4 flex flex-row justify-center">
+          <ul
+            className="h-14 flex flex-col justify-center pr-4 leading-7 pl-2 text-2xl font-bold text-center
+              ![&>*]:py-0"
+          >
+            <li className="font-japanese">を</li>
+          </ul>
+          <p>
+            <span className="font-extrabold">Sensei:</span> And lastly, we have
+            "<span className="font-japanese text-xl">を</span>". This character
+            is technically pronounced "wo," but you'll more often hear it
+            pronounced as "o".
+          </p>
+        </div>
         <p>
-          <span className="font-extrabold">Sensei:</span> You've probably
-          noticed that not all the rows are completely filled. Japanese doesn't
-          have characters for 'yi', 'ye', 'wi', etc. That just means fewer
-          characters for you to memorize!
+          You've may have also noticed that not all the rows are completely
+          filled. Japanese doesn't have characters for 'yi', 'ye', 'wi', etc.
+          That just means fewer characters for you to memorize!
         </p>
         <p>
           <span className="font-extrabold">Student:</span> Sensei, The pattern
@@ -161,7 +192,7 @@ export default function page() {
         </p>
         <p>
           <span className="font-extrabold">Student:</span> I'll definitely look
-          into that. What should I do after I've learned all the characters?
+          into that. What should I do after I've explored all the characters?
         </p>
         <p>
           <span className="font-extrabold">Sensei:</span> Once you've made your
@@ -170,9 +201,17 @@ export default function page() {
           properly greet each other in Japanese! Remember, you don't need to
           master every hiragana character in one go, we'll provide the romaji
           (the pronunciations) with the hiragana for the remainder of this
-          chapter, but we'll be ditching them in the next one.
+          chapter,{" "}
+          <span className="font-medium">
+            but we'll be ditching them in the next one.
+          </span>
         </p>
-        <p className="text-2xl">🤯</p>
+        <div className="mt-4 w-full flex justify-center">
+          <PortraitIcon
+            image="/img/chapter-1/shocked-child.png"
+            className="border-none w-16 h-16 bg-inherit"
+          />
+        </div>
         <div className="!-mb-6">
           <p className="text-base">
             <span className="font-bold">A note from sensei: </span>

@@ -11,57 +11,60 @@ export function ChapterBoxes() {
           Welcome!
         </UnitButton>
         <UnitButton id="2." type="lesson" link="/learn/chapter-1/lesson-1">
-          Japanese Phonetics
+          Japanese Pronunciation
         </UnitButton>
         <UnitButton id="3." type="lesson" link="/learn/chapter-1/lesson-2">
           Writing Systems
         </UnitButton>
-        <UnitButton id="4." type="lesson" link="/learn/chapter-1/lesson-2">
+        <UnitButton id="4." type="lesson" link="/learn/chapter-1/lesson-3">
           Hiragana
         </UnitButton>
-        <UnitButton id="5." type="quiz">
+        <UnitButton id="5." type="quiz" link="/learn/chapter-1/hiragana-quiz-1">
           Hiragana Quiz 1
         </UnitButton>
-        <UnitButton id="6." type="lesson">
+        <UnitButton id="6." type="lesson" link="/learn/chapter-1/lesson-4">
           Dakuten & Handakuten
         </UnitButton>
-        <UnitButton id="7." type="quiz">
+        <UnitButton id="7." type="quiz" link="/learn/chapter-1/hiragana-quiz-2">
           Hiragana Quiz 2
         </UnitButton>
-        <UnitButton id="8." type="lesson">
+        <UnitButton id="8." type="lesson" link="/learn/chapter-1/lesson-5">
           Contracted Sounds
         </UnitButton>
-        <UnitButton id="9." type="quiz">
+        <UnitButton id="9." type="quiz" link="/learn/chapter-1/hiragana-quiz-3">
           Hiragana Quiz 3
         </UnitButton>
-        <UnitButton id="10." type="lesson">
+        <UnitButton id="10." type="lesson" link="/learn/chapter-1/lesson-6">
           Long Vowels & Double Consonants
         </UnitButton>
-        <UnitButton id="11." type="quiz">
+        <UnitButton id="11." type="quiz" link="/learn/chapter-1/hiragana-test">
           Hiragana Final Quiz
         </UnitButton>
-        <UnitButton id="12." type="vocab-list">
+        <UnitButton id="12." type="quiz" link="/learn/chapter-1/lesson-7">
+          Punctuation and Misc.
+        </UnitButton>
+        <UnitButton id="13." type="vocab-list">
           Chapter 1 - All Vocab
         </UnitButton>
-        <UnitButton id="13." type="lesson">
+        <UnitButton id="14." type="lesson">
           Greetings
         </UnitButton>
-        <UnitButton id="14." type="quiz">
+        <UnitButton id="15." type="quiz">
           Greetings Quiz
         </UnitButton>
-        <UnitButton id="15." type="lesson">
+        <UnitButton id="16." type="lesson">
           Common Phrases
         </UnitButton>
-        <UnitButton id="16." type="lesson">
+        <UnitButton id="17." type="lesson">
           Numbers
         </UnitButton>
-        <UnitButton id="17." type="vocab-list">
+        <UnitButton id="18." type="vocab-list">
           Numbers 1-100
         </UnitButton>
-        <UnitButton id="18." type="quiz">
+        <UnitButton id="19." type="quiz">
           Practice Numbers 0-10
         </UnitButton>
-        <UnitButton id="19." type="quiz">
+        <UnitButton id="20." type="quiz">
           Practice Numbers 11-100
         </UnitButton>
       </ChapterBox>

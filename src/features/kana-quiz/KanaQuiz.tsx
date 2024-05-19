@@ -13,9 +13,10 @@ import { useKanaQuiz } from "@/features/kana-quiz/hooks/useKanaQuiz"
 type KanaQuizProps = {
   kana: { hiragana: string; romaji: string[] }[]
   nextLesson: string
+  title: string
 }
 
-export default function KanaQuiz({ kana, nextLesson }: KanaQuizProps) {
+export default function KanaQuiz({ kana, nextLesson, title }: KanaQuizProps) {
   const {
     characterBoxes,
     showResults,
@@ -51,9 +52,7 @@ export default function KanaQuiz({ kana, nextLesson }: KanaQuizProps) {
       <div className="text-center text-foreground-secondary">
         {!showResults ? (
           <>
-            <h1 className="pt-12 mb-4 text-5xl font-semibold">
-              Hiragana Quiz 1
-            </h1>
+            <h1 className="pt-12 mb-4 text-5xl font-semibold">{title}</h1>
             <h2 className="text-xl">
               Type the english spelling of each character into their respective
               boxes.

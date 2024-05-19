@@ -147,6 +147,13 @@ export default function page() {
             remains unchanged.
           </p>
           <p>
+            As a matter of fact, Japanese has only 71 sounds that combine to
+            create ~100 sound combinations. By contrast, English has ~250 unique
+            sounds and 1000s of combinations. That means your tongue can already
+            pronounce four times more sounds than the average Japanese person
+            can!
+          </p>
+          <p>
             <span className="font-extrabold">Student:</span> That's comforting
             to hear, wise Sensei. This doesn't seem so hard after all.
           </p>

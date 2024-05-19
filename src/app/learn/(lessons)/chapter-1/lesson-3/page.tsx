@@ -173,16 +173,21 @@ export default function page() {
           chapter, but we'll be ditching them in the next one.
         </p>
         <p className="text-2xl">🤯</p>
-        <p className="text-base">
-          <span className="font-bold">A note from sensei: </span>
-          <em>
-            Learning Hiragana is like building the foundation of a house. It
-            takes time and practice, but everything you learn after this will
-            rely on this fundamental knowledge. So, take your time, practice
-            regularly, and most importantly, enjoy the process, young
-            grasshopper.
-          </em>
-        </p>
+        <div className="!-mb-6">
+          <p className="text-base">
+            <span className="font-bold">A note from sensei: </span>
+            <em>
+              Learning Hiragana is like building the foundation of a house. It
+              takes time and practice, but everything you learn after this will
+              rely on this fundamental knowledge. So, take your time, practice
+              regularly, and most importantly, enjoy the process, young
+              grasshopper.
+            </em>
+          </p>
+          <div className="mt-4 w-full flex justify-center">
+            <PortraitIcon image="/img/guru.png" className="border-none" />
+          </div>
+        </div>
       </div>
     </ContentBox>
   )

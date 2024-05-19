@@ -24,7 +24,7 @@ export default function CharacterBox({
     <div
       className={`relative text-3xl h-48 flex justify-center bg-card shadow-lg shadow-[#645947] rounded-[12px] ${className}`}
     >
-      <div className="mt-6 text-5xl">{character}</div>
+      <div className="font-japanese mt-6 text-5xl">{character}</div>
       <div className={`absolute bottom-0 mb-6 ${inputTextColor}`}>
         <input
           type="text"

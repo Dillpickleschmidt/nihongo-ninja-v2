@@ -160,10 +160,10 @@ export default function page() {
               </li>
               <li>
                 <span className="font-japanese font-semibold text-xl">
-                  ありがとう
+                  おしょうがつ
                 </span>{" "}
-                <span className="text-sm">(thank you)</span> - arigatō{" "}
-                <span>✔️</span>, not arigato-u.{" "}
+                <span className="text-sm">(New Year's)</span> - oshōgatsu{" "}
+                <span>✔️</span>, not osho-u-gatsu.{" "}
                 <span className="text-sm">❌</span>
               </li>
               <li>

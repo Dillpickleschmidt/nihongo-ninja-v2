@@ -3,15 +3,15 @@ import { twMerge } from "tailwind-merge"
 type RomajiProps = {
   children: React.ReactNode
   romaji: string
-  textShadow?: string
   className?: string
+  textShadow?: string
 }
 
 export default function Romaji({
   children,
   romaji,
-  textShadow,
   className,
+  textShadow,
 }: RomajiProps) {
   return (
     <span

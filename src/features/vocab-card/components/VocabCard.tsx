@@ -1,4 +1,4 @@
-import VideoWrapper from "@/features/vocab-card/components/VideoWrapper"
+import VocabVideo from "./video/VocabVideo"
 
 type VocabCardProps = {
   children: React.ReactNode
@@ -19,12 +19,13 @@ export default function VocabCard({
 }: VocabCardProps) {
   return (
     <div
-      className={`relative py-12 px-16 rounded-[30px] shadow-lg shadow-black overflow-x-hidden ${
+      className={`relative rounded-[30px] text-black shadow-lg shadow-black overflow-x-hidden ${
         light ? "bg-[#f7f0dd]" : "bg-[#f7e2c4]"
       }`}
     >
-      <h3 className="font-japanese text-2xl font-bold">{title}</h3>
-      <div className="pt-4">
+      <VocabVideo index={index} />
+      <div className="py-12 px-16">
+        <h3 className="font-japanese text-2xl font-bold">{title}</h3>
         {/* <strong>Kana:</strong> <span className="font-japanese">{kana}</span> */}
         <br />
         {pronunciation && (
@@ -34,7 +35,6 @@ export default function VocabCard({
         )}
         {children}
       </div>
-      <VideoWrapper index={index} />
     </div>
   )
 }

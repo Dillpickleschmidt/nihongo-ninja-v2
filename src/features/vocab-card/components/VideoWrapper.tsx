@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { useVocabCardContext } from "@/features/vocab-card/context/VocabCardContext"
+import { Button } from "@/components/ui/button"
 
 type VideoWrapperProps = {
   index: number
@@ -21,20 +22,20 @@ export default function VideoWrapper({ index }: VideoWrapperProps) {
   const src: string = entry?.videos?.[0]?.src ?? ""
   const title: string = entry?.videos?.[0]?.title ?? ""
 
-  const [visibleIndex, setVisibleIndex] = useState<number | null>(0)
+  const [expandedVideo, setExpandedVideo] = useState<number | null>(null)
   const [loadingStates, setLoadingStates] = useState(
     vocabEntries.map(() => true)
   )
 
   const handleShow = (index: number) => {
-    setVisibleIndex(index)
+    setExpandedVideo(index)
   }
 
   const handleHide = () => {
-    setVisibleIndex(null)
+    setExpandedVideo(null)
   }
 
-  const handleLoad = (index: number) => {
+  const handleLoaded = (index: number) => {
     setLoadingStates((prevStates) => {
       const newStates = [...prevStates]
       newStates[index] = false
@@ -43,9 +44,50 @@ export default function VideoWrapper({ index }: VideoWrapperProps) {
   }
 
   return (
+    <>
+      <Button
+        variant="ghost"
+        onClick={() => handleShow(index)}
+        className={`${
+          expandedVideo !== index && "relative"
+        } float-end mt-4 mr-4 w-48 h-28 rounded-2xl overflow-hidden`}
+      >
+        <div className="absolute inset-0 bg-background" />
+        <VideoJSX
+          src={src}
+          title={title}
+          expandedVideo={expandedVideo}
+          handleLoaded={handleLoaded}
+          index={index}
+          loadingStates={loadingStates}
+        />
+      </Button>
+      {/* Render the following if expanded */}
+    </>
+  )
+}
+
+type VideoJSXProps = {
+  src: string
+  title: string
+  index: number
+  expandedVideo: number | null
+  loadingStates: boolean[]
+  handleLoaded: (index: number) => void
+}
+
+function VideoJSX({
+  src,
+  title,
+  index,
+  expandedVideo,
+  loadingStates,
+  handleLoaded,
+}: VideoJSXProps) {
+  return (
     <div
       className={`absolute inset-0 overflow-hidden flex items-center justify-center transition-opacity duration-300 ${
-        visibleIndex === index ? "opacity-100 visible" : "opacity-0 invisible"
+        expandedVideo === index ? "opacity-100 visible" : "opacity-0 invisible"
       }`}
     >
       {loadingStates[index] && (
@@ -59,25 +101,10 @@ export default function VideoWrapper({ index }: VideoWrapperProps) {
           src={src}
           title={title}
           allow="autoplay; fullscreen"
-          onLoad={() => handleLoad(index)}
+          onLoad={() => handleLoaded(index)}
           className="absolute top-0 left-0 w-full h-full"
         />
       </div>
     </div>
   )
 }
-
-// Save for later:
-// <div className="flex space-x-2 mb-4">
-//   {videos.map((video, index) => (
-//     <button
-//       key={index}
-//       onClick={() => handleShow(index)}
-//       className={`w-8 h-8 rounded-md p-2 ${
-//         visibleIndex === index ? "bg-green-500" : "bg-gray-500"
-//       } text-white hover:bg-green-700 flex justify-center items-center`}
-//     >
-//       {index + 1}
-//     </button>
-//   ))}
-// </div>

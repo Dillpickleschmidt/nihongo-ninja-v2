@@ -14,7 +14,7 @@ export default function PortraitIcon({ image, className }: PortraitIconProps) {
         className
       )}
     >
-      <CustomImage image={image} />
+      <CustomImage src={image} alt="portrait icon" />
     </div>
   )
 }

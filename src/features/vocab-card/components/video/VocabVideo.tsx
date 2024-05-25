@@ -19,18 +19,23 @@ export default function VocabVideo({ index }: VocabVideoProps) {
   const src: string = entry?.videos?.[0]?.src ?? ""
   const title: string = entry?.videos?.[0]?.title ?? ""
 
-  const [expandedVideo, setExpandedVideo] = useState<number | null>(null)
+  const [showVideo, setShowVideo] = useState<number | null>(null)
   const [loadingStates, setLoadingStates] = useState(
     vocabEntries.map(() => true)
   )
 
   const handleShow = (index: number) => {
-    setExpandedVideo(index)
+    setShowVideo((prev) => {
+      console.log("show " + index)
+      return prev === index ? null : index
+    })
   }
 
   const handleHide = () => {
-    setExpandedVideo(null)
-    console.log("hide " + expandedVideo)
+    setShowVideo(() => {
+      console.log("hide " + null)
+      return null
+    })
   }
 
   const handleLoaded = (index: number) => {
@@ -43,13 +48,15 @@ export default function VocabVideo({ index }: VocabVideoProps) {
 
   return (
     <div
-      className={`${index === expandedVideo && "pb-[56.25%] bg-background"}`}
+      className={`${
+        index === showVideo && "relative pb-[56.25%] bg-background"
+      }`}
     >
       <ButtonWithVideo
         index={index}
         src={src}
         title={title}
-        expandedVideo={expandedVideo}
+        showVideo={showVideo}
         loadingStates={loadingStates}
         handleShow={handleShow}
         handleHide={handleHide}

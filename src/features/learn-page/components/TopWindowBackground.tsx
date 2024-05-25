@@ -11,7 +11,8 @@ export default function TopWindowBackground({
       {children}
       <Link href="/learn/chapter-1/welcome">
         <CustomImage
-          image="/img/japanese-gate.png"
+          src="/img/japanese-gate.png"
+          alt="Japanese gate homescreen image"
           priority={true}
           className="bg-background hover:scale-[102%] ease-in-out duration-300"
         >

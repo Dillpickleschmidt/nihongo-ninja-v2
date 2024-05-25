@@ -1,20 +1,17 @@
-type VocabData = {
-  [key: string]: {
-    furigana: string[]
-    english: string[]
-    mnemonics: string[]
-  }
-}
+import { VocabData, Video } from "@/types/vocab"
 
-type ExtractedHiragana = {
-  [key: string]: string[]
-}
+type ExtractedTextArray = string[][]
 
-export function extractHiragana(data: VocabData): ExtractedHiragana {
-  const result: ExtractedHiragana = {}
+type VocabDataRaw = VocabData["data"]
 
-  for (const key in data) {
-    const furiganaArr = data[key].furigana
+export function extractHiragana(rawData: VocabDataRaw): ExtractedTextArray {
+  const result: ExtractedTextArray = []
+
+  for (const key in rawData) {
+    const entry = rawData[key]
+    if (!entry.furigana) continue
+
+    const furiganaArr = entry.furigana
     const parsedFuriganaArr: string[] = []
 
     for (const furiganaStr of furiganaArr) {
@@ -26,9 +23,9 @@ export function extractHiragana(data: VocabData): ExtractedHiragana {
 
         if (char === "[") {
           skip = true
-        } else if (char === "]" || char === " ") {
+        } else if (char === "]") {
           skip = false
-        } else if (!skip) {
+        } else if (!skip && char !== " ") {
           hiragana = char + hiragana
         }
       }
@@ -36,33 +33,101 @@ export function extractHiragana(data: VocabData): ExtractedHiragana {
       parsedFuriganaArr.push(hiragana)
     }
 
-    result[key] = parsedFuriganaArr
+    result.push(parsedFuriganaArr)
   }
-
   return result
 }
 
-type TransformedVocabData = {
-  [key: string]: {
-    hiragana: string[]
-    english: string[]
-    mnemonics: string[]
+export function furiganaToRubyText(rawData: VocabDataRaw): ExtractedTextArray {
+  const result: ExtractedTextArray = []
+
+  for (const key in rawData) {
+    const entry = rawData[key]
+    if (!entry.furigana) continue
+
+    const furiganaArr = entry.furigana
+    const rubyTextArr: string[] = []
+
+    const tempArr: string[] = []
+
+    for (const furiganaStr of furiganaArr) {
+      let rubyText = ""
+      let foundFurigana = false
+
+      for (let i = 0; i < furiganaStr.length; i++) {
+        const char = furiganaStr[i]
+
+        tempArr.push(char)
+
+        if (char === "[") {
+          foundFurigana = true
+          rubyText = rubyText + "<ruby>" + tempArr.join("") + "<rp>(</rp><rt>"
+          tempArr.length = 0
+        } else if (char === "]") {
+          rubyText += tempArr.join("") + "</rt><rp>)</rp>"
+          tempArr.length = 0
+        } else if (char === " ") {
+          rubyText += tempArr.join("")
+          tempArr.length = 0
+        }
+        if (i === furiganaStr.length - 1) {
+          if (foundFurigana) {
+            rubyText += tempArr.join("") + "</ruby>"
+            tempArr.length = 0
+          } else {
+            rubyText += tempArr.join("")
+            tempArr.length = 0
+          }
+        }
+      }
+      rubyTextArr.push(rubyText)
+    }
+    result.push(rubyTextArr.map((text) => text.replace(/[\[\] ]/g, "")))
   }
+  return result
 }
 
-export function transformVocabData(data: VocabData): TransformedVocabData {
-  const parsedHiragana = extractHiragana(data)
+type TransformedVocabEntry = {
+  furigana?: string[]
+  hiragana?: string[]
+  english?: string[]
+  mnemonics?: string[]
+  videos?: Video[]
+  rubyText?: string[]
+}
+
+type TransformedVocabData = {
+  [key: string]: TransformedVocabEntry
+}
+
+export function transformVocabData(
+  rawData: VocabDataRaw
+): TransformedVocabData {
+  const parsedHiragana = extractHiragana(rawData)
+  const parsedRubyText = furiganaToRubyText(rawData)
   const result: TransformedVocabData = {}
 
-  for (const key in data) {
-    const { english, mnemonics } = data[key]
-    const hiragana = parsedHiragana[key]
+  let index = 0
+  for (const key in rawData) {
+    const {
+      furigana = [],
+      english = [],
+      mnemonics = [],
+      videos = [],
+    } = rawData[key] // Assign an empty array as default value
+
+    const hiragana = parsedHiragana[index]
+    const rubyText = parsedRubyText[index]
 
     result[key] = {
+      furigana,
       hiragana,
       english,
       mnemonics,
+      videos,
+      rubyText,
     }
+    index++
   }
 
   return result

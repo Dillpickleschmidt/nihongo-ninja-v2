@@ -12,7 +12,10 @@ export default function page() {
     >
       <div className="w-full flex justify-center">
         <div className="relative sm:mt-12 z-[-1] w-[615px] h-[800px] rounded-2xl shadow-xl overflow-hidden">
-          <CustomImage image="/img/chapter-1/chapter-1-welcome.png" />
+          <CustomImage
+            src="/img/chapter-1/chapter-1-welcome.png"
+            alt="welcome image"
+          />
         </div>
       </div>
       <h2 className="mt-12 text-5xl font-medium leading-[3.5rem] text-center px-24">

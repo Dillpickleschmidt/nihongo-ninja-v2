@@ -1,13 +1,13 @@
 "use client"
 
 import { createContext, useContext } from "react"
-import { VocabCardProps } from "@/types/vocab"
+import { VocabData } from "@/types/vocab"
 
-type VocabCardContextProps = VocabCardProps & {
+type VocabCardContextProps = VocabData & {
   children: React.ReactNode
 }
 
-const VocabCardContext = createContext<VocabCardProps | null>(null)
+const VocabCardContext = createContext<VocabData | null>(null)
 
 export function VocabCardContextProvider({
   children,

@@ -5,6 +5,7 @@ type VocabCardProps = {
   index: number
   title?: React.ReactNode
   kana?: string
+  english?: string
   pronunciation?: string
   light?: boolean
 }
@@ -14,25 +15,30 @@ export default function VocabCard({
   index,
   title,
   kana,
+  english,
   pronunciation,
   light = false,
 }: VocabCardProps) {
   return (
     <div
-      className={`relative rounded-[30px] text-black shadow-lg shadow-black overflow-x-hidden ${
+      className={`relative rounded-[30px] text-black shadow-lg shadow-black ${
         light ? "bg-[#f7f0dd]" : "bg-[#f7e2c4]"
       }`}
     >
       <VocabVideo index={index} />
-      <div className="py-12 px-16">
-        <h3 className="font-japanese text-2xl font-bold">{title}</h3>
-        {/* <strong>Kana:</strong> <span className="font-japanese">{kana}</span> */}
-        <br />
-        {pronunciation && (
-          <>
-            <strong>Pronunciation:</strong> {pronunciation} <br />
-          </>
-        )}
+      <div className="min-h-48 py-12 px-16">
+        <h3 className="font-bold font-japanese text-2xl">
+          {/* Number */}
+          <span className="text-[1.375rem] font-japanese">
+            {`${index + 1}.`}{" "}
+          </span>
+          {/* Furigana */}
+          <span
+            dangerouslySetInnerHTML={{ __html: kana ?? "" }}
+            className="text-2xl"
+          ></span>{" "}
+          - <span className="text-[1.375rem] font-japanese">{english}</span>
+        </h3>
         {children}
       </div>
     </div>

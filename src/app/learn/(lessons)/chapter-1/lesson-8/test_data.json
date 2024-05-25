@@ -4,7 +4,7 @@
     "english": ["future"],
     "mnemonics": [
       "Think of 'shourai' as your future plans and aspirations.",
-      "A second mnemonic"
+      "A second mnemonic with all sorts of loaded information to take up lots of space. A second mnemonic with all sorts of loaded information to take up lots of space. A second mnemonic with all sorts of loaded information to take up lots of space."
     ],
     "videos": [
       {
@@ -22,7 +22,7 @@
     ],
     "videos": [
       {
-        "src": "https://example.com/video2.mp4",
+        "src": "https://drive.google.com/file/d/1DxePLe6C4qeLC7z7V6-gO4LlTThALRUc/preview",
         "title": "Dreams and Aspirations",
         "origin": "Movie Example"
       }
@@ -36,7 +36,7 @@
     ],
     "videos": [
       {
-        "src": "https://example.com/video3.mp4",
+        "src": "https://drive.google.com/file/d/1DxePLe6C4qeLC7z7V6-gO4LlTThALRUc/preview",
         "title": "Festivals in Japan",
         "origin": "Documentary Example"
       }
@@ -50,7 +50,7 @@
     ],
     "videos": [
       {
-        "src": "https://example.com/video4.mp4",
+        "src": "https://drive.google.com/file/d/1DxePLe6C4qeLC7z7V6-gO4LlTThALRUc/preview",
         "title": "Japanese New Year",
         "origin": "TV Show Example"
       }
@@ -62,7 +62,7 @@
     "mnemonics": ["Think of 'okashi' as delicious snacks or sweets to enjoy."],
     "videos": [
       {
-        "src": "https://example.com/video5.mp4",
+        "src": "https://drive.google.com/file/d/1DxePLe6C4qeLC7z7V6-gO4LlTThALRUc/preview",
         "title": "Japanese Snacks",
         "origin": "YouTube Example"
       }

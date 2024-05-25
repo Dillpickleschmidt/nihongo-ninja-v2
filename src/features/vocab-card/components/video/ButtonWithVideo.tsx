@@ -6,7 +6,7 @@ type ButtonWithVideoProps = {
   index: number
   src: string
   title: string
-  expandedVideo: number | null
+  showVideo: number | null
   loadingStates: boolean[]
   handleShow: (index: number) => void
   handleHide: () => void
@@ -17,7 +17,7 @@ export function ButtonWithVideo({
   index,
   src,
   title,
-  expandedVideo,
+  showVideo,
   loadingStates,
   handleShow,
   handleHide,
@@ -28,28 +28,27 @@ export function ButtonWithVideo({
       variant="ghost"
       onClick={() => handleShow(index)}
       className={`${
-        expandedVideo !== index && "relative"
-      } float-end mt-4 mr-4 w-48 h-28 rounded-2xl overflow-hidden`}
+        showVideo !== index && "relative"
+      } float-end mt-6 mx-6 w-56 h-36`}
     >
       {/* Fallback loading state */}
-      {loadingStates[index] && expandedVideo !== index && <LoadingOverlay />}
+      {loadingStates[index] && showVideo !== index && (
+        <div className="absolute inset-0 bg-white"></div>
+      )}
       <div // Video content
         className={`absolute inset-0 transition-opacity duration-300`}
       >
-        <div className="relative w-full h-0 pb-[56.25%]">
-          <iframe
-            src={src}
-            title={title}
-            allow="autoplay; fullscreen"
-            onLoad={() => handleLoaded(index)}
-            className={`absolute top-0 left-0 w-full h-full
-            ${expandedVideo !== index && "pointer-events-none"}
+        <iframe
+          src={src}
+          title={title}
+          allow="autoplay; fullscreen"
+          onLoad={() => handleLoaded(index)}
+          className={`absolute top-0 left-0 w-full h-full
+            ${showVideo !== index && "pointer-events-none"}
             `}
-          />
-        </div>
-        {expandedVideo === index && (
+        />
+        {showVideo === index && (
           <>
-            <div className="absolute top-0 right-0 mt-3 mr-3 w-[41px] h-[41px] backdrop-blur-sm cursor-default" />
             <Button
               onClick={(e) => {
                 e.stopPropagation() // Prevent parent onClick from firing

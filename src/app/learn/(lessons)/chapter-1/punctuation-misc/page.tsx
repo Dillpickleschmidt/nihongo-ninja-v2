@@ -7,7 +7,7 @@ export default function page() {
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-1/vocab"
+      nextPageLink="/learn/chapter-1/vocab-list"
     >
       <h1 className="pt-28 text-[2rem] font-medium leading-[2.875rem] text-center px-20">
         Just When You Thought It Was Safe...{" "}
@@ -31,7 +31,7 @@ export default function page() {
       </h2>
       <div className="sm:px-24 px-16 space-y-9">
         <div className="mr-[5.75rem] mt-9 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
-          <PortraitIcon image="/img/student.png" />
+          <PortraitIcon src="/img/student.png" />
           <p>
             Sensei, I've been learning about Hiragana, but I have some questions
             about other parts of Japanese writing. What can you tell me about
@@ -39,7 +39,7 @@ export default function page() {
           </p>
         </div>
         <div className="ml-24 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
-          <PortraitIcon image="/img/guru.png" className="float-end" />
+          <PortraitIcon src="/img/guru.png" className="float-end" />
           <p>
             Ah, inquisitive mind, Japanese is a language of simplicity in some
             aspects. Unlike English, Japanese does not distinguish between
@@ -51,11 +51,11 @@ export default function page() {
           Punctuation
         </h2>
         <div className="mr-[5.75rem] mt-9 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
-          <PortraitIcon image="/img/student.png" />
+          <PortraitIcon src="/img/student.png" />
           <p>What about punctuation, like question marks and periods?</p>
         </div>
         <div className="ml-24 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
-          <PortraitIcon image="/img/guru.png" className="float-end" />
+          <PortraitIcon src="/img/guru.png" className="float-end" />
           <p>
             Ah, punctuation—the tiny marks that guide our understanding. In
             Japanese, we do use question marks and periods, but their usage can
@@ -78,11 +78,11 @@ export default function page() {
           I'll have to get used to that.
         </p>
         <div className="mr-[5.75rem] mt-9 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
-          <PortraitIcon image="/img/student.png" />
+          <PortraitIcon src="/img/student.png" />
           <p>So, what about periods? Surely, they use those... right Sensei?</p>
         </div>
         <div className="ml-24 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
-          <PortraitIcon image="/img/guru.png" className="float-end" />
+          <PortraitIcon src="/img/guru.png" className="float-end" />
           <p>
             Indeed, young grasshopper. The humble period (。) in Japanese is
             called “句点” (kuten). It's used at the end of a sentence, just like
@@ -94,13 +94,13 @@ export default function page() {
           No Spaces!
         </h2>
         <div className="mr-[5.75rem] mt-9 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
-          <PortraitIcon image="/img/student.png" />
+          <PortraitIcon src="/img/student.png" />
           <p>
             Do Japanese sentences have spaces between words like in English?
           </p>
         </div>
         <div className="ml-24 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
-          <PortraitIcon image="/img/guru.png" className="float-end" />
+          <PortraitIcon src="/img/guru.png" className="float-end" />
           <p>
             Ah, spaces, or rather the absence of them, is a unique feature of
             Japanese. In traditional Japanese writing, spaces are not used

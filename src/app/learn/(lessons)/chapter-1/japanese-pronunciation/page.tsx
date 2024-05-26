@@ -8,7 +8,7 @@ export default function page() {
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-1/lesson-2"
+      nextPageLink="/learn/chapter-1/writing-systems"
     >
       <div className="w-full flex justify-center">
         <div className="relative sm:mt-12 z-[-1] w-[615px] h-[800px] rounded-2xl shadow-xl overflow-hidden">
@@ -29,14 +29,14 @@ export default function page() {
       <div className="sm:px-24 px-16 [&>*]:my-6">
         <div className="pt-2 pb-4 [&>*]:my-6">
           <div className="mr-[5.75rem] rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
-            <PortraitIcon image="/img/student.png" />
+            <PortraitIcon src="/img/student.png" />
             <p>
               Wise Sensei, I want to learn Japanese. I heard that the sounds are
               similar to English. Is that true?
             </p>
           </div>
           <div className="ml-24 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
-            <PortraitIcon image="/img/guru.png" className="float-end" />
+            <PortraitIcon src="/img/guru.png" className="float-end" />
             <p>
               Ah, young eager one, your ears are keen. Indeed, many Japanese
               sounds are quite familiar to English speakers. For instance, 'ko'
@@ -98,7 +98,7 @@ export default function page() {
             *Note the rounded shapes of Hiragana characters.*
           </p>
           <div className="my-6 ml-6 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
-            <PortraitIcon image="/img/guru.png" className="float-end ml-2" />
+            <PortraitIcon src="/img/guru.png" className="float-end ml-2" />
             <p>
               These vowels form the essence of the Japanese phonetic system.
               Everything else is just a combination of these vowels with

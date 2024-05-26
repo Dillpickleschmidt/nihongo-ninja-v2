@@ -2,11 +2,11 @@ import CustomImage from "./CustomImage"
 import { twMerge } from "tailwind-merge"
 
 type PortraitIconProps = {
-  image: string
+  src: string
   className?: string
 }
 
-export default function PortraitIcon({ image, className }: PortraitIconProps) {
+export default function PortraitIcon({ src, className }: PortraitIconProps) {
   return (
     <div
       className={twMerge(
@@ -14,7 +14,7 @@ export default function PortraitIcon({ image, className }: PortraitIconProps) {
         className
       )}
     >
-      <CustomImage src={image} alt="portrait icon" />
+      <CustomImage src={src} alt="portrait icon" />
     </div>
   )
 }

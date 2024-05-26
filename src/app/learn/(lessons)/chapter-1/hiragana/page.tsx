@@ -13,7 +13,7 @@ export default function page() {
     >
       <div className="w-full flex justify-center">
         <div className="relative mt-24 h-64 w-64">
-          <CustomImage image="/img/chapter-1/あ.png" />
+          <CustomImage src="/img/chapter-1/あ.png" alt="あ image" />
         </div>
       </div>
       <h1 className="mt-12 text-6xl font-bold leading-[3.5rem] mx-24 text-center">
@@ -107,7 +107,7 @@ export default function page() {
         </div>
         <div className="py-2 [&>*]:my-6">
           <div className="mr-24 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
-            <PortraitIcon image="/img/student.png" />
+            <PortraitIcon src="/img/student.png" />
             <p>
               But wait, <span className="font-japanese">し</span> sounds like
               'she' instead of 'see'! And what about{" "}
@@ -115,7 +115,7 @@ export default function page() {
             </p>
           </div>
           <div className="ml-24 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
-            <PortraitIcon image="/img/guru.png" className="float-end" />
+            <PortraitIcon src="/img/guru.png" className="float-end" />
             <p>
               Excellent observation, young apprentice. Some characters do veer{" "}
               <em>slightly</em> off the pattern, but they're nothing that you
@@ -208,7 +208,7 @@ export default function page() {
         </p>
         <div className="mt-4 w-full flex justify-center">
           <PortraitIcon
-            image="/img/chapter-1/shocked-child.png"
+            src="/img/chapter-1/shocked-child.png"
             className="border-none w-16 h-16 bg-inherit"
           />
         </div>
@@ -224,7 +224,7 @@ export default function page() {
             </em>
           </p>
           <div className="mt-4 w-full flex justify-center">
-            <PortraitIcon image="/img/guru.png" className="border-none" />
+            <PortraitIcon src="/img/guru.png" className="border-none" />
           </div>
         </div>
       </div>

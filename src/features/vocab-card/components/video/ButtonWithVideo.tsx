@@ -32,11 +32,9 @@ export function ButtonWithVideo({
       } float-end mt-6 mx-6 w-56 h-36`}
     >
       {/* Fallback loading state */}
-      {loadingStates[index] && showVideo !== index && (
-        <div className="absolute inset-0 bg-white"></div>
-      )}
+      {loadingStates[index] && showVideo !== index && <LoadingOverlay />}
       <div // Video content
-        className={`absolute inset-0 transition-opacity duration-300`}
+        className={`absolute inset-0`}
       >
         <iframe
           src={src}

@@ -76,7 +76,7 @@ export default function ContentBox({
             {showProgressBar && (
               <m.div
                 style={{ scaleX: scaleX }}
-                className="sticky top-[-64.5px] mt-[-64.5px] mb-[64.5px] h-1 w-full origin-left bg-green-400"
+                className="sticky z-50 top-[-1px] -mb-[0.1625rem] h-[0.1625rem] w-full origin-left bg-indigo-600 dark:bg-green-500"
               ></m.div>
             )}
             {children}
@@ -87,6 +87,12 @@ export default function ContentBox({
         ) : (
           // Otherwise, just render this html
           <div>
+            {showProgressBar && (
+              <m.div
+                style={{ scaleX: scaleX }}
+                className="sticky z-50 top-[-1px] -mb-[0.1625rem] h-[0.1625rem] w-full origin-left bg-indigo-600 dark:bg-green-500"
+              ></m.div>
+            )}
             {children}
             <div className="mt-24 pb-16 mx-12 flex flex-row justify-end">
               {nextButton}

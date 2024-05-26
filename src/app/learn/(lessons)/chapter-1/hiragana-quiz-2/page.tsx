@@ -5,7 +5,7 @@ export default function page() {
   return (
     <KanaQuiz
       kana={tenten}
-      nextLesson="/learn/chapter-1/lesson-5"
+      nextLesson="/learn/chapter-1/contracted-sounds"
       title="Hiragana Quiz 2"
     />
   )

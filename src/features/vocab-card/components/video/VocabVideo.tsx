@@ -15,6 +15,11 @@ export default function VocabVideo({ index }: VocabVideoProps) {
   // vocabEntries[index][1] = value = { english: [], kana: [], mnemonics: [], videos: [] }
   const entry = vocabEntries[index] ? vocabEntries[index][1] : null
 
+  // Check if entry or videos array is null or empty
+  if (!entry || !entry.videos || entry.videos.length === 0) {
+    return null
+  }
+
   //[0] is the first video
   const src: string = entry?.videos?.[0]?.src ?? ""
   const title: string = entry?.videos?.[0]?.title ?? ""

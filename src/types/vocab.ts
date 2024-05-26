@@ -6,6 +6,7 @@ export type Video = {
 export type VocabEntry = {
   furigana?: string[]
   english?: string[]
+  info?: string[]
   mnemonics?: string[]
   videos?: Video[]
 }

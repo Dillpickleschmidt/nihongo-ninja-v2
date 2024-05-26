@@ -10,43 +10,67 @@ export function ChapterBoxes() {
         <UnitButton id="1." type="preview" link="/learn/chapter-1/welcome">
           Welcome!
         </UnitButton>
-        <UnitButton id="2." type="lesson" link="/learn/chapter-1/lesson-1">
+        <UnitButton
+          id="2."
+          type="lesson"
+          link="/learn/chapter-1/japanese-pronunciation"
+        >
           Japanese Pronunciation
         </UnitButton>
-        <UnitButton id="3." type="lesson" link="/learn/chapter-1/lesson-2">
+        <UnitButton
+          id="3."
+          type="lesson"
+          link="/learn/chapter-1/writing-systems"
+        >
           Writing Systems
         </UnitButton>
-        <UnitButton id="4." type="lesson" link="/learn/chapter-1/lesson-3">
+        <UnitButton id="4." type="lesson" link="/learn/chapter-1/hiragana">
           Hiragana
         </UnitButton>
         <UnitButton id="5." type="quiz" link="/learn/chapter-1/hiragana-quiz-1">
           Hiragana Quiz 1
         </UnitButton>
-        <UnitButton id="6." type="lesson" link="/learn/chapter-1/lesson-4">
+        <UnitButton
+          id="6."
+          type="lesson"
+          link="/learn/chapter-1/dakuten-handakuten"
+        >
           Dakuten & Handakuten
         </UnitButton>
         <UnitButton id="7." type="quiz" link="/learn/chapter-1/hiragana-quiz-2">
           Hiragana Quiz 2
         </UnitButton>
-        <UnitButton id="8." type="lesson" link="/learn/chapter-1/lesson-5">
+        <UnitButton
+          id="8."
+          type="lesson"
+          link="/learn/chapter-1/contracted-sounds"
+        >
           Contracted Sounds
         </UnitButton>
         <UnitButton id="9." type="quiz" link="/learn/chapter-1/hiragana-quiz-3">
           Hiragana Quiz 3
         </UnitButton>
-        <UnitButton id="10." type="lesson" link="/learn/chapter-1/lesson-6">
+        <UnitButton
+          id="10."
+          type="lesson"
+          link="/learn/chapter-1/long-vowels-double-consonants"
+        >
           Long Vowels & Double Consonants
         </UnitButton>
         <UnitButton id="11." type="quiz" link="/learn/chapter-1/hiragana-test">
           Hiragana Final Quiz
         </UnitButton>
-        <UnitButton id="12." type="quiz" link="/learn/chapter-1/lesson-7">
+        <UnitButton
+          id="12."
+          type="quiz"
+          link="/learn/chapter-1/punctuation-misc"
+        >
           Punctuation and Misc.
         </UnitButton>
-        <UnitButton id="13." type="vocab-list">
+        <UnitButton id="13." type="vocab-list" link="vocab-list">
           Chapter 1 - All Vocab
         </UnitButton>
-        <UnitButton id="14." type="lesson">
+        <UnitButton id="14." type="lesson" link="greetings">
           Greetings
         </UnitButton>
         <UnitButton id="15." type="quiz">

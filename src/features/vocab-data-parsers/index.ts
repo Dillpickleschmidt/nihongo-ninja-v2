@@ -1,4 +1,4 @@
-import { VocabData, Video } from "@/types/vocab"
+import { VocabData, VocabEntry } from "@/types/vocab"
 
 type ExtractedTextArray = string[][]
 
@@ -87,12 +87,8 @@ export function furiganaToRubyText(rawData: VocabDataRaw): ExtractedTextArray {
   return result
 }
 
-type TransformedVocabEntry = {
-  furigana?: string[]
+type TransformedVocabEntry = VocabEntry & {
   hiragana?: string[]
-  english?: string[]
-  mnemonics?: string[]
-  videos?: Video[]
   rubyText?: string[]
 }
 
@@ -112,6 +108,7 @@ export function transformVocabData(
     const {
       furigana = [],
       english = [],
+      info = [],
       mnemonics = [],
       videos = [],
     } = rawData[key] // Assign an empty array as default value
@@ -123,6 +120,7 @@ export function transformVocabData(
       furigana,
       hiragana,
       english,
+      info,
       mnemonics,
       videos,
       rubyText,

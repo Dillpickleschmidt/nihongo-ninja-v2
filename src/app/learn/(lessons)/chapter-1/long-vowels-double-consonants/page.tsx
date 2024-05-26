@@ -256,7 +256,7 @@ export default function page() {
             </em>
           </p>
           <div className="mt-8 w-full flex justify-center">
-            <PortraitIcon image="/img/guru.png" className="border-none" />
+            <PortraitIcon src="/img/guru.png" className="border-none" />
           </div>
         </div>
       </div>

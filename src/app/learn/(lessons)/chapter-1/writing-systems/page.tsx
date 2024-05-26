@@ -8,24 +8,27 @@ export default function page() {
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-1/lesson-3"
+      nextPageLink="/learn/chapter-1/hiragana"
     >
       <div className="relative w-full h-48 -mt-2 border-b border-black">
-        <CustomImage image="/img/chapter-1/brushes.jpg" />
+        <CustomImage
+          src="/img/chapter-1/brushes.jpg"
+          alt="japanese brushstrokes"
+        />
       </div>
       <h2 className="pb-14 mt-24 text-5xl font-medium px-24">
         Let's take a closer look at the Japanese writing systems.
       </h2>
       <div className="sm:px-24 px-16 space-y-9">
         <div className="mr-24 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
-          <PortraitIcon image="/img/student.png" />
+          <PortraitIcon src="/img/student.png" />
           <p>
             Wise Monk, I've heard that Japanese has three writing systems. Is
             that really true?
           </p>
         </div>
         <div className="ml-24 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
-          <PortraitIcon image="/img/guru.png" className="float-end" />
+          <PortraitIcon src="/img/guru.png" className="float-end" />
           <p>
             <span className="text-xl">Ah</span>, young grasshopper, your
             curiosity is like a blossoming sakura tree.{" "}
@@ -92,7 +95,10 @@ export default function page() {
           </p>
           <div className="w-full flex justify-center">
             <div className="relative w-10 h-10">
-              <CustomImage image="/img/chapter-1/stones-smooth.png" />
+              <CustomImage
+                src="/img/chapter-1/stones-smooth.png"
+                alt="smooth stones"
+              />
             </div>
           </div>
           <p>
@@ -128,7 +134,10 @@ export default function page() {
           </p>
           <div className="w-full flex justify-center">
             <div className="relative w-10 h-10 rounded-full">
-              <CustomImage image="/img/chapter-1/katana-leafs.png" />
+              <CustomImage
+                src="/img/chapter-1/katana-leafs.png"
+                alt="kanata-sword-icon"
+              />
             </div>
           </div>
           <p>
@@ -193,11 +202,11 @@ export default function page() {
             Bonus - <span className="font-normal">Romaji</span>
           </h2>
           <div className="mr-24 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
-            <PortraitIcon image="/img/student.png" />
+            <PortraitIcon src="/img/student.png" />
             <p>Sensei, I've seen Romaji used a lot. What exactly is it?</p>
           </div>
           <div className="ml-24 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
-            <PortraitIcon image="/img/guru.png" className="float-end" />
+            <PortraitIcon src="/img/guru.png" className="float-end" />
             <p>
               Romaji is the use of Latin alphabet letters to represent Japanese
               sounds. It serves as a bridge for those who are just beginning

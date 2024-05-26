@@ -1,0 +1,59 @@
+{
+  "おはようございます": {
+    "furigana": ["おはようございます"],
+    "english": ["Good Morning"],
+    "mnemonics": [],
+    "info": [
+      "This is a polite way to say good morning and is typically used until late morning.",
+      "Drop 'ございます' for a more casual version, just 'おはよう (Ohayou)'.",
+      "The casual version, 'おはよう' is often used among friends, family, or colleagues you're familiar with.",
+      "The polite form 'おはようございます' is suitable for more formal situations or when addressing someone you don't know well.",
+      "It's a common greeting in schools, workplaces, or when doing morning activities.",
+      "As a rule of thumb, drop ございます when you're on a first-name basis with someone (friends and family).",
+      "If you refer to that person as Mr./Ms., use the longer ございます version."
+    ],
+    "videos": [
+      {
+        "src": "https://drive.google.com/file/d/1DxePLe6C4qeLC7z7V6-gO4LlTThALRUc/preview",
+        "title": "Future Plans",
+        "origin": "TV Show Example"
+      }
+    ]
+  },
+  "こんにちは": {
+    "furigana": ["こんにちは"],
+    "english": ["Good Afternoon", "Hello"],
+    "mnemonics": [],
+    "info": [
+      "This is the most versatile and common greeting in Japanese.",
+      "It's used from late morning (around 11 am) until early evening (around 5-6 pm).",
+      "It's akin to saying 'Good afternoon' or a general 'Hello' in English.",
+      "You'll hear this greeting in a wide range of settings, from casual encounters to more formal situations.",
+      "It's a safe, go-to greeting for most daytime interactions."
+    ],
+    "videos": []
+  },
+  "こんばんは": {
+    "furigana": ["こんばんは"],
+    "english": ["Good Evening"],
+    "mnemonics": [],
+    "info": [
+      "Used in the evening, starting around dusk.",
+      "It's a polite greeting that's appropriate in both casual and formal situations.",
+      "Whether you're entering a restaurant in the evening, meeting someone for a night event, or just greeting your neighbor, 'こんばんは' is the suitable choice."
+    ],
+    "videos": []
+  },
+  "じゃあね": {
+    "furigana": ["じゃあね"],
+    "english": ["See you", "Bye"],
+    "mnemonics": [],
+    "info": [
+      "This phrase is casual and friendly, often used among friends, family, or close colleagues.",
+      "It's equivalent to saying 'See you', 'Bye', or 'Catch you later' in English.",
+      "It implies an informal and easy-going parting, often when you expect to see the person again soon.",
+      "It's perfect for everyday casual farewells, like when leaving a café after meeting a friend or saying goodbye at the end of a school or work day."
+    ],
+    "videos": []
+  }
+}

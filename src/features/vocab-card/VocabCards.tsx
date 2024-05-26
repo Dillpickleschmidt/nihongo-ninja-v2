@@ -10,7 +10,6 @@ export default function VocabCards({ data }: VocabData) {
   }))
 
   const rubyText = furiganaToRubyText(data)
-  console.log(rubyText)
 
   return (
     <VocabCardContextProvider data={data}>

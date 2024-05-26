@@ -1,6 +1,6 @@
 import ContentBox from "@/components/ContentBox"
 import VocabCards from "@/features/vocab-card/VocabCards"
-import data from "./test_data.json"
+import data from "@/data/chapter-1/test_data.json"
 import {
   extractHiragana,
   transformVocabData,

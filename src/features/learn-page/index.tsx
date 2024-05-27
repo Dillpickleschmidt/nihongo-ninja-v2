@@ -67,10 +67,14 @@ export function ChapterBoxes() {
         >
           Punctuation and Misc.
         </UnitButton>
-        <UnitButton id="13." type="vocab-list" link="vocab-list">
+        <UnitButton
+          id="13."
+          type="vocab-list"
+          link="learn/chapter-1/vocab-list"
+        >
           Chapter 1 - All Vocab
         </UnitButton>
-        <UnitButton id="14." type="lesson" link="greetings">
+        <UnitButton id="14." type="lesson" link="learn/chapter-1/greetings">
           Greetings
         </UnitButton>
         <UnitButton id="15." type="quiz">

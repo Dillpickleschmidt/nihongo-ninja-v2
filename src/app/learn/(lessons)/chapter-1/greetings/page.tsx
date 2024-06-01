@@ -1,7 +1,7 @@
 import ContentBox from "@/components/ContentBox"
 import VocabCards from "@/features/vocab-card/VocabCards"
-import data1 from "@/data/chapter-1/lesson-8-1.json"
-import data2 from "@/data/chapter-1/lesson-8-2.json"
+import data1 from "@/data/chapter-1/greetings-1.json"
+import data2 from "@/data/chapter-1/greetings-2.json"
 import SelectText from "@/components/text/MultipleChoiceText"
 
 export default function page() {
@@ -100,7 +100,7 @@ export default function page() {
           way to say good morning.
         </p>
         <SelectText answer="False" a="True" b="False" />
-        <p>
+        {/* <p>
           You are leaving a business meeting. How do you say goodbye to your
           colleagues?
         </p>
@@ -110,7 +110,7 @@ export default function page() {
           b="じゃあね"
           c="またね"
           d="ありがとう"
-        />
+        /> */}
       </div>
     </ContentBox>
   )

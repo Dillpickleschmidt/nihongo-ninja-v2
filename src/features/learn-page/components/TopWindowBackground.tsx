@@ -14,7 +14,7 @@ export default function TopWindowBackground({
           src="/img/japanese-gate.png"
           alt="Japanese gate homescreen image"
           priority={true}
-          className="bg-background hover:scale-[102%] ease-in-out duration-300"
+          className="bg-background hover:scale-[101%] ease-in-out duration-300"
         >
           {/* Vignette */}
           <div className="absolute w-full h-full bg-[radial-gradient(50%_120%_at_50%_50%,rgba(0,0,0,0.0)_30%,rgba(0,0,0,0.2)_100%)]"></div>

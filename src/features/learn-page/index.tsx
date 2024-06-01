@@ -6,7 +6,7 @@ import TopWindowAnimations from "./components/TopWindowAnimations"
 export function ChapterBoxes() {
   return (
     <>
-      <ChapterBox text="Chapter 1" className="bg-red-600 saturate-50">
+      <ChapterBox text="Chapter 1" className="bg-[#f83333] saturate-50">
         <UnitButton id="1." type="preview" link="/learn/chapter-1/welcome">
           Welcome!
         </UnitButton>
@@ -70,29 +70,45 @@ export function ChapterBoxes() {
         <UnitButton
           id="13."
           type="vocab-list"
-          link="learn/chapter-1/vocab-list"
+          link="/learn/chapter-1/vocab-list"
         >
           Chapter 1 - All Vocab
         </UnitButton>
-        <UnitButton id="14." type="lesson" link="learn/chapter-1/greetings">
+        <UnitButton id="14." type="lesson" link="/learn/chapter-1/greetings">
           Greetings
         </UnitButton>
-        <UnitButton id="15." type="quiz">
+        <UnitButton id="15." type="quiz" link="/learn/chapter-1/greetings-quiz">
           Greetings Quiz
         </UnitButton>
-        <UnitButton id="16." type="lesson">
+        <UnitButton
+          id="16."
+          type="lesson"
+          link="/learn/chapter-1/common-phrases"
+        >
           Common Phrases
         </UnitButton>
-        <UnitButton id="17." type="lesson">
+        <UnitButton id="17." type="lesson" link="/learn/chapter-1/numbers">
           Numbers
         </UnitButton>
-        <UnitButton id="18." type="vocab-list">
+        <UnitButton
+          id="18."
+          type="vocab-list"
+          link="/learn/chapter-1/numbers-1-100"
+        >
           Numbers 1-100
         </UnitButton>
-        <UnitButton id="19." type="quiz">
+        <UnitButton
+          id="19."
+          type="quiz"
+          link="/learn/chapter-1/practice-numbers-0-10"
+        >
           Practice Numbers 0-10
         </UnitButton>
-        <UnitButton id="20." type="quiz">
+        <UnitButton
+          id="20."
+          type="quiz"
+          link="/learn/chapter-1/practice-numbers-11-100"
+        >
           Practice Numbers 11-100
         </UnitButton>
       </ChapterBox>

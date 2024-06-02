@@ -7,8 +7,19 @@ import Link from "next/link"
 type UnitButtonProps = {
   children: React.ReactNode
   id: string
-  type?: "lesson" | "quiz" | "preview" | "vocab-list" | "learn-vocab"
+  type?:
+    | "lesson"
+    | "quiz"
+    | "culture-note"
+    | "vocab-list"
+    | "practice"
+    | "game"
+    | "video"
+    | "audio"
+    | "grammar-notes"
+    | "reading"
   link?: string
+  disabled?: boolean
 }
 
 export default function UnitButton({
@@ -16,6 +27,7 @@ export default function UnitButton({
   id,
   type,
   link,
+  disabled,
 }: UnitButtonProps) {
   const { setShowNavbar, setFromLearnPage } = useGlobalContext()
 
@@ -24,11 +36,12 @@ export default function UnitButton({
       <Link href={link ? link : ""}>
         <Button
           variant="outline"
-          className="w-full h-full font-normal overflow-x-scroll overflow-y-hidden scrollbar:hidden justify-between py-[.75rem] px-6 text-sm"
+          className="relative w-full h-full font-normal overflow-x-scroll overflow-y-hidden scrollbar:hidden justify-between py-[.75rem] px-6 text-sm"
           onClick={() => {
             setFromLearnPage(true)
             setShowNavbar(false)
           }}
+          disabled={disabled}
         >
           <UnitButtonContents id={id} type={type}>
             {children}

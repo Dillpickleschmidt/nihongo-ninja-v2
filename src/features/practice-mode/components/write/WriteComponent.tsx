@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useMemo, useState, useRef } from "react"
 import { usePracticeModeContext } from "../../context/PracticeModeContext"
 import { handleWrittenAnswer, presentWriteOptions } from "./write"
 import { Input } from "@/components/ui/input"
@@ -29,11 +29,18 @@ export default function WriteComponent({
     [data, currentCardIndex]
   )
   const [userAnswer, setUserAnswer] = useState<string>("")
+  const inputRef = useRef<HTMLInputElement | null>(null)
 
   useEffect(() => {
     setCorrectEntry(correctEntry)
     setUserAnswer("")
   }, [correctEntry])
+
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus()
+    }
+  }, [hasUserAnswered])
 
   const handleInput = (userAnswer: string) => {
     setIsAnswerCorrect(
@@ -54,8 +61,16 @@ export default function WriteComponent({
     <div className="mt-4">
       <label>{!hasUserAnswered && "Type your answer"}</label>
       <Input
+        ref={inputRef}
         value={userAnswer}
         onChange={(e) => setUserAnswer(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" && !hasUserAnswered) {
+            e.preventDefault()
+            handleInput(userAnswer)
+          }
+        }}
+        autoFocus
         disabled={hasUserAnswered}
         className={`${
           hasUserAnswered &&

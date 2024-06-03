@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { usePracticeModeContext } from "../../context/PracticeModeContext"
 import { Button } from "@/components/ui/button"
 import { CardObject } from "@/types"
@@ -33,6 +33,7 @@ export default function PracticePage({
     recentlySeenCards,
     setRecentlySeenCards,
   } = usePracticeModeContext()
+  const buttonRef = useRef<HTMLButtonElement | null>(null)
 
   useEffect(() => {
     console.log("Now practicing deck " + deckId)
@@ -44,9 +45,15 @@ export default function PracticePage({
     }
   }, [recentlySeenCards, setCurrentPage])
 
+  useEffect(() => {
+    if (buttonRef.current) {
+      buttonRef.current.focus()
+    }
+  }, [hasUserAnswered])
+
   return (
     <div className="w-full flex justify-center">
-      <div className="mt-56 xl:w-[50%] lg:w-[70%] w-[80%]">
+      <div className="mt-56 xl:w-[54%] lg:w-[70%] w-[80%]">
         {/* <h1 className="text-3xl text-center font-black">
           Deck {deckId} Learning Page
         </h1> */}
@@ -58,6 +65,7 @@ export default function PracticePage({
       </div>
       {hasUserAnswered && (
         <Button
+          ref={buttonRef}
           size="lg"
           onClick={() =>
             handleNextQuestion(

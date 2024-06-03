@@ -2,7 +2,7 @@
 
 import { useEffect } from "react"
 import CustomImage from "@/components/CustomImage"
-import data from "@/data/chapter-1/greetings-quiz.json"
+import data from "@/data/chapter-0/greetings-quiz.json"
 import { presentPictureQuestion } from "./picture-quiz"
 import { usePictureQuizContext } from "../context/PictureQuizContext"
 

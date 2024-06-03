@@ -9,7 +9,7 @@ export default function page() {
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-0/hiragana-quiz-1"
+      nextPageLink="/learn/chapter-0/hiragana-quiz"
     >
       <div className="w-full flex justify-center">
         <div className="relative mt-24 h-64 w-64">

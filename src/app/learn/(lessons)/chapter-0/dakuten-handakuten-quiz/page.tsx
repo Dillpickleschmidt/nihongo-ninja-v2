@@ -6,7 +6,7 @@ export default function page() {
     <KanaQuiz
       kana={tenten}
       nextLesson="/learn/chapter-0/contracted-sounds"
-      title="Hiragana Quiz 2"
+      title="Dakuten & Handakuten Quiz"
     />
   )
 }

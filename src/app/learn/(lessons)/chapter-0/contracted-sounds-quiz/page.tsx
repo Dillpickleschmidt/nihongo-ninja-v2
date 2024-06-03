@@ -6,7 +6,7 @@ export default function page() {
     <KanaQuiz
       kana={yoon}
       nextLesson="/learn/chapter-0/long-vowels-double-consonants"
-      title="Hiragana Quiz 3"
+      title="Contracted Sounds Quiz"
     />
   )
 }

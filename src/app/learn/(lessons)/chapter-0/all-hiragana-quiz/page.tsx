@@ -6,7 +6,7 @@ export default function page() {
     <KanaQuiz
       kana={allKana}
       nextLesson="/learn/chapter-0/punctuation-misc"
-      title="All Hiragana Test"
+      title="All Hiragana Quiz"
     />
   )
 }

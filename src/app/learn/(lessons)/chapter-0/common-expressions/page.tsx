@@ -1,7 +1,7 @@
 import ContentBox from "@/components/ContentBox"
 import SelectText from "@/components/text/MultipleChoiceText"
-import data1 from "@/data/chapter-1/common-phrases-1.json"
-import data2 from "@/data/chapter-1/common-phrases-2.json"
+import data1 from "@/data/chapter-0/common-phrases-1.json"
+import data2 from "@/data/chapter-0/common-phrases-2.json"
 import VocabCards from "@/features/vocab-card/VocabCards"
 
 export default function page() {
@@ -10,7 +10,7 @@ export default function page() {
       // backgroundImage="/img/dust-splatter-1.png"
       // backgroundImageSize="1215px"
       // backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-1/numbers"
+      nextPageLink="/learn/chapter-0/numbers"
     >
       <h1 className="pt-28 px-28 pb-6 text-3xl">
         Now that you're familiar with the basics, let's dive into some common

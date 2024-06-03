@@ -5,7 +5,7 @@ export default function page() {
   return (
     <KanaQuiz
       kana={yoon}
-      nextLesson="/learn/chapter-1/long-vowels-double-consonants"
+      nextLesson="/learn/chapter-0/long-vowels-double-consonants"
       title="Hiragana Quiz 3"
     />
   )

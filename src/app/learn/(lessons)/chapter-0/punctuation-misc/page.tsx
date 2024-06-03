@@ -7,7 +7,7 @@ export default function page() {
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-1/vocab-list"
+      nextPageLink="/learn/chapter-0/vocab-list"
     >
       <h1 className="pt-28 text-[2rem] font-medium leading-[2.875rem] text-center px-20">
         Just When You Thought It Was Safe...{" "}

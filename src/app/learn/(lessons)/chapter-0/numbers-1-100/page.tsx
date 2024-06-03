@@ -11,7 +11,7 @@ export default function page() {
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-1/practice-numbers-0-10"
+      nextPageLink="/learn/chapter-0/practice-numbers-0-10"
       showProgressBar={false}
     >
       <h1 className="pt-20 mb-8 text-4xl font-medium leading-[3.25rem] text-center px-20">

@@ -8,11 +8,11 @@ export default function page() {
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-1/hiragana"
+      nextPageLink="/learn/chapter-0/hiragana"
     >
       <div className="relative w-full h-48 -mt-2 border-b border-black">
         <CustomImage
-          src="/img/chapter-1/brushes.jpg"
+          src="/img/chapter-0/brushes.jpg"
           alt="japanese brushstrokes"
         />
       </div>
@@ -96,7 +96,7 @@ export default function page() {
           <div className="w-full flex justify-center">
             <div className="relative w-10 h-10">
               <CustomImage
-                src="/img/chapter-1/stones-smooth.png"
+                src="/img/chapter-0/stones-smooth.png"
                 alt="smooth stones"
               />
             </div>
@@ -135,7 +135,7 @@ export default function page() {
           <div className="w-full flex justify-center">
             <div className="relative w-10 h-10 rounded-full">
               <CustomImage
-                src="/img/chapter-1/katana-leafs.png"
+                src="/img/chapter-0/katana-leafs.png"
                 alt="kanata-sword-icon"
               />
             </div>

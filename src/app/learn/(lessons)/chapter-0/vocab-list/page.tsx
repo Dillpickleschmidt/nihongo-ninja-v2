@@ -9,7 +9,7 @@ export default function Numbers() {
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-1/greetings"
+      nextPageLink="/learn/chapter-0/greetings"
     >
       <div className="pb-20">
         <h1 className="pt-28 pb-6 text-4xl font-medium leading-[3.25rem] text-center px-20">

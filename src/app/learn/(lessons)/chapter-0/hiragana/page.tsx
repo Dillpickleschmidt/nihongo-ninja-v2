@@ -9,11 +9,11 @@ export default function page() {
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-1/hiragana-quiz-1"
+      nextPageLink="/learn/chapter-0/hiragana-quiz-1"
     >
       <div className="w-full flex justify-center">
         <div className="relative mt-24 h-64 w-64">
-          <CustomImage src="/img/chapter-1/あ.png" alt="あ image" />
+          <CustomImage src="/img/chapter-0/あ.png" alt="あ image" />
         </div>
       </div>
       <h1 className="mt-12 text-6xl font-bold leading-[3.5rem] mx-24 text-center">
@@ -208,7 +208,7 @@ export default function page() {
         </p>
         <div className="mt-4 w-full flex justify-center">
           <PortraitIcon
-            src="/img/chapter-1/shocked-child.png"
+            src="/img/chapter-0/shocked-child.png"
             className="border-none w-16 h-16 bg-inherit"
           />
         </div>

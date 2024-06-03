@@ -8,12 +8,12 @@ export default function page() {
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-1/writing-systems"
+      nextPageLink="/learn/chapter-0/writing-systems"
     >
       <div className="w-full flex justify-center">
         <div className="relative sm:mt-12 z-[-1] w-[615px] h-[800px] rounded-2xl shadow-xl overflow-hidden">
           <CustomImage
-            src="/img/chapter-1/chapter-1-welcome.png"
+            src="/img/chapter-0/chapter-0-welcome.png"
             alt="welcome image"
           />
         </div>

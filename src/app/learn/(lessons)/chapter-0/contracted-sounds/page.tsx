@@ -7,7 +7,7 @@ export default function page() {
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-1/hiragana-quiz-3"
+      nextPageLink="/learn/chapter-0/hiragana-quiz-3"
     >
       <h1 className="mt-40 pb-12 text-[2rem] font-medium leading-[2.875rem] text-center px-20">
         <span className="text-[2.75rem] font-medium">

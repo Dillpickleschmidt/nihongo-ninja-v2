@@ -6,9 +6,9 @@ import Image from "next/image"
 export default function page() {
   return (
     <ContentBox
-      variant="large"
+      variant="lg"
       color="light"
-      nextPageLink="/learn/chapter-1/lesson-1"
+      nextPageLink="/learn/chapter-0/lesson-1"
     >
       {/* Background Images */}
       <div className="absolute flex flex-row justify-end w-full">
@@ -71,7 +71,7 @@ export default function page() {
             </ul>
           </div>
           <div className="ml-52 mt-14">
-            <Button link="/learn/chapter-1/lesson-1">
+            <Button link="/learn/chapter-0/lesson-1">
               Get started! {"->"}
             </Button>
           </div>

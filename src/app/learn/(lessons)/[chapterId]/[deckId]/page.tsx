@@ -4,10 +4,12 @@ import path from "path"
 import fs from "fs/promises"
 import { notFound } from "next/navigation"
 import { JSONWithAnswerCategories } from "@/types"
+import { VocabData } from "@/types/vocab"
 import PracticeMode from "@/features/practice-mode/PracticeMode"
 import { PracticeModeContextProvider } from "@/features/practice-mode/context/PracticeModeContext"
 // import data from "./test-data.json"
 import useDeckSplit from "@/features/practice-mode/components/useDeckSplit"
+import { vocabDataToJSONWithAnswerCategories } from "@/features/vocab-data-parsers"
 
 type PageProps = {
   params: {
@@ -19,7 +21,7 @@ type PageProps = {
 const getData = async (
   chapterId: string,
   deckId: string
-): Promise<JSONWithAnswerCategories> => {
+): Promise<VocabData> => {
   const filePath = path.join(
     process.cwd(),
     "src",
@@ -29,7 +31,7 @@ const getData = async (
   )
   try {
     const fileContents = await fs.readFile(filePath, "utf-8")
-    return JSON.parse(fileContents) as JSONWithAnswerCategories
+    return JSON.parse(fileContents) as VocabData
   } catch (error) {
     console.error("Error reading file:", error)
     notFound()
@@ -39,13 +41,15 @@ const getData = async (
 const DeckPage = ({ params }: PageProps) => {
   const { chapterId, deckId } = params
   const data = use(getData(chapterId, deckId))
+  const convertedData = vocabDataToJSONWithAnswerCategories(data)
 
-  const { slicedData, remainingData, unslicedData } = useDeckSplit(data)
+  const { slicedData, remainingData, unslicedData } =
+    useDeckSplit(convertedData)
 
   return (
     <PracticeModeContextProvider>
       <PracticeMode
-        data={data}
+        data={convertedData}
         deckId={deckId}
         slicedData={slicedData}
         remainingData={remainingData}

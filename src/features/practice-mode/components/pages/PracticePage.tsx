@@ -53,7 +53,7 @@ export default function PracticePage({
 
   return (
     <div className="w-full flex justify-center">
-      <div className="mt-56 xl:w-[54%] lg:w-[70%] w-[80%]">
+      <div className="w-full mt-64">
         {/* <h1 className="text-3xl text-center font-black">
           Deck {deckId} Learning Page
         </h1> */}

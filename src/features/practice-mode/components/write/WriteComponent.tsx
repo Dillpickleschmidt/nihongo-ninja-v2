@@ -58,8 +58,10 @@ export default function WriteComponent({
   }
 
   return (
-    <div className="mt-4">
-      <label>{!hasUserAnswered && "Type your answer"}</label>
+    <div className="mt-28 mx-40">
+      <label className="text-sm">
+        {!hasUserAnswered && "Type your answer"}
+      </label>
       <Input
         ref={inputRef}
         value={userAnswer}

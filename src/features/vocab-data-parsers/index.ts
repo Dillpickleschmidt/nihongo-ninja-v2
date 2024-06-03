@@ -1,3 +1,4 @@
+import { JSONWithAnswerCategories } from "@/types"
 import { VocabData, VocabEntry } from "@/types/vocab"
 
 type ExtractedTextArray = string[][]
@@ -15,27 +16,32 @@ export function extractHiragana(rawData: VocabDataRaw): ExtractedTextArray {
     const parsedFuriganaArr: string[] = []
 
     for (const furiganaStr of furiganaArr) {
-      let hiragana = ""
-      let skip = false
-
-      for (let i = furiganaStr.length - 1; i >= 0; i--) {
-        const char = furiganaStr[i]
-
-        if (char === "[") {
-          skip = true
-        } else if (char === "]") {
-          skip = false
-        } else if (!skip && char !== " ") {
-          hiragana = char + hiragana
-        }
-      }
-
+      const hiragana = extractHiraganaFromFurigana(furiganaStr)
       parsedFuriganaArr.push(hiragana)
     }
 
     result.push(parsedFuriganaArr)
   }
   return result
+}
+
+function extractHiraganaFromFurigana(furigana: string): string {
+  let hiragana = ""
+  let skip = false
+
+  for (let i = furigana.length - 1; i >= 0; i--) {
+    const char = furigana[i]
+
+    if (char === "[") {
+      skip = true
+    } else if (char === "]") {
+      skip = false
+    } else if (!skip && char !== " ") {
+      hiragana = char + hiragana
+    }
+  }
+
+  return hiragana
 }
 
 export function furiganaToRubyText(rawData: VocabDataRaw): ExtractedTextArray {
@@ -129,4 +135,38 @@ export function transformVocabData(
   }
 
   return result
+}
+
+export function vocabDataToJSONWithAnswerCategories(
+  rawData: VocabDataRaw
+): JSONWithAnswerCategories {
+  const newJson: JSONWithAnswerCategories = {}
+
+  Object.keys(rawData).forEach((key) => {
+    for (const key in rawData) {
+      const entry = rawData[key]
+      const hiraganaArr: string[] = []
+      for (let i = 0; i < (entry.furigana ?? []).length; i++) {
+        const hiragana =
+          entry.furigana && extractHiraganaFromFurigana(entry.furigana[i])
+        hiragana && hiraganaArr.push(hiragana)
+      }
+
+      newJson[key] = {
+        answerCategories: [
+          {
+            category: "Kana",
+            answers: hiraganaArr,
+          },
+          {
+            category: "English",
+            answers: entry.english || [],
+          },
+        ],
+        mnemonics: entry.mnemonics || [],
+      }
+    }
+  })
+
+  return newJson
 }

@@ -35,7 +35,7 @@ export default function CardTypeSwitch({ data }: CardTypeSwitchProps) {
 
   return (
     <div className="w-full">
-      <h2 className="font-japanese mb-20 text-6xl text-center">
+      <h2 className="font-japanese text-6xl text-center mx-6">
         {correctEntry?.key}
       </h2>
       {renderComponent()}

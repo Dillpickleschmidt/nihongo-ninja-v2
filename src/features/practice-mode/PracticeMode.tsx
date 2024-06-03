@@ -71,7 +71,7 @@ export default function PracticeMode({
 
   return (
     <ContentBox
-      variant="lg"
+      variant="md"
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={3}

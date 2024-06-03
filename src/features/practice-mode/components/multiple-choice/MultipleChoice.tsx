@@ -51,11 +51,11 @@ export default function MultipleChoice({
     .flatMap((category) => category.answers)
 
   return (
-    <div className="mt-4">
+    <div>
       {/* <label className={`${hasUserAnswered && "text-center"}`}>
         Multiple Choice
       </label> */}
-      <ul className="grid grid-cols-1 gap-4 mx-4 mt-4 mb-6 lg:grid-cols-2">
+      <ul className="grid grid-cols-1 gap-[.875rem] mt-48 mx-5 mb-6 lg:grid-cols-2">
         {choices.options.map((option, index) => {
           // Flatten the enabled answers from all categories
           const enabledAnswers = option.answerCategories

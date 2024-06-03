@@ -1,3 +1,5 @@
+import "server-only"
+
 import TopWindowBackground from "@/features/learn-page/components/TopWindowBackground"
 
 export default function page({ children }: { children: React.ReactNode }) {

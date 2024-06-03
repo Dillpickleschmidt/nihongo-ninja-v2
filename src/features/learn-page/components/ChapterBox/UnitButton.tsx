@@ -36,7 +36,7 @@ export default function UnitButton({
       <Link href={link ? link : ""}>
         <Button
           variant="outline"
-          className="relative w-full h-full font-normal overflow-x-scroll overflow-y-hidden scrollbar:hidden justify-between py-[.75rem] px-6 text-sm"
+          className="relative w-full h-full whitespace-nowrap font-normal overflow-x-scroll overflow-y-hidden scrollbar:hidden justify-between py-[.75rem] px-6 text-sm"
           onClick={() => {
             setFromLearnPage(true)
             setShowNavbar(false)

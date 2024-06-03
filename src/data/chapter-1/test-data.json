@@ -1,0 +1,170 @@
+{
+  "ぜろ": {
+    "answerCategories": [
+      {
+        "category": "Kana",
+        "answers": ["ぜろ"]
+      },
+      {
+        "category": "English",
+        "answers": ["Zero", "0"]
+      }
+    ],
+    "notes": [],
+    "videos": []
+  },
+  "れい": {
+    "answerCategories": [
+      {
+        "category": "Kana",
+        "answers": ["れい"]
+      },
+      {
+        "category": "English",
+        "answers": ["Zero", "0"]
+      }
+    ],
+    "notes": [],
+    "videos": []
+  },
+  "いち": {
+    "answerCategories": [
+      {
+        "category": "Kana",
+        "answers": ["いち"]
+      },
+      {
+        "category": "English",
+        "answers": ["One", "1"]
+      }
+    ],
+    "notes": [],
+    "videos": []
+  },
+  "に": {
+    "answerCategories": [
+      {
+        "category": "Kana",
+        "answers": ["に"]
+      },
+      {
+        "category": "English",
+        "answers": ["Two", "2"]
+      }
+    ],
+    "notes": [],
+    "videos": []
+  },
+  "さん": {
+    "answerCategories": [
+      {
+        "category": "Kana",
+        "answers": ["さん"]
+      },
+      {
+        "category": "English",
+        "answers": ["Three", "3"]
+      }
+    ],
+    "notes": [],
+    "videos": []
+  },
+  "よん/し": {
+    "answerCategories": [
+      {
+        "category": "Kana",
+        "answers": ["よん/し"]
+      },
+      {
+        "category": "English",
+        "answers": ["Four", "4"]
+      }
+    ],
+    "notes": [],
+    "videos": []
+  },
+  "ご": {
+    "answerCategories": [
+      {
+        "category": "Kana",
+        "answers": ["ご"]
+      },
+      {
+        "category": "English",
+        "answers": ["Five", "5"]
+      }
+    ],
+    "notes": [],
+    "videos": []
+  },
+  "ろく": {
+    "answerCategories": [
+      {
+        "category": "Kana",
+        "answers": ["ろく"]
+      },
+      {
+        "category": "English",
+        "answers": ["Six", "6"]
+      }
+    ],
+    "notes": [],
+    "videos": []
+  },
+  "なな/しち": {
+    "answerCategories": [
+      {
+        "category": "Kana",
+        "answers": ["なな/しち"]
+      },
+      {
+        "category": "English",
+        "answers": ["Seven", "7"]
+      }
+    ],
+    "notes": [],
+    "videos": []
+  },
+  "はち": {
+    "answerCategories": [
+      {
+        "category": "Kana",
+        "answers": ["はち"]
+      },
+      {
+        "category": "English",
+        "answers": ["Eight", "8"]
+      }
+    ],
+    "notes": [],
+    "videos": []
+  },
+  "きゅう/く": {
+    "answerCategories": [
+      {
+        "category": "Kana",
+        "answers": ["きゅう/く"]
+      },
+      {
+        "category": "English",
+        "answers": ["Nine", "9"]
+      }
+    ],
+    "notes": [],
+    "videos": []
+  },
+  "じゅう": {
+    "answerCategories": [
+      {
+        "category": "Kana",
+        "answers": ["じゅう"]
+      },
+      {
+        "category": "English",
+        "answers": ["Ten", "10"]
+      }
+    ],
+    "notes": [],
+    "videos": []
+  }
+}

@@ -12,15 +12,15 @@ export default function page() {
       // backgroundImageOpacity={5}
       nextPageLink="/learn/chapter-0/numbers"
     >
-      <h1 className="pt-28 px-28 pb-6 text-3xl">
+      <h1 className="px-28 pb-6 pt-28 text-3xl">
         Now that you're familiar with the basics, let's dive into some common
         Japanese greetings. These phrases will be your first steps into
         conversational Japanese, and they're essential for everyday
         interactions.
       </h1>
       <VocabCards data={data1} />
-      <div className="px-16 space-y-8">
-        <div className="mx-12 space-y-8 my-8">
+      <div className="space-y-8 px-16">
+        <div className="mx-12 my-8 space-y-8">
           <p>
             <strong>As an Apology:</strong> In situations where a light apology
             is needed, &quot;Sumimasen&quot; is often used. For instance, if you
@@ -71,7 +71,7 @@ export default function page() {
           conversation - fixes everything and keeps things smoothly running!
         </p>
       </div>
-      <h2 className="text-center my-8 px-16 font-bold text-2xl">
+      <h2 className="my-8 px-16 text-center text-2xl font-bold">
         Now for the rest.
       </h2>
       <VocabCards data={data2} countOffset={1} />
@@ -81,8 +81,8 @@ export default function page() {
         magically transform into a social samurai! 🌟🗣️🎉
       </p>
       {/* Practice */}
-      <div className="px-24 text-xl leading-8 space-y-4 [&>*]:space-y-4">
-        <h3 className="!pt-32 !pb-6 text-5xl font-bold text-center">
+      <div className="space-y-4 px-24 text-xl leading-8 [&>*]:space-y-4">
+        <h3 className="!pb-6 !pt-32 text-center text-5xl font-bold">
           Practice
         </h3>
         <p>

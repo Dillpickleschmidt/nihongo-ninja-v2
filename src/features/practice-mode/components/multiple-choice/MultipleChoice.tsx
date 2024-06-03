@@ -27,12 +27,12 @@ export default function MultipleChoice({
   } = usePracticeModeContext()
 
   const [selectedButtonIndex, setSelectedButtonIndex] = useState<number | null>(
-    null
+    null,
   )
 
   const choices = useMemo(
     () => presentMultipleChoiceOptions(data, shuffleInput, currentCardIndex),
-    [data, currentCardIndex]
+    [data, currentCardIndex],
   )
 
   useEffect(() => {
@@ -55,12 +55,12 @@ export default function MultipleChoice({
       {/* <label className={`${hasUserAnswered && "text-center"}`}>
         Multiple Choice
       </label> */}
-      <ul className="grid grid-cols-1 gap-[.875rem] mt-48 mx-5 mb-6 lg:grid-cols-2">
+      <ul className="mx-5 mb-6 mt-48 grid grid-cols-1 gap-[.875rem] lg:grid-cols-2">
         {choices.options.map((option, index) => {
           // Flatten the enabled answers from all categories
           const enabledAnswers = option.answerCategories
             .filter((category) =>
-              enabledAnswerCategories.includes(category.category)
+              enabledAnswerCategories.includes(category.category),
             )
             .flatMap((category) => category.answers)
 
@@ -73,7 +73,7 @@ export default function MultipleChoice({
           function getButtonClassNames(
             hasUserAnswered: boolean,
             isCorrect: boolean,
-            isSelected: boolean
+            isSelected: boolean,
           ) {
             const baseClass = "disabled:opacity-60 font-light"
             let newClasses = ""
@@ -97,10 +97,8 @@ export default function MultipleChoice({
               className={`${getButtonClassNames(
                 hasUserAnswered,
                 isCorrect,
-                isSelected
-              )} w-full py-4 justify-start text-lg rounded-xl shadow-md hover:scale-[98.5%] ease-in-out duration-75
-                font-japanese text-start
-              `}
+                isSelected,
+              )} w-full justify-start rounded-xl py-4 text-start font-japanese text-lg shadow-md duration-75 ease-in-out hover:scale-[98.5%]`}
             >
               {enabledAnswers.join(", ")}
             </Button>

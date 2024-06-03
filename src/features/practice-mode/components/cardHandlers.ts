@@ -13,7 +13,7 @@ export function handleNextQuestion(
   setCurrentPage: (page: PageOptions) => void,
   recentlySeenCards: CardObject | null,
   setRecentlySeenCards: (cards: CardObject | null) => void,
-  unslicedData: CardObject
+  unslicedData: CardObject,
 ) {
   setHasUserAnswered(false)
 
@@ -39,7 +39,7 @@ export function handleNextQuestion(
     recentlySeenCards,
     setRecentlySeenCards,
     currentCard,
-    currentKey
+    currentKey,
   )
 
   if (currentCardIndex <= 3) {
@@ -48,7 +48,7 @@ export function handleNextQuestion(
       currentCardStyle,
       activeCards,
       currentCardIndex,
-      setCurrentCardIndex
+      setCurrentCardIndex,
     )
   } else {
     handleMainPhase(
@@ -59,7 +59,7 @@ export function handleNextQuestion(
       currentCardIndex,
       setActiveCards,
       setInactiveCards,
-      setCurrentPage
+      setCurrentPage,
     )
   }
 }
@@ -74,7 +74,7 @@ function updateWrongAnswerCount(unslicedData: CardObject, currentKey: string) {
     "Wrong answer count for " +
       currentKey +
       ": " +
-      unslicedData[currentKey].wrongAnswerCount
+      unslicedData[currentKey].wrongAnswerCount,
   )
 }
 
@@ -82,7 +82,7 @@ function addToRecentlySeenCards(
   recentlySeenCards: CardObject | null,
   setRecentlySeenCards: (cards: CardObject | null) => void,
   currentCard: EntryWithCardProperties,
-  currentKey: string
+  currentKey: string,
 ) {
   // Create a deep copy of the current card
   const currentCardCopy = JSON.parse(JSON.stringify(currentCard))
@@ -102,7 +102,7 @@ function handleInitialPhase(
   currentCardStyle: string,
   activeCards: CardObject,
   currentCardIndex: number,
-  setCurrentCardIndex: (index: number) => void
+  setCurrentCardIndex: (index: number) => void,
 ) {
   if (isAnswerCorrect) {
     if (currentCardStyle === "multiple-choice") {
@@ -122,7 +122,7 @@ function handleMainPhase(
   currentCardIndex: number,
   setActiveCards: (cards: CardObject) => void,
   setInactiveCards: (cards: CardObject) => void,
-  setCurrentPage: (page: PageOptions) => void
+  setCurrentPage: (page: PageOptions) => void,
 ) {
   if (isAnswerCorrect) {
     if (currentCardStyle === "write") {
@@ -132,7 +132,7 @@ function handleMainPhase(
           activeCards,
           currentCardIndex,
           setActiveCards,
-          setCurrentPage
+          setCurrentPage,
         )
         return
       }
@@ -141,7 +141,7 @@ function handleMainPhase(
         inactiveCards,
         currentCardIndex,
         setActiveCards,
-        setInactiveCards
+        setInactiveCards,
       )
     } else {
       cycleCards("write", activeCards, currentCardIndex, setActiveCards)
@@ -156,7 +156,7 @@ function cycleCards(
   activeCards: CardObject,
   currentCardIndex: number,
   setActiveCards: (cards: CardObject) => void,
-  setCurrentPage?: (page: PageOptions) => void
+  setCurrentPage?: (page: PageOptions) => void,
 ) {
   updateCardType(activeCards, currentCardIndex, cardType)
 
@@ -195,7 +195,7 @@ function cycleCards(
 function updateCardType(
   activeCards: CardObject,
   currentCardIndex: number,
-  cardType: "write" | "multiple-choice" | "done"
+  cardType: "write" | "multiple-choice" | "done",
 ) {
   const currentCard = activeCards[Object.keys(activeCards)[currentCardIndex]]
   currentCard.cardStyle = cardType
@@ -203,7 +203,7 @@ function updateCardType(
 
 function incrementIndex(
   currentCardIndex: number,
-  setCurrentCardIndex: (index: number) => void
+  setCurrentCardIndex: (index: number) => void,
 ) {
   const newCardIndex = currentCardIndex + 1
   setCurrentCardIndex(newCardIndex)
@@ -214,7 +214,7 @@ function removeAndAddNewCard(
   inactiveCards: CardObject,
   currentCardIndex: number,
   setActiveCards: (cards: CardObject) => void,
-  setInactiveCards: (cards: CardObject) => void
+  setInactiveCards: (cards: CardObject) => void,
 ) {
   const [firstInactiveKey, ...remainingInactiveKeys] =
     Object.keys(inactiveCards)
@@ -239,7 +239,7 @@ function removeAndAddNewCard(
     "multiple-choice",
     newActiveCards,
     currentCardIndex,
-    setActiveCards
+    setActiveCards,
   )
 }
 

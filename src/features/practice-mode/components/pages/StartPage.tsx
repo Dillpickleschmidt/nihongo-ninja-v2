@@ -13,29 +13,29 @@ export default function StartPage({ children, deckId, data }: StartPageProps) {
 
   return (
     <div>
-      <div className="pt-24 text-3xl text-center font-semibold mb-10">
+      <div className="mb-10 pt-24 text-center text-3xl font-semibold">
         {children}
       </div>
-      <div className="w-full flex justify-center">
+      <div className="flex w-full justify-center">
         <div>
           <div>
             {Object.entries(data).map(([key, card], index) => (
               <div
                 key={index}
-                className="p-4 bg-card dark:shadow-none shadow-lg rounded-lg my-2 flex min-w-[400px]"
+                className="my-2 flex min-w-[400px] rounded-lg bg-card p-4 shadow-lg dark:shadow-none"
               >
                 <li
-                  className={`font-japanese flex items-center ${
+                  className={`flex items-center font-japanese ${
                     index % 2 === 0
                       ? "dark:text-[#b49b7d]"
                       : "dark:text-[#dfcdb3]"
                   }`}
                 >
-                  <span className="font-semibold text-3xl">{key} -</span>
-                  <div className="text-lg mt-2">
+                  <span className="text-3xl font-semibold">{key} -</span>
+                  <div className="mt-2 text-lg">
                     {card.answerCategories
                       .filter((category) =>
-                        enabledAnswerCategories.includes(category.category)
+                        enabledAnswerCategories.includes(category.category),
                       )
                       .map((category, catIndex) => (
                         <div key={catIndex} className="ml-2">

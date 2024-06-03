@@ -37,8 +37,8 @@ export default function SelectText({ answer, a, b, c, d }: SelectTextProps) {
       <p>
         <span
           className={`${getTextColorClass(
-            option
-          )} cursor-pointer inline-block origin-left hover:scale-[107%] ease-out duration-100 px-3 py-[.0625rem] text-xl`}
+            option,
+          )} inline-block origin-left cursor-pointer px-3 py-[.0625rem] text-xl duration-100 ease-out hover:scale-[107%]`}
           onClick={() => handleClick(option)}
         >
           {`${option}) `}
@@ -49,7 +49,7 @@ export default function SelectText({ answer, a, b, c, d }: SelectTextProps) {
   }
 
   return (
-    <div className="pl-7 !space-y-3">
+    <div className="!space-y-3 pl-7">
       {renderOption("a", a)}
       {renderOption("b", b)}
       {renderOption("c", c)}

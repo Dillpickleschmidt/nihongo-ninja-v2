@@ -44,7 +44,7 @@ export function usePictureQuizContext() {
   const context = useContext(PictureQuizContext)
   if (!context) {
     throw new Error(
-      "usePictureQuizContext must be used within a PictureQuizContextProvider"
+      "usePictureQuizContext must be used within a PictureQuizContextProvider",
     )
   }
   return context

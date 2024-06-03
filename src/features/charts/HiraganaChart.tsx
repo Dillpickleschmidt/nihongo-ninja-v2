@@ -10,8 +10,8 @@ export default function HiraganaChart() {
 
   return (
     <>
-      <div className="rounded-3xl bg-card/100 border-[2.5px] border-dashed border-card-foreground shadow-inner">
-        <table className="font-japanese table-fixed border-collapse text-5xl w-full">
+      <div className="rounded-3xl border-[2.5px] border-dashed border-card-foreground bg-card/100 shadow-inner">
+        <table className="w-full table-fixed border-collapse font-japanese text-5xl">
           <tbody>
             <tr
               className={`[&>*]:border-b-2 [&>*]:border-l-2 [&>*]:border-r-2 ${tableRowClassName}`}
@@ -63,7 +63,7 @@ export default function HiraganaChart() {
               </td>
             </tr>
             <tr
-              className={`[&>*]:border-2 [&>*]:border-card-foreground [&>*]:h-28 [&>*]:text-center ${tableRowClassName}`}
+              className={`[&>*]:h-28 [&>*]:border-2 [&>*]:border-card-foreground [&>*]:text-center ${tableRowClassName}`}
             >
               <td className="!border-l-0">
                 <Romaji
@@ -112,7 +112,7 @@ export default function HiraganaChart() {
               </td>
             </tr>
             <tr
-              className={`[&>*]:border-2 [&>*]:border-card-foreground [&>*]:h-28 [&>*]:text-center ${tableRowClassName}`}
+              className={`[&>*]:h-28 [&>*]:border-2 [&>*]:border-card-foreground [&>*]:text-center ${tableRowClassName}`}
             >
               <td className="!border-l-0">
                 <Romaji
@@ -161,7 +161,7 @@ export default function HiraganaChart() {
               </td>
             </tr>
             <tr
-              className={`[&>*]:border-2 [&>*]:border-card-foreground [&>*]:h-28 [&>*]:text-center ${tableRowClassName}`}
+              className={`[&>*]:h-28 [&>*]:border-2 [&>*]:border-card-foreground [&>*]:text-center ${tableRowClassName}`}
             >
               <td className="!border-l-0">
                 <Romaji
@@ -210,7 +210,7 @@ export default function HiraganaChart() {
               </td>
             </tr>
             <tr
-              className={`[&>*]:border-2 [&>*]:border-card-foreground [&>*]:h-28 [&>*]:text-center ${tableRowClassName}`}
+              className={`[&>*]:h-28 [&>*]:border-2 [&>*]:border-card-foreground [&>*]:text-center ${tableRowClassName}`}
             >
               <td className="!border-l-0">
                 <Romaji
@@ -259,7 +259,7 @@ export default function HiraganaChart() {
               </td>
             </tr>
             <tr
-              className={`[&>*]:border-2 [&>*]:border-card-foreground [&>*]:h-28 [&>*]:text-center ${tableRowClassName}`}
+              className={`[&>*]:h-28 [&>*]:border-2 [&>*]:border-card-foreground [&>*]:text-center ${tableRowClassName}`}
             >
               <td className="!border-l-0">
                 <Romaji
@@ -308,7 +308,7 @@ export default function HiraganaChart() {
               </td>
             </tr>
             <tr
-              className={`[&>*]:border-2 [&>*]:border-card-foreground [&>*]:h-28 [&>*]:text-center ${tableRowClassName}`}
+              className={`[&>*]:h-28 [&>*]:border-2 [&>*]:border-card-foreground [&>*]:text-center ${tableRowClassName}`}
             >
               <td className="!border-l-0">
                 <Romaji
@@ -357,7 +357,7 @@ export default function HiraganaChart() {
               </td>
             </tr>
             <tr
-              className={`[&>*]:border-2 [&>*]:border-card-foreground [&>*]:h-28 [&>*]:text-center ${tableRowClassName}`}
+              className={`[&>*]:h-28 [&>*]:border-2 [&>*]:border-card-foreground [&>*]:text-center ${tableRowClassName}`}
             >
               <td className="!border-l-0">
                 <Romaji
@@ -390,7 +390,7 @@ export default function HiraganaChart() {
               </td>
             </tr>
             <tr
-              className={`[&>*]:border-2 [&>*]:border-card-foreground [&>*]:h-28 [&>*]:text-center ${tableRowClassName}`}
+              className={`[&>*]:h-28 [&>*]:border-2 [&>*]:border-card-foreground [&>*]:text-center ${tableRowClassName}`}
             >
               <td className="!border-l-0">
                 <Romaji
@@ -439,9 +439,9 @@ export default function HiraganaChart() {
               </td>
             </tr>
             <tr
-              className={`[&>*]:border-2 [&>*]:border-card-foreground [&>*]:h-28 [&>*]:text-center ${tableRowClassName}`}
+              className={`[&>*]:h-28 [&>*]:border-2 [&>*]:border-card-foreground [&>*]:text-center ${tableRowClassName}`}
             >
-              <td className="!border-l-0 !border-b-0">
+              <td className="!border-b-0 !border-l-0">
                 <Romaji
                   romaji="wa"
                   className={romajiClassName}
@@ -453,7 +453,7 @@ export default function HiraganaChart() {
               <td className="!border-b-0"></td>
               <td className="!border-b-0"></td>
               <td className="!border-b-0"></td>
-              <td className="!border-r-0 !border-b-0">
+              <td className="!border-b-0 !border-r-0">
                 <Romaji
                   romaji="o**"
                   className={romajiClassName}
@@ -466,8 +466,8 @@ export default function HiraganaChart() {
           </tbody>
         </table>
       </div>
-      <div className="full flex justify-center text-5xl mt-2">
-        <div className="bg-card/100 rounded-2xl border-2 border-dashed border-card-foreground h-28 w-28 pt-3 text-center">
+      <div className="full mt-2 flex justify-center text-5xl">
+        <div className="h-28 w-28 rounded-2xl border-2 border-dashed border-card-foreground bg-card/100 pt-3 text-center">
           <Romaji
             romaji="n"
             className={romajiClassName}

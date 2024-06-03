@@ -10,24 +10,24 @@ export default function page() {
       backgroundImageOpacity={5}
       nextPageLink="/learn/chapter-0/hiragana"
     >
-      <div className="relative w-full h-48 -mt-2 border-b border-black">
+      <div className="relative -mt-2 h-48 w-full border-b border-black">
         <CustomImage
           src="/img/chapter-0/brushes.jpg"
           alt="japanese brushstrokes"
         />
       </div>
-      <h2 className="pb-14 mt-24 text-5xl font-medium px-24">
+      <h2 className="mt-24 px-24 pb-14 text-5xl font-medium">
         Let's take a closer look at the Japanese writing systems.
       </h2>
-      <div className="sm:px-24 px-16 space-y-9">
-        <div className="mr-24 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
+      <div className="space-y-9 px-16 sm:px-24">
+        <div className="mr-24 rounded-2xl border-2 border-dashed border-muted bg-card p-4 shadow-md">
           <PortraitIcon src="/img/student.png" />
           <p>
             Wise Monk, I've heard that Japanese has three writing systems. Is
             that really true?
           </p>
         </div>
-        <div className="ml-24 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
+        <div className="ml-24 rounded-2xl border-2 border-dashed border-muted bg-card p-4 shadow-md">
           <PortraitIcon src="/img/guru.png" className="float-end" />
           <p>
             <span className="text-xl">Ah</span>, young grasshopper, your
@@ -37,34 +37,34 @@ export default function page() {
           </p>
         </div>
         <div>
-          <p className="mb-2 text-2xl font-semibold text-center">
+          <p className="mb-2 text-center text-2xl font-semibold">
             <em>...Behold!</em>
           </p>
           <p className="text-center">
             <span className="font-japanese text-2xl">
               <span className="text-green-500 saturate-[25%]">テレビ</span>
-              <span className="dark:text-background-secondary text-sky-500 dark:saturate-100 saturate-50">
+              <span className="text-sky-500 saturate-50 dark:text-background-secondary dark:saturate-100">
                 を
               </span>
               <span className="text-red-500">見</span>
-              <span className="dark:text-background-secondary text-sky-500 dark:saturate-100 saturate-50">
+              <span className="text-sky-500 saturate-50 dark:text-background-secondary dark:saturate-100">
                 ます
               </span>
             </span>
             <span className="text-sm">(terebi o mimasu)</span> - I watch
             television
           </p>
-          <ul className="w-full mt-2 pb-4 flex justify-center space-x-6">
+          <ul className="mt-2 flex w-full justify-center space-x-6 pb-4">
             <li>
-              <div className="h-3 w-3 bg-green-500 saturate-[25%] rounded-full inline-flex" />{" "}
+              <div className="inline-flex h-3 w-3 rounded-full bg-green-500 saturate-[25%]" />{" "}
               - Katakana
             </li>
             <li>
-              <div className="h-3 w-3 dark:bg-background-secondary bg-sky-500 dark:saturate-100 saturate-50 rounded-full inline-flex" />{" "}
+              <div className="inline-flex h-3 w-3 rounded-full bg-sky-500 saturate-50 dark:bg-background-secondary dark:saturate-100" />{" "}
               - Hiragana
             </li>
             <li>
-              <div className="h-3 w-3 bg-red-500 rounded-full inline-flex" /> -
+              <div className="inline-flex h-3 w-3 rounded-full bg-red-500" /> -
               Kanji
             </li>
           </ul>
@@ -81,7 +81,7 @@ export default function page() {
             spoken Japanese sounds that you'll hear, and are often used for
             native Japanese words. They are built upon five pure vowel sounds:
           </p>
-          <div className="font-japanese font-medium text-center text-2xl">
+          <div className="text-center font-japanese text-2xl font-medium">
             <p>あ a</p>
             <p>い i</p>
             <p>う u</p>
@@ -93,8 +93,8 @@ export default function page() {
             rounded shapes of Hiragana characters, like the smooth stones of a
             Zen garden.
           </p>
-          <div className="w-full flex justify-center">
-            <div className="relative w-10 h-10">
+          <div className="flex w-full justify-center">
+            <div className="relative h-10 w-10">
               <CustomImage
                 src="/img/chapter-0/stones-smooth.png"
                 alt="smooth stones"
@@ -120,7 +120,7 @@ export default function page() {
             foreign words, and it often shouts in TV commercials to make words
             shine brightly.
           </p>
-          <div className="font-japanese font-medium text-center text-2xl">
+          <div className="text-center font-japanese text-2xl font-medium">
             <p>ア a</p>
             <p>イ i</p>
             <p>ウ u</p>
@@ -132,8 +132,8 @@ export default function page() {
             angular shapes of Katakana characters, like the edges of a finely
             crafted katana.
           </p>
-          <div className="w-full flex justify-center">
-            <div className="relative w-10 h-10 rounded-full">
+          <div className="flex w-full justify-center">
+            <div className="relative h-10 w-10 rounded-full">
               <CustomImage
                 src="/img/chapter-0/katana-leafs.png"
                 alt="kanata-sword-icon"
@@ -169,7 +169,7 @@ export default function page() {
             inherited from the distant lands of China. For example, the word
             kanji is actually written as 漢字 which literally means:
           </p>
-          <div className="w-full flex justify-center">
+          <div className="flex w-full justify-center">
             漢 (Han Chinese) 字 (Characters)
           </div>
           <p>
@@ -177,7 +177,7 @@ export default function page() {
             unchanged, like a collection of preserved art pieces. Behold the
             pictorial depiction of the sun:
           </p>
-          <p className="text-center text-5xl font-japanese">日</p>
+          <p className="text-center font-japanese text-5xl">日</p>
           <p>
             <span className="font-extrabold">Student:</span> They seem complex,
             wise teacher. How shall I conquer them?
@@ -198,14 +198,14 @@ export default function page() {
             Hiragana is the first step to opening the gate to the vast world of
             Japanese knowledge.
           </p>
-          <h2 className="text-2xl font-bold !mt-12 mb-8">
+          <h2 className="!mt-12 mb-8 text-2xl font-bold">
             Bonus - <span className="font-normal">Romaji</span>
           </h2>
-          <div className="mr-24 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
+          <div className="mr-24 rounded-2xl border-2 border-dashed border-muted bg-card p-4 shadow-md">
             <PortraitIcon src="/img/student.png" />
             <p>Sensei, I've seen Romaji used a lot. What exactly is it?</p>
           </div>
-          <div className="ml-24 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
+          <div className="ml-24 rounded-2xl border-2 border-dashed border-muted bg-card p-4 shadow-md">
             <PortraitIcon src="/img/guru.png" className="float-end" />
             <p>
               Romaji is the use of Latin alphabet letters to represent Japanese
@@ -247,8 +247,8 @@ export default function page() {
             fluency. Remember, the journey of learning a language is as
             important as the destination. Enjoy each moment.
           </p>
-          <h2 className="text-2xl font-bold !mt-12 mb-4">Summary</h2>
-          <ul className="!mt-2 list-disc space-y-4 ml-6">
+          <h2 className="!mt-12 mb-4 text-2xl font-bold">Summary</h2>
+          <ul className="!mt-2 ml-6 list-disc space-y-4">
             <li className="">
               <span className="font-extrabold">Hiragana - </span>Smooth
               characters primarily used for native Japanese words and

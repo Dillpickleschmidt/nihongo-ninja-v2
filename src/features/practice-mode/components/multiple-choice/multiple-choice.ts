@@ -19,7 +19,7 @@ This is useful for cycling through the data in order.
 export function presentMultipleChoiceOptions(
   data: CardObject,
   shuffleInput = true,
-  currentCardIndex: number
+  currentCardIndex: number,
 ) {
   let entries = Object.entries(data) // [1, 2, 3, 4, 5...]
 
@@ -47,7 +47,7 @@ export function presentMultipleChoiceOptions(
 
   // Shuffle the selected entries
   const shuffledSelectedEntries = selectedEntries.sort(
-    () => 0.5 - Math.random()
+    () => 0.5 - Math.random(),
   ) // [3, 2, 7, 5]
 
   // Map the selected entries to a more usable format
@@ -57,7 +57,7 @@ export function presentMultipleChoiceOptions(
   }))
   // Get the correct key from the correctKeyArr
   const correctOption = options.find(
-    (option) => option.key === correctKeyArr[0]
+    (option) => option.key === correctKeyArr[0],
   )!
 
   return {
@@ -79,7 +79,7 @@ type MultipleChoices = {
  */
 export function handleMultipleChoiceSelection(
   multipleChoices: MultipleChoices,
-  userAnswer: string
+  userAnswer: string,
 ): boolean {
   const { correctOption } = multipleChoices
 
@@ -89,7 +89,7 @@ export function handleMultipleChoiceSelection(
 
   // Flatten the enabled answers from all categories
   const answers = correctOption.answerCategories.flatMap(
-    (category) => category.answers
+    (category) => category.answers,
   )
 
   // console.log("enabledAnswers: ", answers)

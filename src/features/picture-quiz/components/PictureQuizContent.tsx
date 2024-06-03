@@ -21,7 +21,7 @@ export default function PictureQuizContent() {
 
   return (
     <>
-      <div className="relative w-[550px] h-[350px] rounded-[40px] overflow-hidden shadow-lg border-[3px] dark:border-transparent border-black">
+      <div className="relative h-[350px] w-[550px] overflow-hidden rounded-[40px] border-[3px] border-black shadow-lg dark:border-transparent">
         <CustomImage
           src={correctEntry.image}
           alt="quiz image"

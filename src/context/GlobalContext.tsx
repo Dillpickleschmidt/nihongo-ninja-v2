@@ -67,7 +67,7 @@ export function useGlobalContext() {
   const context = useContext(GlobalContext)
   if (!context) {
     throw new Error(
-      "useNavbarContext must be used within a useNavbarContextProvider"
+      "useNavbarContext must be used within a useNavbarContextProvider",
     )
   }
   return context

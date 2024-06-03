@@ -32,11 +32,11 @@ export default function UnitButton({
   const { setShowNavbar, setFromLearnPage } = useGlobalContext()
 
   return (
-    <div className="!p-0 hover:scale-[98.5%] ease-in-out duration-75">
+    <div className="!p-0 duration-75 ease-in-out hover:scale-[98.5%]">
       <Link href={link ? link : ""}>
         <Button
           variant="outline"
-          className="relative w-full h-full whitespace-nowrap font-normal overflow-x-scroll overflow-y-hidden scrollbar:hidden justify-between py-[.75rem] px-6 text-sm"
+          className="relative h-full w-full justify-between overflow-y-hidden overflow-x-scroll whitespace-nowrap px-6 py-[.75rem] text-sm font-normal scrollbar:hidden"
           onClick={() => {
             setFromLearnPage(true)
             setShowNavbar(false)

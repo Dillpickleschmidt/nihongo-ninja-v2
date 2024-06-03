@@ -9,7 +9,7 @@ export default function page() {
       backgroundImageOpacity={5}
       nextPageLink="/learn/chapter-0/contracted-sounds-quiz"
     >
-      <h1 className="mt-40 pb-12 text-[2rem] font-medium leading-[2.875rem] text-center px-20">
+      <h1 className="mt-40 px-20 pb-12 text-center text-[2rem] font-medium leading-[2.875rem]">
         <span className="text-[2.75rem] font-medium">
           Alright, language warriors!
         </span>{" "}
@@ -31,15 +31,12 @@ export default function page() {
         - the linguistic equivalent of a<em>*surprise*</em> party in the middle
         of a sentence!
       </h1>
-      <div className="sm:px-24 px-16 space-y-9">
-        <h3 className="mt-6 -mb-6 font-semibold text-center">
+      <div className="space-y-9 px-16 sm:px-24">
+        <h3 className="-mb-6 mt-6 text-center font-semibold">
           Contracted Sounds (拗音, Yōon): The Team-Up in Japanese:
         </h3>
-        <div className="flex flex-row justify-center items-center !pb-0">
-          <div
-            className="pr-6 pl-2 text-xl font-bold text-center
-              ![&>*]:py-0"
-          >
+        <div className="flex flex-row items-center justify-center !pb-0">
+          <div className="![&>*]:py-0 pl-2 pr-6 text-center text-xl font-bold">
             <em>
               <p>C</p>
               <p>o</p>
@@ -86,7 +83,7 @@ export default function page() {
             </p>
           </div>
         </div>
-        <h3 className="mt-16 !pb-0 text-3xl font-bold text-center">
+        <h3 className="mt-16 !pb-0 text-center text-3xl font-bold">
           Why These Sounds?
         </h3>
         <p className="">

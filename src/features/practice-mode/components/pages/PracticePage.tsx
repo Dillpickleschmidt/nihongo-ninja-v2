@@ -52,8 +52,8 @@ export default function PracticePage({
   }, [hasUserAnswered])
 
   return (
-    <div className="w-full flex justify-center">
-      <div className="w-full mt-64">
+    <div className="flex w-full justify-center">
+      <div className="mt-64 w-full">
         {/* <h1 className="text-3xl text-center font-black">
           Deck {deckId} Learning Page
         </h1> */}
@@ -80,7 +80,7 @@ export default function PracticePage({
               setCurrentPage,
               recentlySeenCards,
               setRecentlySeenCards,
-              unslicedData
+              unslicedData,
             )
           }
           className="absolute bottom-12 shadow-md"

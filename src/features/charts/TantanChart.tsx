@@ -10,8 +10,8 @@ export default function DakutenChart() {
 
   return (
     <>
-      <div className="rounded-3xl border-[3px] border-black overflow-x-hidden">
-        <table className="font-japanese table-fixed border-collapse text-5xl bg-[#F8F5E9] bg-opacity-40 w-full">
+      <div className="overflow-x-hidden rounded-3xl border-[3px] border-black">
+        <table className="w-full table-fixed border-collapse bg-[#F8F5E9] bg-opacity-40 font-japanese text-5xl">
           <tbody>
             <tr
               className={`[&>*]:border-b [&>*]:border-l [&>*]:border-r ${tableRowClassName}`}
@@ -206,11 +206,11 @@ export default function DakutenChart() {
           </tbody>
         </table>
       </div>
-      <div className="mt-2 rounded-3xl border-[3px] border-black overflow-x-hidden">
-        <table className="font-japanese table-fixed border-collapse text-5xl bg-[#F8F5E9] bg-opacity-40 w-full">
+      <div className="mt-2 overflow-x-hidden rounded-3xl border-[3px] border-black">
+        <table className="w-full table-fixed border-collapse bg-[#F8F5E9] bg-opacity-40 font-japanese text-5xl">
           <tbody>
             <tr className={`[&>*]:border ${tableRowClassName}`}>
-              <td className="!border-l-0 !border-b-0">
+              <td className="!border-b-0 !border-l-0">
                 <Romaji
                   romaji="pa"
                   className={romajiClassName}
@@ -246,7 +246,7 @@ export default function DakutenChart() {
                   ぺ
                 </Romaji>
               </td>
-              <td className="!border-r-0 !border-b-0">
+              <td className="!border-b-0 !border-r-0">
                 <Romaji
                   romaji="po"
                   className={romajiClassName}

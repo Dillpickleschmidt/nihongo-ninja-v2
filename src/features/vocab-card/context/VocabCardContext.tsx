@@ -24,7 +24,7 @@ export function useVocabCardContext() {
   const context = useContext(VocabCardContext)
   if (!context) {
     throw new Error(
-      "useVocabCardContext must be used within a VocabCardContextProvider"
+      "useVocabCardContext must be used within a VocabCardContextProvider",
     )
   }
   return context

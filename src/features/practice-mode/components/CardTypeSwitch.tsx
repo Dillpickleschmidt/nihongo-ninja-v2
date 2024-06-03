@@ -13,7 +13,7 @@ export default function CardTypeSwitch({ data }: CardTypeSwitchProps) {
 
   const currentKey = useMemo(
     () => Object.keys(data)[currentCardIndex],
-    [data, currentCardIndex]
+    [data, currentCardIndex],
   )
 
   const currentCardStyle = data[currentKey]?.cardStyle
@@ -35,7 +35,7 @@ export default function CardTypeSwitch({ data }: CardTypeSwitchProps) {
 
   return (
     <div className="w-full">
-      <h2 className="font-japanese text-6xl text-center mx-6">
+      <h2 className="mx-6 text-center font-japanese text-6xl">
         {correctEntry?.key}
       </h2>
       {renderComponent()}

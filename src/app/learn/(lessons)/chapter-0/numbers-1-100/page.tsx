@@ -14,18 +14,18 @@ export default function page() {
       nextPageLink="/learn/chapter-0/practice-numbers-0-10"
       showProgressBar={false}
     >
-      <h1 className="pt-20 mb-8 text-4xl font-medium leading-[3.25rem] text-center px-20">
+      <h1 className="mb-8 px-20 pt-20 text-center text-4xl font-medium leading-[3.25rem]">
         Let's learn the basic numbers.
       </h1>
-      <div className="w-full lg:flex justify-center">
-        <div className="flex justify-center mx-12">
+      <div className="w-full justify-center lg:flex">
+        <div className="mx-12 flex justify-center">
           {/* Numbers List Box */}
           <div>
             <Numbers10 />
           </div>
         </div>
         <div>
-          <div className="pt-12 xl:pr-24 lg:pl-6 md:px-28 px-16 space-y-12">
+          <div className="space-y-12 px-16 pt-12 md:px-28 lg:pl-6 xl:pr-24">
             <p>
               You'll notice that numbers 4, 7, and 9 have two options. Japanese
               speakers use either option, so it's good to know both!
@@ -43,7 +43,7 @@ export default function page() {
                 To make eleven, you just put together &quot;ten&quot; and
                 &quot;one&quot; to make
               </p>
-              <div className="text-3xl text-center mt-2 flex justify-center">
+              <div className="mt-2 flex justify-center text-center text-3xl">
                 <Romaji romaji="jyuu">じゅう</Romaji>
                 <span className="text-orange-400">
                   <Romaji romaji="ichi">いち</Romaji>
@@ -56,7 +56,7 @@ export default function page() {
                 To make twenty, you put together &quot;two&quot; and
                 &quot;ten&quot; to make
               </p>
-              <div className="text-3xl mt-2 flex justify-center">
+              <div className="mt-2 flex justify-center text-3xl">
                 <span className="text-red-400">
                   <Romaji romaji="ni">に</Romaji>
                 </span>
@@ -68,7 +68,7 @@ export default function page() {
                 To make twenty-one, you put together &quot;two&quot;,
                 &quot;ten&quot; and &quot;one&quot; to make
               </div>
-              <div className="text-3xl mt-2 flex justify-center">
+              <div className="mt-2 flex justify-center text-3xl">
                 <span className="text-red-400">
                   <Romaji romaji="ni">に</Romaji>
                 </span>
@@ -84,7 +84,7 @@ export default function page() {
                 To make fifty-six, you put together &quot;five&quot;,
                 &quot;ten&quot; and &quot;six&quot; to make
               </p>
-              <div className="text-3xl mt-2 flex justify-center">
+              <div className="mt-2 flex justify-center text-3xl">
                 <span className="text-red-400">
                   <Romaji romaji="go">ご</Romaji>
                 </span>
@@ -95,11 +95,11 @@ export default function page() {
                 .
               </div>
             </div>
-            <h3 className="text-2xl font-semibold text-center">
+            <h3 className="text-center text-2xl font-semibold">
               Think you can say 99? Give it a try!
             </h3>
           </div>
-          <div className="px-24 mt-24">
+          <div className="mt-24 px-24">
             {/* <Nu
           mbers100 /> */}
           </div>

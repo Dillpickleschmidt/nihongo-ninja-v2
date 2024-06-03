@@ -22,11 +22,8 @@ export default function ButtonBar({
   setIsHovered4,
 }: ButtonBarProps) {
   return (
-    <div className="z-10 flex justify-center h-10 bg-[#2d2d2d]/80 backdrop-blur-xl">
-      <ul
-        className="text-[1.0625rem] w-[95%] lg:w-[86%] xl:w-[82%] 2xl:w-[80%] grid grid-cols-4 xl:gap-9 gap-4 items-center opacity-30
-        [&>*]:h-full [&>*]:flex [&>*]:justify-center [&>*]:items-center [&>*]:ease-in-out [&>*]:duration-200"
-      >
+    <div className="z-10 flex h-10 justify-center bg-[#2d2d2d]/80 backdrop-blur-xl">
+      <ul className="grid w-[95%] grid-cols-4 items-center gap-4 text-[1.0625rem] opacity-30 lg:w-[86%] xl:w-[82%] xl:gap-9 2xl:w-[80%] [&>*]:flex [&>*]:h-full [&>*]:items-center [&>*]:justify-center [&>*]:duration-200 [&>*]:ease-in-out">
         <a
           href="https://jpdb.io"
           style={{ textShadow: "0px 4px 4px rgba(0, 0, 0, 0.5)" }}

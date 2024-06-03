@@ -103,7 +103,7 @@ type TransformedVocabData = {
 }
 
 export function transformVocabData(
-  rawData: VocabDataRaw
+  rawData: VocabDataRaw,
 ): TransformedVocabData {
   const parsedHiragana = extractHiragana(rawData)
   const parsedRubyText = furiganaToRubyText(rawData)
@@ -138,7 +138,7 @@ export function transformVocabData(
 }
 
 export function vocabDataToJSONWithAnswerCategories(
-  rawData: VocabDataRaw
+  rawData: VocabDataRaw,
 ): JSONWithAnswerCategories {
   const newJson: JSONWithAnswerCategories = {}
 

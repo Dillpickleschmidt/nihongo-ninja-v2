@@ -5,8 +5,8 @@ import Link from "next/link"
 export default function NavbarContent() {
   return (
     <nav>
-      <ul className="flex items-center justify-between py-3 mx-6">
-        <li className="h-full flex items-center [&>*]:mr-2">
+      <ul className="mx-6 flex items-center justify-between py-3">
+        <li className="flex h-full items-center [&>*]:mr-2">
           <Button variant="outline">
             <Link href="/learn">Home</Link>
           </Button>

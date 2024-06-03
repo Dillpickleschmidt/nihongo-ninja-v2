@@ -76,11 +76,11 @@ export default function ContentBox({
             {showProgressBar && (
               <m.div
                 style={{ scaleX: scaleX }}
-                className="sticky z-50 top-[-1px] -mb-[0.1625rem] h-[0.1625rem] w-full origin-left bg-indigo-600 dark:bg-green-500"
+                className="sticky top-[-1px] z-50 -mb-[0.1625rem] h-[0.1625rem] w-full origin-left bg-indigo-600 dark:bg-green-500"
               ></m.div>
             )}
             {children}
-            <div className="mt-24 pb-16 mx-12 flex flex-row justify-end">
+            <div className="mx-12 mt-24 flex flex-row justify-end pb-16">
               {nextButton}
             </div>
           </div>
@@ -90,11 +90,11 @@ export default function ContentBox({
             {showProgressBar && (
               <m.div
                 style={{ scaleX: scaleX }}
-                className="sticky z-50 top-[-1px] -mb-[0.1625rem] h-[0.1625rem] w-full origin-left bg-indigo-600 dark:bg-green-500"
+                className="sticky top-[-1px] z-50 -mb-[0.1625rem] h-[0.1625rem] w-full origin-left bg-indigo-600 dark:bg-green-500"
               ></m.div>
             )}
             {children}
-            <div className="mt-24 pb-16 mx-12 flex flex-row justify-end">
+            <div className="mx-12 mt-24 flex flex-row justify-end pb-16">
               {nextButton}
             </div>
           </div>
@@ -126,5 +126,5 @@ const dialogVariants = cva(
       variant: "reading",
       color: "default",
     },
-  }
+  },
 )

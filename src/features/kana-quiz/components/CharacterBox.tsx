@@ -22,13 +22,13 @@ export default function CharacterBox({
 }: CharacterBoxProps) {
   return (
     <div
-      className={`relative text-3xl h-48 flex justify-center bg-card shadow-lg shadow-[#645947] rounded-[12px] ${className}`}
+      className={`relative flex h-48 justify-center rounded-[12px] bg-card text-3xl shadow-lg shadow-[#645947] ${className}`}
     >
-      <div className="font-japanese mt-6 text-5xl">{character}</div>
+      <div className="mt-6 font-japanese text-5xl">{character}</div>
       <div className={`absolute bottom-0 mb-6 ${inputTextColor}`}>
         <input
           type="text"
-          className={`h-14 w-28 bg-[#191919] bg-opacity-0 border-2 ${innerBorderColor} border-dashed rounded-xl text-center`}
+          className={`h-14 w-28 border-2 bg-[#191919] bg-opacity-0 ${innerBorderColor} rounded-xl border-dashed text-center`}
           value={userInput}
           onChange={(e) => onInputChange(e.target.value)}
           disabled={disabled}

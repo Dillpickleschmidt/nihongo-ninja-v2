@@ -11,10 +11,10 @@ export default function page() {
       backgroundImageOpacity={9}
       nextPageLink="/learn/chapter-0/dakuten-handakuten-quiz"
     >
-      <h2 className="mt-40 text-[2.625rem] font-medium leading-[3.25rem] text-center px-20">
+      <h2 className="mt-40 px-20 text-center text-[2.625rem] font-medium leading-[3.25rem]">
         🌊
       </h2>
-      <h2 className="pb-12 text-[2rem] font-medium leading-[2.875rem] text-center px-20">
+      <h2 className="px-20 pb-12 text-center text-[2rem] font-medium leading-[2.875rem]">
         So you've mastered the gentle curves and strokes of Hiragana, and you're
         feeling <em>*pretty* confident</em>, right? Well,{" "}
         <span className="text-[3.125rem]">
@@ -25,13 +25,10 @@ export default function page() {
         <span className="text-[2.675rem] font-bold">Dakuten</span> and{" "}
         <span className="text-[2.675rem] font-bold">Handakuten!</span>
       </h2>
-      <p className="mb-2 text-center font-bold text-2xl">( &quot; )</p>
-      <div className="sm:mx-[7.5rem] mx-16 space-y-6">
+      <p className="mb-2 text-center text-2xl font-bold">( &quot; )</p>
+      <div className="mx-16 space-y-6 sm:mx-[7.5rem]">
         <div className="flex flex-row justify-center !pb-0">
-          <div
-            className="pr-6 pl-2 text-xl font-bold text-center
-              ![&>*]:py-0"
-          >
+          <div className="![&>*]:py-0 pl-2 pr-6 text-center text-xl font-bold">
             <em>
               <p>D</p>
               <p>A</p>
@@ -54,15 +51,12 @@ export default function page() {
             - just a small dash changes the whole flavor! 🍜
           </p>
         </div>
-        <p className="mt-0 mb-12 text-sm text-center">
+        <p className="mb-12 mt-0 text-center text-sm">
           *It's a small change but take a look at those extra little quote marks
           on が*
         </p>
-        <div className="!mt-16 flex flex-row justify-center items-center !pb-0">
-          <div
-            className="pr-6 pl-2 text-xl font-bold text-center
-              ![&>*]:py-0"
-          >
+        <div className="!mt-16 flex flex-row items-center justify-center !pb-0">
+          <div className="![&>*]:py-0 pl-2 pr-6 text-center text-xl font-bold">
             <em>
               <p>H</p>
               <p>A</p>
@@ -77,7 +71,7 @@ export default function page() {
             </em>
           </div>
           <div className="mb-12">
-            <p className="pr-10 text-center font-bold text-2xl">( ゜)</p>
+            <p className="pr-10 text-center text-2xl font-bold">( ゜)</p>
             <p>
               Now, if Dakuten are the DJs, Handakuten are like their quirky
               sidekicks. These little circles are a bit more selective, only
@@ -97,7 +91,7 @@ export default function page() {
           </div>
         </div>
         <div className="space-y-4">
-          <h2 className="mt-16 text-[2rem] font-bold text-center">
+          <h2 className="mt-16 text-center text-[2rem] font-bold">
             <em>
               <span className="text-[2.675rem]">WHY</span>, THOUGH?
             </em>
@@ -115,10 +109,10 @@ export default function page() {
             and decided to mix things up.
           </p>
         </div>
-        <p className="text-xl text-center">
+        <p className="text-center text-xl">
           <span className="font-japanese">わかりません</span>{" "}
           <span className="text-base">(I don't know)</span>{" "}
-          <span className="text-3xl !py-2">🤷🏻</span>
+          <span className="!py-2 text-3xl">🤷🏻</span>
         </p>
         <p>
           <span className="text-[1.1625rem] font-bold">

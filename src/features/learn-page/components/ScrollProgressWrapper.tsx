@@ -14,7 +14,7 @@ export default function ScrollProgressWrapper({
   return (
     <div
       ref={scrollRef}
-      className="relative overflow-hidden z-40 bg-background/[100%] pb-12"
+      className="relative z-40 overflow-hidden bg-background/[100%] pb-12"
     >
       {children}
     </div>

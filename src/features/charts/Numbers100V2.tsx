@@ -3,20 +3,17 @@ import Romaji from "@/components/text/Romaji"
 
 export default function Numbers100V2() {
   return (
-    <div className="relative 2xl:px-64 xl:px-32 lg:px-20 px-12 pb-6 mx-auto text-xl w-[92%] min-h-full dark:bg-[#F1E8DA] rounded-xl shadow-lg">
+    <div className="relative mx-auto min-h-full w-[92%] rounded-xl px-12 pb-6 text-xl shadow-lg dark:bg-[#F1E8DA] lg:px-20 xl:px-32 2xl:px-64">
       <CustomImage
         src="/img/dust-splatter-1.png"
         className="absolute inset-0 opacity-[7%]"
         alt=""
       />
-      <div className="relative flex justify-between z-10">
+      <div className="relative z-10 flex justify-between">
         {/* Col 1 */}
         <div className="w-1/3 p-4">
           <div className="flex flex-row">
-            <div
-              className="pt-16 text-2xl text-right tracking-[-0.5rem]
-                    [&>*]:py-4"
-            >
+            <div className="pt-16 text-right text-2xl tracking-[-0.5rem] [&>*]:py-4">
               <p>０</p>
               <p>１</p>
               <p>２</p>
@@ -85,7 +82,7 @@ export default function Numbers100V2() {
             <em>Numbers</em>
           </h1>
           <div className="flex flex-row pt-8">
-            <div className="[&>*]:py-4 text-2xl text-right tracking-[-0.5rem]">
+            <div className="text-right text-2xl tracking-[-0.5rem] [&>*]:py-4">
               <p>１１</p>
               <p>１２</p>
               <p>１３</p>
@@ -97,10 +94,7 @@ export default function Numbers100V2() {
               <p>１９</p>
               <p>２０</p>
             </div>
-            <div
-              className="ml-8 mt-[.3rem] text-[1.65rem]
-                  [&>*]:my-[0.65rem] [&>*]:block"
-            >
+            <div className="ml-8 mt-[.3rem] text-[1.65rem] [&>*]:my-[0.65rem] [&>*]:block">
               <div>
                 <Romaji romaji={"juuichi"}>
                   じゅう<span className="text-orange-400">いち</span>
@@ -157,10 +151,7 @@ export default function Numbers100V2() {
         {/* Col 3 */}
         <div className="w-1/3 p-4 pt-36">
           <div className="flex flex-row">
-            <div
-              className="text-2xl text-right tracking-[-0.5rem]
-                    [&>*]:py-4"
-            >
+            <div className="text-right text-2xl tracking-[-0.5rem] [&>*]:py-4">
               <p>２１</p>
               <p>３０</p>
               <p>４０</p>
@@ -171,10 +162,7 @@ export default function Numbers100V2() {
               <p>９０</p>
               <p>１００</p>
             </div>
-            <div
-              className="ml-8 mt-[.3rem] text-[1.65rem]
-                  [&>*]:my-[0.65rem] [&>*]:block"
-            >
+            <div className="ml-8 mt-[.3rem] text-[1.65rem] [&>*]:my-[0.65rem] [&>*]:block">
               <div>
                 <Romaji romaji={"nijuuichi"}>
                   <span className="text-red-400">に</span>じゅう

@@ -30,7 +30,7 @@ export default function Dialog({
 }: DialogProps) {
   return (
     <>
-      <Card className="fixed inset-0 bg-transparent flex items-center justify-center z-40">
+      <Card className="fixed inset-0 z-40 flex items-center justify-center bg-transparent">
         {/* <CloseDialog showAlertOnClose={showAlertOnClose} /> */}
         {/* Dialog Variants */}
         <div className={cn(dialogVariants({ variant, className }))}>
@@ -78,5 +78,5 @@ const dialogVariants = cva(
     defaultVariants: {
       variant: "reading",
     },
-  }
+  },
 )

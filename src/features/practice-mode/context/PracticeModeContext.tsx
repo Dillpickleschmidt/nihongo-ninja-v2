@@ -43,7 +43,7 @@ export function PracticeModeContextProvider({
   >([])
   const [currentCardIndex, setCurrentCardIndex] = useState(0)
   const [recentlySeenCards, setRecentlySeenCards] = useState<CardObject | null>(
-    null
+    null,
   )
   const [currentPage, setCurrentPage] = useState<PageOptions>("start")
 
@@ -75,7 +75,7 @@ export function usePracticeModeContext() {
   const context = useContext(PracticeModeContext)
   if (!context) {
     throw new Error(
-      "usePracticeModeContext must be used within a PracticeModeContextProvider"
+      "usePracticeModeContext must be used within a PracticeModeContextProvider",
     )
   }
   return context

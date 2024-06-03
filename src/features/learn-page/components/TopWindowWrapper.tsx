@@ -11,7 +11,7 @@ export default function TopWindowWrapper({
     <div className="fixed top-0 h-full w-full">
       <TopWindowBackground>
         {/* Blur background */}
-        <div className="absolute z-10 w-full h-full backdrop-blur-2xl dark:backdrop-brightness-[65%]">
+        <div className="absolute z-10 h-full w-full backdrop-blur-2xl dark:backdrop-brightness-[65%]">
           <LazyMotion features={loadMotionFeatures} strict>
             {children}
           </LazyMotion>

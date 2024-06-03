@@ -9,7 +9,7 @@ export default function page() {
       backgroundImageOpacity={5}
       nextPageLink="/learn/chapter-0/all-hiragana-quiz"
     >
-      <h1 className="pt-28 text-[2rem] font-medium leading-[2.875rem] text-center px-20">
+      <h1 className="px-20 pt-28 text-center text-[2rem] font-medium leading-[2.875rem]">
         You thought you were finally in the clear?{" "}
         <span className="text-[2.75rem] font-bold">
           <em>No!</em>{" "}
@@ -30,18 +30,15 @@ export default function page() {
         </span>
         , because things are about to get <em>wildly</em>... linguistic.
       </h1>
-      <h2 className="text-3xl font-medium leading-[3.25rem] text-center px-20"></h2>
+      <h2 className="px-20 text-center text-3xl font-medium leading-[3.25rem]"></h2>
 
       <div className="px-32 [&>*]:py-6">
-        <h3 className="font-semibold !pb-4">
+        <h3 className="!pb-4 font-semibold">
           Double Consonants (<span className="font-japanese">促音</span>,
           Sokuon): The Dramatic Pauses of Japanese:
         </h3>
         <div className="flex flex-row justify-center !pb-0">
-          <ul
-            className="pr-4 leading-7 pl-2 text-xl font-bold text-center
-              ![&>*]:py-0"
-          >
+          <ul className="![&>*]:py-0 pl-2 pr-4 text-center text-xl font-bold leading-7">
             <li>C</li>
             <li>o</li>
             <li>n</li>
@@ -53,10 +50,7 @@ export default function page() {
             <li>t</li>
             <li>s</li>
           </ul>
-          <ul
-            className="pr-6 leading-7 text-xl font-bold text-center
-              ![&>*]:py-0"
-          >
+          <ul className="![&>*]:py-0 pr-6 text-center text-xl font-bold leading-7">
             <li>D</li>
             <li>o</li>
             <li>u</li>
@@ -93,15 +87,12 @@ export default function page() {
           *Use a little っ before the consonant character to make it a double
           consonant.
         </p>
-        <h3 className="font-semibold !pb-4 !pt-16 text-center">
+        <h3 className="!pb-4 !pt-16 text-center font-semibold">
           Long Vowels (<span className="font-japanese">長音</span>, chōon): The
           Stretchy Elastic of Sounds:
         </h3>
         <div className="flex flex-row justify-center !pb-0">
-          <div
-            className="pr-4 leading-7 pl-2 text-xl font-bold text-center
-              ![&>*]:py-0"
-          >
+          <div className="![&>*]:py-0 pl-2 pr-4 text-center text-xl font-bold leading-7">
             <p>V</p>
             <p>o</p>
             <p>w</p>
@@ -109,10 +100,7 @@ export default function page() {
             <p>l</p>
             <p>s</p>
           </div>
-          <div
-            className="pr-6 leading-7 text-xl font-bold text-center
-              ![&>*]:py-0"
-          >
+          <div className="![&>*]:py-0 pr-6 text-center text-xl font-bold leading-7">
             <p>L</p>
             <p>o</p>
             <p>n</p>
@@ -148,10 +136,10 @@ export default function page() {
             characters that end in 'o' such as お, こ, そ, と, も, etc. For
             example:
           </p>
-          <div className="mt-2 w-full flex justify-center">
+          <div className="mt-2 flex w-full justify-center">
             <ul className="list-disc">
               <li>
-                <span className="font-japanese font-semibold text-xl">
+                <span className="font-japanese text-xl font-semibold">
                   おとうさん
                 </span>{" "}
                 <span className="text-sm">(father)</span> - otōsan{" "}
@@ -159,7 +147,7 @@ export default function page() {
                 <span className="text-sm">❌</span>
               </li>
               <li>
-                <span className="font-japanese font-semibold text-xl">
+                <span className="font-japanese text-xl font-semibold">
                   おしょうがつ
                 </span>{" "}
                 <span className="text-sm">(New Year's)</span> - oshōgatsu{" "}
@@ -167,7 +155,7 @@ export default function page() {
                 <span className="text-sm">❌</span>
               </li>
               <li>
-                <span className="font-japanese font-semibold text-xl">
+                <span className="font-japanese text-xl font-semibold">
                   もう
                 </span>{" "}
                 <span className="text-sm">(already)</span> - mō <span>✔️</span>,
@@ -181,7 +169,7 @@ export default function page() {
           </p>
         </div>
         <div className="pt-16">
-          <h3 className="font-semibold text-center">
+          <h3 className="text-center font-semibold">
             A special note for <span className="font-japanese text-xl">ん</span>
           </h3>
           <p className="mt-2">
@@ -190,10 +178,10 @@ export default function page() {
             of it like double letters in English, but even more important in
             Japanese—for example, "hello" versus "helo."
           </p>
-          <div className="mt-6 mx-16 rounded-lg bg-card/100 border-[2.5px] border-dashed border-card-foreground shadow-inner">
-            <table className="font-japanese table-fixed border-collapse text-4xl w-full">
+          <div className="mx-16 mt-6 rounded-lg border-[2.5px] border-dashed border-card-foreground bg-card/100 shadow-inner">
+            <table className="w-full table-fixed border-collapse font-japanese text-4xl">
               <tbody>
-                <tr className="[&>*]:border-l-2 [&>*]:border-r-2 [&>*]:border-card-foreground/75 [&>*]:h-[4.5rem] [&>*]:text-center [&>*]:pb-2">
+                <tr className="[&>*]:h-[4.5rem] [&>*]:border-l-2 [&>*]:border-r-2 [&>*]:border-card-foreground/75 [&>*]:pb-2 [&>*]:text-center">
                   <td className="!border-l-0">ko</td>
                   <td>n'</td>
                   <td>ni</td>
@@ -222,7 +210,7 @@ export default function page() {
           Japanese journey.
         </p>
 
-        <h3 className="mt-8 !pb-0 text-3xl font-bold text-center">
+        <h3 className="mt-8 !pb-0 text-center text-3xl font-bold">
           <em>Why, oh </em>
           <span className="text-4xl">Why?</span>
         </h3>
@@ -243,7 +231,7 @@ export default function page() {
           be weaving through Japanese conversations with the grace of a
           linguistic acrobat.
         </p>
-        <div className="-mb-12 ">
+        <div className="-mb-12">
           <p className="mt-6 text-base">
             <span className="font-bold">A note from sensei: </span>
             <em>
@@ -255,7 +243,7 @@ export default function page() {
               linguistic journey! ✨
             </em>
           </p>
-          <div className="mt-8 w-full flex justify-center">
+          <div className="mt-8 flex w-full justify-center">
             <PortraitIcon src="/img/guru.png" className="border-none" />
           </div>
         </div>

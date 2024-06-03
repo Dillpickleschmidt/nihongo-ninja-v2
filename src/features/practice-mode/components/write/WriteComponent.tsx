@@ -26,7 +26,7 @@ export default function WriteComponent({
 
   const correctEntry = useMemo(
     () => presentWriteOptions(data, shuffleInput, currentCardIndex),
-    [data, currentCardIndex]
+    [data, currentCardIndex],
   )
   const [userAnswer, setUserAnswer] = useState<string>("")
   const inputRef = useRef<HTMLInputElement | null>(null)
@@ -44,7 +44,7 @@ export default function WriteComponent({
 
   const handleInput = (userAnswer: string) => {
     setIsAnswerCorrect(
-      handleWrittenAnswer(userAnswer, correctEntry, enabledAnswerCategories)
+      handleWrittenAnswer(userAnswer, correctEntry, enabledAnswerCategories),
     )
     setHasUserAnswered(true)
 
@@ -58,7 +58,7 @@ export default function WriteComponent({
   }
 
   return (
-    <div className="mt-28 mx-40">
+    <div className="mx-40 mt-28">
       <label className="text-sm">
         {!hasUserAnswered && "Type your answer"}
       </label>

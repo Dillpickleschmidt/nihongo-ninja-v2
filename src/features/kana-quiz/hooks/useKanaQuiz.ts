@@ -19,7 +19,7 @@ export const useKanaQuiz = (kana: KanaItem[]) => {
     setCharacterBoxes(
       kana
         .sort(() => Math.random() - 0.5)
-        .map((kanaItem) => ({ ...kanaItem, userInput: "", isCorrect: false }))
+        .map((kanaItem) => ({ ...kanaItem, userInput: "", isCorrect: false })),
     )
   }, [kana])
 

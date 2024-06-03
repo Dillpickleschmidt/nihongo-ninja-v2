@@ -37,12 +37,12 @@ export default function UnitButtonContents({
 
   return (
     <>
-      <div className="h-full flex items-center">
+      <div className="flex h-full items-center">
         <span className="">{id}</span>
         <span className="mx-[0.3rem]"></span>
         <span className="text-muted-foreground">{children}</span>
       </div>
-      <div className="sticky right-0 text-muted-foreground ml-2 bg-inherit rounded-full">
+      <div className="sticky right-0 ml-2 rounded-full bg-inherit text-muted-foreground">
         {type === "lesson" ? (
           <BookOpen size={iconSize} className="text-green-500" />
         ) : type === "quiz" ? (

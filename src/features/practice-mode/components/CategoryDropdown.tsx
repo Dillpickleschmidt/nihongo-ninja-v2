@@ -35,7 +35,7 @@ export default function CategoryDropdown({
     if (enabledAnswerCategories.includes(category)) {
       // Set enabledAnswerCategories to all categories except the one that was toggled
       newEnabledCategories = enabledAnswerCategories.filter(
-        (c) => c !== category
+        (c) => c !== category,
       )
       setEnabledAnswerCategories(newEnabledCategories)
     } else {
@@ -72,8 +72,8 @@ export default function CategoryDropdown({
         <DropdownMenuSeparator /> */}
         {uniqueCategories.map((category) => (
           <DropdownMenuItem key={category}>
-            <View className="flex flex-row gap-2 mx-1 my-2">
-              <View className="w-6 h-6">
+            <View className="mx-1 my-2 flex flex-row gap-2">
+              <View className="h-6 w-6">
                 <Checkbox
                   key={category}
                   checked={enabledAnswerCategories.includes(category)}

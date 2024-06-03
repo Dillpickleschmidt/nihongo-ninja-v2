@@ -29,7 +29,7 @@ export function ButtonWithVideo({
       onClick={() => handleShow(index)}
       className={`${
         showVideo !== index && "relative"
-      } float-end mt-6 mx-6 w-56 h-36`}
+      } float-end mx-6 mt-6 h-36 w-56`}
     >
       {/* Fallback loading state */}
       {loadingStates[index] && showVideo !== index && <LoadingOverlay />}
@@ -41,9 +41,7 @@ export function ButtonWithVideo({
           title={title}
           allow="autoplay; fullscreen"
           onLoad={() => handleLoaded(index)}
-          className={`absolute top-0 left-0 w-full h-full
-            ${showVideo !== index && "pointer-events-none"}
-            `}
+          className={`absolute left-0 top-0 h-full w-full ${showVideo !== index && "pointer-events-none"} `}
         />
         {showVideo === index && (
           <>
@@ -52,7 +50,7 @@ export function ButtonWithVideo({
                 e.stopPropagation() // Prevent parent onClick from firing
                 handleHide()
               }}
-              className="absolute top-0 right-0 mt-4 mr-4 h-8 w-8 bg-red-500 saturate-[85%] hover:bg-red-700 rounded-sm flex justify-center items-center pb-[10px] text-2xl text-white font-light"
+              className="absolute right-0 top-0 mr-4 mt-4 flex h-8 w-8 items-center justify-center rounded-sm bg-red-500 pb-[10px] text-2xl font-light text-white saturate-[85%] hover:bg-red-700"
             >
               &times;
             </Button>

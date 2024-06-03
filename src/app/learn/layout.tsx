@@ -9,19 +9,19 @@ export default function Learn({ children }: { children: React.ReactNode }) {
       {children}
       {/* Rest of Content */}
       <ScrollProgressWrapper>
-        <div className="relative overflow-hidden z-40 bg-background/[100%] pb-12">
+        <div className="relative z-40 overflow-hidden bg-background/[100%] pb-12">
           <ButtonBar />
           <div className="flex justify-center">
             <div className="w-[60%]">
               {/* Tips box */}
-              <div className="w-full h-28 mt-24 px-8 bg-card saturate-50 my-6 flex justify-center items-center rounded-md border">
+              <div className="my-6 mt-24 flex h-28 w-full items-center justify-center rounded-md border bg-card px-8 saturate-50">
                 Visit the resources page to find helpful tools and materials to
                 aid in your learning journey.
               </div>
               {/* Stats */}
-              <div className="flex justify-between items-end mt-20 mb-12">
+              <div className="mb-12 mt-20 flex items-end justify-between">
                 <h3 className="text-4xl">Today's progress: 60%</h3>
-                <Button className="text-base px-6 py-4">Continue</Button>
+                <Button className="px-6 py-4 text-base">Continue</Button>
               </div>
               {/* Lessons */}
               <ChapterBoxes />

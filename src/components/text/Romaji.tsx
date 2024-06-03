@@ -16,14 +16,14 @@ export default function Romaji({
   return (
     <div className="inline-flex">
       <span
-        className="font-japanese block"
+        className="block font-japanese"
         style={{
           textShadow: textShadow, //"0px 4px 4px rgba(0, 0, 0, 0.25)"
         }}
       >
         {children}
         <p
-          className={twMerge("text-base pt-0 text-center", className)}
+          className={twMerge("pt-0 text-center text-base", className)}
           style={{
             textShadow: textShadow, //"0px 4px 4px rgba(0, 0, 0, 0.25)"
           }}

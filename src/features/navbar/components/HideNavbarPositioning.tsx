@@ -14,14 +14,14 @@ export default function HideNavbarPositioning() {
     await animate(
       scope.current,
       { y: -42, opacity: 0.125 },
-      { duration: 0.1, ease: easeInOut }
+      { duration: 0.1, ease: easeInOut },
     )
   }
   async function handleMouseOver() {
     await animate(
       scope.current,
       { y: 0, opacity: 1 },
-      { duration: 0.1, ease: easeInOut }
+      { duration: 0.1, ease: easeInOut },
     )
   }
 
@@ -31,12 +31,12 @@ export default function HideNavbarPositioning() {
         // Just to remove blur flickering and provide time offset
         scope.current,
         { y: 0, opacity: 0.999 },
-        { duration: 1, ease: easeInOut }
+        { duration: 1, ease: easeInOut },
       )
       await animate(
         scope.current,
         { y: -42, opacity: 0.125 },
-        { duration: 1, ease: easeInOut }
+        { duration: 1, ease: easeInOut },
       )
     } else {
       // Set y to -42 and opacity to 0.25 immediately
@@ -79,7 +79,7 @@ export default function HideNavbarPositioning() {
           handleAnimate("mouseOver")
         }}
         onMouseLeave={() => handleAnimate("mouseExit")}
-        className="fixed top-0 left-0 z-10 w-full h-[65px] bg-background/[99.9%] text-foreground"
+        className="fixed left-0 top-0 z-10 h-[65px] w-full bg-background/[99.9%] text-foreground"
       >
         <NavbarContent />
       </div>

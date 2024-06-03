@@ -10,32 +10,32 @@ export default function page() {
       backgroundImageOpacity={5}
       nextPageLink="/learn/chapter-0/writing-systems"
     >
-      <div className="w-full flex justify-center">
-        <div className="relative sm:mt-12 z-[-1] w-[615px] h-[800px] rounded-2xl shadow-xl overflow-hidden">
+      <div className="flex w-full justify-center">
+        <div className="relative z-[-1] h-[800px] w-[615px] overflow-hidden rounded-2xl shadow-xl sm:mt-12">
           <CustomImage
             src="/img/chapter-0/chapter-0-welcome.png"
             alt="welcome image"
           />
         </div>
       </div>
-      <h2 className="mt-12 text-5xl font-medium leading-[3.5rem] text-center px-24">
+      <h2 className="mt-12 px-24 text-center text-5xl font-medium leading-[3.5rem]">
         Getting started 🍵
       </h2>
-      <h2 className="pb-2 mt-6 text-3xl font-medium leading-[2.5rem] px-24">
+      <h2 className="mt-6 px-24 pb-2 text-3xl font-medium leading-[2.5rem]">
         If you feel intimidated about learning a new language, there's good news
         for you! Japanese pronunciation is{" "}
         <span className="font-extrabold">easy</span> if you know English.
       </h2>
-      <div className="sm:px-24 px-16 [&>*]:my-6">
-        <div className="pt-2 pb-4 [&>*]:my-6">
-          <div className="mr-[5.75rem] rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
+      <div className="px-16 sm:px-24 [&>*]:my-6">
+        <div className="pb-4 pt-2 [&>*]:my-6">
+          <div className="mr-[5.75rem] rounded-2xl border-2 border-dashed border-muted bg-card p-4 shadow-md">
             <PortraitIcon src="/img/student.png" />
             <p>
               Wise Sensei, I want to learn Japanese. I heard that the sounds are
               similar to English. Is that true?
             </p>
           </div>
-          <div className="ml-24 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
+          <div className="ml-24 rounded-2xl border-2 border-dashed border-muted bg-card p-4 shadow-md">
             <PortraitIcon src="/img/guru.png" className="float-end" />
             <p>
               Ah, young eager one, your ears are keen. Indeed, many Japanese
@@ -56,13 +56,13 @@ export default function page() {
             Japanese has a simple phonetic structure. The language revolves
             around five basic vowel sounds. Listen carefully:
           </p>
-          <div className="font-japanese font-medium w-full flex justify-center text-2xl">
+          <div className="flex w-full justify-center font-japanese text-2xl font-medium">
             <ul>
               <li>
                 あ a -{" "}
                 <span className="text-xl">
                   <em>
-                    <span className="font-extrabold text-2xl">AH</span>HH!!
+                    <span className="text-2xl font-extrabold">AH</span>HH!!
                   </em>
                 </span>
               </li>
@@ -70,34 +70,34 @@ export default function page() {
                 い i -{" "}
                 <span className="text-xl">
                   <em>
-                    eur<span className="font-semibold text-2xl">ea</span>ka!
+                    eur<span className="text-2xl font-semibold">ea</span>ka!
                   </em>
                 </span>
               </li>
               <li>
                 う u -{" "}
                 <span className="text-xl">
-                  g<span className="font-semibold text-2xl">👀</span>se 🪿
+                  g<span className="text-2xl font-semibold">👀</span>se 🪿
                 </span>
               </li>
               <li>
                 え e -{" "}
                 <span className="text-xl">
-                  <span className="font-semibold text-2xl">e</span>lephant 🐘
+                  <span className="text-2xl font-semibold">e</span>lephant 🐘
                 </span>
               </li>
               <li>
                 お o -{" "}
                 <span className="text-xl">
-                  d<span className="font-semibold text-2xl">o</span>nut 🍩
+                  d<span className="text-2xl font-semibold">o</span>nut 🍩
                 </span>
               </li>
             </ul>
           </div>
-          <p className="mt-0 mb-12 text-sm text-center">
+          <p className="mb-12 mt-0 text-center text-sm">
             *Note the rounded shapes of Hiragana characters.*
           </p>
-          <div className="my-6 ml-6 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
+          <div className="my-6 ml-6 rounded-2xl border-2 border-dashed border-muted bg-card p-4 shadow-md">
             <PortraitIcon src="/img/guru.png" className="float-end ml-2" />
             <p>
               These vowels form the essence of the Japanese phonetic system.
@@ -113,9 +113,9 @@ export default function page() {
             <span className="font-extrabold">Sensei:</span> Of course.
           </p>
           <p className="text-center">
-            Take the consonant <span className="font-bold text-xl">k</span>:
+            Take the consonant <span className="text-xl font-bold">k</span>:
           </p>
-          <div className="font-japanese font-medium text-2xl flex justify-center">
+          <div className="flex justify-center font-japanese text-2xl font-medium">
             <div>
               <p>か ka</p>
               <p>き ki</p>
@@ -125,9 +125,9 @@ export default function page() {
             </div>
           </div>
           <p className="text-center">
-            And the consonant <span className="font-bold text-xl">s</span>:
+            And the consonant <span className="text-xl font-bold">s</span>:
           </p>
-          <div className="font-japanese font-medium text-2xl flex justify-center">
+          <div className="flex justify-center font-japanese text-2xl font-medium">
             <div>
               <p>さ sa</p>
               <p>
@@ -160,7 +160,7 @@ export default function page() {
             <span className="font-extrabold">Student:</span> That's comforting
             to hear, wise Sensei. This doesn't seem so hard after all.
           </p>
-          <h2 className="text-2xl font-bold !mt-12">Your Turn:</h2>
+          <h2 className="!mt-12 text-2xl font-bold">Your Turn:</h2>
           <p className="!mt-2">
             Try connect the consonants t, n, h, m, and r to each of the five
             vowel sounds.

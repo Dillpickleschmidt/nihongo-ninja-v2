@@ -12,7 +12,7 @@ export default function page() {
       // backgroundImageOpacity={5}
       nextPageLink="/learn/chapter-0/greetings-quiz"
     >
-      <h1 className="pt-28 px-28 pb-6 text-3xl">
+      <h1 className="px-28 pb-6 pt-28 text-3xl">
         Now that you're familiar with the basics, let's dive into some common
         Japanese greetings. These phrases will be your first steps into
         conversational Japanese, and they're essential for everyday
@@ -32,8 +32,8 @@ export default function page() {
         is most appropriate.
       </p>
       {/* Practice */}
-      <div className="px-24 text-xl leading-8 space-y-4 [&>*]:space-y-4">
-        <h3 className="!pt-32 !pb-6 text-5xl font-bold text-center">
+      <div className="space-y-4 px-24 text-xl leading-8 [&>*]:space-y-4">
+        <h3 className="!pb-6 !pt-32 text-center text-5xl font-bold">
           Practice
         </h3>
         {/* <p>

@@ -18,7 +18,7 @@ export function presentPictureQuestion(quizData: QuizData) {
 
 export function handlePictureAnswer(
   userAnswer: string,
-  correctOption: QuizItem
+  correctOption: QuizItem,
 ) {
   const isCorrect = correctOption.answers.includes(userAnswer)
 

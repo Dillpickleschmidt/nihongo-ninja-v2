@@ -14,17 +14,17 @@ export default function TopWindowBackground({
           src="/img/japanese-gate.png"
           alt="Japanese gate homescreen image"
           priority={true}
-          className="bg-background hover:scale-[101%] ease-in-out duration-300"
+          className="bg-background duration-300 ease-in-out hover:scale-[101%]"
         >
           {/* Vignette */}
-          <div className="absolute w-full h-full bg-[radial-gradient(50%_120%_at_50%_50%,rgba(0,0,0,0.0)_30%,rgba(0,0,0,0.2)_100%)]"></div>
+          <div className="absolute h-full w-full bg-[radial-gradient(50%_120%_at_50%_50%,rgba(0,0,0,0.0)_30%,rgba(0,0,0,0.2)_100%)]"></div>
           <div
-            className="absolute w-full h-full flex justify-center items-center"
+            className="absolute flex h-full w-full items-center justify-center"
             style={{
               textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
             }}
           >
-            <h1 className="lg:text-[5rem] text-6xl">NIHONGO NINJA</h1>
+            <h1 className="text-6xl lg:text-[5rem]">NIHONGO NINJA</h1>
           </div>
         </CustomImage>
       </Link>

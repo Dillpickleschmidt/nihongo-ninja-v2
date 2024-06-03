@@ -14,30 +14,30 @@ export default function ReviewPage() {
   }
   return (
     <div>
-      <h1 className="font-semibold xl:text-5xl text-3xl text-center text-[#dfcdb3] pt-24 mb-10 mx-6">
+      <h1 className="mx-6 mb-10 pt-24 text-center text-3xl font-semibold text-[#dfcdb3] xl:text-5xl">
         <em>See the terms you practiced!</em>
       </h1>
-      <div className="w-full flex justify-center">
+      <div className="flex w-full justify-center">
         <div>
           {Object.entries(recentlySeenCards).map(([key, card], index) => (
             <div
               key={index}
-              className="relative bg-card dark:shadow-none shadow-lg rounded-lg my-2 flex min-w-[400px] overflow-hidden"
+              className="relative my-2 flex min-w-[400px] overflow-hidden rounded-lg bg-card shadow-lg dark:shadow-none"
             >
               <li
-                className={`font-japanese flex items-center p-4 ${
+                className={`flex items-center p-4 font-japanese ${
                   card.wrongAnswerCount > 0
                     ? "text-red-500"
                     : index % 2 === 0
-                    ? "dark:text-[#b49b7d]"
-                    : "dark:text-[#dfcdb3]"
+                      ? "dark:text-[#b49b7d]"
+                      : "dark:text-[#dfcdb3]"
                 }`}
               >
-                <span className="font-semibold text-3xl">{key} -</span>
-                <div className="text-lg mt-2">
+                <span className="text-3xl font-semibold">{key} -</span>
+                <div className="mt-2 text-lg">
                   {card.answerCategories
                     .filter((category) =>
-                      enabledAnswerCategories.includes(category.category)
+                      enabledAnswerCategories.includes(category.category),
                     )
                     .map((category, catIndex) => (
                       <div key={catIndex} className="ml-2">
@@ -49,15 +49,15 @@ export default function ReviewPage() {
               <div
                 className={`absolute right-0 h-full ${
                   card.wrongAnswerCount > 0
-                    ? "bg-red-500/75 w-2"
-                    : "bg-green-500/50 w-[0.375rem]"
+                    ? "w-2 bg-red-500/75"
+                    : "w-[0.375rem] bg-green-500/50"
                 }`}
               ></div>
             </div>
           ))}
         </div>
       </div>
-      <div className="w-full flex justify-center px-3">
+      <div className="flex w-full justify-center px-3">
         <Button
           size="lg"
           onClick={() => {
@@ -65,7 +65,7 @@ export default function ReviewPage() {
             setRecentlySeenCards(null)
             setCurrentPage("practice")
           }}
-          className="w-40 mt-2 mb-4 bg-orange-500"
+          className="mb-4 mt-2 w-40 bg-orange-500"
         >
           Continue
         </Button>

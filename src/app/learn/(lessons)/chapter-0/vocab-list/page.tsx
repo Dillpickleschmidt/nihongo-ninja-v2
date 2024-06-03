@@ -12,7 +12,7 @@ export default function Numbers() {
       nextPageLink="/learn/chapter-0/greetings"
     >
       <div className="pb-20">
-        <h1 className="pt-28 pb-6 text-4xl font-medium leading-[3.25rem] text-center px-20">
+        <h1 className="px-20 pb-6 pt-28 text-center text-4xl font-medium leading-[3.25rem]">
           <span className="text-5xl font-medium">Great job</span>, you've
           finally made it! You've now got a strong grasp of Hiragana! Not only
           can you <span className="text-5xl">read</span> hiragana, but you also
@@ -26,13 +26,13 @@ export default function Numbers() {
           work your way through each word as they come up, and you'll be having
           real Japanese conversations before you know it!
         </p>
-        <h1 className="mx-auto mt-6 mb-12 text-6xl text-center font-semibold tracking-wide underline-offset-8">
+        <h1 className="mx-auto mb-12 mt-6 text-center text-6xl font-semibold tracking-wide underline-offset-8">
           <u>
             <em>Vocabliary</em>
           </u>
         </h1>
-        <div className="mx-24 pb-12 border-b border-neutral-600">
-          <h3 className="mt-8 mb-6 text-3xl text-center text-orange-400 font-semibold">
+        <div className="mx-24 border-b border-neutral-600 pb-12">
+          <h3 className="mb-6 mt-8 text-center text-3xl font-semibold text-orange-400">
             Greetings
           </h3>
           <table className={tableClassName}>
@@ -72,7 +72,7 @@ export default function Numbers() {
               <td>Goodbye.</td>
             </tr>
           </table>
-          <h3 className="mt-8 mb-6 text-3xl text-center text-orange-400 font-semibold">
+          <h3 className="mb-6 mt-8 text-center text-3xl font-semibold text-orange-400">
             Common Phrases
           </h3>
           <table className={tableClassName}>
@@ -122,7 +122,7 @@ export default function Numbers() {
               <td>Please be kind to me.</td>
             </tr>
           </table>
-          <h3 className="mt-8 mb-6 text-3xl text-center text-orange-400 font-semibold">
+          <h3 className="mb-6 mt-8 text-center text-3xl font-semibold text-orange-400">
             Essential Expressions
           </h3>
           <table className={tableClassName}>
@@ -138,7 +138,7 @@ export default function Numbers() {
             </tr>
           </table>
 
-          <h3 className="mt-8 mb-6 text-3xl text-center text-orange-400 font-semibold">
+          <h3 className="mb-6 mt-8 text-center text-3xl font-semibold text-orange-400">
             Numbers
           </h3>
           <table className={tableClassName}>

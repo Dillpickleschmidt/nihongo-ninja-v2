@@ -7,7 +7,7 @@ import { Entry, CardObject } from "@/types"
 export function presentWriteOptions(
   data: CardObject,
   shuffleInput = true,
-  currentCardIndex: number
+  currentCardIndex: number,
 ) {
   let entries = Object.entries(data) // [1, 2, 3, 4, 5...]
 
@@ -37,7 +37,7 @@ export function presentWriteOptions(
 export function handleWrittenAnswer(
   userAnswer: string,
   correctOption: Entry & { key: string },
-  correctAnswers: string[]
+  correctAnswers: string[],
 ) {
   // Flatten the enabled answers from all categories
   const enabledAnswers = correctOption.answerCategories

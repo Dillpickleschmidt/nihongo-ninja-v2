@@ -26,7 +26,7 @@ export default function VocabVideo({ index }: VocabVideoProps) {
 
   const [showVideo, setShowVideo] = useState<number | null>(null)
   const [loadingStates, setLoadingStates] = useState(
-    vocabEntries.map(() => true)
+    vocabEntries.map(() => true),
   )
 
   const handleShow = (index: number) => {
@@ -54,7 +54,7 @@ export default function VocabVideo({ index }: VocabVideoProps) {
   return (
     <div
       className={`${
-        index === showVideo && "relative pb-[56.25%] bg-background"
+        index === showVideo && "relative bg-background pb-[56.25%]"
       }`}
     >
       <ButtonWithVideo

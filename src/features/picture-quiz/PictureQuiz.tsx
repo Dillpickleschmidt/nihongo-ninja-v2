@@ -32,15 +32,15 @@ export default function PictureQuiz() {
   }
 
   return (
-    <div className="absolute inset-0 py-6 space-y-6 flex flex-col items-center justify-center">
+    <div className="absolute inset-0 flex flex-col items-center justify-center space-y-6 py-6">
       <PictureQuizContent />
-      <div className="mx-12 space-y-6 flex flex-col items-center">
+      <div className="mx-12 flex flex-col items-center space-y-6">
         <Textarea
           placeholder="Write your answer in Japanese..."
           onChange={(e) => setUserAnswer(e.target.value)}
-          className="font-japanese resize-none w-[550px] min-h-72 bg-background-secondary rounded-[40px] focus-visible:ring-0 focus-visible:ring-offset-0 scrollbar-none py-6 px-8 placeholder:text-xl dark:placeholder:text-black dark:placeholder:text-opacity-50 placeholder:font-normal text-3xl text-black text-center font-medium shadow-inner border-[3px] dark:border-transparent border-black"
+          className="scrollbar-none min-h-72 w-[550px] resize-none rounded-[40px] border-[3px] border-black bg-background-secondary px-8 py-6 text-center font-japanese text-3xl font-medium text-black shadow-inner placeholder:text-xl placeholder:font-normal focus-visible:ring-0 focus-visible:ring-offset-0 dark:border-transparent dark:placeholder:text-black dark:placeholder:text-opacity-50"
         />
-        <div className="w-full flex flex-row justify-center gap-4">
+        <div className="flex w-full flex-row justify-center gap-4">
           <Button
             onClick={() => handleInput(userAnswer, correctEntry!)}
             className="w-24"

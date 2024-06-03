@@ -88,11 +88,11 @@ const config = {
     function ({ addVariant }: { addVariant: Function }) {
       addVariant(
         "supports-backdrop-blur",
-        "@supports (backdrop-filter: blur(0)) or (-webkit-backdrop-filter: blur(0))"
+        "@supports (backdrop-filter: blur(0)) or (-webkit-backdrop-filter: blur(0))",
       )
       addVariant(
         "supports-scrollbars",
-        "@supports selector(::-webkit-scrollbar)"
+        "@supports selector(::-webkit-scrollbar)",
       )
       addVariant("scrollbar", "&::-webkit-scrollbar")
       addVariant("scrollbar-track", "&::-webkit-scrollbar-track")

@@ -28,7 +28,7 @@ export default function VocabCards({ data, countOffset = 0 }: VocabCardsProps) {
           >
             <>
               {item.info && (
-                <ul className="list-disc ml-6">
+                <ul className="ml-6 list-disc">
                   {item.info.map((info, idx) => (
                     <li key={idx} className="space-y-6">
                       {info}

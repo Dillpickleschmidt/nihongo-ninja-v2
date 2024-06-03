@@ -8,7 +8,7 @@ export default function OffsetContentObserver() {
     <>
       {/* Check if switch enabled from TopWindowAnimations.tsx */}
       {isTopFullyExpanded && (
-        <div className="w-full h-[65px] bg-background"></div>
+        <div className="h-[65px] w-full bg-background"></div>
       )}
     </>
   )

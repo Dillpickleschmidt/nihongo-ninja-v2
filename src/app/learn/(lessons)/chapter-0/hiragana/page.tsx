@@ -11,18 +11,18 @@ export default function page() {
       backgroundImageOpacity={5}
       nextPageLink="/learn/chapter-0/hiragana-quiz"
     >
-      <div className="w-full flex justify-center">
+      <div className="flex w-full justify-center">
         <div className="relative mt-24 h-64 w-64">
           <CustomImage src="/img/chapter-0/あ.png" alt="あ image" />
         </div>
       </div>
-      <h1 className="mt-12 text-6xl font-bold leading-[3.5rem] mx-24 text-center">
+      <h1 className="mx-24 mt-12 text-center text-6xl font-bold leading-[3.5rem]">
         Hiragana: The <span className="text-sky-400">ABC</span>s of Japanese
       </h1>
-      <h2 className="text-3xl text-center font-bold mb-4 mt-12">
+      <h2 className="mb-4 mt-12 text-center text-3xl font-bold">
         What is Hiragana?
       </h2>
-      <div className="sm:px-24 px-16 space-y-9">
+      <div className="space-y-9 px-16 sm:px-24">
         <p>
           Hiragana is one of the three main scripts used in Japanese writing,
           along with Katakana and Kanji, often referred to as the foundational
@@ -37,8 +37,8 @@ export default function page() {
           sounds like a lot, but don't worry! They all include the same 5 vowels
           that you've already seen.
         </p>
-        <div className="font-japanese font-semibold w-full flex justify-center text-3xl">
-          <ul className="w-full flex justify-evenly">
+        <div className="flex w-full justify-center font-japanese text-3xl font-semibold">
+          <ul className="flex w-full justify-evenly">
             <li>あ a</li>
             <li>い i</li>
             <li>う u</li>
@@ -54,7 +54,7 @@ export default function page() {
           Next, we just add a consonant to each of these. Adding 'k' will give
           us five new characters:
         </p>
-        <div className="font-japanese font-medium w-full flex justify-center text-2xl">
+        <div className="flex w-full justify-center font-japanese text-2xl font-medium">
           <ul>
             <li>
               か ka -{" "}
@@ -106,7 +106,7 @@ export default function page() {
           <HiraganaChart />
         </div>
         <div className="py-2 [&>*]:my-6">
-          <div className="mr-24 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
+          <div className="mr-24 rounded-2xl border-2 border-dashed border-muted bg-card p-4 shadow-md">
             <PortraitIcon src="/img/student.png" />
             <p>
               But wait, <span className="font-japanese">し</span> sounds like
@@ -114,7 +114,7 @@ export default function page() {
               <span className="font-japanese">ん？</span>
             </p>
           </div>
-          <div className="ml-24 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
+          <div className="ml-24 rounded-2xl border-2 border-dashed border-muted bg-card p-4 shadow-md">
             <PortraitIcon src="/img/guru.png" className="float-end" />
             <p>
               Excellent observation, young apprentice. Some characters do veer{" "}
@@ -124,10 +124,7 @@ export default function page() {
           </div>
         </div>
         <div className="mt-4 flex flex-row justify-center">
-          <ul
-            className="h-32 flex flex-col justify-center pr-4 leading-7 pl-2 text-2xl font-bold text-center
-              ![&>*]:py-0"
-          >
+          <ul className="![&>*]:py-0 flex h-32 flex-col justify-center pl-2 pr-4 text-center text-2xl font-bold leading-7">
             <li className="font-japanese">ん</li>
           </ul>
           <p>
@@ -141,10 +138,7 @@ export default function page() {
           </p>
         </div>
         <div className="mt-4 flex flex-row justify-center">
-          <ul
-            className="h-14 flex flex-col justify-center pr-4 leading-7 pl-2 text-2xl font-bold text-center
-              ![&>*]:py-0"
-          >
+          <ul className="![&>*]:py-0 flex h-14 flex-col justify-center pl-2 pr-4 text-center text-2xl font-bold leading-7">
             <li className="font-japanese">を</li>
           </ul>
           <p>
@@ -206,10 +200,10 @@ export default function page() {
             but we'll be ditching them in the next one.
           </span>
         </p>
-        <div className="mt-4 w-full flex justify-center">
+        <div className="mt-4 flex w-full justify-center">
           <PortraitIcon
             src="/img/chapter-0/shocked-child.png"
-            className="border-none w-16 h-16 bg-inherit"
+            className="h-16 w-16 border-none bg-inherit"
           />
         </div>
         <div className="!-mb-6">
@@ -223,7 +217,7 @@ export default function page() {
               grasshopper.
             </em>
           </p>
-          <div className="mt-4 w-full flex justify-center">
+          <div className="mt-4 flex w-full justify-center">
             <PortraitIcon src="/img/guru.png" className="border-none" />
           </div>
         </div>

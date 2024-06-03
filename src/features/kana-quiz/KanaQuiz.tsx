@@ -52,7 +52,7 @@ export default function KanaQuiz({ kana, nextLesson, title }: KanaQuizProps) {
       <div className="text-center text-foreground-secondary">
         {!showResults ? (
           <>
-            <h1 className="pt-12 mb-4 text-5xl font-semibold">{title}</h1>
+            <h1 className="mb-4 pt-12 text-5xl font-semibold">{title}</h1>
             <h2 className="text-xl">
               Type the english spelling of each character into their respective
               boxes.
@@ -61,25 +61,25 @@ export default function KanaQuiz({ kana, nextLesson, title }: KanaQuizProps) {
           </>
         ) : (
           <>
-            <h1 className="pt-12 mb-4 text-6xl font-semibold">
+            <h1 className="mb-4 pt-12 text-6xl font-semibold">
               {numCorrect / kana.length <= 0.5
                 ? "YOU FAILED! 🤦"
                 : numCorrect / kana.length <= 0.8
-                ? "You're getting there! 😎"
-                : "Nice job! 🥳"}
+                  ? "You're getting there! 😎"
+                  : "Nice job! 🥳"}
             </h1>
             <h2 className="text-xl">
               You got {numCorrect} out of {kana.length} correct.{" "}
               {numCorrect / kana.length <= 0.5
                 ? "Review the terms and try again!"
                 : numCorrect / kana.length <= 0.8
-                ? "Try again and see if you can get 80%!"
-                : "Keep it up!"}
+                  ? "Try again and see if you can get 80%!"
+                  : "Keep it up!"}
             </h2>
           </>
         )}
       </div>
-      <div className="container grid grid-cols-[repeat(auto-fill,minmax(145px,_1fr))] p-3 mx-auto mt-12 text-center gap-3 text-[#F8F5E9]">
+      <div className="container mx-auto mt-12 grid grid-cols-[repeat(auto-fill,minmax(145px,_1fr))] gap-3 p-3 text-center text-[#F8F5E9]">
         {characterBoxes.map((characterBox, index) => (
           <CharacterBox
             key={characterBox.hiragana}
@@ -98,15 +98,15 @@ export default function KanaQuiz({ kana, nextLesson, title }: KanaQuizProps) {
               showResults && !characterBox.isCorrect
                 ? "text-red-500"
                 : showResults && characterBox.isCorrect
-                ? "text-white"
-                : undefined
+                  ? "text-white"
+                  : undefined
             }
             innerBorderColor={
               showResults && !characterBox.isCorrect
                 ? "border-red-500"
                 : showResults && characterBox.isCorrect
-                ? "border-green-500"
-                : undefined
+                  ? "border-green-500"
+                  : undefined
             }
           />
         ))}

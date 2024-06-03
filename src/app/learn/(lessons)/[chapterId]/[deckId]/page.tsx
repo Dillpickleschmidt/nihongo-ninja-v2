@@ -20,14 +20,14 @@ type PageProps = {
 
 const getData = async (
   chapterId: string,
-  deckId: string
+  deckId: string,
 ): Promise<VocabData> => {
   const filePath = path.join(
     process.cwd(),
     "src",
     "data",
     chapterId,
-    `${deckId}.json`
+    `${deckId}.json`,
   )
   try {
     const fileContents = await fs.readFile(filePath, "utf-8")

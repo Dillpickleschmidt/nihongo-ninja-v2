@@ -58,12 +58,12 @@ export default function TopWindowAnimations({
       await animate(
         scope.current,
         { height: "94vh", opacity: 1 },
-        { duration: 0.5, ease: easeInOut }
+        { duration: 0.5, ease: easeInOut },
       )
       await animate(
         scope.current,
         { height: "100vh" },
-        { duration: 1, ease: easeInOut }
+        { duration: 1, ease: easeInOut },
       )
       setFromLearnPage(false)
       console.log("Animation complete")
@@ -109,7 +109,7 @@ export default function TopWindowAnimations({
       ) : (
         <div
           style={{ opacity: handleScroll() }}
-          className="relative w-full h-screen bg-background"
+          className="relative h-screen w-full bg-background"
         >
           <TopWindowWrapper>{children}</TopWindowWrapper>
         </div>

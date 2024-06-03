@@ -9,7 +9,7 @@ export default function page() {
       backgroundImageOpacity={5}
       nextPageLink="/learn/chapter-0/vocab-list"
     >
-      <h1 className="pt-28 text-[2rem] font-medium leading-[2.875rem] text-center px-20">
+      <h1 className="px-20 pt-28 text-center text-[2rem] font-medium leading-[2.875rem]">
         Just When You Thought It Was Safe...{" "}
         <span className="text-[2.75rem] font-bold">Prepare Yourselves</span>,
         Intrepid Learners, for the World of{" "}
@@ -26,11 +26,11 @@ export default function page() {
         </span>{" "}
         Strap in, because you're about to get wildly... precise!
       </h1>
-      <h2 className="text-3xl text-center font-bold mb-4 mt-12">
+      <h2 className="mb-4 mt-12 text-center text-3xl font-bold">
         No Uppercase or Lowercase!
       </h2>
-      <div className="sm:px-24 px-16 space-y-9">
-        <div className="mr-[5.75rem] mt-9 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
+      <div className="space-y-9 px-16 sm:px-24">
+        <div className="mr-[5.75rem] mt-9 rounded-2xl border-2 border-dashed border-muted bg-card p-4 shadow-md">
           <PortraitIcon src="/img/student.png" />
           <p>
             Sensei, I've been learning about Hiragana, but I have some questions
@@ -38,7 +38,7 @@ export default function page() {
             uppercase and lowercase letters in Japanese?
           </p>
         </div>
-        <div className="ml-24 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
+        <div className="ml-24 rounded-2xl border-2 border-dashed border-muted bg-card p-4 shadow-md">
           <PortraitIcon src="/img/guru.png" className="float-end" />
           <p>
             Ah, inquisitive mind, Japanese is a language of simplicity in some
@@ -47,14 +47,14 @@ export default function page() {
             its own, without needing to change form.
           </p>
         </div>
-        <h2 className="text-3xl text-center font-bold mb-4 mt-12">
+        <h2 className="mb-4 mt-12 text-center text-3xl font-bold">
           Punctuation
         </h2>
-        <div className="mr-[5.75rem] mt-9 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
+        <div className="mr-[5.75rem] mt-9 rounded-2xl border-2 border-dashed border-muted bg-card p-4 shadow-md">
           <PortraitIcon src="/img/student.png" />
           <p>What about punctuation, like question marks and periods?</p>
         </div>
-        <div className="ml-24 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
+        <div className="ml-24 rounded-2xl border-2 border-dashed border-muted bg-card p-4 shadow-md">
           <PortraitIcon src="/img/guru.png" className="float-end" />
           <p>
             Ah, punctuation—the tiny marks that guide our understanding. In
@@ -77,11 +77,11 @@ export default function page() {
           <span className="font-extrabold">Student:</span> Oh, that's weird.
           I'll have to get used to that.
         </p>
-        <div className="mr-[5.75rem] mt-9 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
+        <div className="mr-[5.75rem] mt-9 rounded-2xl border-2 border-dashed border-muted bg-card p-4 shadow-md">
           <PortraitIcon src="/img/student.png" />
           <p>So, what about periods? Surely, they use those... right Sensei?</p>
         </div>
-        <div className="ml-24 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
+        <div className="ml-24 rounded-2xl border-2 border-dashed border-muted bg-card p-4 shadow-md">
           <PortraitIcon src="/img/guru.png" className="float-end" />
           <p>
             Indeed, young grasshopper. The humble period (。) in Japanese is
@@ -90,16 +90,16 @@ export default function page() {
             it as a tiny halo, giving your sentence a celestial send-off.
           </p>
         </div>
-        <h2 className="text-3xl text-center font-bold mb-4 mt-12">
+        <h2 className="mb-4 mt-12 text-center text-3xl font-bold">
           No Spaces!
         </h2>
-        <div className="mr-[5.75rem] mt-9 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
+        <div className="mr-[5.75rem] mt-9 rounded-2xl border-2 border-dashed border-muted bg-card p-4 shadow-md">
           <PortraitIcon src="/img/student.png" />
           <p>
             Do Japanese sentences have spaces between words like in English?
           </p>
         </div>
-        <div className="ml-24 rounded-2xl bg-card p-4 border-muted border-dashed border-2 shadow-md">
+        <div className="ml-24 rounded-2xl border-2 border-dashed border-muted bg-card p-4 shadow-md">
           <PortraitIcon src="/img/guru.png" className="float-end" />
           <p>
             Ah, spaces, or rather the absence of them, is a unique feature of

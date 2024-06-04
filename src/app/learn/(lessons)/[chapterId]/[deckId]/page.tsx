@@ -1,13 +1,9 @@
 import "server-only"
-import { use } from "react"
-import path from "path"
-import fs from "fs/promises"
-import { notFound } from "next/navigation"
 import { JSONWithAnswerCategories } from "@/types"
 import { VocabData } from "@/types/vocab"
 import PracticeMode from "@/features/practice-mode/PracticeMode"
 import { PracticeModeContextProvider } from "@/features/practice-mode/context/PracticeModeContext"
-// import data from "./test-data.json"
+import data from "@/data/chapter-0/vocab.json"
 import useDeckSplit from "@/features/practice-mode/components/useDeckSplit"
 import { vocabDataToJSONWithAnswerCategories } from "@/features/vocab-data-parsers"
 
@@ -18,29 +14,10 @@ type PageProps = {
   }
 }
 
-const getData = async (
-  chapterId: string,
-  deckId: string,
-): Promise<VocabData> => {
-  const filePath = path.join(
-    process.cwd(),
-    "src",
-    "data",
-    chapterId,
-    `${deckId}.json`,
-  )
-  try {
-    const fileContents = await fs.readFile(filePath, "utf-8")
-    return JSON.parse(fileContents) as VocabData
-  } catch (error) {
-    console.error("Error reading file:", error)
-    notFound()
-  }
-}
-
-const DeckPage = ({ params }: PageProps) => {
+export default async function DeckPage({ params }: PageProps) {
   const { chapterId, deckId } = params
-  const data = use(getData(chapterId, deckId))
+  const joinedPath = `${chapterId}/${deckId}`
+
   const convertedData = vocabDataToJSONWithAnswerCategories(data)
 
   const { slicedData, remainingData, unslicedData } =
@@ -60,5 +37,3 @@ const DeckPage = ({ params }: PageProps) => {
     </PracticeModeContextProvider>
   )
 }
-
-export default DeckPage

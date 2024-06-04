@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server"
 import { createClient } from "@/lib/supabase/middleware"
+import { getAllowedPaths } from "@/features/auth/allowedPaths"
 
 export async function middleware(request: NextRequest) {
   const { supabase, response } = createClient(request)
@@ -11,20 +12,11 @@ export async function middleware(request: NextRequest) {
   // console.log("Request path:", request.nextUrl.pathname)
   // console.log("User:", user)
 
-  // Specify the paths you want to allow
-  const allowedPaths = ["/", "/learn"]
-
-  // Check if the path starts with /learn or is the root path
-  const isAllowedPath =
-    allowedPaths.includes(request.nextUrl.pathname) ||
-    request.nextUrl.pathname.startsWith("/learn/") ||
-    request.nextUrl.pathname.startsWith("/auth")
-
-  // Check if the user is on the auth page
-  const isAuthPage = request.nextUrl.pathname === "/auth"
+  // Check if the path is allowed
+  const isAllowedPath = getAllowedPaths(request.nextUrl.pathname, user)
 
   // Redirect if the user is not authenticated, not on an allowed path, and not on the auth page
-  if (!user && !isAllowedPath && !isAuthPage) {
+  if (!user && !isAllowedPath) {
     console.log("Redirecting to auth")
     return NextResponse.redirect(new URL("/auth", request.url))
   }

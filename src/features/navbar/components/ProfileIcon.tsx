@@ -4,8 +4,10 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import supabaseBrowser from "@/lib/supabase/browser"
 import CustomImage from "@/components/CustomImage"
+import { User } from "@supabase/supabase-js"
 
 export default function ProfileIcon() {
+  const [user, setUser] = useState<User | null>(null)
   const [imageUrl, setImageUrl] = useState<string | null>(null)
 
   useEffect(() => {
@@ -14,6 +16,7 @@ export default function ProfileIcon() {
       const user = (await supabase.auth.getSession()).data.session?.user
       // console.log("user", user)
       if (user) {
+        setUser(user)
         let { data: profiles, error } = await supabase
           .from("profiles")
           .select("image_url")
@@ -32,16 +35,22 @@ export default function ProfileIcon() {
 
   return (
     <div>
-      <Link href="/profile">
-        <Button
-          variant="outline"
-          className="relative h-10 w-10 overflow-clip rounded-full"
-        >
-          {imageUrl && (
-            <CustomImage src={imageUrl} alt="profile icon" sizes="60px" />
-          )}
-        </Button>
-      </Link>
+      {user ? (
+        <Link href="/profile">
+          <Button
+            variant="outline"
+            className="relative h-10 w-10 overflow-clip rounded-full"
+          >
+            {imageUrl && (
+              <CustomImage src={imageUrl} alt="profile icon" sizes="60px" />
+            )}
+          </Button>
+        </Link>
+      ) : (
+        <Link href="/auth">
+          <Button variant="outline">Sign In</Button>
+        </Link>
+      )}
     </div>
   )
 }

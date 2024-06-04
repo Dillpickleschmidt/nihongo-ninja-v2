@@ -15,9 +15,6 @@ export default function NavbarContent() {
           <ThemeToggle />
         </li>
         <li className="flex h-full items-center [&>*]:mr-2">
-          <Link href="/auth">
-            <Button variant="outline">Sign In</Button>
-          </Link>
           <ProfileIcon />
         </li>
       </ul>

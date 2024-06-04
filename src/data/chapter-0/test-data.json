@@ -1,0 +1,48 @@
+{
+  "おはようございます": {
+    "furigana": ["おはようございます"],
+    "english": ["Good Morning"],
+    "mnemonics": [],
+    "info": [
+      "This is a polite way to say good morning and is typically used until late morning.",
+      "Drop 'ございます' for a more casual version, just 'おはよう (Ohayou)'.",
+      "The casual version, 'おはよう' is often used among friends, family, or colleagues you're familiar with.",
+      "The polite form 'おはようございます' is suitable for more formal situations or when addressing someone you don't know well.",
+      "It's a common greeting in schools, workplaces, or when doing morning activities.",
+      "As a rule of thumb, drop ございます when you're on a first-name basis with someone (friends and family).",
+      "If you refer to that person as Mr./Ms., use the longer ございます version."
+    ],
+    "example_sentences": ["Example 1", "Example 2"],
+    "chapter": 1,
+    "videos": [
+      {
+        "src": "https://drive.google.com/file/d/1DxePLe6C4qeLC7z7V6-gO4LlTThALRUc/preview",
+        "title": "Future Plans",
+        "origin": "TV Show Example"
+      }
+    ]
+  },
+  "こんにちは": {
+    "furigana": ["こんにちは"],
+    "english": ["Hello"],
+    "mnemonics": [],
+    "info": [
+      "This is a common greeting used during the day.",
+      "It is appropriate for both formal and informal settings."
+    ],
+    "example_sentences": ["Example 1", "Example 2"],
+    "chapter": 2,
+    "videos": [
+      {
+        "src": "https://example.com/video1",
+        "title": "Greeting",
+        "origin": "TV Show Example"
+      },
+      {
+        "src": "https://example.com/video2",
+        "title": "Conversation",
+        "origin": "Movie Example"
+      }
+    ]
+  }
+}

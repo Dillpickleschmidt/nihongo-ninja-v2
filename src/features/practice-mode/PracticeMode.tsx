@@ -77,14 +77,7 @@ export default function PracticeMode({
       backgroundImageOpacity={3}
       nextPageLink=""
       showProgressBar={false}
-      nextButton={
-        <Button
-          onClick={() => setCurrentPage("practice")}
-          className="bg-orange-500"
-        >
-          Start Learning! {"->"}
-        </Button>
-      }
+      nextButton=""
     >
       {renderPage()}
     </ContentBox>

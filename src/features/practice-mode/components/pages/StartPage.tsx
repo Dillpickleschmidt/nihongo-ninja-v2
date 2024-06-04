@@ -49,14 +49,15 @@ export default function StartPage({ children, deckId, data }: StartPageProps) {
           </div>
         </div>
       </div>
-      {/* <div className="relative">
+      <div className="relative mt-6 flex justify-center">
         <Button
           onClick={() => setCurrentPage("practice")}
-          className="min-w-full bg-orange-500"
+          size="lg"
+          className="bg-orange-500"
         >
           Start Learning!
         </Button>
-      </div> */}
+      </div>
     </div>
   )
 }

@@ -55,7 +55,7 @@ export default function MultipleChoice({
       {/* <label className={`${hasUserAnswered && "text-center"}`}>
         Multiple Choice
       </label> */}
-      <ul className="mx-5 mb-6 mt-48 grid grid-cols-1 gap-[.875rem] lg:grid-cols-2">
+      <ul className="mx-5 mb-6 mt-32 grid grid-cols-1 gap-[.875rem] lg:grid-cols-2">
         {choices.options.map((option, index) => {
           // Flatten the enabled answers from all categories
           const enabledAnswers = option.answerCategories
@@ -98,7 +98,7 @@ export default function MultipleChoice({
                 hasUserAnswered,
                 isCorrect,
                 isSelected,
-              )} w-full justify-start rounded-xl py-4 text-start font-japanese text-lg shadow-md duration-75 ease-in-out hover:scale-[98.5%]`}
+              )} min-h-20 w-full justify-start rounded-xl py-4 text-start font-japanese text-lg shadow-md duration-75 ease-in-out hover:scale-[98.5%]`}
             >
               {enabledAnswers.join(", ")}
             </Button>

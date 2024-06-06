@@ -1,16 +1,23 @@
 import ContentBox from "@/components/ContentBox"
 import VocabCards from "@/features/vocab-card/VocabCards"
-import data1 from "@/data/chapter-0/greetings-1.json"
-import data2 from "@/data/chapter-0/greetings-2.json"
 import SelectText from "@/components/text/MultipleChoiceText"
+import { fetchVocabularyByPath } from "@/features/practice-mode/components/fetchVocabByPath"
 
-export default function page() {
+export default async function page() {
+  const slug = "chapter-0/greetings-common-expressions"
+  const data = await fetchVocabularyByPath(slug)
+
+  // Split the data into two parts
+  const data1 = data.slice(0, 4)
+  const data2 = data.slice(4, 7)
+  data2.push(data[20])
+
   return (
     <ContentBox
       // backgroundImage="/img/dust-splatter-1.png"
       // backgroundImageSize="1215px"
       // backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-0/greetings-quiz"
+      nextPageLink="/learn/chapter-0/culture-note-japanese-greetings"
     >
       <h1 className="px-28 pb-6 pt-28 text-3xl">
         Now that you're familiar with the basics, let's dive into some common

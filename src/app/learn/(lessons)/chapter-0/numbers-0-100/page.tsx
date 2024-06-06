@@ -11,7 +11,7 @@ export default function page() {
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-0/practice-numbers-0-10"
+      nextPageLink="/learn/chapter-0/number-matching"
       showProgressBar={false}
     >
       <h1 className="mb-8 px-20 pt-20 text-center text-4xl font-medium leading-[3.25rem]">

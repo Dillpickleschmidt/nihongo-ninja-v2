@@ -1,24 +1,28 @@
 import ContentBox from "@/components/ContentBox"
 import SelectText from "@/components/text/MultipleChoiceText"
-import data1 from "@/data/chapter-0/common-phrases-1.json"
-import data2 from "@/data/chapter-0/common-phrases-2.json"
+import { fetchVocabularyByPath } from "@/features/practice-mode/components/fetchVocabByPath"
 import VocabCards from "@/features/vocab-card/VocabCards"
 
-export default function page() {
+export default async function page() {
+  const path = "chapter-0/greetings-common-expressions"
+  const data = await fetchVocabularyByPath(path)
+
+  // Split the data into two parts
+  const firstItem = data.slice(7, 8)
+  const rest = data.slice(8, 20)
+
   return (
     <ContentBox
       // backgroundImage="/img/dust-splatter-1.png"
       // backgroundImageSize="1215px"
       // backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-0/numbers"
+      nextPageLink="/learn/chapter-0/greetings-common-expressions/practice"
     >
       <h1 className="px-28 pb-6 pt-28 text-3xl">
-        Now that you're familiar with the basics, let's dive into some common
-        Japanese greetings. These phrases will be your first steps into
-        conversational Japanese, and they're essential for everyday
-        interactions.
+        Welcome to your next lesson. We've got a lot to talk about. This one
+        will be well worth your time. Good luck!
       </h1>
-      <VocabCards data={data1} />
+      <VocabCards data={firstItem} />
       <div className="space-y-8 px-16">
         <div className="mx-12 my-8 space-y-8">
           <p>
@@ -74,7 +78,7 @@ export default function page() {
       <h2 className="my-8 px-16 text-center text-2xl font-bold">
         Now for the rest.
       </h2>
-      <VocabCards data={data2} countOffset={1} />
+      <VocabCards data={rest} countOffset={1} />
       <p className="px-16">
         And there you have it, the essential phrases to not act like a rude
         person in Japanese! Use them wisely, use them often, and watch as you

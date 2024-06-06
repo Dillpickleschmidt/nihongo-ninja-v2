@@ -9,7 +9,7 @@ export default function page() {
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-0/numbers-1-100"
+      nextPageLink="/learn/chapter-0/numbers-0-100"
       showProgressBar={false}
     >
       <h1 className="px-20 pb-16 pt-36 text-center text-5xl font-medium leading-[4rem]">

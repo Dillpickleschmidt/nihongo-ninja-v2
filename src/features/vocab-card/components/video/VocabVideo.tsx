@@ -3,30 +3,28 @@
 import { useState } from "react"
 import { useVocabCardContext } from "@/features/vocab-card/context/VocabCardContext"
 import { ButtonWithVideo } from "./ButtonWithVideo"
+import type { VocabEntry } from "@/types/vocab"
 
 type VocabVideoProps = {
   index: number
 }
 
 export default function VocabVideo({ index }: VocabVideoProps) {
-  const { data } = useVocabCardContext()
-  // converts object to array of key-value pairs
-  const vocabEntries = Object.entries(data)
-  // vocabEntries[index][1] = value = { english: [], kana: [], mnemonics: [], videos: [] }
-  const entry = vocabEntries[index] ? vocabEntries[index][1] : null
+  const data = useVocabCardContext()
+  const entry: VocabEntry | undefined = data[index]
 
   // Check if entry or videos array is null or empty
   if (!entry || !entry.videos || entry.videos.length === 0) {
     return null
   }
 
-  //[0] is the first video
-  const src: string = entry?.videos?.[0]?.src ?? ""
-  const title: string = entry?.videos?.[0]?.title ?? ""
+  // Get the first video
+  const src: string = entry.videos[0].src ?? ""
+  const title: string = entry.videos[0].title ?? ""
 
   const [showVideo, setShowVideo] = useState<number | null>(null)
-  const [loadingStates, setLoadingStates] = useState(
-    vocabEntries.map(() => true),
+  const [loadingStates, setLoadingStates] = useState<boolean[]>(
+    data.map(() => true),
   )
 
   const handleShow = (index: number) => {
@@ -53,9 +51,7 @@ export default function VocabVideo({ index }: VocabVideoProps) {
 
   return (
     <div
-      className={`${
-        index === showVideo && "relative bg-background pb-[56.25%]"
-      }`}
+      className={`${index === showVideo && "relative bg-background pb-[56.25%]"}`}
     >
       <ButtonWithVideo
         index={index}

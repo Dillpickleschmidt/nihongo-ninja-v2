@@ -1,15 +1,12 @@
 import { JSONWithAnswerCategories } from "@/types"
-import { VocabData, VocabEntry } from "@/types/vocab"
+import { VocabEntry } from "@/types/vocab"
 
 type ExtractedTextArray = string[][]
 
-type VocabDataRaw = VocabData["data"]
-
-export function extractHiragana(rawData: VocabDataRaw): ExtractedTextArray {
+export function extractHiragana(rawData: VocabEntry[]): ExtractedTextArray {
   const result: ExtractedTextArray = []
 
-  for (const key in rawData) {
-    const entry = rawData[key]
+  for (const entry of rawData) {
     if (!entry.furigana) continue
 
     const furiganaArr = entry.furigana
@@ -44,11 +41,10 @@ function extractHiraganaFromFurigana(furigana: string): string {
   return hiragana
 }
 
-export function furiganaToRubyText(rawData: VocabDataRaw): ExtractedTextArray {
-  const result: ExtractedTextArray = []
+export function furiganaToRubyText(rawData: VocabEntry[]): string[][] {
+  const result: string[][] = []
 
-  for (const key in rawData) {
-    const entry = rawData[key]
+  for (const entry of rawData) {
     if (!entry.furigana) continue
 
     const furiganaArr = entry.furigana
@@ -98,55 +94,33 @@ type TransformedVocabEntry = VocabEntry & {
   rubyText?: string[]
 }
 
-type TransformedVocabData = {
-  [key: string]: TransformedVocabEntry
-}
-
 export function transformVocabData(
-  rawData: VocabDataRaw,
-): TransformedVocabData {
+  rawData: VocabEntry[],
+): TransformedVocabEntry[] {
   const parsedHiragana = extractHiragana(rawData)
   const parsedRubyText = furiganaToRubyText(rawData)
-  const result: TransformedVocabData = {}
+  const result: TransformedVocabEntry[] = []
 
-  let index = 0
-  for (const key in rawData) {
-    const {
-      furigana = [],
-      english = [],
-      info = [],
-      mnemonics = [],
-      chapter = 0,
-      example_sentences = [],
-    } = rawData[key] // Assign an empty array as default value
-
+  rawData.forEach((entry, index) => {
     const hiragana = parsedHiragana[index]
     const rubyText = parsedRubyText[index]
 
-    result[key] = {
-      word: key,
-      furigana,
+    result.push({
+      ...entry,
       hiragana,
-      english,
-      info,
-      mnemonics,
-      chapter,
-      example_sentences,
       rubyText,
-    }
-    index++
-  }
+    })
+  })
 
   return result
 }
 
 export function vocabDataToJSONWithAnswerCategories(
-  rawData: VocabDataRaw,
+  rawData: VocabEntry[],
 ): JSONWithAnswerCategories {
   const newJson: JSONWithAnswerCategories = {}
 
-  Object.keys(rawData).forEach((key) => {
-    const entry = rawData[key]
+  rawData.forEach((entry) => {
     const hiraganaArr: string[] = []
     for (let i = 0; i < (entry.furigana ?? []).length; i++) {
       const hiragana =
@@ -154,7 +128,7 @@ export function vocabDataToJSONWithAnswerCategories(
       hiragana && hiraganaArr.push(hiragana)
     }
 
-    newJson[key] = {
+    newJson[entry.word] = {
       answerCategories: [
         {
           category: "Kana",

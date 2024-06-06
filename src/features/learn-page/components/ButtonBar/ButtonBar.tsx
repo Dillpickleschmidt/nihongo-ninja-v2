@@ -34,7 +34,7 @@ export default function ButtonBar({
           CARDS
         </a>
         <Link
-          href=""
+          href="/learn/"
           style={{ textShadow: "0px 4px 4px rgba(0, 0, 0, 0.5)" }}
           className={isHovered2 ? "scale-[105%]" : ""}
           onMouseEnter={() => setIsHovered2(true)}
@@ -43,7 +43,7 @@ export default function ButtonBar({
           RESOURCES
         </Link>
         <Link
-          href=""
+          href="/learn/"
           style={{ textShadow: "0px 4px 4px rgba(0, 0, 0, 0.5)" }}
           className={isHovered3 ? "scale-[105%]" : ""}
           onMouseEnter={() => setIsHovered3(true)}
@@ -52,7 +52,7 @@ export default function ButtonBar({
           PROGRESS
         </Link>
         <Link
-          href=""
+          href="/learn/"
           style={{ textShadow: "0px 4px 4px rgba(0, 0, 0, 0.5)" }}
           className={isHovered4 ? "scale-[105%]" : ""}
           onMouseEnter={() => setIsHovered4(true)}

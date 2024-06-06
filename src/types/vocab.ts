@@ -13,6 +13,3 @@ export type VocabEntry = {
   chapter?: number
   videos?: Video[]
 }
-export type VocabData = {
-  data: Record<string, VocabEntry>
-}

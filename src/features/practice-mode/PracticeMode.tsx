@@ -71,10 +71,10 @@ export default function PracticeMode({
 
   return (
     <ContentBox
-      variant="md"
+      variant="xl"
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
-      backgroundImageOpacity={3}
+      backgroundImageOpacity={2}
       nextPageLink=""
       showProgressBar={false}
       nextButton=""

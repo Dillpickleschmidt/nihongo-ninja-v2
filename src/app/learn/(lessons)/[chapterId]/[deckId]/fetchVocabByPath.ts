@@ -1,18 +1,16 @@
 import supabaseServer from "@/lib/supabase/server"
-import { VocabEntry } from "@/types/vocab"
+import type { VocabEntry } from "@/types/vocab"
 
 export async function fetchVocabularyByPath(
   path: string,
-): Promise<(VocabEntry & { word: string })[]> {
+): Promise<VocabEntry[]> {
   const supabase = supabaseServer()
   try {
     const { data, error } = await supabase
       .from("practice_modules")
       .select(
         `
-        word,
         vocabulary (
-          id,
           created_at,
           word,
           furigana,
@@ -31,20 +29,16 @@ export async function fetchVocabularyByPath(
     }
 
     // Extract vocabulary data from the joined results
-    const vocabularyData = data.map((entry: any) => ({
-      ...entry.vocabulary,
-      word: entry.word, // Add the word property to each VocabEntry
-    }))
+    const vocabularyData = data.map((entry: any) => entry.vocabulary)
+
     return vocabularyData
   } catch (error) {
-    console.error("Error fetching vocabulary data by paths:", error)
+    console.error("Error fetching vocabulary data by path:", error)
     throw error
   }
 }
 
-export function arrayToRecord(
-  array: (VocabEntry & { word: string })[],
-): Record<string, VocabEntry> {
+export function arrayToRecord(array: VocabEntry[]): Record<string, VocabEntry> {
   return array.reduce(
     (record, entry) => {
       record[entry.word] = entry

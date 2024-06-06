@@ -116,19 +116,22 @@ export function transformVocabData(
       english = [],
       info = [],
       mnemonics = [],
-      videos = [],
+      chapter = 0,
+      example_sentences = [],
     } = rawData[key] // Assign an empty array as default value
 
     const hiragana = parsedHiragana[index]
     const rubyText = parsedRubyText[index]
 
     result[key] = {
+      word: key,
       furigana,
       hiragana,
       english,
       info,
       mnemonics,
-      videos,
+      chapter,
+      example_sentences,
       rubyText,
     }
     index++
@@ -143,28 +146,26 @@ export function vocabDataToJSONWithAnswerCategories(
   const newJson: JSONWithAnswerCategories = {}
 
   Object.keys(rawData).forEach((key) => {
-    for (const key in rawData) {
-      const entry = rawData[key]
-      const hiraganaArr: string[] = []
-      for (let i = 0; i < (entry.furigana ?? []).length; i++) {
-        const hiragana =
-          entry.furigana && extractHiraganaFromFurigana(entry.furigana[i])
-        hiragana && hiraganaArr.push(hiragana)
-      }
+    const entry = rawData[key]
+    const hiraganaArr: string[] = []
+    for (let i = 0; i < (entry.furigana ?? []).length; i++) {
+      const hiragana =
+        entry.furigana && extractHiraganaFromFurigana(entry.furigana[i])
+      hiragana && hiraganaArr.push(hiragana)
+    }
 
-      newJson[key] = {
-        answerCategories: [
-          {
-            category: "Kana",
-            answers: hiraganaArr,
-          },
-          {
-            category: "English",
-            answers: entry.english || [],
-          },
-        ],
-        mnemonics: entry.mnemonics || [],
-      }
+    newJson[key] = {
+      answerCategories: [
+        {
+          category: "Kana",
+          answers: hiraganaArr,
+        },
+        {
+          category: "English",
+          answers: entry.english || [],
+        },
+      ],
+      mnemonics: entry.mnemonics || [],
     }
   })
 

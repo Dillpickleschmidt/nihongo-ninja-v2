@@ -6,9 +6,14 @@ import { furiganaToRubyText } from "@/features/vocab-data-parsers"
 type VocabCardsProps = {
   data: VocabEntry[]
   countOffset?: number
+  noFurigana?: boolean
 }
 
-export default function VocabCards({ data, countOffset = 0 }: VocabCardsProps) {
+export default function VocabCards({
+  data,
+  countOffset = 0,
+  noFurigana = false,
+}: VocabCardsProps) {
   const rubyText = furiganaToRubyText(data)
 
   return (
@@ -21,6 +26,8 @@ export default function VocabCards({ data, countOffset = 0 }: VocabCardsProps) {
             light={(index + 1) % 2 === 0} // Alternating colors
             english={item.english?.join(", ")}
             kana={rubyText[index][0]}
+            noFurigana={noFurigana}
+            japanese={item.word}
           >
             <>
               {item.info && item.info.length > 0 && (

@@ -1,4 +1,5 @@
 "use client"
+import { cn } from "@/utils/cn"
 import { useState } from "react"
 
 type SelectTextProps = {
@@ -7,9 +8,17 @@ type SelectTextProps = {
   b?: string
   c?: string
   d?: string
+  className?: string
 }
 
-export default function SelectText({ answer, a, b, c, d }: SelectTextProps) {
+export default function SelectText({
+  answer,
+  a,
+  b,
+  c,
+  d,
+  className,
+}: SelectTextProps) {
   const options = { a, b, c, d }
   const [clicked, setClicked] = useState<{ [key: string]: boolean }>({})
   const [correct, setCorrect] = useState<{ [key: string]: boolean }>({})
@@ -42,7 +51,9 @@ export default function SelectText({ answer, a, b, c, d }: SelectTextProps) {
           onClick={() => handleClick(option)}
         >
           {`${option}) `}
-          <span className="font-japanese text-[1.55rem]">{text}</span>
+          <span className={cn("font-japanese text-[1.55rem]", className)}>
+            {text}
+          </span>
         </span>
       </p>
     )

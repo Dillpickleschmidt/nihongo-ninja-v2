@@ -2,7 +2,7 @@ import { twMerge } from "tailwind-merge"
 
 type RomajiProps = {
   children: React.ReactNode
-  romaji: string
+  romaji: any
   className?: string
   textShadow?: string
 }
@@ -14,7 +14,7 @@ export default function Romaji({
   textShadow,
 }: RomajiProps) {
   return (
-    <div className="inline-flex">
+    <span className="inline-flex">
       <span
         className="block font-japanese"
         style={{
@@ -22,15 +22,15 @@ export default function Romaji({
         }}
       >
         {children}
-        <p
-          className={twMerge("pt-0 text-center text-base", className)}
+        <span
+          className={twMerge("block pt-0 text-center text-base", className)}
           style={{
             textShadow: textShadow, //"0px 4px 4px rgba(0, 0, 0, 0.25)"
           }}
         >
           {romaji}
-        </p>
+        </span>
       </span>
-    </div>
+    </span>
   )
 }

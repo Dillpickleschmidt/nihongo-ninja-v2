@@ -6,6 +6,8 @@ type VocabCardProps = {
   kana?: string
   english?: string
   light?: boolean
+  noFurigana?: boolean
+  japanese?: string
 }
 
 export default function VocabCard({
@@ -14,6 +16,8 @@ export default function VocabCard({
   kana,
   english,
   light = false,
+  noFurigana = false,
+  japanese,
 }: VocabCardProps) {
   return (
     <div
@@ -29,10 +33,14 @@ export default function VocabCard({
             {`${index + 1}.`}{" "}
           </span>
           {/* Furigana */}
-          <span
-            dangerouslySetInnerHTML={{ __html: kana ?? "" }}
-            className="text-2xl"
-          ></span>{" "}
+          {noFurigana && japanese ? (
+            <span className="font-japanese text-2xl">{japanese}</span>
+          ) : (
+            <span
+              dangerouslySetInnerHTML={{ __html: kana ?? "" }}
+              className="text-2xl"
+            ></span>
+          )}{" "}
           - <span className="font-japanese text-[1.375rem]">{english}</span>
         </h3>
         {children}

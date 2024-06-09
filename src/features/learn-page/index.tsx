@@ -201,132 +201,143 @@ export function ChapterBoxes() {
         >
           Useful Expressions
         </UnitButton>
-        <UnitButton
-          id="4."
-          type="practice"
-          link="/learn/chapter-1/useful-expressions/practice"
-        >
-          Practice Useful Expressions
-        </UnitButton>
-        <UnitButton id="5." type="lesson">
+        <UnitButton id="4." type="lesson">
           jpdb.io Flashcards
         </UnitButton>
-        <UnitButton id="6." type="vocab-list">
-          Family & School
-        </UnitButton>
         <UnitButton
-          id="7."
-          type="practice"
-          link="/learn/chapter-1/family-school/practice"
+          id="5."
+          type="vocab-list"
+          link="/learn/chapter-1/people-descriptors-misc"
         >
-          Practice Family & School
-        </UnitButton>
-        <UnitButton id="8." type="vocab-list">
           People, Descriptors, Misc.
         </UnitButton>
         <UnitButton
-          id="9."
+          id="6."
           type="practice"
           link="/learn/chapter-1/people-descriptors-misc/practice"
         >
           Practice People, Descriptors, Misc.
         </UnitButton>
-        <UnitButton id="10." type="lesson">
-          です
+        <UnitButton
+          id="7."
+          type="vocab-list"
+          link="/learn/chapter-1/family-school"
+        >
+          Family & School
         </UnitButton>
-        <UnitButton id="11." type="lesson">
-          は Particle
+        <UnitButton
+          id="8."
+          type="practice"
+          link="/learn/chapter-1/family-school/practice"
+        >
+          Practice Family & School
         </UnitButton>
-        <UnitButton id="12." type="quiz">
-          <span className="font-bold">X</span>は
-          <span className="font-bold">Y</span>です Practice Sentences
+        <UnitButton id="9." type="lesson" link="/learn/chapter-1/x-wa-y-desu">
+          <span className="font-bold">X</span>
+          <span className="font-japanese">は</span>
+          <span className="font-bold">Y</span>
+          <span className="font-japanese">です</span>
         </UnitButton>
-        <UnitButton id="13." type="vocab-list">
+        <UnitButton
+          id="10."
+          type="vocab-list"
+          link="/learn/chapter-1/occupations-majors"
+        >
           Occuupations & Majors
         </UnitButton>
         <UnitButton
-          id="14."
+          id="11."
           type="practice"
           link="/learn/chapter-1/occupations-majors/practice"
         >
           Practice Occuupations & Majors
         </UnitButton>
-        <UnitButton id="15." type="lesson">
+        <UnitButton id="12." type="quiz">
+          <span className="font-bold">X</span>
+          <span className="font-japanese">は</span>
+          <span className="font-bold">Y</span>
+          <span className="font-japanese">です</span> Practice Sentences
+        </UnitButton>
+        <UnitButton
+          id="13."
+          type="lesson"
+          link="/learn/chapter-1/self-introductions"
+        >
           Self Introductions
         </UnitButton>
-        <UnitButton id="16." type="lesson">
+        <UnitButton id="14." type="lesson">
           Japanese Names & Honorifics
         </UnitButton>
-        <UnitButton id="17." type="lesson">
+        <UnitButton id="15." type="lesson">
           Saying "You" in Japanese
         </UnitButton>
-        <UnitButton id="18." type="vocab-list">
+        <UnitButton id="16." type="vocab-list">
           Expressions You'll Hear Every Day
         </UnitButton>
-        <UnitButton id="19." type="video">
+        <UnitButton id="17." type="video">
           Your Japanese Voice
         </UnitButton>
-        <UnitButton id="20." type="vocab-list">
+        <UnitButton id="18." type="vocab-list">
           Countries & Time
         </UnitButton>
         <UnitButton
-          id="21."
+          id="19."
           type="practice"
           link="/learn/chapter-1/countries-time/practice"
         >
           Practice Countries & Time
         </UnitButton>
-        <UnitButton id="22." type="vocab-list">
+        <UnitButton id="20." type="vocab-list">
           Age, Nationality, School-Year
         </UnitButton>
-        <UnitButton id="23." type="lesson">
+        <UnitButton id="21." type="lesson">
           Questions with <span className="font-japanese">か</span>
         </UnitButton>
-        <UnitButton id="24." type="lesson">
+        <UnitButton id="22." type="lesson">
           Modifying Nouns: <span className="font-japanese">の</span>
         </UnitButton>
-        <UnitButton id="25." type="quiz">
+        <UnitButton id="23." type="quiz">
           Practice Sentences:{" "}
           <span className="font-japanese">です, は, か, の</span>
         </UnitButton>
-        <UnitButton id="26." type="lesson">
+        <UnitButton id="24." type="lesson">
           Sounding Natural:{" "}
           <span className="font-japanese">あのう、えっと。。。</span>
         </UnitButton>
-        <UnitButton id="27." type="video">
+        <UnitButton id="25." type="video">
           Kikusasaizu Video - L1-1
         </UnitButton>
-        <UnitButton id="28." type="audio">
+        <UnitButton id="26." type="audio">
           MyKikitori - Conversation 1
         </UnitButton>
-        <UnitButton id="29." type="lesson">
+        <UnitButton id="27." type="lesson">
           Telling Time
         </UnitButton>
-        <UnitButton id="30." type="quiz">
+        <UnitButton id="28." type="quiz">
           Practice Asking The Time
         </UnitButton>
-        <UnitButton id="31." type="lesson">
+        <UnitButton id="29." type="lesson">
           Minutes
         </UnitButton>
-        <UnitButton id="32." type="audio">
+        <UnitButton id="30." type="audio">
           MyKikitori - Conversation 2
         </UnitButton>
-        <UnitButton id="33." type="practice">
+        <UnitButton id="31." type="practice">
           Vocab Practice: All Vocab
         </UnitButton>
-        <UnitButton id="34." type="quiz">
+        <UnitButton id="32." type="quiz">
           Worksheet 1
         </UnitButton>
-        <UnitButton id="35." type="quiz">
+        <UnitButton id="33." type="quiz">
           Worksheet 2
         </UnitButton>
-        <UnitButton id="36." type="video">
+        <UnitButton id="34." type="video">
           Kikusasaizu Video - L1-1
         </UnitButton>
-        <UnitButton id="37." type="game" disabled>
+        <UnitButton id="35." type="game" disabled>
           Meet Your Host Family At The Airport
         </UnitButton>
-        <UnitButton id="38." type="audio">
+        <UnitButton id="36." type="audio">
           MyKikitori - Conversation 2
         </UnitButton>
       </ChapterBox>

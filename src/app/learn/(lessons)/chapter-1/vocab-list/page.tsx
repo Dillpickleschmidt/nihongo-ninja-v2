@@ -118,6 +118,78 @@ export default async function page() {
             </tbody>
           </table>
           <h3 className="mb-6 mt-8 text-center text-3xl font-semibold text-orange-400">
+            People, Descriptors, Misc.
+          </h3>
+          <table className={tableClassName}>
+            <tbody className="align-top">
+              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
+                <td className={japaneseClassName}>わたし</td>
+                <td>Watashi</td>
+                <td>I</td>
+              </tr>
+              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
+                <td className={japaneseClassName}>ともだち</td>
+                <td>Tomodachi</td>
+                <td>Friend</td>
+              </tr>
+              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
+                <td className={japaneseClassName}>～じん</td>
+                <td>...jin</td>
+                <td>...people</td>
+              </tr>
+              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
+                <td className={japaneseClassName}>にほんじん</td>
+                <td>Nihonjin</td>
+                <td>Japanese people</td>
+              </tr>
+              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
+                <td className={japaneseClassName}>ばんごう</td>
+                <td>Bangō</td>
+                <td>Number</td>
+              </tr>
+              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
+                <td className={japaneseClassName}>なまえ</td>
+                <td>Namae</td>
+                <td>Name</td>
+              </tr>
+              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
+                <td className={japaneseClassName}>みんな</td>
+                <td>Min'na</td>
+                <td>Everyone / All</td>
+              </tr>
+              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
+                <td className={japaneseClassName}>なん/なに</td>
+                <td>Nan/Nani</td>
+                <td>What</td>
+              </tr>
+              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
+                <td className={japaneseClassName}>あのう</td>
+                <td>Anō</td>
+                <td>Um...</td>
+              </tr>
+              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
+                <td className={japaneseClassName}>はい</td>
+                <td>Hai</td>
+                <td>Yes</td>
+              </tr>
+              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
+                <td className={japaneseClassName}>そうです</td>
+                <td>Sō desu</td>
+                <td>That's right.</td>
+              </tr>
+              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
+                <td className={japaneseClassName}>そうですか</td>
+                <td>Sō desu ka</td>
+                <td>I see / Is that so?</td>
+              </tr>
+              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
+                <td className={japaneseClassName}>～さん</td>
+                <td>...san</td>
+                <td>Mr. / Mrs. / Ms.</td>
+              </tr>
+            </tbody>
+          </table>
+          <h3 className="mb-6 mt-8 text-center text-3xl font-semibold text-orange-400">
             Family & School
           </h3>
           <table className={tableClassName}>
@@ -211,73 +283,6 @@ export default async function page() {
                 <td className={japaneseClassName}>せんこう</td>
                 <td>Senkō</td>
                 <td>Major</td>
-              </tr>
-            </tbody>
-          </table>
-          <h3 className="mb-6 mt-8 text-center text-3xl font-semibold text-orange-400">
-            People, Descriptors, Misc.
-          </h3>
-          <table className={tableClassName}>
-            <tbody className="align-top">
-              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
-                <td className={japaneseClassName}>わたし</td>
-                <td>Watashi</td>
-                <td>I</td>
-              </tr>
-              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
-                <td className={japaneseClassName}>ともだち</td>
-                <td>Tomodachi</td>
-                <td>Friend</td>
-              </tr>
-              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
-                <td className={japaneseClassName}>～じん</td>
-                <td>...jin</td>
-                <td>...people</td>
-              </tr>
-              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
-                <td className={japaneseClassName}>にほんじん</td>
-                <td>Nihonjin</td>
-                <td>Japanese people</td>
-              </tr>
-              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
-                <td className={japaneseClassName}>ばんごう</td>
-                <td>Bangō</td>
-                <td>Number</td>
-              </tr>
-              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
-                <td className={japaneseClassName}>なまえ</td>
-                <td>Namae</td>
-                <td>Name</td>
-              </tr>
-              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
-                <td className={japaneseClassName}>なん/なに</td>
-                <td>Nan/Nani</td>
-                <td>What</td>
-              </tr>
-              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
-                <td className={japaneseClassName}>あのう</td>
-                <td>Anō</td>
-                <td>Um...</td>
-              </tr>
-              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
-                <td className={japaneseClassName}>はい</td>
-                <td>Hai</td>
-                <td>Yes</td>
-              </tr>
-              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
-                <td className={japaneseClassName}>そうです</td>
-                <td>Sō desu</td>
-                <td>That's right.</td>
-              </tr>
-              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
-                <td className={japaneseClassName}>そうですか</td>
-                <td>Sō desu ka</td>
-                <td>I see / Is that so?</td>
-              </tr>
-              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
-                <td className={japaneseClassName}>～さん</td>
-                <td>...san</td>
-                <td>Mr. / Mrs. / Ms.</td>
               </tr>
             </tbody>
           </table>

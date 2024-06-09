@@ -13,7 +13,7 @@ export default function page() {
       // backgroundImageSize="1215px"
       // backgroundImageOpacity={5}
     >
-      {/* <PictureQuizWrapper /> */}
+      <PictureQuizWrapper />
       <div></div>
     </ContentBox>
   )

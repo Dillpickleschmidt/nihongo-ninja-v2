@@ -32,17 +32,38 @@ export default async function page() {
           </Furigana>{" "}
           <span className="text-[1.375rem]">(Tanaka Tarou)</span>
         </h3>
+        <p className="!mt-0 text-center">(last—first)</p>
         <div className="space-y-1">
           <li>
             <span className="font-bold">Family Name: </span>
-            <span className="font-japanese">田中</span> (Tanaka)
+            <span className="font-japanese">田中</span> (Tanaka) - Means{" "}
+            <em>within rice fields</em>.
           </li>
           <li>
             <span className="font-bold">Given Name: </span>
-            <span className="font-japanese">太郎</span> (Tarou)
+            <span className="font-japanese">太郎</span> (Tarou) - Means{" "}
+            <em>great son</em>.
           </li>
         </div>
-        <h2 className="pb-3 pt-6 text-center text-2xl font-bold">
+        <p>
+          *Family names often refer to geographical features or parts of nature.
+        </p>
+        <h4 className="text-xl font-semibold">
+          Forign names are usually written in katakana and in their native
+          order.
+        </h4>
+        <h4 className="text-xl font-bold">Example:</h4>
+        <h3 className="!-mt-4 text-center text-xl">
+          <Furigana furigana={<span className="text-sm">とむ</span>}>
+            トム
+          </Furigana>
+          ・
+          <Furigana furigana={<span className="text-sm">くるーず</span>}>
+            クルーズ
+          </Furigana>{" "}
+          <span className="text-lg">(Tom Cruise)</span>
+        </h3>
+        <h2 className="py-3 text-center text-2xl font-bold">
           Cultural Differences in Addressing People
         </h2>
         <h4 className="text-xl font-bold">Family Name vs. Given Name</h4>

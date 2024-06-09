@@ -265,10 +265,10 @@ export function ChapterBoxes() {
         >
           Self Introductions
         </UnitButton>
-        <UnitButton id="14." type="lesson">
+        <UnitButton id="14." type="lesson" link="japanese-names-honorifics">
           Japanese Names & Honorifics
         </UnitButton>
-        <UnitButton id="15." type="lesson">
+        <UnitButton id="15." type="lesson" link="saying-you-in-japanese">
           Saying "You" in Japanese
         </UnitButton>
         <UnitButton id="16." type="vocab-list">

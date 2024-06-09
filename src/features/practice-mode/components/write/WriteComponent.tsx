@@ -24,8 +24,10 @@ export default function WriteComponent({
     isAnswerCorrect,
   } = usePracticeModeContext()
 
-  const correctEntry = presentWriteOptions(data, shuffleInput, currentCardIndex)
-
+  const correctEntry = useMemo(
+    () => presentWriteOptions(data, shuffleInput, currentCardIndex),
+    [data, currentCardIndex],
+  )
   const [userAnswer, setUserAnswer] = useState<string>("")
   const inputRef = useRef<HTMLInputElement | null>(null)
 

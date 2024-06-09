@@ -30,10 +30,9 @@ export default function MultipleChoice({
     null,
   )
 
-  const choices = presentMultipleChoiceOptions(
-    data,
-    shuffleInput,
-    currentCardIndex,
+  const choices = useMemo(
+    () => presentMultipleChoiceOptions(data, shuffleInput, currentCardIndex),
+    [data, currentCardIndex],
   )
 
   useEffect(() => {

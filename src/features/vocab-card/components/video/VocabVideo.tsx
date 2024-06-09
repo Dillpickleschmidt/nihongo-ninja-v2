@@ -13,6 +13,11 @@ export default function VocabVideo({ index }: VocabVideoProps) {
   const data = useVocabCardContext()
   const entry: VocabEntry | undefined = data[index]
 
+  const [showVideo, setShowVideo] = useState<number | null>(null)
+  const [loadingStates, setLoadingStates] = useState<boolean[]>(
+    data.map(() => true),
+  )
+
   // Check if entry or videos array is null or empty
   if (!entry || !entry.videos || entry.videos.length === 0) {
     return null
@@ -21,11 +26,6 @@ export default function VocabVideo({ index }: VocabVideoProps) {
   // Get the first video
   const src: string = entry.videos[0].src ?? ""
   const title: string = entry.videos[0].title ?? ""
-
-  const [showVideo, setShowVideo] = useState<number | null>(null)
-  const [loadingStates, setLoadingStates] = useState<boolean[]>(
-    data.map(() => true),
-  )
 
   const handleShow = (index: number) => {
     setShowVideo((prev) => {

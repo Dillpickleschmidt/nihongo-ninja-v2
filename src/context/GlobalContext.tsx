@@ -43,7 +43,7 @@ export function GlobalContextProvider({ children }: GlobalContextProps) {
       setShowNavbar(true)
       setIsTopFullyExpanded(true)
     }
-  }, [pathname])
+  }, [pathname, specificPaths])
 
   return (
     <GlobalContext.Provider

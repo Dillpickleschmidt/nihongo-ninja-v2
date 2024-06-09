@@ -68,7 +68,7 @@ export default function HideNavbarPositioning() {
 
   useEffect(() => {
     handleAnimate("pageMount")
-  }, [])
+  }, [handleAnimate])
 
   return (
     // This animation will run when loadFeatures resolves.

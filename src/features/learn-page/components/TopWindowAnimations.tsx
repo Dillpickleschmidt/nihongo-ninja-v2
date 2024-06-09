@@ -48,7 +48,7 @@ export default function TopWindowAnimations({
       setIsTopFullyExpanded(!isInView)
       setShowNavbar(isInView)
     }
-  }, [isInView])
+  }, [isInView, fromLearnPage, setIsTopFullyExpanded, setShowNavbar])
 
   const [scope, animate] = useAnimate()
 
@@ -73,7 +73,7 @@ export default function TopWindowAnimations({
   // Run the 'open' animation when the page mounts
   useEffect(() => {
     pageMountAnimation()
-  }, [])
+  }, [pageMountAnimation])
 
   // Track the scroll position of the scrollRefStateObject
   const { scrollYProgress } = useScroll({
@@ -87,7 +87,7 @@ export default function TopWindowAnimations({
     ease: anticipate,
   })
 
-  const handleScroll = () => {
+  const useHandleScroll = () => {
     useMotionValueEvent(opacity, "change", (latestValue) => {
       setOpacityState(latestValue)
       // console.log("Page scroll: ", latestValue)
@@ -101,14 +101,14 @@ export default function TopWindowAnimations({
       {fromLearnPage ? (
         <div
           ref={scope}
-          style={{ opacity: handleScroll() }}
+          style={{ opacity: useHandleScroll() }}
           className="relative w-full bg-background"
         >
           <TopWindowWrapper>{children}</TopWindowWrapper>
         </div>
       ) : (
         <div
-          style={{ opacity: handleScroll() }}
+          style={{ opacity: useHandleScroll() }}
           className="relative h-screen w-full bg-background"
         >
           <TopWindowWrapper>{children}</TopWindowWrapper>

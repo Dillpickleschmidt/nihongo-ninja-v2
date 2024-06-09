@@ -41,7 +41,7 @@ export default function PracticeMode({
 
   useEffect(() => {
     setEnabledAnswerCategories(uniqueCategories)
-  }, [uniqueCategories])
+  }, [uniqueCategories, setEnabledAnswerCategories])
 
   function renderPage() {
     switch (currentPage) {

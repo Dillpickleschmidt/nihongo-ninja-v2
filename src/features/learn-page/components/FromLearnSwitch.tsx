@@ -18,6 +18,6 @@ export function FromLearnSwitchOff() {
     setFromLearnPage(false)
     // setShowContentBox(false)
     console.log("FromLearnSwitch: false")
-  }, [])
+  }, [setFromLearnPage])
   return <div></div>
 }

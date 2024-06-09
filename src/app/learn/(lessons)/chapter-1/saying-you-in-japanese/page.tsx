@@ -7,7 +7,7 @@ export default async function page() {
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-1/saying-you-in-japanese"
+      nextPageLink="/learn/chapter-1/useful-expressions"
     >
       <h1 className="px-28 pb-6 pt-28 text-center text-4xl font-semibold">
         Saying "You" in Japanese

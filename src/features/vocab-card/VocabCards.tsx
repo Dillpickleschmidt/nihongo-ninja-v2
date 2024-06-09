@@ -28,6 +28,7 @@ export default function VocabCards({
             kana={rubyText[index][0]}
             noFurigana={noFurigana}
             japanese={item.word}
+            vocabVideo={true}
           >
             <>
               {item.info && item.info.length > 0 && (

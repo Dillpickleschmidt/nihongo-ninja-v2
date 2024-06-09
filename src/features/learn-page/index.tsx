@@ -197,9 +197,9 @@ export function ChapterBoxes() {
         <UnitButton
           id="3."
           type="vocab-list"
-          link="/learn/chapter-1/useful-expressions"
+          link="/learn/chapter-1/everyday-expressions"
         >
-          Useful Expressions
+          Everyday Expressions
         </UnitButton>
         <UnitButton id="4." type="lesson">
           jpdb.io Flashcards
@@ -252,7 +252,11 @@ export function ChapterBoxes() {
         >
           Practice Occuupations & Majors
         </UnitButton>
-        <UnitButton id="12." type="quiz">
+        <UnitButton
+          id="12."
+          type="quiz"
+          link="/learn/chapter-1/x-wa-y-desu/practice-sentences"
+        >
           <span className="font-bold">X</span>
           <span className="font-japanese">は</span>
           <span className="font-bold">Y</span>
@@ -271,8 +275,8 @@ export function ChapterBoxes() {
         <UnitButton id="15." type="lesson" link="saying-you-in-japanese">
           Saying "You" in Japanese
         </UnitButton>
-        <UnitButton id="16." type="vocab-list">
-          Expressions You'll Hear Every Day
+        <UnitButton id="16." type="vocab-list" link="useful-expressions">
+          Useful Expressions
         </UnitButton>
         <UnitButton id="17." type="video">
           Your Japanese Voice

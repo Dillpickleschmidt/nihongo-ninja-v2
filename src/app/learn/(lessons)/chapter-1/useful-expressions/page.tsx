@@ -12,7 +12,7 @@ export default async function page() {
       // backgroundImage="/img/dust-splatter-1.png"
       // backgroundImageSize="1215px"
       // backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-1/jpdb"
+      nextPageLink="/learn/chapter-1/your-japanese-voice"
     >
       {/* <h1 className="px-20 pb-12 pt-28 text-center text-3xl font-medium leading-[2.75rem]">
         Exhausted from dancing with digits all day? Are you feeling like a ninja

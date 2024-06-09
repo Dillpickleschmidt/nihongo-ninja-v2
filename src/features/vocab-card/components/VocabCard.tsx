@@ -8,6 +8,7 @@ type VocabCardProps = {
   light?: boolean
   noFurigana?: boolean
   japanese?: string
+  vocabVideo?: boolean
 }
 
 export default function VocabCard({
@@ -18,6 +19,7 @@ export default function VocabCard({
   light = false,
   noFurigana = false,
   japanese,
+  vocabVideo,
 }: VocabCardProps) {
   return (
     <div
@@ -25,7 +27,7 @@ export default function VocabCard({
         light ? "bg-[#f7f0dd]" : "bg-[#f7e2c4]"
       }`}
     >
-      <VocabVideo index={index} />
+      {vocabVideo && <VocabVideo index={index} />}
       <div className="min-h-48 px-16 py-12">
         <h3 className="mb-4 font-japanese text-2xl font-bold">
           {/* Number */}

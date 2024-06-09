@@ -1,14 +1,7 @@
 {
   "extends": "next/core-web-vitals",
-  "rules": [
-    { "react/no-unescaped-entities": 0 },
-    {
-      "no-restricted-imports": [
-        "error",
-        {
-          "patterns": ["@/features/*/*"]
-        }
-      ]
-    }
-  ]
+  "rules": {
+    "react/no-unescaped-entities": 0,
+    "no-restricted-imports": ["error", { "patterns": ["@/features/*/*"] }]
+  }
 }

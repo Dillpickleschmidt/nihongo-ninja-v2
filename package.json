@@ -45,5 +45,47 @@
     "prettier-plugin-tailwindcss": "^0.6.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
+  },
+  "overrides": {
+    "@radix-ui/react-dropdown-menu": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "@radix-ui/react-label": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "@radix-ui/react-select": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "@radix-ui/react-slot": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "@radix-ui/react-toast": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "framer-motion": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "lucide-react": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "next": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "next-themes": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "react-hook-form": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    }
   }
 }

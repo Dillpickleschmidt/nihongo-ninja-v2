@@ -34,16 +34,16 @@ export function GlobalContextProvider({ children }: GlobalContextProps) {
   const [isTopFullyExpanded, setIsTopFullyExpanded] = useState(true)
 
   const pathname = usePathname()
-  const specificPaths = ["/learn"]
 
   useEffect(() => {
+    const specificPaths = ["/learn"]
     // If the current path is in the specificPaths array
     if (specificPaths.includes(pathname)) {
       // Reset state on path change
       setShowNavbar(true)
       setIsTopFullyExpanded(true)
     }
-  }, [pathname, specificPaths])
+  }, [pathname])
 
   return (
     <GlobalContext.Provider

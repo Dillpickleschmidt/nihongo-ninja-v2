@@ -52,28 +52,27 @@ export default function TopWindowAnimations({
 
   const [scope, animate] = useAnimate()
 
-  const pageMountAnimation = async () => {
-    if (scope.current && fromLearnPage) {
-      console.log("Running animation")
-      await animate(
-        scope.current,
-        { height: "94vh", opacity: 1 },
-        { duration: 0.5, ease: easeInOut },
-      )
-      await animate(
-        scope.current,
-        { height: "100vh" },
-        { duration: 1, ease: easeInOut },
-      )
-      setFromLearnPage(false)
-      console.log("Animation complete")
-    }
-  }
-
   // Run the 'open' animation when the page mounts
   useEffect(() => {
+    const pageMountAnimation = async () => {
+      if (scope.current && fromLearnPage) {
+        console.log("Running animation")
+        await animate(
+          scope.current,
+          { height: "94vh", opacity: 1 },
+          { duration: 0.5, ease: easeInOut },
+        )
+        await animate(
+          scope.current,
+          { height: "100vh" },
+          { duration: 1, ease: easeInOut },
+        )
+        setFromLearnPage(false)
+        console.log("Animation complete")
+      }
+    }
     pageMountAnimation()
-  }, [pageMountAnimation])
+  }, [fromLearnPage, scope, animate, setFromLearnPage])
 
   // Track the scroll position of the scrollRefStateObject
   const { scrollYProgress } = useScroll({
@@ -96,24 +95,17 @@ export default function TopWindowAnimations({
     return opacityState
   }
 
+  const opacityValue = useHandleScroll()
+
   return (
     <>
-      {fromLearnPage ? (
-        <div
-          ref={scope}
-          style={{ opacity: useHandleScroll() }}
-          className="relative w-full bg-background"
-        >
-          <TopWindowWrapper>{children}</TopWindowWrapper>
-        </div>
-      ) : (
-        <div
-          style={{ opacity: useHandleScroll() }}
-          className="relative h-screen w-full bg-background"
-        >
-          <TopWindowWrapper>{children}</TopWindowWrapper>
-        </div>
-      )}
+      <div
+        ref={scope}
+        style={{ opacity: opacityValue }}
+        className={`relative w-full bg-background ${fromLearnPage ? "" : "h-screen"}`}
+      >
+        <TopWindowWrapper>{children}</TopWindowWrapper>
+      </div>
     </>
   )
 }

@@ -24,7 +24,9 @@ export default function TopWindowBackground({
               textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
             }}
           >
-            <h1 className="text-6xl lg:text-[5rem]">NIHONGO NINJA</h1>
+            <h1 className="text-6xl text-white lg:text-[5rem]">
+              NIHONGO NINJA
+            </h1>
           </div>
         </CustomImage>
       </Link>

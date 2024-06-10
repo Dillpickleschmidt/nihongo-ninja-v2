@@ -231,6 +231,16 @@ export default function page() {
           Japanese journey.
         </p>
 
+        <h3 className="!pb-0 !pt-6 text-center text-2xl font-semibold">
+          Bonus: Japanese Rhythm & Moras
+        </h3>
+        <div>
+          <YouTubeVideo
+            videoId="J_HLY0Rss-g"
+            title="Japanese Pronunciation: Rhythm by Kaname Naito, Nov 21 2022"
+          />
+        </div>
+
         <h3 className="mt-8 !pb-0 text-center text-3xl font-bold">
           <em>Why, oh </em>
           <span className="text-4xl">Why?</span>

@@ -34,7 +34,11 @@ export function ChapterBoxes() {
         >
           Practice Hiragana
         </UnitButton>
-        <UnitButton id="5." type="quiz" link="/learn/chapter-0/hiragana-quiz">
+        <UnitButton
+          id="5."
+          type="writing"
+          link="/learn/chapter-0/hiragana-quiz"
+        >
           Hiragana Quiz
         </UnitButton>
         <UnitButton
@@ -53,7 +57,7 @@ export function ChapterBoxes() {
         </UnitButton>
         <UnitButton
           id="8."
-          type="quiz"
+          type="writing"
           link="/learn/chapter-0/dakuten-handakuten-quiz"
         >
           Dakuten & Handakuten Quiz
@@ -74,7 +78,7 @@ export function ChapterBoxes() {
         </UnitButton>
         <UnitButton
           id="11."
-          type="quiz"
+          type="writing"
           link="/learn/chapter-0/contracted-sounds-quiz"
         >
           Contracted Sounds Quiz
@@ -95,7 +99,7 @@ export function ChapterBoxes() {
         </UnitButton>
         <UnitButton
           id="14."
-          type="quiz"
+          type="writing"
           link="/learn/chapter-0/all-hiragana-quiz"
         >
           All Hiragana Quiz
@@ -114,7 +118,7 @@ export function ChapterBoxes() {
         >
           Chapter 0 Vocab List
         </UnitButton>
-        <UnitButton id="17." type="lesson" link="/learn/chapter-0/greetings">
+        <UnitButton id="17." type="vocab" link="/learn/chapter-0/greetings">
           Greetings
         </UnitButton>
         <UnitButton
@@ -124,12 +128,16 @@ export function ChapterBoxes() {
         >
           Culture Note: Japanese Greetings
         </UnitButton>
-        <UnitButton id="15." type="quiz" link="/learn/chapter-0/greetings-quiz">
+        <UnitButton
+          id="15."
+          type="writing"
+          link="/learn/chapter-0/greetings-quiz"
+        >
           Greetings Quiz
         </UnitButton>
         <UnitButton
           id="19."
-          type="lesson"
+          type="vocab"
           link="/learn/chapter-0/common-expressions"
         >
           Common Expressions
@@ -144,11 +152,7 @@ export function ChapterBoxes() {
         <UnitButton id="21." type="lesson" link="/learn/chapter-0/numbers">
           Numbers
         </UnitButton>
-        <UnitButton
-          id="22."
-          type="vocab-list"
-          link="/learn/chapter-0/numbers-0-100"
-        >
+        <UnitButton id="22." type="vocab" link="/learn/chapter-0/numbers-0-100">
           Numbers 0-100
         </UnitButton>
         <UnitButton
@@ -196,7 +200,7 @@ export function ChapterBoxes() {
         </UnitButton>
         <UnitButton
           id="3."
-          type="vocab-list"
+          type="vocab"
           link="/learn/chapter-1/everyday-expressions"
         >
           Everyday Expressions
@@ -206,7 +210,7 @@ export function ChapterBoxes() {
         </UnitButton>
         <UnitButton
           id="5."
-          type="vocab-list"
+          type="vocab"
           link="/learn/chapter-1/people-descriptors-misc"
         >
           People, Descriptors, Misc.
@@ -218,11 +222,7 @@ export function ChapterBoxes() {
         >
           Practice People, Descriptors, Misc.
         </UnitButton>
-        <UnitButton
-          id="7."
-          type="vocab-list"
-          link="/learn/chapter-1/family-school"
-        >
+        <UnitButton id="7." type="vocab" link="/learn/chapter-1/family-school">
           Family & School
         </UnitButton>
         <UnitButton
@@ -240,7 +240,7 @@ export function ChapterBoxes() {
         </UnitButton>
         <UnitButton
           id="10."
-          type="vocab-list"
+          type="vocab"
           link="/learn/chapter-1/occupations-majors"
         >
           Occuupations & Majors
@@ -254,7 +254,7 @@ export function ChapterBoxes() {
         </UnitButton>
         <UnitButton
           id="12."
-          type="quiz"
+          type="writing"
           link="/learn/chapter-1/x-wa-y-desu/practice-sentences"
         >
           <span className="font-bold">X</span>
@@ -285,14 +285,14 @@ export function ChapterBoxes() {
         </UnitButton>
         <UnitButton
           id="16."
-          type="vocab-list"
+          type="vocab"
           link="/learn/chapter-1/useful-expressions"
         >
           Useful Expressions
         </UnitButton>
         <UnitButton
           id="17."
-          type="vocab-list"
+          type="vocab"
           link="/learn/chapter-1/countries-time"
         >
           Countries & Time
@@ -310,7 +310,7 @@ export function ChapterBoxes() {
         <UnitButton id="20." type="lesson">
           Modifying Nouns: <span className="font-japanese">の</span>
         </UnitButton>
-        <UnitButton id="21." type="quiz">
+        <UnitButton id="21." type="writing">
           Practice Sentences:{" "}
           <span className="font-japanese">です, は, か, の</span>
         </UnitButton>
@@ -327,7 +327,7 @@ export function ChapterBoxes() {
         <UnitButton id="25." type="lesson">
           Telling Time
         </UnitButton>
-        <UnitButton id="26." type="quiz">
+        <UnitButton id="26." type="writing">
           Practice Asking The Time
         </UnitButton>
         <UnitButton id="27." type="lesson">
@@ -339,10 +339,10 @@ export function ChapterBoxes() {
         <UnitButton id="29." type="practice">
           Vocab Practice: All Vocab
         </UnitButton>
-        <UnitButton id="30." type="quiz">
+        <UnitButton id="30." type="writing">
           Worksheet 1
         </UnitButton>
-        <UnitButton id="31." type="quiz">
+        <UnitButton id="31." type="writing">
           Worksheet 2
         </UnitButton>
         <UnitButton id="32." type="video">
@@ -371,13 +371,13 @@ export function ChapterBoxes() {
         <UnitButton id="5." type="lesson">
           English Words in Japanese
         </UnitButton>
-        <UnitButton id="6." type="quiz">
+        <UnitButton id="6." type="writing">
           Katakana Quiz
         </UnitButton>
-        <UnitButton id="7." type="quiz">
+        <UnitButton id="7." type="writing">
           Katakana Words Practice
         </UnitButton>
-        <UnitButton id="8." type="vocab-list">
+        <UnitButton id="8." type="vocab">
           Things
         </UnitButton>
         <UnitButton id="9." type="practice">
@@ -410,7 +410,7 @@ export function ChapterBoxes() {
         <UnitButton id="18." type="video">
           Kikusasaizu Video - L2-2
         </UnitButton>
-        <UnitButton id="19." type="vocab-list">
+        <UnitButton id="19." type="vocab">
           Places, Money, Food
         </UnitButton>
         <UnitButton id="20." type="practice">
@@ -425,7 +425,7 @@ export function ChapterBoxes() {
         <UnitButton id="23." type="lesson">
           Japanese Money
         </UnitButton>
-        <UnitButton id="24." type="quiz">
+        <UnitButton id="24." type="writing">
           Practice Money
         </UnitButton>
         <UnitButton id="25." type="game" disabled>
@@ -437,13 +437,13 @@ export function ChapterBoxes() {
         <UnitButton id="23." type="culture-note">
           Bonus: More About Money
         </UnitButton>
-        <UnitButton id="23." type="quiz">
+        <UnitButton id="23." type="writing">
           Worksheet 1
         </UnitButton>
-        <UnitButton id="23." type="quiz">
+        <UnitButton id="23." type="writing">
           Worksheet 2
         </UnitButton>
-        <UnitButton id="23." type="quiz">
+        <UnitButton id="23." type="writing">
           Worksheet 3
         </UnitButton>
         <UnitButton id="23." type="game" disabled>
@@ -463,7 +463,7 @@ export function ChapterBoxes() {
         <UnitButton id="4." type="lesson">
           Breaking Down Kanji
         </UnitButton>
-        <UnitButton id="5." type="vocab-list">
+        <UnitButton id="5." type="vocab">
           Chapter 3 Nouns
         </UnitButton>
         <UnitButton id="6." type="practice">
@@ -472,7 +472,7 @@ export function ChapterBoxes() {
         <UnitButton id="7." type="practice">
           Practice Nouns - Kana
         </UnitButton>
-        <UnitButton id="8." type="vocab-list">
+        <UnitButton id="8." type="vocab">
           Chapter 3 Verbs & Adj.
         </UnitButton>
         <UnitButton id="9." type="practice">
@@ -496,7 +496,7 @@ export function ChapterBoxes() {
           Practice Negative <span className="font-japanese">ます</span>{" "}
           Conjugation
         </UnitButton>
-        <UnitButton id="15." type="quiz">
+        <UnitButton id="15." type="writing">
           Verb Conj. Worksheet
         </UnitButton>
         <UnitButton id="16." type="lesson">
@@ -505,7 +505,7 @@ export function ChapterBoxes() {
         <UnitButton id="17." type="lesson">
           Word Order
         </UnitButton>
-        <UnitButton id="18." type="quiz">
+        <UnitButton id="18." type="writing">
           Practice Particles
         </UnitButton>
         <UnitButton id="19." type="reading">
@@ -535,10 +535,10 @@ export function ChapterBoxes() {
         <UnitButton id="27." type="audio">
           MyKikitori - Do You Want to Go to Tokyo?
         </UnitButton>
-        <UnitButton id="28." type="vocab-list">
+        <UnitButton id="28." type="vocab">
           Frequency Adverbs
         </UnitButton>
-        <UnitButton id="29." type="vocab-list">
+        <UnitButton id="29." type="vocab">
           More Common Expressions
         </UnitButton>
         <UnitButton id="30." type="video">
@@ -547,12 +547,12 @@ export function ChapterBoxes() {
         <UnitButton id="31." type="video">
           Aizuchi: Japanese Noises
         </UnitButton>
-        <UnitButton id="32." type="vocab-list">
+        <UnitButton id="32." type="vocab">
           <span className="font-japanese">
             そして、それから, でも, けど, が
           </span>
         </UnitButton>
-        <UnitButton id="33." type="quiz">
+        <UnitButton id="33." type="writing">
           <span className="font-japanese">
             そして, それから, でも, けど, が
           </span>{" "}
@@ -567,10 +567,10 @@ export function ChapterBoxes() {
         <UnitButton id="36." type="lesson">
           Note on <span className="font-japanese">けど</span>
         </UnitButton>
-        <UnitButton id="37." type="quiz">
+        <UnitButton id="37." type="writing">
           Contrast Worksheet
         </UnitButton>
-        <UnitButton id="38." type="quiz">
+        <UnitButton id="38." type="writing">
           Chapter 3 Worksheet
         </UnitButton>
       </ChapterBox>

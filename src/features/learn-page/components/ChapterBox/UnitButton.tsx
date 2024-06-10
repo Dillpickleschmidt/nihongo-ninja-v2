@@ -9,15 +9,16 @@ type UnitButtonProps = {
   id: string
   type?:
     | "lesson"
-    | "quiz"
+    | "writing"
     | "culture-note"
-    | "vocab-list"
+    | "vocab"
     | "practice"
     | "game"
     | "video"
     | "audio"
     | "grammar-notes"
     | "reading"
+    | "vocab-list"
   link?: string
   disabled?: boolean
 }

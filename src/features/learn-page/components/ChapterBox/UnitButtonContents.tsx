@@ -3,13 +3,14 @@ import {
   PencilLine,
   ScrollText,
   GraduationCap,
-  CloudSun,
   Gamepad,
   Coffee,
   Video,
   Volume2,
-  NotebookPen,
+  Library,
+  NotebookText,
   BookOpenText,
+  BookPlus,
 } from "lucide-react"
 
 type UnitButtonContentsProps = {
@@ -17,15 +18,16 @@ type UnitButtonContentsProps = {
   id: string
   type?:
     | "lesson"
-    | "quiz"
+    | "writing"
     | "culture-note"
-    | "vocab-list"
+    | "vocab"
     | "practice"
     | "game"
     | "video"
     | "audio"
     | "grammar-notes"
     | "reading"
+    | "vocab-list"
 }
 
 export default function UnitButtonContents({
@@ -45,15 +47,15 @@ export default function UnitButtonContents({
       <div className="sticky right-0 ml-2 rounded-full bg-inherit text-muted-foreground">
         {type === "lesson" ? (
           <BookOpen size={iconSize} className="text-green-500" />
-        ) : type === "quiz" ? (
+        ) : type === "writing" ? (
           <PencilLine
             size={iconSize}
             className="text-yellow-500 saturate-[75%]"
           />
         ) : type === "culture-note" ? (
           <Coffee size={iconSize} className="text-pink-400 saturate-[75%]" />
-        ) : type === "vocab-list" ? (
-          <ScrollText size={iconSize} className="text-sky-500 saturate-[50%]" />
+        ) : type === "vocab" ? (
+          <BookPlus size={iconSize} className="text-sky-400 saturate-[75%]" />
         ) : type === "practice" ? (
           <GraduationCap size={iconSize} className="text-orange-500" />
         ) : type === "game" ? (
@@ -63,9 +65,11 @@ export default function UnitButtonContents({
         ) : type === "audio" ? (
           <Volume2 size={iconSize} className="text-purple-400" />
         ) : type === "grammar-notes" ? (
-          <NotebookPen size={iconSize} className="text-red-500 opacity-80" />
+          <ScrollText size={iconSize} className="text-red-500 opacity-80" />
         ) : type === "reading" ? (
           <BookOpenText size={iconSize} className="text-purple-400" />
+        ) : type === "vocab-list" ? (
+          <Library size={iconSize} className="text-red-500 opacity-80" />
         ) : undefined}
       </div>
     </>

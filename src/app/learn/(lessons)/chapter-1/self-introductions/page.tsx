@@ -1,5 +1,6 @@
 import ContentBox from "@/components/ContentBox"
 import Furigana from "@/components/text/Furigana"
+import YouTubeVideo from "@/features/youtube/YouTube"
 
 export default async function page() {
   return (
@@ -22,6 +23,14 @@ export default async function page() {
           English, which primarily uses "I," Japanese pronouns can reflect
           gender, formality, and personal style.
         </p>
+        <div className="pb-3">
+          <YouTubeVideo videoId="MNR0egvK_oQ" />
+          <div className="mt-2">
+            <small className="text-muted-foreground">
+              Credit: <span className="font-semibold">Kaname Naito</span>
+            </small>
+          </div>
+        </div>
         <h3 className="pt-3 font-japanese text-3xl font-medium">
           <Furigana furigana="わたし">私</Furigana> -{" "}
           <span className="text-2xl">Watashi</span>
@@ -209,13 +218,13 @@ export default async function page() {
           <span className="text-2xl">Washi</span>
         </h3>
         <li>
-          <span className="font-bold">Usage: </span>Informal, typically used by
-          older men. (Note: わし is often written in hiragana, but this kanji
-          can be used)
+          <span className="font-bold">Usage: </span>Informal, used by older men.
+          (Note: わし is often written in hiragana, but this kanji can be used)
         </li>
         <li>
-          <span className="font-bold">Context: </span>Often used by elderly men
-          to refer to themselves. It conveys wisdom and age.
+          <span className="font-bold">Context: </span>Can be used by elderly men
+          to refer to themselves, though not commonly used except in Hiroshima
+          dialect or in anime. It conveys wisdom and age.
         </li>
         <li className="flex items-start">
           <span className="mr-3 mt-1 inline-block">•</span>
@@ -322,9 +331,8 @@ export default async function page() {
           </p>
         </div>
         <p>
-          However, while grammatically correct, this isn't the most natural or
-          common way to introduce yourself. In Japanese, you don't just go
-          around throwing{" "}
+          This is grammatically correct, and may be fine for certain situations.
+          But in Japanese, you don't just go around throwing{" "}
           <span className="font-japanese font-bold">わたし</span> in every
           sentence like confetti. No, no, no. You use it when you really need to
           emphasize that it's YOU we're talking about. Because, let's face it,
@@ -348,9 +356,9 @@ export default async function page() {
         </li>
         <h3 className="text-center font-bold">The Solution</h3>
         <p>
-          So, how do you introduce yourself in a more natural, Japanese way?
-          Just say [your name] + <span className="font-japanese">です</span>.
-          That's it. Simple, right?
+          So, how do you introduce yourself in a less rigid manner? Just say
+          [your name] + <span className="font-japanese">です</span>. That's it.
+          Simple, right?
         </p>
         <h4 className="py-4 text-center text-3xl font-bold">
           Just say [your name] + <span className="font-japanese">です</span>.

@@ -292,73 +292,66 @@ export function ChapterBoxes() {
         </UnitButton>
         <UnitButton
           id="17."
-          type="video"
-          link="/learn/chapter-1/your-japanese-voice"
-        >
-          Your Japanese Voice
-        </UnitButton>
-        <UnitButton
-          id="18."
           type="vocab-list"
           link="/learn/chapter-1/countries-time"
         >
           Countries & Time
         </UnitButton>
         <UnitButton
-          id="19."
+          id="18."
           type="practice"
           link="/learn/chapter-1/countries-time/practice"
         >
           Practice Countries & Time
         </UnitButton>
-        <UnitButton id="20." type="lesson">
+        <UnitButton id="19." type="lesson">
           Questions with <span className="font-japanese">か</span>
         </UnitButton>
-        <UnitButton id="21." type="lesson">
+        <UnitButton id="20." type="lesson">
           Modifying Nouns: <span className="font-japanese">の</span>
         </UnitButton>
-        <UnitButton id="22." type="quiz">
+        <UnitButton id="21." type="quiz">
           Practice Sentences:{" "}
           <span className="font-japanese">です, は, か, の</span>
         </UnitButton>
-        <UnitButton id="23." type="lesson">
+        <UnitButton id="22." type="lesson">
           Sounding Natural:{" "}
           <span className="font-japanese">あのう、えっと。。。</span>
         </UnitButton>
-        <UnitButton id="24." type="video">
+        <UnitButton id="23." type="video">
           Kikusasaizu Video - L1-1
         </UnitButton>
-        <UnitButton id="25." type="audio">
+        <UnitButton id="24." type="audio">
           MyKikitori - Conversation 1
         </UnitButton>
-        <UnitButton id="26." type="lesson">
+        <UnitButton id="25." type="lesson">
           Telling Time
         </UnitButton>
-        <UnitButton id="27." type="quiz">
+        <UnitButton id="26." type="quiz">
           Practice Asking The Time
         </UnitButton>
-        <UnitButton id="28." type="lesson">
+        <UnitButton id="27." type="lesson">
           Minutes
         </UnitButton>
-        <UnitButton id="29." type="audio">
+        <UnitButton id="28." type="audio">
           MyKikitori - Conversation 2
         </UnitButton>
-        <UnitButton id="30." type="practice">
+        <UnitButton id="29." type="practice">
           Vocab Practice: All Vocab
         </UnitButton>
-        <UnitButton id="31." type="quiz">
+        <UnitButton id="30." type="quiz">
           Worksheet 1
         </UnitButton>
-        <UnitButton id="32." type="quiz">
+        <UnitButton id="31." type="quiz">
           Worksheet 2
         </UnitButton>
-        <UnitButton id="33." type="video">
+        <UnitButton id="32." type="video">
           Kikusasaizu Video - L1-1
         </UnitButton>
-        <UnitButton id="34." type="game" disabled>
+        <UnitButton id="33." type="game" disabled>
           Meet Your Host Family At The Airport
         </UnitButton>
-        <UnitButton id="35." type="audio">
+        <UnitButton id="34." type="audio">
           MyKikitori - Conversation 2
         </UnitButton>
       </ChapterBox>

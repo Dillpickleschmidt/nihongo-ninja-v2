@@ -1,5 +1,6 @@
 import ContentBox from "@/components/ContentBox"
 import Furigana from "@/components/text/Furigana"
+import YouTubeVideo from "@/features/youtube/YouTube"
 
 export default async function page() {
   return (
@@ -22,6 +23,9 @@ export default async function page() {
           Japanese speakers prefer using names and titles, which convey respect
           and help maintain social harmony.
         </p>
+        <div>
+          <YouTubeVideo videoId="8KTvBdGt_vg" />
+        </div>
         <h2 className="pb-3 pt-6 text-center text-2xl font-bold">
           Using Names and Titles Instead of "You"
         </h2>
@@ -33,24 +37,29 @@ export default async function page() {
         </p>
         <div></div>
         <h2 className="pb-3 pt-6 text-center text-2xl font-bold">
-          Ways to Say "You" in Japanese and When to Use Them (
-          <span className="underline underline-offset-4">and When Not</span>)
+          Second-Person Pronouns You Might've Heard
         </h2>
+        <p>
+          <em>
+            The following second-person pronouns should not be used unless
+            you've reached a near-native level of Japanese speaking ability and
+            can fully grasp the situations in which they would be appropriate.
+          </em>
+        </p>
         <h3 className="pt-3 font-bold">
           <span className="font-japanese text-xl">あなた</span> (Anata)
         </h3>
         <div className="ml-4">
           <li>
             <span className="font-bold">Usage: </span>General term for "you,"
-            that can sometimes be used between equals or in polite
-            conversations.
+            that is can often sound rude except in very specific situations.
           </li>
           <li>
-            <span className="font-bold">Context: </span>While polite in some
+            <span className="font-bold">Context: </span>While okay in some
             contexts, <span className="font-japanese text-xl">あなた</span> can
             also sound overly familiar or even rude if used too frequently or
             inappropriately, especially with strangers or superiors. By the time
-            you learn someone's name, it's usually better to use that instead of{" "}
+            you learn someone's name, it's better to use that instead of{" "}
             <span className="font-japanese text-xl">あなた</span>.
           </li>
           <li>
@@ -98,6 +107,7 @@ export default async function page() {
             — What do you think?
           </li>
         </div>
+
         <div className="ml-4">
           <h3 className="pt-3 font-bold">
             <span className="font-japanese text-xl">
@@ -128,6 +138,35 @@ export default async function page() {
             — What the hell are you doing?
           </li>
         </div>
+
+        <h3 className="pt-3 font-bold">
+          <span className="font-japanese text-xl">てめえ</span> (Temee)
+        </h3>
+        <div className="ml-4">
+          <li>
+            <span className="font-bold">Usage: </span>Extremely informal and
+            confrontational term for "you," often used in anime or manga for
+            dramatic effect.
+          </li>
+          <li>
+            <span className="font-bold">Context: </span>Highly disrespectful and
+            aggressive. It should be avoided in real-life conversations due to
+            its offensive nature. Typically used in contexts where one is
+            extremely angry or in a fight.
+          </li>
+          <li>
+            <span className="font-bold">Example Usage: </span>
+            <span className="font-japanese text-xl">
+              てめえ、
+              <Furigana furigana={<span className="text-sm">かくご</span>}>
+                覚悟
+              </Furigana>
+              しろ！
+            </span>
+            — Get ready, you bastard!
+          </li>
+        </div>
+
         <div className="ml-4">
           <h3 className="pt-3 font-bold">
             <Furigana furigana={<span className="text-sm">きさま</span>}>

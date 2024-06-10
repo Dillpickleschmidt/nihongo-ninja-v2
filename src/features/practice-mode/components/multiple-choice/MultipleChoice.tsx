@@ -29,11 +29,10 @@ export default function MultipleChoice({
   const [selectedButtonIndex, setSelectedButtonIndex] = useState<number | null>(
     null,
   )
-  const [forceRender, setForceRender] = useState(false)
 
   const choices = useMemo(
     () => presentMultipleChoiceOptions(data, shuffleInput, currentCardIndex),
-    [data, currentCardIndex, shuffleInput],
+    [data, currentCardIndex],
   )
 
   useEffect(() => {
@@ -45,7 +44,6 @@ export default function MultipleChoice({
     setIsAnswerCorrect(isCorrect)
     setHasUserAnswered(true)
     setSelectedButtonIndex(index)
-    setForceRender((prev) => !prev) // Force re-render
   }
 
   const correctAnswer = choices.correctOption.answerCategories
@@ -60,13 +58,11 @@ export default function MultipleChoice({
     const baseClass = "disabled:opacity-60 font-light bg-background"
     let newClasses = ""
     if (hasUserAnswered) {
-      if (isCorrect && isSelected) {
+      if (isCorrect) {
         newClasses =
           "disabled:opacity-100 bg-green-500 text-white font-semibold"
-      } else if (!isCorrect && isSelected) {
+      } else if (isSelected) {
         newClasses = "disabled:opacity-100 bg-red-500 text-white"
-      } else {
-        newClasses = "bg-background" // Ensure non-selected buttons revert to base background
       }
     }
     return cn(baseClass, newClasses)
@@ -74,6 +70,9 @@ export default function MultipleChoice({
 
   return (
     <div>
+      {/* <label className={`${hasUserAnswered && "text-center"}`}>
+        Multiple Choice
+      </label> */}
       <ul className="mx-16 mb-6 mt-32 grid grid-cols-1 gap-[.875rem] lg:grid-cols-2">
         {choices.options.map((option, index) => {
           // Flatten the enabled answers from all categories

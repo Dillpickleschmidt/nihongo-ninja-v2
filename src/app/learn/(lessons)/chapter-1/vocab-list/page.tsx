@@ -19,105 +19,6 @@ export default async function page() {
         </h1>
         <div className="mx-24 border-b border-neutral-600 pb-12">
           <h3 className="mb-6 mt-8 text-center text-3xl font-semibold text-orange-400">
-            Useful Expressions
-          </h3>
-          <table className={tableClassName}>
-            <tbody className="align-top">
-              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
-                <td className={japaneseClassName}>はじめまして。</td>
-                <td>Hajimemashite.</td>
-                <td>
-                  <span className="whitespace-nowrap">How do you do.</span> /{" "}
-                  <span className="whitespace-nowrap">Nice to meet you.</span>
-                </td>
-              </tr>
-              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
-                <td className={japaneseClassName}>[your name]です。</td>
-                <td>[your name] desu.</td>
-                <td>I am [your name].</td>
-              </tr>
-              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
-                <td className={japaneseClassName}>
-                  しゅっしんは[your hometown]です。
-                </td>
-                <td>Shusshin wa [your hometown] desu.</td>
-                <td>I came from [your hometown].</td>
-              </tr>
-              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
-                <td className={japaneseClassName}>
-                  どうぞよろしくおねがいします。
-                </td>
-                <td>Dōzo yoroshiku onegaishimasu.</td>
-                <td>Very pleased to meet you.</td>
-              </tr>
-              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
-                <td className={japaneseClassName}>おなまえは？</td>
-                <td>Onamae wa?</td>
-                <td>What is your name?</td>
-              </tr>
-              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
-                <td className={japaneseClassName}>せんせい</td>
-                <td>Sensei</td>
-                <td>
-                  <span className="whitespace-nowrap">Teacher</span> /{" "}
-                  <span className="whitespace-nowrap">Professor</span> /{" "}
-                  <span className="whitespace-nowrap">Dr.</span>
-                </td>
-              </tr>
-              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
-                <td className={japaneseClassName}>あのう、すみません。</td>
-                <td>Anō, sumimasen.</td>
-                <td>Ummm, excuse me</td>
-              </tr>
-              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
-                <td className={japaneseClassName}>しつもんがあります。</td>
-                <td>Shitsumon ga arimasu.</td>
-                <td>I have a question.</td>
-              </tr>
-              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
-                <td className={japaneseClassName}>
-                  もういちどおねがいします。
-                </td>
-                <td>Mōichido onegaishimasu.</td>
-                <td>One more time, please.</td>
-              </tr>
-              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
-                <td className={japaneseClassName}>
-                  もうちょっとゆっくりおねがいします。
-                </td>
-                <td>Mōchotto yukkuri onegaishimasu.</td>
-                <td>A little slower, please.</td>
-              </tr>
-              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
-                <td className={japaneseClassName}>
-                  どうもありがとうございます。
-                </td>
-                <td>Dōmo arigatō gozaimasu.</td>
-                <td>Thank you very much.</td>
-              </tr>
-              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
-                <td className={japaneseClassName}>しつれいします。</td>
-                <td>Shitsurei shimasu.</td>
-                <td>
-                  <span className="whitespace-nowrap">Excuse me</span> / Please
-                  excuse my interrupting you
-                </td>
-              </tr>
-              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
-                <td className={japaneseClassName}>かいてください。</td>
-                <td>Kaite kudasai.</td>
-                <td>Please write.</td>
-              </tr>
-              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
-                <td className={japaneseClassName}>
-                  すみませんが、えいごでいいですか。
-                </td>
-                <td>Sumimasen ga, eigo de ii desu ka?</td>
-                <td>Excuse me but is English okay?</td>
-              </tr>
-            </tbody>
-          </table>
-          <h3 className="mb-6 mt-8 text-center text-3xl font-semibold text-orange-400">
             People, Descriptors, Misc.
           </h3>
           <table className={tableClassName}>
@@ -375,6 +276,105 @@ export default async function page() {
                 <td className={japaneseClassName}>れきし</td>
                 <td>Rekishi</td>
                 <td>History</td>
+              </tr>
+            </tbody>
+          </table>
+          <h3 className="mb-6 mt-8 text-center text-3xl font-semibold text-orange-400">
+            Useful Expressions
+          </h3>
+          <table className={tableClassName}>
+            <tbody className="align-top">
+              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
+                <td className={japaneseClassName}>はじめまして。</td>
+                <td>Hajimemashite.</td>
+                <td>
+                  <span className="whitespace-nowrap">How do you do.</span> /{" "}
+                  <span className="whitespace-nowrap">Nice to meet you.</span>
+                </td>
+              </tr>
+              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
+                <td className={japaneseClassName}>[your name]です。</td>
+                <td>[your name] desu.</td>
+                <td>I am [your name].</td>
+              </tr>
+              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
+                <td className={japaneseClassName}>
+                  しゅっしんは[your hometown]です。
+                </td>
+                <td>Shusshin wa [your hometown] desu.</td>
+                <td>I came from [your hometown].</td>
+              </tr>
+              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
+                <td className={japaneseClassName}>
+                  どうぞよろしくおねがいします。
+                </td>
+                <td>Dōzo yoroshiku onegaishimasu.</td>
+                <td>Very pleased to meet you.</td>
+              </tr>
+              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
+                <td className={japaneseClassName}>おなまえは？</td>
+                <td>Onamae wa?</td>
+                <td>What is your name?</td>
+              </tr>
+              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
+                <td className={japaneseClassName}>せんせい</td>
+                <td>Sensei</td>
+                <td>
+                  <span className="whitespace-nowrap">Teacher</span> /{" "}
+                  <span className="whitespace-nowrap">Professor</span> /{" "}
+                  <span className="whitespace-nowrap">Dr.</span>
+                </td>
+              </tr>
+              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
+                <td className={japaneseClassName}>あのう、すみません。</td>
+                <td>Anō, sumimasen.</td>
+                <td>Ummm, excuse me</td>
+              </tr>
+              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
+                <td className={japaneseClassName}>しつもんがあります。</td>
+                <td>Shitsumon ga arimasu.</td>
+                <td>I have a question.</td>
+              </tr>
+              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
+                <td className={japaneseClassName}>
+                  もういちどおねがいします。
+                </td>
+                <td>Mōichido onegaishimasu.</td>
+                <td>One more time, please.</td>
+              </tr>
+              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
+                <td className={japaneseClassName}>
+                  もうちょっとゆっくりおねがいします。
+                </td>
+                <td>Mōchotto yukkuri onegaishimasu.</td>
+                <td>A little slower, please.</td>
+              </tr>
+              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
+                <td className={japaneseClassName}>
+                  どうもありがとうございます。
+                </td>
+                <td>Dōmo arigatō gozaimasu.</td>
+                <td>Thank you very much.</td>
+              </tr>
+              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
+                <td className={japaneseClassName}>しつれいします。</td>
+                <td>Shitsurei shimasu.</td>
+                <td>
+                  <span className="whitespace-nowrap">Excuse me</span> / Please
+                  excuse my interrupting you
+                </td>
+              </tr>
+              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
+                <td className={japaneseClassName}>かいてください。</td>
+                <td>Kaite kudasai.</td>
+                <td>Please write.</td>
+              </tr>
+              <tr className="[&>*]:py-[0.65rem] [&>*]:pr-2">
+                <td className={japaneseClassName}>
+                  すみませんが、えいごでいいですか。
+                </td>
+                <td>Sumimasen ga, eigo de ii desu ka?</td>
+                <td>Excuse me but is English okay?</td>
               </tr>
             </tbody>
           </table>

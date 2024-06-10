@@ -24,7 +24,10 @@ export default async function page() {
           and help maintain social harmony.
         </p>
         <div>
-          <YouTubeVideo videoId="8KTvBdGt_vg" />
+          <YouTubeVideo
+            videoId="8KTvBdGt_vg"
+            title="Saying 'You' in Japanese by Kaname Naito, Nov 12 2023"
+          />
         </div>
         <h2 className="pb-3 pt-6 text-center text-2xl font-bold">
           Using Names and Titles Instead of "You"

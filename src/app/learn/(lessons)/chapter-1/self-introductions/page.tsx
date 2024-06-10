@@ -24,12 +24,10 @@ export default async function page() {
           gender, formality, and personal style.
         </p>
         <div className="pb-3">
-          <YouTubeVideo videoId="MNR0egvK_oQ" />
-          <div className="mt-2">
-            <small className="text-muted-foreground">
-              Credit: <span className="font-semibold">Kaname Naito</span>
-            </small>
-          </div>
+          <YouTubeVideo
+            videoId="MNR0egvK_oQ"
+            title="Nuances of Japanese First-Person Pronouns by Kaname Naito, Mar 26 2023"
+          />
         </div>
         <h3 className="pt-3 font-japanese text-3xl font-medium">
           <Furigana furigana="わたし">私</Furigana> -{" "}

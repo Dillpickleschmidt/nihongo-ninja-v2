@@ -1,5 +1,6 @@
 import ContentBox from "@/components/ContentBox"
 import PortraitIcon from "@/components/PortraitIcon"
+import YouTubeVideo from "@/features/youtube/YouTube"
 
 export default function page() {
   return (
@@ -91,6 +92,26 @@ export default function page() {
           Long Vowels (<span className="font-japanese">長音</span>, chōon): The
           Stretchy Elastic of Sounds:
         </h3>
+        <div>
+          <YouTubeVideo
+            videoId="XG-QPpiqn54"
+            title="Japanese Long Vowels with Pitch ーうん-ううん／いね-いいね／おばさん-おばあさん, Oct 17 2020"
+            timestamps={[
+              { label: "Intro", time: 0 },
+              { label: "Pronunciation", time: 38 },
+              { label: "あ vs. ああ", time: 90 },
+              { label: "い vs. いい", time: 152 },
+              { label: "う vs. うう", time: 173 },
+              { label: "Pronouncing Yes/No", time: 185 },
+              { label: "え vs. ええ", time: 264 },
+              { label: "お vs. おお", time: 309 },
+              { label: "Practice", time: 350 },
+              { label: "Review Test 1", time: 526 },
+              { label: "Review Test 2", time: 634 },
+            ]}
+            credit="Speak Japanese Naturally"
+          />
+        </div>
         <div className="flex flex-row justify-center !pb-0">
           <div className="![&>*]:py-0 pl-2 pr-4 text-center text-xl font-bold leading-7">
             <p>V</p>

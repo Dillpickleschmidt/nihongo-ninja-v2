@@ -3,7 +3,7 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme/theme-provider"
 import Navbar from "@/features/navbar/Navbar"
 import { GlobalContextProvider } from "@/context/GlobalContext"
-import { inter, japanese } from "@/utils/fonts"
+import { inter, japanese, honk } from "@/utils/fonts"
 
 export const metadata: Metadata = {
   title: "Nihongo Ninja",
@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter} ${japanese} overflow-x-hidden font-inter text-lg scrollbar:w-2.5 scrollbar-track:bg-transparent scrollbar-thumb:bg-neutral-500 hover:scrollbar-thumb:bg-[#999999]`}
+        className={`${inter} ${japanese} ${honk} overflow-x-hidden font-inter text-lg scrollbar:w-2.5 scrollbar-track:bg-transparent scrollbar-thumb:bg-neutral-500 hover:scrollbar-thumb:bg-[#999999]`}
       >
         <ThemeProvider
           attribute="class"

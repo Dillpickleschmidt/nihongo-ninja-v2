@@ -304,10 +304,18 @@ export function ChapterBoxes() {
         >
           Practice Countries & Time
         </UnitButton>
-        <UnitButton id="19." type="lesson">
+        <UnitButton
+          id="19."
+          type="lesson"
+          link="/learn/chapter-1/questions-with-ka"
+        >
           Questions with <span className="font-japanese">か</span>
         </UnitButton>
-        <UnitButton id="20." type="lesson">
+        <UnitButton
+          id="20."
+          type="lesson"
+          link="/learn/chapter-1/the-no-particle"
+        >
           Modifying Nouns: <span className="font-japanese">の</span>
         </UnitButton>
         <UnitButton id="21." type="writing">
@@ -318,7 +326,11 @@ export function ChapterBoxes() {
           Sounding Natural:{" "}
           <span className="font-japanese">あのう、えっと。。。</span>
         </UnitButton>
-        <UnitButton id="23." type="video">
+        <UnitButton
+          id="23."
+          type="video"
+          link="/learn/chapter-1/kikusasaizu-1-1"
+        >
           Kikusasaizu Video - L1-1
         </UnitButton>
         <UnitButton id="24." type="audio">
@@ -333,7 +345,11 @@ export function ChapterBoxes() {
         <UnitButton id="27." type="lesson">
           Minutes
         </UnitButton>
-        <UnitButton id="28." type="audio">
+        <UnitButton
+          id="28."
+          type="audio"
+          link="/learn/chapter-1/kikusasaizu-1-2"
+        >
           MyKikitori - Conversation 2
         </UnitButton>
         <UnitButton id="29." type="practice">
@@ -345,8 +361,12 @@ export function ChapterBoxes() {
         <UnitButton id="31." type="writing">
           Worksheet 2
         </UnitButton>
-        <UnitButton id="32." type="video">
-          Kikusasaizu Video - L1-1
+        <UnitButton
+          id="32."
+          type="video"
+          link="/learn/chapter-1/kikusasaizu-1-3"
+        >
+          Kikusasaizu Video - L1-3
         </UnitButton>
         <UnitButton id="33." type="game" disabled>
           Meet Your Host Family At The Airport

@@ -23,10 +23,12 @@ export default async function page() {
           Japanese speakers prefer using names and titles, which convey respect
           and help maintain social harmony.
         </p>
-        <div>
+        <div className="!mt-12">
           <YouTubeVideo
             videoId="8KTvBdGt_vg"
             title="Saying 'You' in Japanese by Kaname Naito, Nov 12 2023"
+            credit="Kaname Naito"
+            glow
           />
         </div>
         <h2 className="pb-3 pt-6 text-center text-2xl font-bold">
@@ -238,6 +240,58 @@ export default async function page() {
             — What is your name, sir/madam?
           </li>
         </div>
+        <h3 className="pt-6 text-center text-2xl font-bold">
+          But what if you don't know their name?
+        </h3>
+        <div className="!mt-12">
+          <YouTubeVideo
+            videoId="t1iTJK31UYw"
+            title="First-time Greeting in Japanese for Beginners by Kaname Naito, Jun 15 2024"
+            startTime={256}
+            credit="Kaname Naito"
+            glow
+            timestamps={[
+              { time: 0, label: "First-time Greetings" },
+              { time: 256, label: "How to Ask for Someone's Name" },
+            ]}
+          />
+        </div>
+        <h4 className="pt-6 text-center font-japanese text-3xl font-medium">
+          <Furigana furigana={<span>しつれい</span>}>失礼</Furigana>ですが、お
+          <Furigana furigana={<span>なまえ</span>}>名前</Furigana>は？
+        </h4>
+        <li>
+          <span className="font-japanese text-xl font-bold">
+            <Furigana furigana={<span className="text-sm">しつれい</span>}>
+              失礼
+            </Furigana>
+            です -{" "}
+          </span>
+          Literally—
+          <em>"Rude"</em> - Means—<em>"Excuse me/Pardon me"</em>
+        </li>
+        <li>
+          <span className="font-japanese text-xl font-bold">が、 - </span>"but"{" "}
+          <span className="text-base text-muted-foreground">
+            (more on this in later lessons)
+          </span>
+        </li>
+        <li>
+          <span className="font-japanese text-xl font-bold">お - </span>Polite
+          prefix
+        </li>
+        <li>
+          <span className="font-japanese text-xl font-bold">
+            <Furigana furigana={<span className="text-sm">なまえ</span>}>
+              名前
+            </Furigana>
+          </span>{" "}
+          - "What is your name?"
+        </li>
+        <li>
+          <span className="font-japanese text-xl font-bold">は？ - </span>
+          topic particle
+        </li>
       </div>
     </ContentBox>
   )

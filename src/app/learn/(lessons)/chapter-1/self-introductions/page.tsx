@@ -10,28 +10,30 @@ export default async function page() {
       backgroundImageOpacity={5}
       nextPageLink="/learn/chapter-1/japanese-names-honorifics"
     >
-      <h1 className="px-28 pb-6 pt-28 text-center text-4xl font-semibold">
-        Self Introductions
+      <h1 className="px-28 pb-6 pt-28 text-center text-5xl font-semibold">
+        <em>Self Introductions</em>
       </h1>
       <div className="space-y-3 px-16 md:px-24">
         <h2 className="my-3 text-center text-2xl font-bold">
           First-Person Pronouns
         </h2>
-        <p>
+        <p className="pb-6 pt-1">
           In Japanese, there are several pronouns that you can use to refer to
           yourself, each with its own nuance and level of formality. Unlike
           English, which primarily uses "I," Japanese pronouns can reflect
           gender, formality, and personal style.
         </p>
-        <div className="pb-3">
+        <div>
           <YouTubeVideo
             videoId="MNR0egvK_oQ"
             title="Nuances of Japanese First-Person Pronouns by Kaname Naito, Mar 26 2023"
+            credit="Kaname Naito"
+            glow
           />
         </div>
-        <h3 className="pt-3 font-japanese text-3xl font-medium">
+        <h3 className="pt-12 font-japanese text-3xl font-medium">
           <Furigana furigana="わたし">私</Furigana> -{" "}
-          <span className="text-2xl">Watashi</span>
+          <span className="font-honk text-4xl">Watashi</span>
         </h3>
         <li>
           <span className="font-bold">Usage: </span>Gender-neutral, formal or
@@ -45,14 +47,17 @@ export default async function page() {
         <li className="flex items-start">
           <span className="mr-3 mt-1 inline-block">•</span>
           <div>
-            <h4 className="text-2xl">
-              <span className="block text-3xl font-black">Story</span>
-              <span className="mr-2 text-3xl font-black">Context:</span>Business
-              meeting
+            <h4 className="text-xl">
+              <span className="text-2xl font-black">
+                <em>Story:</em>{" "}
+              </span>
+              Business meeting
             </h4>
-            <h4 className="text-2xl">
-              <span className="mr-2 text-3xl font-black">Characters:</span>You
-              (the learner), Mr. Tanaka (your boss), and clients
+            <h4 className="text-xl">
+              <span className="mr-2 text-2xl font-black">
+                <em>Characters:</em>
+              </span>
+              You (the learner), Mr. Tanaka (your boss), and clients
             </h4>
             <p className="mt-3">
               You nervously enter the meeting room, aware that first impressions
@@ -64,9 +69,9 @@ export default async function page() {
             </p>
           </div>
         </li>
-        <h3 className="pt-3 font-japanese text-3xl font-medium">
+        <h3 className="pt-12 font-japanese text-3xl font-medium">
           <Furigana furigana="わたくし">私</Furigana> -{" "}
-          <span className="text-2xl">Watakushi</span>
+          <span className="font-honk text-4xl">Watakushi</span>
         </h3>
         <li>
           <span className="font-bold">Usage: </span>Very formal, gender-neutral.
@@ -82,14 +87,17 @@ export default async function page() {
         <li className="flex items-start">
           <span className="mr-3 mt-1 inline-block">•</span>
           <div>
-            <h4 className="text-2xl">
-              <span className="block text-3xl font-black">Story</span>
-              <span className="mr-2 text-3xl font-black">Context:</span>Award
-              ceremony
+            <h4 className="text-xl">
+              <span className="text-2xl font-black">
+                <em>Story:</em>{" "}
+              </span>
+              Award ceremony
             </h4>
-            <h4 className="text-2xl">
-              <span className="mr-2 text-3xl font-black">Characters:</span>You
-              (the award recipient), the audience
+            <h4 className="text-xl">
+              <span className="mr-2 text-2xl font-black">
+                <em>Characters:</em>
+              </span>
+              You (the award recipient), the audience
             </h4>
             <p className="mt-3">
               The spotlight is on you as you walk up to the stage to receive
@@ -102,9 +110,9 @@ export default async function page() {
             </p>
           </div>
         </li>
-        <h3 className="pt-3 font-japanese text-3xl font-medium">
+        <h3 className="pt-12 font-japanese text-3xl font-medium">
           <Furigana furigana="ぼく">僕</Furigana> -{" "}
-          <span className="text-2xl">Boku</span>
+          <span className="font-honk text-4xl">Boku</span>
         </h3>
         <li>
           <span className="font-bold">Usage: </span>Informal, typically used by
@@ -118,14 +126,17 @@ export default async function page() {
         <li className="flex items-start">
           <span className="mr-3 mt-1 inline-block">•</span>
           <div>
-            <h4 className="text-2xl">
-              <span className="block text-3xl font-black">Story</span>
-              <span className="mr-2 text-3xl font-black">Context:</span>School
-              club introduction
+            <h4 className="text-xl">
+              <span className="text-2xl font-black">
+                <em>Story:</em>{" "}
+              </span>
+              School club introduction
             </h4>
-            <h4 className="text-2xl">
-              <span className="mr-2 text-3xl font-black">Characters:</span>You
-              (a new club member), club members
+            <h4 className="text-xl">
+              <span className="mr-2 text-2xl font-black">
+                <em>Characters:</em>
+              </span>
+              You (a new club member), club members
             </h4>
             <p className="mt-3">
               You walk into the school's soccer club for the first time, feeling
@@ -137,9 +148,9 @@ export default async function page() {
             </p>
           </div>
         </li>
-        <h3 className="pt-3 font-japanese text-3xl font-medium">
+        <h3 className="pt-12 font-japanese text-3xl font-medium">
           <Furigana furigana="おれ">俺</Furigana> -{" "}
-          <span className="text-2xl">Ore</span>
+          <span className="font-honk text-4xl">Ore</span>
         </h3>
         <li>
           <span className="font-bold">Usage: </span>Very informal, typically
@@ -154,14 +165,17 @@ export default async function page() {
         <li className="flex items-start">
           <span className="mr-3 mt-1 inline-block">•</span>
           <div>
-            <h4 className="text-2xl">
-              <span className="block text-3xl font-black">Story</span>
-              <span className="mr-2 text-3xl font-black">Context:</span>Gaming
-              night with close friends
+            <h4 className="text-xl">
+              <span className="text-2xl font-black">
+                <em>Story:</em>{" "}
+              </span>
+              Gaming night with close friends
             </h4>
-            <h4 className="text-2xl">
-              <span className="mr-2 text-3xl font-black">Characters:</span>You
-              (with close friends)
+            <h4 className="text-xl">
+              <span className="mr-2 text-2xl font-black">
+                <em>Characters:</em>
+              </span>
+              You (with close friends)
             </h4>
             <p className="mt-3">
               It's Friday night, and you're at a friend's house for your weekly
@@ -173,8 +187,8 @@ export default async function page() {
             </p>
           </div>
         </li>
-        <h3 className="pt-3 font-japanese text-3xl font-bold">
-          あたし - <span className="text-2xl">Atashi</span>
+        <h3 className="pt-12 font-japanese text-3xl font-bold">
+          あたし - <span className="font-honk text-4xl">Atashi</span>
         </h3>
         <li>
           <span className="font-bold">Usage: </span>Informal, typically used by
@@ -191,14 +205,17 @@ export default async function page() {
         <li className="flex items-start">
           <span className="mr-3 mt-1 inline-block">•</span>
           <div>
-            <h4 className="text-2xl">
-              <span className="block text-3xl font-black">Story</span>
-              <span className="mr-2 text-3xl font-black">Context:</span>Café
-              with friends
+            <h4 className="text-xl">
+              <span className="text-2xl font-black">
+                <em>Story:</em>{" "}
+              </span>
+              Café with friends
             </h4>
-            <h4 className="text-2xl">
-              <span className="mr-2 text-3xl font-black">Characters:</span>You
-              (a young woman), friends
+            <h4 className="text-xl">
+              <span className="mr-2 text-2xl font-black">
+                <em>Characters:</em>
+              </span>
+              You (a young woman), friends
             </h4>
             <p className="mt-3">
               You're at a cozy café, chatting with your friends about the latest
@@ -211,9 +228,9 @@ export default async function page() {
             </p>
           </div>
         </li>
-        <h3 className="pt-3 font-japanese text-3xl font-bold">
+        <h3 className="pt-12 font-japanese text-3xl font-bold">
           <Furigana furigana="わし">儂</Furigana> -{" "}
-          <span className="text-2xl">Washi</span>
+          <span className="font-honk text-4xl">Washi</span>
         </h3>
         <li>
           <span className="font-bold">Usage: </span>Informal, used by older men.
@@ -227,14 +244,17 @@ export default async function page() {
         <li className="flex items-start">
           <span className="mr-3 mt-1 inline-block">•</span>
           <div>
-            <h4 className="text-2xl">
-              <span className="block text-3xl font-black">Story</span>
-              <span className="mr-2 text-3xl font-black">Context:</span>Telling
-              stories to grandchildren
+            <h4 className="text-xl">
+              <span className="text-2xl font-black">
+                <em>Story:</em>{" "}
+              </span>
+              Telling stories to grandchildren
             </h4>
-            <h4 className="text-2xl">
-              <span className="mr-2 text-3xl font-black">Characters:</span>You
-              (an elderly man), grandchildren
+            <h4 className="text-xl">
+              <span className="mr-2 text-2xl font-black">
+                <em>Characters:</em>
+              </span>
+              You (an elderly man), grandchildren
             </h4>
             <p className="mt-3">
               You sit in your favorite armchair, surrounded by your eager
@@ -246,38 +266,38 @@ export default async function page() {
             </p>
           </div>
         </li>
-        <h3 className="pt-3 text-center font-japanese text-2xl font-bold">
+        <h3 className="pt-12 text-center font-inter text-2xl font-bold">
           Plural First-Person
         </h3>
-        <ul className="text-center">
+        <ul className="space-y-4 pt-4 text-xl">
           <li>
-            <span className="font-japanese text-xl font-semibold">
+            <span className="font-japanese text-3xl font-semibold">
               <Furigana furigana="わたしたち">私たち</Furigana> -{" "}
             </span>
             Plural of <span className="font-japanese">わたし</span>.
           </li>
           <li>
-            <span className="font-japanese text-xl font-semibold">
+            <span className="font-japanese text-3xl font-semibold">
               <Furigana furigana="ぼくたち">僕たち</Furigana> -{" "}
             </span>
             Plural of <span className="font-japanese">ぼく</span>.
           </li>
           <li>
-            <span className="font-japanese text-xl font-semibold">
+            <span className="font-japanese text-3xl font-semibold">
               <Furigana furigana="おれたち">俺たち</Furigana> -{" "}
             </span>
             Plural of <span className="font-japanese">おれ</span>.
           </li>
           <li>
-            <span className="font-japanese text-xl font-semibold">
+            <span className="font-japanese text-3xl font-semibold">
               あたしたち -{" "}
             </span>
             Plural of <span className="font-japanese">あたし</span>.
           </li>
         </ul>
-        <h3 className="pt-3 font-japanese text-3xl font-bold">
+        <h3 className="pt-12 font-japanese text-3xl font-bold">
           <Furigana furigana="われわれ">我々</Furigana> -{" "}
-          <span className="text-2xl">Wareware</span>
+          <span className="font-honk text-4xl">Wareware</span>
         </h3>
         <li>
           <span className="font-bold">Usage: </span>Formal, often used in
@@ -290,14 +310,17 @@ export default async function page() {
         <li className="flex items-start">
           <span className="mr-3 mt-1 inline-block">•</span>
           <div>
-            <h4 className="text-2xl">
-              <span className="block text-3xl font-black">Story</span>
-              <span className="mr-2 text-3xl font-black">Context:</span>Company
-              announcement
+            <h4 className="text-xl">
+              <span className="text-2xl font-black">
+                <em>Story:</em>{" "}
+              </span>
+              Company announcement
             </h4>
-            <h4 className="text-2xl">
-              <span className="mr-2 text-3xl font-black">Characters:</span>You
-              (a company representative), employees
+            <h4 className="text-xl">
+              <span className="mr-2 text-2xl font-black">
+                <em>Characters:</em>
+              </span>
+              You (a company representative), employees
             </h4>
             <p className="mt-3">
               You stand in front of the employees to make an important
@@ -310,9 +333,21 @@ export default async function page() {
             </p>
           </div>
         </li>
-        <h2 className="pb-3 pt-9 text-center text-2xl font-bold">
+        <h2 className="pb-3 pt-24 text-center text-3xl font-bold">
           Introducing Yourself
         </h2>
+        <div className="!mb-12 !mt-6">
+          <YouTubeVideo
+            videoId="t1iTJK31UYw"
+            title="First-time Greeting in Japanese for Beginners by Kaname Naito, Jun 15 2024"
+            credit="Kaname Naito"
+            glow
+            timestamps={[
+              { time: 0, label: "First-time Greetings" },
+              { time: 256, label: "How to Ask for Someone's Name" },
+            ]}
+          />
+        </div>
         <div>
           <p>
             We've learned the <span className="font-bold">X</span>
@@ -329,12 +364,11 @@ export default async function page() {
           </p>
         </div>
         <p>
-          This is grammatically correct, and may be fine for certain situations.
+          That's one way you could do it, and can sound fine in some situations.
           But in Japanese, you don't just go around throwing{" "}
           <span className="font-japanese font-bold">わたし</span> in every
-          sentence like confetti. No, no, no. You use it when you really need to
-          emphasize that it's YOU we're talking about. Because, let's face it,
-          the world doesnt revolve around you.
+          sentence like confetti. You use it when you really need to emphasize
+          that it's YOU we're talking about.
         </p>
         <li className="ml-4">
           <span className="font-bold">Omitting Pronouns: </span>In Japanese,
@@ -352,28 +386,35 @@ export default async function page() {
           room and announcing, "As for me..." before every single statement you
           make.
         </li>
-        <h3 className="text-center font-bold">The Solution</h3>
+        <h3 className="pt-6 text-center text-xl font-black italic">
+          The Solution
+        </h3>
         <p>
           So, how do you introduce yourself in a less rigid manner? Just say
           [your name] + <span className="font-japanese">です</span>. That's it.
           Simple, right?
         </p>
         <h4 className="py-4 text-center text-3xl font-bold">
-          Just say [your name] + <span className="font-japanese">です</span>.
+          [your name] + <span className="font-japanese">です</span>。
         </h4>
         <p>
           Okay, but if you're looking to become a real social samurai, you can
           say:
         </p>
         <p className="font-japanese text-xl font-semibold">
-          はじめまして。<span className="font-inter">[Your name]</span>
+          こんにちは！はじめまして！
+          <span className="font-inter">[Your name]</span>
           です。
           <span className="font-inter">[Additional information]です。</span>
           どうぞよろしくおねがいします。
         </p>
-        <p className="text-center">
+        <p className="py-6 text-center">
           <em>"Okay, what was all that?"</em>
         </p>
+        <li>
+          <span className="font-japanese font-bold">こんにちは</span> - Simple
+          way to say hello.
+        </li>
         <li>
           <span className="font-japanese font-bold">はじめまして</span> -
           Literally—
@@ -413,15 +454,24 @@ export default async function page() {
             どうぞよろしくおねがいします。
           </span>{" "}
           Means—
-          <em>
-            "Please treat me kindly" / "I look forward to working with you"
-          </em>{" "}
-          (roughly translated). It can also be shortened to just{" "}
-          <span className="font-japanese">よろしく</span> if you're looking to
-          be more casual. This phrase is used at the end of the introduction to
-          express your hope for a positive relationship. It's a versatile and
-          polite phrase that can be used in various situations, from casual
-          meetings to formal business settings.
+          <em>"Please treat me kindly"</em> (roughly translated). It can also be
+          shortened to <span className="font-japanese">どうぞよろしく</span> or
+          even just <span className="font-japanese">よろしく</span> if you're
+          looking to be more casual. This phrase is used at the end of the
+          introduction to express your hope for a positive relationship. It's a
+          versatile and polite phrase that can be used in various situations,
+          from casual meetings to formal business settings.
+        </li>
+        <li>
+          You can drop{" "}
+          <span className="font-japanese font-bold">はじめまして</span> to be
+          less formal.
+        </li>
+        <li>
+          You can say <span className="font-japanese font-bold">どうも</span>{" "}
+          instead of <span className="font-japanese font-bold">こんにちは</span>
+          , or use both{" -> "}
+          <span className="font-japanese font-bold">どうも、こんにちは</span>
         </li>
         <h2 className="pt-6 text-2xl font-bold">Summary</h2>
         <ul className="ml-6 mt-2 list-disc space-y-4">
@@ -440,11 +490,13 @@ export default async function page() {
           <li>
             For a more thorough introduction you can say:{" "}
             <span className="font-japanese">
-              はじめまして。<span className="font-inter">[Your name]</span>
+              どうも、こんにちは。
+              <span className="font-inter">[Your name]</span>
               です。
               <span className="font-inter">[Additional information]です。</span>
               どうぞよろしくおねがいします。
-            </span>
+            </span>{" "}
+            Feel free to shorten it when you see fit.
           </li>
         </ul>
       </div>

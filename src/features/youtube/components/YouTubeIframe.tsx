@@ -4,12 +4,14 @@ import { useEffect, useRef } from "react"
 type YouTubeIframeProps = {
   videoId: string
   title: string
+  startTime?: number
   seekTime?: number | null
 }
 
 export default function YouTubeIframe({
   videoId,
   title,
+  startTime,
   seekTime,
 }: YouTubeIframeProps) {
   const iframeRef = useRef<HTMLIFrameElement>(null)
@@ -26,6 +28,9 @@ export default function YouTubeIframe({
       )
     }
   }, [seekTime])
+
+  const src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&enablejsapi=1${startTime ? `&start=${startTime}` : ""}`
+  // console.log("src: ", src)
 
   const srcDoc = `
     <style>
@@ -60,7 +65,7 @@ export default function YouTubeIframe({
         transition: transform 0.3s ease;
       }
     </style>
-    <a href='https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&enablejsapi=1'>
+    <a href='${src}'>
       <svg viewBox='0 0 16 16' width='96' height='96' xmlns='http://www.w3.org/2000/svg' aria-hidden='true'>
         <circle cx='50%' cy='50%' r='7.75' fill='none' stroke='#000' stroke-width='.5'/>
         <circle cx='50%' cy='50%' r='7.25' fill='none' stroke='#fff' stroke-width='.5'/>
@@ -74,7 +79,7 @@ export default function YouTubeIframe({
       ref={iframeRef}
       title={title}
       className="aspect-video w-full"
-      src={`https://www.youtube-nocookie.com/embed/${videoId}?enablejsapi=1`}
+      src={src}
       allow="autoplay"
       allowFullScreen
       loading="lazy"

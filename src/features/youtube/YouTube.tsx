@@ -11,23 +11,43 @@ type Timestamp = {
 type YouTubeVideoProps = {
   videoId: string
   title: string
+  startTime?: number
   timestamps?: Timestamp[]
   credit?: string
+  glow?: boolean
   className?: string
 }
 
 export default function YouTubeVideo({
   videoId,
   title,
+  startTime,
   timestamps,
   credit,
+  glow,
   className,
 }: YouTubeVideoProps) {
   const [seekTime, setSeekTime] = useState<number | null>(null)
 
   return (
     <div>
-      <YouTubeIframe videoId={videoId} title={title} seekTime={seekTime} />
+      {glow ? (
+        <div className="glow">
+          <YouTubeIframe
+            videoId={videoId}
+            title={title}
+            startTime={startTime}
+            seekTime={seekTime}
+          />
+        </div>
+      ) : (
+        <YouTubeIframe
+          videoId={videoId}
+          title={title}
+          startTime={startTime}
+          seekTime={seekTime}
+        />
+      )}
 
       {credit && (
         <div className="mt-2">

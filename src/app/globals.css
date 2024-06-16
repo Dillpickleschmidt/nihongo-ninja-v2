@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
 @layer base {
   :root {
     --background: 0 0% 9.8%;
@@ -36,6 +42,14 @@
     --ring: 0 0% 83.1%;
 
     --radius: 0.5rem;
+
+    /* Conic gradient properties */
+    --gradient-angle: 0deg;
+    --clr-1: hsl(186, 81%, 10%);
+    --clr-2: hsl(160, 84%, 36%);
+    --clr-3: hsl(158, 64%, 52%);
+    --clr-4: hsl(38, 92%, 50%);
+    --clr-5: hsl(25, 95%, 53%);
   }
 
   .light {
@@ -78,5 +92,41 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Gradient card styles */
+  .glow {
+    border-radius: 0.35rem;
+    position: relative;
+  }
+
+  .glow::before,
+  .glow::after {
+    content: "";
+    position: absolute;
+    inset: -0.35rem;
+    z-index: -1;
+    border-radius: 0.25rem;
+    opacity: 0.5;
+    background: conic-gradient(
+      from var(--gradient-angle),
+      var(--clr-2),
+      var(--clr-3),
+      var(--clr-4),
+      var(--clr-5),
+      var(--clr-4),
+      var(--clr-3),
+      var(--clr-2)
+    );
+    animation: spin 20s linear infinite;
+  }
+  .glow::after {
+    filter: blur(1.25rem);
+  }
+
+  @keyframes spin {
+    to {
+      --gradient-angle: 360deg;
+    }
   }
 }

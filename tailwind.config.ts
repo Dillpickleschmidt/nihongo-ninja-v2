@@ -81,6 +81,7 @@ const config = {
       fontFamily: {
         inter: ["var(--font-inter)"],
         japanese: ["var(--font-noto-sans-jp)"],
+        honk: ["var(--font-honk)"],
       },
     },
   },

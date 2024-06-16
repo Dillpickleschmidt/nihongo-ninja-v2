@@ -110,8 +110,8 @@ export default async function page() {
           addressed. Here are some common honorifics:
         </p>
         <h3 className="pt-3 text-3xl font-bold">
-          <span className="font-japanese">さん</span>{" "}
-          <span className="text-[1.7rem]">(San)</span>
+          <span className="font-japanese">さん</span> -{" "}
+          <span className="font-honk text-4xl">San</span>
         </h3>
         <li>
           <span className="font-bold">Usage: </span>Most common honorific,
@@ -124,14 +124,13 @@ export default async function page() {
         <li className="flex items-start">
           <span className="mr-3 mt-1 inline-block">•</span>
           <div>
-            <h4 className="text-2xl">
-              <span className="block text-3xl font-black">Story</span>
-              <span className="mr-2 text-3xl font-black">Context:</span>Office
-              setting
+            <h4 className="text-xl">
+              <span className="text-2xl font-black">Story: </span>
+              Office setting
             </h4>
-            <h4 className="text-2xl">
-              <span className="mr-2 text-3xl font-black">Characters:</span>You
-              (a new employee), Mr. Tanaka (your colleague)
+            <h4 className="text-xl">
+              <span className="mr-2 text-2xl font-black">Characters:</span>
+              You (a new employee), Mr. Tanaka (your colleague)
             </h4>
             <p className="mt-3">
               On your first day at the office, you meet Mr. Tanaka, your
@@ -146,8 +145,8 @@ export default async function page() {
           </div>
         </li>
         <h3 className="pt-3 text-3xl font-bold">
-          <span className="font-japanese">ちゃん</span>{" "}
-          <span className="text-[1.7rem]">(Chan)</span>
+          <span className="font-japanese">ちゃん</span> -{" "}
+          <span className="font-honk text-4xl">Chan</span>
         </h3>
         <li>
           <span className="font-bold">Usage: </span>Informal, affectionate,
@@ -160,14 +159,13 @@ export default async function page() {
         <li className="flex items-start">
           <span className="mr-3 mt-1 inline-block">•</span>
           <div>
-            <h4 className="text-2xl">
-              <span className="block text-3xl font-black">Story</span>
-              <span className="mr-2 text-3xl font-black">Context:</span>Family
-              gathering
+            <h4 className="text-xl">
+              <span className="text-2xl font-black">Story: </span>
+              Family gathering
             </h4>
-            <h4 className="text-2xl">
-              <span className="mr-2 text-3xl font-black">Characters:</span>You
-              (a family member), little Sakura (your niece)
+            <h4 className="text-xl">
+              <span className="mr-2 text-2xl font-black">Characters:</span>
+              You (a family member), little Sakura (your niece)
             </h4>
             <p className="mt-3">
               At a family gathering, you see your cute little niece, Sakura,
@@ -181,8 +179,8 @@ export default async function page() {
           </div>
         </li>
         <h3 className="pt-3 text-3xl font-bold">
-          <span className="font-japanese">くん</span>{" "}
-          <span className="text-[1.7rem]">(Kun)</span>
+          <span className="font-japanese">くん</span> -{" "}
+          <span className="font-honk text-4xl">Kun</span>
         </h3>
         <li>
           <span className="font-bold">Usage: </span>Informal, typically used for
@@ -195,14 +193,13 @@ export default async function page() {
         <li className="flex items-start">
           <span className="mr-3 mt-1 inline-block">•</span>
           <div>
-            <h4 className="text-2xl">
-              <span className="block text-3xl font-black">Story</span>
-              <span className="mr-2 text-3xl font-black">Context:</span>School
-              setting
+            <h4 className="text-xl">
+              <span className="text-2xl font-black">Story: </span>
+              School setting
             </h4>
-            <h4 className="text-2xl">
-              <span className="mr-2 text-3xl font-black">Characters:</span>You
-              (a student), Tarou (your classmate)
+            <h4 className="text-xl">
+              <span className="mr-2 text-2xl font-black">Characters:</span>
+              You (a student), Tarou (your classmate)
             </h4>
             <p className="mt-3">
               During recess, you see your classmate Tarou scoring a goal in
@@ -215,8 +212,8 @@ export default async function page() {
         </li>
 
         <h3 className="pt-3 text-3xl font-bold">
-          <Furigana furigana="せんせい">先生</Furigana>{" "}
-          <span className="text-[1.7rem]">(Sensei)</span>
+          <Furigana furigana="せんせい">先生</Furigana> -{" "}
+          <span className="font-honk text-4xl">Sensei</span>
         </h3>
         <li>
           <span className="font-bold">Usage: </span>For teachers, doctors, or
@@ -229,14 +226,13 @@ export default async function page() {
         <li className="flex items-start">
           <span className="mr-3 mt-1 inline-block">•</span>
           <div>
-            <h4 className="text-2xl">
-              <span className="block text-3xl font-black">Story</span>
-              <span className="mr-2 text-3xl font-black">Context:</span>
+            <h4 className="text-xl">
+              <span className="text-2xl font-black">Story: </span>
               Classroom setting
             </h4>
-            <h4 className="text-2xl">
-              <span className="mr-2 text-3xl font-black">Characters:</span>You
-              (a student), Mr. Yamada (your teacher)
+            <h4 className="text-xl">
+              <span className="mr-2 text-2xl font-black">Characters:</span>
+              You (a student), Mr. Yamada (your teacher)
             </h4>
             <p className="mt-3">
               During class, you raise your hand and say, "Yamada-sensei, I have
@@ -250,8 +246,8 @@ export default async function page() {
         </li>
 
         <h3 className="pt-3 text-3xl font-bold">
-          <Furigana furigana="せんぱい">先輩</Furigana>{" "}
-          <span className="text-[1.7rem]">(Senpai)</span>
+          <Furigana furigana="せんぱい">先輩</Furigana> -{" "}
+          <span className="font-honk text-4xl">Senpai</span>
         </h3>
         <li>
           <span className="font-bold">Usage: </span>For senior colleagues or
@@ -266,14 +262,13 @@ export default async function page() {
         <li className="flex items-start">
           <span className="mr-3 mt-1 inline-block">•</span>
           <div>
-            <h4 className="text-2xl">
-              <span className="block text-3xl font-black">Story</span>
-              <span className="mr-2 text-3xl font-black">Context:</span>Club
-              activity
+            <h4 className="text-xl">
+              <span className="text-2xl font-black">Story: </span>
+              Club activity
             </h4>
-            <h4 className="text-2xl">
-              <span className="mr-2 text-3xl font-black">Characters:</span>You
-              (a new club member), Senior Takahashi (an experienced member)
+            <h4 className="text-xl">
+              <span className="mr-2 text-2xl font-black">Characters:</span>
+              You (a new club member), Senior Takahashi (an experienced member)
             </h4>
             <p className="mt-3">
               At your first club meeting, you approach Senior Takahashi and say,
@@ -286,8 +281,8 @@ export default async function page() {
         </li>
 
         <h3 className="pt-3 text-3xl font-bold">
-          <Furigana furigana="さま">様</Furigana>{" "}
-          <span className="text-[1.7rem]">(Sama)</span>
+          <Furigana furigana="さま">様</Furigana> -{" "}
+          <span className="font-honk text-4xl">Sama</span>
         </h3>
         <li>
           <span className="font-bold">Usage: </span>Very formal, respectful.
@@ -299,14 +294,13 @@ export default async function page() {
         <li className="flex items-start">
           <span className="mr-3 mt-1 inline-block">•</span>
           <div>
-            <h4 className="text-2xl">
-              <span className="block text-3xl font-black">Story</span>
-              <span className="mr-2 text-3xl font-black">Context:</span>Customer
-              service
+            <h4 className="text-xl">
+              <span className="text-2xl font-black">Story: </span>
+              Customer service
             </h4>
-            <h4 className="text-2xl">
-              <span className="mr-2 text-3xl font-black">Characters:</span>You
-              (a store employee), Ms. Tanaka (a customer)
+            <h4 className="text-xl">
+              <span className="mr-2 text-2xl font-black">Characters:</span>
+              You (a store employee), Ms. Tanaka (a customer)
             </h4>
             <p className="mt-3">
               Working at a luxury boutique, you greet a customer, "Welcome,
@@ -320,8 +314,8 @@ export default async function page() {
         </li>
 
         <h3 className="pt-3 text-3xl font-bold">
-          <Furigana furigana="どの">殿</Furigana>{" "}
-          <span className="text-[1.7rem]">(Dono)</span>
+          <Furigana furigana="どの">殿</Furigana> -{" "}
+          <span className="font-honk text-4xl">Dono</span>
         </h3>
         <li>
           <span className="font-bold">Usage: </span>Very formal, archaic.
@@ -333,14 +327,13 @@ export default async function page() {
         <li className="flex items-start">
           <span className="mr-3 mt-1 inline-block">•</span>
           <div>
-            <h4 className="text-2xl">
-              <span className="block text-3xl font-black">Story</span>
-              <span className="mr-2 text-3xl font-black">Context:</span>
+            <h4 className="text-xl">
+              <span className="text-2xl font-black">Story: </span>
               Historical drama
             </h4>
-            <h4 className="text-2xl">
-              <span className="mr-2 text-3xl font-black">Characters:</span>You
-              (a samurai), Lord Oda (your master)
+            <h4 className="text-xl">
+              <span className="mr-2 text-2xl font-black">Characters:</span>
+              You (a samurai), Lord Oda (your master)
             </h4>
             <p className="mt-3">
               In a historical drama, you kneel before Lord Oda and say,
@@ -474,7 +467,7 @@ export default async function page() {
         </li>
         <h2 className="!pb-6 pt-16 text-center text-5xl font-bold">Practice</h2>
         <h4 className="pb-2 text-center text-xl font-bold">
-          Put the descriptions in the correct order
+          Put the descriptions in the correct order [wip]
         </h4>
         <div className="flex w-full pb-24">
           <ul className="mr-1 flex w-1/4 flex-col font-japanese [&>*]:text-xl">

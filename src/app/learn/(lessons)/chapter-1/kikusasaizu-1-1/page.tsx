@@ -9,7 +9,7 @@ export default function page() {
       // backgroundImageOpacity={5}
       variant="lg"
       showProgressBar={false}
-      nextPageLink="/learn/chapter-1/the-no-particle"
+      nextPageLink="/learn/chapter-1/my-kikitori-conversation-1"
     >
       <div className="inset-0 -mb-20">
         <YouTubeVideo

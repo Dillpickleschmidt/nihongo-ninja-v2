@@ -1,5 +1,7 @@
 import ContentBox from "@/components/ContentBox"
 import Furigana from "@/components/text/Furigana"
+import Romaji from "@/components/text/Romaji"
+import { Input } from "@/components/ui/input"
 import YouTubeVideo from "@/features/youtube/YouTube"
 
 export default async function page() {
@@ -8,249 +10,262 @@ export default async function page() {
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-1/useful-expressions"
+      nextPageLink="/learn/chapter-1/practice-sentences-desu-wa-ka-no"
     >
       <h1 className="px-28 pb-6 pt-28 text-center text-4xl font-semibold">
-        Mastering the <span className="font-japanese">の</span> Particle in
-        Japanese
+        Mastering the <span className="font-japanese text-orange-500">の</span>{" "}
+        Particle in Japanese
       </h1>
       <div className="space-y-3 px-16 md:px-24">
         <p>
-          Welcome back to our Japanese language journey! Today, we're diving
-          into the versatile <span className="font-japanese">の</span> (no)
-          particle. Think of it as the Swiss army knife of Japanese particles,
-          primarily used to show possession. Let's break it down in a way that's
-          easy to grasp and fun to use.
+          Today, we're gonna make our first step towards making longer and more
+          complex sentences. Say hello to{" "}
+          <span className="font-japanese text-xl font-bold">の</span>
+          <span className="text-muted-foreground">(no)</span>—the particle which
+          connects nouns.
         </p>
-
-        <h2 className="pb-3 pt-6 text-center text-2xl font-bold">
-          The Basics: Possession with <span className="font-japanese">の</span>
+        <h2 className="py-3 text-center text-2xl font-bold">
+          The Basics: Possession with{" "}
+          <span className="font-japanese text-[1.6rem] text-orange-500">
+            の
+          </span>
         </h2>
         <p>
-          The <span className="font-japanese">の</span> particle is used to link
-          two nouns, indicating possession or a close relationship. It’s similar
-          to the apostrophe-s ('s) in English.
+          The <span className="font-japanese">の</span> particle is used to
+          connect two nouns, indicating possession or a close relationship. It's
+          similar to the apostrophe-s ('s) in English.
         </p>
         <p>
           Example: <br />
-          <span className="font-japanese">たけしさんの</span>
+          <span className="font-japanese">
+            たけしさん<span className="text-orange-500">の</span>
+          </span>
           <Furigana furigana={<span className="text-sm">でんわばんごう</span>}>
             電話番号
           </Furigana>{" "}
           (Takeshi-san no denwa bangou) <br />
           <span className="font-bold">Takeshi's phone number</span>
         </p>
-        <p>
-          Here's the structure: <br />
-          [Owner] + <span className="font-japanese">の</span> + [Possession]
-        </p>
+        <p>Here's the structure:</p>
+        <h3 className="py-3 text-center text-[1.75rem] font-medium">
+          [Noun 1] +{" "}
+          <span className="font-japanese text-[2rem] text-orange-500">の</span>{" "}
+          + [Noun 2]
+        </h3>
+        <small>*Noun 1 is the owner, and Noun 2 is the posessive</small>
         <p>More Examples:</p>
-        <ul className="ml-4 list-inside list-disc">
+        <ul className="ml-4 list-inside list-disc space-y-2">
           <li>
-            <span className="font-japanese">わたしの</span>{" "}
-            <Furigana furigana={<span className="text-sm">ほん</span>}>
-              本
-            </Furigana>{" "}
-            (Watashi no hon) - <span className="font-bold">My book</span>
-          </li>
-          <li>
-            <span className="font-japanese">先生の</span>{" "}
-            <Furigana furigana={<span className="text-sm">くるま</span>}>
-              車
-            </Furigana>{" "}
-            (Sensei no kuruma) -{" "}
-            <span className="font-bold">Teacher's car</span>
-          </li>
-          <li>
-            <span className="font-japanese">友達の</span>{" "}
-            <Furigana furigana={<span className="text-sm">とけい</span>}>
-              時計
-            </Furigana>{" "}
-            (Tomodachi no tokei) -{" "}
-            <span className="font-bold">Friend’s watch</span>
-          </li>
-        </ul>
-
-        <h2 className="pb-3 pt-6 text-center text-2xl font-bold">
-          Practical Examples: Bringing It to Life
-        </h2>
-        <p>
-          Since you’ve recently learned family terms, countries, majors, and
-          occupations, let’s use these topics for more examples. Imagine
-          introducing your family members and their favorite things, and let's
-          mix in some English nouns for practice.
-        </p>
-        <ul className="ml-4 list-inside list-disc">
-          <li>
-            <span className="font-japanese">父のcar</span> (Chichi no car) -{" "}
-            <span className="font-bold">Dad’s car</span>
-          </li>
-          <li>
-            <span className="font-japanese">母の</span>{" "}
-            <Furigana furigana={<span className="text-sm">だいがく</span>}>
-              大学
-            </Furigana>{" "}
-            (Haha no daigaku) -{" "}
-            <span className="font-bold">Mom’s university</span>
-          </li>
-          <li>
-            <span className="font-japanese">兄のコンピューター</span> (Ani no
-            konpyuutaa) -{" "}
-            <span className="font-bold">Older brother’s computer</span>
-          </li>
-          <li>
-            <span className="font-japanese">妹の</span>{" "}
-            <Furigana furigana={<span className="text-sm">ほん</span>}>
-              本
-            </Furigana>{" "}
-            (Imouto no hon) -{" "}
-            <span className="font-bold">Younger sister’s book</span>
-          </li>
-          <li>
-            <span className="font-japanese">友達のphone</span> (Tomodachi no
-            phone) - <span className="font-bold">Friend's phone</span>
-          </li>
-          <li>
-            <span className="font-japanese">先生のbag</span> (Sensei no bag) -{" "}
-            <span className="font-bold">Teacher's bag</span>
-          </li>
-        </ul>
-
-        <p>Or talk about friends from different countries:</p>
-        <ul className="ml-4 list-inside list-disc">
-          <li>
-            <span className="font-japanese">アメリカの友達のcamera</span>{" "}
-            (Amerika no tomodachi no camera) -{" "}
-            <span className="font-bold">American friend’s camera</span>
-          </li>
-          <li>
-            <span className="font-japanese">日本の</span>{" "}
-            <Furigana furigana={<span className="text-sm">せんせい</span>}>
-              先生
-            </Furigana>{" "}
-            <span className="font-japanese">のwatch</span> (Nihon no sensei no
-            watch) - <span className="font-bold">Japanese teacher’s watch</span>
-          </li>
-          <li>
-            <span className="font-japanese">フランスの学生のnotebook</span>{" "}
-            (Furansu no gakusei no notebook) -{" "}
-            <span className="font-bold">French student’s notebook</span>
-          </li>
-        </ul>
-
-        <h2 className="pb-3 pt-6 text-center text-2xl font-bold">
-          Activity: My Favorite Things
-        </h2>
-        <p>
-          Now it's your turn! Write about your favorite items and who they
-          belong to. Use the <span className="font-japanese">の</span> particle
-          to show possession, and try mixing in some English nouns. Here are
-          some examples to get you started:
-        </p>
-        <ul className="ml-4 list-inside list-disc">
-          <li>
-            <span className="font-japanese">私のコンピューター</span> (Watashi
-            no konpyuutaa) - <span className="font-bold">My computer</span>
-          </li>
-          <li>
-            <span className="font-japanese">兄のphone</span> (Ani no phone) -{" "}
-            <span className="font-bold">My brother’s phone</span>
-          </li>
-          <li>
-            <span className="font-japanese">お母さんのbag</span> (Okaasan no
-            bag) - <span className="font-bold">My mom’s bag</span>
-          </li>
-        </ul>
-        <p>
-          Write three sentences about your favorite things and who they belong
-          to. It’s a simple yet powerful exercise to master{" "}
-          <span className="font-japanese">の</span>.
-        </p>
-
-        <h2 className="pb-3 pt-6 text-center text-2xl font-bold">
-          Fun Activity: Who Owns What?
-        </h2>
-        <p>
-          Let's play a quick game to reinforce what we’ve learned. I’ll describe
-          an item, and you guess who it belongs to. Imagine you're a detective
-          solving a fun mystery.
-        </p>
-        <ul className="ml-4 list-inside list-disc">
-          <li>
-            <span className="font-bold">これは誰の</span>{" "}
-            <span className="font-japanese">本</span>{" "}
-            <span className="font-bold">ですか？</span> (Kore wa dare no hon
-            desu ka?)
-            <br />
-            <span className="font-bold">Whose book is this?</span>
-            <br />
-            <span className="font-japanese">これは妹の</span>{" "}
-            <Furigana furigana={<span className="text-sm">ほん</span>}>
-              本
-            </Furigana>{" "}
-            <span className="font-japanese">です。</span> (Kore wa imouto no hon
-            desu.)
-            <br />
-            <span className="font-bold">This is my younger sister’s book.</span>
-          </li>
-          <li>
-            <span className="font-bold">これは誰のコンピューターですか？</span>{" "}
-            (Kore wa dare no konpyuutaa desu ka?)
-            <br />
-            <span className="font-bold">Whose computer is this?</span>
-            <br />
-            <span className="font-japanese">
-              これは兄のコンピューターです。
+            <span className="font-japanese text-xl">
+              わたしの{" "}
+              <Furigana furigana={<span className="text-sm">ほん</span>}>
+                本
+              </Furigana>
             </span>{" "}
-            (Kore wa ani no konpyuutaa desu.)
-            <br />
-            <span className="font-bold">
-              This is my older brother’s computer.
-            </span>
+            - <span className="font-bold">My book</span>
+          </li>
+          <li>
+            <span className="font-japanese text-xl">
+              せんせいの{" "}
+              <Furigana furigana={<span className="text-sm">くるま</span>}>
+                車
+              </Furigana>
+            </span>{" "}
+            - <span className="font-bold">Teacher's car</span>
+          </li>
+          <li>
+            <span className="font-japanese text-xl">
+              ともだちの{" "}
+              <Furigana furigana={<span className="text-sm">とけい</span>}>
+                時計
+              </Furigana>
+            </span>{" "}
+            - <span className="font-bold">Friend's watch</span>
           </li>
         </ul>
-
         <h2 className="pb-3 pt-6 text-center text-2xl font-bold">
-          Real-Life Application: Social Media Descriptions
+          More Practical Examples
         </h2>
         <p>
-          Let’s relate this to something we all use: social media. Next time
-          you’re scrolling through Instagram or Twitter, think about how you'd
-          describe a photo using <span className="font-japanese">の</span>. For
-          example, if you see a post of a friend’s new gadget, the caption might
-          read:
+          Since you've recently learned family terms, countries, majors, and
+          occupations, let's use these topics for more examples.
         </p>
+        <ul className="ml-4 list-inside list-disc space-y-2">
+          <li>
+            <span className="font-japanese text-xl">
+              <Furigana furigana={<span className="text-sm">さとう</span>}>
+                佐藤
+              </Furigana>
+              さんのおかあさん -{" "}
+            </span>
+            <span className="font-bold">Satou's mother</span>
+          </li>
+          <li>
+            <span className="font-japanese text-xl">
+              おとうさんの
+              <Furigana furigana={<span className="text-sm">くるま</span>}>
+                車
+              </Furigana>
+            </span>{" "}
+            - <span className="font-bold">Father's car</span>
+          </li>
+          <li>
+            <span className="font-japanese text-xl">おかあさんのせんこう</span>{" "}
+            - <span className="font-bold">Mother's major</span>
+          </li>
+          <li>
+            <span className="font-japanese text-xl">
+              おにいさんの
+              <Furigana
+                furigana={<span className="text-sm">こんぴゅーたー</span>}
+              >
+                コンピューター
+              </Furigana>
+            </span>{" "}
+            - <span className="font-bold">Older brother's computer</span>
+          </li>
+          <li>
+            <span className="font-japanese text-xl">
+              いもうとの{" "}
+              <Furigana furigana={<span className="text-sm">ほん</span>}>
+                本
+              </Furigana>
+            </span>{" "}
+            - <span className="font-bold">Younger sister's book</span>
+          </li>
+          <li>
+            <span className="font-japanese text-xl">
+              ともだちの
+              <Furigana furigana={<span className="text-sm">けいたい</span>}>
+                携帯
+              </Furigana>
+            </span>{" "}
+            - <span className="font-bold">Friend's cellphone</span>
+          </li>
+        </ul>
+        <p className="pb-2 pt-6 font-bold">
+          You can connect more than just two nouns in a single sentence:
+        </p>
+        <ul className="ml-4 list-inside list-disc space-y-2">
+          <li>
+            <span className="font-japanese text-xl">
+              <Furigana furigana={<span className="text-sm">あめりか</span>}>
+                アメリカ
+              </Furigana>
+              <span className="text-orange-500">の</span>ともだち
+              <span className="text-orange-500">の</span>
+              <Furigana furigana={<span className="text-sm">かめら</span>}>
+                カメラ
+              </Furigana>
+            </span>{" "}
+            - <span className="font-bold">American friend's camera</span>
+          </li>
+          <li>
+            <span className="font-japanese text-xl">
+              <Furigana furigana={<span className="text-sm">にほんご</span>}>
+                日本語
+              </Furigana>
+              <span className="text-orange-500">の</span>{" "}
+              <Furigana furigana={<span className="text-sm">せんせい</span>}>
+                先生
+              </Furigana>
+            </span>{" "}
+            <span className="font-japanese text-xl">
+              <span className="text-orange-500">の</span>
+              <Furigana furigana={<span className="text-sm">とけい</span>}>
+                時計
+              </Furigana>
+            </span>{" "}
+            - <span className="font-bold">Japanese teacher's watch</span>
+          </li>
+          <li>
+            <span className="font-japanese text-xl">
+              <Furigana furigana={<span className="text-sm">ふらんす</span>}>
+                フランス
+              </Furigana>
+              <span className="text-orange-500">の</span>
+              <Furigana furigana={<span className="text-sm">がくせい</span>}>
+                学生
+              </Furigana>
+              <span className="text-orange-500">の</span>
+              <Furigana furigana={<span className="text-sm">のーと</span>}>
+                ノート
+              </Furigana>
+            </span>{" "}
+            - <span className="font-bold">French student's notebook</span>
+          </li>
+        </ul>
+        <p className="pt-6">And that's it!</p>
         <p>
-          <span className="font-japanese">ジョンのgadgetです。</span> (John no
-          gadget desu.)
-          <br />
-          <span className="font-bold">It’s John’s gadget.</span>
+          ...Okay, there are a couple more uses for the{" "}
+          <span className="font-japanese text-xl">の</span> particle, but you
+          can worry about them once you reach the later lessons. For now, try to
+          link nouns together to show possession.
         </p>
-        <p>
-          Now think of a few items from your feed and describe them using{" "}
-          <span className="font-japanese">の</span>. This could be a fun way to
-          see how much you’ve learned!
-        </p>
-
         <h2 className="pb-3 pt-6 text-center text-2xl font-bold">
-          Wrap-Up: Practice Makes Perfect
+          Activity: Who Owns What?
         </h2>
         <p>
-          That’s it for today’s lesson on the{" "}
-          <span className="font-japanese">の</span> particle. By now, you should
-          feel more comfortable using <span className="font-japanese">の</span>{" "}
-          to show possession and make your sentences richer in detail. Keep
-          practicing, and soon enough, using{" "}
-          <span className="font-japanese">の</span> will become second nature.
+          Let's play a quick game to reinforce what we've learned. Connect the
+          following pictures using the{" "}
+          <span className="font-japanese text-xl">の</span> particle.
         </p>
-        <p>
-          Remember, learning a language is a journey. Keep exploring and
-          experimenting with new ways to express yourself. Happy studying!
-        </p>
+        <h3 className="pt-6 text-center font-japanese text-2xl font-medium">
+          <Romaji
+            romaji={
+              <span className="font-inter text-muted-foreground">Who</span>
+            }
+          >
+            <Furigana furigana={<span className="text-base">だれ</span>}>
+              誰
+            </Furigana>
+          </Romaji>
+          の
+          <Furigana furigana={<span className="text-base">ほん</span>}>
+            本
+          </Furigana>
+          ですか。
+        </h3>
+        <div className="flex items-center justify-center pb-6">
+          <div className="h-48 w-48 rounded-md bg-card"></div>
+          <div className="mx-12 text-4xl">+</div>
+          <div className="h-48 w-48 rounded-md bg-card"></div>
+        </div>
+        <div className="flex justify-center pb-6">
+          <div>
+            <Input placeholder="" className="bg-card text-lg" />
+          </div>
+        </div>
 
-        <p className="text-center">
-          Feel free to bookmark this post for future reference and share it with
-          fellow Japanese learners. Keep up the great work!
+        <h3 className="pt-6 text-center font-japanese text-2xl font-medium">
+          <Furigana furigana={<span className="text-base">だれ</span>}>
+            誰
+          </Furigana>
+          の
+          <Furigana
+            furigana={<span className="text-base">こんぴゅーたー</span>}
+          >
+            コンピューター
+          </Furigana>
+          ですか。
+        </h3>
+        <div className="flex items-center justify-center pb-6 pt-3">
+          <div className="h-48 w-48 rounded-md bg-card"></div>
+          <div className="mx-12 text-4xl">+</div>
+          <div className="h-48 w-48 rounded-md bg-card"></div>
+        </div>
+        <div className="flex justify-center pb-6">
+          <div>
+            <Input placeholder="" className="bg-card text-lg" />
+          </div>
+        </div>
+
+        <h2 className="pb-3 pt-6 text-2xl font-bold">Summary</h2>
+        <p>
+          By now, you should feel more comfortable using{" "}
+          <span className="font-japanese">の</span> to show possession and make
+          your sentences richer in detail. If not, don't worry because you'll be
+          creating more sentences in the next lesson.
         </p>
       </div>
     </ContentBox>

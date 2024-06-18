@@ -311,7 +311,7 @@ export default function Page() {
         </ul>
         <h2 className="my-3 text-center text-2xl font-bold">
           Non-Question Uses of{" "}
-          <span className="font-japanese text-red-500">か</span>
+          <span className="font-japanese text-[1.65rem] text-red-500">か</span>
         </h2>
         <ul className="ml-6 list-disc">
           <li>

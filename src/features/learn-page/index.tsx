@@ -318,11 +318,15 @@ export function ChapterBoxes() {
         >
           Modifying Nouns: <span className="font-japanese">の</span>
         </UnitButton>
-        <UnitButton id="21." type="writing">
+        <UnitButton
+          id="21."
+          type="writing"
+          link="/learn/chapter-1/practice-sentences-desu-wa-ka-no"
+        >
           Practice Sentences:{" "}
           <span className="font-japanese">です, は, か, の</span>
         </UnitButton>
-        <UnitButton id="22." type="lesson">
+        <UnitButton id="22." type="lesson" link="/learn/chapter-1/anou-etto">
           Sounding Natural:{" "}
           <span className="font-japanese">あのう、えっと。。。</span>
         </UnitButton>
@@ -333,7 +337,11 @@ export function ChapterBoxes() {
         >
           Kikusasaizu Video - L1-1
         </UnitButton>
-        <UnitButton id="24." type="audio">
+        <UnitButton
+          id="24."
+          type="audio"
+          link="/learn/chapter-1/my-kikitori-conversation-1"
+        >
           MyKikitori - Conversation 1
         </UnitButton>
         <UnitButton id="25." type="lesson">
@@ -372,7 +380,7 @@ export function ChapterBoxes() {
           Meet Your Host Family At The Airport
         </UnitButton>
         <UnitButton id="34." type="audio">
-          MyKikitori - Conversation 2
+          MyKikitori - Conversation 3
         </UnitButton>
       </ChapterBox>
       <ChapterBox text="Chapter 2" className="bg-green-600 saturate-[65%]">

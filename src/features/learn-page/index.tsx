@@ -30,7 +30,7 @@ export function ChapterBoxes() {
         <UnitButton
           id="4."
           type="practice"
-          link="/learn/chapter-0/hiragana/practice"
+          link="/learn/chapter-0/practice/hiragana"
         >
           Practice Hiragana
         </UnitButton>
@@ -51,7 +51,7 @@ export function ChapterBoxes() {
         <UnitButton
           id="7."
           type="practice"
-          link="/learn/chapter-0/dakuten-handakuten/practice"
+          link="/learn/chapter-0/practice/dakuten-handakuten"
         >
           Practice Dakuten & Handakuten
         </UnitButton>
@@ -72,7 +72,7 @@ export function ChapterBoxes() {
         <UnitButton
           id="10."
           type="practice"
-          link="/learn/chapter-0/contracted-sounds/practice"
+          link="/learn/chapter-0/practice/contracted-sounds"
         >
           Practice Contracted Sounds
         </UnitButton>
@@ -92,44 +92,37 @@ export function ChapterBoxes() {
         </UnitButton>
         <UnitButton
           id="13."
-          type="practice"
-          link="/learn/chapter-0/long-vowels-double-consonants/practice"
-        >
-          Practice Long Vow. & Dbl. Cons.
-        </UnitButton>
-        <UnitButton
-          id="14."
           type="writing"
           link="/learn/chapter-0/all-hiragana-quiz"
         >
           All Hiragana Quiz
         </UnitButton>
         <UnitButton
-          id="15."
+          id="14."
           type="lesson"
           link="/learn/chapter-0/punctuation-misc"
         >
           Punctuation and Misc.
         </UnitButton>
         <UnitButton
-          id="16."
+          id="15."
           type="vocab-list"
           link="/learn/chapter-0/vocab-list"
         >
           Chapter 0 Vocab List
         </UnitButton>
-        <UnitButton id="17." type="vocab" link="/learn/chapter-0/greetings">
+        <UnitButton id="16." type="vocab" link="/learn/chapter-0/greetings">
           Greetings
         </UnitButton>
         <UnitButton
-          id="18."
+          id="17."
           type="culture-note"
           link="/learn/chapter-0/culture-note-japanese-greetings"
         >
           Culture Note: Japanese Greetings
         </UnitButton>
         <UnitButton
-          id="15."
+          id="18."
           type="writing"
           link="/learn/chapter-0/greetings-quiz"
         >
@@ -145,14 +138,18 @@ export function ChapterBoxes() {
         <UnitButton
           id="20."
           type="practice"
-          link="/learn/chapter-0/greetings-common-expressions/practice"
+          link="/learn/chapter-0/practice/greetings-common-expressions"
         >
           Practice Greet. & Common Expr.
         </UnitButton>
-        <UnitButton id="21." type="lesson" link="/learn/chapter-0/numbers">
-          Numbers
+        <UnitButton
+          id="21."
+          type="lesson"
+          link="/learn/chapter-0/numbers-intro"
+        >
+          Numbers Intro
         </UnitButton>
-        <UnitButton id="22." type="vocab" link="/learn/chapter-0/numbers-0-100">
+        <UnitButton id="22." type="vocab" link="/learn/chapter-0/numbers">
           Numbers 0-100
         </UnitButton>
         <UnitButton
@@ -165,14 +162,14 @@ export function ChapterBoxes() {
         <UnitButton
           id="24."
           type="practice"
-          link="/learn/chapter-0/numbers-0-10/practice"
+          link="/learn/chapter-0/practice/numbers-0-10"
         >
           Practice Numbers 0-10
         </UnitButton>
         <UnitButton
           id="25."
           type="practice"
-          link="/learn/chapter-0/numbers-11-100/practice"
+          link="/learn/chapter-0/practice/numbers-11-100"
         >
           Practice Numbers 11-100
         </UnitButton>
@@ -218,7 +215,7 @@ export function ChapterBoxes() {
         <UnitButton
           id="6."
           type="practice"
-          link="/learn/chapter-1/people-descriptors-misc/practice"
+          link="/learn/chapter-1/practice/people-descriptors-misc"
         >
           Practice People, Descriptors, Misc.
         </UnitButton>
@@ -228,7 +225,7 @@ export function ChapterBoxes() {
         <UnitButton
           id="8."
           type="practice"
-          link="/learn/chapter-1/family-school/practice"
+          link="/learn/chapter-1/practice/family-school"
         >
           Practice Family & School
         </UnitButton>
@@ -248,14 +245,14 @@ export function ChapterBoxes() {
         <UnitButton
           id="11."
           type="practice"
-          link="/learn/chapter-1/occupations-majors/practice"
+          link="/learn/chapter-1/practice/occupations-majors"
         >
           Practice Occuupations & Majors
         </UnitButton>
         <UnitButton
           id="12."
           type="writing"
-          link="/learn/chapter-1/x-wa-y-desu/practice-sentences"
+          link="/learn/chapter-1/practice/x-wa-y-desu-sentences"
         >
           <span className="font-bold">X</span>
           <span className="font-japanese">は</span>
@@ -300,7 +297,7 @@ export function ChapterBoxes() {
         <UnitButton
           id="18."
           type="practice"
-          link="/learn/chapter-1/countries-time/practice"
+          link="/learn/chapter-1/practice/countries-time"
         >
           Practice Countries & Time
         </UnitButton>
@@ -347,7 +344,11 @@ export function ChapterBoxes() {
         <UnitButton id="25." type="lesson" link="/learn/chapter-1/telling-time">
           Telling Time
         </UnitButton>
-        <UnitButton id="26." type="writing">
+        <UnitButton
+          id="26."
+          type="practice"
+          link="/learn/chapter-1/practice/telling-time"
+        >
           Practice Time
         </UnitButton>
         <UnitButton id="27." type="lesson" link="/learn/chapter-1/minutes">

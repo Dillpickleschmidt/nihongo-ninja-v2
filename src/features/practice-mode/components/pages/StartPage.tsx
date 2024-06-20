@@ -3,11 +3,10 @@ import { Card } from "@/types"
 import { usePracticeModeContext } from "../../context/PracticeModeContext"
 
 type StartPageProps = {
-  children: React.ReactNode
   deckName: string
 }
 
-export default function StartPage({ children, deckName }: StartPageProps) {
+export default function StartPage({ deckName }: StartPageProps) {
   const { setCurrentPage, enabledAnswerCategories, data } =
     usePracticeModeContext()
 
@@ -16,8 +15,8 @@ export default function StartPage({ children, deckName }: StartPageProps) {
 
   return (
     <div>
-      <div className="mb-10 pt-24 text-center text-3xl font-semibold">
-        {children}
+      <div className="mb-10 pt-24 text-center text-5xl font-semibold">
+        Practice {deckName}
       </div>
       <div className="flex w-full justify-center">
         <div>

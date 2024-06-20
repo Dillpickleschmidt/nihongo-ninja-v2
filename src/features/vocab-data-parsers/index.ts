@@ -1,4 +1,4 @@
-import type { Entry } from "@/types"
+import type { Card, Entry } from "@/types"
 import type { VocabEntry } from "@/types/vocab"
 
 type ExtractedTextArray = string[][]
@@ -115,7 +115,7 @@ export function transformVocabData(
   return result
 }
 
-export function vocabEntriesToEntries(rawData: VocabEntry[]): Entry[] {
+export function vocabEntriesToCards(rawData: VocabEntry[]): Card[] {
   return rawData.map((entry, index) => {
     const hiraganaArr = (entry.furigana ?? [])
       .map((f) => extractHiraganaFromFurigana(f))
@@ -135,6 +135,8 @@ export function vocabEntriesToEntries(rawData: VocabEntry[]): Entry[] {
       ],
       mnemonics: entry.mnemonics || [],
       order: index,
+      cardStyle: "multiple-choice",
+      wrongAnswerCount: 0,
     }
   })
 }

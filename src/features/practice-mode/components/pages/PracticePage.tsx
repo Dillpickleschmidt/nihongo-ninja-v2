@@ -7,7 +7,6 @@ import CardTypeSwitch from "../CardTypeSwitch"
 import { handleNextQuestion } from "../cardHandlers"
 
 type PracticePageProps = {
-  deckName: string
   activeCards: Card[]
   setActiveCards: (cards: Card[]) => void
   inactiveCards: Card[]
@@ -16,7 +15,6 @@ type PracticePageProps = {
 }
 
 export default function PracticePage({
-  deckName,
   activeCards,
   setActiveCards,
   inactiveCards,
@@ -34,10 +32,6 @@ export default function PracticePage({
     setRecentlySeenCards,
   } = usePracticeModeContext()
   const buttonRef = useRef<HTMLButtonElement | null>(null)
-
-  useEffect(() => {
-    console.log("Now practicing deck " + deckName)
-  }, [deckName])
 
   useEffect(() => {
     if (recentlySeenCards && Object.keys(recentlySeenCards).length === 7) {

@@ -7,28 +7,32 @@ import FinishPage from "./components/pages/FinishPage"
 import { usePracticeModeContext } from "./context/PracticeModeContext"
 import { useEffect, useMemo, useState } from "react"
 import type { Card } from "@/types"
+import useDeckSplit from "./components/useDeckSplit"
 
 type PracticeModeProps = {
-  children: React.ReactNode
   deckName: string
-  slicedData: Card[]
-  remainingData: Card[]
-  unslicedData: Card[]
+  data: Card[]
 }
 
 export default function PracticeMode({
-  children,
   deckName,
-  slicedData,
-  remainingData,
-  unslicedData,
+  data: propData,
 }: PracticeModeProps) {
-  const { currentPage, setEnabledAnswerCategories, setData } =
+  const { currentPage, setEnabledAnswerCategories, data, setData } =
     usePracticeModeContext()
+  const [shuffleInput, setShuffleInput] = useState(true)
 
   useEffect(() => {
-    setData(unslicedData)
-  }, [unslicedData, setData])
+    if (propData.length > 0) {
+      // Shuffle the input data
+      const newData = shuffleInput
+        ? [...propData].sort(() => Math.random() - 0.5)
+        : propData
+      setData(newData)
+    }
+  }, [propData, setData, shuffleInput])
+
+  const { slicedData, remainingData, unslicedData } = useDeckSplit(data)
 
   const uniqueCategories = useMemo(
     () => extractUniqueCategories(unslicedData),
@@ -39,17 +43,21 @@ export default function PracticeMode({
   const [inactiveCards, setInactiveCards] = useState(remainingData)
 
   useEffect(() => {
+    setActiveCards(slicedData)
+    setInactiveCards(remainingData)
+  }, [unslicedData])
+
+  useEffect(() => {
     setEnabledAnswerCategories(uniqueCategories)
   }, [uniqueCategories, setEnabledAnswerCategories])
 
   function renderPage() {
     switch (currentPage) {
       case "start":
-        return <StartPage deckName={deckName}>{children}</StartPage>
+        return <StartPage deckName={deckName} />
       case "practice":
         return (
           <PracticePage
-            deckName={deckName}
             unslicedData={unslicedData}
             activeCards={activeCards}
             setActiveCards={setActiveCards}
@@ -61,6 +69,8 @@ export default function PracticeMode({
         return <ReviewPage />
       case "finished":
         return <FinishPage />
+      default:
+        return null
     }
   }
 

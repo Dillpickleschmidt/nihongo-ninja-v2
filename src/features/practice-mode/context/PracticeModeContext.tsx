@@ -1,32 +1,32 @@
 "use client"
 
 import { createContext, useContext, useState } from "react"
-import { CardObject, Entry } from "@/types"
+import { Card } from "@/types"
 
 type PracticeModeContextProps = {
   children: React.ReactNode
 }
-
-export type PageOptions = "start" | "practice" | "review" | "finished"
 
 type PracticeModeContext = {
   isAnswerCorrect: boolean
   setIsAnswerCorrect: React.Dispatch<React.SetStateAction<boolean>>
   hasUserAnswered: boolean
   setHasUserAnswered: React.Dispatch<React.SetStateAction<boolean>>
-  correctEntry?: Entry & { key: string }
-  setCorrectEntry: React.Dispatch<
-    React.SetStateAction<(Entry & { key: string }) | undefined>
-  >
+  correctEntry?: Card
+  setCorrectEntry: React.Dispatch<React.SetStateAction<Card | undefined>>
   enabledAnswerCategories: string[]
   setEnabledAnswerCategories: React.Dispatch<React.SetStateAction<string[]>>
   currentCardIndex: number
   setCurrentCardIndex: React.Dispatch<React.SetStateAction<number>>
+  data: Card[]
+  setData: React.Dispatch<React.SetStateAction<Card[]>>
   currentPage: PageOptions
   setCurrentPage: React.Dispatch<React.SetStateAction<PageOptions>>
-  recentlySeenCards: CardObject | null
-  setRecentlySeenCards: React.Dispatch<React.SetStateAction<CardObject | null>>
+  recentlySeenCards: Card[] | null
+  setRecentlySeenCards: React.Dispatch<React.SetStateAction<Card[] | null>>
 }
+
+export type PageOptions = "start" | "practice" | "review" | "finished"
 
 const PracticeModeContext = createContext<PracticeModeContext | null>(null)
 
@@ -35,17 +35,14 @@ export function PracticeModeContextProvider({
 }: PracticeModeContextProps) {
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(false)
   const [hasUserAnswered, setHasUserAnswered] = useState(false)
-  const [correctEntry, setCorrectEntry] = useState<
-    (Entry & { key: string }) | undefined
-  >()
+  const [correctEntry, setCorrectEntry] = useState<Card | undefined>()
   const [enabledAnswerCategories, setEnabledAnswerCategories] = useState<
     string[]
   >([])
   const [currentCardIndex, setCurrentCardIndex] = useState(0)
-  const [recentlySeenCards, setRecentlySeenCards] = useState<CardObject | null>(
-    null,
-  )
+  const [data, setData] = useState<Card[]>([])
   const [currentPage, setCurrentPage] = useState<PageOptions>("start")
+  const [recentlySeenCards, setRecentlySeenCards] = useState<Card[] | null>([])
 
   return (
     <PracticeModeContext.Provider
@@ -60,6 +57,8 @@ export function PracticeModeContextProvider({
         setEnabledAnswerCategories,
         currentCardIndex,
         setCurrentCardIndex,
+        data,
+        setData,
         currentPage,
         setCurrentPage,
         recentlySeenCards,

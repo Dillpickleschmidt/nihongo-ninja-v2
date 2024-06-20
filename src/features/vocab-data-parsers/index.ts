@@ -1,5 +1,5 @@
-import { JSONWithAnswerCategories } from "@/types"
-import { VocabEntry } from "@/types/vocab"
+import type { Entry } from "@/types"
+import type { VocabEntry } from "@/types/vocab"
 
 type ExtractedTextArray = string[][]
 
@@ -115,20 +115,14 @@ export function transformVocabData(
   return result
 }
 
-export function vocabDataToJSONWithAnswerCategories(
-  rawData: VocabEntry[],
-): JSONWithAnswerCategories {
-  const newJson: JSONWithAnswerCategories = {}
+export function vocabEntriesToEntries(rawData: VocabEntry[]): Entry[] {
+  return rawData.map((entry, index) => {
+    const hiraganaArr = (entry.furigana ?? [])
+      .map((f) => extractHiraganaFromFurigana(f))
+      .filter(Boolean) as string[]
 
-  rawData.forEach((entry) => {
-    const hiraganaArr: string[] = []
-    for (let i = 0; i < (entry.furigana ?? []).length; i++) {
-      const hiragana =
-        entry.furigana && extractHiraganaFromFurigana(entry.furigana[i])
-      hiragana && hiraganaArr.push(hiragana)
-    }
-
-    newJson[entry.word] = {
+    return {
+      key: entry.word,
       answerCategories: [
         {
           category: "Kana",
@@ -140,8 +134,7 @@ export function vocabDataToJSONWithAnswerCategories(
         },
       ],
       mnemonics: entry.mnemonics || [],
+      order: index,
     }
   })
-
-  return newJson
 }

@@ -2,21 +2,21 @@
 import { useEffect, useState, useRef } from "react"
 import { usePracticeModeContext } from "../../context/PracticeModeContext"
 import { Button } from "@/components/ui/button"
-import { CardObject } from "@/types"
+import { Card } from "@/types"
 import CardTypeSwitch from "../CardTypeSwitch"
 import { handleNextQuestion } from "../cardHandlers"
 
 type PracticePageProps = {
-  deckId: string
-  activeCards: CardObject
-  setActiveCards: (cards: CardObject) => void
-  inactiveCards: CardObject
-  setInactiveCards: (cards: CardObject) => void
-  unslicedData: CardObject
+  deckName: string
+  activeCards: Card[]
+  setActiveCards: (cards: Card[]) => void
+  inactiveCards: Card[]
+  setInactiveCards: (cards: Card[]) => void
+  unslicedData: Card[]
 }
 
 export default function PracticePage({
-  deckId,
+  deckName,
   activeCards,
   setActiveCards,
   inactiveCards,
@@ -36,8 +36,8 @@ export default function PracticePage({
   const buttonRef = useRef<HTMLButtonElement | null>(null)
 
   useEffect(() => {
-    console.log("Now practicing deck " + deckId)
-  }, [deckId])
+    console.log("Now practicing deck " + deckName)
+  }, [deckName])
 
   useEffect(() => {
     if (recentlySeenCards && Object.keys(recentlySeenCards).length === 7) {

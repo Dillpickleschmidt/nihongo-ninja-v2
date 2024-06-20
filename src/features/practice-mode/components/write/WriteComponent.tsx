@@ -3,10 +3,10 @@ import { usePracticeModeContext } from "../../context/PracticeModeContext"
 import { handleWrittenAnswer, presentWriteOptions } from "./write"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { CardObject } from "@/types"
+import { Card } from "@/types"
 
 type WriteComponentProps = {
-  data: CardObject
+  data: Card[]
   shuffleInput?: boolean
 }
 
@@ -48,7 +48,6 @@ export default function WriteComponent({
     )
     setHasUserAnswered(true)
 
-    // Flatten the enabled answers from all categories for logging
     const enabledAnswers = correctEntry.answerCategories
       .filter((category) => enabledAnswerCategories.includes(category.category))
       .flatMap((category) => category.answers)

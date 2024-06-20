@@ -5,11 +5,11 @@ import {
 } from "./multiple-choice"
 import { Button } from "@/components/ui/button"
 import { usePracticeModeContext } from "../../context/PracticeModeContext"
-import { CardObject } from "@/types"
+import { Card } from "@/types"
 import { cn } from "@/utils/cn"
 
 type MultipleChoiceProps = {
-  data: CardObject
+  data: Card[]
   shuffleInput?: boolean
 }
 
@@ -70,19 +70,14 @@ export default function MultipleChoice({
 
   return (
     <div>
-      {/* <label className={`${hasUserAnswered && "text-center"}`}>
-        Multiple Choice
-      </label> */}
       <ul className="mx-16 mb-6 mt-32 grid grid-cols-1 gap-[.875rem] lg:grid-cols-2">
         {choices.options.map((option, index) => {
-          // Flatten the enabled answers from all categories
           const enabledAnswers = option.answerCategories
             .filter((category) =>
               enabledAnswerCategories.includes(category.category),
             )
             .flatMap((category) => category.answers)
 
-          // Pick the first answer from the enabled answers array (each answer in the array is equally valid)
           const firstAnswerIndex = enabledAnswers[0]
 
           const isCorrect = correctAnswer.includes(firstAnswerIndex)

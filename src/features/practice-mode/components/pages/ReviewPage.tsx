@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { usePracticeModeContext } from "../../context/PracticeModeContext"
+import { AnswerCategory } from "@/types"
 
 export default function ReviewPage() {
   const {
@@ -12,64 +13,69 @@ export default function ReviewPage() {
   if (!recentlySeenCards) {
     return
   }
+
+  // Create a Map to filter out duplicate keys and keep only the last occurrence
+  const uniqueCards = Array.from(
+    new Map(recentlySeenCards.map((card) => [card.key, card])).values(),
+  )
+
   return (
-    <div>
-      <h1 className="mx-6 mb-10 pt-24 text-center text-3xl font-semibold text-[#dfcdb3] xl:text-5xl">
-        <em>See the terms you practiced!</em>
-      </h1>
+    <>
+      <p className="mx-6 mt-16 text-center text-3xl font-semibold italic text-orange-500 xl:text-5xl">
+        See the terms you practiced!
+      </p>
       <div className="flex w-full justify-center">
         <div>
-          {Object.entries(recentlySeenCards).map(([key, card], index) => (
-            <div
-              key={index}
-              className="relative my-2 flex min-w-[400px] overflow-hidden rounded-lg bg-card shadow-lg dark:shadow-none"
-            >
-              <li
-                className={`flex items-center p-4 font-japanese ${
-                  card.wrongAnswerCount > 0
-                    ? "text-red-500"
-                    : index % 2 === 0
-                      ? "dark:text-[#b49b7d]"
-                      : "dark:text-[#dfcdb3]"
-                }`}
-              >
-                <span className="text-3xl font-semibold">{key} -</span>
-                <div className="mt-2 text-lg">
-                  {card.answerCategories
-                    .filter((category) =>
-                      enabledAnswerCategories.includes(category.category),
-                    )
-                    .map((category, catIndex) => (
-                      <div key={catIndex} className="ml-2">
-                        {category.answers.join(" / ")}
-                      </div>
-                    ))}
-                </div>
-              </li>
+          <div className="mt-6 w-full">
+            {uniqueCards.map((card) => (
               <div
-                className={`absolute right-0 h-full ${
-                  card.wrongAnswerCount > 0
-                    ? "w-2 bg-red-500/75"
-                    : "w-[0.375rem] bg-green-500/50"
-                }`}
-              ></div>
-            </div>
-          ))}
+                key={card.key}
+                className="relative mx-2 mb-4 flex min-w-[500px] overflow-hidden rounded-lg bg-card shadow-md xl:mx-8"
+              >
+                <div className="flex-1 py-4 pl-4 pr-6">
+                  <p
+                    className={`${card.wrongAnswerCount > 0 ? "text-[#ff5757]" : ""} font-interbold text-xl`}
+                  >
+                    {card.key}
+                  </p>
+                  {card.answerCategories.map(
+                    (categoryObj: AnswerCategory, index: number) => (
+                      <div key={index} className="mt-2">
+                        <p className="font-interbold">
+                          {categoryObj.category}:
+                        </p>
+                        {categoryObj.answers.map(
+                          (answer: string, idx: number) => (
+                            <p key={idx} className="ml-4">
+                              {answer}
+                            </p>
+                          ),
+                        )}
+                      </div>
+                    ),
+                  )}
+                </div>
+                <div
+                  className={`absolute right-0 h-full ${card.wrongAnswerCount > 0 ? "w-4 bg-red-500" : "w-2 bg-emerald-500/50"}`}
+                ></div>
+              </div>
+            ))}
+          </div>
+          <div className="flex w-full justify-center px-3">
+            <Button
+              size="lg"
+              onClick={() => {
+                console.log("Clearing recently seen cards")
+                setRecentlySeenCards(null)
+                setCurrentPage("practice")
+              }}
+              className="mb-4 mt-2 w-40 bg-orange-500"
+            >
+              Continue
+            </Button>
+          </div>
         </div>
       </div>
-      <div className="flex w-full justify-center px-3">
-        <Button
-          size="lg"
-          onClick={() => {
-            console.log("Clearing recently seen cards")
-            setRecentlySeenCards(null)
-            setCurrentPage("practice")
-          }}
-          className="mb-4 mt-2 w-40 bg-orange-500"
-        >
-          Continue
-        </Button>
-      </div>
-    </div>
+    </>
   )
 }

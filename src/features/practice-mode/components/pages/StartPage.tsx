@@ -1,15 +1,18 @@
 import { Button } from "@/components/ui/button"
-import { JSONWithAnswerCategories } from "@/types"
+import { Card } from "@/types"
 import { usePracticeModeContext } from "../../context/PracticeModeContext"
 
 type StartPageProps = {
   children: React.ReactNode
-  deckId: string
-  data: JSONWithAnswerCategories
+  deckName: string
 }
 
-export default function StartPage({ children, deckId, data }: StartPageProps) {
-  const { setCurrentPage, enabledAnswerCategories } = usePracticeModeContext()
+export default function StartPage({ children, deckName }: StartPageProps) {
+  const { setCurrentPage, enabledAnswerCategories, data } =
+    usePracticeModeContext()
+
+  // Sort data based on the order property before setting it
+  const sortedData = data.sort((a, b) => a.order - b.order)
 
   return (
     <div>
@@ -19,31 +22,30 @@ export default function StartPage({ children, deckId, data }: StartPageProps) {
       <div className="flex w-full justify-center">
         <div>
           <div>
-            {Object.entries(data).map(([key, card], index) => (
+            {sortedData.map((entry, index) => (
               <div
                 key={index}
-                className="my-2 flex min-w-[400px] rounded-lg bg-card p-4 shadow-lg dark:shadow-none"
+                className="my-2 min-w-[500px] rounded-xl bg-card p-6 shadow-md"
               >
-                <li
-                  className={`flex items-center font-japanese ${
-                    index % 2 === 0
-                      ? "dark:text-[#b49b7d]"
-                      : "dark:text-[#dfcdb3]"
-                  }`}
-                >
-                  <span className="text-3xl font-semibold">{key} -</span>
-                  <div className="mt-2 text-lg">
-                    {card.answerCategories
-                      .filter((category) =>
-                        enabledAnswerCategories.includes(category.category),
-                      )
-                      .map((category, catIndex) => (
-                        <div key={catIndex} className="ml-2">
-                          {category.answers.join(" / ")}
-                        </div>
+                <p className="text-2xl font-bold text-orange-500 text-primary">
+                  {entry.key}
+                </p>
+                {entry.answerCategories
+                  .filter((category) =>
+                    enabledAnswerCategories.includes(category.category),
+                  )
+                  .map((category, i) => (
+                    <div key={i}>
+                      <p className="my-2 italic text-muted-foreground">
+                        {category.category}:
+                      </p>
+                      {category.answers.map((answer: string, j: number) => (
+                        <p key={j} className="text-xl font-bold text-primary">
+                          {answer}
+                        </p>
                       ))}
-                  </div>
-                </li>
+                    </div>
+                  ))}
               </div>
             ))}
           </div>

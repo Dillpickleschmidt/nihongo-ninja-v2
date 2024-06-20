@@ -1,22 +1,22 @@
-import { CardObject } from "@/types"
 import MultipleChoice from "./multiple-choice/MultipleChoice"
 import WriteComponent from "./write/WriteComponent"
 import { useMemo } from "react"
 import { usePracticeModeContext } from "../context/PracticeModeContext"
+import type { Card } from "@/types"
 
 type CardTypeSwitchProps = {
-  data: CardObject
+  data: Card[]
 }
 
 export default function CardTypeSwitch({ data }: CardTypeSwitchProps) {
   const { currentCardIndex, correctEntry } = usePracticeModeContext()
 
-  const currentKey = useMemo(
-    () => Object.keys(data)[currentCardIndex],
+  const currentCard = useMemo(
+    () => data[currentCardIndex],
     [data, currentCardIndex],
   )
 
-  const currentCardStyle = data[currentKey]?.cardStyle
+  const currentCardStyle = currentCard?.cardStyle
 
   function renderComponent() {
     switch (currentCardStyle) {

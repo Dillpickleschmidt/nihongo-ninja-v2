@@ -54,7 +54,13 @@ export default function PracticeMode({
   function renderPage() {
     switch (currentPage) {
       case "start":
-        return <StartPage deckName={deckName} />
+        return (
+          <StartPage
+            deckName={deckName}
+            shuffleInput={shuffleInput}
+            setShuffleInput={setShuffleInput}
+          />
+        )
       case "practice":
         return (
           <PracticePage

@@ -50,7 +50,7 @@ export default function ReviewPage() {
           See the terms you practiced!
         </h1>
       </div>
-      <div className="lg:mx-48 2xl:mx-96">
+      <div className="pb-28 lg:mx-48 2xl:mx-96">
         <div>
           {uniqueCards.map((card) => (
             <div

@@ -1,12 +1,20 @@
 import { Button } from "@/components/ui/button"
 import { usePracticeModeContext } from "../../context/PracticeModeContext"
 import ContentBox from "@/components/ContentBox"
+import DeckSettingsDialog from "../DeckSettingsDialog"
+import { Settings } from "lucide-react"
 
 type StartPageProps = {
   deckName: string
+  shuffleInput: boolean
+  setShuffleInput: (value: boolean) => void
 }
 
-export default function StartPage({ deckName }: StartPageProps) {
+export default function StartPage({
+  deckName,
+  shuffleInput,
+  setShuffleInput,
+}: StartPageProps) {
   const { setCurrentPage, enabledAnswerCategories, data } =
     usePracticeModeContext()
 
@@ -34,12 +42,22 @@ export default function StartPage({ deckName }: StartPageProps) {
         </div>
       }
     >
-      <div className="w-full pb-10 pt-24">
+      <div className="relative w-full pb-10 pt-24">
         <h1 className="text-center text-5xl font-semibold">
           Practice {deckName}
         </h1>
+        <div className="absolute bottom-0 right-4">
+          <DeckSettingsDialog
+            shuffleInput={shuffleInput}
+            setShuffleInput={setShuffleInput}
+          >
+            <Button variant="ghost">
+              <Settings className="h-7 w-7" />
+            </Button>
+          </DeckSettingsDialog>
+        </div>
       </div>
-      <div className="lg:mx-48 2xl:mx-96">
+      <div className="pb-28 lg:mx-48 2xl:mx-96">
         <div>
           {sortedData.map((entry, index) => (
             <div

@@ -15,49 +15,48 @@ export default function FinishPage() {
       nextPageLink=""
       showProgressBar={false}
       nextButton=""
+      fixedElements={
+        <div className="fixed bottom-0 my-6 flex w-full justify-center">
+          <Link href="/learn">
+            <Button size="lg" className="mb-4 mt-2 w-40 bg-orange-500">
+              Return
+            </Button>
+          </Link>
+        </div>
+      }
     >
-      <p className="mx-6 mt-16 text-center text-3xl font-bold italic xl:text-5xl">
-        You've finished this deck!
-      </p>
-      <div className="mt-2 text-4xl">🎉</div>
-      <div className="flex w-full justify-center">
+      <div className="w-full pb-10 pt-24">
+        <h1 className="text-center text-5xl font-semibold">
+          You've finished this deck!
+        </h1>
+        <div className="mt-2 text-4xl">🎉</div>
+      </div>
+      <div className="pb-28 lg:mx-48 2xl:mx-96">
         <div>
-          <div className="mt-6 w-full">
-            {data.map((entry, index) => (
-              <div
-                key={index}
-                className="my-2 rounded-xl bg-card p-6 shadow-md"
-              >
-                <p className="text-2xl font-bold !text-orange-500 text-primary">
-                  {entry.key}
-                </p>
-                {entry.answerCategories.map((category, i) => (
-                  <div key={i}>
-                    <p className="my-2 italic text-muted-foreground">
-                      {category.category}:
-                    </p>
-                    {category.answers.map((answer: string, j: number) => (
-                      <p key={j} className="text-xl font-bold text-primary">
-                        {answer}
-                      </p>
-                    ))}
-                  </div>
-                ))}
-                {entry.wrongAnswerCount > 0 && (
-                  <p className="text-red-500">
-                    You missed this question {entry.wrongAnswerCount} times
+          {data.map((entry, index) => (
+            <div key={index} className="my-2 rounded-xl bg-card p-6 shadow-md">
+              <p className="text-2xl font-bold !text-orange-500 text-primary">
+                {entry.key}
+              </p>
+              {entry.answerCategories.map((category, i) => (
+                <div key={i}>
+                  <p className="my-2 italic text-muted-foreground">
+                    {category.category}:
                   </p>
-                )}
-              </div>
-            ))}
-          </div>
-          <div className="flex w-full justify-center px-3">
-            <Link href="/learn">
-              <Button size="lg" className="mb-4 mt-2 w-40 bg-orange-500">
-                Return
-              </Button>
-            </Link>
-          </div>
+                  {category.answers.map((answer: string, j: number) => (
+                    <p key={j} className="text-xl font-bold text-primary">
+                      {answer}
+                    </p>
+                  ))}
+                </div>
+              ))}
+              {entry.wrongAnswerCount > 0 && (
+                <p className="text-red-500">
+                  You missed this question {entry.wrongAnswerCount} times
+                </p>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </ContentBox>

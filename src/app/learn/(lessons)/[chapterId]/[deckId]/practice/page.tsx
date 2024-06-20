@@ -3,10 +3,7 @@ import PracticeMode from "@/features/practice-mode/PracticeMode"
 import { PracticeModeContextProvider } from "@/features/practice-mode/context/PracticeModeContext"
 import useDeckSplit from "@/features/practice-mode/components/useDeckSplit"
 import { vocabDataToJSONWithAnswerCategories } from "@/features/vocab-data-parsers"
-import {
-  arrayToRecord,
-  fetchVocabularyByPath,
-} from "@/features/practice-mode/components/fetchVocabByPath"
+import { fetchVocabularyByPath } from "@/features/practice-mode/components/fetchVocabByPath"
 // import data from "@/data/chapter-0/vocab.json"
 
 type PageProps = {

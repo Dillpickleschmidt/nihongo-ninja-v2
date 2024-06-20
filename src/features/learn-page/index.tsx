@@ -344,13 +344,13 @@ export function ChapterBoxes() {
         >
           MyKikitori - Conversation 1
         </UnitButton>
-        <UnitButton id="25." type="lesson">
+        <UnitButton id="25." type="lesson" link="/learn/chapter-1/telling-time">
           Telling Time
         </UnitButton>
         <UnitButton id="26." type="writing">
-          Practice Asking The Time
+          Practice Time
         </UnitButton>
-        <UnitButton id="27." type="lesson">
+        <UnitButton id="27." type="lesson" link="/learn/chapter-1/minutes">
           Minutes
         </UnitButton>
         <UnitButton

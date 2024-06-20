@@ -7,7 +7,7 @@ export default function page() {
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-0/contracted-sounds/practice"
+      nextPageLink="/learn/chapter-0/practice/contracted-sounds"
     >
       <h1 className="mt-40 px-20 pb-12 text-center text-[2rem] font-medium leading-[2.875rem]">
         <span className="text-[2.75rem] font-medium">

@@ -9,7 +9,7 @@ export default function page() {
       backgroundImage="/img/wavy-pattern-2.jpg"
       backgroundImageSize="700px"
       backgroundImageOpacity={9}
-      nextPageLink="/learn/chapter-0/dakuten-handakuten/practice"
+      nextPageLink="/learn/chapter-0/practice/dakuten-handakuten"
     >
       <h2 className="mt-40 px-20 text-center text-[2.625rem] font-medium leading-[3.25rem]">
         🌊

@@ -74,19 +74,7 @@ export default function PracticeMode({
     }
   }
 
-  return (
-    <ContentBox
-      variant="xl"
-      backgroundImage="/img/dust-splatter-1.png"
-      backgroundImageSize="1215px"
-      backgroundImageOpacity={2}
-      nextPageLink=""
-      showProgressBar={false}
-      nextButton=""
-    >
-      {renderPage()}
-    </ContentBox>
-  )
+  return <>{renderPage()}</>
 }
 
 function extractUniqueCategories(data: Card[]): string[] {

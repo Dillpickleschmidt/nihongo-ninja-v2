@@ -16,6 +16,7 @@ type ContentBoxProps = React.HTMLAttributes<HTMLDivElement> &
     backgroundImageSize?: string
     backgroundImageOpacity?: number
     showAlertOnClose?: boolean
+    fixedElements?: React.ReactNode
   }
 
 export default function ContentBox({
@@ -24,12 +25,17 @@ export default function ContentBox({
   color,
   className,
   nextPageLink,
-  nextButton = <Button link={nextPageLink}>Next Lesson {"->"}</Button>,
+  nextButton = (
+    <div className="mx-12 flex flex-row justify-end pb-16 pt-24">
+      <Button link={nextPageLink}>Next Lesson {"->"}</Button>
+    </div>
+  ),
   showProgressBar = true,
   backgroundImage,
   backgroundImageSize = "1200px",
   backgroundImageOpacity = 30,
   showAlertOnClose = false,
+  fixedElements,
 }: ContentBoxProps) {
   const contentScrollRef = useRef(null)
   const { scrollYProgress } = useScroll({
@@ -49,7 +55,6 @@ export default function ContentBox({
   return (
     <div>
       <div
-        ref={contentScrollRef}
         className={cn(dialogVariants({ variant, color, className }))}
         style={{
           position: "absolute",
@@ -58,21 +63,24 @@ export default function ContentBox({
           transform: "translate(50%,-50%)",
         }}
       >
-        {/* If a background is provided, render this html */}
-        {backgroundImage ? (
-          <div className="relative">
-            <div
-              className="absolute inset-0"
-              style={{
-                backgroundImage: `url(${backgroundImage})`,
-                backgroundRepeat: "repeat",
-                backgroundSize: backgroundImageSize, // Change this value to scale your background image
-                // mixBlendMode: "multiply",
-                backgroundBlendMode: "multiply",
-                opacity: backgroundImageOpacity / 100, // Change this value to set the opacity of the background image
-                zIndex: -1,
-              }}
-            />
+        <div
+          ref={contentScrollRef}
+          className="h-full w-full overflow-y-scroll scrollbar:hidden"
+        >
+          <div className="relative min-h-full">
+            {backgroundImage && (
+              <div
+                className="absolute inset-0"
+                style={{
+                  backgroundImage: `url(${backgroundImage})`,
+                  backgroundRepeat: "repeat",
+                  backgroundSize: backgroundImageSize, // Change this value to scale your background image
+                  backgroundBlendMode: "multiply",
+                  opacity: backgroundImageOpacity / 100, // Change this value to set the opacity of the background image
+                  zIndex: -1,
+                }}
+              />
+            )}
             {showProgressBar && (
               <m.div
                 style={{ scaleX: scaleX }}
@@ -80,32 +88,18 @@ export default function ContentBox({
               ></m.div>
             )}
             {children}
-            <div className="mx-12 mt-24 flex flex-row justify-end pb-16">
-              {nextButton}
-            </div>
+            {nextButton}
           </div>
-        ) : (
-          // Otherwise, just render this html
-          <div>
-            {showProgressBar && (
-              <m.div
-                style={{ scaleX: scaleX }}
-                className="sticky top-[-1px] z-50 -mb-[0.1625rem] h-[0.1625rem] w-full origin-left bg-indigo-600 dark:bg-green-500"
-              ></m.div>
-            )}
-            {children}
-            <div className="mx-12 mt-24 flex flex-row justify-end pb-16">
-              {nextButton}
-            </div>
-          </div>
-        )}
+        </div>
+        {/* Fixed Elements Container */}
+        <div className="fixed left-0 top-0 z-50">{fixedElements}</div>
       </div>
     </div>
   )
 }
 
 const dialogVariants = cva(
-  "relative w-full h-full border-black rounded-none shadow-xl overflow-y-scroll scrollbar:hidden",
+  "relative w-full h-full border-black rounded-none shadow-xl overflow-hidden",
   {
     variants: {
       variant: {

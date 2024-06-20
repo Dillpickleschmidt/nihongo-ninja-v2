@@ -41,9 +41,13 @@ export default function KanaQuiz({ kana, nextLesson, title }: KanaQuizProps) {
       backgroundImageOpacity={30}
       nextButton={
         !showResults ? (
-          <Button onClick={handleSubmit}>Submit</Button>
+          <div className="mx-12 flex flex-row justify-end pb-16 pt-24">
+            <Button onClick={handleSubmit}>Submit</Button>
+          </div>
         ) : (
-          <Button link={nextLesson}>Next Lesson {"->"}</Button>
+          <div className="mx-12 flex flex-row justify-end pb-16 pt-24">
+            <Button link={nextLesson}>Next Lesson {"->"}</Button>
+          </div>
         )
       }
       // showAlertOnClose={true}

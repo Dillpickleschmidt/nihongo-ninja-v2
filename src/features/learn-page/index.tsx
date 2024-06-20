@@ -149,7 +149,7 @@ export function ChapterBoxes() {
         >
           Numbers Intro
         </UnitButton>
-        <UnitButton id="22." type="vocab" link="/learn/chapter-0/numbers">
+        <UnitButton id="22." type="vocab" link="/learn/chapter-0/numbers-0-100">
           Numbers 0-100
         </UnitButton>
         <UnitButton

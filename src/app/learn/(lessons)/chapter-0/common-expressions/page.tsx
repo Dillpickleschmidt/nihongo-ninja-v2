@@ -16,7 +16,7 @@ export default async function page() {
       // backgroundImage="/img/dust-splatter-1.png"
       // backgroundImageSize="1215px"
       // backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-0/greetings-common-expressions/practice"
+      nextPageLink="/learn/chapter-0/practice/greetings-common-expressions"
     >
       <h1 className="px-28 pb-6 pt-28 text-3xl">
         Welcome to your next lesson. We've got a lot to talk about. This one

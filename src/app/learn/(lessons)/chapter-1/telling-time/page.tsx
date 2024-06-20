@@ -11,7 +11,7 @@ export default function page() {
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-1/telling-time/practice"
+      nextPageLink="/learn/chapter-1/practice/telling-time"
       showProgressBar={false}
     >
       <h1 className="mb-8 px-20 pt-20 text-center text-4xl font-medium leading-[3.25rem]">

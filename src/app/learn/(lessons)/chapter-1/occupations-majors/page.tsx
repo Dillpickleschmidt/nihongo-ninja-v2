@@ -15,7 +15,7 @@ export default async function page() {
       // backgroundImageSize="1215px"
       // backgroundImageOpacity={5}
       variant="xl"
-      nextPageLink="/learn/chapter-1/occupations-majors/practice"
+      nextPageLink="/learn/chapter-1/practice/occupations-majors"
     >
       <h1 className="px-28 pb-6 pt-28 text-center text-4xl font-semibold">
         Occupations & Majors

@@ -1,14 +1,22 @@
 import { Button } from "@/components/ui/button"
-import { Card, AnswerCategory } from "@/types"
 import Link from "next/link"
 import { usePracticeModeContext } from "../../context/PracticeModeContext"
+import ContentBox from "@/components/ContentBox"
 
 export default function FinishPage() {
   const { data } = usePracticeModeContext()
 
   return (
-    <>
-      <p className="font-interbolditalic mx-6 mt-16 text-center text-3xl xl:text-5xl">
+    <ContentBox
+      variant="xl"
+      backgroundImage="/img/dust-splatter-1.png"
+      backgroundImageSize="1215px"
+      backgroundImageOpacity={2}
+      nextPageLink=""
+      showProgressBar={false}
+      nextButton=""
+    >
+      <p className="mx-6 mt-16 text-center text-3xl font-bold italic xl:text-5xl">
         You've finished this deck!
       </p>
       <div className="mt-2 text-4xl">🎉</div>
@@ -20,19 +28,16 @@ export default function FinishPage() {
                 key={index}
                 className="my-2 rounded-xl bg-card p-6 shadow-md"
               >
-                <p className="font-interbold text-2xl !text-orange-500 text-primary">
+                <p className="text-2xl font-bold !text-orange-500 text-primary">
                   {entry.key}
                 </p>
                 {entry.answerCategories.map((category, i) => (
                   <div key={i}>
-                    <p className="font-interitalic my-2 text-muted-foreground">
+                    <p className="my-2 italic text-muted-foreground">
                       {category.category}:
                     </p>
                     {category.answers.map((answer: string, j: number) => (
-                      <p
-                        key={j}
-                        className="font-interbold text-xl text-primary"
-                      >
+                      <p key={j} className="text-xl font-bold text-primary">
                         {answer}
                       </p>
                     ))}
@@ -55,6 +60,6 @@ export default function FinishPage() {
           </div>
         </div>
       </div>
-    </>
+    </ContentBox>
   )
 }

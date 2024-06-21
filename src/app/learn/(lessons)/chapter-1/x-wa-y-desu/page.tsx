@@ -134,8 +134,9 @@ export default function page() {
           </p>
         </div>
         <h3 className="text-center text-2xl font-bold">
-          Sometimes, we can just drop です altogether and still have a complete
-          sentence! 😀
+          Sometimes, we can just drop{" "}
+          <span className="font-japanese">です</span> altogether and still have
+          a complete sentence! 😀
         </h3>
         <div className="font-japanese text-5xl font-semibold">
           <div className="flex w-full items-center">
@@ -448,7 +449,7 @@ export default function page() {
               Here,{" "}
               <span className="font-japanese">
                 <span className="text-orange-400">東京</span>
-                <span className="text-sky-300">は</span>
+                <span className="text-sky-400">は</span>
               </span>{" "}
               sets Tokyo as the topic of the conversation.
             </li>
@@ -477,7 +478,7 @@ export default function page() {
               <Romaji
                 romaji={
                   <>
-                    <span className="text-sky-300">As for</span>{" "}
+                    <span className="text-sky-400">As for</span>{" "}
                     <span className="text-muted-foreground">the </span>
                     <span className="text-orange-400">food</span>
                   </>
@@ -514,13 +515,14 @@ export default function page() {
               Here, the topic of Tokyo has already been introduced, so we can
               drop{" "}
               <span className="font-japanese">
-                <span className="text-orange-400">東京</span>は
+                <span className="text-orange-400">東京</span>
+                <span className="text-sky-400">は</span>
               </span>
               .
             </li>
             <li className="mx-6 text-base">
               Food is a new topic, so we use{" "}
-              <span className="font-japanese text-sky-300">は</span> paired with
+              <span className="font-japanese text-sky-400">は</span> paired with
               the topic,{" "}
               <span className="font-japanese text-orange-400">食べ物</span>.
             </li>

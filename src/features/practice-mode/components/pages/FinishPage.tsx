@@ -40,7 +40,7 @@ export default function FinishPage() {
               </p>
               {entry.answerCategories.map((category, i) => (
                 <div key={i}>
-                  <p className="my-2 italic text-muted-foreground">
+                  <p className="my-1 italic text-muted-foreground">
                     {category.category}:
                   </p>
                   {category.answers.map((answer: string, j: number) => (

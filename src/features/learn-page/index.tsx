@@ -118,6 +118,7 @@ export function ChapterBoxes() {
           id="17."
           type="culture-note"
           link="/learn/chapter-0/culture-note-japanese-greetings"
+          disabled
         >
           Culture Note: Japanese Greetings
         </UnitButton>
@@ -156,6 +157,7 @@ export function ChapterBoxes() {
           id="23."
           type="practice"
           link="/learn/chapter-0/number-matching"
+          disabled
         >
           Number Matching
         </UnitButton>
@@ -252,7 +254,7 @@ export function ChapterBoxes() {
         <UnitButton
           id="12."
           type="writing"
-          link="/learn/chapter-1/practice/x-wa-y-desu-sentences"
+          link="/learn/chapter-1/x-wa-y-desu/practice-sentences"
         >
           <span className="font-bold">X</span>
           <span className="font-japanese">は</span>
@@ -315,13 +317,8 @@ export function ChapterBoxes() {
         >
           Modifying Nouns: <span className="font-japanese">の</span>
         </UnitButton>
-        <UnitButton
-          id="21."
-          type="writing"
-          link="/learn/chapter-1/practice-sentences-desu-wa-ka-no"
-        >
-          Practice Sentences:{" "}
-          <span className="font-japanese">です, は, か, の</span>
+        <UnitButton id="21." type="writing" link="/learn/chapter-1/worksheet-1">
+          Worksheet 1
         </UnitButton>
         <UnitButton id="22." type="lesson" link="/learn/chapter-1/anou-etto">
           Sounding Natural:{" "}
@@ -356,105 +353,116 @@ export function ChapterBoxes() {
         </UnitButton>
         <UnitButton
           id="28."
+          type="practice"
+          link="/learn/chapter-1/practice/minutes"
+        >
+          Practice Minutes
+        </UnitButton>
+        <UnitButton
+          id="29."
           type="audio"
-          link="/learn/chapter-1/kikusasaizu-1-2"
+          link="/learn/chapter-1/my-kikitori-conversation-2"
         >
           MyKikitori - Conversation 2
         </UnitButton>
-        <UnitButton id="29." type="practice">
+        <UnitButton id="30." type="practice">
           Vocab Practice: All Vocab
         </UnitButton>
-        <UnitButton id="30." type="writing">
-          Worksheet 1
-        </UnitButton>
-        <UnitButton id="31." type="writing">
+        <UnitButton id="31." type="writing" disabled>
           Worksheet 2
         </UnitButton>
+        <UnitButton id="32." type="writing" disabled>
+          Worksheet 3
+        </UnitButton>
         <UnitButton
-          id="32."
+          id="33."
           type="video"
           link="/learn/chapter-1/kikusasaizu-1-3"
         >
           Kikusasaizu Video - L1-3
         </UnitButton>
-        <UnitButton id="33." type="game" disabled>
+        <UnitButton id="34." type="game" disabled>
           Meet Your Host Family At The Airport
         </UnitButton>
-        <UnitButton id="34." type="audio">
+        <UnitButton
+          id="35."
+          type="audio"
+          link="/learn/chapter-1/my-kikitori-conversation-3"
+        >
           MyKikitori - Conversation 3
         </UnitButton>
       </ChapterBox>
       <ChapterBox text="Chapter 2" className="bg-green-600 saturate-[65%]">
-        <UnitButton id="1." type="vocab-list">
+        <UnitButton id="1." type="vocab-list" disabled>
           Chapter 2 Vocab List
         </UnitButton>
-        <UnitButton id="2." type="grammar-notes">
+        <UnitButton id="2." type="grammar-notes" disabled>
           Chapter 2 Grammar notes
         </UnitButton>
-        <UnitButton id="3." type="lesson">
+        <UnitButton id="3." type="lesson" disabled>
           Katakana
         </UnitButton>
-        <UnitButton id="4." type="practice">
+        <UnitButton id="4." type="practice" disabled>
           Practice Katakana
         </UnitButton>
-        <UnitButton id="5." type="lesson">
+        <UnitButton id="5." type="lesson" disabled>
           English Words in Japanese
         </UnitButton>
-        <UnitButton id="6." type="writing">
+        <UnitButton id="6." type="writing" disabled>
           Katakana Quiz
         </UnitButton>
-        <UnitButton id="7." type="writing">
+        <UnitButton id="7." type="writing" disabled>
           Katakana Words Practice
         </UnitButton>
-        <UnitButton id="8." type="vocab">
+        <UnitButton id="8." type="vocab" disabled>
           Things
         </UnitButton>
-        <UnitButton id="9." type="practice">
+        <UnitButton id="9." type="practice" disabled>
           Practice Things
         </UnitButton>
-        <UnitButton id="10." type="lesson">
+        <UnitButton id="10." type="lesson" disabled>
           Words That Point Pt.1
         </UnitButton>
-        <UnitButton id="11." type="lesson">
+        <UnitButton id="11." type="lesson" disabled>
           Words That Point Pt.2
         </UnitButton>
-        <UnitButton id="12." type="practice">
+        <UnitButton id="12." type="practice" disabled>
           Practice Words That Point
         </UnitButton>
-        <UnitButton id="13." type="lesson">
+        <UnitButton id="13." type="lesson" disabled>
           <span className="font-japanese font-medium">だれ</span>
         </UnitButton>
-        <UnitButton id="14." type="lesson">
+        <UnitButton id="14." type="lesson" disabled>
           <span className="font-japanese font-medium">も</span>
         </UnitButton>
-        <UnitButton id="15." type="lesson">
+        <UnitButton id="15." type="lesson" disabled>
           It is not...
         </UnitButton>
-        <UnitButton id="16." type="video">
+        <UnitButton id="16." type="video" disabled>
           Kikusasaizu Video - L2-1
         </UnitButton>
-        <UnitButton id="17." type="lesson">
+        <UnitButton id="17." type="lesson" disabled>
           <span className="font-japanese font-medium">ね, よ</span>
         </UnitButton>
-        <UnitButton id="18." type="video">
+        <UnitButton id="18." type="video" disabled>
           Kikusasaizu Video - L2-2
         </UnitButton>
-        <UnitButton id="19." type="vocab">
+        <UnitButton id="19." type="vocab" disabled>
           Places, Money, Food
         </UnitButton>
-        <UnitButton id="20." type="practice">
+        <UnitButton id="20." type="practice" disabled>
           Practice Places, Money, Food
         </UnitButton>
-        <UnitButton id="21." type="audio">
+        <UnitButton id="21." type="audio" disabled>
           MyKikitori - At a Café
         </UnitButton>
-        <UnitButton id="22." type="lesson">
+        <UnitButton id="22." type="lesson" disabled>
           Big Numbers
         </UnitButton>
-        <UnitButton id="23." type="lesson">
+        <UnitButton id="23." type="lesson" disabled>
           Japanese Money
         </UnitButton>
-        <UnitButton id="24." type="writing">
+        <UnitButton id="24." type="writing" disabled>
           Practice Money
         </UnitButton>
         <UnitButton id="25." type="game" disabled>
@@ -463,16 +471,16 @@ export function ChapterBoxes() {
         <UnitButton id="26." type="game" disabled>
           Numbers Game 2
         </UnitButton>
-        <UnitButton id="23." type="culture-note">
+        <UnitButton id="23." type="culture-note" disabled>
           Bonus: More About Money
         </UnitButton>
-        <UnitButton id="23." type="writing">
+        <UnitButton id="23." type="writing" disabled>
           Worksheet 1
         </UnitButton>
-        <UnitButton id="23." type="writing">
+        <UnitButton id="23." type="writing" disabled>
           Worksheet 2
         </UnitButton>
-        <UnitButton id="23." type="writing">
+        <UnitButton id="23." type="writing" disabled>
           Worksheet 3
         </UnitButton>
         <UnitButton id="23." type="game" disabled>
@@ -480,126 +488,126 @@ export function ChapterBoxes() {
         </UnitButton>
       </ChapterBox>
       <ChapterBox text="Chapter 3" className="bg-orange-500 saturate-[65%]">
-        <UnitButton id="1." type="vocab-list">
+        <UnitButton id="1." type="vocab-list" disabled>
           Chapter 3 Vocab List
         </UnitButton>
-        <UnitButton id="2." type="grammar-notes">
+        <UnitButton id="2." type="grammar-notes" disabled>
           Chapter 3 Grammar Notes
         </UnitButton>
-        <UnitButton id="3." type="lesson">
+        <UnitButton id="3." type="lesson" disabled>
           Introduction to Kanji
         </UnitButton>
-        <UnitButton id="4." type="lesson">
+        <UnitButton id="4." type="lesson" disabled>
           Breaking Down Kanji
         </UnitButton>
-        <UnitButton id="5." type="vocab">
+        <UnitButton id="5." type="vocab" disabled>
           Chapter 3 Nouns
         </UnitButton>
-        <UnitButton id="6." type="practice">
+        <UnitButton id="6." type="practice" disabled>
           Practice Nouns - Readings
         </UnitButton>
-        <UnitButton id="7." type="practice">
+        <UnitButton id="7." type="practice" disabled>
           Practice Nouns - Kana
         </UnitButton>
-        <UnitButton id="8." type="vocab">
+        <UnitButton id="8." type="vocab" disabled>
           Chapter 3 Verbs & Adj.
         </UnitButton>
-        <UnitButton id="9." type="practice">
+        <UnitButton id="9." type="practice" disabled>
           Practice Verbs & Adj. - Readings
         </UnitButton>
-        <UnitButton id="10." type="practice">
+        <UnitButton id="10." type="practice" disabled>
           Practice Verbs & Adj. - Kana
         </UnitButton>
-        <UnitButton id="11." type="lesson">
+        <UnitButton id="11." type="lesson" disabled>
           Verb Conj. - <span className="font-japanese">ます</span>, Godan,
           Ichidan
         </UnitButton>
-        <UnitButton id="12." type="practice">
+        <UnitButton id="12." type="practice" disabled>
           Practice Positive <span className="font-japanese">ます</span>{" "}
           Conjugation
         </UnitButton>
-        <UnitButton id="13." type="lesson">
+        <UnitButton id="13." type="lesson" disabled>
           Negative <span className="font-japanese">ます</span> Conjugation
         </UnitButton>
-        <UnitButton id="14." type="practice">
+        <UnitButton id="14." type="practice" disabled>
           Practice Negative <span className="font-japanese">ます</span>{" "}
           Conjugation
         </UnitButton>
-        <UnitButton id="15." type="writing">
+        <UnitButton id="15." type="writing" disabled>
           Verb Conj. Worksheet
         </UnitButton>
-        <UnitButton id="16." type="lesson">
+        <UnitButton id="16." type="lesson" disabled>
           Particles - <span className="font-japanese">を, で, に, へ</span>
         </UnitButton>
-        <UnitButton id="17." type="lesson">
+        <UnitButton id="17." type="lesson" disabled>
           Word Order
         </UnitButton>
-        <UnitButton id="18." type="writing">
+        <UnitButton id="18." type="writing" disabled>
           Practice Particles
         </UnitButton>
-        <UnitButton id="19." type="reading">
+        <UnitButton id="19." type="reading" disabled>
           Reading Practice
         </UnitButton>
-        <UnitButton id="20." type="lesson">
+        <UnitButton id="20." type="lesson" disabled>
           Polite Invitations
         </UnitButton>
-        <UnitButton id="21." type="video">
+        <UnitButton id="21." type="video" disabled>
           Kikusasaizu Video - L3-2
         </UnitButton>
-        <UnitButton id="22." type="lesson">
+        <UnitButton id="22." type="lesson" disabled>
           Days of The Week & Time
         </UnitButton>
-        <UnitButton id="23." type="practice">
+        <UnitButton id="23." type="practice" disabled>
           Practice Days & Time - Readings
         </UnitButton>
-        <UnitButton id="24." type="lesson">
+        <UnitButton id="24." type="lesson" disabled>
           Practice Days & Time - Kana
         </UnitButton>
-        <UnitButton id="25." type="lesson">
+        <UnitButton id="25." type="lesson" disabled>
           ちょっと
         </UnitButton>
-        <UnitButton id="26." type="video">
+        <UnitButton id="26." type="video" disabled>
           Kikusasaizu Video - L3-3
         </UnitButton>
-        <UnitButton id="27." type="audio">
+        <UnitButton id="27." type="audio" disabled>
           MyKikitori - Do You Want to Go to Tokyo?
         </UnitButton>
-        <UnitButton id="28." type="vocab">
+        <UnitButton id="28." type="vocab" disabled>
           Frequency Adverbs
         </UnitButton>
-        <UnitButton id="29." type="vocab">
+        <UnitButton id="29." type="vocab" disabled>
           More Common Expressions
         </UnitButton>
-        <UnitButton id="30." type="video">
+        <UnitButton id="30." type="video" disabled>
           MyKikitori - Campus Interview #1
         </UnitButton>
-        <UnitButton id="31." type="video">
+        <UnitButton id="31." type="video" disabled>
           Aizuchi: Japanese Noises
         </UnitButton>
-        <UnitButton id="32." type="vocab">
+        <UnitButton id="32." type="vocab" disabled>
           <span className="font-japanese">
             そして、それから, でも, けど, が
           </span>
         </UnitButton>
-        <UnitButton id="33." type="writing">
+        <UnitButton id="33." type="writing" disabled>
           <span className="font-japanese">
             そして, それから, でも, けど, が
           </span>{" "}
           Practice
         </UnitButton>
-        <UnitButton id="34." type="video">
+        <UnitButton id="34." type="video" disabled>
           Kikusasaizu Video - L3-1
         </UnitButton>
-        <UnitButton id="35." type="audio">
+        <UnitButton id="35." type="audio" disabled>
           MyKikitori - Campus Interview #2
         </UnitButton>
-        <UnitButton id="36." type="lesson">
+        <UnitButton id="36." type="lesson" disabled>
           Note on <span className="font-japanese">けど</span>
         </UnitButton>
-        <UnitButton id="37." type="writing">
+        <UnitButton id="37." type="writing" disabled>
           Contrast Worksheet
         </UnitButton>
-        <UnitButton id="38." type="writing">
+        <UnitButton id="38." type="writing" disabled>
           Chapter 3 Worksheet
         </UnitButton>
       </ChapterBox>

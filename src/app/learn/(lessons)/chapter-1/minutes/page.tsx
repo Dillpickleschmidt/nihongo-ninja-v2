@@ -9,10 +9,10 @@ export default function page() {
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-1/my-kikitori-conversation-2"
+      nextPageLink="/learn/chapter-1/practice/minutes"
       showProgressBar={false}
     >
-      <h1 className="mb-6 mt-12 px-20 text-center text-3xl font-medium">
+      <h1 className="mb-8 px-20 pt-20 text-center text-4xl font-medium">
         Counting Minutes - <span className="font-japanese">ぷん・ふん</span>
       </h1>
       <div className="w-full justify-center lg:flex lg:gap-3">
@@ -45,11 +45,17 @@ export default function page() {
                   しちじさんじゅうななふん
                 </span>
               </li>
+              <li>
+                10:15 {"->"}{" "}
+                <span className="font-japanese text-xl">
+                  じゅうじじゅうごふん
+                </span>
+              </li>
             </ul>
           </div>
           <h3 className="!mt-9 text-center font-bold">
             You'll just have to memorize which minutes from 1-10 use ぷん and
-            ふん.
+            which use ふん.
           </h3>
           <p className="text-center italic">You'll get better with practice!</p>
         </div>

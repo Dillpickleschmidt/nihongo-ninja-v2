@@ -42,19 +42,21 @@ export default function StartPage({
         </div>
       }
     >
-      <div className="relative w-full pb-10 pt-24">
-        <h1 className="text-center text-5xl font-semibold">
-          Practice {deckName}
-        </h1>
-        <div className="absolute bottom-0 right-4">
-          <DeckSettingsDialog
-            shuffleInput={shuffleInput}
-            setShuffleInput={setShuffleInput}
-          >
-            <Button variant="ghost">
-              <Settings className="h-7 w-7" />
-            </Button>
-          </DeckSettingsDialog>
+      <div className="w-full pb-10 pt-24">
+        <div className="relative lg:mx-48 2xl:mx-96">
+          <h1 className="text-center text-5xl font-semibold">
+            Practice {deckName}
+          </h1>
+          <div className="absolute bottom-0 right-4">
+            <DeckSettingsDialog
+              shuffleInput={shuffleInput}
+              setShuffleInput={setShuffleInput}
+            >
+              <Button variant="ghost">
+                <Settings className="h-7 w-7" />
+              </Button>
+            </DeckSettingsDialog>
+          </div>
         </div>
       </div>
       <div className="pb-28 lg:mx-48 2xl:mx-96">

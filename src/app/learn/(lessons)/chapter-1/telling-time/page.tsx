@@ -14,7 +14,7 @@ export default function page() {
       nextPageLink="/learn/chapter-1/practice/telling-time"
       showProgressBar={false}
     >
-      <h1 className="mb-8 px-20 pt-20 text-center text-4xl font-medium leading-[3.25rem]">
+      <h1 className="mb-8 px-20 pt-20 text-center text-4xl font-medium">
         Telling Time
       </h1>
       <div className="w-full justify-center lg:flex">

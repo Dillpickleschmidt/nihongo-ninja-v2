@@ -3,9 +3,10 @@ import ContentBox from "@/components/ContentBox"
 export default function page() {
   return (
     <ContentBox
-      // backgroundImage="/img/dust-splatter-1.png"
-      // backgroundImageSize="1215px"
-      // backgroundImageOpacity={5}
+      backgroundImage="/img/dust-splatter-1.png"
+      backgroundImageSize="1215px"
+      backgroundImageOpacity={5}
+      variant="fullscreen"
       nextPageLink="/learn/chapter-1/everyday-expressions"
     >
       Hello world

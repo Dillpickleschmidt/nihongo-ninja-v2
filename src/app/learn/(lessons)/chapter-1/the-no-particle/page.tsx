@@ -10,7 +10,7 @@ export default async function page() {
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-1/practice-sentences-desu-wa-ka-no"
+      nextPageLink="/learn/chapter-1/worksheet-1"
     >
       <h1 className="px-28 pb-6 pt-28 text-center text-4xl font-semibold">
         Mastering the <span className="font-japanese text-orange-500">の</span>{" "}

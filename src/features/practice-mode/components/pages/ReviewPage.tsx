@@ -66,7 +66,9 @@ export default function ReviewPage() {
                 {card.answerCategories.map(
                   (categoryObj: AnswerCategory, index: number) => (
                     <div key={index} className="mt-2">
-                      <p className="font-bold">{categoryObj.category}:</p>
+                      <p className="my-1 italic text-muted-foreground">
+                        {categoryObj.category}:
+                      </p>
                       {categoryObj.answers.map(
                         (answer: string, idx: number) => (
                           <p key={idx} className="ml-4">

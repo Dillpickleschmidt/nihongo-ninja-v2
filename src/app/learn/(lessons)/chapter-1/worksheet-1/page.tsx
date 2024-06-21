@@ -111,16 +111,20 @@ export default function page() {
               </tr>
               <tr className="bg-card">
                 <td className="border border-primary/15 px-4 py-2">Major</td>
-                <td className="border border-primary/15 px-4 py-2">けいざい</td>
-                <td className="border border-primary/15 px-4 py-2">れきし</td>
-                <td className="border border-primary/15 px-4 py-2">
+                <td className="border border-primary/15 px-4 py-2 font-japanese">
+                  けいざい
+                </td>
+                <td className="border border-primary/15 px-4 py-2 font-japanese">
+                  れきし
+                </td>
+                <td className="border border-primary/15 px-4 py-2 font-japanese">
                   <Furigana
                     furigana={<span className="text-sm">こんぴゅーたー</span>}
                   >
                     コンピューター
                   </Furigana>
                 </td>
-                <td className="border border-primary/15 px-4 py-2">
+                <td className="border border-primary/15 px-4 py-2 font-japanese">
                   せいぶつがく
                 </td>
               </tr>

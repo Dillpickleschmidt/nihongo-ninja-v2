@@ -14,7 +14,7 @@ export default async function page() {
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-0/greetings"
+      nextPageLink="/learn/chapter-1/grammar-notes"
     >
       <div className="mx-16 border-b border-neutral-600 pb-16">
         <h1 className="mx-auto mb-12 mt-20 text-center text-5xl font-semibold tracking-wide">

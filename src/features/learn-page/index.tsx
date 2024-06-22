@@ -365,7 +365,7 @@ export function ChapterBoxes() {
         >
           MyKikitori - Conversation 2
         </UnitButton>
-        <UnitButton id="30." type="practice">
+        <UnitButton id="30." type="practice" disabled>
           Vocab Practice: All Vocab
         </UnitButton>
         <UnitButton id="31." type="writing" disabled>
@@ -399,91 +399,96 @@ export function ChapterBoxes() {
         <UnitButton id="2." type="grammar-notes" disabled>
           Chapter 2 Grammar notes
         </UnitButton>
-        <UnitButton id="3." type="lesson" disabled>
+        <UnitButton id="3." type="lesson" link="/learn/chapter-2/katakana">
           Katakana
         </UnitButton>
-        <UnitButton id="4." type="practice" disabled>
+        <UnitButton
+          id="4."
+          type="practice"
+          link="/learn/chapter-2/practice/katakana"
+        >
           Practice Katakana
         </UnitButton>
-        <UnitButton id="5." type="lesson" disabled>
-          English Words in Japanese
-        </UnitButton>
-        <UnitButton id="6." type="writing" disabled>
+        <UnitButton
+          id="5."
+          type="writing"
+          link="/learn/chapter-2/katakana-quiz"
+        >
           Katakana Quiz
         </UnitButton>
-        <UnitButton id="7." type="writing" disabled>
+        <UnitButton id="6." type="writing" disabled>
           Katakana Words Practice
         </UnitButton>
-        <UnitButton id="8." type="vocab" disabled>
+        <UnitButton id="7." type="vocab" disabled>
           Things
         </UnitButton>
-        <UnitButton id="9." type="practice" disabled>
+        <UnitButton id="8." type="practice" disabled>
           Practice Things
         </UnitButton>
-        <UnitButton id="10." type="lesson" disabled>
+        <UnitButton id="9." type="lesson" disabled>
           Words That Point Pt.1
         </UnitButton>
-        <UnitButton id="11." type="lesson" disabled>
+        <UnitButton id="10." type="lesson" disabled>
           Words That Point Pt.2
         </UnitButton>
-        <UnitButton id="12." type="practice" disabled>
+        <UnitButton id="11." type="practice" disabled>
           Practice Words That Point
         </UnitButton>
-        <UnitButton id="13." type="lesson" disabled>
+        <UnitButton id="12." type="lesson" disabled>
           <span className="font-japanese font-medium">だれ</span>
         </UnitButton>
-        <UnitButton id="14." type="lesson" disabled>
+        <UnitButton id="13." type="lesson" disabled>
           <span className="font-japanese font-medium">も</span>
         </UnitButton>
-        <UnitButton id="15." type="lesson" disabled>
+        <UnitButton id="14." type="lesson" disabled>
           It is not...
         </UnitButton>
-        <UnitButton id="16." type="video" disabled>
+        <UnitButton id="15." type="video" disabled>
           Kikusasaizu Video - L2-1
         </UnitButton>
-        <UnitButton id="17." type="lesson" disabled>
+        <UnitButton id="16." type="lesson" disabled>
           <span className="font-japanese font-medium">ね, よ</span>
         </UnitButton>
-        <UnitButton id="18." type="video" disabled>
+        <UnitButton id="17." type="video" disabled>
           Kikusasaizu Video - L2-2
         </UnitButton>
-        <UnitButton id="19." type="vocab" disabled>
+        <UnitButton id="18." type="vocab" disabled>
           Places, Money, Food
         </UnitButton>
-        <UnitButton id="20." type="practice" disabled>
+        <UnitButton id="19." type="practice" disabled>
           Practice Places, Money, Food
         </UnitButton>
-        <UnitButton id="21." type="audio" disabled>
+        <UnitButton id="20." type="audio" disabled>
           MyKikitori - At a Café
         </UnitButton>
-        <UnitButton id="22." type="lesson" disabled>
+        <UnitButton id="21." type="lesson" disabled>
           Big Numbers
         </UnitButton>
-        <UnitButton id="23." type="lesson" disabled>
+        <UnitButton id="22." type="lesson" disabled>
           Japanese Money
         </UnitButton>
-        <UnitButton id="24." type="writing" disabled>
+        <UnitButton id="23." type="writing" disabled>
           Practice Money
         </UnitButton>
-        <UnitButton id="25." type="game" disabled>
+        <UnitButton id="24." type="game" disabled>
           Numbers Game 1
         </UnitButton>
-        <UnitButton id="26." type="game" disabled>
+        <UnitButton id="25." type="game" disabled>
           Numbers Game 2
         </UnitButton>
-        <UnitButton id="23." type="culture-note" disabled>
+        <UnitButton id="26." type="culture-note" disabled>
           Bonus: More About Money
         </UnitButton>
-        <UnitButton id="23." type="writing" disabled>
+        <UnitButton id="27." type="writing" disabled>
           Worksheet 1
         </UnitButton>
-        <UnitButton id="23." type="writing" disabled>
+        <UnitButton id="28." type="writing" disabled>
           Worksheet 2
         </UnitButton>
-        <UnitButton id="23." type="writing" disabled>
+        <UnitButton id="29." type="writing" disabled>
           Worksheet 3
         </UnitButton>
-        <UnitButton id="23." type="game" disabled>
+        <UnitButton id="30." type="game" disabled>
           House Tour
         </UnitButton>
       </ChapterBox>

@@ -143,13 +143,14 @@ export default async function page() {
           </li>
         </VocabCard>
         <p className="my-6 px-16">
-          In conversational Japanese, じゃあ is a versatile and commonly used
-          phrase to indicate a transition. It's often used when deciding on the
-          next action or wrapping up a conversation. For example, after
-          discussing plans with friends, you might say, "じゃあ、行きましょう"
-          (Well then, let's go). It helps to move the conversation along
-          smoothly and naturally, making it an essential phrase in everyday
-          interactions.
+          In conversational Japanese,{" "}
+          <span className="font-japanese">じゃあ</span> is a versatile and
+          commonly used phrase to indicate a transition. It's often used when
+          deciding on the next action or wrapping up a conversation. For
+          example, after discussing plans with friends, you might say,
+          "じゃあ、行きましょう" (Well then, let's go). It helps to move the
+          conversation along smoothly and naturally, making it an essential
+          phrase in everyday interactions.
         </p>
 
         <VocabCard index={3} kana={"どうぞ"} english="Please / Go ahead" light>
@@ -164,23 +165,25 @@ export default async function page() {
           <li>
             <span className="font-bold">Example Usage: </span>
             <span className="font-japanese text-xl">
-              どうぞ、
-              <Furigana furigana={<span className="text-sm">おはい</span>}>
-                お入り
+              どうぞ、お
+              <Furigana furigana={<span className="text-sm">はい</span>}>
+                入
               </Furigana>
-              ください。
+              りください。
             </span>{" "}
             — Please, come in.
           </li>
         </VocabCard>
         <p className="my-6 px-16">
-          どうぞ is a polite phrase used to offer something or invite someone to
-          do something. It's often heard when entering someone's home or being
-          offered a seat. For example, "どうぞ、お入りください" (Please, come
-          in) is a common phrase used to welcome guests. It conveys a sense of
-          hospitality and consideration, making it an essential phrase in
-          Japanese culture. Using どうぞ shows that you are considerate and
-          respectful, whether in a formal or informal setting.
+          <span className="font-japanese">どうぞ</span> is a polite phrase used
+          to offer something or invite someone to do something. It's often heard
+          when entering someone's home or being offered a seat. For example,
+          <span className="font-japanese">"どうぞ、お入りください"</span>{" "}
+          (Please, come in) is a common phrase used to welcome guests. It
+          conveys a sense of hospitality and consideration, making it an
+          essential phrase in Japanese culture. Using{" "}
+          <span className="font-japanese">どうぞ</span> shows that you are
+          considerate and respectful, whether in a formal or informal setting.
         </p>
 
         <VocabCard index={4} kana={"どうも"} english="Thanks / Hi">
@@ -202,14 +205,18 @@ export default async function page() {
           </li>
         </VocabCard>
         <p className="mt-6 px-16">
-          どうも is a multi-purpose phrase that can be used in various contexts.
-          It can mean "thanks" by itself, or it might be followed by ありがとう
-          (arigatou), as in "どうも、ありがとう" (Thanks a lot). It can also be
-          used as a casual greeting, similar to "hi" or "hello." The versatility
-          of どうも makes it a convenient phrase for many everyday interactions,
-          though it's generally used in more casual settings. Using どうも shows
-          friendliness and ease, making it an essential part of informal
-          Japanese communication.
+          <span className="font-japanese">どうも</span> is a multi-purpose
+          phrase that can be used in various contexts. It can mean "thanks" by
+          itself, or it might be followed by{" "}
+          <span className="font-japanese">ありがとう</span> (arigatou), as in{" "}
+          <span className="font-japanese">"どうも、ありがとう"</span> (Thanks a
+          lot). It can also be used as a casual greeting, similar to "hi" or
+          "hello." The versatility of{" "}
+          <span className="font-japanese">どうも</span> makes it a convenient
+          phrase for many everyday interactions, though it's generally used in
+          more casual settings. Using{" "}
+          <span className="font-japanese">どうも</span> shows friendliness and
+          ease, making it an essential part of informal Japanese communication.
         </p>
       </div>
       <div className="space-y-4 px-24 text-xl leading-8 [&>*]:space-y-4">

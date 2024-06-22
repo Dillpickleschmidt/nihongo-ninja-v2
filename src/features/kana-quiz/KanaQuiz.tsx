@@ -39,6 +39,7 @@ export default function KanaQuiz({ kana, nextLesson, title }: KanaQuizProps) {
       backgroundImage="/img/wavy-pattern-1.jpg"
       backgroundImageSize="1200px"
       backgroundImageOpacity={30}
+      showProgressBar={false}
       nextButton={
         !showResults ? (
           <div className="mx-12 flex flex-row justify-end pb-16 pt-24">

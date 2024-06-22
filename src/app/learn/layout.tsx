@@ -20,7 +20,7 @@ export default function Learn({ children }: { children: React.ReactNode }) {
               </div>
               {/* Stats */}
               <div className="mb-12 mt-20 flex items-end justify-between">
-                <h3 className="text-4xl">Today's progress: 60%</h3>
+                <h3 className="text-4xl">Today's progress: %</h3>
                 <Button className="px-6 py-4 text-base">Continue</Button>
               </div>
               {/* Lessons */}

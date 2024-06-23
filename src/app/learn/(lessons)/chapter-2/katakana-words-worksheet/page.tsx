@@ -162,7 +162,7 @@ export default function page() {
         <div className="flex">
           <p className="w-1/3 text-center font-bold">Example:</p>
           <p className="w-2/3 text-center">
-            Charlottesville, Virginia{"->"}{" "}
+            Charlottesville, Virginia {"->"}{" "}
             <span className="font-japanese text-xl">
               シャーロッツビル、バージニア
             </span>

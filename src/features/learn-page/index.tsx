@@ -433,13 +433,18 @@ export function ChapterBoxes() {
         >
           Practice Things
         </UnitButton>
-        <UnitButton id="9." type="lesson" disabled>
-          Words That Point Pt.1
+        <UnitButton
+          id="9."
+          type="lesson"
+          link="/learn/chapter-2/words-that-point"
+        >
+          Words That Point
         </UnitButton>
-        <UnitButton id="10." type="lesson" disabled>
-          Words That Point Pt.2
-        </UnitButton>
-        <UnitButton id="11." type="practice" disabled>
+        <UnitButton
+          id="10."
+          type="practice"
+          link="/learn/chapter-2/practice/words-that-point"
+        >
           Practice Words That Point
         </UnitButton>
         <UnitButton id="12." type="lesson" disabled>

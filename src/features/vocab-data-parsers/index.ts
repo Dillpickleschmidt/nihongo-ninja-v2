@@ -126,40 +126,29 @@ export function vocabEntriesToCards(rawData: VocabEntry[]): Card[] {
   return rawData.map((entry, index) => {
     const hiraganaArr = (entry.furigana ?? [])
       .map((f) => extractHiraganaFromFurigana(f))
-      .filter(Boolean) as string[]
+      .filter(Boolean)
 
+    const answerCategories = []
     if (hiraganaArr.length > 0) {
-      return {
-        key: entry.word,
-        answerCategories: [
-          {
-            category: "Kana",
-            answers: hiraganaArr,
-          },
-          {
-            category: "English",
-            answers: entry.english || [],
-          },
-        ],
-        mnemonics: entry.mnemonics || [],
-        order: index,
-        cardStyle: "multiple-choice",
-        wrongAnswerCount: 0,
-      }
-    } else {
-      return {
-        key: entry.word,
-        answerCategories: [
-          {
-            category: "English",
-            answers: entry.english || [],
-          },
-        ],
-        mnemonics: entry.mnemonics || [],
-        order: index,
-        cardStyle: "multiple-choice",
-        wrongAnswerCount: 0,
-      }
+      answerCategories.push({
+        category: "Kana",
+        answers: hiraganaArr,
+      })
+    }
+    if (entry.english) {
+      answerCategories.push({
+        category: "English",
+        answers: entry.english,
+      })
+    }
+
+    return {
+      key: entry.word,
+      answerCategories: answerCategories,
+      mnemonics: entry.mnemonics || [],
+      order: index,
+      cardStyle: "multiple-choice",
+      wrongAnswerCount: 0,
     }
   })
 }
@@ -173,6 +162,17 @@ export function VocabEntryKanjiToKana(entries: VocabEntry[]): VocabEntry[] {
       ...entry,
       word: hiragana ?? entry.word,
       furigana: hiragana ? undefined : entry.furigana,
+    }
+  })
+}
+
+export function SwapWordAndEnglish(entries: VocabEntry[]): VocabEntry[] {
+  return entries.map((entry) => {
+    return {
+      ...entry,
+      word: entry.english?.[0] ?? entry.word,
+      english: undefined,
+      furigana: [entry.word],
     }
   })
 }

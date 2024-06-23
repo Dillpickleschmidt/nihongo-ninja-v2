@@ -38,14 +38,18 @@ export default function FinishPage() {
               <p className="text-2xl font-bold !text-orange-500 text-primary">
                 {entry.key}
               </p>
-              {entry.answerCategories.map((category, i) => (
+              {entry.answerCategories.map((categoryObj, i) => (
                 <div key={i}>
                   <p className="my-1 italic text-muted-foreground">
-                    {category.category}:
+                    {categoryObj.category}:
                   </p>
-                  {category.answers.map((answer: string, j: number) => (
+                  {categoryObj.answers.map((answer: string, j: number) => (
                     <p key={j} className="text-xl font-bold text-primary">
-                      {answer}
+                      {categoryObj.category === "Kana" ? (
+                        <span className="font-japanese text-2xl">{answer}</span>
+                      ) : (
+                        answer
+                      )}
                     </p>
                   ))}
                 </div>

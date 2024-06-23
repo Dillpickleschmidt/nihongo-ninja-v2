@@ -71,8 +71,14 @@ export default function ReviewPage() {
                       </p>
                       {categoryObj.answers.map(
                         (answer: string, idx: number) => (
-                          <p key={idx} className="ml-4">
-                            {answer}
+                          <p key={idx} className="ml-4 text-xl">
+                            {categoryObj.category === "Kana" ? (
+                              <span className="font-japanese text-2xl font-medium">
+                                {answer}
+                              </span>
+                            ) : (
+                              answer
+                            )}
                           </p>
                         ),
                       )}

@@ -7,14 +7,16 @@ type VocabCardsProps = {
   data: VocabEntry[]
   countOffset?: number
   noFurigana?: boolean
+  furiganaSize?: string
 }
 
 export default function VocabCards({
   data,
   countOffset = 0,
   noFurigana = false,
+  furiganaSize,
 }: VocabCardsProps) {
-  const rubyText = furiganaToRubyText(data)
+  const rubyText = furiganaToRubyText(data, furiganaSize)
 
   return (
     <VocabCardContextProvider data={data}>

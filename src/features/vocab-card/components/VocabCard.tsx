@@ -39,8 +39,8 @@ export default function VocabCard({
             <span className="font-japanese text-2xl">{japanese}</span>
           ) : (
             <span
-              dangerouslySetInnerHTML={{ __html: kana ?? "" }}
               className="text-2xl"
+              dangerouslySetInnerHTML={{ __html: kana ?? "" }}
             ></span>
           )}{" "}
           - <span className="font-japanese text-[1.375rem]">{english}</span>

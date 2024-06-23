@@ -41,7 +41,10 @@ function extractHiraganaFromFurigana(furigana: string): string {
   return hiragana
 }
 
-export function furiganaToRubyText(rawData: VocabEntry[]): string[][] {
+export function furiganaToRubyText(
+  rawData: VocabEntry[],
+  furiganaSize = "0.75rem",
+): string[][] {
   const result: string[][] = []
 
   for (const entry of rawData) {
@@ -63,10 +66,14 @@ export function furiganaToRubyText(rawData: VocabEntry[]): string[][] {
 
         if (char === "[") {
           foundFurigana = true
-          rubyText = rubyText + "<ruby>" + tempArr.join("") + "<rp>(</rp><rt>"
+          rubyText =
+            rubyText +
+            "<ruby>" +
+            tempArr.join("") +
+            `<rp>(</rp><rt><span style="font-size: ${furiganaSize};">`
           tempArr.length = 0
         } else if (char === "]") {
-          rubyText += tempArr.join("") + "</rt><rp>)</rp>"
+          rubyText += tempArr.join("") + "</span></rt><rp>)</rp>"
           tempArr.length = 0
         } else if (char === " ") {
           rubyText += tempArr.join("")
@@ -84,7 +91,7 @@ export function furiganaToRubyText(rawData: VocabEntry[]): string[][] {
       }
       rubyTextArr.push(rubyText)
     }
-    result.push(rubyTextArr.map((text) => text.replace(/[\[\] ]/g, "")))
+    result.push(rubyTextArr.map((text) => text.replace(/[\[\]]/g, "")))
   }
   return result
 }
@@ -121,22 +128,51 @@ export function vocabEntriesToCards(rawData: VocabEntry[]): Card[] {
       .map((f) => extractHiraganaFromFurigana(f))
       .filter(Boolean) as string[]
 
+    if (hiraganaArr.length > 0) {
+      return {
+        key: entry.word,
+        answerCategories: [
+          {
+            category: "Kana",
+            answers: hiraganaArr,
+          },
+          {
+            category: "English",
+            answers: entry.english || [],
+          },
+        ],
+        mnemonics: entry.mnemonics || [],
+        order: index,
+        cardStyle: "multiple-choice",
+        wrongAnswerCount: 0,
+      }
+    } else {
+      return {
+        key: entry.word,
+        answerCategories: [
+          {
+            category: "English",
+            answers: entry.english || [],
+          },
+        ],
+        mnemonics: entry.mnemonics || [],
+        order: index,
+        cardStyle: "multiple-choice",
+        wrongAnswerCount: 0,
+      }
+    }
+  })
+}
+
+export function VocabEntryKanjiToKana(entries: VocabEntry[]): VocabEntry[] {
+  // For each entry, make word the hiragana (from the first furigana entry)
+  return entries.map((entry) => {
+    const hiragana =
+      entry.furigana?.[0] && extractHiraganaFromFurigana(entry.furigana?.[0])
     return {
-      key: entry.word,
-      answerCategories: [
-        {
-          category: "Kana",
-          answers: hiraganaArr,
-        },
-        {
-          category: "English",
-          answers: entry.english || [],
-        },
-      ],
-      mnemonics: entry.mnemonics || [],
-      order: index,
-      cardStyle: "multiple-choice",
-      wrongAnswerCount: 0,
+      ...entry,
+      word: hiragana ?? entry.word,
+      furigana: hiragana ? undefined : entry.furigana,
     }
   })
 }

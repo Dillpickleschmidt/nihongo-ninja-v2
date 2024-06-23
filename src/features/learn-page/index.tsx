@@ -416,13 +416,21 @@ export function ChapterBoxes() {
         >
           Katakana Quiz
         </UnitButton>
-        <UnitButton id="6." type="writing" disabled>
-          Katakana Words Practice
+        <UnitButton
+          id="6."
+          type="writing"
+          link="/learn/chapter-2/katakana-words-worksheet"
+        >
+          Katakana Words Worksheet
         </UnitButton>
-        <UnitButton id="7." type="vocab" disabled>
+        <UnitButton id="7." type="vocab" link="/learn/chapter-2/things">
           Things
         </UnitButton>
-        <UnitButton id="8." type="practice" disabled>
+        <UnitButton
+          id="8."
+          type="practice"
+          link="/learn/chapter-2/practice/things"
+        >
           Practice Things
         </UnitButton>
         <UnitButton id="9." type="lesson" disabled>

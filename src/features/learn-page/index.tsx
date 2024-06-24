@@ -447,7 +447,11 @@ export function ChapterBoxes() {
         >
           Practice Words That Point
         </UnitButton>
-        <UnitButton id="12." type="lesson" disabled>
+        <UnitButton id="12." type="lesson" link="/learn/chapter-2/ga-particle">
+          <span className="font-japanese font-medium">が</span> - The Subject
+          Marker
+        </UnitButton>
+        <UnitButton id="12." type="lesson" link="/learn/chapter-2/dare">
           <span className="font-japanese font-medium">だれ</span>
         </UnitButton>
         <UnitButton id="13." type="lesson" disabled>

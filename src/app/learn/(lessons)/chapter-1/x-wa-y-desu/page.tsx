@@ -3,6 +3,7 @@ import CustomImage from "@/components/CustomImage"
 import PortraitIcon from "@/components/PortraitIcon"
 import Furigana from "@/components/text/Furigana"
 import Romaji from "@/components/text/Romaji"
+import YouTubeVideo from "@/features/youtube/YouTube"
 
 export default function page() {
   return (
@@ -526,82 +527,20 @@ export default function page() {
               the topic,{" "}
               <span className="font-japanese text-orange-400">食べ物</span>.
             </li>
-            {/* <p>
-              <span className="mr-2 text-lg">A:</span>
-              <Romaji
-                romaji={
-                  <>
-                    <span className="text-emerald-400">Nice</span>!
-                  </>
-                }
-              >
-                <span className="text-emerald-400">いいね</span>
-              </Romaji>
-              ！
-              <Romaji
-                romaji={
-                  <>
-                    <span className="text-sky-300">To</span>{" "}
-                    <span className="text-muted-foreground">a </span>
-                    <span className="mr-2 text-orange-400">temple</span>
-                  </>
-                }
-              >
-                <div className="flex justify-center">
-                  <span className="text-orange-400">お寺</span>
-                  <span className="font-bold text-sky-400">に</span>
-                </div>
-              </Romaji>
-              <Romaji
-                romaji={
-                  <>
-                    <span className="mr-1 text-pink-400">did you go</span>?
-                  </>
-                }
-              >
-                <span className="text-pink-400">行った</span>？
-              </Romaji>
-            </p>
-            <li className="mx-6 text-base">
-              We'll learn about the <span className="text-sky-300">に</span>{" "}
-              particle a future lesson.
-            </li>
-            <p>
-              <span className="mr-2 text-lg">B:</span>
-              <Romaji
-                romaji={
-                  <>
-                    <span className="text-yellow-400">Yeah</span>,
-                  </>
-                }
-              >
-                <span className="text-yellow-400">うん</span>、
-              </Romaji>
-              <Romaji
-                romaji={
-                  <>
-                    <span className="text-pink-400">I went</span>{" "}
-                    <span className="text-sky-300">to</span>{" "}
-                    <span className="text-orange-400">Sensōji temple</span>.
-                  </>
-                }
-              >
-                <span className="text-orange-400">浅草寺</span>
-                <span className="font-bold text-sky-400">に</span>
-                <span className="text-pink-400">行った</span>よ。
-              </Romaji>
-              <Romaji
-                romaji={
-                  <>
-                    <span className="text-emerald-400">It was beautiful</span>!
-                  </>
-                }
-              >
-                <span className="text-emerald-400">きれいだった</span>！
-              </Romaji>
-            </p> */}
           </div>
         </div>
+
+        <h2 className="text-2xl font-bold">
+          The REAL Most Basic Japanese Sentence Structures
+        </h2>
+        <div>
+          <YouTubeVideo
+            videoId="15ukUhFolU4"
+            title="The REAL Most Basic Japanese Sentence Structures"
+            credit="ToKini Andy"
+          />
+        </div>
+
         <h2 className="text-2xl font-bold">Summary</h2>
         <ul className="ml-6 mt-2 list-disc space-y-4">
           <li className="">

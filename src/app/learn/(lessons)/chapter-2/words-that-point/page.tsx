@@ -144,6 +144,16 @@ export default async function page() {
             </li>
           </ul>
         </div>
+        <p className="text-base italic">
+          *Question words like{" "}
+          <span className="font-japanese not-italic">どれ</span>,{" "}
+          <span className="font-japanese not-italic">どの</span>, and{" "}
+          <span className="font-japanese not-italic">なに</span> cannot be
+          followed by the particle{" "}
+          <span className="font-japanese not-italic">は</span>. Instead, they
+          are followed by <span className="font-japanese not-italic">が</span>.
+          We'll cover this in more detail in the next lesson.
+        </p>
 
         <h2 className="text-center text-2xl font-black italic">
           Demonstrative Adjectives
@@ -454,6 +464,11 @@ export default async function page() {
             </li>
           </ul>
         </div>
+        <p>
+          <span className="font-bold italic">Don't worry</span> if you're
+          currently struggling with these words. You'll be getting plenty of
+          practice as you continue learning Japanese.
+        </p>
       </div>
     </ContentBox>
   )

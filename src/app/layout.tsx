@@ -27,7 +27,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <GlobalContextProvider>
-            <Navbar />
+            {/* <Navbar /> */}
             {children}
           </GlobalContextProvider>
         </ThemeProvider>

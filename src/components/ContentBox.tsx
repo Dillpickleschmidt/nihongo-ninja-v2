@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react"
 import { VariantProps, cva } from "class-variance-authority"
 import { cn } from "@/utils/cn"
 import { Button } from "./ui/button"
+import { useGlobalContext } from "@/context/GlobalContext"
 
 type ContentBoxProps = React.HTMLAttributes<HTMLDivElement> &
   VariantProps<typeof dialogVariants> & {
@@ -37,7 +38,7 @@ export default function ContentBox({
   showAlertOnClose = false,
   fixedElements,
 }: ContentBoxProps) {
-  const contentScrollRef = useRef(null)
+  const contentScrollRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     container: contentScrollRef,
   })
@@ -46,11 +47,39 @@ export default function ContentBox({
     damping: 30,
     restDelta: 0.001,
   })
+  const { isHiddenContentVisible } = useGlobalContext()
 
   // Scroll to the top of the page on component mount
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+
+  // Scroll using scroll events outside of the content box
+  useEffect(() => {
+    if (isHiddenContentVisible) return
+
+    function handleGlobalScroll(event: WheelEvent) {
+      if (contentScrollRef.current) {
+        event.preventDefault()
+        contentScrollRef.current.scrollTop += event.deltaY
+      }
+    }
+
+    function handleTouchMove(event: TouchEvent) {
+      if (contentScrollRef.current) {
+        event.preventDefault()
+        contentScrollRef.current.scrollTop += event.touches[0].clientY
+      }
+    }
+
+    window.addEventListener("wheel", handleGlobalScroll, { passive: false })
+    window.addEventListener("touchmove", handleTouchMove, { passive: false })
+
+    return () => {
+      window.removeEventListener("wheel", handleGlobalScroll)
+      window.removeEventListener("touchmove", handleTouchMove)
+    }
+  }, [isHiddenContentVisible])
 
   return (
     <div>
@@ -65,7 +94,7 @@ export default function ContentBox({
       >
         <div
           ref={contentScrollRef}
-          className="h-full w-full overflow-y-scroll scrollbar:hidden"
+          className={`h-full w-full ${!isHiddenContentVisible ? "overflow-y-scroll" : "overflow-hidden"} scrollbar:hidden`}
         >
           <div className="relative min-h-full">
             {backgroundImage && (

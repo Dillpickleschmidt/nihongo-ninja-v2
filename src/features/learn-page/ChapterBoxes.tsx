@@ -1,7 +1,5 @@
 import ChapterBox from "./components/ChapterBox/ChapterBox"
 import UnitButton from "./components/ChapterBox/UnitButton"
-import ButtonBarGroup from "./components/ButtonBar/ButtonBarGroup"
-import TopWindowAnimations from "./components/TopWindowAnimations"
 
 export function ChapterBoxes() {
   return (
@@ -635,12 +633,4 @@ export function ChapterBoxes() {
       </ChapterBox>
     </>
   )
-}
-
-export function ButtonBar() {
-  return <ButtonBarGroup />
-}
-
-export function TopWindow({ children }: { children: React.ReactNode }) {
-  return <TopWindowAnimations>{children}</TopWindowAnimations>
 }

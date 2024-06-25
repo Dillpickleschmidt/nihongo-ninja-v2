@@ -18,10 +18,8 @@ type GlobalContext = {
   navbarRef: React.RefObject<HTMLDivElement>
   showNavbar: boolean
   setShowNavbar: React.Dispatch<React.SetStateAction<boolean>>
-  fromLearnPage: boolean
-  setFromLearnPage: React.Dispatch<React.SetStateAction<boolean>>
-  isTopFullyExpanded: boolean
-  setIsTopFullyExpanded: React.Dispatch<React.SetStateAction<boolean>>
+  isHiddenContentVisible: boolean
+  setHiddenContentVisible: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const GlobalContext = createContext<GlobalContext | null>(null)
@@ -30,8 +28,7 @@ export function GlobalContextProvider({ children }: GlobalContextProps) {
   const scrollRef = createRef<HTMLDivElement>()
   const navbarRef = createRef<HTMLDivElement>()
   const [showNavbar, setShowNavbar] = useState(true)
-  const [fromLearnPage, setFromLearnPage] = useState(false)
-  const [isTopFullyExpanded, setIsTopFullyExpanded] = useState(true)
+  const [isHiddenContentVisible, setHiddenContentVisible] = useState(false)
 
   const pathname = usePathname()
 
@@ -41,7 +38,6 @@ export function GlobalContextProvider({ children }: GlobalContextProps) {
     if (specificPaths.includes(pathname)) {
       // Reset state on path change
       setShowNavbar(true)
-      setIsTopFullyExpanded(true)
     }
   }, [pathname])
 
@@ -52,10 +48,8 @@ export function GlobalContextProvider({ children }: GlobalContextProps) {
         navbarRef,
         showNavbar,
         setShowNavbar,
-        fromLearnPage,
-        setFromLearnPage,
-        isTopFullyExpanded,
-        setIsTopFullyExpanded,
+        isHiddenContentVisible,
+        setHiddenContentVisible,
       }}
     >
       {children}
@@ -67,7 +61,7 @@ export function useGlobalContext() {
   const context = useContext(GlobalContext)
   if (!context) {
     throw new Error(
-      "useNavbarContext must be used within a useNavbarContextProvider",
+      "useGlobalContext must be used within a useNavbarContextProvider",
     )
   }
   return context

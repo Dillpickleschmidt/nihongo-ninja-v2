@@ -30,7 +30,7 @@ export default function UnitButton({
   link,
   disabled,
 }: UnitButtonProps) {
-  const { setShowNavbar, setFromLearnPage } = useGlobalContext()
+  const { setShowNavbar, setHiddenContentVisible } = useGlobalContext()
 
   return (
     <div className="!p-0 duration-75 ease-in-out hover:scale-[98.5%]">
@@ -39,7 +39,7 @@ export default function UnitButton({
           variant="outline"
           className="relative h-full w-full justify-between overflow-y-hidden overflow-x-scroll whitespace-nowrap px-6 py-[.75rem] text-sm font-normal scrollbar:hidden"
           onClick={() => {
-            setFromLearnPage(true)
+            setHiddenContentVisible(false)
             setShowNavbar(false)
           }}
           disabled={disabled}

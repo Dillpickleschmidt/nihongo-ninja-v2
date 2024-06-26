@@ -30,9 +30,10 @@ export default function Layout({ children }: LayoutProps) {
 
   const { scrollYProgress } = useScroll({
     target: hiddenContentRef,
+    container: scrollRef,
     // start-end instead of start center bc translateY -50%
-    // start-0.6 instead of start-start bc translateY -50%
-    offset: ["start end", "start 0.6"],
+    // start-0.525 instead of start-start bc translateY -50%
+    offset: ["start end", "start 0.525"],
     layoutEffect: false,
   })
 
@@ -104,10 +105,11 @@ export default function Layout({ children }: LayoutProps) {
         { translateY: "0%" },
         { ease: "linear", duration: 0.1 },
       )
+      scrollRef.current?.scrollTo(0, 0)
     } else {
       await animate(
         hiddenContentRef.current,
-        { translateY: "-50%" },
+        { translateY: "-40%" },
         { ease: "linear", duration: 0.5 },
       )
     }

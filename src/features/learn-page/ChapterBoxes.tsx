@@ -452,7 +452,7 @@ export function ChapterBoxes() {
         <UnitButton id="12." type="lesson" link="/learn/chapter-2/dare">
           <span className="font-japanese font-medium">だれ</span>
         </UnitButton>
-        <UnitButton id="13." type="lesson" disabled>
+        <UnitButton id="13." type="lesson" link="/learn/chapter-2/mo-particle">
           <span className="font-japanese font-medium">も</span>
         </UnitButton>
         <UnitButton id="14." type="lesson" disabled>

@@ -8,7 +8,7 @@ export default function page() {
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-2/practice/mo-particle"
+      nextPageLink="/learn/chapter-2/mo-particle"
       showProgressBar={false}
     >
       <h1 className="px-28 pb-6 pt-28 text-center text-4xl font-semibold">

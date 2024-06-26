@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter} ${japanese} ${honk} overflow-x-hidden font-inter text-lg scrollbar:w-2.5 scrollbar-track:bg-transparent scrollbar-thumb:bg-neutral-500 hover:scrollbar-thumb:bg-[#999999]`}
+        className={`${inter} ${japanese} ${honk} overflow-x-hidden font-inter text-lg scrollbar:w-2.5 scrollbar-track:bg-transparent scrollbar-thumb:bg-neutral-400 hover:scrollbar-thumb:bg-[#999999] dark:scrollbar-thumb:bg-neutral-500`}
       >
         <ThemeProvider
           attribute="class"
@@ -27,7 +27,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <GlobalContextProvider>
-            {/* <Navbar /> */}
+            <Navbar />
             {children}
           </GlobalContextProvider>
         </ThemeProvider>

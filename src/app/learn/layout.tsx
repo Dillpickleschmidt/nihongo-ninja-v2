@@ -5,5 +5,5 @@ type LayoutProps = {
 }
 
 export default function ({ children }: LayoutProps) {
-  return <div>{children}</div>
+  return <div className="relative overflow-hidden">{children}</div>
 }

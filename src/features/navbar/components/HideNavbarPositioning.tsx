@@ -7,40 +7,53 @@ import { useEffect } from "react"
 import { useGlobalContext } from "@/context/GlobalContext"
 
 export default function HideNavbarPositioning() {
-  const { fromLearnPage } = useGlobalContext()
+  const { isHiddenContentVisible } = useGlobalContext()
   const [scope, animate] = useAnimate()
 
   async function handleMouseExit() {
-    await animate(
-      scope.current,
-      { y: -42, opacity: 0.125 },
-      { duration: 0.1, ease: easeInOut },
-    )
+    if (!isHiddenContentVisible) {
+      await animate(
+        scope.current,
+        { y: -42, opacity: 0.125 },
+        { duration: 0.2, ease: easeInOut },
+      )
+    }
   }
   async function handleMouseOver() {
     await animate(
       scope.current,
       { y: 0, opacity: 1 },
-      { duration: 0.1, ease: easeInOut },
+      { duration: 0.2, ease: easeInOut },
     )
   }
 
   async function pageMountAnimation() {
-    if (fromLearnPage) {
+    await animate(
+      // Just to remove blur flickering and provide time offset
+      scope.current,
+      { y: 0, opacity: 0.999 },
+      { duration: 1, ease: easeInOut },
+    )
+    await animate(
+      scope.current,
+      { y: -42, opacity: 0.125 },
+      { duration: 1, ease: easeInOut },
+    )
+  }
+
+  async function handleHiddenContentVisible() {
+    if (isHiddenContentVisible) {
       await animate(
-        // Just to remove blur flickering and provide time offset
         scope.current,
         { y: 0, opacity: 0.999 },
         { duration: 1, ease: easeInOut },
       )
+    } else {
       await animate(
         scope.current,
         { y: -42, opacity: 0.125 },
         { duration: 1, ease: easeInOut },
       )
-    } else {
-      // Set y to -42 and opacity to 0.25 immediately
-      await animate(scope.current, { y: -42, opacity: 0.25 }, { duration: 0.5 })
     }
   }
 
@@ -48,6 +61,7 @@ export default function HideNavbarPositioning() {
     pageMount,
     mouseOver,
     mouseExit,
+    hiddenContentVisible,
   }
 
   type AnimationTypeString = keyof typeof AnimationType
@@ -63,12 +77,19 @@ export default function HideNavbarPositioning() {
       case "mouseExit":
         handleMouseExit()
         break
+      case "hiddenContentVisible":
+        handleHiddenContentVisible()
+        break
     }
   }
 
   useEffect(() => {
     handleAnimate("pageMount")
   }, [handleAnimate])
+
+  useEffect(() => {
+    handleAnimate("hiddenContentVisible")
+  }, [isHiddenContentVisible])
 
   return (
     // This animation will run when loadFeatures resolves.

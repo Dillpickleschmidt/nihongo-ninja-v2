@@ -25,20 +25,17 @@ export default function Layout({ children }: LayoutProps) {
     useGlobalContext()
 
   const [hiddenContentRef, animate] = useAnimate()
-
   const [opacityState, setOpacityState] = useState(1)
   const [hasPageLoaded, setHasPageLoaded] = useState(false)
+  const [touchStartY, setTouchStartY] = useState<number | null>(null)
 
   const { scrollYProgress } = useScroll({
     target: hiddenContentRef,
     container: scrollRef,
-    // start-end instead of start center bc translateY -50%
-    // start-0.525 instead of start-start bc translateY -50%
     offset: ["start end", "start 0.525"],
     layoutEffect: false,
   })
 
-  // Apply a curve to the opacity value and flip it
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0], {
     ease: anticipate,
   })
@@ -73,31 +70,38 @@ export default function Layout({ children }: LayoutProps) {
       }
     }
 
+    const handleTouchStart = (event: TouchEvent) => {
+      if (event.touches.length > 0) {
+        setTouchStartY(event.touches[0].clientY)
+      }
+    }
+
     const handleTouchMove = (event: TouchEvent) => {
       if (
         isHiddenContentVisible &&
         scrollRef.current &&
         scrollRef.current.scrollTop <= 0 &&
-        event.touches[0].clientY > 0
+        touchStartY !== null &&
+        event.touches[0].clientY > touchStartY
       ) {
-        event.preventDefault()
+        event.preventDefault() // Prevent default only when hiding the hidden content
         handleAnimate(isHiddenContentVisible)
         setHiddenContentVisible(false)
       }
     }
 
-    // if (!hasPageLoaded) {
     handleAnimate(!isHiddenContentVisible)
-    // }
 
     window.addEventListener("wheel", handleScroll, { passive: false })
+    window.addEventListener("touchstart", handleTouchStart, { passive: true })
     window.addEventListener("touchmove", handleTouchMove, { passive: false })
 
     return () => {
       window.removeEventListener("wheel", handleScroll)
+      window.removeEventListener("touchstart", handleTouchStart)
       window.removeEventListener("touchmove", handleTouchMove)
     }
-  }, [isHiddenContentVisible, setHiddenContentVisible])
+  }, [isHiddenContentVisible, setHiddenContentVisible, touchStartY])
 
   async function handleClick() {
     await handleAnimate(isHiddenContentVisible)
@@ -124,7 +128,12 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div
       ref={scrollRef}
-      className={`relative min-h-screen overflow-x-hidden ${!isHiddenContentVisible ? "scrollbar:hidden" : "overflow-y-auto"} scrollbar:w-2.5 scrollbar-track:bg-transparent scrollbar-thumb:bg-neutral-400 hover:scrollbar-thumb:bg-[#999999] dark:scrollbar-thumb:bg-neutral-500`}
+      // scrollbar:w-2.5 scrollbar-track:bg-transparent scrollbar-thumb:bg-neutral-400 hover:scrollbar-thumb:bg-[#999999] dark:scrollbar-thumb:bg-neutral-500
+      className={`relative min-h-screen overflow-x-hidden ${
+        !isHiddenContentVisible
+          ? "max-h-screen overflow-y-hidden"
+          : "overflow-y-auto"
+      } `}
     >
       <div
         ref={mainContentRef}

@@ -46,13 +46,13 @@ export default function HideNavbarPositioning() {
       await animate(
         scope.current,
         { y: 0, opacity: 0.999 },
-        { duration: 1, ease: easeInOut },
+        { duration: 0.5, ease: easeInOut },
       )
     } else {
       await animate(
         scope.current,
         { y: -42, opacity: 0.125 },
-        { duration: 1, ease: easeInOut },
+        { duration: 0.5, ease: easeInOut },
       )
     }
   }

@@ -1,7 +1,7 @@
 "use client"
 
 import { m, useScroll, useSpring } from "framer-motion"
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { VariantProps, cva } from "class-variance-authority"
 import { cn } from "@/utils/cn"
 import { Button } from "./ui/button"
@@ -48,13 +48,12 @@ export default function ContentBox({
     restDelta: 0.001,
   })
   const { isHiddenContentVisible } = useGlobalContext()
+  // const [touchStartY, setTouchStartY] = useState<number | null>(null)
 
-  // Scroll to the top of the page on component mount
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
-  // Scroll using scroll events outside of the content box
   useEffect(() => {
     if (isHiddenContentVisible) return
 
@@ -65,21 +64,37 @@ export default function ContentBox({
       }
     }
 
-    function handleTouchMove(event: TouchEvent) {
-      if (contentScrollRef.current) {
-        event.preventDefault()
-        contentScrollRef.current.scrollTop += event.touches[0].clientY
-      }
-    }
+    // function handleTouchStart(event: TouchEvent) {
+    //   if (event.touches.length > 0) {
+    //     setTouchStartY(event.touches[0].clientY)
+    //   }
+    // }
+
+    // function handleTouchMove(event: TouchEvent) {
+    //   if (
+    //     contentScrollRef.current &&
+    //     touchStartY !== null &&
+    //     event.touches[0].clientY > touchStartY
+    //   ) {
+    //     contentScrollRef.current.scrollTop +=
+    //       event.touches[0].clientY - touchStartY
+    //     setTouchStartY(event.touches[0].clientY) // Update touchStartY to current touch position
+    //   }
+    // }
 
     window.addEventListener("wheel", handleGlobalScroll, { passive: false })
-    window.addEventListener("touchmove", handleTouchMove, { passive: false })
+    // window.addEventListener("touchstart", handleTouchStart, { passive: true })
+    // window.addEventListener("touchmove", handleTouchMove, { passive: true })
 
     return () => {
       window.removeEventListener("wheel", handleGlobalScroll)
-      window.removeEventListener("touchmove", handleTouchMove)
+      // window.removeEventListener("touchstart", handleTouchStart)
+      // window.removeEventListener("touchmove", handleTouchMove)
     }
-  }, [isHiddenContentVisible])
+  }, [
+    isHiddenContentVisible,
+    // touchStartY
+  ])
 
   return (
     <div>
@@ -103,9 +118,9 @@ export default function ContentBox({
                 style={{
                   backgroundImage: `url(${backgroundImage})`,
                   backgroundRepeat: "repeat",
-                  backgroundSize: backgroundImageSize, // Change this value to scale your background image
+                  backgroundSize: backgroundImageSize,
                   backgroundBlendMode: "multiply",
-                  opacity: backgroundImageOpacity / 100, // Change this value to set the opacity of the background image
+                  opacity: backgroundImageOpacity / 100,
                   zIndex: -1,
                 }}
               />
@@ -120,7 +135,6 @@ export default function ContentBox({
             {nextButton}
           </div>
         </div>
-        {/* Fixed Elements Container */}
         <div className="fixed left-0 top-0 z-50">{fixedElements}</div>
       </div>
     </div>

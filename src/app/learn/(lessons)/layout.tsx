@@ -27,6 +27,7 @@ export default function Layout({ children }: LayoutProps) {
   const [hiddenContentRef, animate] = useAnimate()
 
   const [opacityState, setOpacityState] = useState(1)
+  const [hasPageLoaded, setHasPageLoaded] = useState(false)
 
   const { scrollYProgress } = useScroll({
     target: hiddenContentRef,
@@ -55,6 +56,7 @@ export default function Layout({ children }: LayoutProps) {
 
   useEffect(() => {
     setShowNavbar(false)
+    setHasPageLoaded(true)
   }, [])
 
   useEffect(() => {
@@ -84,6 +86,10 @@ export default function Layout({ children }: LayoutProps) {
       }
     }
 
+    // if (!hasPageLoaded) {
+    handleAnimate(!isHiddenContentVisible)
+    // }
+
     window.addEventListener("wheel", handleScroll, { passive: false })
     window.addEventListener("touchmove", handleTouchMove, { passive: false })
 
@@ -94,8 +100,8 @@ export default function Layout({ children }: LayoutProps) {
   }, [isHiddenContentVisible, setHiddenContentVisible])
 
   async function handleClick() {
-    setHiddenContentVisible(!isHiddenContentVisible)
     await handleAnimate(isHiddenContentVisible)
+    setHiddenContentVisible(!isHiddenContentVisible)
   }
 
   async function handleAnimate(isHiddenContentVisible: boolean) {

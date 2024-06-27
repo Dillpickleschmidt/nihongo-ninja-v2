@@ -33,15 +33,6 @@ export default function VocabCards({
             vocabVideo={true}
           >
             <>
-              {item.info && item.info.length > 0 && (
-                <ul className="ml-6 list-disc">
-                  {item.info.map((info, idx) => (
-                    <li key={idx} className="space-y-6">
-                      {info}
-                    </li>
-                  ))}
-                </ul>
-              )}
               {item.mnemonics && item.mnemonics.length > 0 && (
                 <div>
                   {item.mnemonics.map((mnemonic, idx) => (
@@ -51,6 +42,20 @@ export default function VocabCards({
                     </p>
                   ))}
                 </div>
+              )}
+              {item.info && item.info.length > 0 && (
+                <>
+                  {/* <span className="font-bold italic">Info</span> */}
+                  <ul
+                    className={`ml-6 list-disc ${item.mnemonics && item.mnemonics.length > 0 && "pt-3"}`}
+                  >
+                    {item.info.map((info, idx) => (
+                      <li key={idx} className="space-y-6">
+                        {info}
+                      </li>
+                    ))}
+                  </ul>
+                </>
               )}
             </>
           </VocabCard>

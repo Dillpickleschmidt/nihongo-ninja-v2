@@ -477,10 +477,18 @@ export function ChapterBoxes() {
         >
           Kikusasaizu Video - L2-2
         </UnitButton>
-        <UnitButton id="18." type="vocab" disabled>
+        <UnitButton
+          id="18."
+          type="vocab"
+          link="/learn/chapter-2/places-money-food"
+        >
           Places, Money, Food
         </UnitButton>
-        <UnitButton id="19." type="practice" disabled>
+        <UnitButton
+          id="19."
+          type="practice"
+          link="/learn/chapter-2/practice/places-money-food"
+        >
           Practice Places, Money, Food
         </UnitButton>
         <UnitButton

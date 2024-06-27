@@ -181,10 +181,113 @@ export default function page() {
           sentences. Therefore, we've included this module again in the list of
           Chapter 3 lessons to make sure you don't forget to read it.
         </p>
+
+        <h3 className="pt-6 text-center text-2xl font-bold">
+          WH Questions and{" "}
+          <span className="font-japanese text-[1.6rem] text-green-500">が</span>
+        </h3>
+        <p>
+          WH-words (who, what, where, when, why, which) like{" "}
+          <span className="font-japanese">だれ</span>,{" "}
+          <span className="font-japanese">なに</span>,{" "}
+          <span className="font-japanese">どこ</span>,
+          <span className="font-japanese">どれ</span>,{" "}
+          <span className="font-japanese">どの</span>+noun, etc. and are always
+          marked by{" "}
+          <span className="font-japanese text-xl font-bold text-green-500">
+            が
+          </span>{" "}
+          when they are the subject of a sentence.
+        </p>
+        <div className="flex w-full items-center">
+          <p className="w-1/4 font-bold text-red-500">Incorrect</p>
+          <p className="w-3/4">
+            <span className="font-japanese text-xl line-through">
+              どれ
+              <span className="font-bold text-sky-400">は</span>
+              田中さんのペンですか。
+            </span>
+          </p>
+        </div>
+        <div className="flex w-full items-center">
+          <p className="w-1/4 font-bold">Correct</p>
+          <p className="w-3/4">
+            <span className="font-japanese text-xl">
+              どれ
+              <span className="font-bold text-green-500">が</span>
+              田中さんのペンですか。
+            </span>
+            {"->"} Which one is Tanaka's pen?
+          </p>
+        </div>
+
+        <ul className="!mt-4 ml-6 list-inside list-disc space-y-2">
+          <li>
+            This sentence emphasizes{" "}
+            <span className="font-japanese text-xl font-semibold">どれ</span>{" "}
+            (which one) as the subject of the sentence{" "}
+            <span className="text-base text-muted-foreground">
+              (focus on the part{" "}
+              <strong>
+                before <span className="font-japanese">が</span>
+              </strong>
+              )
+            </span>
+            . It directly asks which pen among several options belongs to
+            Tanaka.
+          </li>
+          <li>
+            <strong>Example: </strong>If you're standing in front of a desk with
+            several pens and want to know specifically which one is Tanaka's,
+            you might use this structure.
+          </li>
+        </ul>
+
+        <div className="flex w-full items-center">
+          <p className="w-1/4 font-bold">Also Correct</p>
+          <p className="w-3/4">
+            <span className="font-japanese text-xl">
+              田中さんのペン
+              <span className="font-bold text-sky-400">は</span>どれですか。
+            </span>
+            {"->"} Which one is Tanaka's pen?
+          </p>
+        </div>
+        <ul className="!mt-4 ml-6 list-inside list-disc space-y-2">
+          <li>
+            This sentence places{" "}
+            <span className="font-japanese text-xl">田中さんのペン</span>{" "}
+            (Tanaka's pen) as the topic. It asks
+            <div className="my-3 border-l-[3px] border-muted-foreground pl-6">
+              <p className="font-extralight italic">
+                among these several pens,{" "}
+                <span className="font-light underline underline-offset-4">
+                  which one
+                </span>{" "}
+                is Tanaka's?
+              </p>
+            </div>
+            <p>
+              (with the focus on the part{" "}
+              <strong>
+                after <span className="font-japanese">は</span>
+              </strong>
+              ).
+            </p>
+          </li>
+          <li>
+            <strong>Example: </strong>If you know one of the pens belongs to
+            Tanaka and you want to find out which one it is, this structure
+            would be appropriate.
+          </li>
+        </ul>
       </div>
 
       <div className="space-y-4 px-24 leading-8 [&>*]:space-y-4">
         <h3 className="pt-12 text-center text-3xl font-bold">Practice</h3>
+        <p className="text-center text-base italic text-muted-foreground">
+          *There may be more than 1 correct answer*
+        </p>
         <p>
           You are showing your friend different items in your room. How would
           you say "This is a pen"?
@@ -210,6 +313,33 @@ export default function page() {
           answer="たろうがもっています。"
           a="たろうはもっています。"
           b="たろうがもっています。"
+          className="text-xl"
+        />
+        <p>Which sentence(s) correctly ask(s), "What is that?"</p>
+        <p className="!my-0 text-base text-muted-foreground">
+          *<span className="font-japanese">何</span> {"->"} なん・なに
+        </p>
+        <SelectText
+          answer="それは何ですか。"
+          a="何がそれですか。"
+          b="何はそれですか。"
+          c="それは何ですか。"
+          d="それが何ですか。"
+          className="text-xl"
+        />
+        <p>
+          Choose the correct sentence(s) to ask, "Which one is Takashi's
+          notebook?"
+        </p>
+        <SelectText
+          answer={[
+            "隆さんのノートはどれですか。",
+            "どれが隆さんのノートですか。",
+          ]}
+          a="隆さんのノートはどれですか。"
+          b="どれは隆さんのノートですか。"
+          c="どれが隆さんのノートですか。"
+          d="隆さんのノートがどれですか。"
           className="text-xl"
         />
       </div>

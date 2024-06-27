@@ -3,7 +3,7 @@ import { cn } from "@/utils/cn"
 import { useState } from "react"
 
 type SelectTextProps = {
-  answer: string
+  answer: string | string[]
   a?: string
   b?: string
   c?: string
@@ -25,7 +25,8 @@ export default function SelectText({
 
   const handleClick = (option: string) => {
     setClicked((prev) => ({ ...prev, [option]: true }))
-    if (options[option as keyof typeof options] === answer) {
+    const correctAnswers = Array.isArray(answer) ? answer : [answer]
+    if (correctAnswers.includes(options[option as keyof typeof options]!)) {
       setCorrect((prev) => ({ ...prev, [option]: true }))
     }
   }

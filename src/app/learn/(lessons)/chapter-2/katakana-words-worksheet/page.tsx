@@ -10,7 +10,7 @@ export default function page() {
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
       showProgressBar={false}
-      nextPageLink="/learn/chapter-1/kikusasaizu-1-1"
+      nextPageLink="/learn/chapter-2/things"
     >
       <h1 className="px-20 pb-12 pt-28 text-center text-[2rem] font-medium leading-[2.875rem]">
         <span className="text-[2.65rem] font-medium">Get ready</span> to see

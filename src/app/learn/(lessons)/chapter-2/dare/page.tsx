@@ -146,7 +146,7 @@ export default function page() {
         <h3 className="pt-12 text-center text-3xl font-bold">Practice</h3>
         <p>
           You notice a skinny old man at the gym lift twice your max. You turn
-          your head and say to your friend:
+          your head and whisper to your friend:
         </p>
         <SelectText
           answer="あのおじいさんはだれですか。"

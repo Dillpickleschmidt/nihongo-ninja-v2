@@ -453,10 +453,12 @@ export function ChapterBoxes() {
           <span className="font-japanese font-medium">だれ</span>
         </UnitButton>
         <UnitButton id="13." type="lesson" link="/learn/chapter-2/mo-particle">
+          Saying <em>also</em> with{" "}
           <span className="font-japanese font-medium">も</span>
         </UnitButton>
-        <UnitButton id="14." type="lesson" disabled>
-          It is not...
+        <UnitButton id="14." type="lesson" link="/learn/chapter-2/janai">
+          <span className="font-japanese font-medium">じゃないです</span> - Is
+          not...
         </UnitButton>
         <UnitButton
           id="15."

@@ -9,7 +9,7 @@ export default function page() {
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-2/dare"
+      nextPageLink="/learn/chapter-2/janai"
     >
       <h1 className="px-28 pb-6 pt-28 text-center text-4xl font-semibold">
         How to say <span className="text-[2.6rem] font-bold italic">also</span>{" "}

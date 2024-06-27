@@ -7,7 +7,7 @@ export default function HiddenContent() {
     <div className="relative z-40 w-full overflow-hidden bg-background/[100%] pb-12">
       <ButtonBarGroup />
       <div className="flex justify-center">
-        <div className="w-[80%] sm:w-[70%] xl:w-[60%]">
+        <div className="w-[75%] sm:w-[67%] xl:w-[60%]">
           <div className="my-6 mt-24 flex h-28 w-full items-center justify-center rounded-md border bg-card px-8 saturate-50">
             Visit the resources page to find helpful tools and materials to aid
             in your learning journey.

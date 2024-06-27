@@ -50,9 +50,9 @@ export default function page() {
         </p>
 
         <div className="flex w-full flex-col items-center">
-          <div className="w-[450px] rounded-lg border-2 border-orange-400 p-5">
+          <div className="rounded-lg border-2 border-orange-400 p-5 md:w-[450px]">
             <div className="flex w-full">
-              <p className="w-64 text-2xl">
+              <p className="w-56 text-2xl md:w-64">
                 X{" "}
                 <span className="font-japanese font-bold text-sky-400">は</span>{" "}
                 Y <span className="font-japanese">です。</span>
@@ -61,7 +61,7 @@ export default function page() {
               <p className="text-xl">X is Y.</p>
             </div>
             <div className="flex w-full">
-              <p className="w-64 text-2xl">
+              <p className="w-56 text-2xl md:w-64">
                 X{" "}
                 <span className="font-japanese font-bold text-sky-400">は</span>{" "}
                 Y{" "}
@@ -139,7 +139,7 @@ export default function page() {
         <h4 className="!mt-2 text-xl font-bold italic">Examples:</h4>
         <div className="!mt-3 flex flex-wrap justify-center">
           <div className="space-y-2">
-            <div className="flex items-end">
+            <div className="flex flex-wrap items-end">
               <p className="mx-3">1.</p>
               <p className="w-80 font-japanese text-xl">
                 <Furigana furigana={<span className="text-sm">たなか</span>}>
@@ -151,21 +151,36 @@ export default function page() {
                 </Furigana>
                 じゃないです。
               </p>
-              <p className="text-center font-semibold italic">Colloquial</p>
+              <p>
+                {"->"}
+                <span className="ml-2 text-center font-semibold italic">
+                  Colloquial
+                </span>
+              </p>
             </div>
-            <div className="flex items-end">
+            <div className="flex flex-wrap items-end">
               <p className="mx-3">2.</p>
               <p className="w-80 font-japanese text-xl">
                 田中さんは 学生 じゃありません。
               </p>
-              <p className="text-center font-semibold italic">Polite</p>
+              <p>
+                {"->"}
+                <span className="ml-2 text-center font-semibold italic">
+                  Polite
+                </span>
+              </p>
             </div>
-            <div className="flex items-end">
+            <div className="flex flex-wrap items-end">
               <p className="mx-3">3.</p>
               <p className="w-80 font-japanese text-xl">
                 田中さんは 学生 じゃありません。
               </p>
-              <p className="text-center font-semibold italic">Formal</p>
+              <p>
+                {"->"}
+                <span className="ml-2 text-center font-semibold italic">
+                  Formal
+                </span>
+              </p>
             </div>
           </div>
         </div>

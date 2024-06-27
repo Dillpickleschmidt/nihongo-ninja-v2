@@ -37,7 +37,7 @@ export default function page() {
         <span className="font-japanese text-orange-400">じゃない</span>—The
         Negative Form in Japanese
       </h1>
-      <div className="space-y-6 px-16 md:px-24">
+      <div className="space-y-6 px-8 sm:px-16 md:px-24">
         <p>
           The{" "}
           <span className="font-japanese text-xl font-semibold text-orange-400">
@@ -137,7 +137,7 @@ export default function page() {
           <span className="font-japanese text-lg not-italic">です</span>.
         </p>
         <h4 className="!mt-2 text-xl font-bold italic">Examples:</h4>
-        <div className="!mt-3 flex justify-center">
+        <div className="!mt-3 flex flex-wrap justify-center">
           <div className="space-y-2">
             <div className="flex items-end">
               <p className="mx-3">1.</p>
@@ -304,7 +304,7 @@ export default function page() {
         </p>
       </div>
 
-      <div className="space-y-4 px-24 leading-8 [&>*]:space-y-4">
+      <div className="space-y-4 px-8 leading-8 sm:px-16 md:px-24 [&>*]:space-y-4">
         <h3 className="pt-12 text-center text-3xl font-bold">Practice</h3>
         <p className="text-center font-semibold">
           Check the words that{" "}

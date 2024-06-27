@@ -87,7 +87,11 @@ export default function CheckboxQuestion({
 
   return (
     <>
-      <div className={horizontal ? "flex flex-wrap space-x-6" : "space-y-3"}>
+      <div
+        className={
+          horizontal ? "md:flex md:flex-wrap md:space-x-6" : "space-y-3"
+        }
+      >
         {questions.map((question, index) => (
           <div
             key={index}

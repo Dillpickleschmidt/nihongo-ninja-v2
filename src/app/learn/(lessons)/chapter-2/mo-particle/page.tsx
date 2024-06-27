@@ -15,7 +15,7 @@ export default function page() {
         How to say <span className="text-[2.6rem] font-bold italic">also</span>{" "}
         with <span className="font-japanese text-purple-400">も</span>
       </h1>
-      <div className="space-y-6 px-16 md:px-24">
+      <div className="space-y-6 px-8 sm:px-16 md:px-24">
         <p>
           The{" "}
           <span className="font-japanese text-xl font-semibold text-purple-400">
@@ -391,7 +391,7 @@ export default function page() {
         </div>
       </div>
 
-      <div className="space-y-4 px-24 leading-8 [&>*]:space-y-4">
+      <div className="space-y-4 px-8 leading-8 sm:px-16 md:px-24 [&>*]:space-y-4">
         <h3 className="pt-12 text-center text-3xl font-bold">Practice</h3>
         <p>
           Someone asks if Tanaka likes dogs. You want to say "yes, and he also

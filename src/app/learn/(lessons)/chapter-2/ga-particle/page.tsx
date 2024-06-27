@@ -15,7 +15,7 @@ export default function page() {
         New Subjects With The{" "}
         <span className="font-japanese text-green-500">が</span> Particle
       </h1>
-      <div className="space-y-6 px-16 md:px-24">
+      <div className="space-y-6 px-8 sm:px-16 md:px-24">
         <div>
           <p>
             In this lesson, we'll delve into the{" "}
@@ -283,7 +283,7 @@ export default function page() {
         </ul>
       </div>
 
-      <div className="space-y-4 px-24 leading-8 [&>*]:space-y-4">
+      <div className="space-y-4 px-8 leading-8 sm:px-16 md:px-24 [&>*]:space-y-4">
         <h3 className="pt-12 text-center text-3xl font-bold">Practice</h3>
         <p className="text-center text-base italic text-muted-foreground">
           *There may be more than 1 correct answer*

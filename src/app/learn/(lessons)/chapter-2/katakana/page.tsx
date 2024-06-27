@@ -30,7 +30,7 @@ export default function page() {
       <h2 className="mb-4 mt-12 text-center text-3xl font-bold">
         What is Katakana?
       </h2>
-      <div className="space-y-9 px-8 sm:px-16 md:px-24">
+      <div className="space-y-9 px-12 sm:px-16 md:px-24">
         <p>
           Katakana is one of the three main scripts used in Japanese writing,
           along with Hiragana and Kanji. It is primarily used for{" "}

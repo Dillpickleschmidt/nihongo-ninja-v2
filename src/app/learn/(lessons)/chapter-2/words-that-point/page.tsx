@@ -14,7 +14,7 @@ export default async function page() {
       <h1 className="px-28 pb-6 pt-28 text-center text-4xl font-semibold">
         Words That Point
       </h1>
-      <div className="space-y-9 px-8 sm:px-16 md:px-24">
+      <div className="space-y-9 px-12 sm:px-16 md:px-24">
         <p>
           In Japanese, there are specific words used to point to objects. These
           words help to clarify what you are referring to and are essential for

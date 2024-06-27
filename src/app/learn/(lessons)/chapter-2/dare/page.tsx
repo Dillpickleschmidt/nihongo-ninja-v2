@@ -14,7 +14,7 @@ export default function page() {
       <h1 className="px-28 pb-6 pt-28 text-center text-4xl font-semibold">
         Asking Who with <span className="font-japanese text-red-500">だれ</span>
       </h1>
-      <div className="space-y-6 px-8 sm:px-16 md:px-24">
+      <div className="space-y-6 px-12 sm:px-16 md:px-24">
         <h3 className="!mt-12 text-2xl font-bold">
           <span className="font-japanese text-3xl">
             <Furigana furigana={<span className="text-lg">だれ</span>}>
@@ -142,7 +142,7 @@ export default function page() {
         </ol>
       </div>
 
-      <div className="space-y-4 px-8 leading-8 sm:px-16 md:px-24 [&>*]:space-y-4">
+      <div className="space-y-4 px-12 leading-8 sm:px-16 md:px-24 [&>*]:space-y-4">
         <h3 className="pt-12 text-center text-3xl font-bold">Practice</h3>
         <p>
           You notice a skinny old man at the gym lift twice your max. You turn

@@ -15,7 +15,7 @@ export default function page() {
         How to say <span className="text-[2.6rem] font-bold italic">also</span>{" "}
         with <span className="font-japanese text-purple-400">も</span>
       </h1>
-      <div className="space-y-6 px-8 sm:px-16 md:px-24">
+      <div className="space-y-6 px-12 sm:px-16 md:px-24">
         <p>
           The{" "}
           <span className="font-japanese text-xl font-semibold text-purple-400">
@@ -391,7 +391,7 @@ export default function page() {
         </div>
       </div>
 
-      <div className="space-y-4 px-8 leading-8 sm:px-16 md:px-24 [&>*]:space-y-4">
+      <div className="space-y-4 px-12 leading-8 sm:px-16 md:px-24 [&>*]:space-y-4">
         <h3 className="pt-12 text-center text-3xl font-bold">Practice</h3>
         <p>
           Someone asks if Tanaka likes dogs. You want to say "yes, and he also
@@ -433,8 +433,8 @@ export default function page() {
         <h4 className="!mt-6 text-xl font-bold">
           Where can <span className="font-japanese">も</span> appear in a
           sentence? Fill in the blanks. If{" "}
-          <span className="font-japanese">も</span>cannot be used, then write an
-          X.
+          <span className="font-japanese">も</span> cannot be used, then write
+          an X.
         </h4>
         <div className="flex justify-center font-japanese text-xl">
           <div className="space-y-4">

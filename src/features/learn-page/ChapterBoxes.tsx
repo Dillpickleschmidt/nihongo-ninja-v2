@@ -467,7 +467,7 @@ export function ChapterBoxes() {
         >
           Kikusasaizu Video - L2-1
         </UnitButton>
-        <UnitButton id="16." type="lesson" disabled>
+        <UnitButton id="16." type="lesson" link="ne-yo">
           <span className="font-japanese font-medium">ね, よ</span>
         </UnitButton>
         <UnitButton

@@ -202,7 +202,7 @@ export function ChapterBoxes() {
         >
           Everyday Expressions
         </UnitButton>
-        <UnitButton id="4." type="lesson">
+        <UnitButton id="4." type="lesson" link="/learn/chapter-1/jpdb">
           jpdb.io Flashcards
         </UnitButton>
         <UnitButton

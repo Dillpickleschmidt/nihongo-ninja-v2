@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme/theme-provider"
 import Navbar from "@/features/navbar/Navbar"
 import { GlobalContextProvider } from "@/context/GlobalContext"
 import { inter, japanese, honk } from "@/utils/fonts"
+import { Toaster } from "@/components/ui/sonner"
 
 export const metadata: Metadata = {
   title: "Nihongo Ninja",
@@ -29,6 +30,7 @@ export default function RootLayout({
           <GlobalContextProvider>
             <Navbar />
             {children}
+            <Toaster position="bottom-center" richColors />
           </GlobalContextProvider>
         </ThemeProvider>
       </body>

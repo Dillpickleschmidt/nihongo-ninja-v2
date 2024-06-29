@@ -34,6 +34,7 @@
     "react-dom": "^19.0.0-rc-935180c7e0-20240524",
     "react-hook-form": "^7.51.5",
     "server-only": "^0.0.1",
+    "sonner": "^1.5.0",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.23.8"
@@ -69,6 +70,10 @@
       "react-dom": "$react-dom"
     },
     "@radix-ui/react-toast": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "sonner": {
       "react": "$react",
       "react-dom": "$react-dom"
     },

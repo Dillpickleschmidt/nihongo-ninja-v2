@@ -1,5 +1,8 @@
 import ContentBox from "@/components/ContentBox"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import YouTubeVideo from "@/features/youtube/YouTube"
+import APIKeyForm from "./components/APIKeyForm"
 
 export default function page() {
   return (
@@ -45,7 +48,6 @@ export default function page() {
               Link to jpdb.io
             </a>
           </h3>
-
           <h2 className="text-4xl font-bold">Why We Recommend jpdb.io</h2>
           <h3 className="text-xl font-semibold">
             Integrated Vocabulary and Kanji Learning
@@ -278,6 +280,12 @@ export default function page() {
                 from zero." —jpdb
               </span>
             </li>
+            <li>
+              <strong>Large Dictionary: </strong>jpdb.io is also a comprehensive
+              dictionary where you can search any word and see each kanji that
+              makes up the word, along with the meaning of each kanji. This is a
+              great way to learn new words and kanji you encounter in the wild.
+            </li>
           </ul>
 
           <h2 className="!mt-12 text-4xl font-bold">In summary</h2>
@@ -363,6 +371,44 @@ export default function page() {
             This powerful combination ensures a fun yet balanced approach to
             mastering Japanese.
           </h3>
+
+          <h3 className="!mt-12 text-2xl font-bold">How to get started?</h3>
+          <ul className="list-disc space-y-4">
+            <li>
+              <strong>Nihongo Ninja</strong> automatically adds vocabulary to
+              your jpdb decks when you encounter them, once you link your
+              account.
+            </li>
+          </ul>
+          <ol className="ml-6 list-decimal space-y-4 font-semibold">
+            <li>
+              Go to{" "}
+              <a href="https://jpdb.io/" target="_blank">
+                jpdb.io
+              </a>{" "}
+              and create an account.
+            </li>
+            <li>
+              Click the{" "}
+              <a href="https://jpdb.io/" target="_blank">
+                Settings
+              </a>{" "}
+              button in the top right (next to Logout).
+            </li>
+            <li>
+              Scroll to the very bottom and copy your API key. It should look
+              something along the lines of this:{" "}
+              <span className="text-base font-light text-muted-foreground">
+                d72a3c594fe2a5b1074b6d8f97de083c (this one's a fake key).
+              </span>{" "}
+            </li>
+            <li>
+              Paste it here and submit.
+              <div className="mt-3 flex flex-col items-center">
+                <APIKeyForm />
+              </div>
+            </li>
+          </ol>
         </div>
       </div>
     </ContentBox>

@@ -15,7 +15,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { toast } from "sonner"
 import { FormSchema } from "@/features/jpdb/actions/formSchema"
-import addAPIKey from "@/features/jpdb/actions/addAPIKey"
+import { addAPIKey } from "@/features/jpdb/actions/actions"
 import FormButton from "./FormButton"
 
 export default function APIKeyForm() {
@@ -36,7 +36,7 @@ export default function APIKeyForm() {
     } else {
       const { data: responseData, error } = response
       if (error) {
-        toast.error(error)
+        toast.error(JSON.stringify(error))
       } else {
         toast.success("API key added successfully!")
         console.log(responseData)

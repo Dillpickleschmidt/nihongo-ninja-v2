@@ -1,6 +1,4 @@
 "use server"
-import { z } from "zod"
-import { FormSchema } from "./formSchema"
 import supabaseServer from "@/lib/supabase/server"
 import { redirect } from "next/navigation"
 
@@ -10,7 +8,7 @@ type ActionResponse = {
 }
 
 export default async function addAPIKey(
-  formData: z.infer<typeof FormSchema>,
+  formData: FormData,
 ): Promise<void | ActionResponse> {
   const supabase = supabaseServer()
   const {
@@ -22,7 +20,7 @@ export default async function addAPIKey(
     redirect("/auth")
   }
 
-  const apiKey = formData.apiKey
+  const apiKey = formData.get("apiKey")
   const url = "https://jpdb.io/api/v1/ping"
   const options = {
     method: "POST",

@@ -3,7 +3,6 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 
-import { Button } from "@/components/ui/button"
 import {
   Form,
   FormControl,
@@ -17,6 +16,7 @@ import { Input } from "@/components/ui/input"
 import { toast } from "sonner"
 import { FormSchema } from "@/features/jpdb/actions/formSchema"
 import addAPIKey from "@/features/jpdb/actions/addAPIKey"
+import FormButton from "./FormButton"
 
 export default function APIKeyForm() {
   const form = useForm<z.infer<typeof FormSchema>>({
@@ -27,7 +27,7 @@ export default function APIKeyForm() {
     },
   })
 
-  async function onSubmit(data: z.infer<typeof FormSchema>) {
+  async function onSubmit(data: FormData) {
     const response = await addAPIKey(data)
     if (!response) {
       // if user is not logged in (void response)
@@ -46,7 +46,7 @@ export default function APIKeyForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="w-2/3 space-y-6">
+      <form action={onSubmit} className="w-2/3 space-y-6">
         <FormField
           control={form.control}
           name="apiKey"
@@ -65,9 +65,7 @@ export default function APIKeyForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" variant="outline">
-          Submit
-        </Button>
+        <FormButton />
       </form>
     </Form>
   )

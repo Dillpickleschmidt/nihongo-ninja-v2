@@ -6,9 +6,10 @@ import { VariantProps, cva } from "class-variance-authority"
 import { cn } from "@/utils/cn"
 import { Button } from "./ui/button"
 import { useGlobalContext } from "@/context/GlobalContext"
-import { addVocabToDeck, getJpdbVocab } from "@/features/jpdb/actions/actions"
-import { VocabEntry } from "@/types/vocab"
-import { get } from "react-hook-form"
+import { addVocabToDeck } from "@/features/jpdb/actions/actions"
+import { toast } from "sonner"
+import { getUser } from "@/lib/supabase/databaseFunctions"
+import { LoadingSpinner } from "./ui/loading-spinner"
 
 type ContentBoxProps = React.HTMLAttributes<HTMLDivElement> &
   VariantProps<typeof dialogVariants> & {
@@ -67,13 +68,57 @@ export default function ContentBox({
     window.scrollTo(0, 0)
   }, [])
 
+  async function onToastClick(jpdbDeckName: string, jpdbVocab: number[][]) {
+    toast.dismiss()
+    toast(`Adding vocab to jpdb.io`, {
+      duration: Infinity,
+      description: `→ ${jpdbDeckName}...`,
+      icon: <LoadingSpinner size={24} className="text-orange-400" />,
+    })
+    try {
+      const response = await addVocabToDeck(jpdbDeckName, jpdbVocab)
+      toast.dismiss() // Dismiss the previous toast messages
+      if (response.skippedVocabLength === 0) {
+        toast.success(
+          `Successfully added ${response.newVocabLength} vocab to jpdb.`,
+          {
+            description: `→ ${jpdbDeckName}`,
+            duration: 5000,
+          },
+        )
+      } else {
+        toast.success(
+          `Successfully added ${response.newVocabLength} new vocab to jpdb`,
+          {
+            description: `→ ${jpdbDeckName}, added ${response.newVocabLength} new vocab, skipped ${response.skippedVocabLength} existing vocab.`,
+            duration: 5000,
+          },
+        )
+      }
+    } catch {
+      toast.dismiss()
+      toast.error("Failed to add vocab to jpdb.")
+    }
+  }
+
   // Add to jpdb when bottom is reached
   useMotionValueEvent(scrollYProgress, "change", async (latest) => {
     if (latest >= 0.95 && !bottomReached && jpdbDeckName && jpdbVocab) {
       setBottomReached(true)
-      // getJpdbVocab(jpdbDeckName)
-      const response = await addVocabToDeck(jpdbDeckName, jpdbVocab)
-      console.log(response)
+      try {
+        const user = await getUser()
+        if (user) {
+          toast(`Add vocab to jpdb.io?`, {
+            duration: Infinity,
+            action: {
+              label: "Add",
+              onClick: () => onToastClick(jpdbDeckName, jpdbVocab),
+            },
+          })
+        }
+      } catch {
+        console.error("No user signed in. Can't add vocab to jpdb.")
+      }
     }
   })
 

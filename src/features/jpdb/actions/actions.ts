@@ -1,5 +1,4 @@
 "use server"
-import { getUserRedirect } from "@/lib/supabase/databaseFunctions"
 import supabaseServer from "@/lib/supabase/server"
 import { redirect } from "next/navigation"
 
@@ -147,7 +146,7 @@ export async function addVocabToDeck(deckName: string, vocab: number[][]) {
 
   // Get existing vocab in deck
   const vocabData = await getJpdbVocab(deckName)
-  const existingVocab = vocabData?.vocabulary || []
+  const existingVocab = vocabData.vocabulary || []
 
   // Filter vocab already in deck
   const newVocab = vocab.filter((v: number[]) => {
@@ -155,7 +154,18 @@ export async function addVocabToDeck(deckName: string, vocab: number[][]) {
   })
 
   // Add the new vocabulary to the deck
-  return await addVocabularyToDeck(deckId, newVocab, apiKey)
+  const addVocabularyResponse = await addVocabularyToDeck(
+    deckId,
+    newVocab,
+    apiKey,
+  )
+
+  // Return the number of new vocab added and the number of vocab skipped
+  const response = {
+    newVocabLength: newVocab.length,
+    skippedVocabLength: vocab.length - newVocab.length,
+  }
+  return response
 }
 
 export async function getJpdbVocab(deckName: string) {

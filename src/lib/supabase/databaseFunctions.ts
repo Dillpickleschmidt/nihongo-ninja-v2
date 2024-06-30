@@ -17,3 +17,16 @@ export async function getUserRedirect() {
     return user
   }
 }
+
+export async function getUser() {
+  const supabase = supabaseServer()
+  const {
+    data: { user },
+    error: supabaseError,
+  } = await supabase.auth.getUser()
+  if (supabaseError) {
+    throw supabaseError
+  } else {
+    return user
+  }
+}

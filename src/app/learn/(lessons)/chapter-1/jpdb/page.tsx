@@ -1,6 +1,4 @@
 import ContentBox from "@/components/ContentBox"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import YouTubeVideo from "@/features/youtube/YouTube"
 import APIKeyForm from "./components/APIKeyForm"
 

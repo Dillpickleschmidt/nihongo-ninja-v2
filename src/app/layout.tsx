@@ -30,7 +30,7 @@ export default function RootLayout({
           <GlobalContextProvider>
             <Navbar />
             {children}
-            <Toaster position="bottom-center" richColors />
+            <Toaster richColors />
           </GlobalContextProvider>
         </ThemeProvider>
       </body>

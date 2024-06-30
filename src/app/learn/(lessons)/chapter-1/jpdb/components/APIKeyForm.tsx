@@ -31,16 +31,15 @@ export default function APIKeyForm() {
     const response = await addAPIKey(data)
     if (!response) {
       // if user is not logged in (void response)
-      toast.error("User must be logged in to add API key.")
+      toast.error("User must be logged in to add API key.", {
+        position: "bottom-center",
+      })
       return
     } else {
-      const { data: responseData, error } = response
-      if (error) {
-        toast.error(JSON.stringify(error))
-      } else {
-        toast.success("API key added successfully!")
-        console.log(responseData)
-      }
+      toast.success("API key added successfully!", {
+        position: "bottom-center",
+      })
+      console.log(response)
     }
   }
 

@@ -130,7 +130,6 @@ async function addVocabularyToDeck(
     body: JSON.stringify({
       id: deckId,
       vocabulary: vocab,
-      occurences: [0],
       replace_existing_occurences: false,
       ignore_unknown: true,
     }),

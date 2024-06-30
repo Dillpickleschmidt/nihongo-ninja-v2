@@ -77,20 +77,22 @@ export default function ContentBox({
     })
     try {
       const response = await addVocabToDeck(jpdbDeckName, jpdbVocab)
+      const skippedVocabLength = response.skippedVocabLength
+      const newVocabLength = response.newVocabLength
       toast.dismiss() // Dismiss the previous toast messages
       if (response.skippedVocabLength === 0) {
         toast.success(
           `Successfully added ${response.newVocabLength} vocab to jpdb.`,
           {
-            description: `→ ${jpdbDeckName}`,
+            description: `${jpdbDeckName}`,
             duration: 5000,
           },
         )
       } else {
         toast.success(
-          `Successfully added ${response.newVocabLength} new vocab to jpdb`,
+          `Successfully added ${newVocabLength} new vocab to jpdb`,
           {
-            description: `→ ${jpdbDeckName}, added ${response.newVocabLength} new vocab, skipped ${response.skippedVocabLength} existing vocab.`,
+            description: `${jpdbDeckName} → added ${skippedVocabLength} new vocab, skipped ${skippedVocabLength} existing vocab.`,
             duration: 5000,
           },
         )
@@ -108,7 +110,8 @@ export default function ContentBox({
       try {
         const user = await getUser()
         if (user) {
-          toast(`Add vocab to jpdb.io?`, {
+          toast(`Add ${jpdbVocab.length} vocab to jpdb.io?`, {
+            description: `Recommended!`,
             duration: Infinity,
             action: {
               label: "Add",

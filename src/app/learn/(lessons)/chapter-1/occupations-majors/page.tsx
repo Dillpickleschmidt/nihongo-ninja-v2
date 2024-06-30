@@ -5,6 +5,19 @@ import VocabCards from "@/features/vocab-card/VocabCards"
 export default async function page() {
   const path = "chapter-1/occupations-majors"
   const data = await fetchVocabularyByPath(path)
+  const jpdbIds = [
+    [1375970, 3499299065],
+    [1198560, 97821687],
+    [1558050, 2727256350],
+    [2077500, 1226645967],
+    [1278010, 1706505088],
+    [9000027, 592891567],
+    [1251320, 4038116835],
+    [1283510, 1921103956],
+    [1505190, 4249027222],
+    [1159980, 4222937496],
+    [1326160, 3908347866],
+  ]
 
   const tableClassName = "table-fixed w-full"
   const japaneseClassName = "font-japanese text-[1.35rem] font-medium"
@@ -16,6 +29,8 @@ export default async function page() {
       // backgroundImageOpacity={5}
       variant="xl"
       nextPageLink="/learn/chapter-1/practice/occupations-majors"
+      jpdbDeckName="Nihongo Ninja: Chapter 1"
+      jpdbVocab={jpdbIds}
     >
       <h1 className="px-28 pb-6 pt-28 text-center text-4xl font-semibold">
         Occupations & Majors

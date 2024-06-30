@@ -1,11 +1,12 @@
 "use client"
 
-import { m, useScroll, useSpring } from "framer-motion"
+import { m, useMotionValueEvent, useScroll, useSpring } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
 import { VariantProps, cva } from "class-variance-authority"
 import { cn } from "@/utils/cn"
 import { Button } from "./ui/button"
 import { useGlobalContext } from "@/context/GlobalContext"
+import { addDeck } from "@/features/jpdb/actions/actions"
 
 type ContentBoxProps = React.HTMLAttributes<HTMLDivElement> &
   VariantProps<typeof dialogVariants> & {
@@ -18,6 +19,7 @@ type ContentBoxProps = React.HTMLAttributes<HTMLDivElement> &
     backgroundImageOpacity?: number
     showAlertOnClose?: boolean
     fixedElements?: React.ReactNode
+    jpdbDeckName?: string
   }
 
 export default function ContentBox({
@@ -37,11 +39,17 @@ export default function ContentBox({
   backgroundImageOpacity = 30,
   showAlertOnClose = false,
   fixedElements,
+  jpdbDeckName,
 }: ContentBoxProps) {
+  // Ref for the content scroll box
   const contentScrollRef = useRef<HTMLDivElement>(null)
+  // State for checking if the bottom of the content box has been reached
+  const [bottomReached, setBottomReached] = useState(false)
+  // Framer motion scroll progress
   const { scrollYProgress } = useScroll({
     container: contentScrollRef,
   })
+  // Framer motion spring for the progress bar
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 125,
     damping: 30,
@@ -50,10 +58,20 @@ export default function ContentBox({
   const { isHiddenContentVisible } = useGlobalContext()
   // const [touchStartY, setTouchStartY] = useState<number | null>(null)
 
+  // Do this on mount
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
+  // Send message when bottom is reached
+  useMotionValueEvent(scrollYProgress, "change", async (latest) => {
+    if (latest >= 0.95 && !bottomReached && jpdbDeckName) {
+      setBottomReached(true)
+      addDeck(jpdbDeckName)
+    }
+  })
+
+  // Global scroll event listener for scrolling the content box
   useEffect(() => {
     if (isHiddenContentVisible) return
 

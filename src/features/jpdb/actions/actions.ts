@@ -1,4 +1,5 @@
 "use server"
+import { getUser } from "@/lib/supabase/databaseFunctions"
 import supabaseServer from "@/lib/supabase/server"
 import { redirect } from "next/navigation"
 
@@ -40,38 +41,21 @@ export async function addAPIKey(formData: FormData) {
   return response
 }
 
-export async function createEmptyDeck() {
+export async function getJpdbApiKey() {
+  const user = await getUser()
   const supabase = supabaseServer()
-  const {
-    data: { user },
-    error: supabaseError,
-  } = await supabase.auth.getUser()
-
-  if (supabaseError || !user) {
-    redirect("/auth")
-  }
-  const url = "https://jpdb.io/api/v1/deck/create-empty"
-  const options = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-      Authorization: "Bearer 123",
-    },
-    body: '{"name":"NihongoNinja Test","position":0}',
-  }
-
-  const { data, error } = await myFetch(url, options)
+  const { data, error } = await supabase
+    .from("profiles")
+    .select("jpdb_api_key")
+    .eq("id", user?.id)
+    .single()
   if (error) {
-    console.error(error)
-  } else {
-    console.log(data)
+    throw error
   }
+  return data.jpdb_api_key
 }
 
 export async function getDeck(deckName: string, apiKey: string) {
-  const supabase = supabaseServer()
-
   const url = "https://jpdb.io/api/v1/list-user-decks"
   const options = {
     method: "POST",
@@ -95,4 +79,40 @@ export async function getDeck(deckName: string, apiKey: string) {
     }
   }
   return { data: null, error: "Deck not found" }
+}
+
+async function createEmptyDeck(deckName: string, apiKey: string) {
+  const supabase = supabaseServer()
+  const {
+    data: { user },
+    error: supabaseError,
+  } = await supabase.auth.getUser()
+
+  if (supabaseError || !user) {
+    redirect("/auth")
+  }
+  const url = "https://jpdb.io/api/v1/deck/create-empty"
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `Bearer ${apiKey}`,
+    },
+    body: `{"name": "${deckName}","position":0}`,
+  }
+
+  const response = await myFetch(url, options)
+  return response
+}
+
+export async function addDeck(deckName: string) {
+  const apiKey = await getJpdbApiKey()
+  const fetchedDeck = await getDeck(deckName, apiKey)
+  if (fetchedDeck.data) {
+    return { data: "Deck already exists", error: null }
+  } else {
+    const response = await createEmptyDeck(deckName, apiKey)
+    return response
+  }
 }

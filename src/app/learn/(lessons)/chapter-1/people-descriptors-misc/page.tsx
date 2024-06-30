@@ -12,6 +12,7 @@ export default async function page() {
       // backgroundImageSize="1215px"
       // backgroundImageOpacity={5}
       nextPageLink="/learn/chapter-1/people-descriptors-misc/practice"
+      jpdbDeckName="NihongoNinja: Chapter 1"
     >
       <h1 className="px-28 pb-6 pt-28 text-center text-4xl font-semibold">
         People, Descriptors, & Misc

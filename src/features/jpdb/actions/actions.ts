@@ -100,20 +100,63 @@ async function createEmptyDeck(deckName: string, apiKey: string) {
   return [deckName, response.id]
 }
 
-export async function addDeck(deckName: string) {
+async function ensureDeckExists(deckName: string) {
   try {
-    const apiKey = await getJpdbApiKey()
-    const getDeckData = await getDeck(deckName, apiKey)
-    return getDeckData
+    return await getDeck(deckName)
   } catch (error) {
     if (error instanceof Error && error.message === "Deck not found") {
-      console.log("here")
+      console.log("Creating new deck")
       const apiKey = await getJpdbApiKey()
       return await createEmptyDeck(deckName, apiKey)
     } else {
       throw error
     }
   }
+}
+
+async function addVocabularyToDeck(
+  deckId: number,
+  vocab: number[][],
+  apiKey: string,
+) {
+  const url = "https://jpdb.io/api/v1/deck/add-vocabulary"
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      id: deckId,
+      vocabulary: vocab,
+      occurences: [0],
+      replace_existing_occurences: false,
+      ignore_unknown: true,
+    }),
+  }
+
+  return await myFetch(url, options)
+}
+
+export async function addVocabToDeck(deckName: string, vocab: number[][]) {
+  const apiKey = await getJpdbApiKey()
+
+  // Ensure deck exists and get its ID
+  const deckData = await ensureDeckExists(deckName)
+  const deckId = deckData[1]
+
+  // Get existing vocab in deck
+  const vocabData = await getJpdbVocab(deckName)
+  const existingVocab = vocabData?.vocabulary || []
+
+  // Filter vocab already in deck
+  const newVocab = vocab.filter((v: number[]) => {
+    return !existingVocab.some((existing: number[]) => v[0] === existing[0])
+  })
+
+  // Add the new vocabulary to the deck
+  return await addVocabularyToDeck(deckId, newVocab, apiKey)
 }
 
 export async function getJpdbVocab(deckName: string) {
@@ -130,43 +173,6 @@ export async function getJpdbVocab(deckName: string) {
       Authorization: `Bearer ${apiKey}`,
     },
     body: `{"id":${deckId},"fetch_occurences":false}`,
-  }
-
-  return await myFetch(url, options)
-}
-
-export async function addVocabToDeck(deckName: string, vocab: number[][]) {
-  // Get existing vocab in deck
-  const vocabData = await getJpdbVocab(deckName)
-  const existingVocab = vocabData?.vocabulary || []
-
-  // Filter vocab already in deck
-  const newVocab = vocab.filter((v: number[]) => {
-    return !existingVocab.some((existing: number[]) => v[0] === existing[0])
-  })
-
-  // Get jpdb API key for current user
-  const apiKey = await getJpdbApiKey()
-
-  // Add deck if it doesn't exist
-  const addDeckData = await addDeck(deckName)
-  const deckId = addDeckData[1]
-
-  const url = "https://jpdb.io/api/v1/deck/add-vocabulary"
-  const options = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-      Authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify({
-      id: deckId,
-      vocabulary: newVocab,
-      occurences: [0],
-      replace_existing_occurences: false,
-      ignore_unknown: true,
-    }),
   }
 
   return await myFetch(url, options)

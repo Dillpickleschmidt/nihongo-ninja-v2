@@ -67,7 +67,10 @@ export default function ContentBox({
   useMotionValueEvent(scrollYProgress, "change", async (latest) => {
     if (latest >= 0.95 && !bottomReached && jpdbDeckName) {
       setBottomReached(true)
-      addDeck(jpdbDeckName)
+      const response = await addDeck(jpdbDeckName)
+      if (response.error) {
+        console.error(response.error)
+      }
     }
   })
 

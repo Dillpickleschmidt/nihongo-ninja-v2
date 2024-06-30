@@ -42,17 +42,24 @@ export async function addAPIKey(formData: FormData) {
 }
 
 export async function getJpdbApiKey() {
-  const user = await getUser()
   const supabase = supabaseServer()
+  const {
+    data: { user },
+    error: supabaseError,
+  } = await supabase.auth.getUser()
+
+  if (supabaseError || !user) {
+    return { data: null, error: "User must be logged in to add API key." }
+  }
   const { data, error } = await supabase
     .from("profiles")
     .select("jpdb_api_key")
     .eq("id", user?.id)
     .single()
   if (error) {
-    throw error
+    return { data: null, error }
   }
-  return data.jpdb_api_key
+  return { data: data.jpdb_api_key, error: null }
 }
 
 export async function getDeck(deckName: string, apiKey: string) {
@@ -89,7 +96,7 @@ async function createEmptyDeck(deckName: string, apiKey: string) {
   } = await supabase.auth.getUser()
 
   if (supabaseError || !user) {
-    redirect("/auth")
+    return { data: null, error: "User must be logged in to add API key." }
   }
   const url = "https://jpdb.io/api/v1/deck/create-empty"
   const options = {
@@ -107,7 +114,10 @@ async function createEmptyDeck(deckName: string, apiKey: string) {
 }
 
 export async function addDeck(deckName: string) {
-  const apiKey = await getJpdbApiKey()
+  const { data: apiKey, error: apiKeyError } = await getJpdbApiKey()
+  if (apiKeyError) {
+    return { data: null, error: apiKeyError }
+  }
   const fetchedDeck = await getDeck(deckName, apiKey)
   if (fetchedDeck.data) {
     return { data: "Deck already exists", error: null }

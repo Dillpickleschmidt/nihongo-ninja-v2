@@ -1,68 +1,66 @@
 "use server"
-import { getUser } from "@/lib/supabase/databaseFunctions"
+import { getUserRedirect } from "@/lib/supabase/databaseFunctions"
 import supabaseServer from "@/lib/supabase/server"
 import { redirect } from "next/navigation"
 
-type ActionResponse = {
-  data: any | null
-  error: string | null
-}
-
-async function myFetch(
-  url: string,
-  options: RequestInit,
-): Promise<ActionResponse> {
+async function myFetch(url: string, options: RequestInit): Promise<any> {
   const response = await fetch(url, options)
   if (!response.ok) {
     const error = await response.text()
-    return { data: null, error }
+    throw new Error(error)
   }
-  const data = await response.json()
-  return { data, error: null }
+  return await response.json()
+}
+
+async function getSupabaseUser() {
+  const supabase = supabaseServer()
+  const { data, error } = await supabase.auth.getUser()
+  if (error || !data.user) {
+    throw new Error(error ? error.message : "User not found")
+  }
+  return data.user
 }
 
 export async function addAPIKey(formData: FormData) {
-  const supabase = supabaseServer()
-  const {
-    data: { user },
-    error: supabaseError,
-  } = await supabase.auth.getUser()
+  try {
+    const user = await getSupabaseUser()
+    const apiKey = formData.get("apiKey")
+    const supabase = supabaseServer()
+    const { data, error } = await supabase
+      .from("profiles")
+      .update({ jpdb_api_key: `${apiKey}` })
+      .eq("id", user.id)
+      .select()
 
-  if (supabaseError || !user) {
+    if (error) throw new Error(error.message)
+    return data
+  } catch (error) {
     redirect("/auth")
   }
-
-  const apiKey = formData.get("apiKey")
-  const response = await supabase
-    .from("profiles")
-    .update({ jpdb_api_key: `${apiKey}` })
-    .eq("id", `${user.id}`)
-    .select()
-  return response
 }
 
 export async function getJpdbApiKey() {
-  const supabase = supabaseServer()
-  const {
-    data: { user },
-    error: supabaseError,
-  } = await supabase.auth.getUser()
+  try {
+    const user = await getSupabaseUser()
+    const supabase = supabaseServer()
+    const { data, error } = await supabase
+      .from("profiles")
+      .select("jpdb_api_key")
+      .eq("id", user.id)
+      .single()
 
-  if (supabaseError || !user) {
-    return { data: null, error: "User must be logged in to add API key." }
+    if (error) throw new Error(error.message)
+    return data.jpdb_api_key
+  } catch (error) {
+    throw new Error("User must be logged in to add API key.")
   }
-  const { data, error } = await supabase
-    .from("profiles")
-    .select("jpdb_api_key")
-    .eq("id", user?.id)
-    .single()
-  if (error) {
-    return { data: null, error }
-  }
-  return { data: data.jpdb_api_key, error: null }
 }
 
-export async function getDeck(deckName: string, apiKey: string) {
+export async function getDeck(deckName: string, apiKey?: string) {
+  if (!apiKey) {
+    apiKey = await getJpdbApiKey()
+  }
+
   const url = "https://jpdb.io/api/v1/list-user-decks"
   const options = {
     method: "POST",
@@ -71,33 +69,22 @@ export async function getDeck(deckName: string, apiKey: string) {
       Accept: "application/json",
       Authorization: `Bearer ${apiKey}`,
     },
-    body: '{"fields":["name"]}',
+    body: '{"fields":["name", "id"]}',
   }
 
-  const response = await myFetch(url, options)
-  if (response.error) {
-    return response // error
-  }
-  if (response.data.decks) {
-    for (const deckGroup of response.data.decks) {
+  const data = await myFetch(url, options)
+  if (data.decks) {
+    for (const deckGroup of data.decks) {
       if (deckGroup[0] === deckName) {
-        return { data: `found deck: ${deckGroup[0]}`, error: null }
+        console.log("Existing decks: ", deckGroup)
+        return deckGroup
       }
     }
   }
-  return { data: null, error: "Deck not found" }
+  throw new Error("Deck not found")
 }
 
 async function createEmptyDeck(deckName: string, apiKey: string) {
-  const supabase = supabaseServer()
-  const {
-    data: { user },
-    error: supabaseError,
-  } = await supabase.auth.getUser()
-
-  if (supabaseError || !user) {
-    return { data: null, error: "User must be logged in to add API key." }
-  }
   const url = "https://jpdb.io/api/v1/deck/create-empty"
   const options = {
     method: "POST",
@@ -110,19 +97,77 @@ async function createEmptyDeck(deckName: string, apiKey: string) {
   }
 
   const response = await myFetch(url, options)
-  return response
+  return [deckName, response.id]
 }
 
 export async function addDeck(deckName: string) {
-  const { data: apiKey, error: apiKeyError } = await getJpdbApiKey()
-  if (apiKeyError) {
-    return { data: null, error: apiKeyError }
+  try {
+    const apiKey = await getJpdbApiKey()
+    const getDeckData = await getDeck(deckName, apiKey)
+    return getDeckData
+  } catch (error) {
+    if (error instanceof Error && error.message === "Deck not found") {
+      console.log("here")
+      const apiKey = await getJpdbApiKey()
+      return await createEmptyDeck(deckName, apiKey)
+    } else {
+      throw error
+    }
   }
-  const fetchedDeck = await getDeck(deckName, apiKey)
-  if (fetchedDeck.data) {
-    return { data: "Deck already exists", error: null }
-  } else {
-    const response = await createEmptyDeck(deckName, apiKey)
-    return response
+}
+
+export async function getJpdbVocab(deckName: string) {
+  const apiKey = await getJpdbApiKey()
+  const deckData = await getDeck(deckName, apiKey)
+
+  const deckId = deckData[1]
+  const url = "https://jpdb.io/api/v1/deck/list-vocabulary"
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `Bearer ${apiKey}`,
+    },
+    body: `{"id":${deckId},"fetch_occurences":false}`,
   }
+
+  return await myFetch(url, options)
+}
+
+export async function addVocabToDeck(deckName: string, vocab: number[][]) {
+  // Get existing vocab in deck
+  const vocabData = await getJpdbVocab(deckName)
+  const existingVocab = vocabData?.vocabulary || []
+
+  // Filter vocab already in deck
+  const newVocab = vocab.filter((v: number[]) => {
+    return !existingVocab.some((existing: number[]) => v[0] === existing[0])
+  })
+
+  // Get jpdb API key for current user
+  const apiKey = await getJpdbApiKey()
+
+  // Add deck if it doesn't exist
+  const addDeckData = await addDeck(deckName)
+  const deckId = addDeckData[1]
+
+  const url = "https://jpdb.io/api/v1/deck/add-vocabulary"
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      id: deckId,
+      vocabulary: newVocab,
+      occurences: [0],
+      replace_existing_occurences: false,
+      ignore_unknown: true,
+    }),
+  }
+
+  return await myFetch(url, options)
 }

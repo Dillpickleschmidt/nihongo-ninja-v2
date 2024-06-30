@@ -3,7 +3,7 @@
 import { redirect } from "next/navigation"
 import supabaseServer from "./server"
 
-export async function getUser() {
+export async function getUserRedirect() {
   const supabase = supabaseServer()
   const {
     data: { user },

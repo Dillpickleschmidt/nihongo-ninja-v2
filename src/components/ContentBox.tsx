@@ -6,7 +6,9 @@ import { VariantProps, cva } from "class-variance-authority"
 import { cn } from "@/utils/cn"
 import { Button } from "./ui/button"
 import { useGlobalContext } from "@/context/GlobalContext"
-import { addDeck } from "@/features/jpdb/actions/actions"
+import { addVocabToDeck, getJpdbVocab } from "@/features/jpdb/actions/actions"
+import { VocabEntry } from "@/types/vocab"
+import { get } from "react-hook-form"
 
 type ContentBoxProps = React.HTMLAttributes<HTMLDivElement> &
   VariantProps<typeof dialogVariants> & {
@@ -20,6 +22,7 @@ type ContentBoxProps = React.HTMLAttributes<HTMLDivElement> &
     showAlertOnClose?: boolean
     fixedElements?: React.ReactNode
     jpdbDeckName?: string
+    jpdbVocab?: number[][]
   }
 
 export default function ContentBox({
@@ -40,6 +43,7 @@ export default function ContentBox({
   showAlertOnClose = false,
   fixedElements,
   jpdbDeckName,
+  jpdbVocab,
 }: ContentBoxProps) {
   // Ref for the content scroll box
   const contentScrollRef = useRef<HTMLDivElement>(null)
@@ -63,14 +67,13 @@ export default function ContentBox({
     window.scrollTo(0, 0)
   }, [])
 
-  // Send message when bottom is reached
+  // Add to jpdb when bottom is reached
   useMotionValueEvent(scrollYProgress, "change", async (latest) => {
-    if (latest >= 0.95 && !bottomReached && jpdbDeckName) {
+    if (latest >= 0.95 && !bottomReached && jpdbDeckName && jpdbVocab) {
       setBottomReached(true)
-      const response = await addDeck(jpdbDeckName)
-      if (response.error) {
-        console.error(response.error)
-      }
+      // getJpdbVocab(jpdbDeckName)
+      const response = await addVocabToDeck(jpdbDeckName, jpdbVocab)
+      console.log(response)
     }
   })
 

@@ -1,6 +1,7 @@
 import ContentBox from "@/components/ContentBox"
 import YouTubeVideo from "@/features/youtube/YouTube"
 import APIKeyForm from "./components/APIKeyForm"
+import { BookPlus } from "lucide-react"
 
 export default function page() {
   return (
@@ -9,7 +10,7 @@ export default function page() {
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-1/people-descriptors-misc"
+      nextPageLink="/learn/chapter-1/kanji-numbers"
     >
       <div className="flex w-full justify-center">
         <div className="max-w-[750px] space-y-6">
@@ -378,7 +379,7 @@ export default function page() {
               account.
             </li>
           </ul>
-          <ol className="ml-6 list-decimal space-y-4 font-semibold">
+          <ol className="ml-6 list-decimal space-y-4 font-medium">
             <li>
               Go to{" "}
               <a href="https://jpdb.io/" target="_blank">
@@ -405,6 +406,31 @@ export default function page() {
               <div className="mt-3 flex flex-col items-center">
                 <APIKeyForm />
               </div>
+            </li>
+            <li>
+              When you reach the bottom of any page marked by a{" "}
+              <BookPlus
+                size={22}
+                className="inline-flex text-sky-400 saturate-[75%]"
+              />{" "}
+              <span className="text-base text-muted-foreground">
+                (excluding Chapter 0)
+              </span>
+              , <u>you'll see a popup</u> prompting you to add the vocabulary to
+              your <strong>jpdb deck</strong>. Click <strong>'Add'</strong> and
+              the cards will automatically be added to a deck named{" "}
+              <span className="text-xl font-bold">
+                Nihongo Ninja: Chapter [chapter].
+              </span>
+            </li>
+            <li>
+              We understand you may end up going at a faster pace here on
+              Nihongo Ninja than on jpdb.io, which is{" "}
+              <span className="text-xl font-bold">okay</span>. However, we'd
+              reccomend you try to fall <u>no more than a full chapter</u>{" "}
+              behind! <span className="italic">Pace yourself</span>, and make
+              sure you're <u>never missing a day</u> on <strong>jpdb</strong> so
+              you can keep a good pace here on <strong>Nihongo Ninja</strong>.
             </li>
           </ol>
         </div>

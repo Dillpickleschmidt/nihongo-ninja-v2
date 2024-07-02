@@ -26,7 +26,7 @@ export default function page() {
     {
       title: (
         <>
-          Asking Who with <span className="font-japanese">だれ</span>
+          <span className="font-japanese">だれ</span> - Who
         </>
       ),
       content: <Dare />,
@@ -68,10 +68,10 @@ export default function page() {
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
       variant="fullscreen"
-      nextPageLink="/learn/chapter-1/everyday-expressions"
+      nextPageLink="/learn/chapter-3/katakana"
       showProgressBar={false}
     >
-      <GrammarNotes gridCols={4} items={items} />
+      <GrammarNotes gridCols={3} items={items} />
     </ContentBox>
   )
 }

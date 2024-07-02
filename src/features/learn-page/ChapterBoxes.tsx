@@ -401,10 +401,18 @@ export function ChapterBoxes() {
         </UnitButton>
       </ChapterBox>
       <ChapterBox text="Chapter 2" className="bg-green-600 saturate-[65%]">
-        <UnitButton id="1." type="vocab-list" disabled>
+        <UnitButton
+          id="1."
+          type="vocab-list"
+          link="/learn/chapter-2/vocab-list"
+        >
           Chapter 2 Vocab List
         </UnitButton>
-        <UnitButton id="2." type="grammar-notes" disabled>
+        <UnitButton
+          id="2."
+          type="grammar-notes"
+          link="/learn/chapter-2/grammar-notes"
+        >
           Chapter 2 Grammar notes
         </UnitButton>
         <UnitButton id="3." type="lesson" link="/learn/chapter-2/katakana">
@@ -508,13 +516,21 @@ export function ChapterBoxes() {
         >
           MyKikitori - At a Café
         </UnitButton>
-        <UnitButton id="21." type="lesson" disabled>
+        <UnitButton id="21." type="lesson" link="/learn/chapter-2/big-numbers">
           Big Numbers
         </UnitButton>
-        <UnitButton id="22." type="lesson" disabled>
+        <UnitButton
+          id="22."
+          type="lesson"
+          link="/learn/chapter-2/japanese-money"
+        >
           Japanese Money
         </UnitButton>
-        <UnitButton id="23." type="writing" disabled>
+        <UnitButton
+          id="23."
+          type="writing"
+          link="/learn/chapter-2/practice-money"
+        >
           Practice Money
         </UnitButton>
         <UnitButton
@@ -523,6 +539,13 @@ export function ChapterBoxes() {
           link="/learn/chapter-2/my-kikitori-at-a-store"
         >
           MyKikitori - At a Store
+        </UnitButton>
+        <UnitButton
+          id="24."
+          type="practice"
+          link="/learn/chapter-2/practice/all-vocab"
+        >
+          Vocab Practice: All Vocab
         </UnitButton>
         <UnitButton id="25." type="game" disabled>
           Numbers Game 1

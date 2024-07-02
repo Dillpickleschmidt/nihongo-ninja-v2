@@ -368,12 +368,14 @@ export default async function page() {
           <ul className="list-inside list-disc space-y-3">
             <li>
               <span className="font-bold">Example: </span>
-              <span className="font-japanese text-xl">ここは教室です。</span>
-              {"->"} Here is the classroom.
+              <span className="font-japanese text-xl">
+                ここはオフィスです。
+              </span>
+              {"->"} Here is the office.
             </li>
             <li>
               <span className="font-bold">Situation: </span>When you are inside
-              the classroom.
+              the office.
             </li>
             <li>
               <span className="font-bold">Explanation: </span>Use{" "}
@@ -396,12 +398,14 @@ export default async function page() {
           <ul className="list-inside list-disc space-y-3">
             <li>
               <span className="font-bold">Example: </span>
-              <span className="font-japanese text-xl">そこは教室です。</span>
-              {"->"} There is the classroom.
+              <span className="font-japanese text-xl">
+                そこはオフィスです。
+              </span>
+              {"->"} There is the office.
             </li>
             <li>
-              <span className="font-bold">Situation: </span>When the classroom
-              is near the listener.
+              <span className="font-bold">Situation: </span>When the office is
+              near the listener.
             </li>
             <li>
               <span className="font-bold">Explanation: </span>Use{" "}
@@ -424,12 +428,14 @@ export default async function page() {
           <ul className="list-inside list-disc space-y-3">
             <li>
               <span className="font-bold">Example: </span>
-              <span className="font-japanese text-xl">あそこは教室です。</span>
-              {"->"} Over there is the classroom.
+              <span className="font-japanese text-xl">
+                あそこはオフィスです。
+              </span>
+              {"->"} Over there is the office.
             </li>
             <li>
-              <span className="font-bold">Situation: </span>When the classroom
-              is far from both you and the listener.
+              <span className="font-bold">Situation: </span>When the office is
+              far from both you and the listener.
             </li>
             <li>
               <span className="font-bold">Explanation: </span>Use{" "}
@@ -450,8 +456,10 @@ export default async function page() {
           <ul className="list-inside list-disc space-y-3">
             <li>
               <span className="font-bold">Example: </span>
-              <span className="font-japanese text-xl">教室はどこですか。</span>
-              {"->"} Where is the classroom?
+              <span className="font-japanese text-xl">
+                オフィスはどこですか。
+              </span>
+              {"->"} Where is the office?
             </li>
             <li>
               <span className="font-bold">Situation: </span>When you want to
@@ -464,10 +472,147 @@ export default async function page() {
             </li>
           </ul>
         </div>
+
+        <h2 className="text-center text-2xl font-black italic">
+          Demonstratives for People and Directions
+        </h2>
+
+        <div className="!mt-6 space-y-3">
+          <h3 className="text-2xl">
+            <span className="font-japanese text-3xl font-semibold text-green-400">
+              こちら
+            </span>{" "}
+            - <span className="font-bold text-green-400">This way/person</span>{" "}
+            <span className="text-xl italic">
+              (near the <strong>speaker</strong>)
+            </span>
+          </h3>
+          <ul className="list-inside list-disc space-y-3">
+            <li>
+              <span className="font-bold">Example: </span>
+              <span className="font-japanese text-xl">
+                こちらは田中さんです。
+              </span>
+              {"->"} This is Mr. Tanaka.
+            </li>
+            <li>
+              <span className="font-bold">Situation: </span>When introducing Mr.
+              Tanaka who is near you.
+            </li>
+            <li>
+              <span className="font-bold">Explanation: </span>Use{" "}
+              <span className="font-japanese text-xl">こちら</span> for polite
+              introductions or indicating direction close to you.
+            </li>
+          </ul>
+        </div>
+
+        <div className="!mt-6 space-y-3">
+          <h3 className="text-2xl">
+            <span className="font-japanese text-3xl font-semibold text-green-400">
+              そちら
+            </span>{" "}
+            - <span className="font-bold text-green-400">That way/person</span>{" "}
+            <span className="text-xl italic">
+              (near the <strong>listener</strong>)
+            </span>
+          </h3>
+          <ul className="list-inside list-disc space-y-3">
+            <li>
+              <span className="font-bold">Example: </span>
+              <span className="font-japanese text-xl">
+                そちらは山田さんですか。
+              </span>
+              {"->"} Is that Mr. Yamada?
+            </li>
+            <li>
+              <span className="font-bold">Situation: </span>When asking about
+              Mr. Yamada who is near the listener.
+            </li>
+            <li>
+              <span className="font-bold">Explanation: </span>Use{" "}
+              <span className="font-japanese text-xl">そちら</span> for polite
+              introductions or indicating direction close to the listener.
+            </li>
+          </ul>
+        </div>
+
+        <div className="!mt-6 space-y-3">
+          <h3 className="text-2xl">
+            <span className="font-japanese text-3xl font-semibold text-green-400">
+              あちら
+            </span>{" "}
+            -{" "}
+            <span className="font-bold text-green-400">
+              That way/person over there
+            </span>{" "}
+            <span className="text-xl italic">
+              (far from both <strong>speaker</strong> and{" "}
+              <strong>listener</strong>)
+            </span>
+          </h3>
+          <ul className="list-inside list-disc space-y-3">
+            <li>
+              <span className="font-bold">Example: </span>
+              <span className="font-japanese text-xl">
+                あちらは
+                <Furigana furigana={<span className="text-sm">ぶちょう</span>}>
+                  部長
+                </Furigana>
+                です。
+              </span>
+              {"->"} That is the department manager over there.
+            </li>
+            <li>
+              <span className="font-bold">Situation: </span>When referring to
+              someone or something far from both you and the listener.
+            </li>
+            <li>
+              <span className="font-bold">Explanation: </span>Use{" "}
+              <span className="font-japanese text-xl">あちら</span> for polite
+              introductions or indicating direction far from both the speaker
+              and the listener.
+            </li>
+          </ul>
+        </div>
+
+        <div className="!mt-6 space-y-3">
+          <h3 className="text-2xl">
+            <span className="font-japanese text-3xl font-semibold text-yellow-500">
+              どちら
+            </span>{" "}
+            -{" "}
+            <span className="font-bold text-yellow-500">Which way/person</span>{" "}
+            <span className="text-xl italic">(used for questions)</span>
+          </h3>
+          <ul className="list-inside list-disc space-y-3">
+            <li>
+              <span className="font-bold">Example: </span>
+              <span className="font-japanese text-xl">
+                どちら
+                <Furigana furigana={<span className="text-sm">さま</span>}>
+                  様
+                </Furigana>
+                ですか。
+              </span>
+              {"->"} Who are you? (very polite)
+            </li>
+            <li>
+              <span className="font-bold">Situation: </span>When asking politely
+              about someone's identity or direction.
+            </li>
+            <li>
+              <span className="font-bold">Explanation: </span>Use{" "}
+              <span className="font-japanese text-xl">どちら</span> for polite
+              questions about people or directions.
+            </li>
+          </ul>
+        </div>
+
         <p>
-          <span className="font-bold italic">Don't worry</span> if you're
-          currently struggling with these words. You'll be getting plenty of
-          practice as you continue learning Japanese.
+          <span className="font-bold italic">Don't worry</span> if you think
+          you'll struggle differentiating these words. You'll get plenty of
+          practice as you continue learning new material.
         </p>
       </div>
     </ContentBox>

@@ -103,6 +103,7 @@ type TransformedVocabEntry = VocabEntry & {
 
 export function transformVocabData(
   rawData: VocabEntry[],
+  removeDuplicateKana?: boolean,
 ): TransformedVocabEntry[] {
   const parsedHiragana = extractHiragana(rawData)
   const parsedRubyText = furiganaToRubyText(rawData)
@@ -111,6 +112,11 @@ export function transformVocabData(
   rawData.forEach((entry, index) => {
     const hiragana = parsedHiragana[index]
     const rubyText = parsedRubyText[index]
+
+    // if the kana and word are the same, remove the kana
+    if (removeDuplicateKana && hiragana && hiragana[0] === entry.word) {
+      hiragana.shift()
+    }
 
     result.push({
       ...entry,

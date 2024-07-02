@@ -34,20 +34,24 @@ export default function page() {
         <p>
           Generally speaking, we don't expect you to memorize the kanji for
           words until <strong>Chapter 3</strong>, but you will be adding words
-          to and practicing on <strong>jpdb.io</strong> well before then. That
-          way, you'll hit the ground running when it's time to get serious with
-          kanji.
+          to and practicing on <strong>jpdb.io</strong> everyday from this point
+          on. That way, you'll hit the ground running when it's time to get
+          serious with kanji.
         </p>
         <p>
-          However, in this case, we're making an exception. These first 10
-          numbers are so frequently used that it's worth mastering the kanji
-          early. Not only that, but they're actually{" "}
+          However, we're making an exception now. These first 10 numbers are so
+          frequently used that it's worth mastering them right now on Nihongo
+          Ninja, and we'll expect you to know them going forward{" "}
+          <span className="text-base text-muted-foreground">
+            (you'll still review them on jpdb)
+          </span>
+          . The reason being that they're actually{" "}
           <span className="font-bold italic">much</span> easier to read than the
           hiragana{" "}
           <span className="text-base text-muted-foreground">
             (once you get used to them)
           </span>
-          .
+          , so we're actually making it easier for you.
         </p>
         <div className="flex items-center justify-center text-3xl">
           <div className="mr-4 font-japanese text-5xl">一</div>
@@ -64,7 +68,7 @@ export default function page() {
           <div>{"->"} Two</div>
         </div>
         <p>
-          A pictograph of two lines. Wow, this isn't that hard.{" "}
+          A pictograph of <strong>two</strong> lines. Wow, this isn't that hard.{" "}
           <span>( ‾́ ◡ ‾́ )</span>
         </p>
 
@@ -72,7 +76,9 @@ export default function page() {
           <div className="mr-4 font-japanese text-5xl">三</div>
           <div>{"->"} Three</div>
         </div>
-        <p>A pictograph of three lines.</p>
+        <p>
+          A pictograph of <strong>three</strong> lines.
+        </p>
 
         <h4 className="font-bold">
           Now, it gets weirder. Before we get to four, let's learn these kanji
@@ -224,14 +230,18 @@ export default function page() {
           <span className="font-black">n</span> with a tiny{" "}
           <span className="font-black">i</span> attached at the end (where it
           flares up). What do the letters <span className="font-black">n</span>{" "}
-          and <span className="font-black">i</span> start spelling? Why, the
+          and <span className="font-black">i</span> start spelling? Yep, the
           word <strong>nine</strong>.
         </p>
-        <p>
-          A woman in the doggie style position, waiting for my{" "}
+        {/* <p>
+          A woman in the doggie style position, waiting for{" "}
           <span className="font-bold italic tracking-wider">nine</span> inches.
           If only she knew back then she would get pregnant and would have to
           carry a baby for <strong>nine</strong> months!
+        </p> */}
+        <p>
+          A person in the doggie style position, waiting for (insert{" "}
+          <strong>nine</strong> [unit of measurement] joke here).
         </p>
 
         <div className="flex items-center justify-center text-3xl">

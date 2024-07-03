@@ -1,5 +1,4 @@
 "use client"
-import React from "react"
 import { VariantProps } from "class-variance-authority"
 import { cn } from "@/utils/cn"
 import { cva } from "class-variance-authority"
@@ -8,7 +7,9 @@ import FixedElements from "./components/FixedElements"
 import BackgroundImage from "./components/BackgroundImage"
 import ProgressBar from "./components/ProgressBar"
 import NextButton from "./components/NextButton"
+import PrintButton from "./components/PrintButton"
 import { useContentBoxLogic } from "./hooks/useContentBoxLogic"
+import CloseButton from "./components/CloseButton"
 
 type ContentBoxProps = React.HTMLAttributes<HTMLDivElement> &
   VariantProps<typeof dialogVariants> & {
@@ -75,7 +76,11 @@ export default function ContentBox({
             <NextButton nextButton={nextButton} nextPageLink={nextPageLink} />
           </div>
         </ScrollableContent>
-        <FixedElements>{fixedElements}</FixedElements>
+        <FixedElements>
+          <PrintButton contentRef={contentScrollRef} />
+          <CloseButton showAlertOnClose={showAlertOnClose} />
+          {fixedElements}
+        </FixedElements>
       </div>
     </div>
   )

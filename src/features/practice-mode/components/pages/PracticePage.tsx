@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/types"
 import CardTypeSwitch from "../CardTypeSwitch"
 import { handleNextQuestion } from "../cardHandlers"
-import ContentBox from "@/components/ContentBox"
+import ContentBox from "@/features/content-box/ContentBox"
 
 type PracticePageProps = {
   activeCards: Card[]

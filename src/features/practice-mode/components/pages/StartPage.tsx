@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { usePracticeModeContext } from "../../context/PracticeModeContext"
-import ContentBox from "@/components/ContentBox"
+import ContentBox from "@/features/content-box/ContentBox"
 import DeckSettingsDialog from "../DeckSettingsDialog"
 import { Settings } from "lucide-react"
 

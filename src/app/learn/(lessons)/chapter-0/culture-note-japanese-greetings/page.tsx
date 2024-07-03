@@ -1,4 +1,4 @@
-import ContentBox from "@/components/ContentBox"
+import ContentBox from "@/features/content-box/ContentBox"
 
 export default function page() {
   return (

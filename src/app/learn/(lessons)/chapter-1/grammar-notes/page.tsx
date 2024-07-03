@@ -1,4 +1,4 @@
-import ContentBox from "@/components/ContentBox"
+import ContentBox from "@/features/content-box/ContentBox"
 import GrammarNotes from "@/features/grammar-notes/GrammarNotes"
 import XwaYdesu from "./components/XwaYdesu"
 import KaParticle from "./components/KaParticle"

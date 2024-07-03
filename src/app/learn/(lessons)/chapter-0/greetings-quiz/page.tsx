@@ -1,4 +1,4 @@
-import ContentBox from "@/components/ContentBox"
+import ContentBox from "@/features/content-box/ContentBox"
 import PictureQuizWrapper from "@/features/picture-quiz/PictureQuizWrapper"
 import React from "react"
 

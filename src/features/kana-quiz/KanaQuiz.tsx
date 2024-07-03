@@ -1,5 +1,5 @@
 "use client"
-import ContentBox from "@/components/ContentBox"
+import ContentBox from "@/features/content-box/ContentBox"
 import { Button } from "@/components/ui/button"
 import CharacterBox from "@/features/kana-quiz/components/CharacterBox"
 import { useKanaQuiz } from "@/features/kana-quiz/hooks/useKanaQuiz"

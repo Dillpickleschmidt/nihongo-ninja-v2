@@ -1,4 +1,4 @@
-import ContentBox from "@/components/ContentBox"
+import ContentBox from "@/features/content-box/ContentBox"
 import YouTubeVideo from "@/features/youtube/YouTube"
 
 export default function page() {

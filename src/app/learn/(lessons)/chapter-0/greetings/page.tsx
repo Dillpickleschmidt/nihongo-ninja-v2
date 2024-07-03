@@ -1,4 +1,4 @@
-import ContentBox from "@/components/ContentBox"
+import ContentBox from "@/features/content-box/ContentBox"
 import VocabCards from "@/features/vocab-card/VocabCards"
 import SelectText from "@/components/text/MultipleChoiceText"
 import { fetchVocabularyByPath } from "@/features/practice-mode/components/fetchVocabByPath"

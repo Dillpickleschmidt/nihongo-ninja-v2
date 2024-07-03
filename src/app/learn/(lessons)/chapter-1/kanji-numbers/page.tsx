@@ -1,4 +1,4 @@
-import ContentBox from "@/components/ContentBox"
+import ContentBox from "@/features/content-box/ContentBox"
 import CustomImage from "@/components/CustomImage"
 import { AspectRatio } from "@/components/ui/aspect-ratio"
 

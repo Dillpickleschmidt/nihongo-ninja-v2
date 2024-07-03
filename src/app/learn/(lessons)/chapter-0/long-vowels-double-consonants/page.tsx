@@ -1,4 +1,4 @@
-import ContentBox from "@/components/ContentBox"
+import ContentBox from "@/features/content-box/ContentBox"
 import PortraitIcon from "@/components/PortraitIcon"
 import YouTubeVideo from "@/features/youtube/YouTube"
 

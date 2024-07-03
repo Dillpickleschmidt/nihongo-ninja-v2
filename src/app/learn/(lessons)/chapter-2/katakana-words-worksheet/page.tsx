@@ -1,4 +1,4 @@
-import ContentBox from "@/components/ContentBox"
+import ContentBox from "@/features/content-box/ContentBox"
 import CustomTextArea from "@/components/CustomTextArea"
 import Furigana from "@/components/text/Furigana"
 import { Input } from "@/components/ui/input"

@@ -1,4 +1,4 @@
-import ContentBox from "@/components/ContentBox"
+import ContentBox from "@/features/content-box/ContentBox"
 import MinutesChart1 from "@/features/charts/MinutesChart1"
 import MinutesChart2 from "@/features/charts/MinutesChart2"
 

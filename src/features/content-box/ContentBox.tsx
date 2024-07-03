@@ -4,12 +4,12 @@ import { m, useMotionValueEvent, useScroll, useSpring } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
 import { VariantProps, cva } from "class-variance-authority"
 import { cn } from "@/utils/cn"
-import { Button } from "./ui/button"
+import { Button } from "@/components/ui/button"
 import { useGlobalContext } from "@/context/GlobalContext"
 import { addVocabToDeck } from "@/features/jpdb/actions/actions"
 import { toast } from "sonner"
 import { getUser } from "@/lib/supabase/databaseFunctions"
-import { LoadingSpinner } from "./ui/loading-spinner"
+import { LoadingSpinner } from "@/components/ui/loading-spinner"
 
 type ContentBoxProps = React.HTMLAttributes<HTMLDivElement> &
   VariantProps<typeof dialogVariants> & {

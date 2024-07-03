@@ -1,4 +1,4 @@
-import ContentBox from "@/components/ContentBox"
+import ContentBox from "@/features/content-box/ContentBox"
 import Romaji from "@/components/text/Romaji"
 import Numbers10 from "@/features/charts/Numbers10"
 import Numbers100 from "@/features/charts/Numbers100"

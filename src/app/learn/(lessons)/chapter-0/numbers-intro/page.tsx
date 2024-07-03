@@ -1,4 +1,4 @@
-import ContentBox from "@/components/ContentBox"
+import ContentBox from "@/features/content-box/ContentBox"
 import PortraitIcon from "@/components/PortraitIcon"
 import Romaji from "@/components/text/Romaji"
 import React from "react"

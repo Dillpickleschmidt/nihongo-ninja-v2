@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { usePracticeModeContext } from "../../context/PracticeModeContext"
-import ContentBox from "@/components/ContentBox"
+import ContentBox from "@/features/content-box/ContentBox"
 
 export default function FinishPage() {
   const { data } = usePracticeModeContext()

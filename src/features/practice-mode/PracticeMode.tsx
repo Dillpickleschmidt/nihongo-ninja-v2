@@ -1,5 +1,5 @@
 "use client"
-import ContentBox from "@/components/ContentBox"
+import ContentBox from "@/features/content-box/ContentBox"
 import PracticePage from "./components/pages/PracticePage"
 import StartPage from "./components/pages/StartPage"
 import ReviewPage from "./components/pages/ReviewPage"

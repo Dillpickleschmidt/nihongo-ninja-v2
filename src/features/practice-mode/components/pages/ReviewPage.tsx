@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { usePracticeModeContext } from "../../context/PracticeModeContext"
 import { AnswerCategory } from "@/types"
-import ContentBox from "@/components/ContentBox"
+import ContentBox from "@/features/content-box/ContentBox"
 
 export default function ReviewPage() {
   const {

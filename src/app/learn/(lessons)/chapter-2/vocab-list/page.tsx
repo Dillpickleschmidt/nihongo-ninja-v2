@@ -1,4 +1,4 @@
-import ContentBox from "@/components/ContentBox"
+import ContentBox from "@/features/content-box/ContentBox"
 import Things from "./components/Things"
 import WordsThatPoint from "./components/WordsThatPoint"
 import PlacesMoneyFood from "./components/PlacesMoneyFood"

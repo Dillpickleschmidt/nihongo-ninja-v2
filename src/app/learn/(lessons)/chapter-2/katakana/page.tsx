@@ -1,4 +1,4 @@
-import ContentBox from "@/components/ContentBox"
+import ContentBox from "@/features/content-box/ContentBox"
 import CustomAvatar from "@/components/CustomAvatar"
 import CustomImage from "@/components/CustomImage"
 import PortraitIcon from "@/components/PortraitIcon"

@@ -1,4 +1,4 @@
-import ContentBox from "@/components/ContentBox"
+import ContentBox from "@/features/content-box/ContentBox"
 import BigNumbers from "@/features/charts/BigNumbersChart"
 import DigitsPractice from "./components/DigitsPractice"
 import NumbersKanjiPractice from "./components/NumbersKanjiPractice"

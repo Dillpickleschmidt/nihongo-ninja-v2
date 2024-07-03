@@ -1,4 +1,4 @@
-import ContentBox from "@/components/ContentBox"
+import ContentBox from "@/features/content-box/ContentBox"
 import Furigana from "@/components/text/Furigana"
 import Romaji from "@/components/text/Romaji"
 import TimeChart from "@/features/charts/TimeChart"

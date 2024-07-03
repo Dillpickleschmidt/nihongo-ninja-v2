@@ -106,6 +106,10 @@
     "react-frame-component": {
       "react": "$react",
       "react-dom": "$react-dom"
+    },
+    "react-to-print": {
+      "react": "$react",
+      "react-dom": "$react-dom"
     }
   }
 }

@@ -12,7 +12,7 @@ export default function page() {
     {
       title: <>Words That Point</>,
       content: <WordsThatPoint />,
-      imgSrc: "/img/chapter-1/grammar-notes/no-particle.jpg",
+      imgSrc: "/img/chapter-2/grammar-notes/words-that-point.jpg",
     },
     {
       title: (
@@ -21,7 +21,7 @@ export default function page() {
         </>
       ),
       content: <GaParticle />,
-      imgSrc: "/img/chapter-1/grammar-notes/no-particle.jpg",
+      imgSrc: "/img/chapter-2/grammar-notes/ga-particle.jpg",
     },
     {
       title: (
@@ -30,7 +30,7 @@ export default function page() {
         </>
       ),
       content: <Dare />,
-      imgSrc: "/img/chapter-1/grammar-notes/no-particle.jpg",
+      imgSrc: "/img/chapter-2/grammar-notes/dare.jpg",
     },
     {
       title: (
@@ -39,16 +39,16 @@ export default function page() {
         </>
       ),
       content: <MoParticle />,
-      imgSrc: "/img/chapter-1/grammar-notes/no-particle.jpg",
+      imgSrc: "/img/chapter-2/grammar-notes/mo-particle.jpg",
     },
     {
       title: (
         <>
-          <span className="font-japanese">じゃない</span> - The Negative Form
+          <span className="font-japanese">じゃない</span> - Negative Form
         </>
       ),
       content: <Janai />,
-      imgSrc: "/img/chapter-1/grammar-notes/no-particle.jpg",
+      imgSrc: "/img/chapter-2/grammar-notes/janai.jpg",
     },
     {
       title: (
@@ -58,7 +58,7 @@ export default function page() {
         </>
       ),
       content: <NeYoParticles />,
-      imgSrc: "/img/chapter-1/grammar-notes/no-particle.jpg",
+      imgSrc: "/img/chapter-2/grammar-notes/ne-yo.jpg",
     },
   ]
 
@@ -71,7 +71,7 @@ export default function page() {
       nextPageLink="/learn/chapter-3/katakana"
       showProgressBar={false}
     >
-      <GrammarNotes gridCols={3} items={items} />
+      <GrammarNotes items={items} />
     </ContentBox>
   )
 }

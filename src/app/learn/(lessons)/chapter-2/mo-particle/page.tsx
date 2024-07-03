@@ -309,7 +309,8 @@ export default function page() {
           </li>
         </ol>
         <p className="text-base italic text-muted-foreground">
-          *Place も after the noun there are more than one of.
+          *Place <span className="font-japanese not-italic">も</span> after the
+          noun there are more than one of.
         </p>
         <p>
           In the first sentence,{" "}

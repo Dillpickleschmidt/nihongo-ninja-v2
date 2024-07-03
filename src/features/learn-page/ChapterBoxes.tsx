@@ -642,7 +642,7 @@ export function ChapterBoxes() {
         <UnitButton id="23." type="practice" disabled>
           Practice Days & Time - Readings
         </UnitButton>
-        <UnitButton id="24." type="lesson" disabled>
+        <UnitButton id="24." type="practice" disabled>
           Practice Days & Time - Kana
         </UnitButton>
         <UnitButton id="25." type="lesson" disabled>

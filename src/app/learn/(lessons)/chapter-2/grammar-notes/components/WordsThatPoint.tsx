@@ -84,7 +84,7 @@ export default function WordsThatPoint() {
               <td className="border border-black px-4 py-1 leading-5">
                 Can stand{" "}
                 <span className="font-semibold text-emerald-500">alone</span> /
-                Must have{" "}
+                Must have a{" "}
                 <span className="font-semibold text-indigo-500">noun</span>
               </td>
               <td className="whitespace-nowrap border border-black px-4 py-1 text-center font-japanese text-lg">

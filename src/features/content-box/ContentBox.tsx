@@ -1,15 +1,14 @@
 "use client"
-
-import { m, useMotionValueEvent, useScroll, useSpring } from "framer-motion"
-import { useEffect, useRef, useState } from "react"
-import { VariantProps, cva } from "class-variance-authority"
+import React from "react"
+import { VariantProps } from "class-variance-authority"
 import { cn } from "@/utils/cn"
-import { Button } from "@/components/ui/button"
-import { useGlobalContext } from "@/context/GlobalContext"
-import { addVocabToDeck } from "@/features/jpdb/actions/actions"
-import { toast } from "sonner"
-import { getUser } from "@/lib/supabase/databaseFunctions"
-import { LoadingSpinner } from "@/components/ui/loading-spinner"
+import { cva } from "class-variance-authority"
+import ScrollableContent from "./components/ScrollableContent"
+import FixedElements from "./components/FixedElements"
+import BackgroundImage from "./components/BackgroundImage"
+import ProgressBar from "./components/ProgressBar"
+import NextButton from "./components/NextButton"
+import { useContentBoxLogic } from "./hooks/useContentBoxLogic"
 
 type ContentBoxProps = React.HTMLAttributes<HTMLDivElement> &
   VariantProps<typeof dialogVariants> & {
@@ -32,11 +31,7 @@ export default function ContentBox({
   color,
   className,
   nextPageLink,
-  nextButton = (
-    <div className="mx-12 flex flex-row justify-end pb-16 pt-24">
-      <Button link={nextPageLink}>Next Lesson {"->"}</Button>
-    </div>
-  ),
+  nextButton,
   showProgressBar = true,
   backgroundImage,
   backgroundImageSize = "1200px",
@@ -46,127 +41,13 @@ export default function ContentBox({
   jpdbDeckName,
   jpdbVocab,
 }: ContentBoxProps) {
-  // Ref for the content scroll box
-  const contentScrollRef = useRef<HTMLDivElement>(null)
-  // State for checking if the bottom of the content box has been reached
-  const [bottomReached, setBottomReached] = useState(false)
-  // Framer motion scroll progress
-  const { scrollYProgress } = useScroll({
-    container: contentScrollRef,
-  })
-  // Framer motion spring for the progress bar
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 125,
-    damping: 30,
-    restDelta: 0.001,
-  })
-  const { isHiddenContentVisible } = useGlobalContext()
-  // const [touchStartY, setTouchStartY] = useState<number | null>(null)
-
-  // Do this on mount
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
-
-  async function onToastClick(jpdbDeckName: string, jpdbVocab: number[][]) {
-    toast.dismiss()
-    toast(`Adding vocab to jpdb.io`, {
-      duration: Infinity,
-      description: `→ ${jpdbDeckName}...`,
-      icon: <LoadingSpinner size={24} className="text-orange-400" />,
-    })
-    try {
-      const response = await addVocabToDeck(jpdbDeckName, jpdbVocab)
-      const skippedVocabLength = response.skippedVocabLength
-      const newVocabLength = response.newVocabLength
-      toast.dismiss() // Dismiss the previous toast messages
-      if (response.skippedVocabLength === 0) {
-        toast.success(
-          `Successfully added ${response.newVocabLength} vocab to jpdb.`,
-          {
-            description: `${jpdbDeckName}`,
-            duration: 5000,
-          },
-        )
-      } else {
-        toast.success(
-          `Successfully added ${newVocabLength} new vocab to jpdb`,
-          {
-            description: `${jpdbDeckName} → added ${skippedVocabLength} new vocab, skipped ${skippedVocabLength} existing vocab.`,
-            duration: 5000,
-          },
-        )
-      }
-    } catch {
-      toast.dismiss()
-      toast.error("Failed to add vocab to jpdb.")
-    }
-  }
-
-  // Add to jpdb when bottom is reached
-  useMotionValueEvent(scrollYProgress, "change", async (latest) => {
-    if (latest >= 0.95 && !bottomReached && jpdbDeckName && jpdbVocab) {
-      setBottomReached(true)
-      try {
-        const user = await getUser()
-        if (user) {
-          toast(`Add ${jpdbVocab.length} vocab to jpdb.io?`, {
-            description: `Recommended!`,
-            duration: Infinity,
-            action: {
-              label: "Add",
-              onClick: () => onToastClick(jpdbDeckName, jpdbVocab),
-            },
-          })
-        }
-      } catch {
-        console.error("No user signed in. Can't add vocab to jpdb.")
-      }
-    }
-  })
-
-  // Global scroll event listener for scrolling the content box
-  useEffect(() => {
-    if (isHiddenContentVisible) return
-
-    function handleGlobalScroll(event: WheelEvent) {
-      if (contentScrollRef.current) {
-        event.preventDefault()
-        contentScrollRef.current.scrollTop += event.deltaY
-      }
-    }
-
-    // function handleTouchStart(event: TouchEvent) {
-    //   if (event.touches.length > 0) {
-    //     setTouchStartY(event.touches[0].clientY)
-    //   }
-    // }
-
-    // function handleTouchMove(event: TouchEvent) {
-    //   if (
-    //     contentScrollRef.current &&
-    //     touchStartY !== null &&
-    //     event.touches[0].clientY > touchStartY
-    //   ) {
-    //     contentScrollRef.current.scrollTop +=
-    //       event.touches[0].clientY - touchStartY
-    //     setTouchStartY(event.touches[0].clientY) // Update touchStartY to current touch position
-    //   }
-    // }
-
-    window.addEventListener("wheel", handleGlobalScroll, { passive: false })
-    // window.addEventListener("touchstart", handleTouchStart, { passive: true })
-    // window.addEventListener("touchmove", handleTouchMove, { passive: true })
-
-    return () => {
-      window.removeEventListener("wheel", handleGlobalScroll)
-      // window.removeEventListener("touchstart", handleTouchStart)
-      // window.removeEventListener("touchmove", handleTouchMove)
-    }
-  }, [
+  const {
+    contentScrollRef,
+    bottomReached,
+    scaleX,
     isHiddenContentVisible,
-    // touchStartY
-  ])
+    handleGlobalScroll,
+  } = useContentBoxLogic(jpdbDeckName, jpdbVocab)
 
   return (
     <div>
@@ -179,35 +60,22 @@ export default function ContentBox({
           transform: "translate(50%,-50%)",
         }}
       >
-        <div
+        <ScrollableContent
           ref={contentScrollRef}
-          className={`h-full w-full ${!isHiddenContentVisible ? "overflow-y-scroll" : "overflow-hidden"} scrollbar:hidden`}
+          isHiddenContentVisible={isHiddenContentVisible}
         >
           <div className="relative min-h-full">
-            {backgroundImage && (
-              <div
-                className="absolute inset-0"
-                style={{
-                  backgroundImage: `url(${backgroundImage})`,
-                  backgroundRepeat: "repeat",
-                  backgroundSize: backgroundImageSize,
-                  backgroundBlendMode: "multiply",
-                  opacity: backgroundImageOpacity / 100,
-                  zIndex: -1,
-                }}
-              />
-            )}
-            {showProgressBar && (
-              <m.div
-                style={{ scaleX: scaleX }}
-                className="sticky top-[-1px] z-50 -mb-[0.1625rem] h-[0.1625rem] w-full origin-left bg-indigo-600 dark:bg-green-500"
-              ></m.div>
-            )}
+            <BackgroundImage
+              backgroundImage={backgroundImage}
+              backgroundImageSize={backgroundImageSize}
+              backgroundImageOpacity={backgroundImageOpacity}
+            />
+            {showProgressBar && <ProgressBar scaleX={scaleX} />}
             {children}
-            {nextButton}
+            <NextButton nextButton={nextButton} nextPageLink={nextPageLink} />
           </div>
-        </div>
-        <div className="fixed left-0 top-0 z-50">{fixedElements}</div>
+        </ScrollableContent>
+        <FixedElements>{fixedElements}</FixedElements>
       </div>
     </div>
   )

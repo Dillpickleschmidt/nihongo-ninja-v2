@@ -576,11 +576,15 @@ export function ChapterBoxes() {
         <UnitButton id="2." type="grammar-notes" disabled>
           Chapter 3 Grammar Notes
         </UnitButton>
-        <UnitButton id="3." type="lesson" disabled>
+        <UnitButton id="3." type="lesson" link="/learn/chapter-3/kanji">
           Introduction to Kanji
         </UnitButton>
-        <UnitButton id="4." type="lesson" disabled>
-          Breaking Down Kanji
+        <UnitButton
+          id="4."
+          type="lesson"
+          link="/learn/chapter-3/kanji-radicals"
+        >
+          Kanji Radicals
         </UnitButton>
         <UnitButton id="5." type="vocab" disabled>
           Chapter 3 Nouns

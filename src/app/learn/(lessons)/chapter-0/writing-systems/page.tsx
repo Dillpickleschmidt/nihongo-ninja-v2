@@ -23,8 +23,8 @@ export default function page() {
         <div className="mr-24 rounded-2xl border-2 border-dashed border-muted bg-card p-4 shadow-md">
           <PortraitIcon src="/img/student.png" />
           <p>
-            Wise Monk, I've heard that Japanese has three writing systems. Is
-            that really true?
+            Wise Monk, I've heard that Japanese has more than one writing
+            system. Is that really true?
           </p>
         </div>
         <div className="ml-24 rounded-2xl border-2 border-dashed border-muted bg-card p-4 shadow-md">
@@ -32,7 +32,8 @@ export default function page() {
           <p>
             <span className="text-xl">Ah</span>, young grasshopper, your
             curiosity is like a blossoming sakura tree.{" "}
-            <span className="font-semibold">Yes</span>, Japanese has three
+            <span className="font-semibold">Yes</span>, Japanese has{" "}
+            <strong>three</strong>
             writing systems, and all three can be seen in a single sentence.
           </p>
         </div>

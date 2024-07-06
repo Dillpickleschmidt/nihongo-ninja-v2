@@ -33,6 +33,8 @@ function extractHiraganaFromFurigana(furigana: string): string {
       skip = true
     } else if (char === "]") {
       skip = false
+    } else if (skip && char === " ") {
+      skip = false
     } else if (!skip && char !== " ") {
       hiragana = char + hiragana
     }
@@ -101,6 +103,7 @@ type TransformedVocabEntry = VocabEntry & {
   rubyText?: string[]
 }
 
+//
 export function transformVocabData(
   rawData: VocabEntry[],
   removeDuplicateKana?: boolean,
@@ -126,6 +129,14 @@ export function transformVocabData(
   })
 
   return result
+}
+
+// Remove the furigana property from the vocab entries
+export function removeFurigana(rawData: VocabEntry[]): VocabEntry[] {
+  return rawData.map((entry) => {
+    const { furigana, ...rest } = entry
+    return rest
+  })
 }
 
 export function vocabEntriesToCards(rawData: VocabEntry[]): Card[] {
@@ -176,7 +187,7 @@ export function SwapWordAndEnglish(entries: VocabEntry[]): VocabEntry[] {
   return entries.map((entry) => {
     return {
       ...entry,
-      word: entry.english?.[0] ?? entry.word,
+      word: entry.english?.join(", ") ?? entry.word,
       english: undefined,
       furigana: [entry.word],
     }

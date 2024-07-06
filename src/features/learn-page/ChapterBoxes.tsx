@@ -586,13 +586,21 @@ export function ChapterBoxes() {
         >
           Kanji Radicals
         </UnitButton>
-        <UnitButton id="5." type="vocab" disabled>
+        <UnitButton id="5." type="vocab" link="/learn/chapter-3/nouns">
           Chapter 3 Nouns
         </UnitButton>
-        <UnitButton id="6." type="practice" disabled>
+        <UnitButton
+          id="6."
+          type="practice"
+          link="/learn/chapter-3/practice/nouns-readings"
+        >
           Practice Nouns - Readings
         </UnitButton>
-        <UnitButton id="7." type="practice" disabled>
+        <UnitButton
+          id="7."
+          type="practice"
+          link="/learn/chapter-3/practice/nouns-kana"
+        >
           Practice Nouns - Kana
         </UnitButton>
         <UnitButton id="8." type="vocab" disabled>
@@ -640,7 +648,7 @@ export function ChapterBoxes() {
         <UnitButton id="21." type="video" disabled>
           Kikusasaizu Video - L3-2
         </UnitButton>
-        <UnitButton id="22." type="lesson" disabled>
+        <UnitButton id="22." type="vocab" disabled>
           Days of The Week & Time
         </UnitButton>
         <UnitButton id="23." type="practice" disabled>

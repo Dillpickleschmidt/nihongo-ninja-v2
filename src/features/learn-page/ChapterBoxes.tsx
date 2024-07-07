@@ -589,53 +589,95 @@ export function ChapterBoxes() {
         <UnitButton
           id="5."
           type="vocab"
-          link="/learn/chapter-3/chapter-1-2-kanji"
+          link="/learn/chapter-3/chapter-1-kanji-part-1"
         >
-          Chapter 1 & 2 Kanji
+          Chapter 1 Kanji Part 1
         </UnitButton>
         <UnitButton
           id="6."
           type="practice"
-          link="/learn/chapter-3/practice/chapter-1-2-readings"
+          link="/learn/chapter-3/practice/chapter-1-kanji-part-1"
         >
-          Practice Chapter 1 & 2 Readings
+          Practice Chapter 1 Kanji Part 1
+        </UnitButton>
+        <UnitButton
+          id="7."
+          type="vocab"
+          link="/learn/chapter-3/chapter-1-kanji-part-2"
+        >
+          Chapter 1 Kanji Part 2
+        </UnitButton>
+        <UnitButton
+          id="8."
+          type="practice"
+          link="/learn/chapter-3/practice/chapter-1-kanji-part-2"
+        >
+          Practice Chapter 1 Kanji Part 2
+        </UnitButton>
+        <UnitButton
+          id="9."
+          type="vocab"
+          link="/learn/chapter-3/chapter-1-kanji-part-3"
+        >
+          Chapter 1 Kanji Part 3
+        </UnitButton>
+        <UnitButton
+          id="10."
+          type="practice"
+          link="/learn/chapter-3/practice/chapter-1-kanji-part-3"
+        >
+          Practice Chapter 1 Kanji Part 3
+        </UnitButton>
+        <UnitButton
+          id="11."
+          type="vocab"
+          link="/learn/chapter-3/chapter-2-kanji"
+        >
+          Chapter 2 Kanji
+        </UnitButton>
+        <UnitButton
+          id="12."
+          type="practice"
+          link="/learn/chapter-3/practice/chapter-2-kanji"
+        >
+          Practice Chapter 2 Kanji
         </UnitButton>
         <UnitButton id="7." type="vocab" link="/learn/chapter-3/nouns">
           Chapter 3 Nouns
         </UnitButton>
         <UnitButton
-          id="6."
+          id="13."
           type="practice"
-          link="/learn/chapter-3/practice/nouns-readings"
+          link="/learn/chapter-3/practice/nouns-kanji"
         >
           Practice Nouns - Readings
         </UnitButton>
         <UnitButton
-          id="7."
+          id="14."
           type="practice"
           link="/learn/chapter-3/practice/nouns-kana"
         >
           Practice Nouns - Kana
         </UnitButton>
-        <UnitButton id="8." type="vocab" link="/learn/chapter-3/verbs-and-adj">
+        <UnitButton id="15." type="vocab" link="/learn/chapter-3/verbs-and-adj">
           Chapter 3 Verbs & Adj.
         </UnitButton>
         <UnitButton
-          id="9."
+          id="16."
           type="practice"
           link="/learn/chapter-3/practice/verbs-and-adj-readings"
         >
           Practice Verbs & Adj. - Readings
         </UnitButton>
         <UnitButton
-          id="10."
+          id="17."
           type="practice"
           link="/learn/chapter-3/practice/verbs-and-adj-kana"
         >
           Practice Verbs & Adj. - Kana
         </UnitButton>
         <UnitButton
-          id="11."
+          id="18."
           type="lesson"
           link="/learn/chapter-3/verb-conj-masu"
         >
@@ -643,13 +685,13 @@ export function ChapterBoxes() {
           Ichidan
         </UnitButton>
         <UnitButton
-          id="12."
+          id="19."
           type="lesson"
           link="/learn/chapter-3/negative-masu-conj"
         >
           Negative <span className="font-japanese">ます</span> Conjugation
         </UnitButton>
-        <UnitButton id="13." type="practice" disabled>
+        <UnitButton id="20." type="practice" disabled>
           Practice Pos/Neg <span className="font-japanese">ます</span>{" "}
           Conjugation
         </UnitButton>

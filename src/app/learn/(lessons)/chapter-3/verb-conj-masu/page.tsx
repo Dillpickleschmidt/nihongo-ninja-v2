@@ -4,7 +4,6 @@ import GodanEndingChart from "./components/GodanEndingChart"
 import Furigana from "@/components/text/Furigana"
 import Romaji from "@/components/text/Romaji"
 import IruEruExceptionsChart from "./components/IruEruExceptionsChart"
-import { Input } from "@/components/ui/input"
 import IruEruPractice from "./components/IruEruPractice"
 import IrregularPractice from "./components/IrregularPractice"
 

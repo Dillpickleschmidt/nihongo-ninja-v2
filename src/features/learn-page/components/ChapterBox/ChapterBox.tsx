@@ -2,7 +2,7 @@ import { twMerge } from "tailwind-merge"
 
 type ChapterBoxProps = {
   children: React.ReactNode
-  text: string
+  text: React.ReactNode
   className?: string
 }
 

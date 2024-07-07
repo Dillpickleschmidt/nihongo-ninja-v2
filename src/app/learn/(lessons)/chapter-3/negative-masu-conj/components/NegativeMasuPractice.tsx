@@ -1,8 +1,20 @@
 import { Input } from "@/components/ui/input"
 
-const verbs = ["聞く", "起きる", "寝る", "する", "来る", "帰る", "勉強する"]
+const verbs = [
+  "行く",
+  "話す",
+  "読む",
+  "見る",
+  "聞く",
+  "起きる",
+  "寝る",
+  "する",
+  "来る",
+  "帰る",
+  "勉強する",
+]
 
-export default function IrregularPractice() {
+export default function NegativeMasuPractice() {
   const randomizedVerbs = [...verbs].sort(() => Math.random() - 0.5)
 
   return (

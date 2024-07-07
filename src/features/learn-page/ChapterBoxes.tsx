@@ -586,7 +586,21 @@ export function ChapterBoxes() {
         >
           Kanji Radicals
         </UnitButton>
-        <UnitButton id="5." type="vocab" link="/learn/chapter-3/nouns">
+        <UnitButton
+          id="5."
+          type="vocab"
+          link="/learn/chapter-3/chapter-1-2-kanji"
+        >
+          Chapter 1 & 2 Kanji
+        </UnitButton>
+        <UnitButton
+          id="6."
+          type="practice"
+          link="/learn/chapter-3/practice/chapter-1-2-readings"
+        >
+          Practice Chapter 1 & 2 Readings
+        </UnitButton>
+        <UnitButton id="7." type="vocab" link="/learn/chapter-3/nouns">
           Chapter 3 Nouns
         </UnitButton>
         <UnitButton
@@ -628,27 +642,24 @@ export function ChapterBoxes() {
           Verb Conj. - <span className="font-japanese">ます</span>, Godan,
           Ichidan
         </UnitButton>
-        <UnitButton id="12." type="practice" disabled>
-          Practice Positive <span className="font-japanese">ます</span>{" "}
-          Conjugation
-        </UnitButton>
-        <UnitButton id="13." type="lesson" disabled>
+        <UnitButton
+          id="12."
+          type="lesson"
+          link="/learn/chapter-3/negative-masu-conj"
+        >
           Negative <span className="font-japanese">ます</span> Conjugation
         </UnitButton>
-        <UnitButton id="14." type="practice" disabled>
-          Practice Negative <span className="font-japanese">ます</span>{" "}
+        <UnitButton id="13." type="practice" disabled>
+          Practice Pos/Neg <span className="font-japanese">ます</span>{" "}
           Conjugation
         </UnitButton>
-        <UnitButton id="15." type="writing" disabled>
-          Verb Conj. Worksheet
-        </UnitButton>
-        <UnitButton id="16." type="lesson" disabled>
+        <UnitButton id="14." type="lesson" disabled>
           Particles - <span className="font-japanese">を, で, に, へ</span>
         </UnitButton>
-        <UnitButton id="17." type="lesson" disabled>
+        <UnitButton id="15." type="lesson" disabled>
           Word Order
         </UnitButton>
-        <UnitButton id="18." type="writing" disabled>
+        <UnitButton id="16." type="writing" disabled>
           Practice Particles
         </UnitButton>
         <UnitButton id="19." type="reading" disabled>

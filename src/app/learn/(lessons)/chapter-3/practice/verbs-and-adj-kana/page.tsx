@@ -6,7 +6,7 @@ import {
 } from "@/features/vocab-data-parsers"
 
 export default async function page() {
-  const data = await fetchVocabularyByPath("chapter-3/nouns")
+  const data = await fetchVocabularyByPath("chapter-3/verbs-and-adj")
   const kanaData = VocabEntryKanjiToKana(data)
   const swappedData = SwapWordAndEnglish(kanaData)
 

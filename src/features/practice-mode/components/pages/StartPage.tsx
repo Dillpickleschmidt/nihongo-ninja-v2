@@ -5,7 +5,7 @@ import DeckSettingsDialog from "../DeckSettingsDialog"
 import { Settings } from "lucide-react"
 
 type StartPageProps = {
-  deckName: string
+  deckName: React.ReactNode
   shuffleInput: boolean
   setShuffleInput: (value: boolean) => void
 }

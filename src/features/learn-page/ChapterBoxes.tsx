@@ -603,16 +603,28 @@ export function ChapterBoxes() {
         >
           Practice Nouns - Kana
         </UnitButton>
-        <UnitButton id="8." type="vocab" disabled>
+        <UnitButton id="8." type="vocab" link="/learn/chapter-3/verbs-and-adj">
           Chapter 3 Verbs & Adj.
         </UnitButton>
-        <UnitButton id="9." type="practice" disabled>
+        <UnitButton
+          id="9."
+          type="practice"
+          link="/learn/chapter-3/practice/verbs-and-adj-readings"
+        >
           Practice Verbs & Adj. - Readings
         </UnitButton>
-        <UnitButton id="10." type="practice" disabled>
+        <UnitButton
+          id="10."
+          type="practice"
+          link="/learn/chapter-3/practice/verbs-and-adj-kana"
+        >
           Practice Verbs & Adj. - Kana
         </UnitButton>
-        <UnitButton id="11." type="lesson" disabled>
+        <UnitButton
+          id="11."
+          type="lesson"
+          link="/learn/chapter-3/verb-conj-masu"
+        >
           Verb Conj. - <span className="font-japanese">ます</span>, Godan,
           Ichidan
         </UnitButton>

@@ -3,7 +3,7 @@ import { fetchVocabularyByPath } from "@/features/practice-mode/components/fetch
 import { removeFurigana } from "@/features/vocab-data-parsers"
 
 export default async function page() {
-  const data = await fetchVocabularyByPath("chapter-3/nouns")
+  const data = await fetchVocabularyByPath("chapter-3/verb-conj-masu")
   const removedFuriganaData = removeFurigana(data)
 
   return (

@@ -5,7 +5,7 @@ import { vocabEntriesToCards } from "../vocab-data-parsers"
 
 type PracticeModePageProps = {
   data: VocabEntry[]
-  deckName: string
+  deckName: React.ReactNode
 }
 
 export default function PracticeModePage({

@@ -10,7 +10,7 @@ import type { Card } from "@/types"
 import useDeckSplit from "./components/useDeckSplit"
 
 type PracticeModeProps = {
-  deckName: string
+  deckName: React.ReactNode
   data: Card[]
 }
 

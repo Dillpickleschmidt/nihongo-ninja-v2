@@ -1,7 +1,6 @@
-import SettingsMenu from "@/features/conjugation-practice/components/SettingsMenu"
+import ConjugationPractice from "@/features/conjugation-practice/ConjugationPage"
 import { ConjugationPracticeContextProvider } from "@/features/conjugation-practice/context/ConjugationPracticeContext"
 import ContentBox from "@/features/content-box/ContentBox"
-import WanakanaWrapper from "@/features/wanakana/WanaKana"
 
 export default function Page() {
   return (
@@ -15,9 +14,9 @@ export default function Page() {
       nextButton=""
     >
       <div className="flex w-full flex-col items-center pt-16">
-        <div className="flex w-[500px] flex-col items-center space-y-6">
+        <div className="flex w-full max-w-2xl flex-col items-center space-y-6">
           <ConjugationPracticeContextProvider>
-            <SettingsMenu />
+            <ConjugationPractice />
           </ConjugationPracticeContextProvider>
         </div>
       </div>

@@ -1,4 +1,4 @@
-export const wordData = {
+const wordData = {
   verbs: [
     { kanji: "行<rt>い</rt>く", type: "irv", eng: "go" },
     { kanji: "する", type: "irv", eng: "do, make" },
@@ -213,3 +213,5 @@ export const wordData = {
     { kanji: "必<rt>ひつ</rt>要<rt>よう</rt>", type: "na", eng: "necessary" },
   ],
 }
+
+export default wordData

@@ -13,7 +13,7 @@ export default function SettingsMenu() {
     useConjugationPracticeContext()
 
   return (
-    <div className="w-full space-y-3">
+    <div className="w-full space-y-3 px-24">
       <h1 className="text-center text-3xl font-semibold">Settings</h1>
       <div className="!mt-6 w-full space-y-3 border-b border-card-foreground pb-3 pl-1">
         <FuriganaToggle />

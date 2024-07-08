@@ -691,7 +691,11 @@ export function ChapterBoxes() {
         >
           Negative <span className="font-japanese">ます</span> Conjugation
         </UnitButton>
-        <UnitButton id="20." type="practice" disabled>
+        <UnitButton
+          id="20."
+          type="conjugation-practice"
+          link="/learn/chapter-3/practice/masu-conjugation"
+        >
           Practice Pos/Neg <span className="font-japanese">ます</span>{" "}
           Conjugation
         </UnitButton>

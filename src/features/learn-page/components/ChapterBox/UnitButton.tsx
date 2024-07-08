@@ -13,6 +13,7 @@ type UnitButtonProps = {
     | "culture-note"
     | "vocab"
     | "practice"
+    | "conjugation-practice"
     | "game"
     | "video"
     | "audio"

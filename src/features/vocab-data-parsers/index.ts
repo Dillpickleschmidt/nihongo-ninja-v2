@@ -2,83 +2,80 @@ import type { Card } from "@/types"
 import type { VocabEntry, EnhancedVocabEntry } from "@/types/vocab"
 
 /**
- * Extracts hiragana from a furigana string.
- * @param furigana - A string containing kanji with furigana in brackets.
- * @returns The extracted hiragana string.
+ * Extracts hiragana from furigana string(s).
+ * @param furigana - A string or array of strings containing kanji with furigana in brackets.
+ * @returns A hiragana string or array of hiragana strings, depending on the input type.
  */
-function extractHiraganaFromFurigana(furigana: string): string {
-  let hiragana = ""
-  let skip = false
+export function extractHiragana<T extends string | string[]>(
+  furigana: T,
+): T extends string[] ? string[] : string {
+  const extract = (text: string): string => {
+    let hiragana = ""
+    let skip = false
 
-  for (let i = furigana.length - 1; i >= 0; i--) {
-    const char = furigana[i]
-    if (char === "[") skip = true
-    else if (char === "]") skip = false
-    else if (skip && char === " ") skip = false
-    else if (!skip && char !== " ") hiragana = char + hiragana
-  }
-
-  return hiragana
-}
-
-/**
- * Converts a furigana string to HTML ruby text.
- * @param furigana - A string containing kanji with furigana in brackets.
- * @param furiganaSize - The font size for the furigana text (default: "0.75rem").
- * @returns An HTML string with ruby tags for furigana display.
- */
-function convertFuriganaToRubyHtml(
-  furigana: string,
-  furiganaSize = "0.75rem",
-): string {
-  let rubyText = ""
-  let tempArr: string[] = []
-  let foundFurigana = false
-
-  for (let i = 0; i < furigana.length; i++) {
-    const char = furigana[i]
-    tempArr.push(char)
-
-    if (char === "[") {
-      foundFurigana = true
-      rubyText += `<ruby>${tempArr.join("")}<rp>(</rp><rt><span style="font-size: ${furiganaSize};">`
-      tempArr = []
-    } else if (char === "]") {
-      rubyText += `${tempArr.join("")}</span></rt><rp>)</rp>`
-      tempArr = []
-    } else if (char === " " || i === furigana.length - 1) {
-      if (foundFurigana) {
-        rubyText += `${tempArr.join("")}</ruby>`
-      } else {
-        rubyText += tempArr.join("")
-      }
-      tempArr = []
+    for (let i = text.length - 1; i >= 0; i--) {
+      const char = text[i]
+      if (char === "[") skip = true
+      else if (char === "]") skip = false
+      else if (skip && char === " ") skip = false
+      else if (!skip && char !== " ") hiragana = char + hiragana
     }
+
+    return hiragana
   }
 
-  return rubyText.replace(/[\[\]]/g, "")
+  if (Array.isArray(furigana)) {
+    return furigana.map(extract) as T extends string[] ? string[] : string
+  } else {
+    return extract(furigana) as T extends string[] ? string[] : string
+  }
 }
 
 /**
- * Extracts hiragana from an array of furigana strings.
- * @param furiganaArr - An array of strings containing kanji with furigana in brackets.
- * @returns An array of extracted hiragana strings.
- */
-function extractHiraganaArray(furiganaArr: string[]): string[] {
-  return furiganaArr.map(extractHiraganaFromFurigana)
-}
-
-/**
- * Converts an array of furigana strings to HTML ruby text.
- * @param furiganaArr - An array of strings containing kanji with furigana in brackets.
+ * Converts furigana string(s) to HTML ruby text.
+ * @param furigana - A string or array of strings containing kanji with furigana in brackets.
  * @param furiganaSize - The font size for the furigana text (default: "0.75rem").
- * @returns An array of HTML strings with ruby tags for furigana display.
+ * @returns An HTML string or array of HTML strings with ruby tags for furigana display,
+ *          depending on the input type.
  */
-function convertFuriganaArrayToRubyHtml(
-  furiganaArr: string[],
-  furiganaSize = "0.75rem",
-): string[] {
-  return furiganaArr.map((f) => convertFuriganaToRubyHtml(f, furiganaSize))
+export function convertFuriganaToRubyHtml<T extends string | string[]>(
+  furigana: T,
+  furiganaSize?: string,
+): T extends string[] ? string[] : string {
+  const convert = (text: string): string => {
+    let rubyText = ""
+    let tempArr: string[] = []
+    let foundFurigana = false
+
+    for (let i = 0; i < text.length; i++) {
+      const char = text[i]
+      tempArr.push(char)
+
+      if (char === "[") {
+        foundFurigana = true
+        rubyText += `<ruby>${tempArr.join("")}<rp>(</rp><rt><span style="font-size: ${furiganaSize};">`
+        tempArr = []
+      } else if (char === "]") {
+        rubyText += `${tempArr.join("")}</span></rt><rp>)</rp>`
+        tempArr = []
+      } else if (char === " " || i === text.length - 1) {
+        if (foundFurigana) {
+          rubyText += `${tempArr.join("")}</ruby>`
+        } else {
+          rubyText += tempArr.join("")
+        }
+        tempArr = []
+      }
+    }
+
+    return rubyText.replace(/[\[\]]/g, "")
+  }
+
+  if (Array.isArray(furigana)) {
+    return furigana.map(convert) as T extends string[] ? string[] : string
+  } else {
+    return convert(furigana) as T extends string[] ? string[] : string
+  }
 }
 
 /**
@@ -95,10 +92,10 @@ export function enhanceVocabWithKanaAndRuby<
 ): T extends VocabEntry[] ? EnhancedVocabEntry[] : EnhancedVocabEntry {
   const enhance = (entry: VocabEntry): EnhancedVocabEntry => {
     const hiragana = entry.furigana
-      ? extractHiraganaArray(entry.furigana)
+      ? extractHiragana(entry.furigana)
       : undefined
     const rubyText = entry.furigana
-      ? convertFuriganaArrayToRubyHtml(entry.furigana)
+      ? convertFuriganaToRubyHtml(entry.furigana)
       : undefined
 
     if (removeDuplicateKana && hiragana && hiragana[0] === entry.word) {
@@ -154,9 +151,7 @@ export function convertToFlashcards(
   entries: VocabEntry | VocabEntry[],
 ): Card | Card[] {
   const convert = (entry: VocabEntry, index: number): Card => {
-    const hiraganaArr = entry.furigana
-      ? extractHiraganaArray(entry.furigana)
-      : []
+    const hiraganaArr = entry.furigana ? extractHiragana(entry.furigana) : []
 
     const answerCategories = [
       ...(hiraganaArr.length > 0
@@ -189,8 +184,7 @@ export function convertKanjiToKana<T extends VocabEntry | VocabEntry[]>(
   entries: T,
 ): T {
   const convert = (entry: VocabEntry): VocabEntry => {
-    const hiragana =
-      entry.furigana?.[0] && extractHiraganaFromFurigana(entry.furigana[0])
+    const hiragana = entry.furigana?.[0] && extractHiragana(entry.furigana[0])
     return {
       ...entry,
       word: hiragana ?? entry.word,

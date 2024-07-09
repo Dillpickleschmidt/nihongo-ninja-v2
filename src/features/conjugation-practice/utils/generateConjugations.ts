@@ -1,14 +1,5 @@
-/*
-generateConjugations does the following:
-
-It separates the conjugation logic for verbs and adjectives into separate functions (conjugateVerb and conjugateAdjective).
-For verbs, it handles godan (う-verbs), ichidan (る-verbs), and irregular verbs (する and 来る).
-For adjectives, it handles i-adjectives, na-adjectives, and the irregular adjective いい.
-It generates all the necessary conjugations: present/past, affirmative/negative, and plain/polite forms for both verbs and adjectives, as well as the て-form for verbs and the adverbial form for adjectives.
-It removes furigana from the kanji before conjugating.
-*/
-
 import { WordJSON, Conjugation } from "@/features/conjugation-practice/types"
+import { extractHiragana } from "@/features/vocab-data-parsers"
 
 /**
  * Changes the last character of a う-verb to its い sound equivalent.
@@ -50,12 +41,87 @@ function changeUtoA(char: string): string {
   return uToA[char] || char
 }
 
+// Conjugates the verb する.
+function conjugateSuru(prefix: string) {
+  return {
+    presentAffirmative: `${prefix}する`,
+    presentNegative: `${prefix}しない`,
+    pastAffirmative: `${prefix}した`,
+    pastNegative: `${prefix}しなかった`,
+    teForm: `${prefix}して`,
+  }
+}
+
 /**
- * Conjugates a verb in its different forms.
- * @param {string} base - The dictionary form of the verb.
- * @param {string} type - The type of the verb ('godan', 'ichidan', or 'irv').
- * @returns {Object} An object containing the different conjugations of the verb.
- * @throws {Error} If the verb type is unknown.
+ * Conjugates an irregular verb.
+ * @param {string} base - The dictionary form of the irregular verb.
+ * @returns {Object | null} An object containing the conjugations, or null if not irregular.
+ */
+function conjugateIrregularVerb(base: string): {
+  presentAffirmative: string
+  presentNegative: string
+  pastAffirmative: string
+  pastNegative: string
+  teForm: string
+} | null {
+  switch (base) {
+    case "行く":
+      return {
+        presentAffirmative: "いく",
+        presentNegative: "いかない",
+        pastAffirmative: "いった",
+        pastNegative: "いかなかった",
+        teForm: "いって",
+      }
+    case "する":
+      return conjugateSuru("")
+    case "来る":
+    case "くる":
+      return {
+        presentAffirmative: "くる",
+        presentNegative: "こない",
+        pastAffirmative: "きた",
+        pastNegative: "こなかった",
+        teForm: "きて",
+      }
+    case "ある":
+      return {
+        presentAffirmative: "ある",
+        presentNegative: "ない",
+        pastAffirmative: "あった",
+        pastNegative: "なかった",
+        teForm: "あって",
+      }
+    case "問う":
+      return {
+        presentAffirmative: "とう",
+        presentNegative: "とわない",
+        pastAffirmative: "とうた",
+        pastNegative: "とわなかった",
+        teForm: "とうて",
+      }
+    case "勉強する":
+      return conjugateSuru("べんきょう")
+    case "運動する":
+      return conjugateSuru("うんどう")
+    case "持って行く":
+      return {
+        presentAffirmative: "もっていく",
+        presentNegative: "もっていかない",
+        pastAffirmative: "もっていった",
+        pastNegative: "もっていかなかった",
+        teForm: "もっていって",
+      }
+    default:
+      return null
+  }
+}
+
+/**
+ * Conjugates a regular verb.
+ * @param {string} base - The dictionary form of the verb in hiragana.
+ * @param {string} type - The type of the verb ('godan' or 'ichidan').
+ * @returns {Object} An object containing the conjugations.
  */
 function conjugateVerb(
   base: string,
@@ -69,22 +135,6 @@ function conjugateVerb(
 } {
   let stem = base.slice(0, -1)
   let lastChar = base.slice(-1)
-
-  // Helper function to conjugate する verbs
-  function conjugateSuru(prefix: string) {
-    return {
-      presentAffirmative: `${prefix}する`,
-      presentNegative: `${prefix}しない`,
-      pastAffirmative: `${prefix}した`,
-      pastNegative: `${prefix}しなかった`,
-      teForm: `${prefix}して`,
-    }
-  }
-
-  // Helper function to remove all furigana tags
-  function removeFurigana(text: string): string {
-    return text.replace(/<rt>.*?<\/rt>/g, "").replace(/<ruby>|<\/ruby>/g, "")
-  }
 
   if (type === "godan") {
     return {
@@ -102,71 +152,50 @@ function conjugateVerb(
       pastNegative: stem + "なかった",
       teForm: stem + "て",
     }
-  } else if (type === "irv") {
-    // Irregular verbs
-    const cleanBase = removeFurigana(base)
-    switch (cleanBase) {
-      case "行く":
-        return {
-          presentAffirmative: "行く",
-          presentNegative: "行かない",
-          pastAffirmative: "行った",
-          pastNegative: "行かなかった",
-          teForm: "行って",
-        }
-      case "する":
-        return conjugateSuru("")
-      case "来る":
-      case "くる":
-        return {
-          presentAffirmative: "来る",
-          presentNegative: "来ない",
-          pastAffirmative: "来た",
-          pastNegative: "来なかった",
-          teForm: "来て",
-        }
-      case "ある":
-        return {
-          presentAffirmative: "ある",
-          presentNegative: "ない",
-          pastAffirmative: "あった",
-          pastNegative: "なかった",
-          teForm: "あって",
-        }
-      case "問う":
-        return {
-          presentAffirmative: "問う",
-          presentNegative: "問わない",
-          pastAffirmative: "問うた",
-          pastNegative: "問わなかった",
-          teForm: "問うて",
-        }
-      case "勉強する":
-        return conjugateSuru("勉強")
-      case "運動する":
-        return conjugateSuru("運動")
-      case "持って行く":
-        return {
-          presentAffirmative: "持って行く",
-          presentNegative: "持って行かない",
-          pastAffirmative: "持って行った",
-          pastNegative: "持って行かなかった",
-          teForm: "持って行って",
-        }
-      default:
-        throw new Error(`Unknown irregular verb: ${cleanBase}`)
-    }
   }
 
   throw new Error(`Unknown verb type: ${type}`)
 }
 
 /**
- * Conjugates an adjective in its different forms.
- * @param {string} base - The dictionary form of the adjective.
- * @param {string} type - The type of the adjective ('i', 'na', or 'ira').
- * @returns {Object} An object containing the different conjugations of the adjective.
- * @throws {Error} If the adjective type is unknown.
+ * Conjugates an irregular adjective.
+ * @param {string} base - The dictionary form of the irregular adjective.
+ * @returns {Object | null} An object containing the conjugations, or null if not irregular.
+ */
+function conjugateIrregularAdjective(base: string): {
+  presentAffirmative: string
+  presentNegative: string
+  pastAffirmative: string
+  pastNegative: string
+  adverbial: string
+} | null {
+  switch (base) {
+    case "いい":
+      return {
+        presentAffirmative: "いい",
+        presentNegative: "よくない",
+        pastAffirmative: "よかった",
+        pastNegative: "よくなかった",
+        adverbial: "よく",
+      }
+    case "かっこいい":
+      return {
+        presentAffirmative: "かっこいい",
+        presentNegative: "かっこよくない",
+        pastAffirmative: "かっこよかった",
+        pastNegative: "かっこよくなかった",
+        adverbial: "かっこよく",
+      }
+    default:
+      return null
+  }
+}
+
+/**
+ * Conjugates a regular adjective.
+ * @param {string} base - The dictionary form of the adjective in hiragana.
+ * @param {string} type - The type of the adjective ('i' or 'na').
+ * @returns {Object} An object containing the conjugations.
  */
 function conjugateAdjective(
   base: string,
@@ -195,28 +224,6 @@ function conjugateAdjective(
       pastNegative: base + "じゃなかった",
       adverbial: base + "に",
     }
-  } else if (type === "ira") {
-    // irregular adjectives
-    switch (base) {
-      case "いい":
-        return {
-          presentAffirmative: "いい",
-          presentNegative: "よくない",
-          pastAffirmative: "よかった",
-          pastNegative: "よくなかった",
-          adverbial: "よく",
-        }
-      case "かっこいい":
-        return {
-          presentAffirmative: "かっこいい",
-          presentNegative: "かっこよくない",
-          pastAffirmative: "かっこよかった",
-          pastNegative: "かっこよくなかった",
-          adverbial: "かっこよく",
-        }
-      default:
-        throw new Error(`Unknown irregular adjective: ${base}`)
-    }
   }
 
   throw new Error(`Unknown adjective type: ${type}`)
@@ -232,119 +239,138 @@ export function generateConjugations(word: WordJSON): Conjugation[] {
   const isVerb = ["godan", "ichidan", "irv"].includes(word.type)
   const isAdjective = ["i", "na", "ira"].includes(word.type)
 
-  let base = word.kanji.replace(/<rt>.*?<\/rt>/g, "") // Remove furigana
+  let base = word.kanji.replace(/\[.*?\]/g, "").replace(/\s+/g, "")
+  let baseHiragana = extractHiragana(word.kanji)
+
+  let conj
 
   if (isVerb) {
-    const verbConj = conjugateVerb(base, word.type)
+    if (word.type === "irv") {
+      conj = conjugateIrregularVerb(base)
+      if (!conj) {
+        throw new Error(`Unknown irregular verb: ${base}`)
+      }
+    } else {
+      conj = conjugateVerb(baseHiragana, word.type)
+    }
+
     conjugations.push(
       {
-        conjugations: [verbConj.presentAffirmative],
+        conjugations: [conj.presentAffirmative],
         tense: "Present",
         affirmative: true,
         polite: false,
       },
       {
-        conjugations: [verbConj.presentAffirmative + "ます"],
+        conjugations: [conj.presentAffirmative + "ます"],
         tense: "Present",
         affirmative: true,
         polite: true,
       },
       {
-        conjugations: [verbConj.presentNegative],
+        conjugations: [conj.presentNegative],
         tense: "Present",
         affirmative: false,
         polite: false,
       },
       {
-        conjugations: [verbConj.presentNegative.slice(0, -1) + "いません"],
+        conjugations: [conj.presentNegative.slice(0, -1) + "いません"],
         tense: "Present",
         affirmative: false,
         polite: true,
       },
       {
-        conjugations: [verbConj.pastAffirmative],
+        conjugations: [conj.pastAffirmative],
         tense: "Past",
         affirmative: true,
         polite: false,
       },
       {
-        conjugations: [verbConj.pastAffirmative.slice(0, -1) + "ました"],
+        conjugations: [conj.pastAffirmative.slice(0, -1) + "ました"],
         tense: "Past",
         affirmative: true,
         polite: true,
       },
       {
-        conjugations: [verbConj.pastNegative],
+        conjugations: [conj.pastNegative],
         tense: "Past",
         affirmative: false,
         polite: false,
       },
       {
-        conjugations: [verbConj.pastNegative.slice(0, -4) + "いませんでした"],
+        conjugations: [conj.pastNegative.slice(0, -4) + "いませんでした"],
         tense: "Past",
         affirmative: false,
         polite: true,
       },
       {
-        conjugations: [verbConj.teForm],
+        conjugations: [conj.teForm],
         tense: "て-form",
         affirmative: null,
         polite: null,
       },
     )
   } else if (isAdjective) {
-    const adjConj = conjugateAdjective(base, word.type)
+    if (word.type === "ira") {
+      conj = conjugateIrregularAdjective(base)
+      if (!conj) {
+        throw new Error(`Unknown irregular adjective: ${base}`)
+      }
+    } else {
+      conj = conjugateAdjective(baseHiragana, word.type)
+    }
+
     conjugations.push(
       {
-        conjugations: [adjConj.presentAffirmative],
+        conjugations: [conj.presentAffirmative],
         tense: "Present",
         affirmative: true,
         polite: false,
       },
       {
-        conjugations: [adjConj.presentAffirmative + "です"],
+        conjugations: [conj.presentAffirmative + "です"],
         tense: "Present",
         affirmative: true,
         polite: true,
       },
       {
-        conjugations: [adjConj.presentNegative],
+        conjugations: [conj.presentNegative],
         tense: "Present",
         affirmative: false,
         polite: false,
       },
       {
-        conjugations: [adjConj.presentNegative + "です"],
+        conjugations: [conj.presentNegative + "です"],
         tense: "Present",
         affirmative: false,
         polite: true,
       },
       {
-        conjugations: [adjConj.pastAffirmative],
+        conjugations: [conj.pastAffirmative],
         tense: "Past",
         affirmative: true,
         polite: false,
       },
       {
-        conjugations: [adjConj.pastAffirmative + "です"],
+        conjugations: [conj.pastAffirmative + "です"],
         tense: "Past",
         affirmative: true,
         polite: true,
       },
       {
-        conjugations: [adjConj.pastNegative],
+        conjugations: [conj.pastNegative],
         tense: "Past",
         affirmative: false,
         polite: false,
       },
       {
-        conjugations: [adjConj.pastNegative + "です"],
+        conjugations: [conj.pastNegative + "です"],
         tense: "Past",
         affirmative: false,
         polite: true,
       },
       {
-        conjugations: [adjConj.adverbial],
+        conjugations: [conj.adverbial],
         tense: "Adverb",
         affirmative: null,
         polite: null,

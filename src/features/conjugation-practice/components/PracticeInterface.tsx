@@ -9,6 +9,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import WanakanaWrapper from "@/features/wanakana/WanaKana"
+import RubyText from "./RubyText"
 
 export default function PracticeInterface() {
   const context = useConjugationPracticeContext()
@@ -25,6 +26,8 @@ export default function PracticeInterface() {
   const [feedback, setFeedback] = useState<"correct" | "incorrect" | null>(null)
   const [streak, setStreak] = useState(0)
   const [maxStreak, setMaxStreak] = useState(0)
+  const [isReadyForNext, setIsReadyForNext] = useState(false)
+  const [enteredWord, setEnteredWord] = useState("")
 
   useEffect(() => {
     // Select a new word when the component mounts or when settings change
@@ -36,21 +39,31 @@ export default function PracticeInterface() {
     e.preventDefault()
     if (!currentWord) return
 
-    const isCorrect = checkAnswer(currentWord, userInput)
-    setFeedback(isCorrect ? "correct" : "incorrect")
-
-    if (isCorrect) {
-      const newStreak = streak + 1
-      setStreak(newStreak)
-      setMaxStreak(Math.max(maxStreak, newStreak))
+    if (isReadyForNext) {
+      // Move to the next word
+      const newWord = selectWord(context)
+      setCurrentWord(newWord)
+      setUserInput("")
+      setFeedback(null)
+      setIsReadyForNext(false)
+      setEnteredWord("")
     } else {
-      setStreak(0)
-    }
+      // Check the answer
+      const isCorrect = checkAnswer(currentWord, userInput)
+      setFeedback(isCorrect ? "correct" : "incorrect")
 
-    // Select a new word for the next question
-    const newWord = selectWord(context)
-    setCurrentWord(newWord)
-    setUserInput("")
+      if (isCorrect) {
+        const newStreak = streak + 1
+        setStreak(newStreak)
+        setMaxStreak(Math.max(maxStreak, newStreak))
+      } else {
+        setStreak(0)
+      }
+
+      setIsReadyForNext(true)
+      setEnteredWord(userInput)
+      setUserInput("")
+    }
   }
 
   if (!currentWord) return <div className="text-center">Loading...</div>
@@ -59,11 +72,9 @@ export default function PracticeInterface() {
     <div className="bg-card p-6 px-32">
       <div className="mb-8 text-center">
         <h2 className="mb-2 text-3xl font-bold">
-          {
-            showFurigana
-              ? currentWord.wordJSON.kanji
-              : currentWord.wordJSON.kanji /* display without furigana */
-          }
+          <RubyText showFurigana={showFurigana} furiganaSize="1rem">
+            {currentWord.wordJSON.kanji}
+          </RubyText>
         </h2>
         {showTranslation && (
           <p
@@ -88,31 +99,55 @@ export default function PracticeInterface() {
       </div>
 
       <form onSubmit={handleSubmit} className="mb-6">
-        <WanakanaWrapper>
+        <div className="mb-4 h-24">
+          {feedback && (
+            <div
+              className={`h-full rounded-lg p-2 text-center ${
+                feedback === "correct" ? "bg-green-600" : "bg-card-foreground"
+              }`}
+            >
+              {feedback === "correct" ? (
+                <>
+                  <p className="mt-2 text-xl font-medium">Correct!</p>
+                  <p className="font-japanese text-3xl font-medium">
+                    {enteredWord}
+                  </p>
+                </>
+              ) : (
+                <>
+                  <div className="flex flex-col items-center justify-center">
+                    <div className="flex items-center">
+                      <p className="min-h-10 font-japanese text-3xl font-medium">
+                        {enteredWord}
+                      </p>
+                      <p className="ml-2 text-2xl text-red-500">✘</p>
+                    </div>
+                    <div className="flex items-center">
+                      <p className="min-h-10 font-japanese text-3xl font-medium">
+                        {currentWord.conjugation.conjugations.join(", ")}
+                      </p>
+                      <p className="ml-2 text-3xl text-green-500">●</p>
+                    </div>
+                  </div>
+                </>
+              )}
+            </div>
+          )}
+        </div>
+
+        <WanakanaWrapper onChange={(e) => setUserInput(e.target.value)}>
           <Input
             type="text"
             value={userInput}
-            onChange={(e) => setUserInput(e.target.value)}
             // placeholder="Enter conjugation"
             className="w-full font-japanese text-lg font-medium"
+            disabled={isReadyForNext}
           />
         </WanakanaWrapper>
         <Button type="submit" size="lg" className="mt-4 w-full">
-          Submit
+          {isReadyForNext ? "Next" : "Submit"}
         </Button>
       </form>
-
-      {feedback && (
-        <div
-          className={`rounded p-2 text-center ${
-            feedback === "correct"
-              ? "bg-green-100 text-green-800"
-              : "bg-red-100 text-red-800"
-          }`}
-        >
-          {feedback === "correct" ? "Correct!" : "Incorrect. Try again."}
-        </div>
-      )}
 
       {showStreak && (
         <div className="mt-6 text-center">

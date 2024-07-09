@@ -5,6 +5,7 @@ import {
 } from "@/features/conjugation-practice/types"
 import { generateConjugations } from "./generateConjugations"
 import wordData from "@/features/conjugation-practice/data/wordData"
+import { extractHiragana } from "@/features/vocab-data-parsers"
 
 export function selectWord(settings: any): Word | null {
   const {
@@ -104,10 +105,28 @@ export function selectWord(settings: any): Word | null {
 
   // Select a random word from the available words
   const randomIndex = Math.floor(Math.random() * availableWords.length)
+  console.log(
+    "Correct answers:",
+    availableWords[randomIndex].conjugation.conjugations,
+  )
   return availableWords[randomIndex]
 }
 
+/**
+ * Checks if the user's answer matches any of the correct conjugations.
+ * @param {Word} word - The current word object containing the correct conjugations.
+ * @param {string} userInput - The user's input to check.
+ * @returns {boolean} True if the answer is correct, false otherwise.
+ */
 export function checkAnswer(word: Word, userInput: string): boolean {
-  // This is a placeholder. You'll need to implement the actual answer checking logic.
-  return word.conjugation.conjugations.includes(userInput)
+  // Normalize the user input by trimming whitespace
+  const normalizedUserInput = userInput.trim()
+
+  console.log("User input:", normalizedUserInput)
+  console.log("Expected answers:", word.conjugation.conjugations)
+
+  // Check if the normalized user input matches any of the correct conjugations
+  return word.conjugation.conjugations.some(
+    (correctAnswer) => normalizedUserInput === correctAnswer,
+  )
 }

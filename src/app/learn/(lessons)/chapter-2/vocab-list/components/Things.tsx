@@ -7,11 +7,11 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { fetchVocabularyByPath } from "@/features/practice-mode/components/fetchVocabByPath"
-import { transformVocabData } from "@/features/vocab-data-parsers"
+import { enhanceVocabWithKanaAndRuby } from "@/features/vocab-data-parsers"
 
 export default async function Things() {
   const data = await fetchVocabularyByPath("chapter-2/things")
-  const convertedData = transformVocabData(data, true)
+  const enhancedData = enhanceVocabWithKanaAndRuby(data, true)
 
   return (
     <Table>
@@ -23,7 +23,7 @@ export default async function Things() {
         </TableRow>
       </TableHeader>
       <TableBody className="text-base">
-        {convertedData.map((entry, index) => (
+        {enhancedData.map((entry, index) => (
           <TableRow key={index}>
             <TableCell className="font-japanese text-xl">
               {entry.word}

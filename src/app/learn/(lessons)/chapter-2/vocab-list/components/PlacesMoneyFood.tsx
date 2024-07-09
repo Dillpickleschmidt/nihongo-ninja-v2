@@ -7,11 +7,11 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { fetchVocabularyByPath } from "@/features/practice-mode/components/fetchVocabByPath"
-import { transformVocabData } from "@/features/vocab-data-parsers"
+import { enhanceVocabWithKanaAndRuby } from "@/features/vocab-data-parsers"
 
 export default async function PlacesMoneyFood() {
   const data = await fetchVocabularyByPath("chapter-2/places-money-food")
-  const convertedData = transformVocabData(data, true)
+  const enhancedData = enhanceVocabWithKanaAndRuby(data, true)
 
   return (
     <Table>
@@ -23,13 +23,13 @@ export default async function PlacesMoneyFood() {
         </TableRow>
       </TableHeader>
       <TableBody className="text-base">
-        {convertedData.map((entry, index) => (
+        {enhancedData.map((entry, index) => (
           <TableRow key={index}>
             <TableCell className="font-japanese text-xl">
               {entry.word}
             </TableCell>
             <TableCell className="font-japanese text-xl">
-              {entry.hiragana}
+              {entry.hiragana?.[0] || ""}
             </TableCell>
             <TableCell className="text-right">
               {entry.english?.join(", ")}

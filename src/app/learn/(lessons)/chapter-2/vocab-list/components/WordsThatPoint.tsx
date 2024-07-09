@@ -7,11 +7,11 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { fetchVocabularyByPath } from "@/features/practice-mode/components/fetchVocabByPath"
-import { transformVocabData } from "@/features/vocab-data-parsers"
+import { enhanceVocabWithKanaAndRuby } from "@/features/vocab-data-parsers"
 
 export default async function WordsThatPoint() {
   const data = await fetchVocabularyByPath("chapter-2/words-that-point")
-  const convertedData = transformVocabData(data, true)
+  const enhancedData = enhanceVocabWithKanaAndRuby(data, true)
 
   return (
     <>
@@ -41,7 +41,7 @@ export default async function WordsThatPoint() {
       </Table>
       <Table>
         <TableBody className="text-base">
-          {convertedData.map((entry, index) => (
+          {enhancedData.map((entry, index) => (
             <TableRow key={index}>
               {entry.hiragana && entry.hiragana[0] === "だれ" && (
                 <>

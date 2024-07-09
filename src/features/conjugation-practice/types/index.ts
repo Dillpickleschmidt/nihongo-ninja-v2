@@ -20,12 +20,42 @@ export type Word = {
 }
 
 export type Settings = {
-  furigana: boolean
-  emoji: boolean
-  streak: boolean
-  translation: boolean
-  translationTiming: string
+  // Form types
+  normal: boolean
+  teForm: boolean
+  volitional: boolean
+  taiForm: boolean
+  tariForm: boolean
+  potential: boolean
+  imperative: boolean
+  conditional: boolean
+  passive: boolean
+  causative: boolean
+  causativePassive: boolean
+
+  // Part of speech
   verb: boolean
-  adjective: boolean
-  // Add more settings as required
+  iAdjective: boolean
+  naAdjective: boolean
+
+  // Speech level
+  polite: boolean
+  plain: boolean
+
+  // Tense
+  nonPast: boolean
+  past: boolean
+
+  // Positive/Negative
+  positive: boolean
+  negative: boolean
+
+  // Special options
+  jlptLevel: "n5" | "n4" | "n3" | "n2" | "n1"
+  leaveOutSuru: boolean
+  reverse: boolean
+  amount: number
+  showMeaning: boolean
+  noFurigana: boolean
+  emoji: boolean
 }

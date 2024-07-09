@@ -4,18 +4,14 @@ import { useState } from "react"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
-import { furiganaToRubyText } from "@/features/vocab-data-parsers"
+import { enhanceVocabWithKanaAndRuby } from "@/features/vocab-data-parsers"
+import type { VocabEntry, EnhancedVocabEntry } from "@/types/vocab"
 
 type CheckboxQuestionProps = {
   questions: string[]
   correctQuestions: string[]
   className?: string
-  horizontal?: boolean // Add the horizontal prop
-}
-
-type VocabEntry = {
-  word: string
-  furigana: string[]
+  horizontal?: boolean
 }
 
 const transformQuestionsToVocabEntries = (
@@ -31,7 +27,7 @@ export default function CheckboxQuestion({
   questions,
   correctQuestions,
   className,
-  horizontal = false, // Default value is false for vertical layout
+  horizontal = false,
 }: CheckboxQuestionProps) {
   const initialCheckedState = questions.reduce(
     (acc, question) => {
@@ -73,14 +69,13 @@ export default function CheckboxQuestion({
   }
 
   const vocabEntries = transformQuestionsToVocabEntries(questions)
-  const rubyTexts = furiganaToRubyText(vocabEntries)
+  const enhancedEntries = enhanceVocabWithKanaAndRuby(vocabEntries)
 
-  const renderQuestion = (question: string, index: number) => {
-    const rubyText = rubyTexts[index][0]
+  const renderQuestion = (entry: EnhancedVocabEntry) => {
     return (
       <span
         className={cn("font-japanese text-xl", className)}
-        dangerouslySetInnerHTML={{ __html: rubyText }}
+        dangerouslySetInnerHTML={{ __html: entry.rubyText?.[0] || entry.word }}
       />
     )
   }
@@ -92,22 +87,22 @@ export default function CheckboxQuestion({
           horizontal ? "md:flex md:flex-wrap md:space-x-6" : "space-y-3"
         }
       >
-        {questions.map((question, index) => (
+        {enhancedEntries.map((entry, index) => (
           <div
             key={index}
             className={`flex items-center ${horizontal ? "mt-3 space-x-3" : "space-x-3"}`}
           >
             <Checkbox
               id={`checkbox-${index}`}
-              checked={!!checkedQuestions[question]}
-              onCheckedChange={() => handleCheckboxChange(question)}
+              checked={!!checkedQuestions[entry.word]}
+              onCheckedChange={() => handleCheckboxChange(entry.word)}
               className="cursor-pointer"
             />
             <Label
               htmlFor={`checkbox-${index}`}
-              className={`${getTextColorClass(question)} cursor-pointer ${!horizontal && "pr-6"} py-[.0625rem] text-xl ease-out hover:scale-[102%]`}
+              className={`${getTextColorClass(entry.word)} cursor-pointer ${!horizontal && "pr-6"} py-[.0625rem] text-xl ease-out hover:scale-[102%]`}
             >
-              {renderQuestion(question, index)}
+              {renderQuestion(entry)}
             </Label>
           </div>
         ))}

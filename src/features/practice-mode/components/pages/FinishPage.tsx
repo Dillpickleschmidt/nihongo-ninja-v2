@@ -4,7 +4,7 @@ import { usePracticeModeContext } from "../../context/PracticeModeContext"
 import ContentBox from "@/features/content-box/ContentBox"
 
 export default function FinishPage() {
-  const { data } = usePracticeModeContext()
+  const { data, enabledAnswerCategories } = usePracticeModeContext()
 
   return (
     <ContentBox
@@ -38,22 +38,30 @@ export default function FinishPage() {
               <p className="text-2xl font-bold !text-orange-500 text-primary">
                 {entry.key}
               </p>
-              {entry.answerCategories.map((categoryObj, i) => (
-                <div key={i}>
-                  <p className="my-1 italic text-muted-foreground">
-                    {categoryObj.category}:
-                  </p>
-                  {categoryObj.answers.map((answer: string, j: number) => (
-                    <p key={j} className="text-xl font-bold text-primary">
-                      {categoryObj.category === "Kana" ? (
-                        <span className="font-japanese text-2xl">{answer}</span>
-                      ) : (
-                        answer
-                      )}
+              {entry.answerCategories
+                .filter(
+                  (category) =>
+                    enabledAnswerCategories.includes(category.category) &&
+                    category.answers.length > 0,
+                )
+                .map((categoryObj, i) => (
+                  <div key={i}>
+                    <p className="my-1 italic text-muted-foreground">
+                      {categoryObj.category}:
                     </p>
-                  ))}
-                </div>
-              ))}
+                    {categoryObj.answers.map((answer: string, j: number) => (
+                      <p key={j} className="text-xl font-bold text-primary">
+                        {categoryObj.category === "Kana" ? (
+                          <span className="font-japanese text-2xl">
+                            {answer}
+                          </span>
+                        ) : (
+                          answer
+                        )}
+                      </p>
+                    ))}
+                  </div>
+                ))}
               {entry.wrongAnswerCount > 0 && (
                 <p className="text-red-500">
                   You missed this question {entry.wrongAnswerCount} times

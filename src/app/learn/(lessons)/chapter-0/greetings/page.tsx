@@ -4,8 +4,8 @@ import SelectText from "@/components/text/MultipleChoiceText"
 import { fetchVocabularyByPath } from "@/features/practice-mode/components/fetchVocabByPath"
 
 export default async function page() {
-  const slug = "chapter-0/greetings-common-expressions"
-  const data = await fetchVocabularyByPath(slug)
+  const path = "chapter-0/greetings-common-expressions"
+  const data = await fetchVocabularyByPath(path)
 
   // Split the data into two parts
   const data1 = data.slice(0, 4)

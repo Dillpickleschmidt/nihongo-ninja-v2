@@ -12,7 +12,7 @@ export default function ReviewPage() {
   } = usePracticeModeContext()
 
   if (!recentlySeenCards) {
-    return
+    return null
   }
 
   // Create a Map to filter out duplicate keys and keep only the last occurrence
@@ -63,8 +63,13 @@ export default function ReviewPage() {
                 >
                   {card.key}
                 </p>
-                {card.answerCategories.map(
-                  (categoryObj: AnswerCategory, index: number) => (
+                {card.answerCategories
+                  .filter(
+                    (category) =>
+                      enabledAnswerCategories.includes(category.category) &&
+                      category.answers.length > 0,
+                  )
+                  .map((categoryObj: AnswerCategory, index: number) => (
                     <div key={index} className="mt-2">
                       <p className="my-1 italic text-muted-foreground">
                         {categoryObj.category}:
@@ -83,8 +88,7 @@ export default function ReviewPage() {
                         ),
                       )}
                     </div>
-                  ),
-                )}
+                  ))}
               </div>
               <div
                 className={`absolute right-0 h-full ${card.wrongAnswerCount > 0 ? "w-4 bg-red-500" : "w-2 bg-emerald-500/50"}`}

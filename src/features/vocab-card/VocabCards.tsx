@@ -1,7 +1,7 @@
 import VocabCard from "./components/VocabCard"
 import { VocabCardContextProvider } from "./context/VocabCardContext"
-import type { VocabEntry } from "@/types/vocab"
-import { furiganaToRubyText } from "@/features/vocab-data-parsers"
+import type { VocabEntry, EnhancedVocabEntry } from "@/types/vocab"
+import { enhanceVocabWithKanaAndRuby } from "@/features/vocab-data-parsers"
 
 type VocabCardsProps = {
   data: VocabEntry[]
@@ -14,20 +14,24 @@ export default function VocabCards({
   data,
   countOffset = 0,
   noFurigana = false,
-  furiganaSize,
+  furiganaSize = "0.75rem",
 }: VocabCardsProps) {
-  const rubyText = furiganaToRubyText(data, furiganaSize)
+  // Enhance the data with ruby text
+  const enhancedData = enhanceVocabWithKanaAndRuby(
+    data,
+    false,
+  ) as EnhancedVocabEntry[]
 
   return (
     <VocabCardContextProvider data={data}>
       <div className="m-6 space-y-6">
-        {data.map((item, index) => (
+        {enhancedData.map((item, index) => (
           <VocabCard
-            key={item.word} // Use word as the key to prevent React key error
-            index={index + countOffset} // Track the index
-            light={(index + 1) % 2 === 0} // Alternating colors
+            key={item.word}
+            index={index + countOffset}
+            light={(index + 1) % 2 === 0}
             english={item.english?.join(", ")}
-            kana={rubyText[index][0]}
+            kana={item.rubyText?.[0] || item.word}
             noFurigana={noFurigana}
             japanese={item.word}
             vocabVideo={true}
@@ -45,7 +49,6 @@ export default function VocabCards({
               )}
               {item.info && item.info.length > 0 && (
                 <>
-                  {/* <span className="font-bold italic">Info</span> */}
                   <ul
                     className={`ml-6 list-disc ${item.mnemonics && item.mnemonics.length > 0 && "pt-3"}`}
                   >

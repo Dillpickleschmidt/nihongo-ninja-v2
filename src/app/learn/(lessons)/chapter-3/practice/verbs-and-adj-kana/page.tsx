@@ -1,21 +1,20 @@
 import PracticeModePage from "@/features/practice-mode/PracticeModePage"
 import { fetchVocabularyByPath } from "@/features/practice-mode/components/fetchVocabByPath"
 import {
-  SwapWordAndEnglish,
-  VocabEntryKanjiToKana,
+  swapWordAndEnglish,
+  convertKanjiToKana,
 } from "@/features/vocab-data-parsers"
 
-export default async function page() {
+export default async function Page() {
   const data = await fetchVocabularyByPath("chapter-3/verbs-and-adj")
-  const kanaData = VocabEntryKanjiToKana(data)
-  const swappedData = SwapWordAndEnglish(kanaData)
+  const processedData = swapWordAndEnglish(convertKanjiToKana(data))
 
   return (
     <PracticeModePage
-      data={swappedData}
+      data={processedData}
       deckName={
         <>
-          Nouns <span className="text-orange-400">Kana</span>
+          Verbs & Adjectives <span className="mx-4 text-orange-400">Kana</span>
         </>
       }
     />

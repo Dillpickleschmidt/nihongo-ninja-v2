@@ -648,7 +648,7 @@ export function ChapterBoxes() {
         <UnitButton
           id="13."
           type="practice"
-          link="/learn/chapter-3/practice/nouns-kanji"
+          link="/learn/chapter-3/practice/nouns-readings"
         >
           Practice Nouns - Readings
         </UnitButton>

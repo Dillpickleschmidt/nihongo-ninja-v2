@@ -1,15 +1,18 @@
-export type Video = {
+export type Video = Partial<Database["public"]["Tables"]["videos"]["Row"]> & {
+  // Require src property (not optional)
   src: string
-  title?: string
-  origin?: string
 }
-export type VocabEntry = {
+
+// Partial makes all properties optional
+export type VocabEntry = Partial<
+  Database["public"]["Tables"]["vocabulary"]["Row"]
+> & {
+  // Require word property (not optional)
   word: string
-  furigana?: string[]
-  english?: string[]
-  mnemonics?: string[]
-  info?: string[]
-  example_sentences?: string[]
-  chapter?: number
   videos?: Video[]
+}
+
+export type EnhancedVocabEntry = VocabEntry & {
+  hiragana?: string[]
+  rubyText?: string[]
 }

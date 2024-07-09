@@ -70,8 +70,10 @@ export default function StartPage({
                 {entry.key}
               </p>
               {entry.answerCategories
-                .filter((category) =>
-                  enabledAnswerCategories.includes(category.category),
+                .filter(
+                  (category) =>
+                    enabledAnswerCategories.includes(category.category) &&
+                    category.answers.length > 0,
                 )
                 .map((categoryObj, i) => (
                   <div key={i}>

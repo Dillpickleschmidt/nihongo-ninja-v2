@@ -1,8 +1,9 @@
 "use client"
+
 import { useState } from "react"
-import { Settings } from "../types"
 import { Question, checkAnswer } from "../utils/questionUtils"
 import { generateQuestions } from "../utils/questionGenerator"
+import { useSettingsContext } from "../context/SettingsContext"
 
 type ReviewSessionState = {
   questions: Question[]
@@ -12,13 +13,14 @@ type ReviewSessionState = {
 }
 
 type ReviewSessionActions = {
-  startSession: (settings: Settings) => void
+  startSession: () => void
   submitAnswer: (answer: string) => void
   nextQuestion: () => void
   getCurrentQuestion: () => Question | null
 }
 
 export function useReviewSession(): [ReviewSessionState, ReviewSessionActions] {
+  const { settings } = useSettingsContext()
   const [state, setState] = useState<ReviewSessionState>({
     questions: [],
     currentIndex: 0,
@@ -26,7 +28,7 @@ export function useReviewSession(): [ReviewSessionState, ReviewSessionActions] {
     isComplete: false,
   })
 
-  function startSession(settings: Settings) {
+  function startSession() {
     const questions = generateQuestions(settings)
     setState({
       questions,

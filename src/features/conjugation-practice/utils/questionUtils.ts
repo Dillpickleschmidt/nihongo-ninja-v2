@@ -84,18 +84,18 @@ function getConjugations(
   partOfSpeech: string,
   type: string,
 ): string[] {
-  const neutral = type.includes("polite")
+  const polite = type.includes("polite")
   const negative = type.includes("negative")
-  const past = type.includes("past")
+  const past = !type.includes("non-")
 
   switch (type) {
     case "te-form":
       return [conjugationUtils.teForm(reading, partOfSpeech)]
     case "volitional":
-      return conjugationUtils.volitional(reading, partOfSpeech, neutral)
+      return conjugationUtils.volitional(reading, partOfSpeech, polite)
     case "potential":
       return conjugationUtils.potential(reading, partOfSpeech, {
-        neutral,
+        polite,
         negative,
         past,
       })
@@ -105,7 +105,7 @@ function getConjugations(
       return conjugationUtils.conditional(reading, partOfSpeech, negative)
     case "tai-form":
       return conjugationUtils.taiForm(reading, partOfSpeech, {
-        neutral,
+        polite,
         negative,
         past,
       })
@@ -113,25 +113,25 @@ function getConjugations(
       return conjugationUtils.tariForm(reading, partOfSpeech, negative)
     case "passive":
       return conjugationUtils.passive(reading, partOfSpeech, {
-        neutral,
+        polite,
         negative,
         past,
       })
     case "causative":
       return conjugationUtils.causative(reading, partOfSpeech, {
-        neutral,
+        polite,
         negative,
         past,
       })
     case "causative-passive":
       return conjugationUtils.causativePassive(reading, partOfSpeech, {
-        neutral,
+        polite,
         negative,
         past,
       })
     default:
       return conjugationUtils.normalForm(reading, partOfSpeech, {
-        neutral,
+        polite,
         negative,
         past,
       })

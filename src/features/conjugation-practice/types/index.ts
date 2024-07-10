@@ -1,24 +1,3 @@
-export type WordJSON = {
-  type: string
-  kanji: string
-  eng: string
-  altOkurigana?: string[]
-}
-
-export type Conjugation = {
-  conjugations: string[]
-  tense: string
-  affirmative: boolean | null
-  polite: boolean | null
-}
-
-export type Word = {
-  wordJSON: WordJSON
-  conjugation: Conjugation
-  probability: number
-  wasRecentlyIncorrect: boolean
-}
-
 export type Settings = {
   // Form types
   normal: boolean

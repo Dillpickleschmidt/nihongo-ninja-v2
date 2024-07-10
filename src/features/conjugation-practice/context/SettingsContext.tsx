@@ -1,6 +1,16 @@
 "use client"
-import { useState, useEffect } from "react"
-import { Settings } from "../types"
+
+import { createContext, useContext, useState, useEffect } from "react"
+import type { Settings } from "../types"
+
+type SettingsContextProps = {
+  children: React.ReactNode
+}
+
+type SettingsContext = {
+  settings: Settings
+  updateSettings: (newSettings: Partial<Settings>) => void
+}
 
 const DEFAULT_SETTINGS: Settings = {
   normal: true,
@@ -32,30 +42,9 @@ const DEFAULT_SETTINGS: Settings = {
   emoji: true,
 }
 
-/**
- * Custom hook for managing application settings.
- * @returns An object containing the current settings and a function to update them.
- *
- * @example
- * function SettingsComponent() {
- *   const { settings, updateSettings } = useSettings();
- *
- *   return (
- *     <div>
- *       <label>
- *         <input
- *           type="checkbox"
- *           checked={settings.teForm}
- *           onChange={(e) => updateSettings({ teForm: e.target.checked })}
- *         />
- *         Te-form
- *       </label>
- *       // ... other settings controls
- *     </div>
- *   );
- * }
- */
-export function useSettings() {
+const SettingsContext = createContext<SettingsContext | null>(null)
+
+export function SettingsContextProvider({ children }: SettingsContextProps) {
   const [settings, setSettings] = useState<Settings>(DEFAULT_SETTINGS)
 
   useEffect(() => {
@@ -65,11 +54,7 @@ export function useSettings() {
     }
   }, [])
 
-  /**
-   * Updates the settings with new values.
-   * @param newSettings - Partial settings object with the values to be updated.
-   */
-  function updateSettings(newSettings: Partial<Settings>) {
+  const updateSettings = (newSettings: Partial<Settings>) => {
     const updatedSettings = { ...settings, ...newSettings }
     setSettings(updatedSettings)
     localStorage.setItem(
@@ -78,5 +63,24 @@ export function useSettings() {
     )
   }
 
-  return { settings, updateSettings }
+  return (
+    <SettingsContext.Provider
+      value={{
+        settings,
+        updateSettings,
+      }}
+    >
+      {children}
+    </SettingsContext.Provider>
+  )
+}
+
+export function useSettingsContext() {
+  const context = useContext(SettingsContext)
+  if (!context) {
+    throw new Error(
+      "useSettingsContext must be used within a SettingsContextProvider",
+    )
+  }
+  return context
 }

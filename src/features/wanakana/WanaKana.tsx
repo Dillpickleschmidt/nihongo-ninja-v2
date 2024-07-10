@@ -5,6 +5,7 @@ import React, {
   ChangeEvent,
   ReactElement,
   ReactNode,
+  useEffect,
 } from "react"
 import { toKana, toRomaji, toHiragana, toKatakana } from "wanakana"
 
@@ -49,6 +50,11 @@ const WanakanaWrapper: React.FC<WanakanaWrapperProps> = ({
     }
     onChange && onChange(e)
   }
+
+  // Sync parsedValue with the external value prop
+  useEffect(() => {
+    setValue(translateValue(value, to))
+  }, [value, to])
 
   // Clone each child with updated props
   const enhancedChildren = React.Children.map(children, (child) => {

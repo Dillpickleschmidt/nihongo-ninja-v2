@@ -1,10 +1,9 @@
 "use client"
-import React from "react"
-import Link from "next/link"
-import { useSettings } from "../hooks/useSettings"
-import type { Settings } from "../types"
-import { Checkbox } from "@/components/ui/checkbox"
+import { useSettingsContext } from "../context/SettingsContext"
+import ToggleOption from "./ToggleOption"
 import { Label } from "@/components/ui/label"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
 import {
   Select,
   SelectContent,
@@ -12,41 +11,23 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
+import type { Settings } from "../types"
 
-export default function HomePage() {
-  const { settings, updateSettings } = useSettings()
+type HomePageProps = {
+  onStartReview: () => void
+}
 
+export default function SettingsPage({ onStartReview }: HomePageProps) {
+  const { settings, updateSettings } = useSettingsContext()
+
+  // The keyof Settings type ensures that key must be a string that corresponds to one of the property names within the Settings type.
   const handleSettingChange =
     (key: keyof Settings) => (value: boolean | string | number) => {
       updateSettings({ [key]: value })
     }
 
-  const ToggleOption = ({
-    id,
-    checked,
-    onCheckedChange,
-    label,
-  }: {
-    id: keyof Settings
-    checked: boolean
-    onCheckedChange: (checked: boolean) => void
-    label: string
-  }) => (
-    <div className="mb-2 flex items-center space-x-2">
-      <Checkbox id={id} checked={checked} onCheckedChange={onCheckedChange} />
-      <Label
-        htmlFor={id}
-        className="cursor-pointer text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-      >
-        {label}
-      </Label>
-    </div>
-  )
-
   return (
-    <div className="container mx-auto space-y-6 p-4">
+    <div className="mx-auto space-y-6 p-4">
       <h1 className="mb-6 text-3xl font-bold">Japanese Conjugation Practice</h1>
 
       <div className="space-y-4">
@@ -140,7 +121,7 @@ export default function HomePage() {
       </div>
 
       <div className="space-y-4">
-        <h2 className="text-xl font-semibold">Polarity</h2>
+        <h2 className="text-xl font-semibold">Positive/Negative</h2>
         <div className="grid grid-cols-2 gap-2">
           {[
             ["positive", "Positive"],
@@ -160,7 +141,7 @@ export default function HomePage() {
       </div>
 
       <div className="space-y-4">
-        <h2 className="text-xl font-semibold">Special Options</h2>
+        <h2 className="text-center text-xl font-semibold">Special Options</h2>
         <div className="space-y-2">
           <Label htmlFor="jlptLevel">JLPT Level:</Label>
           <Select
@@ -181,6 +162,20 @@ export default function HomePage() {
             </SelectContent>
           </Select>
 
+          <div className="space-y-2">
+            <Label htmlFor="amount">Number of questions:</Label>
+            <Input
+              id="amount"
+              type="number"
+              value={settings.amount}
+              onChange={(e) =>
+                handleSettingChange("amount")(parseInt(e.target.value, 10))
+              }
+              min="1"
+              max="100"
+            />
+          </div>
+
           <ToggleOption
             id="leaveOutSuru"
             checked={settings.leaveOutSuru}
@@ -199,20 +194,6 @@ export default function HomePage() {
             label="Reverse mode"
           />
 
-          <div className="space-y-2">
-            <Label htmlFor="amount">Number of questions:</Label>
-            <Input
-              id="amount"
-              type="number"
-              value={settings.amount}
-              onChange={(e) =>
-                handleSettingChange("amount")(parseInt(e.target.value, 10))
-              }
-              min="1"
-              max="100"
-            />
-          </div>
-
           <ToggleOption
             id="showMeaning"
             checked={settings.showMeaning}
@@ -230,15 +211,20 @@ export default function HomePage() {
             }
             label="No furigana"
           />
+
+          <ToggleOption
+            id="emoji"
+            checked={settings.emoji}
+            onCheckedChange={(checked) => handleSettingChange("emoji")(checked)}
+            label="Show emojis above conjugation types"
+          />
         </div>
       </div>
 
       <div>
-        <Link href="review">
-          <Button type="button" size="lg" className="text-base">
-            Start Review
-          </Button>
-        </Link>
+        <Button onClick={onStartReview} size="lg" className="text-base">
+          Start Review
+        </Button>
       </div>
     </div>
   )

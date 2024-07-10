@@ -3,7 +3,7 @@
 import { changeHiraganaVowel } from "./hiraganaColumnHelper"
 
 type ConjugationOptions = {
-  neutral?: boolean
+  polite?: boolean
   negative?: boolean
   past?: boolean
 }
@@ -34,6 +34,7 @@ export function getGroup(partOfSpeech: string): string {
     return "3"
   if (partOfSpeech === "I-adjective") return "i-adjective"
   if (partOfSpeech === "Na-adjective") return "na-adjective"
+  console.error(`Unknown part of speech: ${partOfSpeech}`)
   return "unknown"
 }
 
@@ -59,6 +60,7 @@ export function getMasuStem(reading: string, partOfSpeech: string): string {
         reading.slice(0, -2) + changeHiraganaVowel(reading.slice(-2, -1), "i")
       )
     }
+    // Kuru verb - special class
     return changeHiraganaVowel(reading.slice(0, -1), "i")
   }
   return ""
@@ -148,15 +150,15 @@ export function teForm(reading: string, partOfSpeech: string): string {
  * Conjugates a verb to its volitional form.
  * @param reading - The reading of the verb in hiragana.
  * @param partOfSpeech - The part of speech of the verb.
- * @param neutral - Whether to use the neutral (polite) form.
+ * @param polite - Whether to use the polite (polite) form.
  * @returns An array of possible volitional forms.
  */
 export function volitional(
   reading: string,
   partOfSpeech: string,
-  neutral: boolean = false,
+  polite: boolean = false,
 ): string[] {
-  if (neutral) {
+  if (polite) {
     return [getMasuStem(reading, partOfSpeech) + "ましょう"]
   }
 
@@ -189,7 +191,7 @@ export function volitional(
  * Conjugates a verb to its tai-form (desire form).
  * @param reading - The reading of the verb in hiragana.
  * @param partOfSpeech - The part of speech of the verb.
- * @param options - Conjugation options (neutral, negative, past).
+ * @param options - Conjugation options (polite, negative, past).
  * @returns An array of possible tai-forms.
  */
 export function taiForm(
@@ -197,7 +199,7 @@ export function taiForm(
   partOfSpeech: string,
   options: ConjugationOptions = {},
 ): string[] {
-  const { negative = false, past = false, neutral = false } = options
+  const { negative = false, past = false, polite = false } = options
   const type = getType(partOfSpeech)
 
   if (type !== "verb") return []
@@ -212,7 +214,7 @@ export function taiForm(
     conjugation = conjugation.slice(0, -1) + "かった"
   }
 
-  if (neutral) {
+  if (polite) {
     conjugation += "です"
   }
 
@@ -240,7 +242,7 @@ export function tariForm(
  * Conjugates a verb to its potential form.
  * @param reading - The reading of the verb in hiragana.
  * @param partOfSpeech - The part of speech of the verb.
- * @param options - Conjugation options (neutral, negative, past).
+ * @param options - Conjugation options (polite, negative, past).
  * @returns An array of possible potential forms.
  */
 export function potential(
@@ -248,7 +250,7 @@ export function potential(
   partOfSpeech: string,
   options: ConjugationOptions = {},
 ): string[] {
-  const { neutral = false, negative = false, past = false } = options
+  const { polite = false, negative = false, past = false } = options
   const group = getGroup(partOfSpeech)
   let stem = ""
 
@@ -269,7 +271,7 @@ export function potential(
         return [baseStem + "でき", baseStem + "出来", baseStem + "出き"].map(
           (s) =>
             normalForm(s + "る", "Ichidan verb", {
-              neutral,
+              polite,
               negative,
               past,
             })[0],
@@ -279,7 +281,7 @@ export function potential(
   }
 
   return stem
-    ? normalForm(stem + "る", "Ichidan verb", { neutral, negative, past })
+    ? normalForm(stem + "る", "Ichidan verb", { polite, negative, past })
     : []
 }
 
@@ -370,7 +372,7 @@ export function conditional(
  * Conjugates a verb to its passive form.
  * @param reading - The reading of the verb in hiragana.
  * @param partOfSpeech - The part of speech of the verb.
- * @param options - Conjugation options (neutral, negative, past).
+ * @param options - Conjugation options (polite, negative, past).
  * @returns An array of possible passive forms.
  */
 export function passive(
@@ -378,7 +380,7 @@ export function passive(
   partOfSpeech: string,
   options: ConjugationOptions = {},
 ): string[] {
-  const { neutral = false, negative = false, past = false } = options
+  const { polite = false, negative = false, past = false } = options
   let stem = ""
   switch (getGroup(partOfSpeech)) {
     case "1":
@@ -399,7 +401,7 @@ export function passive(
     stem = "あら"
   }
   return stem
-    ? normalForm(stem + "れる", "Ichidan verb", { neutral, negative, past })
+    ? normalForm(stem + "れる", "Ichidan verb", { polite, negative, past })
     : []
 }
 
@@ -407,7 +409,7 @@ export function passive(
  * Conjugates a verb to its causative form.
  * @param reading - The reading of the verb in hiragana.
  * @param partOfSpeech - The part of speech of the verb.
- * @param options - Conjugation options (neutral, negative, past).
+ * @param options - Conjugation options (polite, negative, past).
  * @returns An array of possible causative forms.
  */
 export function causative(
@@ -415,7 +417,7 @@ export function causative(
   partOfSpeech: string,
   options: ConjugationOptions = {},
 ): string[] {
-  const { neutral = false, negative = false, past = false } = options
+  const { polite = false, negative = false, past = false } = options
   let stem = ""
   switch (getGroup(partOfSpeech)) {
     case "1":
@@ -436,7 +438,7 @@ export function causative(
     stem = "あら"
   }
   return stem
-    ? normalForm(stem + "せる", "Ichidan verb", { neutral, negative, past })
+    ? normalForm(stem + "せる", "Ichidan verb", { polite, negative, past })
     : []
 }
 
@@ -444,7 +446,7 @@ export function causative(
  * Conjugates a verb to its causative-passive form.
  * @param reading - The reading of the verb in hiragana.
  * @param partOfSpeech - The part of speech of the verb.
- * @param options - Conjugation options (neutral, negative, past).
+ * @param options - Conjugation options (polite, negative, past).
  * @returns An array of possible causative-passive forms.
  */
 export function causativePassive(
@@ -452,29 +454,29 @@ export function causativePassive(
   partOfSpeech: string,
   options: ConjugationOptions = {},
 ): string[] {
-  const { neutral = false, negative = false, past = false } = options
+  const { polite = false, negative = false, past = false } = options
   const causativeForm = causative(reading, partOfSpeech)[0]
   const passiveForm = passive(causativeForm, "Ichidan verb")[0]
 
   if (getGroup(partOfSpeech) === "1" && !reading.endsWith("す")) {
     return [
-      normalForm(passiveForm, "Ichidan verb", { neutral, negative, past })[0],
+      normalForm(passiveForm, "Ichidan verb", { polite, negative, past })[0],
       normalForm(passiveForm.slice(0, -4) + "される", "Ichidan verb", {
-        neutral,
+        polite,
         negative,
         past,
       })[0],
     ]
   }
 
-  return normalForm(passiveForm, "Ichidan verb", { neutral, negative, past })
+  return normalForm(passiveForm, "Ichidan verb", { polite, negative, past })
 }
 
 /**
  * Conjugates a verb or adjective to its normal form based on the given options.
  * @param reading - The reading of the word in hiragana.
  * @param partOfSpeech - The part of speech of the word.
- * @param options - Conjugation options (neutral, negative, past).
+ * @param options - Conjugation options (polite, negative, past).
  * @returns An array of possible normal forms.
  */
 export function normalForm(
@@ -482,19 +484,20 @@ export function normalForm(
   partOfSpeech: string,
   options: ConjugationOptions = {},
 ): string[] {
-  const { neutral = false, negative = false, past = false } = options
+  // Default these options to false if not provided
+  const { polite = false, negative = false, past = false } = options
   const type = getType(partOfSpeech)
 
   if (type === "i-adjective") {
-    return iAdjectiveNormalForm(reading, { neutral, negative, past })
+    return iAdjectiveNormalForm(reading, { polite, negative, past })
   }
 
   if (type === "na-adjective") {
-    return naAdjectiveNormalForm(reading, { neutral, negative, past })
+    return naAdjectiveNormalForm(reading, { polite, negative, past })
   }
 
   // Verbs
-  if (neutral) {
+  if (polite) {
     const stem = getMasuStem(reading, partOfSpeech)
     const ending = past
       ? negative
@@ -518,53 +521,53 @@ export function normalForm(
 /**
  * Conjugates an i-adjective to its normal form.
  * @param reading - The reading of the adjective in hiragana.
- * @param options - Conjugation options (neutral, negative, past).
+ * @param options - Conjugation options (polite, negative, past).
  * @returns An array of possible normal forms for the i-adjective.
  */
 function iAdjectiveNormalForm(
   reading: string,
   options: ConjugationOptions = {},
 ): string[] {
-  const { neutral = false, negative = false, past = false } = options
+  const { polite = false, negative = false, past = false } = options
   let ending: string
   if (!past) {
     ending = !negative ? "い" : "くない"
   } else {
     ending = !negative ? "かった" : "くなかった"
   }
-  return [reading.slice(0, -1) + ending + (neutral ? "です" : "")]
+  return [reading.slice(0, -1) + ending + (polite ? "です" : "")]
 }
 
 /**
  * Conjugates a na-adjective to its normal form.
  * @param reading - The reading of the adjective in hiragana.
- * @param options - Conjugation options (neutral, negative, past).
+ * @param options - Conjugation options (polite, negative, past).
  * @returns An array of possible normal forms for the na-adjective.
  */
 function naAdjectiveNormalForm(
   reading: string,
   options: ConjugationOptions = {},
 ): string[] {
-  const { neutral = false, negative = false, past = false } = options
-  const endings = deAruNormalForm({ neutral, negative, past })
+  const { polite = false, negative = false, past = false } = options
+  const endings = deAruNormalForm({ polite, negative, past })
 
   return endings.map((ending) => reading + ending)
 }
 
 /**
  * Conjugates the copula 'dearu' to its various forms.
- * @param options - Conjugation options (neutral, negative, past).
+ * @param options - Conjugation options (polite, negative, past).
  * @returns An array of possible forms for 'dearu'.
  */
 function deAruNormalForm(options: ConjugationOptions = {}): string[] {
-  const { neutral = false, negative = false, past = false } = options
+  const { polite = false, negative = false, past = false } = options
   const dewa = "では"
   const ja = "じゃ"
   const nai = "ない"
   const desu = "です"
   const katta = "かった"
 
-  if (neutral) {
+  if (polite) {
     if (!past) {
       return !negative
         ? [desu]
@@ -629,12 +632,12 @@ function plainPast(reading: string, partOfSpeech: string): string {
  * @param reading - The reading of the word in hiragana.
  * @param partOfSpeech - The part of speech of the word.
  * @param type - The type of conjugation to perform.
- * @param options - Conjugation options (neutral, negative, past).
+ * @param options - Conjugation options (polite, negative, past).
  * @returns An array of possible conjugated forms.
  *
  * @example
  * conjugate('食べる', 'Ichidan verb', 'te-form') // returns ['食べて']
- * conjugate('行く', 'Godan verb - Iku/Yuku special class', 'potential', { neutral: true, negative: true, past: true }) // Returns: ['行けませんでした']'
+ * conjugate('行く', 'Godan verb - Iku/Yuku special class', 'potential', { polite: true, negative: true, past: true }) // Returns: ['行けませんでした']'
  */
 export function conjugate(
   reading: string,
@@ -646,7 +649,7 @@ export function conjugate(
     case "te-form":
       return [teForm(reading, partOfSpeech)]
     case "volitional":
-      return volitional(reading, partOfSpeech, options.neutral)
+      return volitional(reading, partOfSpeech, options.polite)
     case "tai-form":
       return taiForm(reading, partOfSpeech, options)
     case "tari-form":

@@ -10,17 +10,33 @@ import {
 import { getJLPTLevels } from "./settingsUtils"
 import wordDatabase from "../data/wordDatabase.json"
 
-type WordDatabase = {
-  verb: Word[]
-  "adj-i": Word[]
-  "adj-na": Word[]
-}
-
 type Word = {
   japanese: { word?: string; reading: string }[]
   senses: { english_definitions: string[]; parts_of_speech: string[] }[]
   level: number
 }
+
+const allowedPartsOfSpeech = [
+  "Godan verb with u ending",
+  "Godan verb with tsu ending",
+  "Godan verb with ru ending",
+  "Godan verb with ru ending (irregular verb)",
+  "Godan verb - aru special class",
+  "Godan verb - Iku/Yuku special class",
+  "Godan verb with ku ending",
+  "Godan verb with gu ending",
+  "Godan verb with bu ending",
+  "Godan verb with mu ending",
+  "Godan verb with nu ending",
+  "Godan verb with su ending",
+  "Ichidan verb",
+  "Suru verb",
+  "Kuru verb - special class",
+  "Suru verb - irregular",
+  "Suru verb - special class",
+  "I-adjective",
+  "Na-adjective",
+]
 
 /**
  * Generates a set of practice questions based on the provided settings.
@@ -28,15 +44,32 @@ type Word = {
  * @returns An array of Question objects.
  */
 export function generateQuestions(settings: Settings): Question[] {
+  console.log("Generating questions with settings:", settings)
   const questions: Question[] = []
   const words = filterWords(settings)
+  // log the filtered words - all that match the settings (uncapped amount)
+  console.log(
+    "Filtered words:",
+    words.map((word) => {
+      return word.japanese[0].word
+    }),
+  )
   const types = getQuestionTypes(settings)
+  // log the enabled question types (from settings)
+  types.forEach((type, index) =>
+    console.log("Enabled type " + index + ": " + type),
+  )
 
   while (questions.length < settings.amount && words.length > 0) {
     const wordIndex = Math.floor(Math.random() * words.length)
     const word = words[wordIndex]
+    console.log(
+      "Selected word:",
+      word.japanese[0].word || "reading: " + word.japanese[0].reading,
+    )
     const typeIndex = Math.floor(Math.random() * types.length)
     const type = types[typeIndex]
+    // console.log("Selected type:", type)
 
     const questionWord = {
       word: word.japanese[0].word || word.japanese[0].reading,
@@ -45,8 +78,24 @@ export function generateQuestions(settings: Settings): Question[] {
       meaning: word.senses[0].english_definitions[0],
     }
 
+    // Make a suru verb from a noun (if applicable)
+    if (questionWord.partOfSpeech === "Suru verb") {
+      questionWord.word = questionWord.word + "する"
+      questionWord.reading = questionWord.reading + "する"
+      questionWord.meaning = "[to do] " + questionWord.meaning
+    }
+    // console.log("Question word:", questionWord)
+    // console.log("Question word POS:", questionWord.partOfSpeech)
+
     let question = createQuestion(questionWord, type)
-    question = setAnswers(question)
+    // console.log("Created question:", question)
+    try {
+      question = setAnswers(question)
+      // console.log("Set answers for question:", question)
+    } catch (error) {
+      console.error("Error setting answers for question:", error)
+      console.error("Problematic question:", question.term)
+    }
 
     if (settings.reverse && Math.random() < 0.5) {
       question = reverseQuestion(question)
@@ -58,6 +107,13 @@ export function generateQuestions(settings: Settings): Question[] {
 
   shuffleArray(questions)
   return questions
+}
+
+function isUsable(partOfSpeech: string) {
+  if (!allowedPartsOfSpeech.includes(partOfSpeech)) {
+    return false
+  }
+  return true
 }
 
 /**
@@ -73,20 +129,26 @@ function filterWords(settings: Settings): Word[] {
     const verbs = wordDatabase.verb.filter(
       (word) =>
         jlptLevels.includes(`n${word.level}`) &&
+        // Include the verb if "Suru verbs" are not to be excluded, or if it is not a "Suru verb"
         (!settings.leaveOutSuru ||
-          !word.senses[0].parts_of_speech.includes("Suru verb")),
+          !word.senses[0].parts_of_speech.includes("Suru verb")) &&
+        isUsable(word.senses[0].parts_of_speech[0]),
     )
     filteredWords.push(...verbs)
   }
   if (settings.iAdjective) {
-    const iAdjectives = wordDatabase["adj-i"].filter((word) =>
-      jlptLevels.includes(`n${word.level}`),
+    const iAdjectives = wordDatabase["adj-i"].filter(
+      (word) =>
+        jlptLevels.includes(`n${word.level}`) &&
+        isUsable(word.senses[0].parts_of_speech[0]),
     )
     filteredWords.push(...iAdjectives)
   }
   if (settings.naAdjective) {
-    const naAdjectives = wordDatabase["adj-na"].filter((word) =>
-      jlptLevels.includes(`n${word.level}`),
+    const naAdjectives = wordDatabase["adj-na"].filter(
+      (word) =>
+        jlptLevels.includes(`n${word.level}`) &&
+        isUsable(word.senses[0].parts_of_speech[0]),
     )
     filteredWords.push(...naAdjectives)
   }
@@ -132,7 +194,7 @@ function getQuestionTypes(settings: Settings): string[] {
     speechLevels.forEach((speechLevel) => {
       tenses.forEach((tense) => {
         polarities.forEach((polarity) => {
-          fullTypes.push(`${speechLevel}-${tense}-${polarity}-${type}`)
+          fullTypes.push(`${speechLevel}, ${tense}, ${polarity}, ${type}`)
         })
       })
     })

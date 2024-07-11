@@ -87,6 +87,7 @@ function getConjugations(
   const polite = type.includes("polite")
   const negative = type.includes("negative")
   const past = !type.includes("non-")
+  // console.log("Type: ", type)
 
   switch (type) {
     case "te-form":

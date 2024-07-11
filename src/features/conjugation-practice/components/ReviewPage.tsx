@@ -1,7 +1,7 @@
 "use client"
 
 /*
-When you click to switch to the ReviewPage, it likely triggers the creation of a new review session.
+When you click to switch to the ReviewPage, it triggers the creation of a new review session.
 This calls the generateQuestions function in questionGenerator.ts.
 generateQuestions calls setAnswers for each question.
 setAnswers calls getConjugations.

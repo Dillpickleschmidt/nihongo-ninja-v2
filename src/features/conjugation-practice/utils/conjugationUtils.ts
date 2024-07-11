@@ -44,13 +44,17 @@ export function getGroup(partOfSpeech: string): string {
  * @param partOfSpeech - The part of speech of the verb.
  * @returns The masu stem of the verb.
  */
-export function getMasuStem(reading: string, partOfSpeech: string): string {
+export function getMasuStem(
+  reading: string,
+  partOfSpeech: string,
+  toVowel: string = "i",
+): string {
   const group = getGroup(partOfSpeech)
   if (group === "1") {
     const preMasu =
       partOfSpeech === "Godan verb - aru special class"
         ? "い"
-        : changeHiraganaVowel(reading.slice(-1), "i")
+        : changeHiraganaVowel(reading.slice(-1), toVowel)
     return reading.slice(0, -1) + preMasu
   }
   if (group === "2") return reading.slice(0, -1)
@@ -104,46 +108,154 @@ export function getNaiStem(reading: string, partOfSpeech: string): string {
  * @param partOfSpeech - The part of speech of the word.
  * @returns The te-form of the word.
  */
-export function teForm(reading: string, partOfSpeech: string): string {
-  const stem = reading.slice(0, -1)
-  let ending
+export function teForm(
+  reading: string,
+  partOfSpeech: string,
+  options: ConjugationOptions = {},
+): string[] {
+  const { negative = false, polite = false } = options
+  let stem = reading.slice(0, -1)
+  let endings: string[] = []
+
   switch (partOfSpeech) {
     case "Ichidan verb":
-    case "Kuru verb - special class":
-    case "Suru verb":
-    case "Suru verb - irregular":
-    case "Suru verb - special class":
-      ending = "て"
+      if (negative) {
+        stem = getMasuStem(reading, partOfSpeech)
+        endings = polite ? ["ませんで"] : ["なくて", "ないで"]
+      } else {
+        endings = ["て"]
+      }
       break
     case "Godan verb with u ending":
+      if (negative) {
+        stem = polite
+          ? getMasuStem(reading, partOfSpeech)
+          : getMasuStem(reading, partOfSpeech).slice(0, -1) + "わ"
+        endings = polite ? ["ませんで"] : ["なくて", "ないで"]
+      } else {
+        endings = ["って"]
+      }
+      break
     case "Godan verb with tsu ending":
     case "Godan verb with ru ending":
-    case "Godan verb - aru special class":
+      if (negative) {
+        stem = polite
+          ? getMasuStem(reading, partOfSpeech)
+          : getMasuStem(reading, partOfSpeech, "a")
+        endings = polite ? ["ませんで"] : ["なくて", "ないで"]
+      } else {
+        endings = ["って"]
+      }
+      break
     case "Godan verb - Iku/Yuku special class":
-      ending = "って"
+      if (negative) {
+        stem = polite
+          ? getMasuStem(reading, partOfSpeech)
+          : getMasuStem(reading, partOfSpeech, "a")
+        endings = polite ? ["ませんで"] : ["なくて", "ないで"]
+      } else {
+        endings = ["って"]
+      }
       break
     case "Godan verb with ku ending":
-      ending = "いて"
+      if (negative) {
+        stem = polite
+          ? getMasuStem(reading, partOfSpeech)
+          : getMasuStem(reading, partOfSpeech, "a")
+        endings = polite ? ["ませんで"] : ["なくて", "ないで"]
+      } else {
+        endings = ["いて"]
+      }
       break
     case "Godan verb with gu ending":
-      ending = "いで"
+      if (negative) {
+        stem = polite
+          ? getMasuStem(reading, partOfSpeech)
+          : getMasuStem(reading, partOfSpeech, "a")
+        endings = polite ? ["ませんで"] : ["なくて", "ないで"]
+      } else {
+        endings = ["いで"]
+      }
       break
     case "Godan verb with bu ending":
     case "Godan verb with mu ending":
     case "Godan verb with nu ending":
-      ending = "んで"
+      if (negative) {
+        stem = polite
+          ? getMasuStem(reading, partOfSpeech)
+          : getMasuStem(reading, partOfSpeech, "a")
+        endings = polite ? ["ませんで"] : ["なくて", "ないで"]
+      } else {
+        endings = ["んで"]
+      }
       break
     case "Godan verb with su ending":
-      ending = "して"
+      if (negative) {
+        stem = polite
+          ? getMasuStem(reading, partOfSpeech)
+          : getMasuStem(reading, partOfSpeech, "a")
+        endings = polite ? ["ませんで"] : ["なくて", "ないで"]
+      } else {
+        endings = ["して"]
+      }
+      break
+    case "Godan verb with ru ending (irregular verb)": // ある
+      if (negative) {
+        return polite ? ["ありませんで"] : ["なくて"]
+      } else {
+        endings = ["って"]
+      }
+      break
+    case "Godan verb - aru special class":
+      if (negative) {
+        stem = getMasuStem(reading, partOfSpeech)
+        endings = polite ? ["ませんで"] : ["なくて", "ないで"]
+      } else {
+        endings = ["って"]
+      }
+      break
+    case "Suru verb":
+    case "Suru verb - irregular":
+    case "Suru verb - special class":
+      if (negative) {
+        stem = getMasuStem(reading, partOfSpeech)
+        endings = polite ? ["ませんで"] : ["なくて", "ないで"]
+      } else {
+        stem = reading.slice(0, -2) // Remove the "する" part
+        endings = ["して"]
+      }
+      break
+    case "Kuru verb - special class":
+      if (negative) {
+        stem = polite ? "き" : "こ"
+        endings = polite ? ["ませんで"] : ["なくて", "ないで"]
+      } else {
+        stem = "き"
+        endings = ["て"]
+      }
       break
     case "I-adjective":
-      return stem + "くて"
+      stem = reading.slice(0, -1)
+      endings = negative ? ["くなくて"] : ["くて"]
+      break
     case "Na-adjective":
-      return reading + "で"
+      stem = reading
+      if (negative) {
+        return [stem + "ではなくて", stem + "じゃなくて"]
+      } else {
+        endings = ["で"]
+      }
+      break
     default:
-      ending = "て"
+      if (negative) {
+        stem = getMasuStem(reading, partOfSpeech)
+        endings = polite ? ["ませんで"] : ["なくて", "ないで"]
+      } else {
+        endings = ["て"]
+      }
   }
-  return stem + ending
+
+  return endings.map((ending) => stem + ending)
 }
 
 /**
@@ -530,20 +642,22 @@ function iAdjectiveNormalForm(
 ): string[] {
   const { polite = false, negative = false, past = false } = options
   let ending: string
+
   if (!past) {
     ending = !negative ? "い" : "くない"
   } else {
     ending = !negative ? "かった" : "くなかった"
   }
-  return [reading.slice(0, -1) + ending + (polite ? "です" : "")]
+
+  const forms = [reading.slice(0, -1) + ending + (polite ? "です" : "")]
+
+  if (polite && past && negative) {
+    forms.push(reading.slice(0, -1) + "くありませんでした")
+  }
+
+  return forms
 }
 
-/**
- * Conjugates a na-adjective to its normal form.
- * @param reading - The reading of the adjective in hiragana.
- * @param options - Conjugation options (polite, negative, past).
- * @returns An array of possible normal forms for the na-adjective.
- */
 function naAdjectiveNormalForm(
   reading: string,
   options: ConjugationOptions = {},
@@ -623,8 +737,15 @@ function plainNegativePast(reading: string, partOfSpeech: string): string {
  * @returns The plain past form of the verb.
  */
 function plainPast(reading: string, partOfSpeech: string): string {
-  const teFormEnding = teForm(reading, partOfSpeech).slice(-1)
-  return reading.slice(0, -1) + changeHiraganaVowel(teFormEnding, "a")
+  const teFormArray = teForm(reading, partOfSpeech)
+
+  // Use the first (positive) te-form
+  const positiveTeForm = teFormArray[0]
+
+  const teFormStem = positiveTeForm.slice(0, -1)
+  const teFormEnding = positiveTeForm.slice(-1)
+
+  return teFormStem + changeHiraganaVowel(teFormEnding, "a")
 }
 
 /**
@@ -647,7 +768,7 @@ export function conjugate(
 ): string[] {
   switch (type) {
     case "te-form":
-      return [teForm(reading, partOfSpeech)]
+      return teForm(reading, partOfSpeech, options)
     case "volitional":
       return volitional(reading, partOfSpeech, options.polite)
     case "tai-form":

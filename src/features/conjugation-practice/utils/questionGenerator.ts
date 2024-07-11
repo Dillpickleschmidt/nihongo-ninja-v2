@@ -91,7 +91,7 @@ export function generateQuestions(settings: Settings): Question[] {
     // console.log("Created question:", question)
     try {
       question = setAnswers(question)
-      // console.log("Set answers for question:", question)
+      // console.log("Answer for " + question.term + question.answers[0].reading)
     } catch (error) {
       console.error("Error setting answers for question:", error)
       console.error("Problematic question:", question.term)

@@ -14,7 +14,7 @@ export type Question = {
     reading: string
     partOfSpeech: string
   }
-  type: string
+  type: string[]
   answers: Answer[]
   givenAnswer: string
   correct?: boolean
@@ -36,7 +36,7 @@ export type Question = {
  */
 export function createQuestion(
   term: { word: string; reading: string; partOfSpeech: string },
-  type: string,
+  type: string[],
 ): Question {
   return {
     term,
@@ -82,16 +82,22 @@ export function setAnswers(question: Question): Question {
 function getConjugations(
   reading: string,
   partOfSpeech: string,
-  type: string,
+  type: string[],
 ): string[] {
-  const polite = type.includes("polite")
-  const negative = type.includes("negative")
-  const past = !type.includes("non-")
-  // console.log("Type: ", type)
+  const [speechLevel, tense, polarity, conjugationType] = type
+  const polite = speechLevel === "polite"
+  const negative = polarity === "negative"
+  const past = tense === "past"
+  console.log("Conjugation options:", {
+    polite,
+    negative,
+    past,
+    conjugationType,
+  })
 
-  switch (type) {
+  switch (conjugationType) {
     case "te-form":
-      return [conjugationUtils.teForm(reading, partOfSpeech)]
+      return conjugationUtils.teForm(reading, partOfSpeech)
     case "volitional":
       return conjugationUtils.volitional(reading, partOfSpeech, polite)
     case "potential":

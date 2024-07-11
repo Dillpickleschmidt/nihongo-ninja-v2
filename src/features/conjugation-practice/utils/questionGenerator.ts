@@ -92,6 +92,7 @@ export function generateQuestions(settings: Settings): Question[] {
     try {
       question = setAnswers(question)
       // console.log("Answer for " + question.term + question.answers[0].reading)
+      // console.log("Types for " + question.term.word + question.type)
     } catch (error) {
       console.error("Error setting answers for question:", error)
       console.error("Problematic question:", question.term)
@@ -161,7 +162,7 @@ function filterWords(settings: Settings): Word[] {
  * @param settings - The current application settings.
  * @returns An array of question type strings.
  */
-function getQuestionTypes(settings: Settings): string[] {
+function getQuestionTypes(settings: Settings): string[][] {
   const types: string[] = []
 
   if (settings.normal) types.push("normal")
@@ -176,7 +177,7 @@ function getQuestionTypes(settings: Settings): string[] {
   if (settings.causative) types.push("causative")
   if (settings.causativePassive) types.push("causative-passive")
 
-  const fullTypes: string[] = []
+  const fullTypes: string[][] = []
 
   const speechLevels: string[] = []
   if (settings.polite) speechLevels.push("polite")
@@ -194,7 +195,7 @@ function getQuestionTypes(settings: Settings): string[] {
     speechLevels.forEach((speechLevel) => {
       tenses.forEach((tense) => {
         polarities.forEach((polarity) => {
-          fullTypes.push(`${speechLevel}, ${tense}, ${polarity}, ${type}`)
+          fullTypes.push([speechLevel, tense, polarity, type])
         })
       })
     })

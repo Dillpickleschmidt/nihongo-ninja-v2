@@ -73,7 +73,7 @@ export default function ReviewPage() {
           <span className="font-bold">{displayTerm.reading}</span>
           {displayTerm.word !== displayTerm.reading && ` (${displayTerm.word})`}
         </p>
-        <p>Type: {currentQuestion.type}</p>
+        <p>Type: {currentQuestion.type.join(", ")}</p>
         <p>Part of Speech: {currentQuestion.term.partOfSpeech}</p>
       </div>
       <form onSubmit={handleSubmit} className="space-y-4">

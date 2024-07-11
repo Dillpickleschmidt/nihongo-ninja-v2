@@ -113,6 +113,7 @@ export function teForm(
   partOfSpeech: string,
   options: ConjugationOptions = {},
 ): string[] {
+  console.log("teForm called with:", { reading, partOfSpeech, options })
   const { negative = false, polite = false } = options
   let stem = reading.slice(0, -1)
   let endings: string[] = []
@@ -255,6 +256,10 @@ export function teForm(
       }
   }
 
+  console.log(
+    "teForm returning:",
+    endings.map((ending) => stem + ending),
+  )
   return endings.map((ending) => stem + ending)
 }
 

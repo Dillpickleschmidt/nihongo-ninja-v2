@@ -5,14 +5,14 @@ import { Question, checkAnswer } from "../utils/questionUtils"
 import { generateQuestions } from "../utils/questionGenerator"
 import { useSettingsContext } from "../context/SettingsContext"
 
-type ReviewSessionState = {
+export type ReviewSessionState = {
   questions: Question[]
   currentIndex: number
   score: number
   isComplete: boolean
 }
 
-type ReviewSessionActions = {
+export type ReviewSessionActions = {
   startSession: () => void
   submitAnswer: (answer: string) => void
   nextQuestion: () => void

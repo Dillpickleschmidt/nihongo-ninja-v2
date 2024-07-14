@@ -1,39 +1,35 @@
 "use client"
 
 import { useState, useEffect, KeyboardEvent, useRef } from "react"
-import { useSettingsContext } from "../context/SettingsContext"
-import { useReviewSession } from "../hooks/useReviewSession"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import WanakanaWrapper from "@/features/wanakana/WanaKana"
+import type {
+  ReviewSessionState,
+  ReviewSessionActions,
+} from "../hooks/useReviewSession"
 
-export default function PracticePage() {
-  const { settings } = useSettingsContext()
-  const [sessionState, sessionActions] = useReviewSession()
+type PracticePageProps = {
+  sessionState: ReviewSessionState
+  sessionActions: ReviewSessionActions
+  onComplete: () => void
+}
+
+export default function PracticePage({
+  sessionState,
+  sessionActions,
+  onComplete,
+}: PracticePageProps) {
   const [userAnswer, setUserAnswer] = useState("")
   const [isAnswered, setIsAnswered] = useState(false)
-  const [isPracticePageMounted, setIsPracticePageMounted] = useState(false)
   const nextQuestionButtonRef = useRef<HTMLButtonElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
-    if (sessionState.questions.length === 0 || sessionState.isComplete) {
-      console.log("Starting new session")
-      sessionActions.startSession()
+    if (sessionState.isComplete) {
+      onComplete()
     }
-    setIsPracticePageMounted(true)
-  }, [
-    settings,
-    sessionActions,
-    sessionState.questions.length,
-    sessionState.isComplete,
-  ])
-
-  useEffect(() => {
-    if (isPracticePageMounted && inputRef.current) {
-      inputRef.current.focus()
-    }
-  }, [isPracticePageMounted])
+  }, [sessionState.isComplete, onComplete])
 
   useEffect(() => {
     if (!isAnswered && inputRef.current) {
@@ -72,20 +68,6 @@ export default function PracticePage() {
 
   if (!currentQuestion) {
     return <div>Loading...</div>
-  }
-
-  if (sessionState.isComplete) {
-    return (
-      <div className="space-y-4">
-        <h1 className="text-3xl font-bold">Review Complete!</h1>
-        <p className="text-xl">
-          Your score: {sessionState.score} / {sessionState.questions.length}
-        </p>
-        <Button onClick={() => sessionActions.startSession()}>
-          Start New Session
-        </Button>
-      </div>
-    )
   }
 
   const displayTerm = currentQuestion.reversed
@@ -142,7 +124,11 @@ export default function PracticePage() {
         <Input
           type="text"
           placeholder="Your answer"
-          className={`py-3 text-center font-japanese text-2xl placeholder:font-inter focus-visible:ring-primary/25 disabled:opacity-100 ${currentQuestion.correct ? "bg-green-500" : isAnswered && "bg-red-500"}`}
+          className={`py-3 text-center font-japanese text-2xl placeholder:font-inter focus-visible:ring-primary/25 disabled:opacity-100 ${
+            currentQuestion.correct
+              ? "bg-green-500"
+              : isAnswered && "bg-red-500"
+          }`}
           disabled={isAnswered}
           onKeyDown={handleKeyDown}
         />

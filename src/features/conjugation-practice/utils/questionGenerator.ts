@@ -8,32 +8,31 @@ import {
   reverseQuestion,
 } from "./questionUtils"
 import { getJLPTLevels } from "./settingsUtils"
-import wordDatabase from "../data/wordDatabase.json"
+import VerbsAndAdjectivesJLPT from "../data/VerbsAndAdjectivesJLPT.json"
 
 type Word = {
   japanese: { word?: string; reading: string }[]
   senses: { english_definitions: string[]; parts_of_speech: string[] }[]
-  level: number
+  jlpt_level: number
 }
 
 const allowedPartsOfSpeech = [
-  "Godan verb with u ending",
-  "Godan verb with tsu ending",
-  "Godan verb with ru ending",
-  "Godan verb with ru ending (irregular verb)",
-  "Godan verb - aru special class",
+  "Godan verb with 'u' ending",
+  "Godan verb with 'tsu' ending",
+  "Godan verb with 'ru' ending",
+  "Godan verb with 'ru' ending (irregular verb)",
+  "Godan verb - -aru special class",
   "Godan verb - Iku/Yuku special class",
-  "Godan verb with ku ending",
-  "Godan verb with gu ending",
-  "Godan verb with bu ending",
-  "Godan verb with mu ending",
-  "Godan verb with nu ending",
-  "Godan verb with su ending",
+  "Godan verb with 'ku' ending",
+  "Godan verb with 'gu' ending",
+  "Godan verb with 'bu' ending",
+  "Godan verb with 'mu' ending",
+  "Godan verb with 'nu' ending",
+  "Godan verb with 'su' ending",
   "Ichidan verb",
-  "Suru verb",
   "Kuru verb - special class",
-  "Suru verb - irregular",
   "Suru verb - special class",
+  "Suru verb - included",
   "I-adjective",
   "Na-adjective",
 ]
@@ -127,9 +126,9 @@ function filterWords(settings: Settings): Word[] {
   const filteredWords: Word[] = []
 
   if (settings.verb) {
-    const verbs = wordDatabase.verb.filter(
+    const verbs = VerbsAndAdjectivesJLPT.verb.filter(
       (word) =>
-        jlptLevels.includes(`n${word.level}`) &&
+        jlptLevels.includes(`n${word.jlpt_level}`) &&
         // Include the verb if "Suru verbs" are not to be excluded, or if it is not a "Suru verb"
         (!settings.leaveOutSuru ||
           !word.senses[0].parts_of_speech.includes("Suru verb")) &&
@@ -138,17 +137,17 @@ function filterWords(settings: Settings): Word[] {
     filteredWords.push(...verbs)
   }
   if (settings.iAdjective) {
-    const iAdjectives = wordDatabase["adj-i"].filter(
+    const iAdjectives = VerbsAndAdjectivesJLPT["adj-i"].filter(
       (word) =>
-        jlptLevels.includes(`n${word.level}`) &&
+        jlptLevels.includes(`n${word.jlpt_level}`) &&
         isUsable(word.senses[0].parts_of_speech[0]),
     )
     filteredWords.push(...iAdjectives)
   }
   if (settings.naAdjective) {
-    const naAdjectives = wordDatabase["adj-na"].filter(
+    const naAdjectives = VerbsAndAdjectivesJLPT["adj-na"].filter(
       (word) =>
-        jlptLevels.includes(`n${word.level}`) &&
+        jlptLevels.includes(`n${word.jlpt_level}`) &&
         isUsable(word.senses[0].parts_of_speech[0]),
     )
     filteredWords.push(...naAdjectives)

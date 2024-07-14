@@ -88,12 +88,12 @@ function getConjugations(
   const polite = speechLevel === "polite"
   const negative = polarity === "negative"
   const past = tense === "past"
-  console.log("Conjugation options:", {
-    polite,
-    negative,
-    past,
-    conjugationType,
-  })
+  // console.log("Conjugation options:", {
+  //   polite,
+  //   negative,
+  //   past,
+  //   conjugationType,
+  // })
 
   switch (conjugationType) {
     case "te-form":

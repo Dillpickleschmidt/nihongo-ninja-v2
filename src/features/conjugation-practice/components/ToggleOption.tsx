@@ -17,11 +17,16 @@ export default function ToggleOption({
   className,
 }: ToggleOptionProps) {
   return (
-    <div className="flex items-center space-x-2">
-      <Checkbox id={id} checked={checked} onCheckedChange={onCheckedChange} />
+    <div className="flex items-center space-x-3">
+      <Checkbox
+        id={id}
+        checked={checked}
+        onCheckedChange={onCheckedChange}
+        className="h-[18px] w-[18px] rounded-full data-[state=checked]:border-emerald-500 data-[state=checked]:bg-emerald-500"
+      />
       <Label
         htmlFor={id}
-        className={`hover:cursor-pointer ${className || "text-base font-normal"}`}
+        className={`hover:cursor-pointer ${className || "text-lg lg:text-[1.2rem]"}`}
       >
         {label}
       </Label>

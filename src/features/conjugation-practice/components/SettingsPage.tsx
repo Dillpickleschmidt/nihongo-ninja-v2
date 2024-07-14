@@ -53,10 +53,9 @@ export default function SettingsPage({ onStartReview }: HomePageProps) {
               ["causative", "Causative"],
               ["causativePassive", "Causative-Passive"],
             ].map(([key, label]) => (
-              <div className="mx-6 flex justify-center">
+              <div key={key} className="mx-6 flex justify-center">
                 <div className="w-56">
                   <ToggleOption
-                    key={key}
                     id={key as keyof Settings}
                     checked={settings[key as keyof Settings] as boolean}
                     onCheckedChange={(checked) =>
@@ -78,10 +77,9 @@ export default function SettingsPage({ onStartReview }: HomePageProps) {
               ["iAdjective", "I-Adjective"],
               ["naAdjective", "Na-Adjective"],
             ].map(([key, label]) => (
-              <div className="mx-6 flex justify-center">
+              <div key={key} className="mx-6 flex justify-center">
                 <div className="w-56">
                   <ToggleOption
-                    key={key}
                     id={key as keyof Settings}
                     checked={settings[key as keyof Settings] as boolean}
                     onCheckedChange={(checked) =>
@@ -102,10 +100,9 @@ export default function SettingsPage({ onStartReview }: HomePageProps) {
               ["polite", "Polite"],
               ["plain", "Plain"],
             ].map(([key, label]) => (
-              <div className="mx-6 flex justify-center">
+              <div key={key} className="mx-6 flex justify-center">
                 <div className="w-56">
                   <ToggleOption
-                    key={key}
                     id={key as keyof Settings}
                     checked={settings[key as keyof Settings] as boolean}
                     onCheckedChange={(checked) =>
@@ -126,10 +123,9 @@ export default function SettingsPage({ onStartReview }: HomePageProps) {
               ["nonPast", "Non-Past"],
               ["past", "Past"],
             ].map(([key, label]) => (
-              <div className="mx-6 flex justify-center">
+              <div key={key} className="mx-6 flex justify-center">
                 <div className="w-56">
                   <ToggleOption
-                    key={key}
                     id={key as keyof Settings}
                     checked={settings[key as keyof Settings] as boolean}
                     onCheckedChange={(checked) =>
@@ -150,10 +146,9 @@ export default function SettingsPage({ onStartReview }: HomePageProps) {
               ["positive", "Positive"],
               ["negative", "Negative"],
             ].map(([key, label]) => (
-              <div className="mx-6 flex justify-center">
+              <div key={key} className="mx-6 flex justify-center">
                 <div className="w-56">
                   <ToggleOption
-                    key={key}
                     id={key as keyof Settings}
                     checked={settings[key as keyof Settings] as boolean}
                     onCheckedChange={(checked) =>

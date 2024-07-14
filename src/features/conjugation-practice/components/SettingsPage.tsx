@@ -30,7 +30,7 @@ export default function SettingsPage({ onStartReview }: HomePageProps) {
     <>
       <div className="fixed flex w-full flex-col items-center">
         <div className="h-3 w-full backdrop-blur-sm"></div>
-        <h1 className="!mt-12 rounded-xl border border-border bg-white/5 px-8 py-6 text-[1.75rem] font-semibold backdrop-blur-sm lg:mt-9">
+        <h1 className="!mt-12 rounded-xl border border-border bg-white/5 px-8 py-6 text-[1.75rem] font-black backdrop-blur-sm lg:mt-9">
           Conjugation Practice
         </h1>
       </div>

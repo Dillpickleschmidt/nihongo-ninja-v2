@@ -5,24 +5,24 @@ describe("Conjugation Utils", () => {
     describe("Godan verbs", () => {
       it("should conjugate correctly in polite form", () => {
         expect(
-          conjugationUtils.normalForm("はなす", "Godan verb with su ending", {
+          conjugationUtils.normalForm("はなす", "Godan verb with 'su' ending", {
             polite: true,
           }),
         ).toEqual(["はなします"])
         expect(
-          conjugationUtils.normalForm("はなす", "Godan verb with su ending", {
+          conjugationUtils.normalForm("はなす", "Godan verb with 'su' ending", {
             polite: true,
             negative: true,
           }),
         ).toEqual(["はなしません"])
         expect(
-          conjugationUtils.normalForm("はなす", "Godan verb with su ending", {
+          conjugationUtils.normalForm("はなす", "Godan verb with 'su' ending", {
             polite: true,
             past: true,
           }),
         ).toEqual(["はなしました"])
         expect(
-          conjugationUtils.normalForm("はなす", "Godan verb with su ending", {
+          conjugationUtils.normalForm("はなす", "Godan verb with 'su' ending", {
             polite: true,
             negative: true,
             past: true,
@@ -34,22 +34,22 @@ describe("Conjugation Utils", () => {
         expect(
           conjugationUtils.normalForm(
             "はなす",
-            "Godan verb with su ending",
+            "Godan verb with 'su' ending",
             {},
           ),
         ).toEqual(["はなす"])
         expect(
-          conjugationUtils.normalForm("はなす", "Godan verb with su ending", {
+          conjugationUtils.normalForm("はなす", "Godan verb with 'su' ending", {
             negative: true,
           }),
         ).toEqual(["はなさない"])
         expect(
-          conjugationUtils.normalForm("はなす", "Godan verb with su ending", {
+          conjugationUtils.normalForm("はなす", "Godan verb with 'su' ending", {
             past: true,
           }),
         ).toEqual(["はなした"])
         expect(
-          conjugationUtils.normalForm("はなす", "Godan verb with su ending", {
+          conjugationUtils.normalForm("はなす", "Godan verb with 'su' ending", {
             negative: true,
             past: true,
           }),
@@ -62,14 +62,14 @@ describe("Conjugation Utils", () => {
         expect(
           conjugationUtils.conjugate(
             "かう",
-            "Godan verb with u ending",
+            "Godan verb with 'u' ending",
             "te-form",
           ),
         ).toEqual(["かって"])
         expect(
           conjugationUtils.conjugate(
             "かう",
-            "Godan verb with u ending",
+            "Godan verb with 'u' ending",
             "te-form",
             { negative: true },
           ),
@@ -77,7 +77,7 @@ describe("Conjugation Utils", () => {
         expect(
           conjugationUtils.conjugate(
             "かう",
-            "Godan verb with u ending",
+            "Godan verb with 'u' ending",
             "te-form",
             { polite: true, negative: true },
           ),
@@ -88,14 +88,14 @@ describe("Conjugation Utils", () => {
         expect(
           conjugationUtils.conjugate(
             "まつ",
-            "Godan verb with tsu ending",
+            "Godan verb with 'tsu' ending",
             "te-form",
           ),
         ).toEqual(["まって"])
         expect(
           conjugationUtils.conjugate(
             "まつ",
-            "Godan verb with tsu ending",
+            "Godan verb with 'tsu' ending",
             "te-form",
             { negative: true },
           ),
@@ -103,7 +103,7 @@ describe("Conjugation Utils", () => {
         expect(
           conjugationUtils.conjugate(
             "まつ",
-            "Godan verb with tsu ending",
+            "Godan verb with 'tsu' ending",
             "te-form",
             { polite: true, negative: true },
           ),
@@ -114,14 +114,14 @@ describe("Conjugation Utils", () => {
         expect(
           conjugationUtils.conjugate(
             "とる",
-            "Godan verb with ru ending",
+            "Godan verb with 'ru' ending",
             "te-form",
           ),
         ).toEqual(["とって"])
         expect(
           conjugationUtils.conjugate(
             "とる",
-            "Godan verb with ru ending",
+            "Godan verb with 'ru' ending",
             "te-form",
             { negative: true },
           ),
@@ -129,7 +129,7 @@ describe("Conjugation Utils", () => {
         expect(
           conjugationUtils.conjugate(
             "とる",
-            "Godan verb with ru ending",
+            "Godan verb with 'ru' ending",
             "te-form",
             { polite: true, negative: true },
           ),
@@ -140,14 +140,14 @@ describe("Conjugation Utils", () => {
         expect(
           conjugationUtils.conjugate(
             "きく",
-            "Godan verb with ku ending",
+            "Godan verb with 'ku' ending",
             "te-form",
           ),
         ).toEqual(["きいて"])
         expect(
           conjugationUtils.conjugate(
             "きく",
-            "Godan verb with ku ending",
+            "Godan verb with 'ku' ending",
             "te-form",
             { negative: true },
           ),
@@ -155,7 +155,7 @@ describe("Conjugation Utils", () => {
         expect(
           conjugationUtils.conjugate(
             "きく",
-            "Godan verb with ku ending",
+            "Godan verb with 'ku' ending",
             "te-form",
             { polite: true, negative: true },
           ),
@@ -166,14 +166,14 @@ describe("Conjugation Utils", () => {
         expect(
           conjugationUtils.conjugate(
             "およぐ",
-            "Godan verb with gu ending",
+            "Godan verb with 'gu' ending",
             "te-form",
           ),
         ).toEqual(["およいで"])
         expect(
           conjugationUtils.conjugate(
             "およぐ",
-            "Godan verb with gu ending",
+            "Godan verb with 'gu' ending",
             "te-form",
             { negative: true },
           ),
@@ -181,7 +181,7 @@ describe("Conjugation Utils", () => {
         expect(
           conjugationUtils.conjugate(
             "およぐ",
-            "Godan verb with gu ending",
+            "Godan verb with 'gu' ending",
             "te-form",
             { polite: true, negative: true },
           ),
@@ -192,14 +192,14 @@ describe("Conjugation Utils", () => {
         expect(
           conjugationUtils.conjugate(
             "よむ",
-            "Godan verb with mu ending",
+            "Godan verb with 'mu' ending",
             "te-form",
           ),
         ).toEqual(["よんで"])
         expect(
           conjugationUtils.conjugate(
             "よむ",
-            "Godan verb with mu ending",
+            "Godan verb with 'mu' ending",
             "te-form",
             { negative: true },
           ),
@@ -207,7 +207,7 @@ describe("Conjugation Utils", () => {
         expect(
           conjugationUtils.conjugate(
             "よむ",
-            "Godan verb with mu ending",
+            "Godan verb with 'mu' ending",
             "te-form",
             { polite: true, negative: true },
           ),
@@ -218,14 +218,14 @@ describe("Conjugation Utils", () => {
         expect(
           conjugationUtils.conjugate(
             "あそぶ",
-            "Godan verb with bu ending",
+            "Godan verb with 'bu' ending",
             "te-form",
           ),
         ).toEqual(["あそんで"])
         expect(
           conjugationUtils.conjugate(
             "あそぶ",
-            "Godan verb with bu ending",
+            "Godan verb with 'bu' ending",
             "te-form",
             { negative: true },
           ),
@@ -233,7 +233,7 @@ describe("Conjugation Utils", () => {
         expect(
           conjugationUtils.conjugate(
             "あそぶ",
-            "Godan verb with bu ending",
+            "Godan verb with 'bu' ending",
             "te-form",
             { polite: true, negative: true },
           ),
@@ -244,14 +244,14 @@ describe("Conjugation Utils", () => {
         expect(
           conjugationUtils.conjugate(
             "しぬ",
-            "Godan verb with nu ending",
+            "Godan verb with 'nu' ending",
             "te-form",
           ),
         ).toEqual(["しんで"])
         expect(
           conjugationUtils.conjugate(
             "しぬ",
-            "Godan verb with nu ending",
+            "Godan verb with 'nu' ending",
             "te-form",
             { negative: true },
           ),
@@ -259,7 +259,7 @@ describe("Conjugation Utils", () => {
         expect(
           conjugationUtils.conjugate(
             "しぬ",
-            "Godan verb with nu ending",
+            "Godan verb with 'nu' ending",
             "te-form",
             { polite: true, negative: true },
           ),
@@ -270,14 +270,14 @@ describe("Conjugation Utils", () => {
         expect(
           conjugationUtils.conjugate(
             "はなす",
-            "Godan verb with su ending",
+            "Godan verb with 'su' ending",
             "te-form",
           ),
         ).toEqual(["はなして"])
         expect(
           conjugationUtils.conjugate(
             "はなす",
-            "Godan verb with su ending",
+            "Godan verb with 'su' ending",
             "te-form",
             { negative: true },
           ),
@@ -285,7 +285,7 @@ describe("Conjugation Utils", () => {
         expect(
           conjugationUtils.conjugate(
             "はなす",
-            "Godan verb with su ending",
+            "Godan verb with 'su' ending",
             "te-form",
             { polite: true, negative: true },
           ),
@@ -494,24 +494,24 @@ describe("Conjugation Utils", () => {
     describe("する (suru) verb", () => {
       it("should conjugate correctly in polite form", () => {
         expect(
-          conjugationUtils.normalForm("する", "Suru verb - irregular", {
+          conjugationUtils.normalForm("する", "Suru verb - included", {
             polite: true,
           }),
         ).toEqual(["します"])
         expect(
-          conjugationUtils.normalForm("する", "Suru verb - irregular", {
+          conjugationUtils.normalForm("する", "Suru verb - included", {
             polite: true,
             negative: true,
           }),
         ).toEqual(["しません"])
         expect(
-          conjugationUtils.normalForm("する", "Suru verb - irregular", {
+          conjugationUtils.normalForm("する", "Suru verb - included", {
             polite: true,
             past: true,
           }),
         ).toEqual(["しました"])
         expect(
-          conjugationUtils.normalForm("する", "Suru verb - irregular", {
+          conjugationUtils.normalForm("する", "Suru verb - included", {
             polite: true,
             negative: true,
             past: true,
@@ -521,20 +521,20 @@ describe("Conjugation Utils", () => {
 
       it("should conjugate correctly in plain form", () => {
         expect(
-          conjugationUtils.normalForm("する", "Suru verb - irregular", {}),
+          conjugationUtils.normalForm("する", "Suru verb - included", {}),
         ).toEqual(["する"])
         expect(
-          conjugationUtils.normalForm("する", "Suru verb - irregular", {
+          conjugationUtils.normalForm("する", "Suru verb - included", {
             negative: true,
           }),
         ).toEqual(["しない"])
         expect(
-          conjugationUtils.normalForm("する", "Suru verb - irregular", {
+          conjugationUtils.normalForm("する", "Suru verb - included", {
             past: true,
           }),
         ).toEqual(["した"])
         expect(
-          conjugationUtils.normalForm("する", "Suru verb - irregular", {
+          conjugationUtils.normalForm("する", "Suru verb - included", {
             negative: true,
             past: true,
           }),
@@ -543,16 +543,12 @@ describe("Conjugation Utils", () => {
 
       it("should conjugate correctly in te-form", () => {
         expect(
-          conjugationUtils.conjugate(
-            "する",
-            "Suru verb - irregular",
-            "te-form",
-          ),
+          conjugationUtils.conjugate("する", "Suru verb - included", "te-form"),
         ).toEqual(["して"])
         expect(
           conjugationUtils.conjugate(
             "する",
-            "Suru verb - irregular",
+            "Suru verb - included",
             "te-form",
             { negative: true },
           ),
@@ -560,11 +556,92 @@ describe("Conjugation Utils", () => {
         expect(
           conjugationUtils.conjugate(
             "する",
-            "Suru verb - irregular",
+            "Suru verb - included",
             "te-form",
             { polite: true, negative: true },
           ),
         ).toEqual(["しませんで"])
+      })
+    })
+
+    describe("する (suru) compound verbs", () => {
+      it("should conjugate correctly in polite form", () => {
+        expect(
+          conjugationUtils.normalForm("勉強する", "Suru verb - compound word", {
+            polite: true,
+          }),
+        ).toEqual(["勉強します"])
+        expect(
+          conjugationUtils.normalForm("勉強する", "Suru verb - compound word", {
+            polite: true,
+            negative: true,
+          }),
+        ).toEqual(["勉強しません"])
+        expect(
+          conjugationUtils.normalForm("勉強する", "Suru verb - compound word", {
+            polite: true,
+            past: true,
+          }),
+        ).toEqual(["勉強しました"])
+        expect(
+          conjugationUtils.normalForm("勉強する", "Suru verb - compound word", {
+            polite: true,
+            negative: true,
+            past: true,
+          }),
+        ).toEqual(["勉強しませんでした"])
+      })
+
+      it("should conjugate correctly in plain form", () => {
+        expect(
+          conjugationUtils.normalForm(
+            "勉強する",
+            "Suru verb - compound word",
+            {},
+          ),
+        ).toEqual(["勉強する"])
+        expect(
+          conjugationUtils.normalForm("勉強する", "Suru verb - compound word", {
+            negative: true,
+          }),
+        ).toEqual(["勉強しない"])
+        expect(
+          conjugationUtils.normalForm("勉強する", "Suru verb - compound word", {
+            past: true,
+          }),
+        ).toEqual(["勉強した"])
+        expect(
+          conjugationUtils.normalForm("勉強する", "Suru verb - compound word", {
+            negative: true,
+            past: true,
+          }),
+        ).toEqual(["勉強しなかった"])
+      })
+
+      it("should conjugate correctly in te-form", () => {
+        expect(
+          conjugationUtils.conjugate(
+            "勉強する",
+            "Suru verb - compound word",
+            "te-form",
+          ),
+        ).toEqual(["勉強して"])
+        expect(
+          conjugationUtils.conjugate(
+            "勉強する",
+            "Suru verb - compound word",
+            "te-form",
+            { negative: true },
+          ),
+        ).toEqual(["勉強しなくて", "勉強しないで"])
+        expect(
+          conjugationUtils.conjugate(
+            "勉強する",
+            "Suru verb - compound word",
+            "te-form",
+            { polite: true, negative: true },
+          ),
+        ).toEqual(["勉強しませんで"])
       })
     })
 
@@ -670,28 +747,28 @@ describe("Conjugation Utils", () => {
         expect(
           conjugationUtils.normalForm(
             "ある",
-            "Godan verb with ru ending (irregular verb)",
+            "Godan verb with 'ru' ending (irregular verb)",
             { polite: true },
           ),
         ).toEqual(["あります"])
         expect(
           conjugationUtils.normalForm(
             "ある",
-            "Godan verb with ru ending (irregular verb)",
+            "Godan verb with 'ru' ending (irregular verb)",
             { polite: true, negative: true },
           ),
         ).toEqual(["ありません"])
         expect(
           conjugationUtils.normalForm(
             "ある",
-            "Godan verb with ru ending (irregular verb)",
+            "Godan verb with 'ru' ending (irregular verb)",
             { polite: true, past: true },
           ),
         ).toEqual(["ありました"])
         expect(
           conjugationUtils.normalForm(
             "ある",
-            "Godan verb with ru ending (irregular verb)",
+            "Godan verb with 'ru' ending (irregular verb)",
             { polite: true, negative: true, past: true },
           ),
         ).toEqual(["ありませんでした"])
@@ -701,28 +778,28 @@ describe("Conjugation Utils", () => {
         expect(
           conjugationUtils.normalForm(
             "ある",
-            "Godan verb with ru ending (irregular verb)",
+            "Godan verb with 'ru' ending (irregular verb)",
             {},
           ),
         ).toEqual(["ある"])
         expect(
           conjugationUtils.normalForm(
             "ある",
-            "Godan verb with ru ending (irregular verb)",
+            "Godan verb with 'ru' ending (irregular verb)",
             { negative: true },
           ),
         ).toEqual(["ない"])
         expect(
           conjugationUtils.normalForm(
             "ある",
-            "Godan verb with ru ending (irregular verb)",
+            "Godan verb with 'ru' ending (irregular verb)",
             { past: true },
           ),
         ).toEqual(["あった"])
         expect(
           conjugationUtils.normalForm(
             "ある",
-            "Godan verb with ru ending (irregular verb)",
+            "Godan verb with 'ru' ending (irregular verb)",
             { negative: true, past: true },
           ),
         ).toEqual(["なかった"])
@@ -732,14 +809,14 @@ describe("Conjugation Utils", () => {
         expect(
           conjugationUtils.conjugate(
             "ある",
-            "Godan verb with ru ending (irregular verb)",
+            "Godan verb with 'ru' ending (irregular verb)",
             "te-form",
           ),
         ).toEqual(["あって"])
         expect(
           conjugationUtils.conjugate(
             "ある",
-            "Godan verb with ru ending (irregular verb)",
+            "Godan verb with 'ru' ending (irregular verb)",
             "te-form",
             { negative: true },
           ),
@@ -747,7 +824,7 @@ describe("Conjugation Utils", () => {
         expect(
           conjugationUtils.conjugate(
             "ある",
-            "Godan verb with ru ending (irregular verb)",
+            "Godan verb with 'ru' ending (irregular verb)",
             "te-form",
             { polite: true, negative: true },
           ),

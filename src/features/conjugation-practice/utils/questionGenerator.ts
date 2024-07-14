@@ -33,6 +33,7 @@ const allowedPartsOfSpeech = [
   "Kuru verb - special class",
   "Suru verb - special class",
   "Suru verb - included",
+  "Suru verb - compound word",
   "I-adjective",
   "Na-adjective",
 ]
@@ -78,7 +79,8 @@ export function generateQuestions(settings: Settings): Question[] {
     }
 
     // Make a suru verb from a noun (if applicable)
-    if (questionWord.partOfSpeech === "Suru verb") {
+    if (questionWord.partOfSpeech === "Suru verb - compound word") {
+      console.log("Converting noun to suru verb")
       questionWord.word = questionWord.word + "する"
       questionWord.reading = questionWord.reading + "する"
       questionWord.meaning = "[to do] " + questionWord.meaning
@@ -131,7 +133,11 @@ function filterWords(settings: Settings): Word[] {
         jlptLevels.includes(`n${word.jlpt_level}`) &&
         // Include the verb if "Suru verbs" are not to be excluded, or if it is not a "Suru verb"
         (!settings.leaveOutSuru ||
-          !word.senses[0].parts_of_speech.includes("Suru verb")) &&
+          !word.senses[0].parts_of_speech.includes(
+            "Suru verb - special class" ||
+              "Suru verb - included" ||
+              "Suru verb - compound word",
+          )) &&
         isUsable(word.senses[0].parts_of_speech[0]),
     )
     filteredWords.push(...verbs)

@@ -52,7 +52,7 @@ export function getMasuStem(
   const group = getGroup(partOfSpeech)
   if (group === "1") {
     const preMasu =
-      partOfSpeech === "Godan verb - aru special class"
+      partOfSpeech === "Godan verb - -aru special class"
         ? "い"
         : changeHiraganaVowel(reading.slice(-1), toVowel)
     return reading.slice(0, -1) + preMasu
@@ -80,7 +80,7 @@ export function getNaiStem(reading: string, partOfSpeech: string): string {
   const group = getGroup(partOfSpeech)
   switch (group) {
     case "1":
-      if (partOfSpeech === "Godan verb with ru ending (irregular verb)") {
+      if (partOfSpeech === "Godan verb with 'ru' ending (irregular verb)") {
         return ""
       } else if (reading.slice(-1) === "う") {
         return reading.slice(0, -1) + "わ"
@@ -126,7 +126,7 @@ export function teForm(
         endings = ["て"]
       }
       break
-    case "Godan verb with u ending":
+    case "Godan verb with 'u' ending":
       if (negative) {
         stem = polite
           ? getMasuStem(reading, partOfSpeech)
@@ -136,8 +136,8 @@ export function teForm(
         endings = ["って"]
       }
       break
-    case "Godan verb with tsu ending":
-    case "Godan verb with ru ending":
+    case "Godan verb with 'tsu' ending":
+    case "Godan verb with 'ru' ending":
       if (negative) {
         stem = polite
           ? getMasuStem(reading, partOfSpeech)
@@ -157,7 +157,7 @@ export function teForm(
         endings = ["って"]
       }
       break
-    case "Godan verb with ku ending":
+    case "Godan verb with 'ku' ending":
       if (negative) {
         stem = polite
           ? getMasuStem(reading, partOfSpeech)
@@ -167,7 +167,7 @@ export function teForm(
         endings = ["いて"]
       }
       break
-    case "Godan verb with gu ending":
+    case "Godan verb with 'gu' ending":
       if (negative) {
         stem = polite
           ? getMasuStem(reading, partOfSpeech)
@@ -177,9 +177,9 @@ export function teForm(
         endings = ["いで"]
       }
       break
-    case "Godan verb with bu ending":
-    case "Godan verb with mu ending":
-    case "Godan verb with nu ending":
+    case "Godan verb with 'bu' ending":
+    case "Godan verb with 'mu' ending":
+    case "Godan verb with 'nu' ending":
       if (negative) {
         stem = polite
           ? getMasuStem(reading, partOfSpeech)
@@ -189,7 +189,7 @@ export function teForm(
         endings = ["んで"]
       }
       break
-    case "Godan verb with su ending":
+    case "Godan verb with 'su' ending":
       if (negative) {
         stem = polite
           ? getMasuStem(reading, partOfSpeech)
@@ -199,14 +199,14 @@ export function teForm(
         endings = ["して"]
       }
       break
-    case "Godan verb with ru ending (irregular verb)": // ある
+    case "Godan verb with 'ru' ending (irregular verb)": // ある
       if (negative) {
         return polite ? ["ありませんで"] : ["なくて"]
       } else {
         endings = ["って"]
       }
       break
-    case "Godan verb - aru special class":
+    case "Godan verb - -aru special class":
       if (negative) {
         stem = getMasuStem(reading, partOfSpeech)
         endings = polite ? ["ませんで"] : ["なくて", "ないで"]
@@ -214,8 +214,8 @@ export function teForm(
         endings = ["って"]
       }
       break
-    case "Suru verb":
-    case "Suru verb - irregular":
+    case "Suru verb - included":
+    case "Suru verb - compound word":
     case "Suru verb - special class":
       if (negative) {
         stem = getMasuStem(reading, partOfSpeech)
@@ -509,7 +509,7 @@ export function passive(
       }
       break
   }
-  if (partOfSpeech === "Godan verb with ru ending (irregular verb)") {
+  if (partOfSpeech === "Godan verb with 'ru' ending (irregular verb)") {
     stem = "あら"
   }
   return stem
@@ -546,7 +546,7 @@ export function causative(
       }
       break
   }
-  if (partOfSpeech === "Godan verb with ru ending (irregular verb)") {
+  if (partOfSpeech === "Godan verb with 'ru' ending (irregular verb)") {
     stem = "あら"
   }
   return stem

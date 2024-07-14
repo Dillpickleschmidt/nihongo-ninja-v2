@@ -34,7 +34,7 @@ export default function SettingsPage({ onStartReview }: HomePageProps) {
           Conjugation Practice
         </h1>
       </div>
-      <div className="mt-32 w-full max-w-[600px] lg:mt-36">
+      <div className="mt-32 w-full max-w-[625px] lg:mt-36">
         <div className="border-b border-card-foreground">
           <h2 className="mt-6 text-[1.75rem] font-black text-orange-400">
             Form Types

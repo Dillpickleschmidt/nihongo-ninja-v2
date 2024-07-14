@@ -93,7 +93,7 @@ export default function PracticePage() {
     : currentQuestion.term
 
   return (
-    <div className="w-screen max-w-[600px] space-y-6">
+    <div className="w-screen max-w-[700px] space-y-6 px-6 sm:px-8 md:px-12">
       <h1 className="text-center font-japanese text-4xl font-medium">
         <span className="font-bold">{displayTerm.reading}</span>
         {displayTerm.word !== displayTerm.reading && ` (${displayTerm.word})`}

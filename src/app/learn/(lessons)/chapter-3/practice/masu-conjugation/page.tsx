@@ -4,7 +4,7 @@ import ContentBox from "@/features/content-box/ContentBox"
 export default function Page() {
   return (
     <ContentBox
-      variant="reading"
+      variant="xl"
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={2}

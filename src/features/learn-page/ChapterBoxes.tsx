@@ -699,10 +699,14 @@ export function ChapterBoxes() {
           Practice Pos/Neg <span className="font-japanese">ます</span>{" "}
           Conjugation
         </UnitButton>
-        <UnitButton id="14." type="lesson" disabled>
+        <UnitButton
+          id="21."
+          type="lesson"
+          link="/learn/chapter-3/o-de-ni-e-particles"
+        >
           Particles - <span className="font-japanese">を, で, に, へ</span>
         </UnitButton>
-        <UnitButton id="15." type="lesson" disabled>
+        <UnitButton id="22." type="lesson" disabled>
           Word Order
         </UnitButton>
         <UnitButton id="16." type="writing" disabled>

@@ -659,25 +659,42 @@ export function ChapterBoxes() {
         >
           Practice Nouns - Kana
         </UnitButton>
-        <UnitButton id="15." type="vocab" link="/learn/chapter-3/verbs-and-adj">
-          Chapter 3 Verbs & Adj.
+        <UnitButton id="15." type="vocab" link="/learn/chapter-3/days-and-time">
+          Days of The Week & Time
         </UnitButton>
         <UnitButton
           id="16."
+          type="practice"
+          link="/learn/chapter-3/practice/days-and-time-readings"
+        >
+          Practice Days & Time - Readings
+        </UnitButton>
+        <UnitButton
+          id="17."
+          type="practice"
+          link="/learn/chapter-3/practice/days-and-time-kana"
+        >
+          Practice Days & Time - Kana
+        </UnitButton>
+        <UnitButton id="18." type="vocab" link="/learn/chapter-3/verbs-and-adj">
+          Chapter 3 Verbs & Adj.
+        </UnitButton>
+        <UnitButton
+          id="19."
           type="practice"
           link="/learn/chapter-3/practice/verbs-and-adj-readings"
         >
           Practice Verbs & Adj. - Readings
         </UnitButton>
         <UnitButton
-          id="17."
+          id="20."
           type="practice"
           link="/learn/chapter-3/practice/verbs-and-adj-kana"
         >
           Practice Verbs & Adj. - Kana
         </UnitButton>
         <UnitButton
-          id="18."
+          id="21."
           type="lesson"
           link="/learn/chapter-3/verb-conj-masu"
         >
@@ -685,14 +702,14 @@ export function ChapterBoxes() {
           Ichidan
         </UnitButton>
         <UnitButton
-          id="19."
+          id="22."
           type="lesson"
           link="/learn/chapter-3/negative-masu-conj"
         >
           Negative <span className="font-japanese">ます</span> Conjugation
         </UnitButton>
         <UnitButton
-          id="20."
+          id="23."
           type="conjugation-practice"
           link="/learn/chapter-3/practice/masu-conjugation"
         >
@@ -700,13 +717,13 @@ export function ChapterBoxes() {
           Conjugation
         </UnitButton>
         <UnitButton
-          id="21."
+          id="24."
           type="lesson"
           link="/learn/chapter-3/o-de-ni-e-particles"
         >
           Particles - <span className="font-japanese">を, で, に, へ</span>
         </UnitButton>
-        <UnitButton id="22." type="lesson" disabled>
+        <UnitButton id="25." type="lesson" link="/learn/chapter-3/word-order">
           Word Order
         </UnitButton>
         <UnitButton id="16." type="writing" disabled>
@@ -720,15 +737,6 @@ export function ChapterBoxes() {
         </UnitButton>
         <UnitButton id="21." type="video" disabled>
           Kikusasaizu Video - L3-2
-        </UnitButton>
-        <UnitButton id="22." type="vocab" disabled>
-          Days of The Week & Time
-        </UnitButton>
-        <UnitButton id="23." type="practice" disabled>
-          Practice Days & Time - Readings
-        </UnitButton>
-        <UnitButton id="24." type="practice" disabled>
-          Practice Days & Time - Kana
         </UnitButton>
         <UnitButton id="25." type="lesson" disabled>
           ちょっと

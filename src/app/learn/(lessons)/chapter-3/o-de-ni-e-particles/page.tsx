@@ -442,13 +442,13 @@ export default function page() {
           className="text-xl"
         />
 
-        <p>Lorem ipsum dolor sit amet.</p>
+        <p>I study at school</p>
         <SelectText
-          answer="友達と公園で野球をします。"
-          a="友達と公園を野球をします。"
-          b="友達と公園で野球をします。"
-          c="友達と公園に野球をします。"
-          d="友達と公園へ野球をします。"
+          answer="学校で勉強します。"
+          a="学校を勉強します。"
+          b="学校に勉強します。"
+          c="学校へ勉強します。"
+          d="学校で勉強します。"
           className="text-xl"
         />
 
@@ -462,26 +462,34 @@ export default function page() {
           className="text-xl"
         />
 
-        <p>Lorem ipsum dolor sit amet.</p>
+        <p>I will not study today.</p>
         <SelectText
-          answer={["来週、北海道へ旅行します。", "来週、北海道に旅行します。"]}
-          a="来週、北海道を旅行します。"
-          b="来週、北海道で旅行します。"
-          c="来週、北海道に旅行します。"
-          d="来週、北海道へ旅行します。"
+          answer="今日、勉強しません。"
+          a="今日、勉強します。"
+          b="今日、勉強にしません。"
+          c="今日、勉強しません。"
+          d="今日、勉強をしません。"
           className="text-xl"
         />
       </div>
 
       <div className="mt-12 space-y-6 px-12 sm:px-16 md:px-24">
         <h3 className="text-center font-bold">
-          Try creating sentences using each particle. Here are some prompts:
+          Try creating sentences using 1 or more of these particles.
         </h3>
         <ol className="list-inside list-decimal space-y-2">
           <li>
-            Describe eating sushi at a restaurant (use{" "}
-            <span className="font-japanese text-xl">を</span> and{" "}
-            <span className="font-japanese text-xl">で</span>).
+            Describe eating sushi at a restaurant.
+            <p className="text-sm italic text-muted-foreground">
+              <span className="font-japanese text-base not-italic">
+                レストラン
+              </span>{" "}
+              {"->"} restaurant
+            </p>
+            <p className="text-sm italic text-muted-foreground">
+              <span className="font-japanese text-base not-italic">すし</span>{" "}
+              {"->"} sushi
+            </p>
             <div className="mx-6 mb-6 mt-4">
               <CustomTextArea
                 className="h-28 w-full resize-none font-japanese text-xl"
@@ -490,9 +498,7 @@ export default function page() {
             </div>
           </li>
           <li>
-            Talk about going to school at 8 AM (use{" "}
-            <span className="font-japanese text-xl">に</span> for both
-            destination and time).
+            Talk about going to school at 8 AM.
             <div className="mx-6 mb-6 mt-4">
               <CustomTextArea
                 className="h-28 w-full resize-none font-japanese text-xl"
@@ -501,9 +507,7 @@ export default function page() {
             </div>
           </li>
           <li>
-            Explain writing a letter to your friend (use{" "}
-            <span className="font-japanese text-xl">を</span> and{" "}
-            <span className="font-japanese text-xl">に</span>).
+            Tell your friend that you watch movies at home.
             <div className="mx-6 mb-6 mt-4">
               <CustomTextArea
                 className="h-28 w-full resize-none font-japanese text-xl"
@@ -512,8 +516,15 @@ export default function page() {
             </div>
           </li>
           <li>
-            Describe traveling towards the mountains (use{" "}
-            <span className="font-japanese text-xl">へ</span>).
+            Describe traveling towards the mountains.
+            <p className="text-sm italic text-muted-foreground">
+              <span className="font-japanese text-base not-italic">
+                <Furigana furigana={<span className="text-xs">やま</span>}>
+                  山
+                </Furigana>
+              </span>{" "}
+              {"->"} mountain
+            </p>
             <div className="mx-6 mb-6 mt-4">
               <CustomTextArea
                 className="h-28 w-full resize-none font-japanese text-xl"

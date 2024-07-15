@@ -28,15 +28,14 @@ export default function SettingsPage({ onStartReview }: HomePageProps) {
 
   return (
     <>
-      <div className="fixed flex w-full flex-col items-center">
-        <div className="h-3 w-full backdrop-blur-sm"></div>
-        <h1 className="!mt-12 rounded-xl border border-border bg-white/5 px-8 py-6 text-[1.75rem] font-black backdrop-blur-sm lg:mt-9">
+      <div className="mt-12 flex w-full flex-col items-center">
+        <h1 className="rounded-xl border border-border bg-white/5 px-8 py-6 text-[1.75rem] font-black backdrop-blur-sm lg:mt-9">
           Conjugation Practice
         </h1>
       </div>
-      <div className="mt-32 w-full max-w-[625px] lg:mt-36">
+      <div className="w-full max-w-[625px]">
         <div className="border-b border-card-foreground">
-          <h2 className="mt-6 text-[1.75rem] font-black text-orange-400">
+          <h2 className="mt-12 text-[1.75rem] font-black text-orange-400">
             Form Types
           </h2>
           <div className="my-8 grid grid-cols-1 gap-4 md:grid-cols-2">

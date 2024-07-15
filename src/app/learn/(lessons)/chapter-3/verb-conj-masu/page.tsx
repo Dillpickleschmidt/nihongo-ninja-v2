@@ -543,6 +543,13 @@ export default function page() {
             </li>
           </ul>
         </div>
+        <p className="text-base italic text-muted-foreground">
+          *Note that while nouns are typically connected to verbs via the{" "}
+          <span className="font-japanese font-semibold not-italic">を</span>{" "}
+          particle (more on this later), compound verbs with{" "}
+          <span className="font-japanese font-semibold not-italic">する</span>{" "}
+          don't need that particle, it's just one word.
+        </p>
         <h4 className="!mt-9 text-center text-xl font-bold">
           Non-Ichidan iru/eru Verbs
         </h4>

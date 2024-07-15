@@ -5,6 +5,22 @@ import TimeChart from "@/features/charts/TimeChart"
 import YouTubeVideo from "@/features/youtube/YouTube"
 
 export default function page() {
+  const jpdbIds = [
+    [2845369, 903783031],
+    [1195960, 2130451943],
+    [2845349, 4176516794],
+    [1478750, 1713267335],
+    [1288850, 1736536790],
+    [1307230, 3471884003],
+    [2845363, 1389634667],
+    [1392580, 1712394290],
+    [1576100, 1925836304],
+    [1542790, 1358220814],
+    [1536350, 1717618640],
+    [1428280, 1953834950],
+    [1426250, 1953075005],
+  ]
+
   return (
     <ContentBox
       variant="xl"
@@ -13,6 +29,8 @@ export default function page() {
       backgroundImageOpacity={5}
       nextPageLink="/learn/chapter-1/practice/telling-time"
       showProgressBar={false}
+      jpdbDeckName="Nihongo Ninja: Chapter 1"
+      jpdbVocab={jpdbIds}
     >
       <h1 className="mb-8 px-20 pt-20 text-center text-4xl font-medium">
         Telling Time
@@ -156,7 +174,11 @@ export default function page() {
             </li>
           </ul>
           <ul className="list-inside list-disc space-y-2">
-            <li>はん is typically written with the kanji 半.</li>
+            <li>
+              <span className="font-japanese text-xl">はん</span> is typically
+              written with the kanji{" "}
+              <span className="font-japanese text-xl">半</span>.
+            </li>
           </ul>
           <h2 className="!mt-12 text-center text-2xl font-bold">
             Quarter Past and Quarter To
@@ -205,7 +227,7 @@ export default function page() {
           </h2>
           <p>
             The basic way to say a.m. and p.m. in Japanese is using{" "}
-            <span className="font-japanese text-xl font-bold">ごぜん</span> and
+            <span className="font-japanese text-xl font-bold">ごぜん</span> and{" "}
             <span className="font-japanese text-xl font-bold">ごご</span>, which
             you'll see written in kanji as{" "}
             <span className="font-japanese text-xl">午前</span> and{" "}

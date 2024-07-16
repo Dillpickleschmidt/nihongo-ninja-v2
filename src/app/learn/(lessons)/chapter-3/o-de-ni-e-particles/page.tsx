@@ -11,7 +11,7 @@ export default function page() {
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-2/next-lesson"
+      nextPageLink="/learn/chapter-3/word-order"
     >
       <h1 className="px-28 pb-6 pt-28 text-center text-4xl font-semibold">
         <span className="font-japanese text-red-500">を</span>,{" "}
@@ -21,16 +21,46 @@ export default function page() {
       </h1>
       <div className="space-y-6 px-12 sm:px-16 md:px-24">
         <p>
-          In Japanese, particles are small words that follow nouns and indicate
-          their grammatical function in a sentence. Today, we'll explore four
-          important particles: <span className="font-japanese text-xl">を</span>{" "}
-          (wo), <span className="font-japanese text-xl">で</span> (de),{" "}
+          If you've been studying Japanese for a while, or if you're just
+          starting out, you've probably found yourself scratching your head over
+          particles. Don't worry—you're not alone. These tiny words can be
+          incredibly confusing for learners, often seeming like arbitrary
+          sprinkles of hiragana that follow no rhyme or reason.
+        </p>
+        <p>
+          But here's the good news: particles aren't as complicated as they
+          seem. In fact, once you understand their core purpose, you'll find
+          that they're actually quite logical. Today, we're going to demystify
+          four important particles that you'll use constantly in everyday
+          Japanese: <span className="font-japanese text-xl">を</span> (o),{" "}
+          <span className="font-japanese text-xl">で</span> (de),{" "}
           <span className="font-japanese text-xl">に</span> (ni), and{" "}
-          <span className="font-japanese text-xl">へ</span> (e). These particles
-          are like the connective tissue of Japanese sentences, binding words
-          together to create meaning. You'll use them constantly in everyday
-          communication, so mastering them will significantly improve your
-          Japanese skills.
+          <span className="font-japanese text-xl">へ</span> (e).
+        </p>
+        <h2 className="text-2xl font-bold">A Quick Refresher on Particles</h2>
+        <p>
+          Before we dive into our new particles, let's quickly remind ourselves
+          what particles do:
+        </p>
+        <ol className="list-inside list-decimal space-y-2">
+          <li>
+            Particles are small words that <strong>follow nouns</strong> and
+            indicate their grammatical function in a sentence.
+          </li>
+          <li>
+            They tell us the role of the word or phrase that comes{" "}
+            <strong>before</strong> them.
+          </li>
+          <li>
+            In Japanese, particles, <u>not word order</u>, determine the meaning
+            of a sentence.
+          </li>
+        </ol>
+        <p>
+          Keeping these points in mind will help you understand our new
+          particles more easily. Think of particles as the helpful signposts in
+          Japanese sentences, guiding you to understand who's doing what, where,
+          and how.
         </p>
 
         <h2 className="text-2xl font-bold">
@@ -75,6 +105,11 @@ export default function page() {
           Note: While written as を, this particle is pronounced as "o" in
           modern Japanese.
         </p>
+        <p className="!mt-0 text-sm italic text-muted-foreground">
+          Also, for some ungodly reason, the particle{" "}
+          <span className="font-japanese">を</span> is written as "wo" in
+          romaji. Don't ask me why.
+        </p>
 
         <p className="text-center italic">
           ToKini Andy has a lot of good content on these particles.
@@ -86,7 +121,59 @@ export default function page() {
           credit="ToKini Andy"
         />
 
-        <h2 className="text-2xl font-bold">
+        <h3 className="font-bold italic">A Note on Particle Placement:</h3>
+        <p className="!mt-4">
+          *Even though the <span className="font-japanese text-xl">を</span>{" "}
+          particle is used with verbs, particles are connected to{" "}
+          <strong>nouns</strong>, specifically the <strong>end</strong> of
+          nouns. This is important because the noun might not always come
+          immediately before the verb (more on Japanese word order after this
+          lesson).
+        </p>
+
+        <p className="text-base italic text-muted-foreground">
+          <span className="font-japanese not-italic">ゆっくり</span> {"->"}{" "}
+          slowly
+        </p>
+        <div className="!mt-2 flex w-full items-center">
+          <p className="w-1/4 font-bold text-red-500">Incorrect</p>
+          <p className="w-3/4">
+            <span className="font-japanese text-xl line-through">
+              私は本ゆっくり
+              <span className="font-bold text-red-500">を</span>読みます。
+            </span>
+          </p>
+        </div>
+        <div className="flex w-full items-center">
+          <p className="w-1/4 font-bold">Correct</p>
+          <p className="w-3/4">
+            <span className="font-japanese text-xl">
+              私は本<span className="font-bold text-red-500">を</span>
+              ゆっくり読みます。
+            </span>
+            {"->"} I read books slowly.
+          </p>
+        </div>
+        <p>
+          Notice how <span className="font-japanese text-xl">を</span> is
+          attached to <span className="font-japanese text-xl">ゆっくり</span>{" "}
+          <span className="text-base text-muted-foreground">(slowly)</span>{" "}
+          instead of <span className="font-japanese text-xl">本</span> in the
+          first example. That's like saying "I read{" "}
+          <span className="font-bold underline">slowlys</span>" as opposed to "I
+          read <span className="font-bold underline">books</span>" since{" "}
+          <span className="font-japanese text-xl">を</span> is incorrectly
+          paired with <span className="font-japanese text-xl">ゆっくり</span>{" "}
+          instead of <span className="font-japanese text-xl">本</span>. The same
+          rule applies for all other particles. Always think of pairing
+          particles to the <u>end of nouns</u>, <strong>not</strong> beginning
+          of verbs.
+        </p>
+        <h3 className="mx-6 text-center text-2xl font-semibold">
+          Always think of pairing particles to the end of nouns.
+        </h3>
+
+        <h2 className="!mt-8 text-2xl font-bold">
           2. <span className="font-japanese">で</span> - The Utilization
           Particle
         </h2>
@@ -357,15 +444,16 @@ export default function page() {
             (You can't say "I utilize the restaurant for heading.")
           </li>
         </ul>
-        <p className="!mt-4 text-base italic text-muted-foreground">
+        <p className="!mt-3 text-base italic text-muted-foreground">
           *You can use{" "}
           <span className="font-japanese font-semibold not-italic">に・へ</span>{" "}
           interchangably in these two sentences.
         </p>
 
-        <h3 className="text-xl font-semibold">
+        <h3 className="!mt-9 text-xl font-semibold">
           <span className="font-japanese">に</span> vs.{" "}
-          <span className="font-japanese">で</span> for location (Chapter 4):
+          <span className="font-japanese">で</span> {"->"} Existence vs. Action
+          Locations (Chapter 4):
         </h3>
         <ul className="list-inside list-disc space-y-2">
           <li>
@@ -391,7 +479,7 @@ export default function page() {
                 </Furigana>
               </Romaji>
               <span className="font-bold text-green-500">に</span>
-              います。
+              <Romaji romaji="I am">います</Romaji>。
             </span>{" "}
             - I am in the park. (stating existence)
           </li>

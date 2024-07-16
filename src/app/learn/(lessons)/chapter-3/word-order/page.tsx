@@ -102,12 +102,16 @@ export default function JapaneseWordOrderLesson() {
 
         <p>You could rearrange this to:</p>
         <p className="font-japanese text-xl">
-          昨日明日で私はラーメンを食べます。
+          昨日東京で私はラーメンを食べます。
         </p>
         <p className="!mt-2">(Tomorrow in Tokyo, I will eat ramen.)</p>
 
         <p>
           Both are grammatically correct, but the emphasis changes slightly.
+        </p>
+        <p className="mx-6 !mt-4 text-center text-muted-foreground">
+          *Remember, particles pair with the end of nouns. Move the noun, and
+          the particle follows.
         </p>
 
         <h2 className="text-2xl font-bold">Emphasis and New Information</h2>

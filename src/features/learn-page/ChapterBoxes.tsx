@@ -726,8 +726,15 @@ export function ChapterBoxes() {
         <UnitButton id="25." type="lesson" link="/learn/chapter-3/word-order">
           Word Order
         </UnitButton>
-        <UnitButton id="16." type="writing" disabled>
+        <UnitButton id="26." type="writing" disabled>
           Practice Particles
+        </UnitButton>
+        <UnitButton
+          id="27."
+          type="video"
+          link="/learn/chapter-3/your-japanese-voice"
+        >
+          Your Japanese Voice
         </UnitButton>
         <UnitButton id="19." type="reading" disabled>
           Reading Practice

@@ -1,7 +1,7 @@
 "use client"
 import React from "react"
 import { PiFilePdf } from "react-icons/pi"
-import { useReactToPrint, UseReactToPrintFn } from "react-to-print"
+import { useReactToPrint } from "react-to-print"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/utils/cn"
 

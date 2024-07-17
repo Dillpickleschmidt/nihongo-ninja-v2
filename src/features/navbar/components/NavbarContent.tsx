@@ -11,6 +11,7 @@ import {
   ScrollText,
   Volume2,
 } from "lucide-react"
+import { Input } from "@/components/ui/input"
 
 export default function NavbarContent() {
   return (
@@ -53,7 +54,13 @@ export default function NavbarContent() {
             </Button>
           </Link>
         </li>
-        <li className="flex h-full items-center [&>*]:mr-2">
+        <li className="flex h-full w-full items-center">
+          <Input
+            className="mx-2 w-full rounded-full bg-card px-8 py-2 text-right font-japanese placeholder:text-[#EEEEEE]"
+            placeholder="AIと話します"
+          />
+        </li>
+        <li className="flex h-full items-center [&>*]:ml-2">
           <a href="https://jpdb.io">
             <Button
               variant="outline"

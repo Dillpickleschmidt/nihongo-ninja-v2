@@ -28,7 +28,6 @@ export default async function page() {
             videoId="8KTvBdGt_vg"
             title="Saying 'You' in Japanese by Kaname Naito, Nov 12 2023"
             credit="Kaname Naito"
-            glow
           />
         </div>
         <h2 className="pb-3 pt-6 text-center text-2xl font-bold">

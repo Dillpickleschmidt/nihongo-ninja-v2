@@ -33,8 +33,8 @@ export default function page() {
             <span className="text-xl">Ah</span>, young grasshopper, your
             curiosity is like a blossoming sakura tree.{" "}
             <span className="font-semibold">Yes</span>, Japanese has{" "}
-            <strong>three</strong>
-            writing systems, and all three can be seen in a single sentence.
+            <strong>three</strong> writing systems, and all three can be seen in
+            a single sentence.
           </p>
         </div>
         <div>
@@ -168,10 +168,15 @@ export default function page() {
           <p>
             <span className="font-extrabold">Sensei:</span> These characters are
             inherited from the distant lands of China. For example, the word
-            kanji is actually written as 漢字 which literally means:
+            kanji is actually written as{" "}
+            <span className="font-japanese text-xl">漢字</span> which literally
+            means:
           </p>
-          <div className="flex w-full justify-center">
-            漢 (Han Chinese) 字 (Characters)
+          <div className="flex w-full items-end justify-center">
+            <span className="mb-0.5 mr-1 font-japanese text-xl">漢</span> (Han
+            Chinese){" "}
+            <span className="mx-1 mb-0.5 font-japanese text-xl">字</span>{" "}
+            (Characters)
           </div>
           <p>
             While China has simplified many, Japan has kept many of them

@@ -10,7 +10,7 @@ export default function NextButton({
   nextPageLink,
 }: NextButtonProps) {
   const defaultButton = (
-    <div className="mx-12 flex flex-row justify-end pb-16 pt-24">
+    <div className="mx-12 flex flex-row justify-end pb-16 pt-24 print:hidden">
       <Button link={nextPageLink}>Next Lesson {"->"}</Button>
     </div>
   )

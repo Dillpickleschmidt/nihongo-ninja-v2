@@ -199,14 +199,20 @@ export default function JapaneseWordOrderLesson() {
         </p>
 
         <p className="text-base italic">
-          If you want to <strong>deeply</strong> delve into Japanese word order,{" "}
+          If you're looking for an alternative explanation{" "}
+          <span className="text-sm">
+            (or just want to further improve your understanding of Japanese word
+            order and particles)
+          </span>
+          ,{" "}
           <a
-            href="https://8020japanese.com/japanese-word-order/?utm_source=ms_wordorder&utm_medium=email&utm_campaign=making_sense_of_japanese_word_order&utm_term="
+            target="_blank"
+            href="https://d81pp4ybbpmjf.cloudfront.net/10_Steps_to_500_Sentences__80-20_Japanese.pdf"
             className="font-bold text-sky-400 underline"
           >
             this article
           </a>{" "}
-          will likely satisfy your curiosity.
+          is a great resource.
         </p>
       </div>
     </ContentBox>

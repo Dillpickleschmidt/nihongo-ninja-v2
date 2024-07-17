@@ -83,6 +83,10 @@ const config = {
         japanese: ["var(--font-noto-sans-jp)"],
         honk: ["var(--font-honk)"],
       },
+      screens: {
+        print: { raw: "print" },
+        screen: { raw: "screen" },
+      },
     },
   },
   plugins: [

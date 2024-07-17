@@ -28,7 +28,6 @@ export default async function page() {
             videoId="MNR0egvK_oQ"
             title="Nuances of Japanese First-Person Pronouns by Kaname Naito, Mar 26 2023"
             credit="Kaname Naito"
-            glow
           />
         </div>
         <h3 className="pt-12 font-japanese text-3xl font-medium">
@@ -341,7 +340,6 @@ export default async function page() {
             videoId="t1iTJK31UYw"
             title="First-time Greeting in Japanese for Beginners by Kaname Naito, Jun 15 2024"
             credit="Kaname Naito"
-            glow
             timestamps={[
               { time: 0, label: "First-time Greetings" },
               { time: 256, label: "How to Ask for Someone's Name" },

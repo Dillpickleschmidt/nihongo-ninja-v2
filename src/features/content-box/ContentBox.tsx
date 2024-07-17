@@ -10,6 +10,7 @@ import NextButton from "./components/NextButton"
 import PrintButton from "./components/PrintButton"
 import { useContentBoxLogic } from "./hooks/useContentBoxLogic"
 import CloseButton from "./components/CloseButton"
+import { inter, japanese, honk } from "@/utils/fonts"
 
 type ContentBoxProps = React.HTMLAttributes<HTMLDivElement> &
   VariantProps<typeof dialogVariants> & {
@@ -65,7 +66,8 @@ export default function ContentBox({
           ref={contentScrollRef}
           isHiddenContentVisible={isHiddenContentVisible}
         >
-          <div className="relative min-h-full">
+          {/* Fonts needed for React-To-Print */}
+          <div className={`${inter} ${japanese} ${honk} relative min-h-full`}>
             <BackgroundImage
               backgroundImage={backgroundImage}
               backgroundImageSize={backgroundImageSize}

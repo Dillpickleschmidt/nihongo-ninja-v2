@@ -13,7 +13,7 @@ export default function BackgroundImage({
 
   return (
     <div
-      className="absolute inset-0"
+      className="absolute inset-0 print:hidden"
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundRepeat: "repeat",

@@ -1,7 +1,7 @@
 "use client"
 import React from "react"
 
-type ScrollableContentProps = {
+type ScrollableContentProps = React.HTMLAttributes<HTMLDivElement> & {
   children: React.ReactNode
   isHiddenContentVisible: boolean
 }

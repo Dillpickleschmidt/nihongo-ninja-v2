@@ -212,7 +212,11 @@ export default function SettingsPage({ onStartReview }: HomePageProps) {
               onCheckedChange={(checked) =>
                 handleSettingChange("leaveOutSuru")(checked)
               }
-              label="Leave out する verbs"
+              label={
+                <>
+                  Leave out <span className="font-japanese">する</span> verbs
+                </>
+              }
             />
 
             <ToggleOption

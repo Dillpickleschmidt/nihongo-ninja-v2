@@ -5,7 +5,7 @@ type ToggleOptionProps = {
   id: string
   checked: boolean
   onCheckedChange: (checked: boolean) => void
-  label: string
+  label: React.ReactNode | string
   className?: string
 }
 

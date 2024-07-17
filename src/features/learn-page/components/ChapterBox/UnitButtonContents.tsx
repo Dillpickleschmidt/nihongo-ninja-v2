@@ -70,7 +70,7 @@ export default function UnitButtonContents({
         ) : type === "reading" ? (
           <BookOpenText size={iconSize} className="text-purple-400" />
         ) : type === "conjugation-practice" ? (
-          <GraduationCap size={iconSize} className="text-teal-500" />
+          <GraduationCap size={iconSize} className="text-teal-400" />
         ) : type === "vocab-list" ? (
           <Library size={iconSize} className="text-red-500 opacity-80" />
         ) : undefined}

@@ -79,7 +79,9 @@ export default function ContentBox({
           </div>
         </ScrollableContent>
         <FixedElements>
-          <PrintButton contentRef={contentScrollRef} />
+          <div className="fixed right-12 top-3">
+            <PrintButton contentRef={contentScrollRef} />
+          </div>
           <CloseButton showAlertOnClose={showAlertOnClose} />
           {fixedElements}
         </FixedElements>

@@ -188,11 +188,7 @@ export function ChapterBoxes() {
         >
           Chapter 1 Vocab List
         </UnitButton>
-        <UnitButton
-          id="2."
-          type="grammar-notes"
-          link="/learn/chapter-1/grammar-notes"
-        >
+        <UnitButton id="2." type="grammar-notes" link="/learn/grammar-notes">
           Chapter 1 Grammar Notes
         </UnitButton>
         <UnitButton
@@ -408,11 +404,7 @@ export function ChapterBoxes() {
         >
           Chapter 2 Vocab List
         </UnitButton>
-        <UnitButton
-          id="2."
-          type="grammar-notes"
-          link="/learn/chapter-2/grammar-notes"
-        >
+        <UnitButton id="2." type="grammar-notes" link="/learn/grammar-notes">
           Chapter 2 Grammar notes
         </UnitButton>
         <UnitButton id="3." type="lesson" link="/learn/chapter-2/katakana">

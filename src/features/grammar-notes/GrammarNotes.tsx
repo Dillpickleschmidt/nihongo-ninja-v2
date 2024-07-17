@@ -4,6 +4,8 @@ import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import CustomImage from "@/components/CustomImage"
+import PrintButton from "../content-box/components/PrintButton"
+import { inter, japanese, honk } from "@/utils/fonts"
 
 type GridItem = {
   title: React.ReactNode
@@ -20,8 +22,10 @@ export default function GrammarNotes({
   gridCols = 4,
   items,
 }: GrammarNotesProps) {
+  const contentRef = React.useRef<HTMLDivElement>(null)
+
   return (
-    <div className="w-full justify-center px-12 py-16">
+    <div className="w-full justify-center">
       <div>
         <div
           className={`grid grid-cols-1 gap-6 lg:grid-cols-2 2xl:grid-cols-4`}
@@ -49,9 +53,17 @@ export default function GrammarNotes({
                     <DialogContent className="max-h-screen max-w-[700px]">
                       <ScrollArea className="rounded-lg">
                         <AspectRatio
+                          ref={contentRef}
                           ratio={1 / 1.414}
-                          className="overflow-hidden"
+                          className={`${inter} ${japanese} ${honk} overflow-hidden`}
                         >
+                          <div className="fixed right-7 top-6 z-50">
+                            <PrintButton
+                              contentRef={contentRef}
+                              className="text-black hover:bg-background/25 hover:text-black/50"
+                              zoom
+                            />
+                          </div>
                           {item.content}
                         </AspectRatio>
                       </ScrollArea>

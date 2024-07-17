@@ -56,7 +56,7 @@ export default function NavbarContent() {
         </li>
         <li className="flex h-full w-full items-center">
           <Input
-            className="mx-2 w-full rounded-full bg-card px-8 py-2 text-right font-japanese placeholder:text-[#EEEEEE]"
+            className="dark:placeholder:text-background-secondary75 mx-2 w-full rounded-full bg-card px-8 py-2 text-right font-japanese"
             placeholder="AIと話します"
           />
         </li>

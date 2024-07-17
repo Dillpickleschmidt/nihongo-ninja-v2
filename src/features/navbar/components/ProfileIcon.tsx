@@ -48,7 +48,9 @@ export default function ProfileIcon() {
         </Link>
       ) : (
         <Link href="/auth">
-          <Button variant="outline">Sign In</Button>
+          <Button variant="outline" className="text-nowrap">
+            Sign In
+          </Button>
         </Link>
       )}
     </div>

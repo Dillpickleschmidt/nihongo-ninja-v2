@@ -81,7 +81,7 @@ export default function NavbarContent() {
               <ScrollText size="18px" className="ml-2 text-sky-500" />
             </Button>
           </Link>
-          <Link href="/learn/vocab-list">
+          <Link href="">
             <Button
               variant="outline"
               className="mr-1 text-nowrap font-normal opacity-75"

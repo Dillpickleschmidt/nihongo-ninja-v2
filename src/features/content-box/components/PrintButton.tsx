@@ -16,11 +16,8 @@ export default function PrintButton({
   className,
   zoom,
 }: PrintButtonProps) {
-  let handlePrint: UseReactToPrintFn
-  if (zoom) {
-    handlePrint = useReactToPrint({
-      contentRef: contentRef,
-      pageStyle: `
+  const pageStyle = zoom
+    ? `
       @page {
         margin: 0;
       }
@@ -29,13 +26,13 @@ export default function PrintButton({
           zoom: 110%;
         }
       }
-      `,
-    })
-  } else {
-    handlePrint = useReactToPrint({
-      contentRef: contentRef,
-    })
-  }
+      `
+    : undefined
+
+  const handlePrint = useReactToPrint({
+    contentRef: contentRef,
+    pageStyle: pageStyle,
+  })
 
   return (
     <Button

@@ -18,7 +18,7 @@ export function ThemeToggle() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon" className="relative">
+        <Button variant="outline" className="relative min-w-10">
           <Sun className="absolute h-[1.2rem] w-[1.2rem] scale-100 dark:scale-0" />
           <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 dark:scale-100" />
         </Button>

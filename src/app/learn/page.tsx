@@ -8,7 +8,7 @@ export default function page() {
     <>
       {/* Push other elements below */}
       <div className="h-[65px] w-full bg-background"></div>
-      <div className="relative h-[380px] w-full bg-background">
+      <div className="relative h-[180px] w-full bg-background md:h-[240px] lg:h-[380px]">
         <TopWindowBackground>
           <div></div>
         </TopWindowBackground>

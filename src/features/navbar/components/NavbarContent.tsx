@@ -3,6 +3,14 @@ import { ThemeToggle } from "@/components/theme/theme-toggle"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import ProfileIcon from "./ProfileIcon"
+import {
+  BookPlus,
+  Gamepad,
+  GraduationCap,
+  Library,
+  ScrollText,
+  Volume2,
+} from "lucide-react"
 
 export default function NavbarContent() {
   return (
@@ -22,6 +30,7 @@ export default function NavbarContent() {
               variant="outline"
               className="ml-1 text-nowrap font-normal opacity-75"
             >
+              <GraduationCap size="18px" className="mr-2 text-red-500" />
               Vocab Practice
             </Button>
           </Link>
@@ -30,6 +39,7 @@ export default function NavbarContent() {
               variant="outline"
               className="ml-1 text-nowrap font-normal opacity-75"
             >
+              <GraduationCap size="18px" className="mr-2 text-orange-500" />
               Conjugation
             </Button>
           </Link>
@@ -38,6 +48,7 @@ export default function NavbarContent() {
               variant="outline"
               className="ml-1 text-nowrap font-normal opacity-75"
             >
+              <Volume2 size="18px" className="mr-2 text-yellow-500" />
               Listening Practice
             </Button>
           </Link>
@@ -49,6 +60,7 @@ export default function NavbarContent() {
               className="mr-1 text-nowrap font-normal opacity-75"
             >
               Jpdb.io
+              <BookPlus size="18px" className="ml-2 text-green-500" />
             </Button>
           </a>
           <Link href="">
@@ -57,6 +69,7 @@ export default function NavbarContent() {
               className="mr-1 text-nowrap font-normal opacity-75"
             >
               Games
+              <Gamepad size="18px" className="ml-2 text-teal-500" />
             </Button>
           </Link>
           <Link href="/learn/grammar-notes">
@@ -65,6 +78,7 @@ export default function NavbarContent() {
               className="mr-1 text-nowrap font-normal opacity-75"
             >
               Grammar Notes
+              <ScrollText size="18px" className="ml-2 text-sky-500" />
             </Button>
           </Link>
           <Link href="/learn/vocab-list">
@@ -73,6 +87,7 @@ export default function NavbarContent() {
               className="mr-1 text-nowrap font-normal opacity-75"
             >
               Vocab List
+              <Library size="18px" className="ml-2 text-purple-500" />
             </Button>
           </Link>
           <div className="!mr-3">

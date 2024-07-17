@@ -1,8 +1,16 @@
 import PortraitIcon from "@/components/PortraitIcon"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import supabaseServer from "@/lib/supabase/server"
+import { redirect } from "next/navigation"
 
-export default function Home() {
+export default async function Home() {
+  const supabase = supabaseServer()
+  const user = (await supabase.auth.getSession()).data.session?.user
+  if (!user) {
+    redirect("/learn")
+  }
+
   return (
     <main className="">
       <div className="flex h-[420px] w-full flex-col items-center justify-center bg-black/5 p-24">

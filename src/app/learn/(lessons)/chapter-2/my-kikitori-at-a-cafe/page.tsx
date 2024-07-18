@@ -20,7 +20,7 @@ export default function page() {
             It's time for some listening practice!
           </h2>
           <p>
-            Head over to MyKikitori - Lesson 1 and listen to{" "}
+            Head over to MyKikitori - Lesson 2 and listen to{" "}
             <span className="text-xl font-bold">At a Café</span>, then answer
             the questions via the{" "}
             <span className="font-black">Take the Quiz!</span> button.

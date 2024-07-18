@@ -734,16 +734,28 @@ export function ChapterBoxes() {
         <UnitButton id="20." type="lesson" disabled>
           Polite Invitations
         </UnitButton>
-        <UnitButton id="21." type="video" disabled>
+        <UnitButton
+          id="21."
+          type="video"
+          link="/learn/chapter-3/kikusasaizu-3-2"
+        >
           Kikusasaizu Video - L3-2
         </UnitButton>
         <UnitButton id="25." type="lesson" disabled>
           ちょっと
         </UnitButton>
-        <UnitButton id="26." type="video" disabled>
+        <UnitButton
+          id="26."
+          type="video"
+          link="/learn/chapter-3/kikusasaizu-3-3"
+        >
           Kikusasaizu Video - L3-3
         </UnitButton>
-        <UnitButton id="27." type="audio" disabled>
+        <UnitButton
+          id="27."
+          type="audio"
+          link="/learn/chapter-3/my-kikitori-do-you-want-to-go-to-tokyo"
+        >
           MyKikitori - Do You Want to Go to Tokyo?
         </UnitButton>
         <UnitButton id="28." type="vocab" disabled>
@@ -752,7 +764,11 @@ export function ChapterBoxes() {
         <UnitButton id="29." type="vocab" disabled>
           More Common Expressions
         </UnitButton>
-        <UnitButton id="30." type="video" disabled>
+        <UnitButton
+          id="30."
+          type="video"
+          link="/learn/chapter-3/my-kikitori-campus-interview-1"
+        >
           MyKikitori - Campus Interview #1
         </UnitButton>
         <UnitButton id="31." type="video" disabled>
@@ -769,10 +785,18 @@ export function ChapterBoxes() {
           </span>{" "}
           Practice
         </UnitButton>
-        <UnitButton id="34." type="video" disabled>
+        <UnitButton
+          id="34."
+          type="video"
+          link="/learn/chapter-3/kikusasaizu-3-1"
+        >
           Kikusasaizu Video - L3-1
         </UnitButton>
-        <UnitButton id="35." type="audio" disabled>
+        <UnitButton
+          id="35."
+          type="audio"
+          link="/learn/chapter-3/my-kikitori-campus-interview-2"
+        >
           MyKikitori - Campus Interview #2
         </UnitButton>
         <UnitButton id="36." type="lesson" disabled>

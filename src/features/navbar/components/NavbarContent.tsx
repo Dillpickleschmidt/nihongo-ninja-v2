@@ -44,13 +44,13 @@ export default function NavbarContent() {
               Conjugation
             </Button>
           </Link>
-          <Link href="/learn/listening-practice">
+          <Link href="/learn/listening-material">
             <Button
               variant="outline"
               className="ml-1 text-nowrap font-normal opacity-50 hover:opacity-85"
             >
               <Volume2 size="18px" className="mr-2 text-yellow-500" />
-              Listening Practice
+              Listening Material
             </Button>
           </Link>
         </li>

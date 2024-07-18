@@ -4,25 +4,22 @@ import { Button } from "@/components/ui/button"
 export default function page() {
   return (
     <ContentBox
-      // backgroundImage="/img/dust-splatter-1.png"
-      // backgroundImageSize="1215px"
-      // backgroundImageOpacity={5}
       variant="lg"
       showProgressBar={false}
-      nextPageLink="/learn"
+      nextPageLink="/learn/chapter-2/big-numbers"
     >
       <div className="h-[50vh]">
         <h1 className="px-28 pb-6 pt-28 text-center text-4xl font-semibold">
-          MyKikitori - At a Store
+          MyKikitori - Campus Interview #2
         </h1>
         <div className="space-y-6 px-16 md:px-24">
           <h2 className="mt-6 text-center text-2xl font-bold">
             It's time for some listening practice!
           </h2>
           <p>
-            Head over to MyKikitori - Lesson 2 and listen to{" "}
-            <span className="text-xl font-bold">At a Store</span>, then answer
-            the questions via the{" "}
+            Head over to MyKikitori - Lesson 3 and listen to{" "}
+            <span className="text-xl font-bold">Campus Interview #2</span>, then
+            answer the questions via the{" "}
             <span className="font-black">Take the Quiz!</span> button.
           </p>
           <p>
@@ -30,8 +27,8 @@ export default function page() {
             module when you're ready.
           </p>
           <div className="flex justify-center pt-3">
-            <a target="_blank" href="https://www.mykikitori.com/lesson-2">
-              <Button size="lg">MyKikitori - Lesson 2</Button>
+            <a target="_blank" href="https://www.mykikitori.com/lesson-3">
+              <Button size="lg">MyKikitori - Lesson 3</Button>
             </a>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import ContentBox from "@/features/content-box/ContentBox"
-import Things from "./components/Things"
-import WordsThatPoint from "./components/WordsThatPoint"
-import PlacesMoneyFood from "./components/PlacesMoneyFood"
+import PlacesMoneyFood from "@/features/vocab-list/components/chapter-2/PlacesMoneyFood"
+import Things from "@/features/vocab-list/components/chapter-2/Things"
+import WordsThatPoint from "@/features/vocab-list/components/chapter-2/WordsThatPoint"
 
 export default async function page() {
   return (
@@ -16,15 +16,15 @@ export default async function page() {
           <em>Vocabulary</em>
         </h1>
         <div className="mx-8">
-          <h3 className="mb-6 mt-8 text-center text-2xl font-medium text-orange-400">
+          <h3 className="mb-3 mt-8 text-center text-2xl font-medium text-orange-400">
             Things
           </h3>
           <Things />
-          <h3 className="mb-6 mt-8 text-center text-2xl font-medium text-orange-400">
+          <h3 className="mb-3 mt-8 text-center text-2xl font-medium text-orange-400">
             Words That Point
           </h3>
           <WordsThatPoint />
-          <h3 className="mb-6 mt-8 text-center text-2xl font-medium text-orange-400">
+          <h3 className="mb-3 mt-8 text-center text-2xl font-medium text-orange-400">
             Places, Money, Food
           </h3>
           <PlacesMoneyFood />

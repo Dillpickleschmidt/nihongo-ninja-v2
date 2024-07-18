@@ -21,7 +21,7 @@ export default function NavbarContent() {
           <Link href="/learn">
             <Button
               variant="outline"
-              className="bg-red-400 font-medium text-black hover:bg-red-400/80 hover:text-black"
+              className="bg-red-400 font-bold text-black hover:bg-red-400/80 hover:text-black"
             >
               Home
             </Button>
@@ -29,7 +29,7 @@ export default function NavbarContent() {
           <Link href="/learn/vocab-practice">
             <Button
               variant="outline"
-              className="ml-1 text-nowrap font-normal opacity-75"
+              className="ml-1 text-nowrap font-normal opacity-50 hover:opacity-85"
             >
               <GraduationCap size="18px" className="mr-2 text-red-500" />
               Vocab Practice
@@ -38,7 +38,7 @@ export default function NavbarContent() {
           <Link href="/learn/conjugation">
             <Button
               variant="outline"
-              className="ml-1 text-nowrap font-normal opacity-75"
+              className="ml-1 text-nowrap font-normal opacity-50 hover:opacity-85"
             >
               <GraduationCap size="18px" className="mr-2 text-orange-500" />
               Conjugation
@@ -47,7 +47,7 @@ export default function NavbarContent() {
           <Link href="/learn/listening-practice">
             <Button
               variant="outline"
-              className="ml-1 text-nowrap font-normal opacity-75"
+              className="ml-1 text-nowrap font-normal opacity-50 hover:opacity-85"
             >
               <Volume2 size="18px" className="mr-2 text-yellow-500" />
               Listening Practice
@@ -64,7 +64,7 @@ export default function NavbarContent() {
           <a href="https://jpdb.io">
             <Button
               variant="outline"
-              className="mr-1 text-nowrap font-normal opacity-75"
+              className="mr-1 text-nowrap font-normal opacity-50 hover:opacity-85"
             >
               Jpdb.io
               <BookPlus size="18px" className="ml-2 text-green-500" />
@@ -73,7 +73,7 @@ export default function NavbarContent() {
           <Link href="">
             <Button
               variant="outline"
-              className="mr-1 text-nowrap font-normal opacity-75"
+              className="mr-1 text-nowrap font-normal opacity-50 hover:opacity-85"
             >
               Games
               <Gamepad size="18px" className="ml-2 text-teal-500" />
@@ -82,16 +82,16 @@ export default function NavbarContent() {
           <Link href="/learn/grammar-notes">
             <Button
               variant="outline"
-              className="mr-1 text-nowrap font-normal opacity-75"
+              className="mr-1 text-nowrap font-normal opacity-50 hover:opacity-85"
             >
               Grammar Notes
               <ScrollText size="18px" className="ml-2 text-sky-500" />
             </Button>
           </Link>
-          <Link href="">
+          <Link href="/learn/vocab-list">
             <Button
               variant="outline"
-              className="mr-1 text-nowrap font-normal opacity-75"
+              className="mr-1 text-nowrap font-normal opacity-50 hover:opacity-85"
             >
               Vocab List
               <Library size="18px" className="ml-2 text-purple-500" />

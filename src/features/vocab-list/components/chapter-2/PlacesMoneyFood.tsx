@@ -25,13 +25,13 @@ export default async function PlacesMoneyFood() {
       <TableBody className="text-base">
         {enhancedData.map((entry, index) => (
           <TableRow key={index}>
-            <TableCell className="font-japanese text-xl">
+            <TableCell className="p-2 font-japanese text-xl">
               {entry.word}
             </TableCell>
-            <TableCell className="font-japanese text-xl">
+            <TableCell className="p-2 font-japanese text-xl">
               {entry.hiragana?.[0] || ""}
             </TableCell>
-            <TableCell className="text-right">
+            <TableCell className="p-2 text-right">
               {entry.english?.join(", ")}
             </TableCell>
           </TableRow>

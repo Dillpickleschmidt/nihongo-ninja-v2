@@ -19,12 +19,26 @@ export default async function page() {
       // backgroundImageOpacity={5}
       nextPageLink="/learn/chapter-0/culture-note-japanese-greetings"
     >
-      <h1 className="px-28 pb-6 pt-28 text-3xl">
+      <h1 className="px-20 pt-28 text-center text-4xl font-medium leading-[3.25rem]">
+        <span className="text-5xl font-medium">Great job</span>, you've finally
+        made it! You've now got a strong grasp of Hiragana! Not only can you{" "}
+        <span className="text-5xl">read</span> hiragana, but you also have the
+        phonetic arsenal to <span className="text-5xl">say</span> pretty much{" "}
+        <span className="font-bold">*anything*</span> in Japanese!🔥
+      </h1>
+      {/* <p className="px-28 py-6 text-xl leading-8">
+        You're probably tired of practicing hiragana, so here's a quick preview
+        of what you'll learn in the next few lessons. You'll quckly work your
+        way through each word as they come up, and you'll be having real
+        Japanese conversations before you know it!
+      </p> */}
+
+      <h2 className="px-28 pb-6 pt-12 text-3xl">
         Now that you're familiar with the basics, let's dive into some common
         Japanese greetings. These phrases will be your first steps into
         conversational Japanese, and they're essential for everyday
         interactions.
-      </h1>
+      </h2>
       <VocabCards data={data1} />
       <p className="px-16">
         Another common and slightly more formal way to say goodbye, especially

@@ -27,10 +27,10 @@ export default async function WordsThatPoint() {
             <>
               {entry.word && entry.word != "誰" && (
                 <TableRow key={index}>
-                  <TableCell className="font-japanese text-xl">
+                  <TableCell className="p-2 font-japanese text-xl">
                     {entry.word}
                   </TableCell>
-                  <TableCell className="text-right">
+                  <TableCell className="p-2 text-right">
                     {entry.english?.join(", ")}
                   </TableCell>
                 </TableRow>
@@ -45,13 +45,13 @@ export default async function WordsThatPoint() {
             <TableRow key={index}>
               {entry.hiragana && entry.hiragana[0] === "だれ" && (
                 <>
-                  <TableCell className="w-1/3 font-japanese text-xl">
+                  <TableCell className="w-1/3 p-2 font-japanese text-xl">
                     {entry.word}
                   </TableCell>
-                  <TableCell className="w-1/3 font-japanese text-xl">
+                  <TableCell className="w-1/3 p-2 font-japanese text-xl">
                     {entry.hiragana}
                   </TableCell>
-                  <TableCell className="w-1/3 text-right">
+                  <TableCell className="w-1/3 p-2 text-right">
                     {entry.english?.join(", ")}
                   </TableCell>
                 </>

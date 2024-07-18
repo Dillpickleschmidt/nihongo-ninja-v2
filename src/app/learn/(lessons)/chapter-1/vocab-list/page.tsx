@@ -1,11 +1,11 @@
 import ContentBox from "@/features/content-box/ContentBox"
-import PeopleDescriptorsMisc from "./components/PeopleDescriptorsMisc"
-import FamilySchool from "./components/FamilySchool"
-import OccupationsMajors from "./components/OccupationsMajors"
-import UsefulExpressions from "./components/UsefulExpressions"
-import Countries from "./components/Countries"
-import Time from "./components/Time"
-import Minutes from "./components/Minutes"
+import Countries from "@/features/vocab-list/components/chapter-1/Countries"
+import FamilySchool from "@/features/vocab-list/components/chapter-1/FamilySchool"
+import Minutes from "@/features/vocab-list/components/chapter-1/Minutes"
+import OccupationsMajors from "@/features/vocab-list/components/chapter-1/OccupationsMajors"
+import PeopleDescriptorsMisc from "@/features/vocab-list/components/chapter-1/PeopleDescriptorsMisc"
+import Time from "@/features/vocab-list/components/chapter-1/Time"
+import UsefulExpressions from "@/features/vocab-list/components/chapter-1/UsefulExpressions"
 
 export default async function page() {
   return (
@@ -20,31 +20,31 @@ export default async function page() {
           <em>Vocabulary</em>
         </h1>
         <div className="mx-8">
-          <h3 className="mb-6 mt-8 text-center text-2xl font-medium text-orange-400">
+          <h3 className="mb-3 mt-8 text-center text-2xl font-medium text-orange-400">
             People, Descriptors, Misc.
           </h3>
           <PeopleDescriptorsMisc />
-          <h3 className="mb-6 mt-8 text-center text-2xl font-medium text-orange-400">
+          <h3 className="mb-3 mt-8 text-center text-2xl font-medium text-orange-400">
             Family & School
           </h3>
           <FamilySchool />
-          <h3 className="mb-6 mt-8 text-center text-2xl font-medium text-orange-400">
+          <h3 className="mb-3 mt-8 text-center text-2xl font-medium text-orange-400">
             Occupations & Majors
           </h3>
           <OccupationsMajors />
-          <h3 className="mb-6 mt-8 text-center text-2xl font-medium text-orange-400">
+          <h3 className="mb-3 mt-8 text-center text-2xl font-medium text-orange-400">
             Useful Expressions
           </h3>
           <UsefulExpressions />
-          <h3 className="mb-6 mt-8 text-center text-2xl font-medium text-orange-400">
+          <h3 className="mb-3 mt-8 text-center text-2xl font-medium text-orange-400">
             Countries
           </h3>
           <Countries />
-          <h3 className="mb-6 mt-8 text-center text-2xl font-medium text-orange-400">
+          <h3 className="mb-3 mt-8 text-center text-2xl font-medium text-orange-400">
             Time
           </h3>
           <Time />
-          <h3 className="mb-6 mt-8 text-center text-2xl font-medium text-orange-400">
+          <h3 className="mb-3 mt-8 text-center text-2xl font-medium text-orange-400">
             Minutes
           </h3>
           <Minutes />

@@ -191,72 +191,65 @@ export function ChapterBoxes() {
         <UnitButton id="2." type="grammar-notes" link="/learn/grammar-notes">
           Chapter 1 Grammar Notes
         </UnitButton>
-        <UnitButton
-          id="3."
-          type="vocab"
-          link="/learn/chapter-1/everyday-expressions"
-        >
-          Everyday Expressions
-        </UnitButton>
-        <UnitButton id="4." type="lesson" link="/learn/chapter-1/jpdb">
+        <UnitButton id="3." type="lesson" link="/learn/chapter-1/jpdb">
           jpdb.io Flashcards
         </UnitButton>
-        <UnitButton id="5." type="vocab" link="/learn/chapter-1/kanji-numbers">
+        <UnitButton id="4." type="vocab" link="/learn/chapter-1/kanji-numbers">
           Kanji Numbers
         </UnitButton>
         <UnitButton
-          id="6."
+          id="5."
           type="practice"
           link="/learn/chapter-1/practice/kanji-numbers"
         >
           Practice Kanji Numbers
         </UnitButton>
         <UnitButton
-          id="7."
+          id="6."
           type="vocab"
           link="/learn/chapter-1/people-descriptors-misc"
         >
           People, Descriptors, Misc.
         </UnitButton>
         <UnitButton
-          id="8."
+          id="7."
           type="practice"
           link="/learn/chapter-1/practice/people-descriptors-misc"
         >
           Practice People, Descriptors, Misc.
         </UnitButton>
-        <UnitButton id="9." type="vocab" link="/learn/chapter-1/family-school">
+        <UnitButton id="8." type="vocab" link="/learn/chapter-1/family-school">
           Family & School
         </UnitButton>
         <UnitButton
-          id="10."
+          id="9."
           type="practice"
           link="/learn/chapter-1/practice/family-school"
         >
           Practice Family & School
         </UnitButton>
-        <UnitButton id="11." type="lesson" link="/learn/chapter-1/x-wa-y-desu">
+        <UnitButton id="10." type="lesson" link="/learn/chapter-1/x-wa-y-desu">
           <span className="font-bold">X</span>
           <span className="font-japanese">は</span>
           <span className="font-bold">Y</span>
           <span className="font-japanese">です</span>
         </UnitButton>
         <UnitButton
-          id="12."
+          id="11."
           type="vocab"
           link="/learn/chapter-1/occupations-majors"
         >
           Occuupations & Majors
         </UnitButton>
         <UnitButton
-          id="13."
+          id="12."
           type="practice"
           link="/learn/chapter-1/practice/occupations-majors"
         >
           Practice Occuupations & Majors
         </UnitButton>
         <UnitButton
-          id="14."
+          id="13."
           type="writing"
           link="/learn/chapter-1/x-wa-y-desu/practice-sentences"
         >
@@ -264,6 +257,13 @@ export function ChapterBoxes() {
           <span className="font-japanese">は</span>
           <span className="font-bold">Y</span>
           <span className="font-japanese">です</span> Practice Sentences
+        </UnitButton>
+        <UnitButton
+          id="14."
+          type="vocab"
+          link="/learn/chapter-1/everyday-expressions"
+        >
+          Everyday Expressions
         </UnitButton>
         <UnitButton
           id="15."

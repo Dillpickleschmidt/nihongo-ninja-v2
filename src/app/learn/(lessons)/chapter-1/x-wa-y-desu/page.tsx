@@ -11,7 +11,7 @@ export default function page() {
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-1/occupations-majors"
+      nextPageLink="/learn/chapter-1/everyday-expressions"
     >
       <h1 className="mt-32 px-20 pb-12 text-center text-4xl font-semibold leading-[2.875rem]">
         <span className="text-orange-400">X</span>

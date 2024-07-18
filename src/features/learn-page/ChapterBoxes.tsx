@@ -771,19 +771,18 @@ export function ChapterBoxes() {
         >
           MyKikitori - Campus Interview #1
         </UnitButton>
-        <UnitButton id="31." type="video" disabled>
+        <UnitButton id="31." type="video" link="/learn/chapter-3/aizuchi">
           Aizuchi: Japanese Noises
         </UnitButton>
         <UnitButton id="32." type="vocab" disabled>
-          <span className="font-japanese">
-            そして、それから, でも, けど, が
-          </span>
+          Saying <span className="italic">And</span>,{" "}
+          <span className="italic">So</span>, and{" "}
+          <span className="italic">But</span>
         </UnitButton>
         <UnitButton id="33." type="writing" disabled>
-          <span className="font-japanese">
-            そして, それから, でも, けど, が
-          </span>{" "}
-          Practice
+          <span className="italic">And</span>,{" "}
+          <span className="italic">So</span>, and{" "}
+          <span className="italic">But</span> Practice
         </UnitButton>
         <UnitButton
           id="34."

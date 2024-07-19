@@ -68,7 +68,7 @@ export default function UnitButtonContents({
         ) : type === "grammar-notes" ? (
           <ScrollText size={iconSize} className="text-red-500 opacity-80" />
         ) : type === "reading" ? (
-          <BookOpenText size={iconSize} className="text-purple-400" />
+          <BookOpenText size={iconSize} className="text-teal-400" />
         ) : type === "conjugation-practice" ? (
           <GraduationCap size={iconSize} className="text-teal-400" />
         ) : type === "vocab-list" ? (

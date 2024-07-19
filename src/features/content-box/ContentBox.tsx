@@ -67,7 +67,9 @@ export default function ContentBox({
           isHiddenContentVisible={isHiddenContentVisible}
         >
           {/* Fonts needed for React-To-Print */}
-          <div className={`${inter} ${japanese} ${honk} relative min-h-full`}>
+          <div
+            className={`${inter} ${japanese} ${honk} relative min-h-full bg-background`}
+          >
             <BackgroundImage
               backgroundImage={backgroundImage}
               backgroundImageSize={backgroundImageSize}

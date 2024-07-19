@@ -731,7 +731,11 @@ export function ChapterBoxes() {
         <UnitButton id="19." type="reading" disabled>
           Reading Practice
         </UnitButton>
-        <UnitButton id="20." type="lesson" disabled>
+        <UnitButton
+          id="20."
+          type="lesson"
+          link="/learn/chapter-3/polite-invitations"
+        >
           Polite Invitations
         </UnitButton>
         <UnitButton
@@ -740,9 +744,6 @@ export function ChapterBoxes() {
           link="/learn/chapter-3/kikusasaizu-3-2"
         >
           Kikusasaizu Video - L3-2
-        </UnitButton>
-        <UnitButton id="25." type="lesson" disabled>
-          ちょっと
         </UnitButton>
         <UnitButton
           id="26."

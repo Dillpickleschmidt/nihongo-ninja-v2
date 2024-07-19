@@ -68,7 +68,7 @@ export default function ContentBox({
         >
           {/* Fonts needed for React-To-Print */}
           <div
-            className={`${inter} ${japanese} ${honk} relative min-h-full bg-background`}
+            className={`${inter} ${japanese} ${honk} relative min-h-full print:bg-background`}
           >
             <BackgroundImage
               backgroundImage={backgroundImage}

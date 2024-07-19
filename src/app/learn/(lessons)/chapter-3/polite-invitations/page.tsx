@@ -12,7 +12,7 @@ export default function page() {
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-2/next-lesson"
+      nextPageLink="/learn/chapter-3/next-lesson"
     >
       <h1 className="px-28 pb-6 pt-28 text-center text-4xl font-semibold">
         Polite Invitations with{" "}
@@ -86,6 +86,62 @@ export default function page() {
           </p>
         </div>
 
+        <p>
+          Literally, the adjective{" "}
+          <span className="font-japanese text-xl font-medium">いい</span> means{" "}
+          <strong>good</strong> or <strong>fine</strong>. It's an extremely
+          versatile word in Japanese and can be used in many contexts.
+        </p>
+        <p>
+          When used to accept an invitation, it's a polite way to say "That
+          sounds good" or "I'm fine with that."
+        </p>
+
+        <p className="text-center italic">
+          Here's a more thorough explanation of using{" "}
+          <span className="font-japanese not-italic">いいですよ</span>.
+        </p>
+        <YouTubeVideo
+          videoId="5s04gJYRPM4"
+          title="How to Use いいですよ"
+          credit="Kaname Naito"
+        />
+
+        <p>
+          If you want to go into <em>more</em> depth learning about{" "}
+          <span className="font-japanese text-xl font-medium">いい</span>,{" "}
+          <span className="text-muted-foreground">
+            (and not look like a fool)
+          </span>{" "}
+          Kaname's got you covered yet again. :)
+        </p>
+        <YouTubeVideo
+          videoId="T1FfatXVH_U"
+          title="How to Use いい"
+          credit="Kaname Naito"
+        />
+
+        <p className="text-base italic text-muted-foreground">
+          *You may occasionally see this word in some form of{" "}
+          <span className="font-japanese text-lg not-italic">
+            <Furigana furigana={<span className="text-sm">よ</span>}>
+              良
+            </Furigana>
+            い
+          </span>
+          . <span className="font-japanese text-lg not-italic">いい</span> is
+          the colloquial form of{" "}
+          <span className="font-japanese text-lg not-italic">良い</span>, and
+          you'll never see{" "}
+          <span className="font-japanese text-lg not-italic">良い</span> used by
+          itself in everyday conversation or even writing. However, whenever
+          this adjective is conjugated (e.g.{" "}
+          <span className="font-japanese text-lg not-italic">よかった</span>),
+          it <strong>always</strong> uses the{" "}
+          <span className="font-japanese text-lg not-italic">よい</span> form as
+          its stem.
+        </p>
+
         <h2 className="!mt-9 text-2xl font-bold">Declining an Invitation</h2>
         <p className="!mt-4">
           In Japanese culture, directly refusing an invitation can be seen as
@@ -130,7 +186,7 @@ export default function page() {
             <span className="mr-2 text-2xl font-black">
               <em>Characters:</em>
             </span>
-            You (the learner), shopkeeper
+            You (the customer), shopkeeper
           </h4>
           <p className="mt-3">
             You're at a local market, eyeing some delicious-looking
@@ -156,7 +212,7 @@ export default function page() {
             <span className="mr-2 text-2xl font-black">
               <em>Characters:</em>
             </span>
-            You (the learner), Yuki (your friend)
+            You & Yuki (your friend)
           </h4>
           <p className="mt-3">
             After class, Yuki excitedly asks, "
@@ -190,7 +246,7 @@ export default function page() {
             <span className="mr-2 text-2xl font-black">
               <em>Characters:</em>
             </span>
-            You (the learner), stranger on the street
+            You & stranger on the street
           </h4>
           <p className="mt-3">
             You're lost in a new city and need directions. You spot a
@@ -218,7 +274,7 @@ export default function page() {
             <span className="mr-2 text-2xl font-black">
               <em>Characters:</em>
             </span>
-            You, your boss
+            You & your boss
           </h4>
           <div className="ml-4 mt-3">
             <p className="font-japanese text-xl">
@@ -298,7 +354,7 @@ export default function page() {
             <span className="mr-2 text-2xl font-black">
               <em>Characters:</em>
             </span>
-            You (the learner), elderly person who just tripped
+            You & an elderly person who just tripped
           </h4>
           <p className="mt-3">
             You're walking down the street when you see an elderly person
@@ -322,7 +378,7 @@ export default function page() {
             <span className="mr-2 text-2xl font-black">
               <em>Characters:</em>
             </span>
-            You (the learner), waiter at a restaurant
+            You & the waiter at a restaurant
           </h4>
           <p className="mt-3">
             You're at a restaurant and the waiter informs you that your first
@@ -346,7 +402,7 @@ export default function page() {
             <span className="mr-2 text-2xl font-black">
               <em>Characters:</em>
             </span>
-            You (the learner), Hiroshi (your colleague)
+            You & Hiroshi (your colleague)
           </h4>
           <p className="mt-3">
             It's lunchtime at your new job. Hiroshi invites you to join the team
@@ -360,7 +416,7 @@ export default function page() {
               ありがとうございます。でも、
               <span className="text-green-500">大丈夫</span>です。
             </span>
-            " (Thank you, but I'm fine.) Hiroshi nods understandingly.
+            " (Thank you, but I'm fine.)
           </p>
         </div>
 

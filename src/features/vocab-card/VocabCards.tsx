@@ -60,6 +60,20 @@ export default function VocabCards({
                   </ul>
                 </>
               )}
+              {item.example_sentences && item.example_sentences.length > 0 && (
+                <>
+                  <h3 className="mt-6 font-bold">Example Sentences</h3>
+                  <ul className="ml-6 list-disc">
+                    {item.example_sentences.map((sentence, idx) => (
+                      <li key={idx} className="space-y-6">
+                        <span className="font-japanese text-xl">
+                          {sentence}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
             </>
           </VocabCard>
         ))}

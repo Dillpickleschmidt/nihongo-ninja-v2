@@ -2,7 +2,7 @@ import Furigana from "@/components/text/Furigana"
 
 export default function MoParticle() {
   return (
-    <div className="h-full w-full bg-background-secondary p-8 text-base text-black">
+    <div className="relative h-full w-full bg-background-secondary p-8 text-base text-black">
       <h1 className="text-center text-lg font-bold">
         <span className="font-japanese text-purple-500">も</span> Particle
       </h1>

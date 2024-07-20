@@ -1,6 +1,6 @@
 export default function XwaYdesu() {
   return (
-    <div className="h-full w-full bg-background-secondary p-8 text-base text-black">
+    <div className="relative h-full w-full bg-background-secondary p-8 text-base text-black">
       <h1 className="text-center text-xl font-bold">
         <span className="font-japanese text-indigo-500">は</span> Particle
       </h1>

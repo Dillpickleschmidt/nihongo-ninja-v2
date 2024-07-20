@@ -1,6 +1,6 @@
 export default function Janai() {
   return (
-    <div className="h-full w-full bg-background-secondary p-8 text-base text-black">
+    <div className="relative h-full w-full bg-background-secondary p-8 text-base text-black">
       <h1 className="text-center text-lg font-bold">
         <span className="font-japanese text-orange-500">じゃない</span> - The
         Negative Form in Japanese

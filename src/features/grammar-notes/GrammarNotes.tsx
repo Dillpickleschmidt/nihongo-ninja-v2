@@ -55,9 +55,9 @@ export default function GrammarNotes({
                         <AspectRatio
                           ref={contentRef}
                           ratio={1 / 1.414}
-                          className={`${inter} ${japanese} ${honk} overflow-hidden`}
+                          className={`${inter} ${japanese} ${honk} overflow-hidden print:p-6`}
                         >
-                          <div className="fixed right-7 top-6 z-50">
+                          <div className="fixed right-7 top-6 z-50 print:relative">
                             <PrintButton
                               contentRef={contentRef}
                               className="text-black hover:bg-background/25 hover:text-black/50"

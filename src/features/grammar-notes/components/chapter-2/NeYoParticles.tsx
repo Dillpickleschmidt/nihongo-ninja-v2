@@ -2,7 +2,7 @@ import Furigana from "@/components/text/Furigana"
 
 export default function NeYoParticles() {
   return (
-    <div className="h-full w-full bg-background-secondary p-8 text-base text-black">
+    <div className="relative h-full w-full bg-background-secondary p-8 text-base text-black">
       <h1 className="text-center text-xl font-bold">
         Understanding <span className="font-japanese text-indigo-500">ね</span>{" "}
         and <span className="font-japanese text-green-600">よ</span>

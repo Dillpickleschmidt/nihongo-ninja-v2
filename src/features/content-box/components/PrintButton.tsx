@@ -23,7 +23,7 @@ export default function PrintButton({
       }
       @media print {
         html, body {
-          zoom: 110%;
+          zoom: 105%;
         }
       }
       `

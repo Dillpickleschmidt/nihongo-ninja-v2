@@ -1,6 +1,6 @@
 import BackgroundImage from "@/features/content-box/components/BackgroundImage"
 import GrammarNotes from "@/features/grammar-notes/GrammarNotes"
-import { chapter1, chapter2 } from "@/features/grammar-notes/data"
+import { chapter1, chapter2, chapter3 } from "@/features/grammar-notes/data"
 
 export default function page() {
   return (
@@ -22,6 +22,10 @@ export default function page() {
           Chapter 2
         </h2>
         <GrammarNotes gridCols={3} items={chapter2} />
+        <h2 className="mx-32 mb-4 mt-20 text-center text-4xl font-bold">
+          Chapter 3
+        </h2>
+        <GrammarNotes gridCols={3} items={chapter3} />
       </div>
     </>
   )

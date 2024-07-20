@@ -1,6 +1,6 @@
 export default function WordsThatPoint() {
   return (
-    <div className="h-full w-full bg-background-secondary p-8 text-base text-black">
+    <div className="relative h-full w-full bg-background-secondary p-8 text-base text-black">
       <h1 className="text-center text-xl font-bold">Words That Point</h1>
       <div className="mt-4 overflow-x-auto text-base">
         <table className="min-w-full border-collapse">

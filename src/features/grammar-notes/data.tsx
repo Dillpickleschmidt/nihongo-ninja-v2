@@ -7,6 +7,8 @@ import Janai from "./components/chapter-2/Janai"
 import MoParticle from "./components/chapter-2/MoParticle"
 import NeYoParticles from "./components/chapter-2/NeYoParticles"
 import WordsThatPoint from "./components/chapter-2/WordsThatPoint"
+import MasuForm from "./components/chapter-3/MasuForm"
+import WoDeNiEParticles from "./components/chapter-3/WoDeNiEParticles"
 
 export const chapter1 = [
   {
@@ -89,5 +91,36 @@ export const chapter2 = [
     ),
     content: <NeYoParticles />,
     imgSrc: "/img/chapter-2/grammar-notes/ne-yo.jpg",
+  },
+]
+
+export const chapter3 = [
+  {
+    title: (
+      <>
+        <span className="font-japanese">ます</span> Form Conjugation
+      </>
+    ),
+    content: <MasuForm />,
+    imgSrc: "",
+  },
+  {
+    title: (
+      <>
+        Particles - <span className="font-japanese">を, で, に, へ</span>
+      </>
+    ),
+    content: <WoDeNiEParticles />,
+    imgSrc: "",
+  },
+  {
+    title: <>Word Order</>,
+    content: <div>Content</div>,
+    imgSrc: "",
+  },
+  {
+    title: <>Polite Invitations</>,
+    content: <div>Content</div>,
+    imgSrc: "",
   },
 ]

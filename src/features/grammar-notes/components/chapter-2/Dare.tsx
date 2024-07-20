@@ -2,7 +2,7 @@ import Furigana from "@/components/text/Furigana"
 
 export default function Dare() {
   return (
-    <div className="h-full w-full bg-background-secondary p-8 text-base text-black">
+    <div className="relative h-full w-full bg-background-secondary p-8 text-base text-black">
       <h1 className="text-center text-xl font-bold">
         Asking Who with <span className="font-japanese text-red-500">だれ</span>
       </h1>

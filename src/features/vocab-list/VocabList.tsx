@@ -24,32 +24,39 @@ export default function VocabList() {
             Greetings
           </h3>
           <Greetings />
+          <h3 className="mb-3 mt-6 text-center text-2xl font-medium text-orange-400">
+            Numbers
+          </h3>
+          <Numbers />
+          <p className="mt-4 text-center">...up to 99 (it's easy).</p>
+        </div>
+        <div className="hidden lg:block">
+          <h3 className="mb-3 mt-6 text-center text-2xl font-medium text-orange-400">
+            Common Expressions
+          </h3>
+          <CommonExpressions />
+        </div>
+
+        <div className="lg:hidden">
+          <div>
+            <h3 className="mb-3 mt-6 text-center text-2xl font-medium text-orange-400">
+              Greetings
+            </h3>
+            <Greetings />
+          </div>
           <div>
             <h3 className="mb-3 mt-6 text-center text-2xl font-medium text-orange-400">
               Common Expressions
             </h3>
             <CommonExpressions />
           </div>
-        </div>
-
-        <div className="lg:hidden">
-          <h3 className="mb-3 mt-6 text-center text-2xl font-medium text-orange-400">
-            Greetings
-          </h3>
-          <Greetings />
-        </div>
-        <div>
-          <h3 className="mb-3 mt-6 text-center text-2xl font-medium text-orange-400">
-            Common Expressions
-          </h3>
-          <CommonExpressions />
-        </div>
-        <div className="lg:hidden">
-          <h3 className="mb-3 mt-6 text-center text-2xl font-medium text-orange-400">
-            Numbers
-          </h3>
-          <Numbers />
-          <p className="mt-4 text-center">...up to 99 (it's easy).</p>
+          <div>
+            <h3 className="mb-3 mt-6 text-center text-2xl font-medium text-orange-400">
+              Numbers
+            </h3>
+            <Numbers />
+            <p className="mt-4 text-center">...up to 99 (it's easy).</p>
+          </div>
         </div>
       </div>
 

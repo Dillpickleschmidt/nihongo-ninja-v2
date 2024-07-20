@@ -725,77 +725,81 @@ export function ChapterBoxes() {
         <UnitButton id="27." type="writing" disabled>
           Practice Particles
         </UnitButton>
+        <UnitButton id="28." type="lesson" link="/learn/chapter-3/suru-vs-yaru">
+          <span className="font-japanese">する</span> vs.{" "}
+          <span className="font-japanese">やる</span>
+        </UnitButton>
         <UnitButton
-          id="28."
+          id="29."
           type="video"
           link="/learn/chapter-3/your-japanese-voice"
         >
           Your Japanese Voice
         </UnitButton>
-        <UnitButton id="29." type="reading" disabled>
+        <UnitButton id="30." type="reading" disabled>
           Reading Practice
         </UnitButton>
         <UnitButton
-          id="30."
+          id="31."
           type="lesson"
           link="/learn/chapter-3/polite-invitations"
         >
           Polite Invitations
         </UnitButton>
         <UnitButton
-          id="31."
+          id="32."
           type="video"
           link="/learn/chapter-3/kikusasaizu-3-2"
         >
           Kikusasaizu Video - L3-2
         </UnitButton>
         <UnitButton
-          id="32."
+          id="33."
           type="video"
           link="/learn/chapter-3/kikusasaizu-3-3"
         >
           Kikusasaizu Video - L3-3
         </UnitButton>
         <UnitButton
-          id="33."
+          id="34."
           type="audio"
           link="/learn/chapter-3/my-kikitori-do-you-want-to-go-to-tokyo"
         >
           MyKikitori - Do You Want to Go to Tokyo?
         </UnitButton>
         <UnitButton
-          id="34."
+          id="35."
           type="vocab"
           link="/learn/chapter-3/adverbs-expressions"
         >
           Adverbs & Expressions
         </UnitButton>
         <UnitButton
-          id="35."
+          id="36."
           type="practice"
           link="/learn/chapter-3/practice/adverbs-expressions-readings"
         >
           Practice Adv. & Expres. - Readings
         </UnitButton>
         <UnitButton
-          id="36."
+          id="37."
           type="practice"
           link="/learn/chapter-3/practice/adverbs-expressions-kana"
         >
           Practice Adv. & Expres. - Kana
         </UnitButton>
         <UnitButton
-          id="37."
+          id="38."
           type="video"
           link="/learn/chapter-3/my-kikitori-campus-interview-1"
         >
           MyKikitori - Campus Interview #1
         </UnitButton>
-        <UnitButton id="38." type="video" link="/learn/chapter-3/aizuchi">
+        <UnitButton id="39." type="video" link="/learn/chapter-3/aizuchi">
           Aizuchi: Japanese Noises
         </UnitButton>
         <UnitButton
-          id="39."
+          id="40."
           type="lesson"
           link="/learn/chapter-3/saying-and-so-but"
         >
@@ -804,23 +808,23 @@ export function ChapterBoxes() {
           <span className="italic">But</span>
         </UnitButton>
         <UnitButton
-          id="40."
+          id="41."
           type="video"
           link="/learn/chapter-3/kikusasaizu-3-1"
         >
           Kikusasaizu Video - L3-1
         </UnitButton>
         <UnitButton
-          id="41."
+          id="42."
           type="audio"
           link="/learn/chapter-3/my-kikitori-campus-interview-2"
         >
           MyKikitori - Campus Interview #2
         </UnitButton>
-        <UnitButton id="42." type="writing" disabled>
+        <UnitButton id="43." type="writing" disabled>
           Contrast Worksheet
         </UnitButton>
-        <UnitButton id="43." type="writing" disabled>
+        <UnitButton id="44." type="writing" disabled>
           Chapter 3 Worksheet
         </UnitButton>
       </ChapterBox>

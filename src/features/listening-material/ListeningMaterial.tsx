@@ -108,7 +108,7 @@ export default function ListeningMaterial() {
         />
         <LinkPreview
           title="Kikusaizu Lesson 3-1"
-          href="/learn/chapter-2/kikusasaizu-3-1"
+          href="/learn/chapter-3  /kikusasaizu-3-1"
           src="/img/chapter-3/kikusasaizu/kikusasaizu-3-1.jpg"
           alt="kikusasaizu-3-1"
         />

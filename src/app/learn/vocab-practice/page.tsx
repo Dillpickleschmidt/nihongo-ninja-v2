@@ -178,13 +178,6 @@ export default function page() {
             <Button
               variant="link"
               className="justify-start text-start text-lg font-normal duration-100 ease-out"
-              link="/learn/chapter-3/practice/nouns-readings"
-            >
-              Nouns - Readings
-            </Button>
-            <Button
-              variant="link"
-              className="justify-start text-start text-lg font-normal duration-100 ease-out"
               link="/learn/chapter-3/practice/nouns-kana"
             >
               Nouns - Kana

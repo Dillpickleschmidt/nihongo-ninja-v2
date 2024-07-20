@@ -6,7 +6,7 @@ export default function page() {
     <ContentBox
       variant="lg"
       showProgressBar={false}
-      nextPageLink="/learn/chapter-2/big-numbers"
+      nextPageLink="/learn/chapter-3/contrast-worksheet"
     >
       <div className="h-[50vh]">
         <h1 className="px-28 pb-6 pt-28 text-center text-4xl font-semibold">

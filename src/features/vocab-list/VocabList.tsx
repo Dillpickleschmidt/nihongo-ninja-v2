@@ -11,6 +11,11 @@ import Time from "./components/chapter-1/Time"
 import Things from "./components/chapter-2/Things"
 import PlacesMoneyFood from "./components/chapter-2/PlacesMoneyFood"
 import WordsThatPoint from "./components/chapter-2/WordsThatPoint"
+import Nouns from "./components/chapter-3/Nouns"
+import DaysAndTime from "./components/chapter-3/DaysAndTime"
+import VerbsAndAdjectives from "./components/chapter-3/VerbsAndAdjectives"
+import AdverbsExpressions from "./components/chapter-3/AdverbsExpressions"
+import AndSoBut from "./components/chapter-3/AndSoBut"
 
 export default function VocabList() {
   return (
@@ -182,6 +187,68 @@ export default function VocabList() {
             Places, Money, Food
           </h3>
           <PlacesMoneyFood />
+        </div>
+      </div>
+
+      <h1 className="mx-auto mb-6 mt-20 text-center text-5xl font-semibold tracking-wide">
+        <em>Chapter 3</em>
+      </h1>
+      <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-2">
+        <div className="hidden lg:block">
+          <h3 className="mb-3 mt-6 text-center text-2xl font-medium text-orange-400">
+            Nouns
+          </h3>
+          <Nouns />
+          <h3 className="mb-3 mt-6 text-center text-2xl font-medium text-orange-400">
+            Verbs & Adjectives
+          </h3>
+          <VerbsAndAdjectives />
+        </div>
+
+        <div className="hidden lg:block">
+          <h3 className="mb-3 mt-6 text-center text-2xl font-medium text-orange-400">
+            Days of The Week & Time
+          </h3>
+          <DaysAndTime />
+          <h3 className="mb-3 mt-6 text-center text-2xl font-medium text-orange-400">
+            Adverbs & Expressions
+          </h3>
+          <AdverbsExpressions />
+          <h3 className="mb-3 mt-6 text-center text-2xl font-medium text-orange-400">
+            And, So, and But
+          </h3>
+          <AndSoBut />
+        </div>
+
+        <div className="lg:hidden">
+          <h3 className="mb-3 mt-6 text-center text-2xl font-medium text-orange-400">
+            Nouns
+          </h3>
+          <Nouns />
+        </div>
+        <div className="lg:hidden">
+          <h3 className="mb-3 mt-6 text-center text-2xl font-medium text-orange-400">
+            Days of The Week & Time
+          </h3>
+          <DaysAndTime />
+        </div>
+        <div className="lg:hidden">
+          <h3 className="mb-3 mt-6 text-center text-2xl font-medium text-orange-400">
+            Verbs & Adjectives
+          </h3>
+          <VerbsAndAdjectives />
+        </div>
+        <div className="lg:hidden">
+          <h3 className="mb-3 mt-6 text-center text-2xl font-medium text-orange-400">
+            Adverbs & Expressions
+          </h3>
+          <AdverbsExpressions />
+        </div>
+        <div className="lg:hidden">
+          <h3 className="mb-3 mt-6 text-center text-2xl font-medium text-orange-400">
+            And, So, and But
+          </h3>
+          <AndSoBut />
         </div>
       </div>
     </>

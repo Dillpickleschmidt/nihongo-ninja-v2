@@ -11,7 +11,7 @@ export default function JapaneseWordOrderLesson() {
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-3/next-lesson"
+      nextPageLink="/learn/chapter-3/practice-particles"
     >
       <h1 className="px-28 pb-6 pt-28 text-center text-4xl font-semibold">
         The Flexibility of Japanese Word Order
@@ -102,7 +102,7 @@ export default function JapaneseWordOrderLesson() {
 
         <p>You could rearrange this to:</p>
         <p className="font-japanese text-xl">
-          昨日東京で私はラーメンを食べます。
+          明日東京で私はラーメンを食べます。
         </p>
         <p className="!mt-2">(Tomorrow in Tokyo, I will eat ramen.)</p>
 

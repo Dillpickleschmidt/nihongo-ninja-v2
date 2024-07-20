@@ -562,7 +562,11 @@ export function ChapterBoxes() {
         </UnitButton>
       </ChapterBox>
       <ChapterBox text="Chapter 3" className="bg-orange-500 saturate-[65%]">
-        <UnitButton id="1." type="vocab-list" disabled>
+        <UnitButton
+          id="1."
+          type="vocab-list"
+          link="/learn/chapter-3/vocab-list"
+        >
           Chapter 3 Vocab List
         </UnitButton>
         <UnitButton id="2." type="grammar-notes" disabled>
@@ -766,28 +770,38 @@ export function ChapterBoxes() {
         >
           Adverbs & Expressions
         </UnitButton>
-        <UnitButton id="35." type="practice" disabled>
-          Practice Adj. Adv. & Expressions
+        <UnitButton
+          id="35."
+          type="practice"
+          link="/learn/chapter-3/practice/adverbs-expressions-readings"
+        >
+          Practice Adv. & Expres. - Readings
         </UnitButton>
         <UnitButton
           id="36."
+          type="practice"
+          link="/learn/chapter-3/practice/adverbs-expressions-kana"
+        >
+          Practice Adv. & Expres. - Kana
+        </UnitButton>
+        <UnitButton
+          id="37."
           type="video"
           link="/learn/chapter-3/my-kikitori-campus-interview-1"
         >
           MyKikitori - Campus Interview #1
         </UnitButton>
-        <UnitButton id="37." type="video" link="/learn/chapter-3/aizuchi">
+        <UnitButton id="38." type="video" link="/learn/chapter-3/aizuchi">
           Aizuchi: Japanese Noises
         </UnitButton>
-        <UnitButton id="38." type="vocab" disabled>
+        <UnitButton
+          id="39."
+          type="lesson"
+          link="/learn/chapter-3/saying-and-so-but"
+        >
           Saying <span className="italic">And</span>,{" "}
           <span className="italic">So</span>, and{" "}
           <span className="italic">But</span>
-        </UnitButton>
-        <UnitButton id="39." type="writing" disabled>
-          <span className="italic">And</span>,{" "}
-          <span className="italic">So</span>, and{" "}
-          <span className="italic">But</span> Practice
         </UnitButton>
         <UnitButton
           id="40."

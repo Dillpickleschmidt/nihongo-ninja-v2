@@ -8,7 +8,7 @@ export default async function page() {
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-3/verb-te-form"
+      nextPageLink="/learn/chapter-3/your-japanese-voice"
     >
       <h1 className="px-28 pb-6 pt-28 text-center text-5xl font-semibold">
         <em>
@@ -47,8 +47,8 @@ export default async function page() {
           する - <span className="font-honk text-4xl">Suru</span>
         </h3>
         <li>
-          <span className="font-bold">Usage: </span>More formal, often used for
-          abstract or professional actions
+          <span className="font-bold">Usage: </span>More neutral, often used for
+          everyday actions
         </li>
         <li>
           <span className="font-bold">Context: </span>Used in business settings,
@@ -119,7 +119,11 @@ export default async function page() {
                     <Furigana furigana={<span className="text-sm">あそ</span>}>
                       遊
                     </Furigana>
-                    びに来たと思ってたよ。
+                    びに来たと
+                    <Furigana furigana={<span className="text-sm">おも</span>}>
+                      思
+                    </Furigana>
+                    ってたよ。
                   </p>
                   <p className="text-sm italic text-muted-foreground">
                     (E, bokutachi wa asobi ni kita to omotteta yo.)
@@ -164,8 +168,24 @@ export default async function page() {
           やる - <span className="font-honk text-4xl">Yaru</span>
         </h3>
         <li>
-          <span className="font-bold">Usage: </span>More casual, typically used
-          for concrete or physical actions
+          <span className="font-bold">Usage</span>
+          <ol className="ml-6 mt-1 list-inside list-disc space-y-1">
+            <li>
+              More casual, typically used for concrete or physical actions
+            </li>
+            <li>
+              States a willful action to do something, thus it can only be used
+              for voluntary actions{" "}
+              <span className="text-muted-foreground">
+                (as opposed to involuntary actions like breathing)
+              </span>
+              .
+            </li>
+            <li>
+              Sounds more determined/significant than{" "}
+              <span className="font-japanese">する</span>.
+            </li>
+          </ol>
         </li>
         <li>
           <span className="font-bold">Context: </span>Used among friends, in
@@ -202,8 +222,8 @@ export default async function page() {
                       furigana={<span className="text-sm">そうじ</span>}
                     >
                       掃除
-                    </Furigana>
-                    やろうよ。
+                    </Furigana>{" "}
+                    (を) やろうよ。
                   </p>
                   <p className="text-sm italic text-muted-foreground">
                     (Nee, souji yarou yo.)
@@ -232,8 +252,8 @@ export default async function page() {
                       furigana={<span className="text-sm">そうじ</span>}
                     >
                       掃除
-                    </Furigana>
-                    やってくれない？
+                    </Furigana>{" "}
+                    (を) やってくれない？
                   </p>
                   <p className="text-sm italic text-muted-foreground">
                     (Dare ka toire souji yatte kurenai?)
@@ -281,8 +301,8 @@ export default async function page() {
                       furigana={<span className="text-sm">そうじ</span>}
                     >
                       掃除
-                    </Furigana>
-                    やって。
+                    </Furigana>{" "}
+                    (を) やって。
                   </p>
                   <p className="text-sm italic text-muted-foreground">
                     (Jaa, kimari! Keiko ga toire souji yatte.)
@@ -339,10 +359,10 @@ export default async function page() {
         <h2 className="pt-6 text-2xl font-bold">Key Differences</h2>
         <ul className="ml-6 mt-2 list-disc space-y-4">
           <li>
-            <strong>Formality:</strong>{" "}
-            <span className="font-japanese">する</span> is more formal and
-            professional, while <span className="font-japanese">やる</span> is
-            more casual and used in everyday speech.
+            <strong>Determination:</strong>{" "}
+            <span className="font-japanese">する</span> is generally more
+            neutral while <span className="font-japanese">やる</span> is more
+            determined.
           </li>
           <li>
             <strong>Emphasis:</strong>{" "}
@@ -366,7 +386,7 @@ export default async function page() {
         <h2 className="pt-6 text-2xl font-bold">Summary</h2>
         <ul className="ml-6 mt-2 list-disc space-y-4">
           <li>
-            Use <span className="font-japanese">する</span> for more formal,
+            Use <span className="font-japanese">する</span> for more neutral,
             professional, or abstract actions.
           </li>
           <li>

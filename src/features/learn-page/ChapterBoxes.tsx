@@ -569,7 +569,7 @@ export function ChapterBoxes() {
         >
           Chapter 3 Vocab List
         </UnitButton>
-        <UnitButton id="2." type="grammar-notes" disabled>
+        <UnitButton id="2." type="grammar-notes" link="/learn/grammar-notes">
           Chapter 3 Grammar Notes
         </UnitButton>
         <UnitButton id="3." type="lesson" link="/learn/chapter-3/kanji">

@@ -4,10 +4,10 @@ export default function WoDeNiEParticles() {
   return (
     <div className="relative h-full w-full bg-background-secondary p-8 text-base text-black">
       <h1 className="text-center text-xl font-bold">
-        Understanding <span className="font-japanese text-red-500">を</span>,{" "}
-        <span className="font-japanese text-orange-400">で</span>,{" "}
+        Understanding The <span className="font-japanese text-red-500">を</span>
+        , <span className="font-japanese text-orange-400">で</span>,{" "}
         <span className="font-japanese text-green-500">に</span>, and{" "}
-        <span className="font-japanese text-sky-400">へ</span>
+        <span className="font-japanese text-sky-400">へ</span> Particles
       </h1>
 
       <div className="mt-3">
@@ -28,16 +28,11 @@ export default function WoDeNiEParticles() {
 
       <div className="mt-2 text-center">
         <p>
-          <span className="font-japanese">
-            本<span className="font-bold text-red-500">を</span>読みます。
-          </span>{" "}
-          - I read a book.
+          <span className="font-japanese">本を読みます。</span> - I read a book.
         </p>
         <p>
-          <span className="font-japanese">
-            日本語<span className="font-bold text-red-500">を</span>勉強します。
-          </span>{" "}
-          - I study Japanese.
+          <span className="font-japanese">日本語を勉強します。</span> - I study
+          Japanese.
         </p>
       </div>
 
@@ -63,17 +58,12 @@ export default function WoDeNiEParticles() {
 
       <div className="mt-2 text-center">
         <p>
-          <span className="font-japanese">
-            ペン<span className="font-bold text-orange-400">で</span>書きます。
-          </span>{" "}
-          - I write with a pen.
+          <span className="font-japanese">ペンで書きます。</span> - I write with
+          a pen.
         </p>
         <p>
-          <span className="font-japanese">
-            図書館<span className="font-bold text-orange-400">で</span>
-            勉強します。
-          </span>{" "}
-          - I study at the library.
+          <span className="font-japanese">図書館で 勉強します。</span> - I study
+          at the library.
         </p>
       </div>
 
@@ -109,27 +99,17 @@ export default function WoDeNiEParticles() {
 
       <div className="mt-2 text-center">
         <p>
-          <span className="font-japanese">
-            学校<span className="font-bold text-green-500">に</span>行きます。
-          </span>{" "}
-          /{" "}
-          <span className="font-japanese">
-            学校<span className="font-bold text-sky-400">へ</span>行きます。
-          </span>{" "}
-          - I go to school.
+          <span className="font-japanese">学校に行きます。</span> /{" "}
+          <span className="font-japanese">学校へ行きます。</span> - I go to
+          school.
         </p>
         <p>
-          <span className="font-japanese">
-            7時<span className="font-bold text-green-500">に</span>起きます。
-          </span>{" "}
-          - I wake up at 7 o'clock.
+          <span className="font-japanese">7時に起きます。</span> - I wake up at
+          7 o'clock.
         </p>
         <p>
-          <span className="font-japanese">
-            友達<span className="font-bold text-green-500">に</span>
-            プレゼントをあげます。
-          </span>{" "}
-          - I give a present to my friend.
+          <span className="font-japanese">友達に プレゼントをあげます。</span> -
+          I give a present to my friend.
         </p>
       </div>
 

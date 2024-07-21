@@ -8,7 +8,9 @@ import MoParticle from "./components/chapter-2/MoParticle"
 import NeYoParticles from "./components/chapter-2/NeYoParticles"
 import WordsThatPoint from "./components/chapter-2/WordsThatPoint"
 import MasuForm from "./components/chapter-3/MasuForm"
+import PoliteInvitations from "./components/chapter-3/PoliteInvitations"
 import WoDeNiEParticles from "./components/chapter-3/WoDeNiEParticles"
+import WordOrder from "./components/chapter-3/WordOrder"
 
 export const chapter1 = [
   {
@@ -102,7 +104,7 @@ export const chapter3 = [
       </>
     ),
     content: <MasuForm />,
-    imgSrc: "",
+    imgSrc: "/img/chapter-3/grammar-notes/masu-form.jpg",
   },
   {
     title: (
@@ -111,16 +113,16 @@ export const chapter3 = [
       </>
     ),
     content: <WoDeNiEParticles />,
-    imgSrc: "",
+    imgSrc: "/img/chapter-3/grammar-notes/o-de-ni-e-particles.jpg",
   },
   {
     title: <>Word Order</>,
-    content: <div>Content</div>,
-    imgSrc: "",
+    content: <WordOrder />,
+    imgSrc: "/img/chapter-3/grammar-notes/word-order.jpg",
   },
   {
     title: <>Polite Invitations</>,
-    content: <div>Content</div>,
-    imgSrc: "",
+    content: <PoliteInvitations />,
+    imgSrc: "/img/chapter-3/grammar-notes/polite-invitations.jpg",
   },
 ]

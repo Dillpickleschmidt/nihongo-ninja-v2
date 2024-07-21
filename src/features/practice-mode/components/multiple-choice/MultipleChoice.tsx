@@ -65,10 +65,6 @@ export default function MultipleChoice({
     )
   }
 
-  const correctAnswer = choices.correctOption.answerCategories
-    .filter((category) => enabledAnswerCategories.includes(category.category))
-    .flatMap((category) => category.answers)
-
   function getButtonClassNames(
     isAnswered: boolean,
     isCorrect: boolean,

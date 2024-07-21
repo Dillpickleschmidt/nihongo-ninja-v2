@@ -9,7 +9,7 @@ export default function TopWindowBackground({
   return (
     <>
       {children}
-      <Link href="/learn/chapter-1/welcome">
+      <Link href="">
         <CustomImage
           src="/img/japanese-gate.png"
           alt="Japanese gate homescreen image"

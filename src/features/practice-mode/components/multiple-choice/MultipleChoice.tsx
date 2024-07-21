@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react"
+import React, { useEffect, useMemo, useState } from "react"
 import {
   handleMultipleChoiceSelection,
   presentMultipleChoiceOptions,
@@ -11,6 +11,12 @@ import { cn } from "@/utils/cn"
 type MultipleChoiceProps = {
   data: Card[]
   shuffleInput?: boolean
+}
+
+type ButtonState = {
+  isSelected: boolean
+  isCorrect: boolean
+  isAnswered: boolean
 }
 
 export default function MultipleChoice({
@@ -26,24 +32,37 @@ export default function MultipleChoice({
     currentCardIndex,
   } = usePracticeModeContext()
 
-  const [selectedButtonIndex, setSelectedButtonIndex] = useState<number | null>(
-    null,
-  )
+  const [buttonStates, setButtonStates] = useState<ButtonState[]>([])
 
   const choices = useMemo(
     () => presentMultipleChoiceOptions(data, shuffleInput, currentCardIndex),
-    [data, currentCardIndex],
+    [data, currentCardIndex, shuffleInput],
   )
 
   useEffect(() => {
     setCorrectEntry(choices.correctOption)
+    setButtonStates(
+      choices.options.map(() => ({
+        isSelected: false,
+        isCorrect: false,
+        isAnswered: false,
+      })),
+    )
   }, [choices, setCorrectEntry])
 
   const handleSelection = (selection: string, index: number) => {
     const isCorrect = handleMultipleChoiceSelection(choices, selection)
     setIsAnswerCorrect(isCorrect)
     setHasUserAnswered(true)
-    setSelectedButtonIndex(index)
+
+    setButtonStates((prevStates) =>
+      prevStates.map((state, i) => ({
+        ...state,
+        isSelected: i === index,
+        isCorrect: i === index && isCorrect,
+        isAnswered: true,
+      })),
+    )
   }
 
   const correctAnswer = choices.correctOption.answerCategories
@@ -51,21 +70,20 @@ export default function MultipleChoice({
     .flatMap((category) => category.answers)
 
   function getButtonClassNames(
-    hasUserAnswered: boolean,
+    isAnswered: boolean,
     isCorrect: boolean,
     isSelected: boolean,
   ) {
-    const baseClass = "disabled:opacity-60 font-light bg-background"
-    let newClasses = ""
-    if (hasUserAnswered) {
-      if (isCorrect) {
-        newClasses =
-          "disabled:opacity-100 bg-green-500 text-white font-semibold"
-      } else if (isSelected) {
-        newClasses = "disabled:opacity-100 bg-red-500 text-white"
-      }
-    }
-    return cn(baseClass, newClasses)
+    return cn(
+      "disabled:opacity-60 font-light bg-background",
+      isAnswered &&
+        isCorrect &&
+        "disabled:opacity-100 bg-green-500 text-white font-semibold",
+      isAnswered &&
+        isSelected &&
+        !isCorrect &&
+        "disabled:opacity-100 bg-red-500 text-white",
+    )
   }
 
   return (
@@ -79,21 +97,26 @@ export default function MultipleChoice({
             .flatMap((category) => category.answers)
 
           const firstAnswerIndex = enabledAnswers[0]
-
-          const isCorrect = correctAnswer.includes(firstAnswerIndex)
-          const isSelected = selectedButtonIndex === index
+          const buttonState = buttonStates[index] || {
+            isSelected: false,
+            isCorrect: false,
+            isAnswered: false,
+          }
 
           return (
             <Button
-              key={index}
+              key={`button-${index}-${buttonState.isAnswered}-${buttonState.isCorrect}-${buttonState.isSelected}`}
               variant="outline"
               onClick={() => handleSelection(firstAnswerIndex, index)}
               disabled={hasUserAnswered}
-              className={`${getButtonClassNames(
-                hasUserAnswered,
-                isCorrect,
-                isSelected,
-              )} min-h-20 w-full justify-start rounded-xl py-4 text-start font-japanese text-xl shadow-md duration-75 ease-in-out hover:scale-[98.5%]`}
+              className={cn(
+                getButtonClassNames(
+                  buttonState.isAnswered,
+                  buttonState.isCorrect,
+                  buttonState.isSelected,
+                ),
+                "min-h-20 w-full justify-start rounded-xl py-4 text-start font-japanese text-xl shadow-md duration-75 ease-in-out hover:scale-[98.5%]",
+              )}
             >
               {enabledAnswers.join(", ")}
             </Button>

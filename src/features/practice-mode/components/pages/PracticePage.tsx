@@ -58,13 +58,6 @@ export default function PracticePage({
     >
       <div className="flex min-h-full w-full justify-center">
         <div className="mx-2 mt-28 w-full max-w-[1000px] rounded-3xl border-2 border-dashed border-card-foreground bg-card pb-24 pt-32 md:mx-12 lg:py-32">
-          {/* <h1 className="text-3xl text-center font-black">
-          Deck {deckId} Learning Page
-        </h1> */}
-          {/* <Text className="text-xl">This is where you'll practice</Text> */}
-          {/* <div>
-          <CategoryDropdown uniqueCategories={uniqueCategories} />
-        </div> */}
           <CardTypeSwitch data={activeCards} />
         </div>
         {hasUserAnswered && (

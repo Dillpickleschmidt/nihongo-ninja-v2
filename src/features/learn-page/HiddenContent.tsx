@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { ChapterBoxes } from "./ChapterBoxes"
 import ButtonBarGroup from "./components/ButtonBar/ButtonBarGroup"
+import Link from "next/link"
 
 export default function HiddenContent() {
   return (
@@ -28,7 +29,19 @@ export default function HiddenContent() {
             by GENKI or other textbook publishers/authors. Nihongo Ninja is not
             affiliated with linked YouTube channels or websites.
           </p>
-          <p className="mt-3 text-center">© 2024 Nihongo Ninja</p>
+          <div className="mt-6 flex items-center justify-evenly px-12">
+            <div className="w-48 text-center">
+              <Link href="/faq" className="text-lg font-normal">
+                FAQ
+              </Link>
+            </div>
+            <div className="w-48 text-center">
+              <Link href="/about" className="text-lg font-normal">
+                About
+              </Link>
+            </div>
+            <div className="w-48 text-center">© 2024 Nihongo Ninja</div>
+          </div>
         </div>
       </div>
     </div>

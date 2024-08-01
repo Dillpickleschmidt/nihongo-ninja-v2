@@ -248,7 +248,7 @@ export default async function page() {
             title="First-time Greeting in Japanese for Beginners by Kaname Naito, Jun 15 2024"
             startTime={256}
             credit="Kaname Naito"
-            glow
+            // glow
             timestamps={[
               { time: 0, label: "First-time Greetings" },
               { time: 256, label: "How to Ask for Someone's Name" },

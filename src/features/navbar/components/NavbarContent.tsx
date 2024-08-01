@@ -58,6 +58,7 @@ export default function NavbarContent() {
           <Input
             className="dark:placeholder:text-background-secondary75 mx-2 w-full rounded-full bg-card px-8 py-2 text-right font-japanese"
             placeholder="AIと話します"
+            disabled
           />
         </li>
         <li className="flex h-full items-center [&>*]:ml-2">

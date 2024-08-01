@@ -17,6 +17,8 @@ export function getAllowedPaths(pathname: string, user: any): boolean {
   return (
     allowedPaths.includes(pathname) ||
     pathname.startsWith("/learn/") ||
-    pathname.startsWith("/auth")
+    pathname.startsWith("/auth") ||
+    pathname.startsWith("/faq") ||
+    pathname.startsWith("/about")
   )
 }

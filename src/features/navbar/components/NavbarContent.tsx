@@ -16,94 +16,27 @@ import { Input } from "@/components/ui/input"
 export default function NavbarContent() {
   return (
     <nav>
-      <ul className="mx-6 flex items-center justify-between overflow-x-auto py-3 scrollbar:hidden">
-        <li className="flex h-full items-center [&>*]:mr-2">
-          <Link href="/learn">
-            <Button
-              variant="outline"
-              className="bg-red-400 font-bold text-black hover:bg-red-400/80 hover:text-black"
-            >
-              Home
-            </Button>
-          </Link>
-          <Link href="/learn/vocab-practice">
-            <Button
-              variant="outline"
-              className="ml-1 text-nowrap font-normal hover:opacity-85 dark:opacity-50"
-            >
-              <GraduationCap size="18px" className="mr-2 text-red-500" />
-              Vocab Practice
-            </Button>
-          </Link>
-          <Link href="/learn/conjugation">
-            <Button
-              variant="outline"
-              className="ml-1 text-nowrap font-normal hover:opacity-85 dark:opacity-50"
-            >
-              <GraduationCap size="18px" className="mr-2 text-orange-500" />
-              Conjugation
-            </Button>
-          </Link>
-          <Link href="/learn/listening-material">
-            <Button
-              variant="outline"
-              className="ml-1 text-nowrap font-normal hover:opacity-85 dark:opacity-50"
-            >
-              <Volume2 size="18px" className="mr-2 text-yellow-500" />
-              Listening Material
-            </Button>
-          </Link>
-        </li>
-        <li className="flex h-full w-full items-center">
-          <Input
-            className="dark:placeholder:text-background-secondary75 mx-2 w-full rounded-full bg-card px-8 py-2 text-right font-japanese"
-            placeholder="AIと話します"
-            disabled
-          />
-        </li>
-        <li className="flex h-full items-center [&>*]:ml-2">
-          <a href="https://jpdb.io">
-            <Button
-              variant="outline"
-              className="mr-1 text-nowrap font-normal hover:opacity-85 dark:opacity-50"
-            >
-              Jpdb.io
-              <BookPlus size="18px" className="ml-2 text-green-500" />
-            </Button>
-          </a>
-          <Link href="">
-            <Button
-              variant="outline"
-              className="mr-1 text-nowrap font-normal hover:opacity-85 dark:opacity-50"
-            >
-              Games
-              <Gamepad size="18px" className="ml-2 text-teal-500" />
-            </Button>
-          </Link>
-          <Link href="/learn/grammar-notes">
-            <Button
-              variant="outline"
-              className="mr-1 text-nowrap font-normal hover:opacity-85 dark:opacity-50"
-            >
-              Grammar Notes
-              <ScrollText size="18px" className="ml-2 text-sky-500" />
-            </Button>
-          </Link>
-          <Link href="/learn/vocab-list">
-            <Button
-              variant="outline"
-              className="mr-1 text-nowrap font-normal hover:opacity-85 dark:opacity-50"
-            >
-              Vocab List
-              <Library size="18px" className="ml-2 text-purple-500" />
-            </Button>
-          </Link>
+      <div className="mx-6 flex items-center justify-between overflow-x-auto py-3 scrollbar:hidden">
+        <Link href="/learn">
+          <Button
+            variant="outline"
+            className="bg-red-400 font-bold text-black hover:bg-red-400/80 hover:text-black"
+          >
+            Home
+          </Button>
+        </Link>
+        <Input
+          className="dark:placeholder:text-background-secondary75 mx-2 w-full max-w-[600px] rounded-full bg-card px-8 py-2 text-right font-japanese"
+          placeholder="AIと話します"
+          disabled
+        />
+        <div className="flex">
           <div className="!mr-3">
             <ThemeToggle />
           </div>
           <ProfileIcon />
-        </li>
-      </ul>
+        </div>
+      </div>
     </nav>
   )
 }

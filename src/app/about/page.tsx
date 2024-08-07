@@ -3,7 +3,7 @@ import Head from "next/head"
 
 export default function About() {
   return (
-    <div className="min-h-screen px-4 pb-12 pt-28 text-primary sm:px-6 lg:px-8">
+    <div className="relative pb-12 pt-28">
       <BackgroundImage
         backgroundImage="/img/dust-splatter-1.png"
         backgroundImageSize="1215px"

@@ -4,6 +4,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import supabaseServer from "@/lib/supabase/server"
+import Link from "next/link"
 import { redirect } from "next/navigation"
 
 export default async function Home() {
@@ -38,9 +39,11 @@ export default async function Home() {
           with <span className="text-[#E8C1A9]">games</span>, and more.
         </h2>
         <div className="mt-8 flex w-full justify-center md:mt-10 md:justify-start">
-          <Button className="rounded-lg bg-[#E8C1A9] px-4 py-[0.65rem] text-[1rem] md:px-6 md:py-3 md:text-lg">
-            Get Started! <span className="ml-2 font-semibold">{"->"}</span>
-          </Button>
+          <Link href="/learn">
+            <Button className="rounded-lg bg-[#E8C1A9] px-4 py-[0.65rem] text-[1rem] md:px-6 md:py-3 md:text-lg">
+              Get Started! <span className="ml-2 font-semibold">{"->"}</span>
+            </Button>
+          </Link>
         </div>
       </div>
       {/* Box content */}

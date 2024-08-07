@@ -7,12 +7,6 @@ import supabaseServer from "@/lib/supabase/server"
 import { redirect } from "next/navigation"
 
 export default async function Home() {
-  const supabase = supabaseServer()
-  const user = (await supabase.auth.getSession()).data.session?.user
-  if (!user) {
-    redirect("/learn")
-  }
-
   return (
     <main className="mt-16">
       {/* Background Image */}

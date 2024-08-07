@@ -1,4 +1,6 @@
+import CustomImage from "@/components/CustomImage"
 import PortraitIcon from "@/components/PortraitIcon"
+import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import supabaseServer from "@/lib/supabase/server"
@@ -12,50 +14,62 @@ export default async function Home() {
   }
 
   return (
-    <main className="">
-      <div className="flex h-[420px] w-full flex-col items-center justify-center bg-black/5 p-24">
-        <div>
-          <h1 className="text-center text-6xl font-semibold">Nihongo Ninja</h1>
-          <h2 className="mt-4 text-center text-muted-foreground">
-            The one-stop shop for all your Japanese learning needs.
-          </h2>
-          <div className="mt-6 flex gap-2">
-            <Input
-              placeholder="your@email.com"
-              className="w-72 border-none bg-card placeholder:text-center placeholder:text-muted-foreground/50"
-            />
-            <Button className="bg-red-400 text-white">Get started!</Button>
-          </div>
+    <main className="mt-16">
+      {/* Background Image */}
+      <div className="absolute z-[-1] w-full min-w-[800px]">
+        <AspectRatio ratio={16 / 9}>
+          <CustomImage
+            src="/img/japanese-gate.png"
+            alt="Japanese gate homescreen image"
+            priority={true}
+            className="gradient-mask-b-[transparent,rgba(0,0,0,1)_0%,rgba(0,0,0,0.0)_73%] opacity-15"
+          />
+        </AspectRatio>
+      </div>
+      {/* Headers */}
+      <div className="pl-12 pr-10 pt-14 md:px-16 md:pt-16 lg:px-24 2xl:px-32 2xl:pt-24">
+        <h3 className="ml-2 font-medium md:text-3xl md:text-[#BBBBBB]">
+          Nihongo Ninja
+        </h3>
+        <h1 className="mt-36 max-w-[800px] pr-4 text-[2.25rem] font-medium leading-[3rem] text-[#BBBBBB] md:mt-48 md:pr-0 md:text-[3.25rem] md:leading-[3.5rem]">
+          Curated Japanese Tools and Learning Resources
+        </h1>
+        <h2 className="mt-8 max-w-[950px] text-[1.15rem] leading-8 tracking-tight md:mt-5 md:text-[1.55rem] md:leading-[2.6rem]">
+          Discover <span className="text-[#E8C1A9]">helpful videos</span>,{" "}
+          tackle challenging <span className="text-[#E8C1A9]">grammar</span>{" "}
+          concepts, learn <span className="text-[#E8C1A9]">vocabulary</span>{" "}
+          through anime examples, master{" "}
+          <span className="text-[#E8C1A9]">conjugation</span>, conquer{" "}
+          <span className="text-[#E8C1A9]">kanji</span>, reinforce your skills
+          with <span className="text-[#E8C1A9]">games</span>, and more.
+        </h2>
+        <div className="mt-8 flex w-full justify-center md:mt-10 md:justify-start">
+          <Button className="rounded-lg bg-[#E8C1A9] px-4 py-[0.65rem] text-[1rem] md:px-6 md:py-3 md:text-lg">
+            Get Started! <span className="ml-2 font-semibold">{"->"}</span>
+          </Button>
         </div>
       </div>
-      {/* <div className="w-full h-0.5 bg-white/10" /> */}
-      <div className="h-[800px] w-full bg-black/20 px-12">
-        <div className="flex">
-          <h2 className="pl-4 pt-24 text-4xl font-semibold text-primary/95">
-            Diverse Activities
-          </h2>
-          <div className="-ml-12 w-full">
-            <div className="grid grid-cols-9 gap-2 pt-12 [&>*]:h-40 [&>*]:rounded-2xl [&>*]:bg-neutral-700 [&>*]:text-neutral-700">
-              <div>.</div>
-              <div>.</div>
-              <div>.</div>
-              <div>.</div>
-              <div>.</div>
-              <div>.</div>
-              <div>.</div>
-              <div>.</div>
-              <div>.</div>
-            </div>
-          </div>
+      {/* Box content */}
+      <div className="mt-12 w-full px-12 pb-24 md:mt-24">
+        <div className="grid w-[750px] grid-cols-9 gap-[0.275rem] md:ml-[17rem] md:w-[1475px] md:gap-2 [&>*]:h-20 [&>*]:rounded-2xl [&>*]:bg-neutral-700 [&>*]:text-neutral-700 [&>*]:md:h-40">
+          <div />
+          <div />
+          <div />
+          <div />
+          <div />
+          <div />
+          <div />
+          <div />
+          <div />
         </div>
-        <div className="grid grid-cols-5 gap-2 pt-24 [&>*]:h-96 [&>*]:rounded-2xl [&>*]:bg-neutral-700 [&>*]:text-neutral-700">
-          <div>.</div>
-          <div>.</div>
-          <div>.</div>
-          <div>.</div>
+        <div className="mt-12 grid w-[800px] grid-cols-5 gap-[0.275rem] md:w-[1750px] md:gap-2 md:pt-24 [&>*]:h-48 [&>*]:rounded-2xl [&>*]:bg-neutral-700 [&>*]:text-neutral-700 [&>*]:md:h-96">
+          <div />
+          <div />
+          <div />
+          <div />
         </div>
       </div>
-      <div className="w-full">
+      {/* <div className="w-full">
         <div className="flex min-h-[900px] w-full">
           <div className="w-[35%] bg-background-secondary text-primary-foreground">
             <div className="mx-24 mt-24 space-y-12 xl:ml-44">
@@ -189,9 +203,8 @@ export default async function Home() {
           </div>
         </div>
         <div className="flex h-[500px] flex-col items-center justify-end bg-card">
-          {/* <div className="bottom-0 w-[75%] h-80 bg-background-secondary rounded-t-3xl"></div> */}
         </div>
-      </div>
+      </div> */}
     </main>
   )
 }

@@ -104,6 +104,7 @@ const config = {
       addVariant("scrollbar-thumb", "&::-webkit-scrollbar-thumb")
     },
     require("tailwindcss-animate"),
+    require("tailwind-gradient-mask-image"),
   ],
 } satisfies Config
 

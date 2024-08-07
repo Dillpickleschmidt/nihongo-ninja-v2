@@ -9,7 +9,7 @@ import { redirect } from "next/navigation"
 
 export default async function Home() {
   return (
-    <main className="mt-16">
+    <main className="mt-16 w-screen overflow-hidden">
       {/* Background Image */}
       <div className="absolute z-[-1] w-full min-w-[800px]">
         <AspectRatio ratio={16 / 9}>
@@ -22,11 +22,11 @@ export default async function Home() {
         </AspectRatio>
       </div>
       {/* Headers */}
-      <div className="pl-12 pr-10 pt-14 md:px-16 md:pt-16 lg:px-24 2xl:px-32 2xl:pt-24">
+      <div className="px-10 pt-14 md:px-16 md:pt-16 lg:px-24 2xl:px-32 2xl:pt-24">
         <h3 className="ml-2 font-medium md:text-3xl md:text-[#BBBBBB]">
           Nihongo Ninja
         </h3>
-        <h1 className="mt-36 max-w-[800px] pr-4 text-[2.25rem] font-medium leading-[3rem] text-[#BBBBBB] md:mt-48 md:pr-0 md:text-[3.25rem] md:leading-[3.5rem]">
+        <h1 className="mt-28 max-w-[800px] pr-4 text-[2.25rem] font-medium leading-[3rem] text-[#BBBBBB] md:mt-48 md:pr-0 md:text-[3.25rem] md:leading-[3.5rem]">
           Curated Japanese Tools and Learning Resources
         </h1>
         <h2 className="mt-8 max-w-[950px] text-[1.15rem] leading-8 tracking-tight md:mt-5 md:text-[1.55rem] md:leading-[2.6rem]">
@@ -59,7 +59,7 @@ export default async function Home() {
           <div />
           <div />
         </div>
-        <div className="mt-12 grid w-[800px] grid-cols-5 gap-[0.275rem] md:w-[1750px] md:gap-2 md:pt-24 [&>*]:h-48 [&>*]:rounded-2xl [&>*]:bg-neutral-700 [&>*]:text-neutral-700 [&>*]:md:h-96">
+        <div className="mt-12 grid grid-cols-2 gap-[0.275rem] sm:grid-cols-3 md:w-[1750px] md:grid-cols-5 md:gap-2 md:pt-24 [&>*]:h-48 [&>*]:rounded-2xl [&>*]:bg-neutral-700 [&>*]:text-neutral-700 [&>*]:md:h-96">
           <div />
           <div />
           <div />

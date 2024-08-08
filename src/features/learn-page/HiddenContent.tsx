@@ -106,13 +106,13 @@ export default function HiddenContent() {
         </div>
       </div>
       <div className="flex justify-center">
-        <div className="flex h-48 w-[78%] flex-col justify-center rounded-t-lg bg-card text-base font-extralight text-muted-foreground sm:w-[70%] xl:w-[63%]">
-          <p className="px-24">
+        <div className="flex min-h-48 w-[78%] flex-col justify-center rounded-t-lg bg-card pb-4 text-base font-extralight text-muted-foreground sm:w-[70%] xl:w-[63%]">
+          <p className="p-6 lg:px-24">
             Disclaimer: Content on this site is supplementary and not approved
             by any textbook publishers/authors. Nihongo Ninja is not affiliated
             with linked YouTube channels or websites.
           </p>
-          <div className="mt-6 flex items-center justify-evenly px-12">
+          <div className="mt-4 flex items-center justify-evenly px-4 lg:px-12">
             <div className="w-48 text-center">
               <Link href="/faq" className="text-lg font-normal">
                 FAQ

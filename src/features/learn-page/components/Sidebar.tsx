@@ -27,13 +27,13 @@ export default function Sidebar() {
         </Button>
       </div>
       {isOpen && (
-        <div className="fixed top-0 z-30 h-full w-80 bg-background">
+        <div className="fixed top-0 z-30 block h-full w-80 bg-background lg:hidden">
           <div className="flex w-full flex-col items-center space-y-3 pt-48">
             <Link href="/learn/grammar-notes">
               <Button
                 size="lg"
                 variant="outline"
-                className="w-72 text-nowrap px-6 py-3 text-base font-normal"
+                className="w-64 text-nowrap px-6 py-3 text-base font-normal"
               >
                 <ScrollText size="22px" className="mr-3 text-red-500" />
                 <span className="opacity-75">Grammar Notes</span>
@@ -43,7 +43,7 @@ export default function Sidebar() {
               <Button
                 size="lg"
                 variant="outline"
-                className="w-72 text-nowrap px-6 py-3 text-base font-normal"
+                className="w-64 text-nowrap px-6 py-3 text-base font-normal"
               >
                 <Library size="22px" className="mr-3 text-sky-400" />
                 <span className="opacity-75">Vocab List</span>
@@ -53,7 +53,7 @@ export default function Sidebar() {
               <Button
                 size="lg"
                 variant="outline"
-                className="w-72 text-nowrap px-6 py-3 text-base font-normal"
+                className="w-64 text-nowrap px-6 py-3 text-base font-normal"
               >
                 <GraduationCap size="22px" className="mr-3 text-orange-500" />
                 <span className="opacity-75">Vocab Practice</span>
@@ -63,7 +63,7 @@ export default function Sidebar() {
               <Button
                 size="lg"
                 variant="outline"
-                className="w-72 text-nowrap px-6 py-3 text-base font-normal"
+                className="w-64 text-nowrap px-6 py-3 text-base font-normal"
               >
                 <GraduationCap size="22px" className="mr-3 text-teal-400" />
                 <span className="opacity-75">Conjugation</span>
@@ -73,7 +73,7 @@ export default function Sidebar() {
               <Button
                 size="lg"
                 variant="outline"
-                className="w-72 text-nowrap px-6 py-3 text-base font-normal"
+                className="w-64 text-nowrap px-6 py-3 text-base font-normal"
               >
                 <BookPlus size="22px" className="mr-3 text-yellow-400" />
                 <span className="opacity-75">
@@ -85,7 +85,7 @@ export default function Sidebar() {
               <Button
                 size="lg"
                 variant="outline"
-                className="w-72 text-nowrap px-6 py-3 text-base font-normal"
+                className="w-64 text-nowrap px-6 py-3 text-base font-normal"
               >
                 <Volume2 size="22px" className="mr-3 text-purple-400" />
                 <span className="opacity-75">Listening Material</span>
@@ -95,7 +95,7 @@ export default function Sidebar() {
               <Button
                 size="lg"
                 variant="outline"
-                className="w-72 text-nowrap px-6 py-3 text-base font-normal"
+                className="w-64 text-nowrap px-6 py-3 text-base font-normal"
               >
                 <Gamepad size="22px" className="mr-3 text-green-500" />
                 <span className="opacity-75">Games</span>

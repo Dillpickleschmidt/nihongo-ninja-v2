@@ -29,7 +29,7 @@ export default function page() {
           />
         </AspectRatio>
       </div>
-      <div className="pt-40 text-center text-7xl font-medium italic text-muted-foreground">
+      <div className="px-10 pt-40 text-center text-7xl font-medium italic text-muted-foreground">
         Nihongo Ninja
       </div>
       <HiddenContent />

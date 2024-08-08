@@ -30,13 +30,12 @@ export default function page() {
           <p className="!my-12">
             At <span className="font-bold">Nihongo Ninja</span>, we are
             passionate about helping you achieve mastery in Japanese. While our
-            practice modules are excellent for building short-term memory, for
-            long-term retention and kanji learning, we highly reccomend{" "}
-            <span className="font-bold">jpdb.io</span>. We are not sponsored by
-            or even affiliated with or{" "}
-            <span className="font-bold">jpdb.io</span>, but we highly value the
-            effectiveness of their learning system, and here's why we reccomend
-            you use it alongside our course.
+            practice modules are excellent for building short-term memory, we
+            highly reccomend <span className="font-bold">jpdb.io</span> for
+            anything long-term. We are not sponsored by or even affiliated with
+            or <span className="font-bold">jpdb.io</span>, but we highly value
+            the effectiveness of their learning system, and here's why we
+            reccomend you use it alongside this course.
           </p>
           <h3 className="text-center text-xl font-semibold">
             <a
@@ -304,7 +303,7 @@ export default function page() {
               flashcard system on the market{" "}
               <span className="text-base text-muted-foreground">
                 (the scheduling felt a lot better than Anki and even WaniKani,
-                which we used before jpdb)
+                which we had used before)
               </span>
               , with excellent analytics to easily track your progress.
             </li>
@@ -326,7 +325,7 @@ export default function page() {
               </p>
             </li>
           </ol>
-          <h3 className="!mt-12 text-2xl font-bold">What to Use When?</h3>
+          <h3 className="!mt-12 text-2xl font-bold">What Tools to Use When?</h3>
           <ul className="list-disc space-y-4">
             <li>
               Use <strong>Nihongo Ninja</strong> to learn tough grammar subjects

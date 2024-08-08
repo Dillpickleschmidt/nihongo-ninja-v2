@@ -19,6 +19,18 @@ export default function HiddenContent() {
         <div className="relative flex lg:w-[27.5%]">
           {/* Large screens */}
           <div className="fixed hidden flex-col space-y-6 pl-12 pt-16 lg:flex xl:pl-24">
+            <a href="https://jpdb.io">
+              <Button
+                size="lg"
+                variant="outline"
+                className="w-full text-nowrap py-3 text-sm font-normal lg:px-6 xl:w-56 xl:text-base 2xl:w-72"
+              >
+                <BookPlus size="22px" className="mr-3 text-amber-400" />
+                <span className="opacity-75">
+                  Jpdb.io <span className="ml-1 text-sm">(Kanji)</span>
+                </span>
+              </Button>
+            </a>
             <Link href="/learn/grammar-notes">
               <Button
                 size="lg"
@@ -59,18 +71,6 @@ export default function HiddenContent() {
                 <span className="opacity-75">Conjugation</span>
               </Button>
             </Link>
-            <a href="https://jpdb.io">
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full text-nowrap py-3 text-sm font-normal lg:px-6 xl:w-56 xl:text-base 2xl:w-72"
-              >
-                <BookPlus size="22px" className="mr-3 text-yellow-400" />
-                <span className="opacity-75">
-                  Jpdb.io <span className="ml-1 text-sm">(Kanji)</span>
-                </span>
-              </Button>
-            </a>
             <Link href="/learn/listening-material">
               <Button
                 size="lg"

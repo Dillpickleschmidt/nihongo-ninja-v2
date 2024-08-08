@@ -32,16 +32,16 @@ export default function page() {
       </h1>
       <div className="space-y-6 px-12 sm:px-16 md:px-24">
         <p>
-          Generally speaking, we don't expect you to memorize the kanji for
-          words until <strong>Chapter 3</strong>, but you will be adding words
-          to and practicing on <strong>jpdb.io</strong> everyday from this point
-          on. That way, you'll hit the ground running when it's time to get
-          serious with kanji.
+          It's a bit early for kanji, and generally speaking, we don't expect
+          you to memorize the kanji for words until <strong>Chapter 3</strong>,
+          but you will be adding words to and practicing on{" "}
+          <strong>jpdb.io</strong> everyday from this point on. That way, you'll
+          hit the ground running when it's time to get serious with kanji.
         </p>
         <p>
-          However, we're making an exception now. These first 10 numbers are so
-          frequently used that it's worth mastering them right now on Nihongo
-          Ninja, and we'll expect you to know them going forward{" "}
+          These first 10 numbers are so frequently used that it's worth
+          mastering them right now on Nihongo Ninja, and we'll expect you to
+          know them going forward{" "}
           <span className="text-base text-muted-foreground">
             (you'll still review them on jpdb)
           </span>
@@ -51,7 +51,7 @@ export default function page() {
           <span className="text-base text-muted-foreground">
             (once you get used to them)
           </span>
-          , so we're actually making it easier for you.
+          , so we're actually making life easier for you.
         </p>
         <div className="flex items-center justify-center text-3xl">
           <div className="mr-4 font-japanese text-5xl">一</div>
@@ -239,10 +239,15 @@ export default function page() {
           If only she knew back then she would get pregnant and would have to
           carry a baby for <strong>nine</strong> months!
         </p> */}
-        <p>
-          A person in the doggie style position, waiting for (insert{" "}
-          <strong>nine</strong> [unit of measurement] joke here).
-        </p>
+        <div>
+          <p>
+            A person appearing to be in the doggie style position, waiting for
+            (insert <strong>nine</strong> [unit of measurement] joke here).
+          </p>
+          <p className="mt-2 text-base italic text-muted-foreground">
+            Whatever helps you remember it \_0_0_/
+          </p>
+        </div>
 
         <div className="flex items-center justify-center text-3xl">
           <div className="mr-4 font-japanese text-5xl">十</div>

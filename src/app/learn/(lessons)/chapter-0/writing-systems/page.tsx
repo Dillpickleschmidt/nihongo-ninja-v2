@@ -167,8 +167,8 @@ export default function page() {
           </p>
           <p>
             <span className="font-extrabold">Sensei:</span> These characters are
-            inherited from the distant lands of China. For example, the word
-            kanji is actually written as{" "}
+            inherited from our neighbors in China. For example, the word kanji
+            is actually written as{" "}
             <span className="font-japanese text-xl">漢字</span> which literally
             means:
           </p>
@@ -185,8 +185,8 @@ export default function page() {
           </p>
           <p className="text-center font-japanese text-5xl">日</p>
           <p>
-            <span className="font-extrabold">Student:</span> They seem complex,
-            wise teacher. How shall I conquer them?
+            <span className="font-extrabold">Student:</span> Uh huh... Well,
+            they seem complex, wise teacher. How shall I conquer them?
           </p>
           <p>
             <span className="font-extrabold">Sensei:</span> Approach Kanji as a

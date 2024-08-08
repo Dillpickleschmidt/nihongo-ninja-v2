@@ -8,7 +8,7 @@ export default function page() {
       // backgroundImageOpacity={5}
       nextPageLink="/learn/chapter-0/greetings-quiz"
     >
-      Hello world
+      <h1 className="mt-12 text-center text-4xl">Work in progress...</h1>
     </ContentBox>
   )
 }

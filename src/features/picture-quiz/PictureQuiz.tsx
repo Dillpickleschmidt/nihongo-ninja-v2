@@ -32,7 +32,7 @@ export default function PictureQuiz() {
   }
 
   return (
-    <div className="absolute inset-0 flex flex-col items-center justify-center space-y-6 py-6">
+    <div className="inset-0 flex flex-col items-center justify-center space-y-6 py-6">
       <PictureQuizContent />
       <div className="mx-12 flex flex-col items-center space-y-6">
         <Textarea

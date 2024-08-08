@@ -213,11 +213,11 @@ export default function page() {
             </table>
           </div>
           <ul className="mt-4 text-center">
-            <li>kon'nichiwa</li>
             <li>
               <span className="text-sm">❌</span>{" "}
               <span className="line-through">ko nichiwa</span>
             </li>
+            <li>kon'nichiwa</li>
           </ul>
         </div>
         <p>
@@ -225,8 +225,8 @@ export default function page() {
           While Japanese pronunciation is generally easy, it's{" "}
           <span className="text-xl font-bold">crucial</span> to pay special
           attention to these sounds, as they can change a word's meaning{" "}
-          <u>entirely</u>. Japanese speakers are forgiving of accents but highly
-          attuned to these subtle length differences. Don't worry if you
+          <u>entirely</u>. Japanese speakers are forgiving of thick accents but
+          highly attuned to these subtle length differences. Don't worry if you
           struggle at first—you'll encounter and practice them throughout your
           Japanese journey.
         </p>
@@ -266,12 +266,10 @@ export default function page() {
           <p className="mt-6 text-base">
             <span className="font-bold">A note from sensei: </span>
             <em>
-              Embark on this exhilarating adventure with gusto! Embrace the
-              dramatic, relish the stretchy, and remember - in the world of
-              Japanese phonetics, <u>more is more</u>. Revel in the glory of
-              sounding like a <em>true</em> Nihongo master, and let the double
-              consonants and long vowels add that extra *zing* to your
-              linguistic journey! ✨
+              Embrace the dramatic, relish the stretchy, and remember - in the
+              world of Japanese phonetics, <u>more is more</u>. So, go forth and
+              conquer those double consonants and long vowels like the
+              linguistic warriors you are!
             </em>
           </p>
           <div className="mt-8 flex w-full justify-center">

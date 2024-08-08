@@ -92,7 +92,7 @@ export default function page() {
         </ul>
         <p className="!mt-4">
           The emphasis here is placed on{" "}
-          <span className="font-bold italic">this</span>. In this case, the word
+          <span className="font-bold italic">this</span>. In this case, the word{" "}
           <span className="font-japanese text-xl">これ</span> is much more
           important.
         </p>

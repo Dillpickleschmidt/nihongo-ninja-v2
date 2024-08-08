@@ -66,13 +66,13 @@ export default function UnitButtonContents({
         ) : type === "audio" ? (
           <Volume2 size={iconSize} className="text-purple-400" />
         ) : type === "grammar-notes" ? (
-          <ScrollText size={iconSize} className="text-sky-500 opacity-80" />
+          <ScrollText size={iconSize} className="text-red-500 opacity-80" />
         ) : type === "reading" ? (
           <BookOpenText size={iconSize} className="text-teal-400" />
         ) : type === "conjugation-practice" ? (
           <GraduationCap size={iconSize} className="text-teal-400" />
         ) : type === "vocab-list" ? (
-          <Library size={iconSize} className="text-sky-400 opacity-80" />
+          <Library size={iconSize} className="text-sky-400 saturate-[75%]" />
         ) : undefined}
       </div>
     </>

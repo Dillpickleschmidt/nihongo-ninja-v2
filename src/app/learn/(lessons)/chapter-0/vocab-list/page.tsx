@@ -13,10 +13,15 @@ export default async function page() {
     >
       <div>
         <div className="mx-16 border-b border-neutral-600 pb-16">
-          <h1 className="mx-auto mb-12 mt-6 text-center text-5xl font-semibold tracking-wide">
+          <h1 className="mx-auto mb-12 mt-20 text-center text-5xl font-semibold tracking-wide">
             <em>Vocabulary</em>
           </h1>
           <div className="mx-8">
+            <p>
+              <strong>Congradulations!</strong> That was a lot to get through, I
+              know :(. Let's try something more fun and take a look at the
+              upcoming vocabulary—utilizing all the characters you just learned.
+            </p>
             <h3 className="mb-6 mt-8 text-center text-2xl font-medium text-orange-400">
               Greetings
             </h3>

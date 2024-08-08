@@ -11,7 +11,7 @@ export default function page() {
       nextPageLink="/learn/chapter-0/writing-systems"
     >
       <div className="flex w-full justify-center">
-        <div className="relative z-[-1] h-[800px] w-[615px] overflow-hidden rounded-2xl shadow-xl sm:mt-12">
+        <div className="relative z-[-1] h-[600px] w-[475px] overflow-hidden rounded-2xl shadow-xl sm:mt-12">
           <CustomImage
             src="/img/chapter-0/chapter-0-welcome.png"
             alt="welcome image"

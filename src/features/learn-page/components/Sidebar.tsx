@@ -29,6 +29,18 @@ export default function Sidebar() {
       {isOpen && (
         <div className="fixed top-0 z-30 block h-full w-80 bg-background lg:hidden">
           <div className="flex w-full flex-col items-center space-y-3 pt-48">
+            <a href="https://jpdb.io">
+              <Button
+                size="lg"
+                variant="outline"
+                className="w-64 text-nowrap px-6 py-3 text-base font-normal"
+              >
+                <BookPlus size="22px" className="mr-3 text-amber-400" />
+                <span className="opacity-75">
+                  Jpdb.io <span className="ml-1 text-sm">(Kanji)</span>
+                </span>
+              </Button>
+            </a>
             <Link href="/learn/grammar-notes">
               <Button
                 size="lg"
@@ -69,18 +81,6 @@ export default function Sidebar() {
                 <span className="opacity-75">Conjugation</span>
               </Button>
             </Link>
-            <a href="https://jpdb.io">
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-64 text-nowrap px-6 py-3 text-base font-normal"
-              >
-                <BookPlus size="22px" className="mr-3 text-yellow-400" />
-                <span className="opacity-75">
-                  Jpdb.io <span className="ml-1 text-sm">(Kanji)</span>
-                </span>
-              </Button>
-            </a>
             <Link href="/learn/listening-material">
               <Button
                 size="lg"

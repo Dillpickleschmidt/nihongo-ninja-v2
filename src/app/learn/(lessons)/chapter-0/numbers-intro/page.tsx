@@ -9,7 +9,7 @@ export default function page() {
       backgroundImage="/img/dust-splatter-1.png"
       backgroundImageSize="1215px"
       backgroundImageOpacity={5}
-      nextPageLink="/learn/chapter-0/numbers"
+      nextPageLink="/learn/chapter-0/numbers-0-100"
       showProgressBar={false}
     >
       <h1 className="px-20 pb-16 pt-36 text-center text-5xl font-medium leading-[4rem]">
@@ -41,8 +41,9 @@ export default function page() {
       <div className="px-20">
         <p className="py-24 text-3xl font-medium leading-[2.5rem]">
           And let's not forget about telling time. Miss your train because you
-          couldn't understand "ごぜんくじ" (9 AM)? ...I hope your friends missed
-          you, at least. 🥹
+          couldn't understand "
+          <span className="font-japanese text-[2rem]">ごぜんくじ</span>" (9 AM)?
+          ...I hope your friends missed you, at least. 🥹
         </p>
       </div>
       <div className="bg-background-secondary px-20">

@@ -30,8 +30,9 @@ export default async function page() {
             is needed, &quot;Sumimasen&quot; is often used. For instance, if you
             accidentally bump into someone, you can say &quot;Sumimasen&quot; to
             apologize. <br />
-            <strong>Politeness Level:</strong> It's more polite than
-            &quot;ごめんなさい (Gomen nasai),&quot; which is more casual.
+            <strong>Politeness Level:</strong> It's more polite than &quot;
+            <span className="font-japanese text-xl">ごめんなさい</span> (Gomen
+            nasai),&quot; which is more casual.
           </p>
           <p>
             <strong>To Get Someone's Attention:</strong> It's also used to
@@ -61,13 +62,14 @@ export default async function page() {
           </p>
         </div>
         <p>
-          Think of すみません as the Swiss Army knife of Japanese phrases - it's
-          super versatile and always handy. It's the polite magic word that
-          covers everything from &quot;My bad!&quot; to &quot;Excuse me!&quot;
-          and &quot;Thanks a lot!&quot; all rolled into one. In Japan, where
-          politeness is practically a sport, &quot;Sumimasen&quot; is your MVP
-          phrase, getting you through all sorts of social jams with just the
-          right touch of courtesy and charm.
+          Think of <span className="font-japanese text-xl">すみません</span> as
+          the Swiss Army knife of Japanese phrases - it's super versatile and
+          always handy. It's the polite magic word that covers everything from
+          &quot;My bad!&quot; to &quot;Excuse me!&quot; and &quot;Thanks a
+          lot!&quot; all rolled into one. In Japan, where politeness is
+          practically a sport, &quot;Sumimasen&quot; is your MVP phrase, getting
+          you through all sorts of social jams with just the right touch of
+          courtesy and charm.
         </p>
         <p>
           So, whenever you're in doubt, a friendly &quot;Sumimasen&quot; is
@@ -176,9 +178,9 @@ export default async function page() {
         <p>
           Explanation: Using &quot;いいえ&quot; in this context is a
           light-hearted way to clarify the comical misunderstanding - no, this
-          café-hopping feline isn't your sneaky pet! The other options would
-          create amusingly absurd responses, like welcoming the cat home or
-          thanking it as if it were a meal! 🐱🤣🚫
+          café-hopping creature isn't your pet! The other options would create
+          amusingly absurd responses, like welcoming the cat home or thanking it
+          as if it were a meal! 🐱🤣🚫
         </p>
       </div>
     </ContentBox>

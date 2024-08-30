@@ -96,6 +96,7 @@ export default function Sidebar() {
                 size="lg"
                 variant="outline"
                 className="w-64 text-nowrap px-6 py-3 text-base font-normal"
+                disabled
               >
                 <Gamepad size="22px" className="mr-3 text-green-500" />
                 <span className="opacity-75">Games</span>

@@ -86,6 +86,7 @@ export default function HiddenContent() {
                 size="lg"
                 variant="outline"
                 className="w-full text-nowrap py-3 text-sm font-normal lg:px-6 xl:w-56 xl:text-base 2xl:w-72"
+                disabled
               >
                 <Gamepad size="22px" className="mr-3 text-green-500" />
                 <span className="opacity-75">Games</span>

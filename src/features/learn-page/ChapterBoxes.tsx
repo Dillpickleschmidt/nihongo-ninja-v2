@@ -828,6 +828,79 @@ export function ChapterBoxes() {
           Chapter 3 Worksheet
         </UnitButton>
       </ChapterBox>
+      <ChapterBox text="Chapter 13" className="bg-green-600 saturate-[65%]">
+        <UnitButton
+          id="1."
+          type="vocab-list"
+          link="/learn/chapter-13/vocab-list"
+          disabled
+        >
+          Chapter 13 Vocab List
+        </UnitButton>
+        <UnitButton
+          id="2."
+          type="grammar-notes"
+          link="/learn/grammar-notes"
+          disabled
+        >
+          Chapter 13 Grammar Notes
+        </UnitButton>
+        <UnitButton id="3." type="vocab" link="/learn/chapter-13/nouns">
+          Nouns
+        </UnitButton>
+        <UnitButton
+          id="4."
+          type="practice"
+          link="/learn/chapter-13/practice/nouns-readings"
+        >
+          Practice Nouns - Readings
+        </UnitButton>
+        <UnitButton
+          id="5."
+          type="practice"
+          link="/learn/chapter-13/practice/nouns-kana"
+        >
+          Practice Nouns - Kana
+        </UnitButton>
+        <UnitButton id="6." type="vocab" link="/learn/chapter-13/adj-and-verbs">
+          Adjectives & Verbs
+        </UnitButton>
+        <UnitButton
+          id="7."
+          type="practice"
+          link="/learn/chapter-13/practice/adj-and-verbs-readings"
+        >
+          Practice Adj & Verbs - Readings
+        </UnitButton>
+        <UnitButton
+          id="8."
+          type="practice"
+          link="/learn/chapter-13/practice/adj-and-verbs-kana"
+        >
+          Practice Adj & Verbs - Kana
+        </UnitButton>
+        <UnitButton
+          id="9."
+          type="vocab"
+          link="/learn/chapter-13/day-count-and-misc"
+        >
+          Day Count & Misc.
+        </UnitButton>
+        <UnitButton
+          id="10."
+          type="practice"
+          link="/learn/chapter-13/practice/day-count-and-misc-readings"
+        >
+          Practice Day Count & Misc. - Readings
+        </UnitButton>
+        <UnitButton
+          id="11."
+          type="practice"
+          link="/learn/chapter-13/practice/day-count-and-misc-kana"
+        >
+          Practice Day Count & Misc. - Kana
+        </UnitButton>
+      </ChapterBox>
     </>
   )
 }

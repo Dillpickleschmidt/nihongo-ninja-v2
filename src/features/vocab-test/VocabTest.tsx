@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, FormEvent, useEffect } from "react"
+import { useState, useEffect } from "react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import type { EnhancedVocabEntry, VocabEntry } from "@/types/vocab"
@@ -12,9 +12,7 @@ type VocabTestProps = {
 }
 
 export default function VocabTest({ data, chapter }: VocabTestProps) {
-  const [randomizedData, setRandomizedData] = useState<
-    (VocabEntry | EnhancedVocabEntry)[]
-  >([])
+  const [randomizedData, setRandomizedData] = useState<VocabEntry[]>([])
   const [showAnswers, setShowAnswers] = useState(false)
   const [userAnswers, setUserAnswers] = useState<{ [key: string]: string }>({})
 
@@ -33,8 +31,7 @@ export default function VocabTest({ data, chapter }: VocabTestProps) {
     }))
   }
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+  const handleCheckAnswers = () => {
     setShowAnswers(true)
   }
 
@@ -60,10 +57,7 @@ export default function VocabTest({ data, chapter }: VocabTestProps) {
       <h1 className="mx-28 border-b-2 border-orange-400 pb-12 pt-24 text-center text-4xl font-semibold">
         Chapter {chapter} Vocab Test
       </h1>
-      <form
-        onSubmit={handleSubmit}
-        className="space-y-6 px-12 sm:px-16 md:px-24"
-      >
+      <div className="space-y-6 px-12 sm:px-16 md:px-24">
         <ul className="mt-12 list-none space-y-2">
           {randomizedData.map((entry, index) => (
             <li key={index} className="grid w-full grid-cols-3 gap-2">
@@ -114,11 +108,11 @@ export default function VocabTest({ data, chapter }: VocabTestProps) {
           ))}
         </ul>
         <div className="!mt-8 flex justify-center">
-          <Button type="submit" className="bg-indigo-400">
+          <Button onClick={handleCheckAnswers} className="bg-indigo-400">
             Check Answers
           </Button>
         </div>
-      </form>
+      </div>
     </ContentBox>
   )
 }

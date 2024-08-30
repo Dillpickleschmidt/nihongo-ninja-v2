@@ -62,7 +62,7 @@ export function convertFuriganaToRubyHtml<T extends string | string[]>(
         if (foundFurigana) {
           rubyText += `${tempArr.join("")}</ruby>`
         } else {
-          rubyText += tempArr.join("")
+          rubyText += tempArr.join("").replace(/\s/g, "") // Remove spaces
         }
         tempArr = []
       }

@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button"
 import type { EnhancedVocabEntry, VocabEntry } from "@/types/vocab"
 import { extractHiragana } from "../vocab-data-parsers"
 import ContentBox from "../content-box/ContentBox"
+import WanakanaWrapper from "../wanakana/WanaKana"
+import { isHiragana, isKatakana } from "wanakana"
 
 type VocabTestProps = {
   data: VocabEntry[]
@@ -63,28 +65,39 @@ export default function VocabTest({ data, chapter }: VocabTestProps) {
             <li key={index} className="grid w-full grid-cols-3 gap-2">
               <h3 className="text-center text-[1.33rem]">{entry.word}</h3>
 
-              <div className="flex flex-col space-y-1">
-                <Input
-                  placeholder="kana"
-                  onChange={(e) =>
-                    handleInputChange(index, "kana", e.target.value)
-                  }
-                  className="min-h-0 rounded-sm bg-card py-1 font-japanese text-lg placeholder:text-base placeholder:opacity-75"
-                />
-                {showAnswers && (
-                  <>
-                    {isCorrect(index, "kana") ? (
-                      <span>✅</span>
-                    ) : (
-                      <small className="text-red-500">
-                        {extractHiragana(entry.furigana?.[0] ?? "")}
-                      </small>
+              <div className="w-full">
+                {!isHiragana(entry.word) && !isKatakana(entry.word) && (
+                  <div className="space-y-1">
+                    <WanakanaWrapper
+                      value={userAnswers[`${index}-kana`] ?? ""}
+                      onChange={(e) =>
+                        handleInputChange(index, "kana", e.target.value)
+                      }
+                    >
+                      <Input
+                        placeholder="kana"
+                        onChange={(e) =>
+                          handleInputChange(index, "kana", e.target.value)
+                        }
+                        className="min-h-0 rounded-sm bg-card py-1 font-japanese text-lg placeholder:text-base placeholder:opacity-75"
+                      />
+                    </WanakanaWrapper>
+                    {showAnswers && (
+                      <>
+                        {isCorrect(index, "kana") ? (
+                          <span>✅</span>
+                        ) : (
+                          <small className="text-red-500">
+                            {extractHiragana(entry.furigana?.[0] ?? "")}
+                          </small>
+                        )}
+                      </>
                     )}
-                  </>
+                  </div>
                 )}
               </div>
 
-              <div className="flex flex-col space-y-1">
+              <div className="space-y-1">
                 <Input
                   placeholder="English"
                   onChange={(e) =>

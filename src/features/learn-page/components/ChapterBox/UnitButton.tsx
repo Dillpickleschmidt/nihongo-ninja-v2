@@ -20,6 +20,7 @@ type UnitButtonProps = {
     | "grammar-notes"
     | "reading"
     | "vocab-list"
+    | "vocab-test"
   link?: string
   disabled?: boolean
 }

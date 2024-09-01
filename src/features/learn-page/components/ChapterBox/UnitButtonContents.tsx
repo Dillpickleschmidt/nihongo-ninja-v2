@@ -29,6 +29,7 @@ type UnitButtonContentsProps = {
     | "grammar-notes"
     | "reading"
     | "vocab-list"
+    | "vocab-test"
 }
 
 export default function UnitButtonContents({
@@ -73,6 +74,11 @@ export default function UnitButtonContents({
           <GraduationCap size={iconSize} className="text-teal-400" />
         ) : type === "vocab-list" ? (
           <Library size={iconSize} className="text-sky-400 saturate-[75%]" />
+        ) : type === "vocab-test" ? (
+          <GraduationCap
+            size={iconSize}
+            className="text-yellow-500 saturate-[75%]"
+          />
         ) : undefined}
       </div>
     </>

@@ -902,8 +902,105 @@ export function ChapterBoxes() {
         </UnitButton>
         <UnitButton
           id="12."
-          type="writing"
+          type="vocab-test"
           link="/learn/chapter-13/all-vocab-test"
+        >
+          All Vocab - Test
+        </UnitButton>
+      </ChapterBox>
+      <ChapterBox text="Chapter 14" className="bg-pink-500 saturate-[50%]">
+        <UnitButton
+          id="1."
+          type="vocab-list"
+          link="/learn/chapter-14/vocab-list"
+          disabled
+        >
+          Chapter 14 Vocab List
+        </UnitButton>
+        <UnitButton
+          id="2."
+          type="grammar-notes"
+          link="/learn/grammar-notes"
+          disabled
+        >
+          Chapter 14 Grammar Notes
+        </UnitButton>
+        <UnitButton id="3." type="vocab" link="/learn/chapter-14/nouns-1">
+          Nouns 1
+        </UnitButton>
+        <UnitButton
+          id="4."
+          type="practice"
+          link="/learn/chapter-14/practice/nouns-1-readings"
+        >
+          Practice Nouns 1 - Readings
+        </UnitButton>
+        <UnitButton
+          id="5."
+          type="practice"
+          link="/learn/chapter-14/practice/nouns-1-kana"
+        >
+          Practice Nouns 1 - Kana
+        </UnitButton>
+        <UnitButton id="6." type="vocab" link="/learn/chapter-14/nouns-2">
+          Nouns 2
+        </UnitButton>
+        <UnitButton
+          id="7."
+          type="practice"
+          link="/learn/chapter-14/practice/nouns-2-readings"
+        >
+          Practice Nouns 2 - Readings
+        </UnitButton>
+        <UnitButton
+          id="8."
+          type="practice"
+          link="/learn/chapter-14/practice/nouns-2-kana"
+        >
+          Practice Nouns 2 - Kana
+        </UnitButton>
+        <UnitButton id="9." type="vocab" link="/learn/chapter-14/adj-and-verbs">
+          Adjectives & Verbs
+        </UnitButton>
+        <UnitButton
+          id="10."
+          type="practice"
+          link="/learn/chapter-14/practice/adj-and-verbs-readings"
+        >
+          Practice Adj & Verbs - Readings
+        </UnitButton>
+        <UnitButton
+          id="11."
+          type="practice"
+          link="/learn/chapter-14/practice/adj-and-verbs-kana"
+        >
+          Practice Adj & Verbs - Kana
+        </UnitButton>
+        <UnitButton
+          id="12."
+          type="vocab"
+          link="/learn/chapter-14/counters-adv-misc"
+        >
+          Counters, Adv., & Misc.
+        </UnitButton>
+        <UnitButton
+          id="13."
+          type="practice"
+          link="/learn/chapter-14/practice/counters-adv-misc-readings"
+        >
+          Counters, Adv., & Misc. - Readings
+        </UnitButton>
+        <UnitButton
+          id="14."
+          type="practice"
+          link="/learn/chapter-14/practice/counters-adv-misc-kana"
+        >
+          Counters, Adv., & Misc. - Kana
+        </UnitButton>
+        <UnitButton
+          id="15."
+          type="vocab-test"
+          link="/learn/chapter-14/all-vocab-test"
         >
           All Vocab - Test
         </UnitButton>

@@ -1005,6 +1005,108 @@ export function ChapterBoxes() {
           All Vocab - Test
         </UnitButton>
       </ChapterBox>
+
+      <ChapterBox text="Chapter 15" className="bg-red-500 saturate-[65%]">
+        <UnitButton
+          id="1."
+          type="vocab-list"
+          link="/learn/chapter-15/vocab-list"
+          disabled
+        >
+          Chapter 15 Vocab List
+        </UnitButton>
+        <UnitButton
+          id="2."
+          type="grammar-notes"
+          link="/learn/grammar-notes"
+          disabled
+        >
+          Chapter 15 Grammar Notes
+        </UnitButton>
+        <UnitButton id="3." type="vocab" link="/learn/chapter-15/nouns-1">
+          Nouns 1
+        </UnitButton>
+        <UnitButton
+          id="4."
+          type="practice"
+          link="/learn/chapter-15/practice/nouns-1-readings"
+        >
+          Practice Nouns 1 - Readings
+        </UnitButton>
+        <UnitButton
+          id="5."
+          type="practice"
+          link="/learn/chapter-15/practice/nouns-1-kana"
+        >
+          Practice Nouns 1 - Kana
+        </UnitButton>
+        <UnitButton id="6." type="vocab" link="/learn/chapter-15/nouns-2">
+          Nouns 2
+        </UnitButton>
+        <UnitButton
+          id="7."
+          type="practice"
+          link="/learn/chapter-15/practice/nouns-2-readings"
+        >
+          Practice Nouns 2 - Readings
+        </UnitButton>
+        <UnitButton
+          id="8."
+          type="practice"
+          link="/learn/chapter-15/practice/nouns-2-kana"
+        >
+          Practice Nouns 2 - Kana
+        </UnitButton>
+        <UnitButton
+          id="9."
+          type="vocab"
+          link="/learn/chapter-15/godan-and-ichidan-v"
+        >
+          Ichidan & Godan Verbs
+        </UnitButton>
+        <UnitButton
+          id="10."
+          type="practice"
+          link="/learn/chapter-15/practice/godan-and-ichidan-v-readings"
+        >
+          Practice Ichidan & Godan V. - Readings
+        </UnitButton>
+        <UnitButton
+          id="11."
+          type="practice"
+          link="/learn/chapter-15/practice/godan-and-ichidan-v-kana"
+        >
+          Practice Ichidan & Godan V. - Kana
+        </UnitButton>
+        <UnitButton
+          id="12."
+          type="vocab"
+          link="/learn/chapter-15/irr-v-adv-misc"
+        >
+          Irreg Verbs, Adv., & Misc.
+        </UnitButton>
+        <UnitButton
+          id="13."
+          type="practice"
+          link="/learn/chapter-15/practice/irr-v-adv-misc-readings"
+        >
+          Irreg Verbs, Adv., & Misc. - Readings
+        </UnitButton>
+        <UnitButton
+          id="14."
+          type="practice"
+          link="/learn/chapter-15/practice/irr-v-adv-misc-kana"
+        >
+          Irreg Verbs, Adv., & Misc. - Kana
+        </UnitButton>
+        <UnitButton
+          id="15."
+          type="vocab-test"
+          link="/learn/chapter-15/all-vocab-test"
+        >
+          All Vocab - Test
+        </UnitButton>
+      </ChapterBox>
     </>
   )
 }

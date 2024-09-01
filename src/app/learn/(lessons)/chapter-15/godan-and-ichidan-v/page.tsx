@@ -3,7 +3,7 @@ import { fetchVocabularyByPath } from "@/features/practice-mode/components/fetch
 import VocabCards from "@/features/vocab-card/VocabCards"
 
 export default async function page() {
-  const path = "chapter-14/counters-adv-misc"
+  const path = "chapter-15/godan-and-ichidan-v"
   const data = await fetchVocabularyByPath(path)
   // const jpdbIds = [
   //   [1318290, 281437092],
@@ -19,12 +19,12 @@ export default async function page() {
 
   return (
     <ContentBox
-      nextPageLink="/learn/chapter-14/practice/irr-v-adv-misc-readings"
-      jpdbDeckName="Nihongo Ninja: Chapter 14"
+      nextPageLink="/learn/chapter-15/practice/godan-and-ichidan-v-readings"
+      jpdbDeckName="Nihongo Ninja: Chapter 15"
       // jpdbVocab={jpdbIds}
     >
       <h1 className="px-28 pb-6 pt-28 text-center text-4xl font-semibold">
-        Irregular Verbs, Adverbs, and Misc.
+        Godan and Ichidan Verbs
       </h1>
       <VocabCards data={data} furiganaSize="1rem" />
     </ContentBox>

@@ -252,7 +252,7 @@ export default function SettingsPage({ onStartReview }: HomePageProps) {
               onCheckedChange={(checked) =>
                 handleSettingChange("emoji")(checked)
               }
-              label="Show emojis above conjugation types"
+              label="Show emojis above conjugation types [WIP]"
             />
           </div>
         </div>

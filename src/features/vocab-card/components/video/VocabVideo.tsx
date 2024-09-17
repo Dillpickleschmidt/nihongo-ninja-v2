@@ -18,8 +18,8 @@ export default function VocabVideo({ index }: VocabVideoProps) {
     data.map(() => true),
   )
 
-  // Check if entry or videos array is null or empty
-  if (!entry || !entry.videos || entry.videos.length === 0) {
+  // Check if entry or videos array is null, undefined, or empty
+  if (!entry?.videos?.length) {
     return null
   }
 

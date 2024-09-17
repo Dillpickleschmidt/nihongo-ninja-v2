@@ -11,6 +11,7 @@ export async function fetchVocabularyByPath(
       .select(
         `
         vocabulary (
+          id,
           created_at,
           word,
           furigana,
@@ -18,7 +19,12 @@ export async function fetchVocabularyByPath(
           chapter,
           example_sentences,
           info,
-          mnemonics
+          mnemonics,
+          videos (
+            src,
+            title,
+            origin
+          )
         )
       `,
       )
@@ -28,8 +34,18 @@ export async function fetchVocabularyByPath(
       throw error
     }
 
-    // Extract vocabulary data from the joined results
-    const vocabularyData = data.map((entry: any) => entry.vocabulary)
+    // Extract vocabulary data from the joined results and format it
+    const vocabularyData = data.map((entry: any) => {
+      const vocab = entry.vocabulary
+      return {
+        ...vocab,
+        videos: Array.isArray(vocab.videos)
+          ? vocab.videos
+          : vocab.videos
+            ? [vocab.videos]
+            : [],
+      }
+    })
 
     return vocabularyData
   } catch (error) {

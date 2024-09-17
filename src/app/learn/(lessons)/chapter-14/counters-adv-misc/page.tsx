@@ -19,7 +19,7 @@ export default async function page() {
 
   return (
     <ContentBox
-      nextPageLink="/learn/chapter-14/practice/irr-v-adv-misc-readings"
+      nextPageLink="/learn/chapter-14/practice/counters-adv-misc-readings"
       jpdbDeckName="Nihongo Ninja: Chapter 14"
       // jpdbVocab={jpdbIds}
     >

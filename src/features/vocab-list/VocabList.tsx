@@ -16,6 +16,17 @@ import DaysAndTime from "./components/chapter-3/DaysAndTime"
 import VerbsAndAdjectives from "./components/chapter-3/VerbsAndAdjectives"
 import AdverbsExpressions from "./components/chapter-3/AdverbsExpressions"
 import AndSoBut from "./components/chapter-3/AndSoBut"
+import C13Nouns from "./components/chapter-13/C13Nouns"
+import C13AdjAndVerbs from "./components/chapter-13/C13AdjAndVerbs"
+import C13DayCountAndMisc from "./components/chapter-13/C13DayCountAndMisc"
+import C14Nouns1 from "./components/chapter-14/C14Nouns1"
+import C14Nouns2 from "./components/chapter-14/C14Nouns2"
+import C14AdjAndVerbs from "./components/chapter-14/C14AdjAndVerbs"
+import C14CountersAdvMisc from "./components/chapter-14/C14CountersAdvMisc"
+import C15Nouns1 from "./components/chapter-15/C15Nouns1"
+import C15Nouns2 from "./components/chapter-15/C15Nouns2"
+import C15GodanAndIchidanV from "./components/chapter-15/GodanAndIchidanV"
+import C15IrrVAdvMisc from "./components/chapter-15/C15IrrVAdvMisc"
 
 export default function VocabList() {
   return (
@@ -249,6 +260,89 @@ export default function VocabList() {
             And, So, and But
           </h3>
           <AndSoBut />
+        </div>
+      </div>
+      <h1 className="mx-auto mb-6 mt-20 text-center text-5xl font-semibold tracking-wide">
+        <em>Chapter 13</em>
+      </h1>
+      <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-2">
+        <div>
+          <h3 className="mb-3 mt-6 text-center text-2xl font-medium text-orange-400">
+            Nouns
+          </h3>
+          <C13Nouns />
+        </div>
+        <div>
+          <h3 className="mb-3 mt-6 text-center text-2xl font-medium text-orange-400">
+            Adjectives & Verbs
+          </h3>
+          <C13AdjAndVerbs />
+        </div>
+        <div>
+          <h3 className="mb-3 mt-6 text-center text-2xl font-medium text-orange-400">
+            Day Count & Misc.
+          </h3>
+          <C13DayCountAndMisc />
+        </div>
+      </div>
+
+      <h1 className="mx-auto mb-6 mt-20 text-center text-5xl font-semibold tracking-wide">
+        <em>Chapter 14</em>
+      </h1>
+      <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-2">
+        <div>
+          <h3 className="mb-3 mt-6 text-center text-2xl font-medium text-orange-400">
+            Nouns 1
+          </h3>
+          <C14Nouns1 />
+        </div>
+        <div>
+          <h3 className="mb-3 mt-6 text-center text-2xl font-medium text-orange-400">
+            Nouns 2
+          </h3>
+          <C14Nouns2 />
+        </div>
+        <div>
+          <h3 className="mb-3 mt-6 text-center text-2xl font-medium text-orange-400">
+            Adjectives & Verbs
+          </h3>
+          <C14AdjAndVerbs />
+        </div>
+        <div>
+          <h3 className="mb-3 mt-6 text-center text-2xl font-medium text-orange-400">
+            Counters, Adv. & Misc.
+          </h3>
+          <C14CountersAdvMisc />
+        </div>
+      </div>
+
+      <h1 className="mx-auto mb-6 mt-20 text-center text-5xl font-semibold tracking-wide">
+        <em>Chapter 15</em>
+      </h1>
+      <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-2">
+        <div>
+          <h3 className="mb-3 mt-6 text-center text-2xl font-medium text-orange-400">
+            Nouns 1
+          </h3>
+          <C15Nouns1 />
+        </div>
+        <div>
+          <h3 className="mb-3 mt-6 text-center text-2xl font-medium text-orange-400">
+            Nouns 2
+          </h3>
+          <C15Nouns2 />
+        </div>
+        <div>
+          <h3 className="mb-3 mt-6 text-center text-2xl font-medium text-orange-400">
+            Ichidan & Godan Verbs
+          </h3>
+          <C15GodanAndIchidanV />
+        </div>
+        <div>
+          <h3 className="mb-3 mt-6 text-center text-2xl font-medium text-orange-400">
+            Irreg Verbs, Adv., & Misc.
+          </h3>
+          <C15IrrVAdvMisc />
         </div>
       </div>
     </>

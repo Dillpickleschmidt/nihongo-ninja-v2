@@ -28,7 +28,8 @@ export default function VocabCards({
         {enhancedData.map((item, index) => (
           <VocabCard
             key={item.word}
-            index={index + countOffset}
+            index={index}
+            countOffset={countOffset}
             light={(index + 1) % 2 === 0}
             english={item.english?.join(", ")}
             kana={item.rubyText?.[0] || item.word}

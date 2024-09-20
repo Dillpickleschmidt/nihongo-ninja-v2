@@ -11,6 +11,7 @@ export default async function page() {
   const data1 = data.slice(0, 4)
   const data2 = data.slice(4, 7)
   data2.push(data[20])
+  console.log(data1[1], data2[2])
 
   return (
     <ContentBox

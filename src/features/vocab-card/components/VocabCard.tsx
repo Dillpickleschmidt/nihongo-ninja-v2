@@ -3,6 +3,7 @@ import VocabVideo from "./video/VocabVideo"
 type VocabCardProps = {
   children: React.ReactNode
   index: number
+  countOffset?: number
   kana?: string
   english?: string
   light?: boolean
@@ -14,6 +15,7 @@ type VocabCardProps = {
 export default function VocabCard({
   children,
   index,
+  countOffset,
   kana,
   english,
   light = false,
@@ -32,7 +34,7 @@ export default function VocabCard({
         <h3 className="mb-4 font-japanese text-2xl font-bold">
           {/* Number */}
           <span className="font-japanese text-[1.375rem]">
-            {`${index + 1}.`}{" "}
+            {`${countOffset ? index + countOffset + 1 : index + 1}.`}{" "}
           </span>
           {/* Furigana */}
           {noFurigana && japanese ? (

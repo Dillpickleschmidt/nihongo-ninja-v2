@@ -530,7 +530,11 @@ export default function page() {
                 <span className="text-sky-400">は</span>
               </span>
               . No need to say{" "}
-              <span className="font-japanese">東京は最高だった</span>.
+              <span className="font-japanese">
+                <span className="text-orange-400">東京</span>
+                <span className="text-sky-400">は</span>最高だった
+              </span>
+              .
             </li>
             <li className="mx-6 text-base">
               Food is a new topic, so we use{" "}

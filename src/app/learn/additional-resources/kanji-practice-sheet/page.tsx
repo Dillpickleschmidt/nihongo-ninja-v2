@@ -6,7 +6,7 @@ import BackgroundImage from "@/features/content-box/components/BackgroundImage"
 import PrintButton from "@/features/content-box/components/PrintButton"
 import { useRef } from "react"
 
-export default function page() {
+export default function Page() {
   const printRef = useRef<HTMLDivElement>(null)
 
   return (

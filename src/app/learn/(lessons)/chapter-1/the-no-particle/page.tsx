@@ -197,10 +197,10 @@ export default async function page() {
         </ul>
         <p className="pt-6">And that's it!</p>
         <p>
-          ...Okay, there are a couple more uses for the{" "}
+          In the future, you'll encounter a couple more uses for the{" "}
           <span className="font-japanese text-xl">の</span> particle, but you
-          can worry about them once you reach the later lessons. For now, try to
-          link nouns together to show possession.
+          can worry about them once you reach the later chapters. For now, try
+          to link nouns together to show possession.
         </p>
         <h2 className="pb-3 pt-6 text-center text-2xl font-bold">
           Activity: Who Owns What?
@@ -264,8 +264,8 @@ export default async function page() {
         <p>
           By now, you should feel more comfortable using{" "}
           <span className="font-japanese">の</span> to show possession and make
-          your sentences richer in detail. If not, don't worry because you'll be
-          creating more sentences in the next lesson.
+          your sentences richer in detail. If not, don't worry because you'll
+          practice creating more sentences in the next lesson.
         </p>
       </div>
     </ContentBox>

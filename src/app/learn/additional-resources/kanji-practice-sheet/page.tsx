@@ -109,30 +109,30 @@ export default function Page() {
                     />
                   </td>
                   <td className="w-36 border border-neutral-500 print:border-black">
-                    <textarea className="h-36 resize-none bg-background px-3 py-2 print:bg-white" />
+                    <textarea className="h-36 resize-none bg-background px-3 py-2 text-2xl print:bg-white" />
                   </td>
                   <td className="w-32 border border-neutral-500 print:border-black">
                     <div className="w-full border-b-2 border-dashed border-neutral-500 print:border-black">
-                      <textarea className="h-full min-h-[4.5rem] w-full resize-none overflow-hidden bg-background px-3 py-2 leading-6 print:bg-white" />
+                      <textarea className="h-full min-h-[4.5rem] w-full resize-none overflow-hidden bg-background px-3 py-2 text-2xl leading-8 print:bg-white" />
                     </div>
                     <div className="w-full">
-                      <textarea className="h-full min-h-[4.5rem] w-full resize-none overflow-hidden bg-background px-3 py-2 leading-6 print:bg-white" />
+                      <textarea className="h-full min-h-[4.5rem] w-full resize-none overflow-hidden bg-background px-3 py-2 text-2xl leading-8 print:bg-white" />
                     </div>
                   </td>
                   <td className="border border-neutral-500 print:border-black">
                     <div className="w-full border-b-2 border-dashed border-neutral-500 print:border-black">
-                      <textarea className="h-full min-h-[4.5rem] w-full resize-none overflow-hidden bg-background px-3 py-2 leading-6 print:bg-white" />
+                      <textarea className="h-full min-h-[4.5rem] w-full resize-none overflow-hidden bg-background px-3 py-2 text-2xl leading-8 print:bg-white" />
                     </div>
                     <div className="w-full">
-                      <textarea className="h-full min-h-[4.5rem] w-full resize-none overflow-hidden bg-background px-3 py-2 leading-6 print:bg-white" />
+                      <textarea className="h-full min-h-[4.5rem] w-full resize-none overflow-hidden bg-background px-3 py-2 text-2xl leading-8 print:bg-white" />
                     </div>
                   </td>
                   <td className="w-1/2 border border-neutral-500 print:border-black">
                     <div className="w-full border-b-2 border-dashed border-neutral-500 print:border-black">
-                      <textarea className="h-full min-h-[4.5rem] w-full resize-none overflow-hidden bg-background px-3 py-2 print:bg-white" />
+                      <textarea className="h-full min-h-[4.5rem] w-full resize-none overflow-hidden bg-background px-3 py-2 text-2xl print:bg-white" />
                     </div>
                     <div className="w-full">
-                      <textarea className="h-full min-h-[4.5rem] w-full resize-none overflow-hidden bg-background px-3 py-2 print:bg-white" />
+                      <textarea className="h-full min-h-[4.5rem] w-full resize-none overflow-hidden bg-background px-3 py-2 text-2xl print:bg-white" />
                     </div>
                   </td>
                 </tr>
@@ -154,30 +154,30 @@ export default function Page() {
                       <Input className="rounded-none border-none bg-opacity-0 bg-none text-center text-8xl print:bg-white print:text-black" />
                     </td>
                     <td className="w-36 border border-neutral-500 print:border-black">
-                      <textarea className="h-36 resize-none bg-background px-3 py-2 print:bg-white" />
+                      <textarea className="h-36 resize-none bg-background px-3 py-2 text-2xl print:bg-white" />
                     </td>
                     <td className="w-32 border border-neutral-500 print:border-black">
                       <div className="w-full border-b-2 border-dashed border-neutral-500 print:border-black">
-                        <textarea className="h-full min-h-[4.5rem] w-full resize-none overflow-hidden bg-background px-3 py-2 leading-6 print:bg-white" />
+                        <textarea className="h-full min-h-[4.5rem] w-full resize-none overflow-hidden bg-background px-3 py-2 text-2xl leading-8 print:bg-white" />
                       </div>
                       <div className="w-full">
-                        <textarea className="h-full min-h-[4.5rem] w-full resize-none overflow-hidden bg-background px-3 py-2 leading-6 print:bg-white" />
+                        <textarea className="h-full min-h-[4.5rem] w-full resize-none overflow-hidden bg-background px-3 py-2 text-2xl leading-8 print:bg-white" />
                       </div>
                     </td>
                     <td className="border border-neutral-500 print:border-black">
                       <div className="w-full border-b-2 border-dashed border-neutral-500 print:border-black">
-                        <textarea className="h-full min-h-[4.5rem] w-full resize-none overflow-hidden bg-background px-3 py-2 leading-6 print:bg-white" />
+                        <textarea className="h-full min-h-[4.5rem] w-full resize-none overflow-hidden bg-background px-3 py-2 text-2xl leading-8 print:bg-white" />
                       </div>
                       <div className="w-full">
-                        <textarea className="h-full min-h-[4.5rem] w-full resize-none overflow-hidden bg-background px-3 py-2 leading-6 print:bg-white" />
+                        <textarea className="h-full min-h-[4.5rem] w-full resize-none overflow-hidden bg-background px-3 py-2 text-2xl leading-8 print:bg-white" />
                       </div>
                     </td>
                     <td className="w-1/2 border border-neutral-500 print:border-black">
                       <div className="w-full border-b-2 border-dashed border-neutral-500 print:border-black">
-                        <textarea className="h-full min-h-[4.5rem] w-full resize-none overflow-hidden bg-background px-3 py-2 print:bg-white" />
+                        <textarea className="h-full min-h-[4.5rem] w-full resize-none overflow-hidden bg-background px-3 py-2 text-2xl print:bg-white" />
                       </div>
                       <div className="w-full">
-                        <textarea className="h-full min-h-[4.5rem] w-full resize-none overflow-hidden bg-background px-3 py-2 print:bg-white" />
+                        <textarea className="h-full min-h-[4.5rem] w-full resize-none overflow-hidden bg-background px-3 py-2 text-2xl print:bg-white" />
                       </div>
                     </td>
                   </tr>

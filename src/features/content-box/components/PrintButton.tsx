@@ -50,6 +50,7 @@ export default function PrintButton({
   const handlePrint = useReactToPrint({
     contentRef: contentRef,
     pageStyle: pageStyle,
+    preserveAfterPrint: true,
   })
 
   return (

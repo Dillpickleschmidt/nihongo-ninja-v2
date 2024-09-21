@@ -9,12 +9,16 @@ type PrintButtonProps = {
   contentRef: React.RefObject<HTMLDivElement>
   className?: string
   zoom?: boolean
+  scale?: number
+  buttonSize?: number
 }
 
 export default function PrintButton({
   contentRef,
   className,
   zoom,
+  scale,
+  buttonSize,
 }: PrintButtonProps) {
   const pageStyle = zoom
     ? `
@@ -27,7 +31,21 @@ export default function PrintButton({
         }
       }
       `
-    : undefined
+    : scale
+      ? `
+      @page {
+        margin: 0;
+      }
+      @media print {
+        html, body {
+          zoom: ${scale}%;
+        }
+      }
+      body {
+        -webkit-print-color-adjust: exact;
+      }
+      `
+      : undefined
 
   const handlePrint = useReactToPrint({
     contentRef: contentRef,
@@ -41,7 +59,7 @@ export default function PrintButton({
       variant="ghost"
       className={cn("h-10 w-10 !p-0 print:hidden", className)}
     >
-      <PiFilePdf size={26} className="opacity-25" />
+      <PiFilePdf size={buttonSize ? buttonSize : 26} className="opacity-25" />
     </Button>
   )
 }

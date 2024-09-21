@@ -7,6 +7,7 @@ import {
   GraduationCap,
   Library,
   ScrollText,
+  TicketPlus,
   Volume2,
 } from "lucide-react"
 import Sidebar from "./components/Sidebar"
@@ -90,6 +91,19 @@ export default function HiddenContent() {
               >
                 <Gamepad size="22px" className="mr-3 text-green-500" />
                 <span className="opacity-75">Games</span>
+              </Button>
+            </Link>
+            <Link href="/learn/additional-resources">
+              <Button
+                size="lg"
+                variant="outline"
+                className="w-full text-nowrap py-3 text-sm font-normal lg:px-6 xl:w-56 xl:text-base 2xl:w-72"
+              >
+                <TicketPlus
+                  size="22px"
+                  className="mr-3 text-pink-400 saturate-[65%]"
+                />
+                <span className="opacity-75">Misc</span>
               </Button>
             </Link>
           </div>

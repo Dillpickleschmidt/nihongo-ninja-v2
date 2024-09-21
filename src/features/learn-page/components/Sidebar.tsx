@@ -102,6 +102,19 @@ export default function Sidebar() {
                 <span className="opacity-75">Games</span>
               </Button>
             </Link>
+            <Link href="/learn/additional-resources">
+              <Button
+                size="lg"
+                variant="outline"
+                className="w-64 text-nowrap px-6 py-3 text-base font-normal"
+              >
+                <Volume2
+                  size="22px"
+                  className="mr-3 text-pink-400 saturate-[65%]"
+                />
+                <span className="opacity-75">Misc.</span>
+              </Button>
+            </Link>
           </div>
         </div>
       )}

@@ -17,7 +17,6 @@ export default function Page() {
         backgroundImageOpacity={5}
       />
       <div className="min-h-screen px-12 pb-28 pt-24 sm:px-16 md:px-24">
-        {/* <ListeningMaterial /> */}
         <AspectRatio
           ref={printRef}
           ratio={8.5 / 11}

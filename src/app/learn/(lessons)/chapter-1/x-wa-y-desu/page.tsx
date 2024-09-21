@@ -191,9 +191,9 @@ export default function page() {
         </div>
         <p className="pt-3">
           But if you ever listen to a Japanese conversation, you'll notice{" "}
-          <span className="font-japanese">です</span> is used in almost every
-          sentence. That's because it softens the tone, adding politeness to
-          speech, which is highly valued in Japanese culture.
+          <span className="font-japanese">です</span> is used quite a lot.
+          That's because it softens the tone, adding politeness to speech, which
+          is highly valued in Japanese culture.
         </p>
         <div>
           <h3 className="pt-3 text-xl font-bold">Understood Context</h3>
@@ -341,10 +341,17 @@ export default function page() {
         <p>
           Here, <span className="font-japanese">これは</span> (kore wa) uses the{" "}
           <span className="font-japanese">は</span> particle to mark{" "}
-          <span className="font-semibold">this</span> as the topic.{" "}
-          <span className="font-japanese">は</span> itself doesn't have any
-          meaning, but it helps to clarify the topic of the sentence. You can
+          <span className="font-semibold">this</span> (
+          <span className="font-japanese">これ</span>) as the topic.{" "}
+          <span className="font-japanese">は</span> doesn't have any meaning
+          itself, but it helps to clarify the topic of the sentence. You can
           think of it like an arrow pointing to the topic of the sentence.
+        </p>
+        <p className="space-y-0 text-sm italic text-muted-foreground">
+          *Particles are a totally foreign concept for English speakers. They're
+          mini-words that serve only grammatical purposes and have no meaning
+          themselves. But don't worry you'll begin to understand them through
+          seeing more examples.
         </p>
         <div className="w-full space-y-4 rounded-2xl bg-primary/10 py-10 text-center font-semibold">
           <p>
@@ -364,6 +371,9 @@ export default function page() {
             <span className="font-japanese">です。</span>
           </h3>
         </div>
+        <p className="space-y-0 text-base text-muted-foreground">
+          You'll want to remember the structure above. ^
+        </p>
         <h2 className="text-2xl font-bold">Example Sentences</h2>
         <p>
           Japanese speakers often omit the topic and <span>は</span> particle
@@ -519,7 +529,8 @@ export default function page() {
                 <span className="text-orange-400">東京</span>
                 <span className="text-sky-400">は</span>
               </span>
-              .
+              . No need to say{" "}
+              <span className="font-japanese">東京は最高だった</span>.
             </li>
             <li className="mx-6 text-base">
               Food is a new topic, so we use{" "}
@@ -539,6 +550,10 @@ export default function page() {
             title="The REAL Most Basic Japanese Sentence Structures"
             credit="ToKini Andy"
           />
+          <small className="italic text-muted-foreground">
+            *Nihongo Ninja is not affiliated with ToKini Andy or any other
+            linked channels.
+          </small>
         </div>
 
         <h2 className="text-2xl font-bold">Summary</h2>

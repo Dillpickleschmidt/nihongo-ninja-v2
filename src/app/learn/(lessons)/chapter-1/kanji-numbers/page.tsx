@@ -239,7 +239,7 @@ export default function page() {
           If only she knew back then she would get pregnant and would have to
           carry a baby for <strong>nine</strong> months!
         </p> */}
-        <div>
+        {/* <div>
           <p>
             A person appearing to be in the doggie style position, waiting for
             (insert <strong>nine</strong> [unit of measurement] joke here).
@@ -247,7 +247,7 @@ export default function page() {
           <p className="mt-2 text-base italic text-muted-foreground">
             Whatever helps you remember it \_0_0_/
           </p>
-        </div>
+        </div> */}
 
         <div className="flex items-center justify-center text-3xl">
           <div className="mr-4 font-japanese text-5xl">十</div>

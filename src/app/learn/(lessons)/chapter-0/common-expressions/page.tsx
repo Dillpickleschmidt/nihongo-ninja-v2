@@ -30,16 +30,27 @@ export default async function page() {
             is needed, &quot;Sumimasen&quot; is often used. For instance, if you
             accidentally bump into someone, you can say &quot;Sumimasen&quot; to
             apologize. <br />
-            <strong>Politeness Level:</strong> It's more polite than &quot;
-            <span className="font-japanese text-xl">ごめんなさい</span> (Gomen
-            nasai),&quot; which is more casual.
+            You may have also heard{" "}
+            <span className="font-japanese text-xl">ごめんなさい</span>, which
+            also means sorry.{" "}
+            <span className="text-nowrap font-japanese text-xl">
+              すみません
+            </span>{" "}
+            is more like saying "<strong>excuse my rudeness</strong>" while{" "}
+            <span className="font-japanese text-xl">ごめんなさい</span> is a
+            more direct "<strong>I'm sorry</strong>." You'll naturally pick up
+            which to use in different situations, but{" "}
+            <span className="font-japanese text-xl">すみません</span> is always
+            a safe bet.
           </p>
           <p>
             <strong>To Get Someone's Attention:</strong> It's also used to
             politely get someone's attention, like a waiter in a restaurant or
             when you're asking for directions. <br />
             Public Spaces: Saying &quot;Sumimasen&quot; before asking a question
-            or making a request is common courtesy in Japan.
+            or making a request is common courtesy in Japan. {"->"}{" "}
+            <span className="font-japanese">あのう、すみません</span> "Umm,
+            excuse me..."
           </p>
           <p>
             <strong>Expressing Gratitude:</strong> Interestingly, "Sumimasen"

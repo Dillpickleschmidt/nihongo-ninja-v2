@@ -173,6 +173,27 @@ export default function page() {
           title="The を Particle in Japanese"
           credit="ToKini Andy"
         />
+        <p className="italic">
+          While the <span className="font-japanese text-xl not-italic">を</span>{" "}
+          particle is fairly straightforward, it's important to note that{" "}
+          <span className="underline underline-offset-2">
+            not all verbs can be used with a{" "}
+            <span className="font-bold not-italic">
+              noun+
+              <span className="font-japanese text-xl">を</span>
+            </span>
+          </span>
+          , instead, they may require a different particle. For more information
+          on this, check out{" "}
+          <a
+            href="https://8020japanese.com/particle-wo/"
+            target="_blank"
+            className="font-semibold not-italic text-sky-400 underline"
+          >
+            this article by 80/20 Japanese on the を particle
+          </a>
+          .
+        </p>
 
         <p>
           Now, let's return to word order. In English, saying "sushi eat I" or
@@ -462,7 +483,7 @@ export default function page() {
               <span className="font-japanese text-xl">
                 明日、お父さんはヘリで仕事に行きます。
               </span>
-              {"->"} Tomorrow, dad will to work by hellicopter.
+              {"->"} Tomorrow, dad will go to work by hellicopter.
             </p>
           </div>
           <div className="flex w-full items-center">
@@ -471,7 +492,7 @@ export default function page() {
               <span className="font-japanese text-xl">
                 お父さんは明日ヘリで仕事に行きます。
               </span>
-              {"->"} Dad will to work by hellicopter tomorrow.
+              {"->"} Dad will go to work by hellicopter tomorrow.
             </p>
           </div>
           <p>
@@ -525,6 +546,26 @@ export default function page() {
           </p>
           <p className="!mt-2 text-base italic text-muted-foreground">
             *Literally: "On the Saturday of next week, I'll go to the pool."
+          </p>
+          <p>
+            <span className="font-japanese text-xl">
+              <span className="ml-2">
+                <Romaji romaji="saturday" className="mr-4">
+                  <Furigana
+                    furigana={<span className="text-xs">どようび</span>}
+                  >
+                    土曜日
+                  </Furigana>
+                  に
+                </Romaji>
+              </span>
+              <Romaji romaji="pool">プール</Romaji>に行きます。
+            </span>
+            {"->"} I'll go to the pool Saturday.
+          </p>
+          <p className="!mt-2 text-base italic text-muted-foreground">
+            *Like in English, we understand they're specifically talking about
+            the upcoming Saturday unless we know otherwise from context.
           </p>
           <p>
             What about chaining together times? "On a Wednesday on the 25th of

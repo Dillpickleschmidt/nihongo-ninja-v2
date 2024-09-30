@@ -121,29 +121,37 @@ export default function JapaneseWordOrderLesson() {
           English, where we often emphasize important information by putting it
           at the beginning of a sentence.
         </p>
+        <p className="text-base text-muted-foreground">
+          *The topic being an exception, which often gets placed first.
+        </p>
 
         <h2 className="text-2xl font-bold">Omission</h2>
         <div>
           <p>
             In conversational Japanese, it's common to omit parts of the
-            sentence that are clear from context. This includes subjects,
-            objects, and even particles sometimes. For example, instead of
-            saying:
+            sentence that are clear from context. This includes topics,
+            subjects, objects, and even particles sometimes. For example,
+            instead of saying:
           </p>
-          <p className="mt-2">
+          <p className="ml-2 mt-2">
             <span className="font-japanese text-xl">
               私はコーヒーが
               <Furigana furigana={<span className="text-sm">す</span>}>
                 好
               </Furigana>
-              きです
+              きです。
             </span>
-            <span className="text-base">(I like coffee)</span>, you might simply
-            say
+            {"->"} I like coffee.
           </p>
-          <p className="mt-2">
-            <span className="font-japanese text-xl">コーヒーが好きです</span>{" "}
-            <span className="text-base">([I] like coffee)</span>.
+          <p className="mt-2">you'd more likely say:</p>
+          <p className="ml-2 mt-2">
+            <span className="font-japanese text-xl">コーヒーが好きです。</span>
+            {"->"} Like coffee.
+          </p>
+          <p className="mt-2">You might even just say:</p>
+          <p className="ml-2 mt-2">
+            <span className="font-japanese text-xl">好き。</span>
+            {"->"} Like.
           </p>
         </div>
 
@@ -207,7 +215,7 @@ export default function JapaneseWordOrderLesson() {
           ,{" "}
           <a
             target="_blank"
-            href="https://d81pp4ybbpmjf.cloudfront.net/10_Steps_to_500_Sentences__80-20_Japanese.pdf"
+            href="https://8020japanese.com/japanese-word-order/"
             className="font-bold text-sky-400 underline"
           >
             this article
